@@ -64,6 +64,11 @@ jobs:
           git config user.name "skillmap-bot"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add data/skills-market.json data/skills-heatmap.svg
+          # Weekly snapshot of live postings in git too (Mondays, or any manual run), for readers
+          # that can fetch git but not release assets. Daily would bloat history.
+          if [ "$(date -u +%u)" = "1" ] || [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            git add -f data/postings-live.jsonl.gz
+          fi
           if git diff --cached --quiet; then echo "No change"; exit 0; fi
           git commit -m "data: refresh $(date -u +%F)"
           git push
