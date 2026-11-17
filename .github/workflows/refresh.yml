@@ -15,6 +15,10 @@ on:
       hn_since:
         description: "Re-read HN threads from this date (YYYY-MM-DD); empty for automatic"
         default: ""
+      dry_run:
+        description: "Collect into memory only: no database, nothing published (checks the sources)"
+        type: boolean
+        default: false
 
 concurrency:
   group: refresh
@@ -38,6 +42,7 @@ jobs:
       - run: uv sync --locked --no-dev
 
       - name: Require the database
+        if: ${{ !inputs.dry_run }}
         run: |
           if [ -z "$DATABASE_URL" ]; then
             echo "::error::Set the DATABASE_URL repository secret (Supabase → Connect → Session pooler URI)."
@@ -45,6 +50,8 @@ jobs:
           fi
 
       - name: Collect, extract, aggregate
+        env:
+          DATABASE_URL: ${{ inputs.dry_run && '' || secrets.DATABASE_URL }}
         run: |
           args=(--sources "${{ inputs.sources || 'boards,adzuna,mcf,hn' }}" --out data)
           [ -n "${{ inputs.board_limit }}" ] && args+=(--board-limit "${{ inputs.board_limit }}")
@@ -53,6 +60,7 @@ jobs:
           { echo '```'; cat run-summary.txt; echo '```'; } >> "$GITHUB_STEP_SUMMARY"
 
       - name: Publish live postings (metadata only) as a release asset
+        if: ${{ !inputs.dry_run }}
         # Kept out of git history: it changes completely every day.
         run: |
           gh release view data-latest >/dev/null 2>&1 || \
@@ -60,6 +68,7 @@ jobs:
           gh release upload data-latest data/postings-live.jsonl.gz --clobber
 
       - name: Commit aggregates
+        if: ${{ !inputs.dry_run }}
         run: |
           git config user.name "skillmap-bot"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
