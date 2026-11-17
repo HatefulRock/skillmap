@@ -1,6 +1,6 @@
 """MyCareersFuture (Singapore's national job portal), via the search API its own site uses.
 
-Pierre chose to include it for Singapore coverage. It is not a documented public API, so this
+It is included for Singapore coverage. It is not a documented public API, so this
 collector is deliberately gentle: one request every 3 seconds, newest-first paging that stops
 at postings already collected, and only the fields the dashboard needs.
 """

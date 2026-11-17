@@ -1,4 +1,4 @@
-"""data/watchlist.json: the company job boards most worth watching for Pierre's own search.
+"""data/watchlist.json: the company job boards most worth watching for the targets in config/my_skills.yaml.
 
 Omnideck's `career.discovery` agent reads Greenhouse, Lever and Ashby boards for the companies
 on the owner's watchlist (profile `watch_greenhouse` / `watch_lever` / `watch_ashby`, rotated

@@ -272,7 +272,7 @@ def pairs_block(rows: list[dict], skills: list[str], top: int = 5) -> dict:
 
 
 def me_block(rows: list[dict], ratings: dict[str, int], categories: dict[str, str]) -> dict:
-    """The heatmap: market demand per target role family next to Pierre's own rating."""
+    """The heatmap: market demand per target role family next to the owner's own rating."""
     families = {f: [r for r in rows if r["role_family"] == f] for f in TARGET_FAMILIES}
     family_shares = {f: shares(group) for f, group in families.items()}
     target = [r for f in ("ai_ml", "fde", "backend") for r in families[f]]

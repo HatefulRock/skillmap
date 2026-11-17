@@ -1,5 +1,5 @@
 """Derived insights: what a skill is worth, what sets roles and levels apart, which skills go
-together, how requirements creep, and what Pierre should learn next.
+together, how requirements creep, and what to learn next for the configured target roles.
 
 Pure functions of the stored rows (plus his self-ratings), like aggregate.py, which calls them.
 """

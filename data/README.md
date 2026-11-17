@@ -81,6 +81,6 @@ Raw URLs follow the pattern
 
 ## License
 
-The data in this folder is licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). You may use it for anything if you credit "skillmap by Pierre Blachère" and link back to this repository.
+The data in this folder is licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). You may use it for anything if you credit "skillmap" and link back to this repository.
 
 The job ads themselves belong to the companies that published them. This folder holds only facts derived from them, such as titles, places, extracted skill names and stated pay ranges, never the ad text.

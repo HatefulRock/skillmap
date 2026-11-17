@@ -1,7 +1,7 @@
 """The skills heatmap as a standalone SVG, for a GitHub profile README.
 
 Same data as the website's heatmap: one row per in-demand skill, one column per target role
-family (cell = share of postings asking for it), and a final column with Pierre's own rating.
+family (cell = share of postings asking for it), and a final column with the owner's own rating.
 Colours follow the viewer's light/dark preference via a media query inside the SVG.
 """
 

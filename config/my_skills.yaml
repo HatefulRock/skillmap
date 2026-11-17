@@ -1,8 +1,8 @@
-# Pierre's self-ratings, shown as the "Me" column of the heatmap (website + GitHub README SVG).
+# The owner's self-ratings, shown as the "Me" column of the heatmap (website + GitHub README SVG).
 # 1 Aware · 2 Used · 3 Comfortable · 4 Strong · 5 Expert. Skills left out show as "—".
 # Names must match config/taxonomy.yaml exactly (tests enforce it).
 #
-# DRAFT for Pierre to correct: pre-filled from the AI Engineer résumé and the project repos.
+# DRAFT: to be corrected by the owner.
 ratings:
   Python: 5
   TypeScript: 3
