@@ -318,6 +318,21 @@ def changes_block(market: list[dict], hn: list[dict], today: date) -> dict:
     }
 
 
+def insights_block(market: list[dict], window: list[dict], pay_rows: list[dict], today: date,
+                   categories: dict[str, str], ratings: dict[str, int]) -> dict:
+    from . import insights  # builds on this module's helpers
+
+    premium = insights.pay_premium(pay_rows, sorted(categories))
+    return {
+        "pay_premium": premium,
+        "role_dna": insights.role_dna(window),
+        "seniority_ladder": insights.seniority_ladder(window),
+        "stacks": insights.stacks(window),
+        "requirement_creep": insights.requirement_creep([r for r in market if r["source"] != "adzuna"], today),
+        "learn_next": insights.learn_next(window, ratings, premium, categories, TARGET_FAMILIES),
+    }
+
+
 def build(rows: list[dict], today: date, categories: dict[str, str], taxonomy_version: int,
           ratings: dict[str, int] | None = None, runs: list[dict] | None = None) -> dict:
     all_rows = dedupe(rows)
@@ -377,6 +392,8 @@ def build(rows: list[dict], today: date, categories: dict[str, str], taxonomy_ve
         "salary": salary_block(active(market, today - timedelta(days=SALARY_DAYS - 1), today), seg_skills),
         "pay": pay_block(active(market, today - timedelta(days=SALARY_DAYS - 1), today)),
         "changes": changes_block(market, hn, today),
+        "insights": insights_block(market, window, active(market, today - timedelta(days=SALARY_DAYS - 1), today), today,
+                                   categories, ratings or {}),
         "pairs": pairs_block(window, current_names[:20]),
         "me": me_block(window, ratings or {}, categories),
     }

@@ -43,3 +43,11 @@ ratings:
   CI/CD: 3
   Temporal / durable execution: 3
   Pre-sales / solution architecture / PoCs: 3
+
+# What a "matching" job is, for data/watchlist.json (the company boards worth watching, read by
+# Omnideck's career.discovery agent) and the "what to learn next" list.
+targets:
+  role_families: [ai_ml, fde, backend, data]
+  countries: [SG]
+  regions: [Southeast Asia, East Asia]
+  remote: true

@@ -11,6 +11,14 @@ week, and publishes the result to
 The heatmap above regenerates every week: each cell is the share of current tech postings
 in that role family that ask for the skill, and the last column is my own rating.
 
+## This week
+
+<!-- weekly:start -->
+_The first weekly note appears after the first full run._
+<!-- weekly:end -->
+
+[RSS](data/feed.xml) · [all notes](data/digest.json) · [CSV tables](data/csv/) · [JSON](data/skills-market.json)
+
 ## How it works
 
 ```

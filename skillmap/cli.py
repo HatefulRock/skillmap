@@ -12,11 +12,11 @@ from datetime import date
 from decimal import Decimal
 from pathlib import Path
 
-from . import aggregate, discover, heatmap
+from . import aggregate, digest, discover, exports, heatmap, watchlist
 from .archive import from_env as open_archive
 from .extract.skills import Taxonomy
 from .http import PoliteClient
-from .runner import archive_texts, collect, load_yaml, reextract
+from .runner import archive_texts, collect, load_boards, load_yaml, reextract
 from .store import MemoryStore, PostgresStore, Store, today_utc
 
 ALL_SOURCES = {"boards", "adzuna", "mcf", "hn"}
@@ -41,11 +41,26 @@ def _json_default(value: object) -> str:
     raise TypeError(type(value))
 
 
-def write_outputs(store: Store, taxonomy: Taxonomy, today: date, out: Path, runs: list[dict] | None = None) -> dict:
+def write_outputs(store: Store, taxonomy: Taxonomy, today: date, out: Path, runs: list[dict] | None = None,
+                  readme: Path | None = None) -> dict:
     rows = store.rows()
-    ratings = (load_yaml("my_skills.yaml") or {}).get("ratings") or {}
+    profile = load_yaml("my_skills.yaml") or {}
+    ratings = profile.get("ratings") or {}
     data = aggregate.build(rows, today, taxonomy.categories, taxonomy.version, ratings, runs)
     out.mkdir(parents=True, exist_ok=True)
+    # The weekly note compares with the previous run's file, so read it before overwriting.
+    previous_path = out / "skills-market.json"
+    previous = json.loads(previous_path.read_text()) if previous_path.exists() else None
+    notes = digest.add_note(digest.load_notes(out / "digest.json"), digest.build_note(data, previous))
+    data["digest"] = notes[:8]
+    (out / "digest.json").write_text(json.dumps(notes, indent=1, ensure_ascii=False))
+    (out / "weekly.md").write_text(digest.markdown(notes[0]))
+    (out / "feed.xml").write_text(digest.rss(notes))
+    if readme:
+        digest.update_readme(readme, notes[0])
+    exports.write_csvs(data, out / "csv")
+    watch = watchlist.build(rows, load_boards(), profile.get("targets") or {}, ratings, today)
+    (out / "watchlist.json").write_text(json.dumps(watch, indent=1, ensure_ascii=False))
     (out / "skills-market.json").write_text(json.dumps(data, separators=(",", ":"), default=_json_default))
     (out / "skills-heatmap.svg").write_text(heatmap.render(data["me"], today.isoformat()))
     # Live tech postings without description text: the census spreadsheet reads this file.
@@ -65,8 +80,10 @@ def main(argv: list[str] | None = None) -> None:
     run.add_argument("--board-limit", type=int, help="only the first N company boards (smoke tests)")
     run.add_argument("--hn-since", type=date.fromisoformat, help="override the HN start month")
     run.add_argument("--out", type=Path, default=Path("data"))
+    run.add_argument("--readme", type=Path, help="README whose weekly section gets the new note")
     agg = sub.add_parser("aggregate", help="rebuild outputs from stored postings")
     agg.add_argument("--out", type=Path, default=Path("data"))
+    agg.add_argument("--readme", type=Path, help="README whose weekly section gets the new note")
     disc = sub.add_parser("discover", help="find company job boards; writes config/boards.yaml")
     disc.add_argument("--platforms", default=",".join(discover.DEFAULT_ATS))
     disc.add_argument("--limit", type=int, help="only the first N candidate companies (smoke tests)")
@@ -109,7 +126,7 @@ def main(argv: list[str] | None = None) -> None:
         if trimmed:
             logging.info("dropped stored text of %d long-closed postings to stay under the size limit", trimmed)
 
-    data = write_outputs(store, taxonomy, today, args.out, runs)
+    data = write_outputs(store, taxonomy, today, args.out, runs, readme=args.readme)
     totals = data["meta"]["totals"]
     print(f"postings {totals['postings']} · tech {totals['tech']} · live now {data['current']['n']}")
 
