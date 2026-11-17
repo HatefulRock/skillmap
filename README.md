@@ -132,4 +132,8 @@ Tests that need Postgres run when `SKILLMAP_TEST_DATABASE_URL` is set; CI provid
 - HN posters are mostly startups and skew remote and US. That series is shown separately and
   never mixed with the live market numbers.
 - Regex extraction misses phrasing it has no pattern for. The tests pin both what it must find
-  and the false positives it must avoid; new cases go in `tests/test_extract.py`.
+  and the false positives it must avoid; new cases go in `tests/test_extract.py`. Once a month
+  (`audit` workflow) Claude labels about 100 recent postings and the regex is scored against it;
+  the precision and recall land in `data/audit.json` and on the website, and the skills with the
+  most disagreements show where the taxonomy needs work. Set the `ANTHROPIC_API_KEY` secret to
+  turn it on (a few dollars a month).

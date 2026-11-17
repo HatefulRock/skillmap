@@ -1,0 +1,52 @@
+name: audit
+# Monthly: check the regex skill extraction against Claude on ~100 recent postings and commit
+# the scores to data/audit.json (the weekly refresh then shows them on the website). Costs a few
+# dollars of API usage a month. Needs the ANTHROPIC_API_KEY repository secret.
+on:
+  schedule:
+    - cron: "0 14 3 * *"  # the 3rd, 22:00 Singapore time (after the monthly board discovery)
+  workflow_dispatch:
+    inputs:
+      sample:
+        description: "Postings to check"
+        default: "100"
+
+concurrency:
+  group: refresh  # reads the same database and pushes to the same branch as the weekly refresh
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    env:
+      DATABASE_URL: ${{ secrets.DATABASE_URL }}
+      SUPABASE_SECRET_KEY: ${{ secrets.SUPABASE_SECRET_KEY }}
+      ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+      - run: uv sync --locked --no-dev
+
+      - name: Require secrets
+        run: |
+          for name in DATABASE_URL ANTHROPIC_API_KEY; do
+            if [ -z "${!name}" ]; then echo "::error::Set the $name repository secret."; exit 1; fi
+          done
+
+      - name: Score the extraction
+        run: |
+          uv run skillmap audit --sample "${{ inputs.sample || '100' }}" | tee audit-summary.txt
+          { echo '```'; cat audit-summary.txt; echo '```'; } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Commit the scores
+        run: |
+          git config user.name "skillmap-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/audit.json
+          if git diff --cached --quiet; then echo "No change"; exit 0; fi
+          git commit -m "data: extraction audit $(date -u +%F)"
+          git pull --rebase --quiet && git push

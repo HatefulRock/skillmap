@@ -43,6 +43,7 @@ class Store(Protocol):
     def rows(self) -> list[dict]: ...
     def log_run(self, source: str, fetched: int, inserted: int, error: str | None) -> None: ...
     def trim_text(self, max_bytes: int) -> int: ...
+    def text_locations(self, posting_ids: list[str]) -> dict[str, tuple[str | None, str | None]]: ...
 
 
 def _raw_from_row(row: dict) -> RawPosting:
@@ -112,6 +113,15 @@ class MemoryStore:
 
     def trim_text(self, max_bytes: int) -> int:
         return 0
+
+    def text_locations(self, posting_ids: list[str]) -> dict[str, tuple[str | None, str | None]]:
+        """(text still in the store, archive file holding it) for each posting that has either."""
+        out = {}
+        for pid in posting_ids:
+            row = self.data.get(pid)
+            if row and (row["description"] or row["text_archive"]):
+                out[pid] = (row["description"], row["text_archive"])
+        return out
 
 
 class PostgresStore:
@@ -212,6 +222,13 @@ class PostgresStore:
             "insert into skillmap.runs (source, fetched, inserted, error) values (%s, %s, %s, %s)",
             (source, fetched, inserted, error),
         )
+
+    def text_locations(self, posting_ids: list[str]) -> dict[str, tuple[str | None, str | None]]:
+        """(text still in the store, archive file holding it) for each posting that has either."""
+        return {row["posting_id"]: (row["description"], row["text_archive"]) for row in self.conn.execute(
+            "select posting_id, description, text_archive from skillmap.postings where posting_id = any(%s) "
+            "and (description is not null or text_archive is not null)", (posting_ids,),
+        ).fetchall()}
 
     def text_bytes(self) -> int:
         return self.conn.execute("select pg_total_relation_size('skillmap.postings') as n").fetchone()["n"]

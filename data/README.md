@@ -13,6 +13,7 @@ It answers questions like these. Which skills do AI/ML, forward-deployed and Pyt
 | `digest.json` | The weekly "what changed" notes, newest first, two years kept. |
 | `weekly.md` | The latest note as Markdown. The same text is in the top-level README. |
 | `feed.xml` | RSS 2.0 feed of the notes. |
+| `audit.json` | The monthly accuracy check. Claude labels about 100 recent postings, and the regex extraction is scored against those labels: precision, recall and F1, overall and per skill, with example postings for each disagreement (ids and titles only). |
 | `postings-live.jsonl.gz` | The week's live tech postings, one JSON object per line: metadata, extracted skills and stated pay. It contains no description text. It is also attached to the `data-latest` release. |
 | `watchlist.json` | The company boards with the most postings matching the author's own targets. It is personal; see below. |
 | `skills-heatmap.svg` | The author's self-rated skills heatmap. |
@@ -45,6 +46,7 @@ Raw URLs follow the pattern
 | `changes` | `movers` (risers and fallers over 90 days, also `movers_by_role`, `movers_by_seniority` and `hn_movers`), `mix` (role and level mix over time), `per_post` (ad shape: skills, words, years, degree, visa, equity), `companies` (largest and growing), and `terms` (new vocabulary). |
 | `insights` | `pay_premium`, `role_dna`, `seniority_ladder`, `stacks`, `requirement_creep` and `learn_next`. |
 | `pairs` | The most common skill pairs. |
+| `audit` | Accuracy history and the skills with the most disagreements, from `audit.json`. |
 | `digest` | The latest weekly notes. These are the same as `digest.json`. |
 | `me` | The author's self-ratings next to demand. It is personal. |
 

@@ -1,5 +1,6 @@
 """`skillmap run` — the weekly job. `skillmap aggregate` — rebuild outputs from stored data only.
-`skillmap discover` — find company job boards and write config/boards.yaml."""
+`skillmap discover` — find company job boards and write config/boards.yaml.
+`skillmap audit` — the monthly check of skill extraction against Claude."""
 
 from __future__ import annotations
 
@@ -12,7 +13,7 @@ from datetime import date
 from decimal import Decimal
 from pathlib import Path
 
-from . import aggregate, digest, discover, exports, heatmap, watchlist
+from . import aggregate, audit, digest, discover, exports, heatmap, watchlist
 from .archive import from_env as open_archive
 from .extract.skills import Taxonomy
 from .http import PoliteClient
@@ -58,6 +59,7 @@ def write_outputs(store: Store, taxonomy: Taxonomy, today: date, out: Path, runs
     (out / "feed.xml").write_text(digest.rss(notes))
     if readme:
         digest.update_readme(readme, notes[0])
+    data["audit"] = audit.headline(out / "audit.json")
     exports.write_csvs(data, out / "csv")
     watch = watchlist.build(rows, load_boards(), profile.get("targets") or {}, ratings, today)
     (out / "watchlist.json").write_text(json.dumps(watch, indent=1, ensure_ascii=False))
@@ -90,6 +92,9 @@ def main(argv: list[str] | None = None) -> None:
     disc.add_argument("--no-yc", action="store_true", help="only config/candidates.yaml")
     disc.add_argument("--interval", type=float, default=0.4, help="seconds between requests to one platform")
     disc.add_argument("--out", type=Path, default=discover.CONFIG / "boards.yaml")
+    aud = sub.add_parser("audit", help="score the skill extraction against Claude on a sample; needs ANTHROPIC_API_KEY")
+    aud.add_argument("--sample", type=int, default=audit.SAMPLE)
+    aud.add_argument("--out", type=Path, default=Path("data") / "audit.json")
     args = parser.parse_args(argv)
 
     logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s")
@@ -99,6 +104,14 @@ def main(argv: list[str] | None = None) -> None:
     taxonomy = Taxonomy.load()
     store = open_store()
     today = today_utc()
+
+    if args.command == "audit":
+        import anthropic
+
+        report = audit.run(store, open_archive(), taxonomy, anthropic.Anthropic(), today, args.sample)
+        audit.write(report, args.out)
+        print(audit.summary(report))
+        return
 
     runs = None
     if args.command == "run":
