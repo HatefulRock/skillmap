@@ -20,6 +20,10 @@ from .models import Posting, RawPosting
 
 SCHEMA = (Path(__file__).resolve().parents[1] / "sql" / "schema.sql")
 POSTING_COLUMNS = [f.name for f in fields(Posting)]
+# Everything re-extraction rewrites.
+EXTRACTED = ["seniority", "role_family", "sector", "skills", "skills_nice", "country", "city", "region", "remote",
+             "salary_min", "salary_max", "salary_currency", "salary_period", "n_words", "min_years", "terms", "degree",
+             "visa_sponsorship", "equity"]
 HINT_COLUMNS = ["description", "seniority_hint", "min_years_hint", "sector_hint", "country_hint", "remote_hint",
                 "taxonomy_version"]
 
@@ -31,7 +35,10 @@ def stored_text(posting: Posting, raw: RawPosting) -> str | None:
 class Store(Protocol):
     def known_ids(self, source: str) -> set[str]: ...
     def save(self, items: Iterable[tuple[Posting, RawPosting]], taxonomy_version: int) -> int: ...
-    def stale_extractions(self, taxonomy_version: int) -> Iterator[RawPosting]: ...
+    def stale_extractions(self, taxonomy_version: int, archive: str | None = None) -> Iterator[RawPosting]: ...
+    def stale_archives(self, taxonomy_version: int) -> list[str]: ...
+    def texts_to_archive(self, limit: int) -> list[tuple[str, str]]: ...
+    def mark_archived(self, posting_ids: list[str], archive: str) -> None: ...
     def update_extraction(self, postings: list[Posting], taxonomy_version: int) -> None: ...
     def rows(self) -> list[dict]: ...
     def log_run(self, source: str, fetched: int, inserted: int, error: str | None) -> None: ...
@@ -66,23 +73,34 @@ class MemoryStore:
                 existing["first_seen"] = min(existing["first_seen"], posting.first_seen)
                 continue
             row = asdict(posting)
-            row.update(description=stored_text(posting, raw), seniority_hint=raw.seniority_hint, min_years_hint=raw.min_years_hint,
+            row.update(description=stored_text(posting, raw), text_archive=None, seniority_hint=raw.seniority_hint, min_years_hint=raw.min_years_hint,
                        sector_hint=raw.sector_hint, country_hint=raw.country_hint, remote_hint=raw.remote_hint,
                        taxonomy_version=taxonomy_version)
             self.data[posting.posting_id] = row
             inserted += 1
         return inserted
 
-    def stale_extractions(self, taxonomy_version: int) -> Iterator[RawPosting]:
+    def stale_extractions(self, taxonomy_version: int, archive: str | None = None) -> Iterator[RawPosting]:
         for row in list(self.data.values()):
-            if row["taxonomy_version"] != taxonomy_version:
+            if row["taxonomy_version"] != taxonomy_version and row["text_archive"] == archive:
                 yield _raw_from_row(row)
+
+    def stale_archives(self, taxonomy_version: int) -> list[str]:
+        return sorted({r["text_archive"] for r in self.data.values()
+                       if r["text_archive"] and r["taxonomy_version"] != taxonomy_version})
+
+    def texts_to_archive(self, limit: int) -> list[tuple[str, str]]:
+        rows = [(pid, r["description"]) for pid, r in sorted(self.data.items()) if r["description"] is not None]
+        return rows[:limit]
+
+    def mark_archived(self, posting_ids: list[str], archive: str) -> None:
+        for pid in posting_ids:
+            self.data[pid].update(description=None, text_archive=archive)
 
     def update_extraction(self, postings: list[Posting], taxonomy_version: int) -> None:
         for posting in postings:
             row = self.data[posting.posting_id]
-            for key in ("seniority", "role_family", "sector", "skills", "skills_nice", "country", "city", "region", "remote",
-                        "salary_min", "salary_max", "salary_currency", "salary_period"):
+            for key in EXTRACTED:
                 row[key] = getattr(posting, key)
             row["taxonomy_version"] = taxonomy_version
 
@@ -145,12 +163,13 @@ class PostgresStore:
         flush()
         return inserted
 
-    def stale_extractions(self, taxonomy_version: int) -> Iterator[RawPosting]:
+    def stale_extractions(self, taxonomy_version: int, archive: str | None = None) -> Iterator[RawPosting]:
         # Ids first, then rows in chunks: the caller writes back between chunks, and a
         # server-side cursor can't stay open across those writes in autocommit mode.
         ids = [row["posting_id"] for row in self.conn.execute(
-            "select posting_id from skillmap.postings where taxonomy_version is distinct from %s order by posting_id",
-            (taxonomy_version,),
+            "select posting_id from skillmap.postings where taxonomy_version is distinct from %s "
+            "and text_archive is not distinct from %s order by posting_id",
+            (taxonomy_version, archive),
         ).fetchall()]
         for start in range(0, len(ids), 1000):
             chunk = self.conn.execute(
@@ -159,15 +178,30 @@ class PostgresStore:
             for row in chunk:
                 yield _raw_from_row(row)
 
+    def stale_archives(self, taxonomy_version: int) -> list[str]:
+        return [row["text_archive"] for row in self.conn.execute(
+            "select distinct text_archive from skillmap.postings where text_archive is not null "
+            "and taxonomy_version is distinct from %s order by 1", (taxonomy_version,),
+        ).fetchall()]
+
+    def texts_to_archive(self, limit: int) -> list[tuple[str, str]]:
+        return [(row["posting_id"], row["description"]) for row in self.conn.execute(
+            "select posting_id, description from skillmap.postings where description is not null "
+            "order by posting_id limit %s", (limit,),
+        ).fetchall()]
+
+    def mark_archived(self, posting_ids: list[str], archive: str) -> None:
+        self.conn.execute(
+            "update skillmap.postings set description = null, text_archive = %s where posting_id = any(%s)",
+            (archive, posting_ids),
+        )
+
     def update_extraction(self, postings: list[Posting], taxonomy_version: int) -> None:
+        assignments = ", ".join(f"{column}=%s" for column in EXTRACTED)
         with self.conn.cursor() as cursor:
             cursor.executemany(
-                "update skillmap.postings set seniority=%s, role_family=%s, sector=%s, skills=%s, skills_nice=%s, "
-                "country=%s, city=%s, region=%s, remote=%s, salary_min=%s, salary_max=%s, salary_currency=%s, "
-                "salary_period=%s, taxonomy_version=%s where posting_id=%s",
-                [(p.seniority, p.role_family, p.sector, p.skills, p.skills_nice, p.country, p.city, p.region, p.remote,
-                  p.salary_min, p.salary_max, p.salary_currency, p.salary_period, taxonomy_version, p.posting_id)
-                 for p in postings],
+                f"update skillmap.postings set {assignments}, taxonomy_version=%s where posting_id=%s",
+                [(*[getattr(p, column) for column in EXTRACTED], taxonomy_version, p.posting_id) for p in postings],
             )
 
     def rows(self) -> list[dict]:

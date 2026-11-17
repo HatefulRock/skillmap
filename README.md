@@ -21,8 +21,8 @@ in that role family that ask for the skill, and the last column is my own rating
  company boards ◀─────────────┘
  (Greenhouse, Lever, ─┐
   Ashby, Workable,    │    normalise                 Supabase Postgres           aggregate
-  SmartRecruiters)    ├──▶ skills · seniority ──▶   postings (tech text,  ──▶  data/skills-market.json ──▶ website
- Adzuna API           │    role · location          first/last seen)           data/skills-heatmap.svg ──▶ this README
+  SmartRecruiters)    ├──▶ skills · seniority ──▶   postings (fields;     ──▶  data/skills-market.json ──▶ website
+ Adzuna API           │    role · location          text → Storage)            data/skills-heatmap.svg ──▶ this README
  MyCareersFuture      │    sector · pay                                       data/postings-live.jsonl.gz
  HN "Who is hiring?" ─┘
                          GitHub Actions, weekly, Mondays 02:00 Singapore time
@@ -51,14 +51,24 @@ in that role family that ask for the skill, and the last column is my own rating
   fixed rates for comparisons.
 - **Store** (`skillmap/store.py`). Every posting is stored once, keyed by its id on its source,
   with the day it was first and last seen: a new id is a new posting, a known one only moves
-  its last-seen date, and one that stops appearing keeps the day it was last live. The full
-  text of tech postings is kept (lz4-compressed) so extraction can be re-run: bumping the
-  taxonomy `version` re-extracts every stored posting on the next run. Non-tech postings keep
-  metadata only, and if the table nears the free plan's 500 MB, the text of postings that
-  closed longest ago is dropped first. The text itself is never published.
+  its last-seen date, and one that stops appearing keeps the day it was last live. The
+  database holds the extracted fields (about 1 KB a posting). The full text of tech postings
+  goes, after each run, into gzip'd batch files in a private Supabase Storage bucket
+  (`skillmap/archive.py`), so extraction can be re-run: bumping the taxonomy `version`
+  re-extracts every stored posting on the next run, one file at a time. Non-tech postings keep
+  metadata only. The text itself is never published.
+- **Per-posting shape.** Besides skills, each posting records its length, the years of
+  experience it asks for, the degree it firmly requires, whether it says it sponsors visas,
+  whether it offers equity, and the tech-looking terms in it that the taxonomy doesn't know yet
+  (`extract/terms.py`, `extract/perks.py`). None of these can be recovered once an ad is gone,
+  so they are recorded from the first run.
 - **Aggregate** (`skillmap/aggregate.py`). Pure functions from stored rows to one JSON file:
   skill shares over the last 30 days with change against the 30 days before, monthly trends,
-  quarterly trends inside each role family and seniority level, breakdowns by seniority, role
+  quarterly trends inside each role family and seniority level, what is changing
+  (`skillmap/trends.py`: skill risers and fallers overall and per role and level, the monthly
+  mix of roles, levels, sectors and regions, the average ad's skill count, length, years asked,
+  degree, visa, equity and pay-stated rates, companies hiring more or less and what each asks
+  for, and emerging terms counted by how many companies use them), breakdowns by seniority, role
   family, region, country and sector over 90 days, which skills appear together, and advertised
   pay by country and by role × seniority. The same ad found on several
   sources is counted once. A group with fewer than 30 postings is reported with its size but no
@@ -91,6 +101,7 @@ Repository secrets used by `.github/workflows/refresh.yml`:
 | Secret | Required | Where it comes from |
 |---|---|---|
 | `DATABASE_URL` | yes | Supabase → Connect → Session pooler URI |
+| `SUPABASE_SECRET_KEY` | recommended (without it, posting text stays in the database and fills it within months) | Supabase → Project Settings → API Keys → secret key |
 | `ADZUNA_APP_ID`, `ADZUNA_APP_KEY` | no (Adzuna is skipped without them) | developer.adzuna.com |
 
 The first run backfills every HN thread since 2011 and the last 60 days of MyCareersFuture;

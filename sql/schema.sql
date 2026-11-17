@@ -36,6 +36,14 @@ create table if not exists skillmap.postings (
   taxonomy_version int,
   inserted_at      timestamptz not null default now()
 );
+alter table skillmap.postings add column if not exists n_words int not null default 0;
+alter table skillmap.postings add column if not exists min_years int;
+alter table skillmap.postings add column if not exists terms text[] not null default '{}';
+alter table skillmap.postings add column if not exists degree text;
+alter table skillmap.postings add column if not exists visa_sponsorship boolean;
+alter table skillmap.postings add column if not exists equity boolean not null default false;
+-- Where the full text lives once it has moved out of the database (an object in file storage).
+alter table skillmap.postings add column if not exists text_archive text;
 create index if not exists postings_last_seen_idx on skillmap.postings (last_seen);
 create index if not exists postings_source_idx on skillmap.postings (source, native_id);
 create index if not exists postings_dedup_idx on skillmap.postings (dedup_key);

@@ -292,6 +292,32 @@ def me_block(rows: list[dict], ratings: dict[str, int], categories: dict[str, st
     }
 
 
+def changes_block(market: list[dict], hn: list[dict], today: date) -> dict:
+    """Everything about change over time beyond single-skill trend lines (see trends.py)."""
+    from . import trends  # trends builds on this module's helpers
+
+    regions = [k for k, _ in Counter(r.get("region") or "Unknown" for r in market).most_common(8)]
+    full_text = [r for r in market if r["source"] != "adzuna"]
+    return {
+        "movers": trends.movers(market, today),
+        "movers_by_role": trends.grouped_movers(market, today, "role_family", roles.FAMILIES),
+        "movers_by_seniority": trends.grouped_movers(market, today, "seniority", SENIORITY_ORDER[:-1]),
+        "hn_movers": trends.movers(hn, today, days=365),
+        "mix": {
+            "role_family": {"market": trends.mix_series(market, "role_family", roles.FAMILIES, today),
+                            "hn": trends.mix_series(hn, "role_family", roles.FAMILIES, today)},
+            "seniority": {"market": trends.mix_series(market, "seniority", SENIORITY_ORDER, today),
+                          "hn": trends.mix_series(hn, "seniority", SENIORITY_ORDER, today)},
+            "sector": {"market": trends.mix_series(market, "sector", sector.SECTORS, today)},
+            "region": {"market": trends.mix_series(market, "region", regions, today)},
+        },
+        "per_post": {"market": trends.per_post_series(full_text, today),
+                     "hn": trends.per_post_series(hn, today, full_text=False)},
+        "companies": trends.companies(market, today),
+        "terms": trends.emerging_terms(full_text, today),
+    }
+
+
 def build(rows: list[dict], today: date, categories: dict[str, str], taxonomy_version: int,
           ratings: dict[str, int] | None = None, runs: list[dict] | None = None) -> dict:
     all_rows = dedupe(rows)
@@ -350,6 +376,7 @@ def build(rows: list[dict], today: date, categories: dict[str, str], taxonomy_ve
         },
         "salary": salary_block(active(market, today - timedelta(days=SALARY_DAYS - 1), today), seg_skills),
         "pay": pay_block(active(market, today - timedelta(days=SALARY_DAYS - 1), today)),
+        "changes": changes_block(market, hn, today),
         "pairs": pairs_block(window, current_names[:20]),
         "me": me_block(window, ratings or {}, categories),
     }

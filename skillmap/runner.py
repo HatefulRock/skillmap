@@ -11,6 +11,7 @@ from pathlib import Path
 
 import yaml
 
+from .archive import Archive, pack, unpack
 from .extract.skills import Taxonomy
 from .http import PoliteClient
 from .models import RawPosting, normalise_company
@@ -159,16 +160,43 @@ def collect(store: Store, client: PoliteClient, taxonomy: Taxonomy, today: date,
     return report
 
 
-def reextract(store: Store, taxonomy: Taxonomy, today: date) -> int:
-    """Re-run extraction on postings stored under an older taxonomy version."""
-    count, batch = 0, []
-    for raw in store.stale_extractions(taxonomy.version):
-        batch.append(normalise(raw, taxonomy, today))
-        if len(batch) >= 1000:
+def reextract(store: Store, taxonomy: Taxonomy, today: date, archive: Archive | None = None) -> int:
+    """Re-run extraction on postings stored under an older taxonomy version: those whose text is
+    in an archive file (one file at a time), then those whose text is in the database."""
+    count = 0
+
+    def run(raws: Iterable[RawPosting], texts: dict[str, str] | None = None) -> None:
+        nonlocal count
+        batch = []
+        for raw in raws:
+            if texts is not None:
+                raw.description = texts.get(raw.posting_id, "")
+            batch.append(normalise(raw, taxonomy, today))
+            if len(batch) >= 1000:
+                store.update_extraction(batch, taxonomy.version)
+                count += len(batch)
+                batch = []
+        if batch:
             store.update_extraction(batch, taxonomy.version)
             count += len(batch)
-            batch = []
-    if batch:
-        store.update_extraction(batch, taxonomy.version)
-        count += len(batch)
+
+    if archive is not None:
+        for name in store.stale_archives(taxonomy.version):
+            run(store.stale_extractions(taxonomy.version, name), unpack(archive.get(name)))
+    run(store.stale_extractions(taxonomy.version))
     return count
+
+
+def archive_texts(store: Store, archive: Archive, today: date, per_file: int = 20_000) -> int:
+    """Move every posting text still in the database into archive files, then clear it there.
+    Each file is written before its postings are marked, so a failure leaves text in place."""
+    moved = 0
+    for part in range(1000):
+        items = store.texts_to_archive(per_file)
+        if not items:
+            break
+        name = f"texts/{today.isoformat()}-{part:03d}.jsonl.gz"
+        archive.put(name, pack(items))
+        store.mark_archived([pid for pid, _ in items], name)
+        moved += len(items)
+    return moved

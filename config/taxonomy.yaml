@@ -8,7 +8,7 @@
 #
 # Bump `version` whenever a pattern (or any other extractor, e.g. salary) changes: stored
 # postings are re-extracted on the next run.
-version: 2  # v2: salary read from posting text
+version: 3  # v2: salary from text. v3: ad length, years, unknown terms, degree, visa, equity
 
 skills:
   # ---------- Languages ----------

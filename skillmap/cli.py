@@ -13,9 +13,10 @@ from decimal import Decimal
 from pathlib import Path
 
 from . import aggregate, discover, heatmap
+from .archive import from_env as open_archive
 from .extract.skills import Taxonomy
 from .http import PoliteClient
-from .runner import collect, load_yaml, reextract
+from .runner import archive_texts, collect, load_yaml, reextract
 from .store import MemoryStore, PostgresStore, Store, today_utc
 
 ALL_SOURCES = {"boards", "adzuna", "mcf", "hn"}
@@ -95,9 +96,15 @@ def main(argv: list[str] | None = None) -> None:
             client.close()
         print(report.summary())
         runs = report.as_dicts()
-        refreshed = reextract(store, taxonomy, today)
+        archive = open_archive() if os.environ.get("DATABASE_URL") else None
+        refreshed = reextract(store, taxonomy, today, archive)
         if refreshed:
             logging.info("re-extracted %d postings for taxonomy v%d", refreshed, taxonomy.version)
+        if archive is not None:
+            moved = archive_texts(store, archive, today)
+            logging.info("moved the text of %d postings to file storage", moved)
+        else:
+            logging.warning("SUPABASE_SECRET_KEY not set: posting text stays in the database")
         trimmed = store.trim_text(MAX_TABLE_BYTES)
         if trimmed:
             logging.info("dropped stored text of %d long-closed postings to stay under the size limit", trimmed)

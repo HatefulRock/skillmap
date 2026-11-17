@@ -73,3 +73,22 @@ def test_trim_text_drops_the_oldest_closed_postings_first():
         "select posting_id, description from skillmap.postings").fetchall()}
     assert texts["greenhouse:0"] is None and texts["greenhouse:10"] == "Python and RAG"
     assert store.trim_text(10**12) == 0
+
+
+def test_archive_and_reextract_from_postgres(tmp_path):
+    from skillmap.archive import LocalArchive
+    from skillmap.runner import archive_texts, reextract
+    from skillmap.store import PostgresStore
+
+    store = PostgresStore(DSN)
+    store.conn.execute("truncate skillmap.postings, skillmap.runs")
+    day = date(2026, 11, 10)
+    store.save([(normalise(raw(i), TAX, day), raw(i)) for i in range(7)], TAX.version)
+    archive = LocalArchive(tmp_path)
+    assert archive_texts(store, archive, day, per_file=5) == 7
+    assert store.texts_to_archive(10) == []
+    store.conn.execute("update skillmap.postings set taxonomy_version = 0, skills = '{}', terms = '{}'")
+    assert store.stale_archives(TAX.version) == ["texts/2026-11-10-000.jsonl.gz", "texts/2026-11-10-001.jsonl.gz"]
+    assert reextract(store, TAX, day, archive) == 7
+    rows = store.conn.execute("select skills, n_words, min_years, degree from skillmap.postings").fetchall()
+    assert all(r["skills"] == ["Python", "RAG"] and r["n_words"] == 3 for r in rows)
