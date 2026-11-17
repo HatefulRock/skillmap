@@ -1,0 +1,69 @@
+name: refresh
+# Daily at 02:00 Singapore time. Collects every source into Supabase, then publishes the
+# aggregates the website reads (data/skills-market.json) and the README heatmap SVG.
+on:
+  schedule:
+    - cron: "0 18 * * *"
+  workflow_dispatch:
+    inputs:
+      sources:
+        description: "Comma-separated: boards, adzuna, mcf, hn"
+        default: "boards,adzuna,mcf,hn"
+      board_limit:
+        description: "Only the first N company boards (smoke test); empty for all"
+        default: ""
+      hn_since:
+        description: "Re-read HN threads from this date (YYYY-MM-DD); empty for automatic"
+        default: ""
+
+concurrency:
+  group: refresh
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 150
+    env:
+      DATABASE_URL: ${{ secrets.DATABASE_URL }}
+      ADZUNA_APP_ID: ${{ secrets.ADZUNA_APP_ID }}
+      ADZUNA_APP_KEY: ${{ secrets.ADZUNA_APP_KEY }}
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+      - run: uv sync --locked --no-dev
+
+      - name: Require the database
+        run: |
+          if [ -z "$DATABASE_URL" ]; then
+            echo "::error::Set the DATABASE_URL repository secret (Supabase → Connect → Session pooler URI)."
+            exit 1
+          fi
+
+      - name: Collect, extract, aggregate
+        run: |
+          args=(--sources "${{ inputs.sources || 'boards,adzuna,mcf,hn' }}" --out data)
+          [ -n "${{ inputs.board_limit }}" ] && args+=(--board-limit "${{ inputs.board_limit }}")
+          [ -n "${{ inputs.hn_since }}" ] && args+=(--hn-since "${{ inputs.hn_since }}")
+          uv run skillmap run "${args[@]}" | tee run-summary.txt
+          { echo '```'; cat run-summary.txt; echo '```'; } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Publish live postings (metadata only) as a release asset
+        # Kept out of git history: it changes completely every day.
+        run: |
+          gh release view data-latest >/dev/null 2>&1 || \
+            gh release create data-latest --title "Latest data" --notes "Rebuilt daily by the refresh workflow." --latest=false
+          gh release upload data-latest data/postings-live.jsonl.gz --clobber
+
+      - name: Commit aggregates
+        run: |
+          git config user.name "skillmap-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/skills-market.json data/skills-heatmap.svg
+          if git diff --cached --quiet; then echo "No change"; exit 0; fi
+          git commit -m "data: refresh $(date -u +%F)"
+          git push

@@ -1,0 +1,16 @@
+# Market-wide sources: searches rather than one company's board.
+adzuna:
+  countries: [sg, gb, us]   # sg is the focus; gb and us give a comparison baseline
+  queries: ["ai engineer", "machine learning engineer", "llm", "forward deployed engineer",
+            "solutions engineer", "python developer", "backend engineer", "data scientist", "data engineer"]
+  max_days_old: 3           # daily run, with slack for a missed day
+  max_pages: 5
+
+mcf:                        # MyCareersFuture, Singapore
+  queries: ["ai engineer", "machine learning", "llm", "generative ai", "data scientist", "forward deployed",
+            "solutions engineer", "python", "backend engineer", "software engineer", "data engineer",
+            "blockchain", "quantitative developer"]
+  max_pages: 10             # 100 per page, newest first; paging stops at already-collected postings
+
+hn:
+  backfill_from: 2011-01-01 # first run walks every monthly thread since then

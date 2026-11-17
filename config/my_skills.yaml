@@ -1,0 +1,45 @@
+# Pierre's self-ratings, shown as the "Me" column of the heatmap (website + GitHub README SVG).
+# 1 Aware · 2 Used · 3 Comfortable · 4 Strong · 5 Expert. Skills left out show as "—".
+# Names must match config/taxonomy.yaml exactly (tests enforce it).
+#
+# DRAFT for Pierre to correct: pre-filled from the AI Engineer résumé and the project repos.
+ratings:
+  Python: 5
+  TypeScript: 3
+  SQL: 3
+  LLMs / GenAI (general): 5
+  RAG: 5
+  AI agents / agentic workflows: 4
+  Multi-agent systems: 4
+  Tool / function calling: 4
+  Prompt & context engineering: 4
+  Structured output: 4
+  MCP: 4
+  LangChain: 4
+  LangGraph: 4
+  LLM provider APIs (OpenAI / Anthropic / Gemini): 4
+  Vector databases: 4
+  Embeddings / semantic search: 4
+  Hybrid search / reranking / chunking: 4
+  Knowledge graphs / GraphRAG: 3
+  PostgreSQL / relational DBs: 4
+  LLM evaluation / eval harnesses: 4
+  Guardrails / AI safety: 3
+  LLM security (prompt injection, OWASP LLM): 4
+  Observability / tracing / monitoring: 3
+  LLM tracing tools (Langfuse / LangSmith / Arize): 4
+  Machine learning fundamentals: 3
+  Computer vision / multimodal / speech: 2
+  pandas / NumPy: 3
+  FastAPI: 4
+  REST / API design & integration: 4
+  Microservices / distributed systems: 3
+  System design / architecture: 3
+  Testing (pytest, unit/integration): 3
+  React / Next.js: 3
+  Azure (incl. Azure OpenAI): 4
+  Docker / containers: 4
+  Terraform / IaC: 3
+  CI/CD: 3
+  Temporal / durable execution: 3
+  Pre-sales / solution architecture / PoCs: 3

@@ -1,0 +1,50 @@
+"""RawPosting → Posting: every extractor applied in one place."""
+
+from __future__ import annotations
+
+from datetime import date
+
+from .extract import location, roles, sector, seniority
+from .extract.skills import Taxonomy
+from .extract.text import to_plain
+from .models import Posting, RawPosting, dedup_key
+
+
+def normalise(raw: RawPosting, taxonomy: Taxonomy, today: date) -> Posting:
+    plain = to_plain(raw.description)
+    skills, nice = taxonomy.extract(raw.title, raw.description)
+    country, city, region, remote = location.normalise(raw.location, raw.country_hint, raw.remote_hint)
+    family = roles.classify(raw.title)
+    if raw.source == "hn" and family is None:
+        # HN headers often name several roles at once ("Engineers, Designer"); fall back to the body.
+        family = roles.classify(plain[:400])
+    posted = raw.posted_on if raw.posted_on and raw.posted_on <= today else None
+    # HN posts belong to their month's thread; company-board posts are live from when they were
+    # published (when the board says so) until the day they stop appearing.
+    first_seen = posted if raw.source == "hn" else (posted or today)
+    last_seen = posted if raw.source == "hn" else today
+    return Posting(
+        posting_id=raw.posting_id,
+        source=raw.source,
+        company=raw.company.strip(),
+        title=raw.title.strip(),
+        url=raw.url,
+        location=raw.location,
+        country=country,
+        city=city,
+        region=region,
+        remote=remote,
+        seniority=seniority.classify(raw.title, plain, raw.seniority_hint, raw.min_years_hint),
+        role_family=family or "non_tech",
+        sector=sector.classify(plain, raw.sector_hint),
+        skills=skills,
+        skills_nice=nice,
+        posted_on=posted,
+        first_seen=first_seen or today,
+        last_seen=last_seen or today,
+        dedup_key=dedup_key(raw.company, raw.title, country),
+        salary_min=raw.salary_min,
+        salary_max=raw.salary_max,
+        salary_currency=raw.salary_currency,
+        salary_period=raw.salary_period,
+    )
