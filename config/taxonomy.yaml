@@ -6,8 +6,9 @@
 #   cs:       case-sensitive regexes (for short or ambiguous names like Go, R, MCP)
 #   not:      if any of these match the same sentence, that sentence doesn't count
 #
-# Bump `version` whenever a pattern changes: stored postings are re-extracted on the next run.
-version: 1
+# Bump `version` whenever a pattern (or any other extractor, e.g. salary) changes: stored
+# postings are re-extracted on the next run.
+version: 2  # v2: salary read from posting text
 
 skills:
   # ---------- Languages ----------

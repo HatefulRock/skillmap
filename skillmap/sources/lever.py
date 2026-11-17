@@ -23,6 +23,10 @@ def parse(payload: list, company: str, sector: str | None = None) -> Iterator[Ra
             [job.get("descriptionPlain") or job.get("description") or "", *sections, job.get("additionalPlain") or ""]
         )
         workplace = (job.get("workplaceType") or "").lower()
+        pay = job.get("salaryRange") or {}
+        interval = (pay.get("interval") or "").lower()
+        period = next((p for p in ("year", "month", "week", "day", "hour") if p in interval), None)
+        has_pay = bool(pay.get("min") and pay.get("currency") and period)
         yield RawPosting(
             source="lever",
             native_id=job["id"],
@@ -35,6 +39,10 @@ def parse(payload: list, company: str, sector: str | None = None) -> Iterator[Ra
             remote_hint=True if workplace == "remote" else (False if workplace else None),
             posted_on=parse_date(job.get("createdAt")),
             sector_hint=sector,
+            salary_min=pay.get("min") if has_pay else None,
+            salary_max=pay.get("max") if has_pay else None,
+            salary_currency=pay.get("currency") if has_pay else None,
+            salary_period=period if has_pay else None,
         )
 
 

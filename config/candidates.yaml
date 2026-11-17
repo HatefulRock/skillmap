@@ -1,0 +1,487 @@
+# Companies to look for on the public job-board platforms (Greenhouse, Lever, Ashby, Workable,
+# SmartRecruiters), on top of every active Y Combinator company that is hiring. `skillmap discover`
+# tries board names derived from each name (and `tokens` when given), keeps every board that
+# answers with open jobs, and writes the result to config/boards.yaml.
+#
+# Grouped by the sector label their postings get. Add a name here to widen the census; a
+# company whose careers site isn't on one of those platforms (Workday, in-house) simply isn't
+# found, which is reported in the discovery summary.
+
+ai:
+  - Anthropic
+  - OpenAI
+  - Cohere
+  - Mistral AI
+  - Perplexity
+  - Character AI
+  - Runway
+  - Stability AI
+  - Hugging Face
+  - Together AI
+  - Fireworks AI
+  - Baseten
+  - Modal
+  - Replicate
+  - Anyscale
+  - Weights & Biases
+  - Pinecone
+  - Weaviate
+  - Qdrant
+  - Chroma
+  - LlamaIndex
+  - LangChain
+  - Glean
+  - Writer
+  - Jasper
+  - Cresta
+  - Decagon
+  - Sierra
+  - Harvey
+  - Hebbia
+  - Rogo
+  - Abridge
+  - Ambience Healthcare
+  - Cognition
+  - Cursor
+  - Anysphere
+  - Replit
+  - Codeium
+  - Windsurf
+  - Poolside
+  - Magic
+  - Adept
+  - Inflection AI
+  - xAI
+  - Reka
+  - AI21 Labs
+  - Aleph Alpha
+  - DeepL
+  - Synthesia
+  - ElevenLabs
+  - PolyAI
+  - Speechmatics
+  - Cleanlab
+  - Snorkel AI
+  - Scale AI
+  - Labelbox
+  - Surge AI
+  - Mercor
+  - Turing
+  - Invisible Technologies
+  - Clay
+  - Hex
+  - Vercel
+  - Retool
+  - Notion
+  - Figma
+  - Canva
+  - Airtable
+  - Zapier
+  - Lindy
+  - Dust
+  - Moveworks
+  - Observe.AI
+  - Uniphore
+  - SambaNova
+  - Cerebras
+  - Groq
+  - Lambda
+  - CoreWeave
+  - Crusoe
+  - Nscale
+  - Helsing
+  - Shield AI
+  - Anduril
+  - Physical Intelligence
+  - Figure
+  - Skild AI
+  - Covariant
+  - Wayve
+  - Waabi
+  - Aurora
+  - Nuro
+  - Zoox
+  - Applied Intuition
+  - Tecton
+  - Arize AI
+  - Galileo
+  - Patronus AI
+  - Braintrust
+  - Humanloop
+  - Contextual AI
+  - Vectara
+  - Unstructured
+  - Sakana AI
+  - Preferred Networks
+  - WIZ.AI
+  - Sea AI Lab
+  - AI Singapore
+  - Appier
+  - Advance Intelligence Group
+  - SenseTime
+  - Moonshot AI
+  - Manus
+  - Jina AI
+  - Imbue
+  - Thinking Machines Lab
+  - Safe Superintelligence
+  - Reflection AI
+  - Liquid AI
+  - Sesame
+  - Suno
+  - Pika
+  - Luma AI
+  - Midjourney
+  - Ideogram
+  - Black Forest Labs
+  - Tavus
+  - HeyGen
+  - Captions
+  - Descript
+  - Otter.ai
+  - Fathom
+  - Gong
+  - Rasa
+  - Deepgram
+  - AssemblyAI
+
+crypto:
+  - Coinbase
+  - Kraken
+  - Binance
+  - OKX
+  - Bybit
+  - Crypto.com
+  - Gemini
+  - Circle
+  - Ripple
+  - Chainalysis
+  - Elliptic
+  - TRM Labs
+  - Fireblocks
+  - Anchorage Digital
+  - BitGo
+  - Ledger
+  - Consensys
+  - Alchemy
+  - Infura
+  - QuickNode
+  - Chainlink Labs
+  - Uniswap Labs
+  - Aave
+  - MakerDAO
+  - Sky
+  - Lido
+  - EigenLayer
+  - Eigen Labs
+  - Optimism
+  - OP Labs
+  - Offchain Labs
+  - Arbitrum
+  - Polygon Labs
+  - Matter Labs
+  - StarkWare
+  - Solana Labs
+  - Solana Foundation
+  - Anza
+  - Jump Crypto
+  - Jump Trading
+  - Wintermute
+  - GSR
+  - Amber Group
+  - Matrixport
+  - Cobo
+  - Ceffu
+  - Hashkey
+  - OSL
+  - Coinhako
+  - Independent Reserve
+  - StraitsX
+  - Xfers
+  - Nansen
+  - Dune
+  - Messari
+  - The Graph
+  - Edge & Node
+  - Paradigm
+  - a16z crypto
+  - Phantom
+  - MetaMask
+  - Rainbow
+  - Magic Eden
+  - OpenSea
+  - Blockchain.com
+  - Bitpanda
+  - Bitstamp
+  - Paxos
+  - Kraken Digital Asset Exchange
+  - Figure Markets
+  - Avalanche
+  - Ava Labs
+  - Aptos Labs
+  - Mysten Labs
+  - Sui Foundation
+  - Near Foundation
+  - Celestia
+  - Flashbots
+  - Gnosis
+  - Safe
+  - Zora
+  - Farcaster
+  - Merkle Manufactory
+  - Worldcoin
+  - Tools for Humanity
+  - MoonPay
+  - Ramp Network
+  - Transak
+  - Bitkub
+  - Upbit
+  - Hyphen Connect
+  - Animoca Brands
+  - Sky Mavis
+  - Immutable
+  - Ethena Labs
+  - Hyperliquid
+  - dYdX
+  - Pyth Network
+  - Wormhole
+  - LayerZero Labs
+  - Axelar
+
+fintech:
+  - Stripe
+  - Ramp
+  - Brex
+  - Mercury
+  - Plaid
+  - Robinhood
+  - Chime
+  - Affirm
+  - Klarna
+  - Revolut
+  - Wise
+  - Monzo
+  - Starling Bank
+  - N26
+  - Nubank
+  - Adyen
+  - Checkout.com
+  - Rapyd
+  - Airwallex
+  - Nium
+  - Aspire
+  - Thunes
+  - Xendit
+  - Funding Societies
+  - Validus
+  - Endowus
+  - Syfe
+  - StashAway
+  - Tiger Brokers
+  - Futu
+  - moomoo
+  - GXS Bank
+  - Trust Bank
+  - MariBank
+  - Atome
+  - Kredivo
+  - Akulaku
+  - YouTrip
+  - Instarem
+  - HitPay
+  - 2C2P
+  - Grab Financial
+  - Ant International
+  - Ripple Payments
+  - Marqeta
+  - Lithic
+  - Unit
+  - Modern Treasury
+  - Increase
+  - Column
+  - Bolt
+  - Carta
+  - Pipe
+  - Tally
+  - Upgrade
+  - SoFi
+  - Betterment
+  - Wealthfront
+  - Public
+  - Alpaca
+  - DriveWealth
+  - Apex Fintech Solutions
+  - Addepar
+  - Clearwater Analytics
+  - Bloomberg
+  - Two Sigma
+  - Citadel
+  - Citadel Securities
+  - Jane Street
+  - Hudson River Trading
+  - Optiver
+  - IMC Trading
+  - Susquehanna
+  - DRW
+  - Tower Research Capital
+  - Virtu Financial
+  - Flow Traders
+  - QRT
+  - Qube Research & Technologies
+  - Squarepoint Capital
+  - Millennium
+  - Point72
+  - Balyasny
+  - Man Group
+  - Marshall Wace
+  - WorldQuant
+  - Grasshopper
+  - Graviton Research Capital
+  - Headlands Technologies
+  - Five Rings
+  - XTX Markets
+  - G-Research
+  - Maven Securities
+  - Akuna Capital
+  - Old Mission
+  - Belvedere Trading
+  - Vatic Labs
+  - Chicago Trading Company
+  - Pdt Partners
+  - D. E. Shaw
+  - Bridgewater Associates
+  - AQR
+  - Schonfeld
+  - ExodusPoint
+  - Verition
+  - Dymon Asia
+  - Tiger Pacific
+  - Nomura
+  - Societe Generale
+  - Revolut Business
+
+tech:
+  - Shopee
+  - Sea
+  - Garena
+  - Grab
+  - GoTo
+  - Gojek
+  - Tokopedia
+  - Lazada
+  - Traveloka
+  - Carousell
+  - PropertyGuru
+  - Ninja Van
+  - Shopback
+  - Zilingo
+  - Carro
+  - Glints
+  - Employment Hero
+  - Thoughtworks
+  - Temus
+  - Breeze
+  - Mobius
+  - Patsnap
+  - Advance.AI
+  - Trax
+  - Sleek
+  - Spenmo
+  - Volopay
+  - Doctor Anywhere
+  - Homage
+  - Ascenda
+  - Rakuten Viki
+  - ByteDance
+  - TikTok
+  - Agoda
+  - Booking.com
+  - Airbnb
+  - Uber
+  - Lyft
+  - DoorDash
+  - Instacart
+  - Pinterest
+  - Reddit
+  - Discord
+  - Dropbox
+  - Atlassian
+  - Datadog
+  - Snowflake
+  - Databricks
+  - MongoDB
+  - Confluent
+  - HashiCorp
+  - Cloudflare
+  - Fastly
+  - Twilio
+  - Okta
+  - CrowdStrike
+  - Palo Alto Networks
+  - Wiz
+  - Snyk
+  - GitLab
+  - GitHub
+  - Postman
+  - Supabase
+  - PlanetScale
+  - Neon
+  - Render
+  - Railway
+  - Fly.io
+  - Netlify
+  - Sentry
+  - PostHog
+  - Grafana Labs
+  - Elastic
+  - Redis
+  - Cockroach Labs
+  - ClickHouse
+  - MotherDuck
+  - dbt Labs
+  - Fivetran
+  - Airbyte
+  - Astronomer
+  - Prefect
+  - Dagster Labs
+  - Temporal Technologies
+  - Palantir
+  - Rippling
+  - Deel
+  - Remote
+  - Gusto
+  - Lattice
+  - Linear
+  - Asana
+  - Monday.com
+  - Miro
+  - Loom
+  - Calendly
+  - Intercom
+  - Zendesk
+  - HubSpot
+  - Shopify
+  - Squarespace
+  - Webflow
+  - Duolingo
+  - Spotify
+  - Netflix
+  - Roblox
+  - Unity
+  - Epic Games
+  - Riot Games
+  - Scale
+  - Samsara
+  - Verkada
+  - Flexport
+  - Benchling
+  - Tempus
+  - Doximity
+  - Oscar Health
+  - Ro
+  - Hims & Hers
+  - Coursera
+  - Udemy
+  - Kaggle
+  - Toptal
+  - Andela

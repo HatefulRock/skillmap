@@ -1,4 +1,5 @@
-"""`skillmap run` — the daily job. `skillmap aggregate` — rebuild outputs from stored data only."""
+"""`skillmap run` — the weekly job. `skillmap aggregate` — rebuild outputs from stored data only.
+`skillmap discover` — find company job boards and write config/boards.yaml."""
 
 from __future__ import annotations
 
@@ -11,13 +12,16 @@ from datetime import date
 from decimal import Decimal
 from pathlib import Path
 
-from . import aggregate, heatmap
+from . import aggregate, discover, heatmap
 from .extract.skills import Taxonomy
 from .http import PoliteClient
 from .runner import collect, load_yaml, reextract
 from .store import MemoryStore, PostgresStore, Store, today_utc
 
 ALL_SOURCES = {"boards", "adzuna", "mcf", "hn"}
+# Supabase's free plan allows 500 MB; stored text is trimmed (oldest offline postings first) past this.
+MAX_TABLE_BYTES = 420 * 1024 * 1024
+HOST_INTERVALS = {"api.smartrecruiters.com": 0.4, "hn.algolia.com": 0.5}
 
 
 def open_store() -> Store:
@@ -62,9 +66,18 @@ def main(argv: list[str] | None = None) -> None:
     run.add_argument("--out", type=Path, default=Path("data"))
     agg = sub.add_parser("aggregate", help="rebuild outputs from stored postings")
     agg.add_argument("--out", type=Path, default=Path("data"))
+    disc = sub.add_parser("discover", help="find company job boards; writes config/boards.yaml")
+    disc.add_argument("--platforms", default=",".join(discover.DEFAULT_ATS))
+    disc.add_argument("--limit", type=int, help="only the first N candidate companies (smoke tests)")
+    disc.add_argument("--no-yc", action="store_true", help="only config/candidates.yaml")
+    disc.add_argument("--interval", type=float, default=0.4, help="seconds between requests to one platform")
+    disc.add_argument("--out", type=Path, default=discover.CONFIG / "boards.yaml")
     args = parser.parse_args(argv)
 
     logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s")
+    if args.command == "discover":
+        run_discover(args)
+        return
     taxonomy = Taxonomy.load()
     store = open_store()
     today = today_utc()
@@ -75,7 +88,7 @@ def main(argv: list[str] | None = None) -> None:
         unknown = sources - ALL_SOURCES
         if unknown:
             parser.error(f"unknown sources: {', '.join(sorted(unknown))}")
-        client = PoliteClient(min_interval=1.0)
+        client = PoliteClient(min_interval=1.0, per_host_interval=HOST_INTERVALS)
         try:
             report = collect(store, client, taxonomy, today, sources, args.board_limit, args.hn_since)
         finally:
@@ -85,10 +98,33 @@ def main(argv: list[str] | None = None) -> None:
         refreshed = reextract(store, taxonomy, today)
         if refreshed:
             logging.info("re-extracted %d postings for taxonomy v%d", refreshed, taxonomy.version)
+        trimmed = store.trim_text(MAX_TABLE_BYTES)
+        if trimmed:
+            logging.info("dropped stored text of %d long-closed postings to stay under the size limit", trimmed)
 
     data = write_outputs(store, taxonomy, today, args.out, runs)
     totals = data["meta"]["totals"]
     print(f"postings {totals['postings']} · tech {totals['tech']} · live now {data['current']['n']}")
+
+
+def run_discover(args: argparse.Namespace) -> None:
+    platforms = [p.strip() for p in args.platforms.split(",") if p.strip()]
+    unknown = set(platforms) - set(discover.ATS)
+    if unknown:
+        raise SystemExit(f"unknown platforms: {', '.join(sorted(unknown))}")
+    client = PoliteClient(min_interval=0.5)
+    try:
+        candidates = discover.load_candidates(client, include_yc=not args.no_yc)[: args.limit]
+    finally:
+        client.close()
+    logging.info("probing %d companies on %s", len(candidates), ", ".join(platforms))
+    boards = discover.discover(candidates, platforms, lambda: PoliteClient(min_interval=args.interval, retries=2))
+    discover.write_boards(boards, args.out, today_utc(), len(candidates))
+    jobs = sum(b.jobs for b in boards)
+    print(f"{len(boards)} boards with {jobs} open jobs, from {len(candidates)} companies → {args.out}")
+    for ats in discover.ATS:
+        found = [b for b in boards if b.ats == ats]
+        print(f"  {ats:<16} {len(found):>5} boards {sum(b.jobs for b in found):>7} jobs")
 
 
 if __name__ == "__main__":

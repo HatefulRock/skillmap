@@ -1,0 +1,53 @@
+name: discover
+# Monthly: look for company job boards on Greenhouse, Lever, Ashby and Workable
+# among every hiring Y Combinator company and config/candidates.yaml, and commit the result to
+# config/boards.yaml for the weekly refresh to read. Companies open and close boards slowly, so
+# monthly keeps the list fresh without re-probing thousands of names every week.
+on:
+  schedule:
+    - cron: "0 14 1 * *"  # the 1st, 22:00 Singapore time
+  workflow_dispatch:
+    inputs:
+      limit:
+        description: "Only the first N candidate companies (smoke test); empty for all"
+        default: ""
+      platforms:
+        description: "Comma-separated platforms to probe (smartrecruiters is opt-in: its robots.txt disallows crawlers)"
+        default: "greenhouse,lever,ashby,workable"
+      commit:
+        description: "Commit config/boards.yaml"
+        type: boolean
+        default: true
+
+concurrency:
+  group: discover
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  discover:
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+      - run: uv sync --locked --no-dev
+
+      - name: Probe job boards
+        run: |
+          args=(--platforms "${{ inputs.platforms || 'greenhouse,lever,ashby,workable' }}")
+          [ -n "${{ inputs.limit }}" ] && args+=(--limit "${{ inputs.limit }}")
+          uv run skillmap discover "${args[@]}" | tee discover-summary.txt
+          { echo '```'; cat discover-summary.txt; echo '```'; } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Commit the board list
+        if: ${{ github.event_name == 'schedule' || inputs.commit }}
+        run: |
+          git config user.name "skillmap-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add config/boards.yaml
+          if git diff --cached --quiet; then echo "No change"; exit 0; fi
+          git commit -m "boards: rediscover $(date -u +%F)"
+          git pull --rebase --quiet && git push

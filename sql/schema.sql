@@ -40,6 +40,11 @@ create index if not exists postings_last_seen_idx on skillmap.postings (last_see
 create index if not exists postings_source_idx on skillmap.postings (source, native_id);
 create index if not exists postings_dedup_idx on skillmap.postings (dedup_key);
 alter table skillmap.postings enable row level security;
+-- lz4 compresses posting text better and faster than the default; skipped where unsupported.
+do $$ begin
+  alter table skillmap.postings alter column description set compression lz4;
+exception when others then null;
+end $$;
 
 create table if not exists skillmap.runs (
   id          bigserial primary key,

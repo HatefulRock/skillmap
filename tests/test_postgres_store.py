@@ -56,3 +56,20 @@ def test_outputs_from_postgres(tmp_path):
     store.save([(normalise(r, TAX, date(2026, 11, 10)), r)], TAX.version)
     data = write_outputs(store, TAX, date(2026, 11, 10), tmp_path)
     assert data["salary"]["median_monthly"] == 8000
+
+
+def test_trim_text_drops_the_oldest_closed_postings_first():
+    from skillmap.store import PostgresStore
+
+    store = PostgresStore(DSN)
+    store.conn.execute("truncate skillmap.postings, skillmap.runs")
+    old, recent = date(2023, 1, 10), date.today()
+    items = [(normalise(raw(i), TAX, old), raw(i)) for i in range(5)]
+    items += [(normalise(raw(10 + i), TAX, recent), raw(10 + i)) for i in range(5)]
+    items += [(normalise(raw(20, "hn"), TAX, old), raw(20, "hn"))]
+    store.save(items, TAX.version)
+    assert store.trim_text(0) == 5  # only the long-closed board postings, never HN
+    texts = {row["posting_id"]: row["description"] for row in store.conn.execute(
+        "select posting_id, description from skillmap.postings").fetchall()}
+    assert texts["greenhouse:0"] is None and texts["greenhouse:10"] == "Python and RAG"
+    assert store.trim_text(10**12) == 0

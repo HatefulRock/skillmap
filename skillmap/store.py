@@ -2,8 +2,10 @@
 
 `PostgresStore` is the real one (a Supabase project; the connection string comes from the
 DATABASE_URL secret). `MemoryStore` has the same interface and backs the tests and dry runs.
-Full description text is stored so extraction can be re-run when the taxonomy improves, but it
-never leaves the database: aggregation reads every column except it.
+Full description text is stored for tech roles so extraction can be re-run when the taxonomy
+improves, but it never leaves the database: aggregation reads every column except it. Non-tech
+postings (sales, legal, ops) keep their metadata only: they never enter the skill statistics, and
+skipping their text roughly halves the database.
 """
 
 from __future__ import annotations
@@ -22,6 +24,10 @@ HINT_COLUMNS = ["description", "seniority_hint", "min_years_hint", "sector_hint"
                 "taxonomy_version"]
 
 
+def stored_text(posting: Posting, raw: RawPosting) -> str | None:
+    return raw.description if posting.role_family != "non_tech" else None
+
+
 class Store(Protocol):
     def known_ids(self, source: str) -> set[str]: ...
     def save(self, items: Iterable[tuple[Posting, RawPosting]], taxonomy_version: int) -> int: ...
@@ -29,6 +35,7 @@ class Store(Protocol):
     def update_extraction(self, postings: list[Posting], taxonomy_version: int) -> None: ...
     def rows(self) -> list[dict]: ...
     def log_run(self, source: str, fetched: int, inserted: int, error: str | None) -> None: ...
+    def trim_text(self, max_bytes: int) -> int: ...
 
 
 def _raw_from_row(row: dict) -> RawPosting:
@@ -59,7 +66,7 @@ class MemoryStore:
                 existing["first_seen"] = min(existing["first_seen"], posting.first_seen)
                 continue
             row = asdict(posting)
-            row.update(description=raw.description, seniority_hint=raw.seniority_hint, min_years_hint=raw.min_years_hint,
+            row.update(description=stored_text(posting, raw), seniority_hint=raw.seniority_hint, min_years_hint=raw.min_years_hint,
                        sector_hint=raw.sector_hint, country_hint=raw.country_hint, remote_hint=raw.remote_hint,
                        taxonomy_version=taxonomy_version)
             self.data[posting.posting_id] = row
@@ -74,7 +81,8 @@ class MemoryStore:
     def update_extraction(self, postings: list[Posting], taxonomy_version: int) -> None:
         for posting in postings:
             row = self.data[posting.posting_id]
-            for key in ("seniority", "role_family", "sector", "skills", "skills_nice", "country", "city", "region", "remote"):
+            for key in ("seniority", "role_family", "sector", "skills", "skills_nice", "country", "city", "region", "remote",
+                        "salary_min", "salary_max", "salary_currency", "salary_period"):
                 row[key] = getattr(posting, key)
             row["taxonomy_version"] = taxonomy_version
 
@@ -83,6 +91,9 @@ class MemoryStore:
 
     def log_run(self, source: str, fetched: int, inserted: int, error: str | None) -> None:
         self.runs.append({"source": source, "fetched": fetched, "inserted": inserted, "error": error})
+
+    def trim_text(self, max_bytes: int) -> int:
+        return 0
 
 
 class PostgresStore:
@@ -126,7 +137,7 @@ class PostgresStore:
         for posting, raw in items:
             values = asdict(posting)
             batch.append((
-                *[values[column] for column in POSTING_COLUMNS], raw.native_id, raw.description, raw.seniority_hint,
+                *[values[column] for column in POSTING_COLUMNS], raw.native_id, stored_text(posting, raw), raw.seniority_hint,
                 raw.min_years_hint, raw.sector_hint, raw.country_hint, raw.remote_hint, taxonomy_version,
             ))
             if len(batch) >= 500:
@@ -152,9 +163,11 @@ class PostgresStore:
         with self.conn.cursor() as cursor:
             cursor.executemany(
                 "update skillmap.postings set seniority=%s, role_family=%s, sector=%s, skills=%s, skills_nice=%s, "
-                "country=%s, city=%s, region=%s, remote=%s, taxonomy_version=%s where posting_id=%s",
+                "country=%s, city=%s, region=%s, remote=%s, salary_min=%s, salary_max=%s, salary_currency=%s, "
+                "salary_period=%s, taxonomy_version=%s where posting_id=%s",
                 [(p.seniority, p.role_family, p.sector, p.skills, p.skills_nice, p.country, p.city, p.region, p.remote,
-                  taxonomy_version, p.posting_id) for p in postings],
+                  p.salary_min, p.salary_max, p.salary_currency, p.salary_period, taxonomy_version, p.posting_id)
+                 for p in postings],
             )
 
     def rows(self) -> list[dict]:
@@ -165,6 +178,29 @@ class PostgresStore:
             "insert into skillmap.runs (source, fetched, inserted, error) values (%s, %s, %s, %s)",
             (source, fetched, inserted, error),
         )
+
+    def text_bytes(self) -> int:
+        return self.conn.execute("select pg_total_relation_size('skillmap.postings') as n").fetchone()["n"]
+
+    def trim_text(self, max_bytes: int) -> int:
+        """Keep the table under the free plan's size: drop the stored text (never the extracted
+        fields) of the postings that went offline longest ago, a year's worth at a time.
+
+        HN posts are short and are the long history, so they go last. Dropped text only means
+        those postings keep their current extraction if the taxonomy changes.
+        """
+        trimmed = 0
+        for days in (730, 548, 365, 270, 180, 120, 90):
+            if self.text_bytes() <= max_bytes:
+                break
+            cursor = self.conn.execute(
+                "update skillmap.postings set description = null where description is not null and source <> 'hn' "
+                "and last_seen < current_date - %s::int",
+                (days,),
+            )
+            trimmed += cursor.rowcount
+            self.conn.execute("vacuum skillmap.postings")
+        return trimmed
 
 
 def today_utc() -> date:
