@@ -3,8 +3,9 @@ name: refresh
 # the aggregates the website reads (data/skills-market.json) and the README heatmap SVG. Skill
 # demand moves over months, and postings stay up for weeks, so a weekly pass misses little.
 on:
-  schedule:
-    - cron: "0 18 * * 0"
+  # Paused until the census is started: uncomment to run on schedule.
+  # schedule:
+  #   - cron: "0 18 * * 0"
   workflow_dispatch:
     inputs:
       sources:

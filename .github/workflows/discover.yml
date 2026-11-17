@@ -4,8 +4,9 @@ name: discover
 # config/boards.yaml for the weekly refresh to read. Companies open and close boards slowly, so
 # monthly keeps the list fresh without re-probing thousands of names every week.
 on:
-  schedule:
-    - cron: "0 14 1 * *"  # the 1st, 22:00 Singapore time
+  # Paused until the census is started: uncomment to run on schedule.
+  # schedule:
+  #   - cron: "0 14 1 * *"  # the 1st, 22:00 Singapore time
   workflow_dispatch:
     inputs:
       limit:
