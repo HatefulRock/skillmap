@@ -19,8 +19,9 @@ def test_greenhouse_unescapes_content_and_uses_first_published():
     assert jobs[0].sector_hint == "crypto" and jobs[0].posting_id == "greenhouse:1"
 
 
-def test_greenhouse_eu_host():
-    assert greenhouse.board_url("polyai", "eu").startswith("https://boards-api.eu.greenhouse.io/")
+def test_greenhouse_eu_boards_use_the_main_api_host():
+    # Verified against a live EU board (bybit): boards-api.eu.greenhouse.io doesn't resolve.
+    assert greenhouse.board_url("bybit", "eu") == "https://boards-api.greenhouse.io/v1/boards/bybit/jobs?content=true"
 
 
 def test_lever_includes_requirement_lists():
