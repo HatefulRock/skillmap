@@ -1,9 +1,11 @@
 name: refresh
-# Daily at 02:00 Singapore time. Collects every source into Supabase, then publishes the
-# aggregates the website reads (data/skills-market.json) and the README heatmap SVG.
+# Weekly, Mondays at 02:00 Singapore time. Collects every source into Supabase, then publishes
+# the aggregates the website reads (data/skills-market.json) and the README heatmap SVG. Skill
+# demand moves over months, and postings stay up for weeks, so a weekly pass misses little.
 on:
-  schedule:
-    - cron: "0 18 * * *"
+  # Paused until the census is started: uncomment to run on schedule.
+  # schedule:
+  #   - cron: "0 18 * * 0"
   workflow_dispatch:
     inputs:
       sources:
@@ -15,6 +17,10 @@ on:
       hn_since:
         description: "Re-read HN threads from this date (YYYY-MM-DD); empty for automatic"
         default: ""
+      dry_run:
+        description: "Collect into memory only: no database, nothing published (checks the sources)"
+        type: boolean
+        default: false
 
 concurrency:
   group: refresh
@@ -26,11 +32,14 @@ permissions:
 jobs:
   refresh:
     runs-on: ubuntu-latest
-    timeout-minutes: 150
+    timeout-minutes: 340  # the first run backfills ~1,000 boards and HN since 2011
     env:
       DATABASE_URL: ${{ secrets.DATABASE_URL }}
       ADZUNA_APP_ID: ${{ secrets.ADZUNA_APP_ID }}
       ADZUNA_APP_KEY: ${{ secrets.ADZUNA_APP_KEY }}
+      # Supabase → Project Settings → API Keys → secret key. Posting text goes to file storage
+      # with it; without it the text stays in the database.
+      SUPABASE_SECRET_KEY: ${{ secrets.SUPABASE_SECRET_KEY }}
       GH_TOKEN: ${{ github.token }}
     steps:
       - uses: actions/checkout@v4
@@ -38,6 +47,7 @@ jobs:
       - run: uv sync --locked --no-dev
 
       - name: Require the database
+        if: ${{ !inputs.dry_run }}
         run: |
           if [ -z "$DATABASE_URL" ]; then
             echo "::error::Set the DATABASE_URL repository secret (Supabase → Connect → Session pooler URI)."
@@ -45,30 +55,33 @@ jobs:
           fi
 
       - name: Collect, extract, aggregate
+        env:
+          DATABASE_URL: ${{ inputs.dry_run && '' || secrets.DATABASE_URL }}
         run: |
-          args=(--sources "${{ inputs.sources || 'boards,adzuna,mcf,hn' }}" --out data)
+          args=(--sources "${{ inputs.sources || 'boards,adzuna,mcf,hn' }}" --out data --readme README.md)
           [ -n "${{ inputs.board_limit }}" ] && args+=(--board-limit "${{ inputs.board_limit }}")
           [ -n "${{ inputs.hn_since }}" ] && args+=(--hn-since "${{ inputs.hn_since }}")
           uv run skillmap run "${args[@]}" | tee run-summary.txt
           { echo '```'; cat run-summary.txt; echo '```'; } >> "$GITHUB_STEP_SUMMARY"
 
       - name: Publish live postings (metadata only) as a release asset
-        # Kept out of git history: it changes completely every day.
+        if: ${{ !inputs.dry_run }}
+        # Kept out of git history as well as in it: the release asset is always the latest.
         run: |
           gh release view data-latest >/dev/null 2>&1 || \
-            gh release create data-latest --title "Latest data" --notes "Rebuilt daily by the refresh workflow." --latest=false
+            gh release create data-latest --title "Latest data" --notes "Rebuilt weekly by the refresh workflow." --latest=false
           gh release upload data-latest data/postings-live.jsonl.gz --clobber
 
       - name: Commit aggregates
+        if: ${{ !inputs.dry_run }}
         run: |
           git config user.name "skillmap-bot"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/skills-market.json data/skills-heatmap.svg
-          # Weekly snapshot of live postings in git too (Mondays, or any manual run), for readers
-          # that can fetch git but not release assets. Daily would bloat history.
-          if [ "$(date -u +%u)" = "1" ] || [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
-            git add -f data/postings-live.jsonl.gz
-          fi
+          # The live-postings snapshot goes into git too, for readers that can fetch git but not
+          # release assets; at one commit a week the history stays small.
+          git add data/skills-market.json data/skills-heatmap.svg data/digest.json data/weekly.md data/feed.xml \
+            data/watchlist.json data/csv README.md
+          git add -f data/postings-live.jsonl.gz
           if git diff --cached --quiet; then echo "No change"; exit 0; fi
           git commit -m "data: refresh $(date -u +%F)"
-          git push
+          git pull --rebase --quiet && git push

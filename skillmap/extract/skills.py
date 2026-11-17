@@ -46,6 +46,13 @@ class Taxonomy:
     def categories(self) -> dict[str, str]:
         return {skill.name: skill.category for skill in self.skills}
 
+    def known(self, term: str) -> bool:
+        """Whether a bare term (from extract.terms) is already one of the skills."""
+        cache = self.__dict__.setdefault("_known", {})
+        if term not in cache:
+            cache[term] = any(skill.matches(term) for skill in self.skills)
+        return cache[term]
+
     def _find(self, lines: list[str]) -> set[str]:
         found: set[str] = set()
         sentences = [s for line in lines for s in _SENTENCE.split(line) if s]

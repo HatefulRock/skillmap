@@ -3,7 +3,7 @@ adzuna:
   countries: [sg, gb, us]   # sg is the focus; gb and us give a comparison baseline
   queries: ["ai engineer", "machine learning engineer", "llm", "forward deployed engineer",
             "solutions engineer", "python developer", "backend engineer", "data scientist", "data engineer"]
-  max_days_old: 3           # daily run, with slack for a missed day
+  max_days_old: 10          # weekly run, with slack for a late one
   max_pages: 5
 
 mcf:                        # MyCareersFuture, Singapore

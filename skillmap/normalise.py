@@ -4,7 +4,7 @@ from __future__ import annotations
 
 from datetime import date
 
-from .extract import location, roles, sector, seniority
+from .extract import location, perks, roles, salary, sector, seniority, terms
 from .extract.skills import Taxonomy
 from .extract.text import to_plain
 from .models import Posting, RawPosting, dedup_key
@@ -23,6 +23,11 @@ def normalise(raw: RawPosting, taxonomy: Taxonomy, today: date) -> Posting:
     # published (when the board says so) until the day they stop appearing.
     first_seen = posted if raw.source == "hn" else (posted or today)
     last_seen = posted if raw.source == "hn" else today
+    pay = (raw.salary_min, raw.salary_max, raw.salary_currency, raw.salary_period)
+    if not (raw.salary_min and raw.salary_currency and raw.salary_period):
+        # No salary field: many ads state the range in the text (US/EU pay-transparency laws, HN posts).
+        pay = salary.from_text(plain, country) or (None, None, None, None)
+    tech = family is not None
     return Posting(
         posting_id=raw.posting_id,
         source=raw.source,
@@ -43,8 +48,15 @@ def normalise(raw: RawPosting, taxonomy: Taxonomy, today: date) -> Posting:
         first_seen=first_seen or today,
         last_seen=last_seen or today,
         dedup_key=dedup_key(raw.company, raw.title, country),
-        salary_min=raw.salary_min,
-        salary_max=raw.salary_max,
-        salary_currency=raw.salary_currency,
-        salary_period=raw.salary_period,
+        salary_min=pay[0],
+        salary_max=pay[1],
+        salary_currency=pay[2],
+        salary_period=pay[3],
+        n_words=len(plain.split()),
+        min_years=raw.min_years_hint or seniority.years_required(plain),
+        # Only tech ads, and only from full text: Adzuna's snippets and HN one-liners would skew counts.
+        terms=terms.candidates(plain, taxonomy.known) if tech and raw.source != "adzuna" else [],
+        degree=perks.degree(plain),
+        visa_sponsorship=perks.visa_sponsorship(plain),
+        equity=perks.equity(plain),
     )

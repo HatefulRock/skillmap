@@ -64,6 +64,14 @@ class Posting:
     salary_max: float | None = None
     salary_currency: str | None = None
     salary_period: str | None = None
+    # Shape of the ad, tracked over time: how long it is, how many years it asks for, and the
+    # tech-looking terms in it that the skill taxonomy doesn't know yet (see extract/terms.py).
+    n_words: int = 0
+    min_years: int | None = None
+    terms: list[str] = field(default_factory=list)
+    degree: str | None = None  # phd | master | bachelor, when firmly required
+    visa_sponsorship: bool | None = None  # stated yes / stated no / silent
+    equity: bool = False
 
 
 _NON_WORD = re.compile(r"[^a-z0-9]+")

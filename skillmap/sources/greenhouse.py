@@ -14,8 +14,8 @@ from ._util import parse_date
 
 
 def board_url(token: str, region: str | None = None) -> str:
-    host = "boards-api.eu.greenhouse.io" if region == "eu" else "boards-api.greenhouse.io"
-    return f"https://{host}/v1/boards/{token}/jobs?content=true"
+    # EU-hosted boards (job-boards.eu.greenhouse.io) are served by the same API host.
+    return f"https://boards-api.greenhouse.io/v1/boards/{token}/jobs?content=true"
 
 
 def parse(payload: dict, company: str, sector: str | None = None) -> Iterator[RawPosting]:

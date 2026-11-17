@@ -11,11 +11,11 @@ from __future__ import annotations
 from collections import Counter, defaultdict
 from collections.abc import Iterable
 from datetime import UTC, date, datetime, timedelta
-from statistics import median
+from statistics import median, quantiles
 
-from .extract import roles, sector
+from .extract import roles, salary, sector
 
-SOURCE_PRIORITY = ["greenhouse", "lever", "ashby", "workable", "mcf", "adzuna"]  # who wins a duplicate
+SOURCE_PRIORITY = ["greenhouse", "lever", "ashby", "workable", "smartrecruiters", "mcf", "adzuna"]  # who wins a duplicate
 MIN_GROUP = 30
 CURRENT_DAYS = 30
 SEGMENT_DAYS = 90
@@ -25,6 +25,10 @@ TOP_TREND = 30
 TOP_SEGMENT = 40
 TARGET_FAMILIES = ["ai_ml", "fde", "backend", "data"]
 SENIORITY_ORDER = ["intern", "junior", "mid", "senior", "staff", "manager", "unspecified"]
+TOP_GROUP_TREND = 12
+PAY_MIN = 20  # postings with stated pay before a country gets a figure
+PAY_CELL = 10  # ...and before a role × seniority cell does
+PAY_COUNTRIES = 4
 
 
 def dedupe(rows: Iterable[dict]) -> list[dict]:
@@ -103,14 +107,22 @@ def current_block(rows: list[dict], today: date, categories: dict[str, str]) -> 
     }
 
 
-def trend_series(rows: list[dict], skills: list[str], today: date) -> dict:
+def trend_series(rows: list[dict], skills: list[str], today: date, step: int = 1) -> dict:
+    """Share of postings live in each period that ask for each skill. `step` is the period length
+    in months: 1 for the headline chart, 3 (quarters) for the thinner per-role and per-level lines."""
     if not rows:
         return {"months": [], "n": [], "shares": {}}
     first = min(r["first_seen"] for r in rows)
-    months = month_starts(first, today)
+    months = [m for m in month_starts(first, today) if (m.month - 1) % step == 0 or step == 1]
+    if step > 1:
+        quarter_start = first.replace(day=1, month=first.month - (first.month - 1) % step)
+        months = [quarter_start, *[m for m in months if m > quarter_start]]
     out = {"months": [m.isoformat()[:7] for m in months], "n": [], "shares": {s: [] for s in skills}}
     for month in months:
-        group = active(rows, month, min(month_end(month), today))
+        last_month = month
+        for _ in range(step - 1):
+            last_month = (last_month.replace(day=28) + timedelta(days=4)).replace(day=1)
+        group = active(rows, month, min(month_end(last_month), today))
         out["n"].append(len(group))
         month_shares = shares(group, skills) if len(group) >= MIN_GROUP else {}
         for skill in skills:
@@ -160,6 +172,83 @@ def salary_block(rows: list[dict], skills: list[str]) -> dict:
             "skills": by_skill}
 
 
+def group_trends(market: list[dict], hn: list[dict], key: str, keys: list[str], today: date) -> dict:
+    """Quarterly skill trends inside each role family (or seniority level): its own top skills,
+    live market and HN kept apart as everywhere else."""
+    out = {}
+    recent = active(market, today - timedelta(days=SEGMENT_DAYS - 1), today)
+    for value in keys:
+        mine = [r for r in market if r.get(key) == value]
+        theirs = [r for r in hn if r.get(key) == value]
+        basis = [r for r in recent if r.get(key) == value] or active(theirs, today - timedelta(days=365), today)
+        if len(basis) < MIN_GROUP:
+            continue
+        top = [name for name, _ in sorted(shares(basis).items(), key=lambda kv: (-kv[1], kv[0]))][:TOP_GROUP_TREND]
+        out[value] = {
+            "n": len(basis),
+            "skills": top,
+            "market": trend_series(mine, top, today, step=3),
+            "hn": trend_series(theirs, top, today, step=3),
+        }
+    return out
+
+
+def _pay_points(rows: list[dict]) -> list[tuple[dict, float, float]]:
+    """(row, midpoint of the yearly range in its own currency, same in USD) for every posting
+    that states pay in a period and currency we can convert."""
+    points = []
+    for r in rows:
+        low = salary.annual(r.get("salary_min"), r.get("salary_period"))
+        if not low or not r.get("salary_currency"):
+            continue
+        high = salary.annual(r.get("salary_max"), r.get("salary_period")) or low
+        mid = (low + max(high, low)) / 2
+        usd = salary.to_usd(mid, r["salary_currency"])
+        if usd and 4_000 <= usd <= 1_500_000:
+            points.append((r, mid, usd))
+    return points
+
+
+def _spread(values: list[float]) -> dict:
+    p25, p50, p75 = quantiles(values, n=4) if len(values) >= 4 else (min(values), median(values), max(values))
+    return {"median": round(p50, -2), "p25": round(p25, -2), "p75": round(p75, -2)}
+
+
+def pay_block(rows: list[dict]) -> dict:
+    """Advertised yearly pay wherever it is stated: per country (local currency and USD), and per
+    role family × seniority within the best-covered countries (USD, so levels compare)."""
+    points = _pay_points(rows)
+    by_country: dict[str, list[tuple[dict, float, float]]] = defaultdict(list)
+    for point in points:
+        by_country[point[0].get("country") or "Unknown"].append(point)
+    countries = []
+    for country, group in sorted(by_country.items(), key=lambda kv: -len(kv[1])):
+        if country == "Unknown" or len(group) < PAY_MIN:
+            continue
+        currency = Counter(r["salary_currency"] for r, _, _ in group).most_common(1)[0][0]
+        local = [mid for r, mid, _ in group if r["salary_currency"] == currency]
+        countries.append({"key": country, "n": len(group), "currency": currency, "local": _spread(local),
+                          "usd": _spread([usd for _, _, usd in group])})
+    matrix = {}
+    for entry in countries[:PAY_COUNTRIES]:
+        cells: dict[str, dict[str, dict]] = {}
+        for family in roles.FAMILIES:
+            for level in SENIORITY_ORDER:
+                values = [usd for r, _, usd in by_country[entry["key"]]
+                          if r["role_family"] == family and r["seniority"] == level]
+                if len(values) >= PAY_CELL:
+                    cells.setdefault(family, {})[level] = {"n": len(values), **_spread(values)}
+        matrix[entry["key"]] = cells
+    return {
+        "period": "year",
+        "fx_note": "Converted to USD at fixed November 2026 rates",
+        "n": len(points),
+        "n_rows": len(rows),
+        "countries": countries,
+        "role_seniority_usd": matrix,
+    }
+
+
 def pairs_block(rows: list[dict], skills: list[str], top: int = 5) -> dict:
     """For each skill: the skills most over-represented alongside it (lift = P(B|A) / P(B))."""
     n = len(rows)
@@ -183,7 +272,7 @@ def pairs_block(rows: list[dict], skills: list[str], top: int = 5) -> dict:
 
 
 def me_block(rows: list[dict], ratings: dict[str, int], categories: dict[str, str]) -> dict:
-    """The heatmap: market demand per target role family next to Pierre's own rating."""
+    """The heatmap: market demand per target role family next to the owner's own rating."""
     families = {f: [r for r in rows if r["role_family"] == f] for f in TARGET_FAMILIES}
     family_shares = {f: shares(group) for f, group in families.items()}
     target = [r for f in ("ai_ml", "fde", "backend") for r in families[f]]
@@ -200,6 +289,47 @@ def me_block(rows: list[dict], ratings: dict[str, int], categories: dict[str, st
             }
             for skill in picked
         ],
+    }
+
+
+def changes_block(market: list[dict], hn: list[dict], today: date) -> dict:
+    """Everything about change over time beyond single-skill trend lines (see trends.py)."""
+    from . import trends  # trends builds on this module's helpers
+
+    regions = [k for k, _ in Counter(r.get("region") or "Unknown" for r in market).most_common(8)]
+    full_text = [r for r in market if r["source"] != "adzuna"]
+    return {
+        "movers": trends.movers(market, today),
+        "movers_by_role": trends.grouped_movers(market, today, "role_family", roles.FAMILIES),
+        "movers_by_seniority": trends.grouped_movers(market, today, "seniority", SENIORITY_ORDER[:-1]),
+        "hn_movers": trends.movers(hn, today, days=365),
+        "mix": {
+            "role_family": {"market": trends.mix_series(market, "role_family", roles.FAMILIES, today),
+                            "hn": trends.mix_series(hn, "role_family", roles.FAMILIES, today)},
+            "seniority": {"market": trends.mix_series(market, "seniority", SENIORITY_ORDER, today),
+                          "hn": trends.mix_series(hn, "seniority", SENIORITY_ORDER, today)},
+            "sector": {"market": trends.mix_series(market, "sector", sector.SECTORS, today)},
+            "region": {"market": trends.mix_series(market, "region", regions, today)},
+        },
+        "per_post": {"market": trends.per_post_series(full_text, today),
+                     "hn": trends.per_post_series(hn, today, full_text=False)},
+        "companies": trends.companies(market, today),
+        "terms": trends.emerging_terms(full_text, today),
+    }
+
+
+def insights_block(market: list[dict], window: list[dict], pay_rows: list[dict], today: date,
+                   categories: dict[str, str], ratings: dict[str, int]) -> dict:
+    from . import insights  # builds on this module's helpers
+
+    premium = insights.pay_premium(pay_rows, sorted(categories))
+    return {
+        "pay_premium": premium,
+        "role_dna": insights.role_dna(window),
+        "seniority_ladder": insights.seniority_ladder(window),
+        "stacks": insights.stacks(window),
+        "requirement_creep": insights.requirement_creep([r for r in market if r["source"] != "adzuna"], today),
+        "learn_next": insights.learn_next(window, ratings, premium, categories, TARGET_FAMILIES),
     }
 
 
@@ -238,7 +368,8 @@ def build(rows: list[dict], today: date, categories: dict[str, str], taxonomy_ve
             "hn_first": min((r["first_seen"] for r in hn), default=today).isoformat(),
             "runs": runs or [],
             "attribution": ["Job data: The Adzuna API", "Hacker News “Who is hiring?” via the HN Algolia API",
-                            "MyCareersFuture (Singapore)", "Company boards on Greenhouse, Lever, Ashby and Workable"],
+                            "MyCareersFuture (Singapore)",
+                            "Company boards on Greenhouse, Lever, Ashby, Workable and SmartRecruiters"],
         },
         "categories": sorted(set(categories.values())),
         "current": current,
@@ -246,6 +377,8 @@ def build(rows: list[dict], today: date, categories: dict[str, str], taxonomy_ve
             "skills": trend_skills,
             "market": trend_series(market, trend_skills, today),
             "hn": trend_series(hn, trend_skills, today),
+            "by_role": group_trends(market, hn, "role_family", roles.FAMILIES, today),
+            "by_seniority": group_trends(market, hn, "seniority", SENIORITY_ORDER[:-1], today),
         },
         "segments": {
             "window_days": SEGMENT_DAYS,
@@ -257,6 +390,10 @@ def build(rows: list[dict], today: date, categories: dict[str, str], taxonomy_ve
             "sector": segment_block(window, "sector", seg_skills, sector.SECTORS, sector.LABELS),
         },
         "salary": salary_block(active(market, today - timedelta(days=SALARY_DAYS - 1), today), seg_skills),
+        "pay": pay_block(active(market, today - timedelta(days=SALARY_DAYS - 1), today)),
+        "changes": changes_block(market, hn, today),
+        "insights": insights_block(market, window, active(market, today - timedelta(days=SALARY_DAYS - 1), today), today,
+                                   categories, ratings or {}),
         "pairs": pairs_block(window, current_names[:20]),
         "me": me_block(window, ratings or {}, categories),
     }
