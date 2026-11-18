@@ -11,7 +11,7 @@ from skillmap.extract import perks, terms
 from skillmap.extract.skills import Taxonomy
 from skillmap.models import RawPosting
 from skillmap.normalise import normalise
-from skillmap.runner import archive_texts, reextract
+from skillmap.runner import archive_texts, check_archives, reextract
 from skillmap.store import MemoryStore
 
 TODAY = date(2026, 11, 17)
@@ -190,3 +190,36 @@ def test_no_rising_terms_without_an_earlier_window():
     rows = [row(i, 5, ["Python"], company=f"C{i}", terms=["BarAI"]) for i in range(20)]
     block = trends.emerging_terms(rows, TODAY)
     assert block["common"][0]["term"] == "BarAI" and block["rising"] == []
+
+
+def test_two_runs_on_one_day_never_overwrite_each_others_archive(tmp_path):
+    store, archive = MemoryStore(), LocalArchive(tmp_path)
+    first = [RawPosting("greenhouse", str(i), "Acme", "Backend Engineer", "We use Python") for i in range(3)]
+    store.save([(normalise(r, TAX, TODAY), r) for r in first], TAX.version)
+    archive_texts(store, archive, TODAY)
+    second = [RawPosting("greenhouse", str(i), "Acme", "Backend Engineer", "We use Rust") for i in range(3, 5)]
+    store.save([(normalise(r, TAX, TODAY), r) for r in second], TAX.version)
+    archive_texts(store, archive, TODAY)
+    assert len(list(tmp_path.glob("texts/*.gz"))) == 2
+    assert check_archives(store, archive) == 0
+
+
+def test_lost_text_keeps_extraction_and_comes_back_when_seen_again(tmp_path):
+    store, archive = MemoryStore(), LocalArchive(tmp_path)
+    raws = [RawPosting("greenhouse", str(i), "Acme", "Backend Engineer", "We use Python and Rust") for i in range(4)]
+    store.save([(normalise(r, TAX, TODAY), r) for r in raws], TAX.version)
+    archive_texts(store, archive, TODAY)
+    (name,) = {r["text_archive"] for r in store.data.values()}
+    (tmp_path / name).unlink()
+    archive.put(name, pack([("greenhouse:0", "We use Python and Rust")]))  # the file lost three texts
+
+    assert check_archives(store, archive) == 3
+    assert store.known_ids("greenhouse") == {"0"}  # the rest get their text fetched again
+    for r in store.data.values():
+        r.update(taxonomy_version=0)
+    assert reextract(store, TAX, TODAY, archive) == 1
+    assert all(r["skills"] == ["Python", "Rust / Scala"] for r in store.data.values())  # nothing wiped
+
+    store.save([(normalise(r, TAX, TODAY), r) for r in raws[1:2]], TAX.version)  # seen again, with text
+    assert store.data["greenhouse:1"]["description"] and store.data["greenhouse:1"]["taxonomy_version"] is None
+    assert reextract(store, TAX, TODAY, archive) == 1

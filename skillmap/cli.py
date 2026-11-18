@@ -18,7 +18,7 @@ from . import aggregate, audit, digest, discover, exports, health, heatmap, watc
 from .archive import from_env as open_archive
 from .extract.skills import Taxonomy
 from .http import PoliteClient
-from .runner import BOARDS, Budget, archive_texts, collect, load_boards, load_yaml, reextract
+from .runner import BOARDS, Budget, archive_texts, check_archives, collect, load_boards, load_yaml, reextract
 from .store import MemoryStore, PostgresStore, Store, today_utc
 
 ALL_SOURCES = {"boards", "adzuna", "mcf", "hn"}
@@ -97,6 +97,8 @@ def main(argv: list[str] | None = None) -> None:
     run.add_argument("--out", type=Path, default=Path("data"))
     run.add_argument("--readme", type=Path, help="README whose weekly section gets the new note")
     run.add_argument("--health", type=Path, help="write problems found by the run-health check here (none: no file)")
+    run.add_argument("--check-archives", action="store_true",
+                     help="first find postings whose archived text is missing, so collectors fetch it again")
     run.add_argument("--force-publish", action="store_true",
                      help="publish even when the new numbers differ sharply from the published ones")
     agg = sub.add_parser("aggregate", help="rebuild outputs from stored postings")
@@ -152,6 +154,9 @@ def main(argv: list[str] | None = None) -> None:
         if unknown:
             parser.error(f"unknown sources: {', '.join(sorted(unknown))}")
         history = store.run_history(HEALTH_DAYS)  # before this run logs its own rows
+        checked = open_archive() if args.check_archives and os.environ.get("DATABASE_URL") else None
+        if checked is not None:
+            logging.info("cleared %d pointers to missing archived text", check_archives(store, checked))
         client = PoliteClient(min_interval=1.0, per_host_interval=HOST_INTERVALS)
         try:
             platforms = {p.strip() for p in (args.platforms or "").split(",") if p.strip()} or None

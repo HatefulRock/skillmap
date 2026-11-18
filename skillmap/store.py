@@ -28,6 +28,10 @@ HINT_COLUMNS = ["description", "seniority_hint", "min_years_hint", "sector_hint"
                 "taxonomy_version"]
 
 
+LOST = ("(skillmap.postings.description is null and skillmap.postings.text_archive is null "
+        "and nullif(excluded.description, '') is not null)")
+
+
 def stored_text(posting: Posting, raw: RawPosting) -> str | None:
     return raw.description if posting.role_family != "non_tech" else None
 
@@ -39,6 +43,10 @@ class Store(Protocol):
     def stale_archives(self, taxonomy_version: int) -> list[str]: ...
     def texts_to_archive(self, limit: int) -> list[tuple[str, str]]: ...
     def mark_archived(self, posting_ids: list[str], archive: str) -> None: ...
+    def forget_archive(self, posting_ids: list[str]) -> None: ...
+    def archive_names(self) -> list[str]: ...
+    def archive_ids(self, archive: str) -> list[str]: ...
+    def mark_current(self, posting_ids: list[str], taxonomy_version: int) -> None: ...
     def update_extraction(self, postings: list[Posting], taxonomy_version: int) -> None: ...
     def rows(self) -> list[dict]: ...
     def log_run(self, source: str, fetched: int, inserted: int, error: str | None) -> None: ...
@@ -67,7 +75,8 @@ class MemoryStore:
         self.runs: list[dict] = []
 
     def known_ids(self, source: str) -> set[str]:
-        return {pid.split(":", 1)[1] for pid, row in self.data.items() if row["source"] == source}
+        return {pid.split(":", 1)[1] for pid, row in self.data.items() if row["source"] == source
+                and (row["description"] or row["text_archive"] or row["role_family"] == "non_tech")}
 
     def save(self, items: Iterable[tuple[Posting, RawPosting]], taxonomy_version: int) -> int:
         inserted = 0
@@ -76,6 +85,9 @@ class MemoryStore:
             if existing:
                 existing["last_seen"] = max(existing["last_seen"], posting.last_seen)
                 existing["first_seen"] = min(existing["first_seen"], posting.first_seen)
+                text = stored_text(posting, raw)
+                if text and not existing["description"] and not existing["text_archive"]:
+                    existing.update(description=text, taxonomy_version=None)  # text lost earlier: re-extract
                 continue
             row = asdict(posting)
             row.update(description=stored_text(posting, raw), text_archive=None, seniority_hint=raw.seniority_hint, min_years_hint=raw.min_years_hint,
@@ -101,6 +113,20 @@ class MemoryStore:
     def mark_archived(self, posting_ids: list[str], archive: str) -> None:
         for pid in posting_ids:
             self.data[pid].update(description=None, text_archive=archive)
+
+    def forget_archive(self, posting_ids: list[str]) -> None:
+        for pid in posting_ids:
+            self.data[pid]["text_archive"] = None
+
+    def archive_names(self) -> list[str]:
+        return sorted({r["text_archive"] for r in self.data.values() if r["text_archive"]})
+
+    def archive_ids(self, archive: str) -> list[str]:
+        return [pid for pid, r in self.data.items() if r["text_archive"] == archive]
+
+    def mark_current(self, posting_ids: list[str], taxonomy_version: int) -> None:
+        for pid in posting_ids:
+            self.data[pid]["taxonomy_version"] = taxonomy_version
 
     def update_extraction(self, postings: list[Posting], taxonomy_version: int) -> None:
         for posting in postings:
@@ -160,7 +186,11 @@ class PostgresStore:
         self.conn.execute(SCHEMA.read_text())
 
     def known_ids(self, source: str) -> set[str]:
-        rows = self.conn.execute("select native_id from skillmap.postings where source = %s", (source,)).fetchall()
+        # A tech posting whose text was lost is left out, so collectors that only fetch text for
+        # new postings fetch it again.
+        rows = self.conn.execute(
+            "select native_id from skillmap.postings where source = %s and (description is not null "
+            "or text_archive is not null or role_family = 'non_tech')", (source,)).fetchall()
         return {row["native_id"] for row in rows}
 
     def save(self, items: Iterable[tuple[Posting, RawPosting]], taxonomy_version: int) -> int:
@@ -170,7 +200,10 @@ class PostgresStore:
             f"insert into skillmap.postings ({', '.join(columns)}) values ({placeholders}) "
             "on conflict (posting_id) do update set "
             "last_seen = greatest(skillmap.postings.last_seen, excluded.last_seen), "
-            "first_seen = least(skillmap.postings.first_seen, excluded.first_seen) "
+            "first_seen = least(skillmap.postings.first_seen, excluded.first_seen), "
+            # Text lost earlier (neither stored nor archived) comes back when the posting is seen again.
+            f"description = case when {LOST} then excluded.description else skillmap.postings.description end, "
+            f"taxonomy_version = case when {LOST} then null else skillmap.postings.taxonomy_version end "
             "returning (xmax = 0) as inserted"
         )
         inserted = 0
@@ -232,6 +265,23 @@ class PostgresStore:
             "update skillmap.postings set description = null, text_archive = %s where posting_id = any(%s)",
             (archive, posting_ids),
         )
+
+    def forget_archive(self, posting_ids: list[str]) -> None:
+        for start in range(0, len(posting_ids), 5000):
+            self.conn.execute("update skillmap.postings set text_archive = null where posting_id = any(%s)",
+                              (posting_ids[start:start + 5000],))
+
+    def archive_names(self) -> list[str]:
+        return [row["text_archive"] for row in self.conn.execute(
+            "select distinct text_archive from skillmap.postings where text_archive is not null order by 1").fetchall()]
+
+    def archive_ids(self, archive: str) -> list[str]:
+        return [row["posting_id"] for row in self.conn.execute(
+            "select posting_id from skillmap.postings where text_archive = %s", (archive,)).fetchall()]
+
+    def mark_current(self, posting_ids: list[str], taxonomy_version: int) -> None:
+        self.conn.execute("update skillmap.postings set taxonomy_version = %s where posting_id = any(%s)",
+                          (taxonomy_version, posting_ids))
 
     def update_extraction(self, postings: list[Posting], taxonomy_version: int) -> None:
         assignments = ", ".join(f"{column}=%s" for column in EXTRACTED)
