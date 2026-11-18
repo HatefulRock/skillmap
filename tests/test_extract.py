@@ -75,6 +75,19 @@ def test_my_skills_use_taxonomy_names():
     ("AI Engineer", "At least 2 years of relevant experience", None, "mid"),
     ("AI Engineer", "", "junior", "junior"),
     ("AI Engineer", "", None, "unspecified"),
+    ("Solutions Architect", "", None, "unspecified"),
+    ("Principal Solutions Architect", "", None, "staff"),
+    ("Software Architect", "", None, "staff"),
+    ("Senior Site Reliability Engineer (SRE) - VP", "", None, "senior"),
+    ("Data Engineer, AVP", "", None, "mid"),
+    ("Lead Engineer, Data Ingestion, VP", "", None, "staff"),
+    ("Associate Software Engineer", "", None, "junior"),
+    ("Director, Recruiting", "", None, "manager"),
+    ("VP of Engineering", "", None, "manager"),
+    ("Lead Android Engineer", "", None, "staff"),
+    ("Quantum-AI Postdoctoral Fellow", "", None, "unspecified"),
+    ("Technical Fellow, AI", "", None, "staff"),
+    ("Manager, Firmware Engineering", "", None, "manager"),
 ])
 def test_seniority(title, text, hint, expected):
     assert seniority.classify(title, text, hint) == expected
@@ -94,6 +107,12 @@ def test_seniority(title, text, hint, expected):
     ("Accounting Manager", None),
     ("Travel Agent", None),
     ("Email Marketing Manager", None),
+    ("Facilities Operations Engineer", None),
+    ("Senior Staff Commissioning Engineer, Electrical", None),
+    ("Clinical Laboratory Scientist, Oncology", None),
+    ("Sales Engineer (Vacuum Pumps)", None),
+    ("Software Engineer, Vehicle Platform", "backend"),
+    ("Machine Learning Engineer, Autonomous Vehicles", "ai_ml"),
 ])
 def test_roles(title, expected):
     assert roles.classify(title) == expected
@@ -105,6 +124,11 @@ def test_roles(title, expected):
     ("Remote - Europe", None, (None, None, None, True)),
     ("London, UK", None, ("GB", "London", "Europe", False)),
     ("Anywhere", "SG", ("SG", "Singapore", "Southeast Asia", True)),
+    ("Milan, Italy", None, ("IT", "Milan", "Europe", False)),
+    ("Remote - Mexico", None, ("MX", None, "Latin America", True)),
+    ("Santa Fe, New Mexico", None, ("US", None, "North America", False)),
+    ("Denver, CO", None, ("US", "Denver", "North America", False)),
+    ("Hybrid, or remote", None, (None, None, None, True)),
 ])
 def test_location(text, hint, expected):
     assert location.normalise(text, hint) == expected
@@ -122,3 +146,16 @@ def test_benefits_and_generic_monitoring_are_not_skills():
     assert not found("Monitoring of patient outcomes.")
     assert "Observability / tracing / monitoring" in found("Experience with monitoring and alerting.")
     assert "Observability / tracing / monitoring" not in found("Own transaction monitoring for AML.")
+
+
+def test_pre_sales_needs_a_customer_context():
+    tax = Taxonomy.load()
+    skill = "Pre-sales / solution architecture / PoCs"
+
+    def found(text):
+        required, nice = tax.extract("Engineer", text)
+        return set(required) | set(nice)
+
+    assert skill not in found("Build PoCs for new features and handle stakeholder management across teams.")
+    assert skill not in found("A customer-facing product used by millions.")
+    assert skill in found("Lead technical discovery and customer demos through the sales cycle.")

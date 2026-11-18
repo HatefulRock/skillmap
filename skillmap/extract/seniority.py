@@ -9,17 +9,30 @@ import re
 
 LEVELS = ["intern", "junior", "mid", "senior", "staff", "manager"]
 
+# Banks use corporate grades on individual-contributor titles ("Senior SRE - VP", "Data Engineer, AVP"):
+# with an IC role word, the grade is a level, not a management job.
+IC_WORD = re.compile(r"\b(?:engineer|developer|scientist|analyst|architect|sre|programmer|researcher|tech(?:nical)? lead)\b", re.I)
+BANK_GRADES: list[tuple[str, re.Pattern[str]]] = [
+    ("mid", re.compile(r"\b(?:avp|assistant vice president)\b", re.I)),
+    ("staff", re.compile(r"\b(?:svp|senior vice president|executive director|managing director|director)\b", re.I)),
+    ("senior", re.compile(r"\b(?:vp|vice president)\b", re.I)),
+]
+
 TITLE_RULES: list[tuple[str, re.Pattern[str]]] = [
     ("intern", re.compile(r"\b(?:intern(?:ship)?|co-?op|apprentice|trainee|working student)\b", re.I)),
     ("manager", re.compile(r"\b(?:head of|director|vp|vice president|chief|cto|cio|engineering manager|"
-                           r"manager,? (?:engineering|data|ml|ai|machine learning)|(?:engineering|ml|ai|data science) manager)\b", re.I)),
-    ("staff", re.compile(r"\b(?:staff|principal|distinguished|fellow|tech(?:nical)? lead|lead (?:engineer|developer|"
-                         r"scientist|ml|ai|data)|architect)\b", re.I)),
+                           r"manager,? (?:\w+ )?(?:engineering|data|ml|ai|machine learning)|(?:engineering|ml|ai|data science) manager)\b", re.I)),
+    ("staff", re.compile(r"\b(?:staff|principal|distinguished|(?:technical|senior) fellow|tech(?:nical)? lead|lead (?:engineer|developer|"
+                         r"scientist|ml|ai|data)|lead \w+ (?:engineer|developer|scientist)|"
+                         # A solutions architect is a customer-facing role, not a level.
+                         r"(?<!solutions )(?<!solution )architect)\b", re.I)),
     ("senior", re.compile(r"\b(?:senior|sr\.?|snr)\b|\b(?:engineer|developer|scientist) (?:iii|3)\b", re.I)),
     ("junior", re.compile(r"\b(?:junior|jr\.?|graduate|new grad|entry[- ]level|fresh(?:er)?|associate (?:engineer|"
                           r"developer|data|ml|software|ai)|early career)\b|\b(?:engineer|developer|scientist) (?:i|1)\b", re.I)),
     ("mid", re.compile(r"\b(?:mid[- ]level|intermediate)\b|\b(?:engineer|developer|scientist) (?:ii|2)\b", re.I)),
 ]
+
+MANAGES = re.compile(r"\b(?:engineering manager|head of|manager)\b", re.I)
 
 YEARS = re.compile(
     r"(\d{1,2})\s*(?:\+|plus)?\s*(?:-|–|to)?\s*(?:\d{1,2}\s*)?\+?\s*years?(?:'|’)?\s*(?:of\s+)?"
@@ -46,6 +59,13 @@ def from_years(years: int) -> str:
 
 
 def classify(title: str, description: str = "", hint: str | None = None, min_years: int | None = None) -> str:
+    title = title or ""
+    if IC_WORD.search(title) and not TITLE_RULES[0][1].search(title) and not MANAGES.search(title):
+        for level, rule in BANK_GRADES:
+            if rule.search(title):
+                # "Senior Engineer - AVP", "Lead Engineer, VP": the stronger of the two signals wins.
+                named = next((lv for lv, r in TITLE_RULES[2:] if r.search(title)), None)
+                return max(level, named or level, key=LEVELS.index)
     for level, rule in TITLE_RULES:
         if rule.search(title or ""):
             return level

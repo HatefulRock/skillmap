@@ -13,30 +13,50 @@ COUNTRIES = {
     "AU": ["australia", "sydney", "melbourne", "brisbane", "perth"], "NZ": ["new zealand", "auckland"],
     "AE": ["united arab emirates", "uae", "dubai", "abu dhabi"], "IL": ["israel", "tel aviv"],
     "GB": ["united kingdom", "london", "manchester", "edinburgh", "cambridge, uk", "england", "scotland"],
-    "IE": ["ireland", "dublin"], "FR": ["france", "paris"], "DE": ["germany", "berlin", "munich", "frankfurt", "hamburg"],
-    "NL": ["netherlands", "amsterdam"], "CH": ["switzerland", "zurich", "zürich", "geneva"], "ES": ["spain", "madrid", "barcelona"],
-    "PT": ["portugal", "lisbon"], "PL": ["poland", "warsaw", "krakow"], "SE": ["sweden", "stockholm"],
-    "CA": ["canada", "toronto", "vancouver", "montreal", "ontario"], "BR": ["brazil", "são paulo", "sao paulo"],
+    "IE": ["ireland", "dublin", "cork"], "FR": ["france", "paris", "lyon"],
+    "DE": ["germany", "berlin", "munich", "frankfurt", "hamburg", "cologne", "stuttgart"],
+    "NL": ["netherlands", "amsterdam", "rotterdam", "utrecht"], "CH": ["switzerland", "zurich", "zürich", "geneva", "lausanne", "basel"],
+    "ES": ["spain", "madrid", "barcelona"], "PT": ["portugal", "lisbon", "porto"], "PL": ["poland", "warsaw", "krakow", "kraków", "wroclaw"],
+    "SE": ["sweden", "stockholm"], "IT": ["italy", "milan", "rome"], "RO": ["romania", "bucharest", "cluj"],
+    "RS": ["serbia", "belgrade", "novi sad"], "CZ": ["czech republic", "czechia", "prague"], "AT": ["austria", "vienna"],
+    "BE": ["belgium", "brussels"], "DK": ["denmark", "copenhagen"], "NO": ["norway", "oslo"], "FI": ["finland", "helsinki"],
+    "GR": ["greece", "athens"], "HU": ["hungary", "budapest"], "UA": ["ukraine", "kyiv"], "EE": ["estonia", "tallinn"],
+    "LT": ["lithuania", "vilnius"], "TR": ["turkey", "türkiye", "istanbul"], "SA": ["saudi arabia", "riyadh"], "QA": ["qatar", "doha"],
+    "ZA": ["south africa", "cape town", "johannesburg"], "NG": ["nigeria", "lagos"], "KE": ["kenya", "nairobi"], "EG": ["egypt", "cairo"],
+    "PK": ["pakistan", "karachi", "lahore"], "BD": ["bangladesh", "dhaka"], "LK": ["sri lanka", "colombo"],
+    "CA": ["canada", "toronto", "vancouver", "montreal", "ontario", "british columbia", "quebec", "calgary", "ottawa", "waterloo"],
+    "BR": ["brazil", "são paulo", "sao paulo"], "MX": ["mexico", "méxico", "guadalajara", "monterrey"],
+    "AR": ["argentina", "buenos aires"], "CO": ["colombia", "bogota", "bogotá", "medellin", "medellín"], "CL": ["chile", "santiago"],
+    "PE": ["peru", "lima"],
     "US": ["united states", "usa", "u.s.", "san francisco", "new york", "nyc", "seattle", "boston", "austin",
            "los angeles", "chicago", "palo alto", "mountain view", "menlo park", "sunnyvale", "san jose",
-           "washington, dc", "denver", "atlanta", "miami", "bay area", ", ca", ", ny", ", wa", ", tx", ", ma"],
+           "washington, dc", "denver", "atlanta", "miami", "bay area", "pittsburgh", "philadelphia", "san diego", "dallas",
+           "houston", "salt lake city", "portland", "new mexico", "raleigh", "phoenix", "minneapolis", "detroit", "nashville",
+           ", ca", ", ny", ", wa", ", tx", ", ma", ", co", ", il", ", ga", ", va", ", nc", ", pa", ", ut", ", fl", ", nj",
+           ", dc", ", az", ", mn", ", oh", ", mi", ", md"],
 }
 REGIONS = {
     "Southeast Asia": {"SG", "MY", "ID", "TH", "VN", "PH"},
     "East Asia": {"HK", "TW", "JP", "KR", "CN"},
-    "South Asia": {"IN"},
+    "South Asia": {"IN", "PK", "BD", "LK"},
     "Oceania": {"AU", "NZ"},
-    "Middle East": {"AE", "IL"},
-    "Europe": {"GB", "IE", "FR", "DE", "NL", "CH", "ES", "PT", "PL", "SE"},
+    "Middle East": {"AE", "IL", "SA", "QA", "TR"},
+    "Europe": {"GB", "IE", "FR", "DE", "NL", "CH", "ES", "PT", "PL", "SE", "IT", "RO", "RS", "CZ", "AT", "BE", "DK", "NO",
+               "FI", "GR", "HU", "UA", "EE", "LT"},
     "North America": {"US", "CA"},
-    "Latin America": {"BR"},
+    "Latin America": {"BR", "MX", "AR", "CO", "CL", "PE"},
+    "Africa": {"ZA", "NG", "KE", "EG"},
 }
 REMOTE = re.compile(r"\bremote\b|\banywhere\b|work from home|\bwfh\b", re.I)
 _PATTERNS = [
     (code, name, re.compile(r"(?<![a-z])" + re.escape(name) + r"(?![a-z])", re.I))
     for code, names in COUNTRIES.items() for name in names
 ]
-CITY_NAMES = {name for names in COUNTRIES.values() for name in names[1:] if not name.startswith(",")}
+# Listed after each country's name but not cities: states, provinces, nations, areas, alternative spellings.
+NOT_CITIES = {"new mexico", "british columbia", "quebec", "ontario", "bay area", "england", "scotland", "usa", "u.s.",
+              "uae", "czechia", "türkiye", "méxico", "united arab emirates", "cambridge, uk"}
+CITY_NAMES = {name for names in COUNTRIES.values() for name in names[1:]
+              if not name.startswith(",") and name not in NOT_CITIES}
 
 
 def region_of(country: str | None) -> str | None:
