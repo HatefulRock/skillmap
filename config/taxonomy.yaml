@@ -8,7 +8,7 @@
 #
 # Bump `version` whenever a pattern (or any other extractor, e.g. salary) changes: stored
 # postings are re-extracted on the next run.
-version: 4  # v2: salary from text. v3: ad length, years, unknown terms, degree, visa, equity. v4: no benefits/monitoring false positives
+version: 5  # v2: salary from text. v3: ad length, years, unknown terms, degree, visa, equity. v4: no benefits/monitoring false positives. v5: seniority (bank grades, solutions architects), non-software engineering, pre-sales, more countries
 
 skills:
   # ---------- Languages ----------
@@ -293,7 +293,8 @@ skills:
     patterns: ['\bn8n\b', '\bzapier\b', '\bmake\.com\b', '\blow[- ]code\b', '\bno[- ]code\b', '\brpa\b', '\buipath\b']
   Pre-sales / solution architecture / PoCs:
     category: Ways of working
-    patterns: ['\bpre-?sales\b', '\bsolutions? architecture\b', '\bproofs? of concepts?\b', '\bpocs?\b', '\bcustomer[- ]facing\b', '\btechnical (?:discovery|demos?)\b', '\bstakeholder management\b']
+    # Bare "PoC", "customer-facing" and "stakeholder management" appear in ordinary engineering ads.
+    patterns: ['\bpre-?sales\b', '\bsolutions? architecture\b', '\bproofs? of concepts? (?:for|with) (?:customers|clients|prospects)\b', '\b(?:customer|client) pocs?\b', '\btechnical (?:discovery|demos?)\b', '\b(?:customer|client|prospect)[- ](?:demos?|workshops?)\b', '\bsales cycles?\b', '\bsolution design for (?:customers|clients)\b']
 
   # ---------- Domain ----------
   Financial services / banking domain:

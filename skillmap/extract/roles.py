@@ -36,8 +36,24 @@ RULES: list[tuple[str, re.Pattern[str]]] = [
 ]
 
 
+# Engineering outside software: these titles say "engineer" or "scientist" but their ads are about
+# buildings, plants, vehicles or labs, and would dilute the software skill shares.
+NOT_SOFTWARE = re.compile(
+    r"\b(?:facilities|facility|mechanical|civil|structural|chemical|process engineer|manufacturing|commissioning|"
+    r"electrical|hvac|plumbing|construction|maintenance|mechatronics|aerospace|vehicle|automotive|piping|"
+    r"clinical|laboratory|lab scientist|biomedical|environmental|geotechnical|mining|petroleum|marine|"
+    r"field service|service engineer|quality engineer|test technician|technician|sales engineer \(|"
+    r"(?:vacuum|pumps?|valves?|compressors?|instrumentation|semiconductor equipment)\b)", re.I)
+# Titles that name software work win over the list above ("Software Engineer, Vehicle Platform").
+SOFTWARE = re.compile(r"software|\bml\b|machine learning|\bai\b|data|cloud|backend|frontend|full[- ]?stack|"
+                      r"firmware|embedded|devops|platform|\bsre\b|security|solutions?|forward[- ]deployed|"
+                      r"\bapi\b|developer|programmer", re.I)
+
+
 def classify(title: str) -> str | None:
     """None means not a technical role; those postings are kept but left out of skill stats."""
+    if NOT_SOFTWARE.search(title or "") and not SOFTWARE.search(title or ""):
+        return None
     for family, rule in RULES:
         if rule.search(title or ""):
             return family
