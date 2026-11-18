@@ -14,7 +14,7 @@ import re
 from collections.abc import Callable
 
 _TOKEN = re.compile(
-    r"(?<![\w.#+/-])("
+    r"(?<![\w.#+/'’-])("
     r"[A-Z][a-z]+(?:[A-Z][a-z0-9]*)+"            # CamelCase: LangGraph, DeepSeek, DuckDB
     r"|[A-Z]{2,}[a-z]+[A-Za-z]*"                 # leading capitals: DSPy, LLMOps, MLflow
     r"|[a-z]+[A-Z][A-Za-z0-9]+"                  # camelStart: vLLM, nanoGPT, iOS
@@ -34,16 +34,22 @@ STOP = {
     "YouTube", "TikTok", "WhatsApp", "PayPal", "JavaScript", "TypeScript", "OpenAI", "DeepMind", "YC", "IPO", "ARR",
     "MRR", "GTM", "SEO", "CRM", "ERP", "POC", "PoC", "PoCs", "MVP", "SLA", "SLAs", "SOC2", "SOC", "ISO", "PII", "HIPAA",
     "PCI", "NDA", "Q1", "Q2", "Q3", "Q4", "H1", "H2", "FY", "W2", "W-2", "K-12", "COVID-19", "COVID", "N/A", "TBD",
+    "CS", "PM", "PMs", "ABOUT", "ROLE", "NICE", "WHAT", "WHO", "WHY", "HOW", "HAVE", "ARE", "WORK", "DO", "YOUR", "WILL",
     "USD", "SGD", "GBP", "EUR", "CAD", "AUD", "HKD", "INR", "JPY", "CNY", "KRW", "AED", "CHF", "OKX", "ETH", "BTC",
 }
 MAX_TERMS = 40
+# Three or more capitalised words in a row are a shouted heading ("WHAT YOU WILL DO"), not names.
+_HEADING = re.compile(r"\b[A-Z][A-Z'’]+(?: [A-Z][A-Z'’]*){2,}\b")
 
 
 def candidates(text: str, known: Callable[[str], bool]) -> list[str]:
     """Distinct unknown tech-looking terms in `text`, in order of first appearance."""
     out: list[str] = []
     seen: set[str] = set()
+    headings = [m.span() for m in _HEADING.finditer(text or "")]
     for match in _TOKEN.finditer(text or ""):
+        if any(a <= match.start() < b for a, b in headings):
+            continue
         term = match.group(1).rstrip(".")
         if term in seen or term in STOP or term.upper() in STOP or len(term) < 2 or term.isdigit():
             continue

@@ -172,7 +172,8 @@ def emerging_terms(rows: list[dict], today: date, days: int = MOVER_DAYS) -> dic
     c_now, c_before = companies_using(now), companies_using(before)
     common = [{"term": t, "companies": n, "companies_before": c_before.get(t, 0)}
               for t, n in c_now.most_common() if n >= MIN_TERM_POSTS][:TOP_TERMS]
-    rising = sorted(
+    # Without a comparable earlier window every term would look new, so nothing is called rising.
+    rising = [] if len(before) < MIN_GROUP else sorted(
         ({"term": t, "companies": n, "companies_before": c_before.get(t, 0)} for t, n in c_now.items()
          if n >= MIN_TERM_POSTS and n >= 2 * c_before.get(t, 0)),
         key=lambda e: -(e["companies"] - e["companies_before"]),
