@@ -47,6 +47,7 @@ class Store(Protocol):
     def text_locations(self, posting_ids: list[str]) -> dict[str, tuple[str | None, str | None]]: ...
     def purge(self, source: str) -> int: ...
     def run_history(self, days: int) -> list[dict]: ...
+    def first_runs(self) -> dict[str, date]: ...
 
 
 def _raw_from_row(row: dict) -> RawPosting:
@@ -120,6 +121,13 @@ class MemoryStore:
 
     def trim_text(self, max_bytes: int) -> int:
         return 0
+
+    def first_runs(self) -> dict[str, date]:
+        out: dict[str, date] = {}
+        for r in self.runs:
+            platform, day = r["source"].split(":", 1)[0], r["ran_at"].date()
+            out[platform] = min(out.get(platform, day), day)
+        return out
 
     def run_history(self, days: int) -> list[dict]:
         since = datetime.now(UTC) - timedelta(days=days)
@@ -255,6 +263,13 @@ class PostgresStore:
             "select posting_id, description, text_archive from skillmap.postings where posting_id = any(%s) "
             "and (description is not null or text_archive is not null)", (posting_ids,),
         ).fetchall()}
+
+    def first_runs(self) -> dict[str, date]:
+        """The day each source (boards per platform) was first read."""
+        rows = self.conn.execute(
+            "select split_part(source, ':', 1) as platform, min(ran_at)::date as first "
+            "from skillmap.runs group by 1").fetchall()
+        return {row["platform"]: row["first"] for row in rows}
 
     def run_history(self, days: int) -> list[dict]:
         return self.conn.execute(
