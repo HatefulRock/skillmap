@@ -97,6 +97,9 @@ Only sources that publish postings for programmatic reading are used:
 | Greenhouse, Lever, Ashby, Workable (SmartRecruiters opt-in: its API host's robots.txt disallows crawlers) | Full postings from ~1,000 companies (`config/boards.yaml`, `config/companies.yaml`) | Public job-board APIs that the companies publish themselves |
 | Workday career sites | Banks and large employers listed in `config/companies.yaml` (text for new technical postings only, up to 150 a site per run) | The JSON each company's own careers page loads |
 | Amazon (amazon.jobs) | Technical job categories, newest 3,000 a run | The JSON Amazon's careers site loads |
+| Microsoft (apply.careers.microsoft.com) | Technical searches, newest first; text for new technical postings only | The JSON Microsoft's careers site loads (`/api/pcsx`, allowed by its robots.txt) |
+
+Google, Apple and Meta are left out: Google's careers results exist only inside page HTML, Apple's search needs a session token, and Meta's robots.txt forbids automated collection.
 | [Adzuna](https://developer.adzuna.com/) | Broad market in Singapore, the UK and the US | Free API key; "Job data: The Adzuna API". Descriptions are snippets, so its skill counts are a lower bound |
 | MyCareersFuture | Singapore's national job portal, including advertised salary ranges | The search API its own site uses, read slowly (one request every 3 s), newest first, stopping at postings already collected |
 | Hacker News "Who is hiring?" | Monthly threads back to 2011: the long trend lines | Official [HN Algolia API](https://hn.algolia.com/api) |
