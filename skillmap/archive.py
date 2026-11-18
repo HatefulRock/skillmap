@@ -55,7 +55,8 @@ class LocalArchive:
     def put(self, name: str, data: bytes) -> None:
         path = self.root / name
         path.parent.mkdir(parents=True, exist_ok=True)
-        path.write_bytes(data)
+        with path.open("xb") as fh:  # never overwrite, like the Supabase bucket
+            fh.write(data)
 
     def get(self, name: str) -> bytes:
         return (self.root / name).read_bytes()
@@ -84,7 +85,7 @@ class SupabaseArchive:
     def put(self, name: str, data: bytes) -> None:
         self._ensure_bucket()
         response = self.client.post(f"{self.base}/object/{self.bucket}/{name}", content=data,
-                                    headers={"Content-Type": "application/gzip", "x-upsert": "true"})
+                                    headers={"Content-Type": "application/gzip", "x-upsert": "false"})  # never overwrite
         response.raise_for_status()
 
     def get(self, name: str) -> bytes:

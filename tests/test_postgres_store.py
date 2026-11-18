@@ -88,10 +88,37 @@ def test_archive_and_reextract_from_postgres(tmp_path):
     assert archive_texts(store, archive, day, per_file=5) == 7
     assert store.texts_to_archive(10) == []
     store.conn.execute("update skillmap.postings set taxonomy_version = 0, skills = '{}', terms = '{}'")
-    assert store.stale_archives(TAX.version) == ["texts/2026-11-10-000.jsonl.gz", "texts/2026-11-10-001.jsonl.gz"]
+    names = store.stale_archives(TAX.version)
+    assert len(names) == 2 and all(n.startswith("texts/2026-11-10-") for n in names)
     assert reextract(store, TAX, day, archive) == 7
     rows = store.conn.execute("select skills, n_words, min_years, degree from skillmap.postings").fetchall()
     assert all(r["skills"] == ["Python", "RAG"] and r["n_words"] == 3 for r in rows)
+
+
+def test_lost_text_is_found_kept_and_restored_in_postgres(tmp_path):
+    from skillmap.archive import LocalArchive
+    from skillmap.runner import archive_texts, check_archives, reextract
+    from skillmap.store import PostgresStore
+
+    store = PostgresStore(DSN)
+    store.conn.execute("truncate skillmap.postings, skillmap.runs")
+    day = date(2026, 11, 10)
+    store.save([(normalise(raw(i), TAX, day), raw(i)) for i in range(3)], TAX.version)
+    archive = LocalArchive(tmp_path)
+    archive_texts(store, archive, day)
+    (name,) = store.archive_names()
+    (tmp_path / name).unlink()  # the file is gone
+    assert check_archives(store, archive) == 3
+    assert store.known_ids("greenhouse") == set()
+    store.conn.execute("update skillmap.postings set taxonomy_version = 0")
+    assert reextract(store, TAX, day, archive) == 0  # nothing wiped
+    assert all(r["skills"] == ["Python", "RAG"] for r in store.conn.execute("select skills from skillmap.postings"))
+
+    store.save([(normalise(raw(1), TAX, day), raw(1))], TAX.version)  # seen again
+    row = store.conn.execute("select description, taxonomy_version from skillmap.postings "
+                             "where posting_id = 'greenhouse:1'").fetchone()
+    assert row["description"] and row["taxonomy_version"] is None
+    assert reextract(store, TAX, day, archive) == 1
 
 
 def test_purge_deletes_only_one_source():

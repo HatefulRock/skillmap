@@ -5,6 +5,7 @@ from __future__ import annotations
 import logging
 import os
 import time
+import uuid
 from collections.abc import Callable, Iterable
 from dataclasses import dataclass, field
 from datetime import date, timedelta
@@ -223,12 +224,23 @@ def reextract(store: Store, taxonomy: Taxonomy, today: date, archive: Archive | 
     count = 0
 
     def run(raws: Iterable[RawPosting], texts: dict[str, str] | None = None) -> None:
+        """A posting whose text is missing keeps its extraction: re-extracting an empty text
+        would wipe its skills. Its text comes back if a collector sees the posting again."""
         nonlocal count
-        batch = []
+        batch: list = []
+        missing: list[str] = []
+        textless: list[str] = []
         for raw in raws:
             if texts is not None:
-                raw.description = texts.get(raw.posting_id, "")
-            batch.append(normalise(raw, taxonomy, today))
+                if raw.posting_id not in texts:
+                    missing.append(raw.posting_id)
+                    continue
+                raw.description = texts[raw.posting_id]
+            posting = normalise(raw, taxonomy, today)
+            if not raw.description and posting.role_family != "non_tech":
+                textless.append(raw.posting_id)
+                continue
+            batch.append(posting)
             if len(batch) >= 1000:
                 store.update_extraction(batch, taxonomy.version)
                 count += len(batch)
@@ -236,6 +248,11 @@ def reextract(store: Store, taxonomy: Taxonomy, today: date, archive: Archive | 
         if batch:
             store.update_extraction(batch, taxonomy.version)
             count += len(batch)
+        if missing:
+            log.warning("%d postings point to an archive file that doesn't hold their text", len(missing))
+            store.forget_archive(missing)
+        for start in range(0, len(textless), 1000):
+            store.mark_current(textless[start:start + 1000], taxonomy.version)
 
     if archive is not None:
         for name in store.stale_archives(taxonomy.version):
@@ -249,15 +266,44 @@ def reextract(store: Store, taxonomy: Taxonomy, today: date, archive: Archive | 
     return count
 
 
+def check_archives(store: Store, archive: Archive) -> int:
+    """Clear the archive pointer of every posting whose text isn't in the file it points to (a
+    file overwritten or deleted), so its text is fetched again when a collector next sees it.
+    Returns how many pointers were cleared."""
+    cleared = 0
+    for name in store.archive_names():
+        try:
+            held = set(unpack(archive.get(name)))
+        except httpx.HTTPStatusError as exc:
+            if exc.response.status_code not in (400, 404):  # Supabase answers 400 for a missing object
+                log.warning("archive %s unreadable, not checked: %s", name, exc)
+                continue
+            held = set()
+        except FileNotFoundError:
+            held = set()
+        except Exception as exc:
+            log.warning("archive %s unreadable, not checked: %s", name, exc)
+            continue
+        missing = [pid for pid in store.archive_ids(name) if pid not in held]
+        if missing:
+            log.warning("archive %s lacks the text of %d postings that point to it", name, len(missing))
+            store.forget_archive(missing)
+            cleared += len(missing)
+    return cleared
+
+
 def archive_texts(store: Store, archive: Archive, today: date, per_file: int = 20_000) -> int:
     """Move every posting text still in the database into archive files, then clear it there.
     Each file is written before its postings are marked, so a failure leaves text in place."""
     moved = 0
+    run_id = uuid.uuid4().hex[:8]
     for part in range(1000):
         items = store.texts_to_archive(per_file)
         if not items:
             break
-        name = f"texts/{today.isoformat()}-{part:03d}.jsonl.gz"
+        # Unique per run: two runs on one day must never write the same file (an overwritten
+        # file loses the text of every posting it held).
+        name = f"texts/{today.isoformat()}-{run_id}-{part:03d}.jsonl.gz"
         archive.put(name, pack(items))
         store.mark_archived([pid for pid, _ in items], name)
         moved += len(items)
