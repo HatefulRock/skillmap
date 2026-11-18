@@ -37,7 +37,9 @@ def pack(items: list[tuple[str, str]]) -> bytes:
 
 def unpack(data: bytes) -> dict[str, str]:
     out = {}
-    for line in gzip.decompress(data).decode().splitlines():
+    # Split on "\n" only: splitlines() also breaks on U+2028, U+0085 and form feeds, which
+    # json.dumps(ensure_ascii=False) leaves unescaped inside posting text.
+    for line in gzip.decompress(data).decode().split("\n"):
         if line:
             item = json.loads(line)
             out[item["id"]] = item["text"]

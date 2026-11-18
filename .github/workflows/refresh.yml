@@ -67,6 +67,7 @@ jobs:
           DATABASE_URL: ${{ !inputs.dry_run && secrets.DATABASE_URL || '' }}
           SUPABASE_SECRET_KEY: ${{ !inputs.dry_run && secrets.SUPABASE_SECRET_KEY || '' }}
         run: |
+          set -o pipefail  # a crash must fail the step, not hide behind tee
           args=(--sources "${{ inputs.sources || 'boards,adzuna,mcf,hn' }}" --out data --readme README.md --health health.md)
           [ -n "${{ inputs.board_limit }}" ] && args+=(--board-limit "${{ inputs.board_limit }}")
           [ -n "${{ inputs.platforms }}" ] && args+=(--platforms "${{ inputs.platforms }}")

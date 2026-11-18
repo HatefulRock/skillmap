@@ -239,7 +239,12 @@ def reextract(store: Store, taxonomy: Taxonomy, today: date, archive: Archive | 
 
     if archive is not None:
         for name in store.stale_archives(taxonomy.version):
-            run(store.stale_extractions(taxonomy.version, name), unpack(archive.get(name)))
+            try:
+                texts = unpack(archive.get(name))
+            except Exception as exc:  # one unreadable file must not stop the run; retried next run
+                log.warning("archive %s unreadable, its postings keep their old extraction: %s", name, exc)
+                continue
+            run(store.stale_extractions(taxonomy.version, name), texts)
     run(store.stale_extractions(taxonomy.version))
     return count
 

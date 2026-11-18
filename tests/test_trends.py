@@ -160,3 +160,20 @@ def test_supabase_archive_requests():
     assert seen[0][:2] == ("POST", "/storage/v1/bucket")
     assert seen[1][:2] == ("POST", "/storage/v1/object/skillmap-text/texts/a.jsonl.gz")
     assert seen[1][2] == "sb_secret_x" and seen[1][3] is None  # new-style keys aren't bearer tokens
+
+
+def test_archive_round_trips_text_with_unicode_line_separators():
+    texts = [("greenhouse:1", "Line one line two\x85three\x0cfour"), ("greenhouse:2", "plain")]
+    assert unpack(pack(texts)) == dict(texts)
+
+
+def test_an_unreadable_archive_file_is_skipped(tmp_path):
+    store, archive = MemoryStore(), LocalArchive(tmp_path)
+    raws = [RawPosting("greenhouse", str(i), "Acme", "Backend Engineer", "We use Python") for i in range(4)]
+    store.save([(normalise(r, TAX, TODAY), r) for r in raws], TAX.version)
+    archive_texts(store, archive, TODAY, per_file=2)
+    first = sorted(tmp_path.glob("texts/*.gz"))[0]
+    first.write_bytes(b"not gzip")
+    for r in store.data.values():
+        r.update(taxonomy_version=0)
+    assert reextract(store, TAX, TODAY, archive) == 2  # the readable file's postings
