@@ -18,7 +18,8 @@ USER_AGENT = "skillmap/0.1 (+https://www.pierreblachere.com/skills; job-market r
 
 class PoliteClient:
     def __init__(self, min_interval: float = 1.0, timeout: float = 30.0, retries: int = 3,
-                 per_host_interval: dict[str, float] | None = None, transport: httpx.BaseTransport | None = None):
+                 per_host_interval: dict[str, float] | None = None, transport: httpx.BaseTransport | None = None,
+                 max_retry_after: float = 60.0):
         self._client = httpx.Client(
             headers={"User-Agent": USER_AGENT, "Accept": "application/json"},
             timeout=timeout,
@@ -28,6 +29,8 @@ class PoliteClient:
         self.min_interval = min_interval
         self.per_host_interval = per_host_interval or {}
         self.retries = retries
+        # A server can ask for a wait of hours; past this the request fails and the caller moves on.
+        self.max_retry_after = max_retry_after
         self._last_call: dict[str, float] = {}
         self.sleep = time.sleep  # swapped out in tests
 
@@ -51,7 +54,8 @@ class PoliteClient:
                 continue
             if response.status_code in (429, 500, 502, 503, 504) and attempt < self.retries:
                 retry_after = response.headers.get("Retry-After", "")
-                self.sleep(float(retry_after) if retry_after.isdigit() else 2 ** (attempt + 1))
+                wait = float(retry_after) if retry_after.isdigit() else 2 ** (attempt + 1)
+                self.sleep(min(wait, self.max_retry_after))
                 continue
             return response
         raise RuntimeError("unreachable")
