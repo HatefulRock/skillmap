@@ -18,7 +18,7 @@ from . import aggregate, audit, digest, discover, exports, heatmap, watchlist
 from .archive import from_env as open_archive
 from .extract.skills import Taxonomy
 from .http import PoliteClient
-from .runner import archive_texts, collect, load_boards, load_yaml, reextract
+from .runner import Budget, archive_texts, collect, load_boards, load_yaml, reextract
 from .store import MemoryStore, PostgresStore, Store, today_utc
 
 ALL_SOURCES = {"boards", "adzuna", "mcf", "hn"}
@@ -84,6 +84,8 @@ def main(argv: list[str] | None = None) -> None:
     run.add_argument("--sources", default=",".join(sorted(ALL_SOURCES)))
     run.add_argument("--board-limit", type=int, help="only the first N company boards (smoke tests)")
     run.add_argument("--platforms", help="only company boards on these platforms, comma-separated (e.g. workday,amazon)")
+    run.add_argument("--budget", type=float, default=270.0,
+                     help="minutes of collecting before the run stops reading and publishes what it has")
     run.add_argument("--hn-since", type=date.fromisoformat, help="override the HN start month")
     run.add_argument("--out", type=Path, default=Path("data"))
     run.add_argument("--readme", type=Path, help="README whose weekly section gets the new note")
@@ -128,7 +130,8 @@ def main(argv: list[str] | None = None) -> None:
         client = PoliteClient(min_interval=1.0, per_host_interval=HOST_INTERVALS)
         try:
             platforms = {p.strip() for p in (args.platforms or "").split(",") if p.strip()} or None
-            report = collect(store, client, taxonomy, today, sources, args.board_limit, args.hn_since, platforms)
+            budget = Budget(time.monotonic() + args.budget * 60)
+            report = collect(store, client, taxonomy, today, sources, args.board_limit, args.hn_since, platforms, budget)
         finally:
             client.close()
         print(report.summary())

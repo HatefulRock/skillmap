@@ -35,7 +35,9 @@ permissions:
 jobs:
   refresh:
     runs-on: ubuntu-latest
-    timeout-minutes: 340  # the first run backfills ~1,000 boards and HN since 2011
+    # Collecting stops after 270 minutes (`--budget`), leaving time to extract, aggregate and publish
+    # what was read; anything cut short is read on the next run.
+    timeout-minutes: 340
     env:
       DATABASE_URL: ${{ secrets.DATABASE_URL }}
       ADZUNA_APP_ID: ${{ secrets.ADZUNA_APP_ID }}

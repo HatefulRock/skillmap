@@ -1,0 +1,82 @@
+"""A run survives rate limits and slow sources: it skips, stops in time, and resumes later."""
+
+from datetime import date
+
+import httpx
+
+from skillmap import runner
+from skillmap.extract.skills import Taxonomy
+from skillmap.http import PoliteClient
+from skillmap.runner import Budget, collect
+from skillmap.store import MemoryStore
+
+TODAY = date(2026, 11, 18)
+TAX = Taxonomy.load()
+
+
+def client_for(handler):
+    client = PoliteClient(min_interval=0, transport=httpx.MockTransport(handler), retries=0)
+    client.sleep = lambda s: None
+    return client
+
+
+def jobs(n, prefix):
+    return {"jobs": [{"id": f"{prefix}{i}", "title": "AI Engineer", "location": {"name": "Singapore"},
+                      "content": "Python", "absolute_url": f"https://x/{i}"} for i in range(n)]}
+
+
+def test_a_platform_that_keeps_rate_limiting_is_skipped_for_the_run(monkeypatch):
+    boards = [{"company": f"G{i}", "ats": "greenhouse", "token": f"g{i}"} for i in range(12)]
+    boards += [{"company": "L", "ats": "lever", "token": "ok"}]
+    monkeypatch.setattr(runner, "load_boards", lambda: boards)
+    calls = []
+
+    def handler(request: httpx.Request) -> httpx.Response:
+        calls.append(str(request.url))
+        if "greenhouse" in str(request.url):
+            return httpx.Response(429)
+        return httpx.Response(200, json=[{"id": "1", "text": "AI Engineer", "categories": {"location": "Singapore"},
+                                          "descriptionPlain": "Python", "hostedUrl": "https://x"}])
+
+    report = collect(MemoryStore(), client_for(handler), TAX, TODAY, {"boards"})
+    greenhouse = [r for r in report.results if r.name.startswith("greenhouse:")]
+    assert len(greenhouse) == 12 and sum("greenhouse" in c for c in calls) == runner.RATE_LIMITED_BOARDS
+    assert all(r.error == "skipped: platform rate-limiting" for r in greenhouse[runner.RATE_LIMITED_BOARDS:])
+    assert next(r for r in report.results if r.name == "lever:ok").inserted == 1  # other platforms carry on
+
+
+def test_one_rate_limited_board_does_not_trip_the_breaker(monkeypatch):
+    boards = [{"company": f"G{i}", "ats": "greenhouse", "token": f"g{i}"} for i in range(8)]
+    monkeypatch.setattr(runner, "load_boards", lambda: boards)
+
+    def handler(request: httpx.Request) -> httpx.Response:
+        url = str(request.url)
+        return httpx.Response(429) if "/g3/" in url or "/g5/" in url else httpx.Response(200, json=jobs(2, url[-20:]))
+
+    report = collect(MemoryStore(), client_for(handler), TAX, TODAY, {"boards"})
+    assert sum(1 for r in report.results if r.error) == 2
+
+
+def test_out_of_time_stops_reading_and_keeps_what_was_saved(monkeypatch):
+    boards = [{"company": f"G{i}", "ats": "greenhouse", "token": f"g{i}"} for i in range(3)]
+    monkeypatch.setattr(runner, "load_boards", lambda: boards)
+    ticks = iter(range(10_000))
+
+    def handler(request: httpx.Request) -> httpx.Response:
+        return httpx.Response(200, json=jobs(250, str(request.url)[-12:]))
+
+    store = MemoryStore()
+    # The clock moves one tick per check: the first board stops part-way, the others are skipped.
+    report = collect(store, client_for(handler), TAX, TODAY, {"boards"}, budget=Budget(1.5, lambda: next(ticks)))
+    first, *rest = report.results
+    assert first.error.startswith("stopped: out of time") and first.inserted == 200
+    assert all(r.error == "skipped: out of time this run" for r in rest)
+    assert len(store.data) == 200
+
+
+def test_a_backfill_cut_short_is_redone_next_run():
+    store = MemoryStore()
+    store.log_run("hn", 500, 500, "stopped: out of time this run (the rest is read next run)")
+    assert not store.finished_before("hn")
+    store.log_run("hn", 900, 400, None)
+    assert store.finished_before("hn") and not store.finished_before("mcf")
