@@ -8,6 +8,10 @@ whether that board exists, and keeps every board with open jobs. Each platform i
 own thread with its own polite client, so the platforms are asked in parallel but each one only
 sees one request at a time.
 
+A platform stops early when the time budget runs out or when it keeps answering "too many
+requests". Candidates are probed curated names first, so a cut-short platform has still covered
+the hand-picked companies, and the boards it found are kept.
+
 The result goes to config/boards.yaml, which the weekly run reads alongside the hand-curated
 config/companies.yaml (the curated entry wins when both name a company).
 """
@@ -16,6 +20,7 @@ from __future__ import annotations
 
 import logging
 import re
+import time
 from collections.abc import Callable, Iterable
 from concurrent.futures import ThreadPoolExecutor
 from dataclasses import dataclass, field
@@ -36,6 +41,8 @@ ATS = ["greenhouse", "lever", "ashby", "workable", "smartrecruiters"]
 # SmartRecruiters' API host asks crawlers to stay away in its robots.txt, so it is only probed
 # when asked for explicitly (`--platforms ...,smartrecruiters`).
 DEFAULT_ATS = ["greenhouse", "lever", "ashby", "workable"]
+# Give up on a platform after this many probes in a row that ended in "429 Too Many Requests".
+RATE_LIMITED_GIVE_UP = 20
 _DROP_WORDS = re.compile(r"\b(?:ai|labs?|inc|hq|technologies|technology|tech|app|io|the|co|group|holdings|global)\b")
 
 
@@ -175,22 +182,41 @@ PROBES: dict[str, Probe] = {
 }
 
 
-def scan(ats: str, candidates: list[Candidate], client: PoliteClient) -> list[Board]:
-    """Every candidate on one platform: the first token variant that answers wins."""
-    probe, found = PROBES[ats], []
+def _rate_limited(exc: Exception) -> bool:
+    return isinstance(exc, httpx.HTTPStatusError) and exc.response.status_code == 429
+
+
+def scan(ats: str, candidates: list[Candidate], client: PoliteClient, deadline: float | None = None,
+         clock: Callable[[], float] = time.monotonic) -> tuple[list[Board], bool]:
+    """Every candidate on one platform: the first token variant that answers wins.
+
+    Returns the boards found and whether every candidate was probed. The scan stops early, keeping
+    what it found, once `deadline` (on `clock`) passes or the platform keeps rate-limiting.
+    """
+    probe, found, limited = PROBES[ats], [], 0
     for i, candidate in enumerate(candidates):
+        if deadline is not None and clock() > deadline:
+            log.warning("%s: out of time after %d/%d candidates, %d boards", ats, i, len(candidates), len(found))
+            return found, False
         for token in slug_variants(candidate.name, candidate.website, candidate.tokens):
             try:
                 hit = probe(client, token)
             except (httpx.HTTPError, RuntimeError) as exc:
                 log.debug("%s %s: %s", ats, token, exc)
+                limited = limited + 1 if _rate_limited(exc) else 0
+                if limited >= RATE_LIMITED_GIVE_UP:
+                    log.warning("%s: still rate-limited after %d tries, stopping at %d/%d candidates, %d boards",
+                                ats, limited, i, len(candidates), len(found))
+                    return found, False
                 continue
+            limited = 0
             if hit and hit[0] > 0 and same_company(hit[1], candidate.name):
                 found.append(Board(candidate.name, ats, token, candidate.sector, hit[0], candidate.origin))
                 break
         if i and i % 250 == 0:
             log.info("%s: %d/%d candidates, %d boards", ats, i, len(candidates), len(found))
-    return found
+    log.info("%s: done, %d candidates, %d boards", ats, len(candidates), len(found))
+    return found, True
 
 
 def choose(boards: list[Board]) -> list[Board]:
@@ -209,17 +235,35 @@ def choose(boards: list[Board]) -> list[Board]:
     return sorted(out, key=lambda b: b.company.lower())
 
 
-def discover(candidates: list[Candidate], platforms: list[str], make_client: Callable[[], PoliteClient]) -> list[Board]:
-    def run(ats: str) -> list[Board]:
-        client = make_client()
+def discover(candidates: list[Candidate], platforms: list[str], make_client: Callable[[str], PoliteClient],
+             deadline: float | None = None) -> tuple[list[Board], list[str]]:
+    """All boards found, one per company, and the platforms that stopped before the end."""
+    def run(ats: str) -> tuple[list[Board], bool]:
+        client = make_client(ats)
         try:
-            return scan(ats, candidates, client)
+            return scan(ats, candidates, client, deadline)
         finally:
             client.close()
 
     with ThreadPoolExecutor(max_workers=len(platforms)) as pool:
         results = list(pool.map(run, platforms))
-    return choose([board for found in results for board in found])
+    unfinished = [ats for ats, (_, complete) in zip(platforms, results, strict=True) if not complete]
+    return choose([board for found, _ in results for board in found]), unfinished
+
+
+def carry_over(boards: list[Board], previous: list[dict], platforms: list[str]) -> list[Board]:
+    """Keep last time's boards on platforms that were cut short, for companies not found again."""
+    have = {normalise_company(b.company) for b in boards}
+    kept = [Board(**{k: p[k] for k in ("company", "ats", "token", "sector", "jobs", "origin")})
+            for p in previous if p.get("ats") in platforms and normalise_company(p["company"]) not in have]
+    return choose([*boards, *kept])
+
+
+def load_previous(path: Path) -> list[dict]:
+    try:
+        return (yaml.safe_load(path.read_text()) or {}).get("boards") or []
+    except FileNotFoundError:
+        return []
 
 
 def load_candidates(client: PoliteClient, include_yc: bool = True) -> list[Candidate]:
@@ -235,12 +279,15 @@ def load_candidates(client: PoliteClient, include_yc: bool = True) -> list[Candi
     return out
 
 
-def write_boards(boards: list[Board], path: Path, today: date, n_candidates: int) -> None:
+def write_boards(boards: list[Board], path: Path, today: date, n_candidates: int,
+                 unfinished: Iterable[str] = ()) -> None:
     by_ats = {ats: sum(1 for b in boards if b.ats == ats) for ats in ATS}
+    unfinished = list(unfinished)
     header = (
         "# Generated by `skillmap discover` — do not edit by hand (add names to candidates.yaml instead).\n"
         f"# {len(boards)} boards with open jobs, found among {n_candidates} companies on {today.isoformat()}.\n"
         f"# {', '.join(f'{ats} {n}' for ats, n in by_ats.items())}.\n"
+        + (f"# Cut short (time or rate limit), earlier boards kept: {', '.join(unfinished)}.\n" if unfinished else "")
     )
     body = yaml.safe_dump(
         {"generated": today.isoformat(), "boards": [vars(b) for b in boards]}, sort_keys=False, allow_unicode=True

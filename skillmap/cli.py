@@ -9,6 +9,7 @@ import gzip
 import json
 import logging
 import os
+import time
 from datetime import date
 from decimal import Decimal
 from pathlib import Path
@@ -24,6 +25,8 @@ ALL_SOURCES = {"boards", "adzuna", "mcf", "hn"}
 # Supabase's free plan allows 500 MB; stored text is trimmed (oldest offline postings first) past this.
 MAX_TABLE_BYTES = 420 * 1024 * 1024
 HOST_INTERVALS = {"api.smartrecruiters.com": 0.4, "hn.algolia.com": 0.5}
+# Workable answers "429 Too Many Requests" to discovery at the default pace.
+DISCOVER_INTERVALS = {"workable": 1.5}
 
 
 def open_store() -> Store:
@@ -91,6 +94,8 @@ def main(argv: list[str] | None = None) -> None:
     disc.add_argument("--limit", type=int, help="only the first N candidate companies (smoke tests)")
     disc.add_argument("--no-yc", action="store_true", help="only config/candidates.yaml")
     disc.add_argument("--interval", type=float, default=0.4, help="seconds between requests to one platform")
+    disc.add_argument("--budget", type=float, default=150.0,
+                      help="minutes before each platform stops probing and the boards found so far are written")
     disc.add_argument("--out", type=Path, default=discover.CONFIG / "boards.yaml")
     aud = sub.add_parser("audit", help="score the skill extraction against Claude on a sample; needs ANTHROPIC_API_KEY")
     aud.add_argument("--sample", type=int, default=audit.SAMPLE)
@@ -155,10 +160,20 @@ def run_discover(args: argparse.Namespace) -> None:
     finally:
         client.close()
     logging.info("probing %d companies on %s", len(candidates), ", ".join(platforms))
-    boards = discover.discover(candidates, platforms, lambda: PoliteClient(min_interval=args.interval, retries=2))
-    discover.write_boards(boards, args.out, today_utc(), len(candidates))
+    deadline = time.monotonic() + args.budget * 60
+
+    def make_client(ats: str) -> PoliteClient:
+        interval = max(args.interval, DISCOVER_INTERVALS.get(ats, 0.0))
+        return PoliteClient(min_interval=interval, retries=2, max_retry_after=30.0)
+
+    boards, unfinished = discover.discover(candidates, platforms, make_client, deadline)
+    if unfinished:
+        boards = discover.carry_over(boards, discover.load_previous(args.out), unfinished)
+    discover.write_boards(boards, args.out, today_utc(), len(candidates), unfinished)
     jobs = sum(b.jobs for b in boards)
     print(f"{len(boards)} boards with {jobs} open jobs, from {len(candidates)} companies → {args.out}")
+    if unfinished:
+        print(f"  cut short (time or rate limit), earlier boards kept: {', '.join(unfinished)}")
     for ats in discover.ATS:
         found = [b for b in boards if b.ats == ats]
         print(f"  {ats:<16} {len(found):>5} boards {sum(b.jobs for b in found):>7} jobs")

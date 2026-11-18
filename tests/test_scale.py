@@ -169,9 +169,52 @@ def test_discover_finds_boards_on_each_platform_and_keeps_the_busiest():
 
     candidates = [discover.Candidate("Acme", "ai", "curated"), discover.Candidate("Bravo", "tech", "yc"),
                   discover.Candidate("Other", "tech", "yc")]
-    boards = discover.discover(candidates, discover.ATS, lambda: client_for(handler))
+    boards, unfinished = discover.discover(candidates, discover.ATS, lambda ats: client_for(handler))
     assert [(b.company, b.ats, b.token, b.jobs) for b in boards] == [
         ("Acme", "greenhouse", "acme", 2), ("Bravo", "ashby", "bravo", 1)]
+    assert unfinished == []
+
+
+def test_scan_stops_at_the_deadline_and_keeps_what_it_found():
+    def handler(request: httpx.Request) -> httpx.Response:
+        if "postings/acme" in str(request.url):
+            return httpx.Response(200, json=[{"id": "x"}])
+        return httpx.Response(404)
+
+    ticks = iter(range(100))
+    candidates = [discover.Candidate(n, "tech", "curated") for n in ("Acme", "Bravo", "Charlie", "Delta")]
+    found, complete = discover.scan("lever", candidates, client_for(handler), deadline=1.5, clock=lambda: next(ticks))
+    assert [b.company for b in found] == ["Acme"] and not complete
+
+
+def test_scan_gives_up_on_a_platform_that_keeps_rate_limiting():
+    calls = []
+
+    def handler(request: httpx.Request) -> httpx.Response:
+        calls.append(request.url)
+        return httpx.Response(429, headers={"Retry-After": "7200"})
+
+    candidates = [discover.Candidate(f"Company {i:03d}", "tech", "yc") for i in range(500)]
+    found, complete = discover.scan("workable", candidates, client_for(handler))
+    assert found == [] and not complete and len(calls) == discover.RATE_LIMITED_GIVE_UP
+
+
+def test_retry_after_is_capped():
+    waits = []
+    client = PoliteClient(min_interval=0, retries=1, max_retry_after=30,
+                          transport=httpx.MockTransport(lambda r: httpx.Response(429, headers={"Retry-After": "7200"})))
+    client.sleep = waits.append
+    assert client.request("GET", "https://example.com/").status_code == 429
+    assert waits == [30]
+
+
+def test_cut_short_platforms_keep_earlier_boards():
+    fresh = [discover.Board("Acme", "workable", "acme", "ai", 4, "curated")]
+    previous = [{"company": "Acme", "ats": "workable", "token": "acme-old", "sector": "ai", "jobs": 9, "origin": "curated"},
+                {"company": "Bravo", "ats": "workable", "token": "bravo", "sector": "tech", "jobs": 2, "origin": "yc"},
+                {"company": "Gone", "ats": "lever", "token": "gone", "sector": "tech", "jobs": 1, "origin": "yc"}]
+    boards = discover.carry_over(fresh, previous, ["workable"])
+    assert [(b.company, b.token) for b in boards] == [("Acme", "acme"), ("Bravo", "bravo")]
 
 
 def test_write_boards_round_trips(tmp_path):
