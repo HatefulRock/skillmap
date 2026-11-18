@@ -3,7 +3,7 @@ name: audit
 # the scores to data/audit.json (the weekly refresh then shows them on the website). Costs a few
 # dollars of API usage a month. Needs the ANTHROPIC_API_KEY repository secret.
 on:
-  # Paused until the census is started: uncomment to run on schedule.
+  # Paused until the ANTHROPIC_API_KEY secret is set: uncomment to run monthly.
   # schedule:
   #   - cron: "0 14 3 * *"  # the 3rd, 22:00 Singapore time (after the monthly board discovery)
   workflow_dispatch:
