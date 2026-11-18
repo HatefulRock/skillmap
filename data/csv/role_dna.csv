@@ -1,65 +1,65 @@
 role_family,skill,share,share_elsewhere,lift
-fde,Pre-sales / solution architecture / PoCs,0.663,0.126,5.25
-fde,Spark / big data,0.194,0.081,2.4
-fde,Azure (incl. Azure OpenAI),0.234,0.108,2.16
-fde,JavaScript / Node.js,0.19,0.113,1.68
-fde,GCP / Vertex AI,0.232,0.145,1.6
-fde,Cloud (unspecified),0.274,0.222,1.24
-fde,AWS,0.269,0.22,1.22
-fde,Data pipelines / ETL,0.133,0.118,1.12
-ai_ml,TensorFlow / Keras / JAX,0.11,0.007,14.64
-ai_ml,PyTorch,0.173,0.014,12.19
-ai_ml,Deep learning,0.118,0.011,10.35
-ai_ml,Fine-tuning (SFT / LoRA / PEFT),0.116,0.017,7.0
-ai_ml,RLHF / DPO / RL,0.105,0.019,5.42
-ai_ml,MLOps / LLMOps,0.13,0.027,4.87
-ai_ml,LLM evaluation / eval harnesses,0.297,0.071,4.18
-ai_ml,Machine learning fundamentals,0.427,0.106,4.02
-data,Workflow orchestration,0.302,0.028,10.88
-data,Data pipelines / ETL,0.636,0.098,6.52
-data,Spark / big data,0.461,0.08,5.78
-data,SQL,0.711,0.224,3.17
-data,Kafka / message queues / streaming,0.233,0.081,2.89
-data,Statistics / maths,0.224,0.078,2.86
-data,Time series / anomaly detection,0.102,0.036,2.79
-data,Governance / compliance / audit,0.202,0.073,2.76
-backend,PostgreSQL / relational DBs,0.23,0.072,3.21
-backend,React / Next.js,0.221,0.076,2.89
-backend,Java / Kotlin (Spring),0.316,0.111,2.85
-backend,"NoSQL (MongoDB, DynamoDB)",0.142,0.053,2.67
-backend,Full-stack / frontend,0.333,0.129,2.59
-backend,REST / API design & integration,0.214,0.089,2.4
-backend,"Testing (pytest, unit/integration)",0.101,0.042,2.38
-backend,C++ / C#,0.263,0.111,2.36
-frontend,React / Next.js,0.562,0.104,5.38
-frontend,Full-stack / frontend,0.562,0.175,3.21
-frontend,TypeScript,0.403,0.126,3.2
-frontend,"Testing (pytest, unit/integration)",0.148,0.056,2.64
-frontend,JavaScript / Node.js,0.311,0.118,2.63
-frontend,REST / API design & integration,0.255,0.12,2.12
-frontend,Java / Kotlin (Spring),0.319,0.163,1.96
-frontend,Crypto / Web3 / blockchain,0.102,0.054,1.91
-infra,Terraform / IaC,0.359,0.075,4.77
-infra,Linux / shell,0.275,0.101,2.73
-infra,Governance / compliance / audit,0.17,0.066,2.6
-infra,Kubernetes,0.386,0.154,2.51
-infra,Go,0.284,0.131,2.17
-infra,Docker / containers,0.273,0.126,2.16
-infra,Cloud (unspecified),0.425,0.201,2.12
-infra,CI/CD,0.317,0.152,2.08
-quant,Trading / quant / markets,0.792,0.028,28.81
-quant,Statistics / maths,0.406,0.074,5.48
-quant,Crypto / Web3 / blockchain,0.204,0.05,4.06
-quant,Time series / anomaly detection,0.111,0.037,3.01
-quant,KYC / AML / fraud / risk,0.282,0.096,2.95
-quant,C++ / C#,0.421,0.145,2.9
-quant,Cost / latency optimization,0.172,0.071,2.43
-quant,Linux / shell,0.208,0.119,1.74
-other_eng,Linux / shell,0.159,0.114,1.4
-other_eng,Financial services / banking domain,0.333,0.328,1.02
-other_eng,Pre-sales / solution architecture / PoCs,0.163,0.203,0.81
-other_eng,LLM provider APIs (OpenAI / Anthropic / Gemini),0.12,0.149,0.8
-other_eng,C++ / C#,0.124,0.16,0.78
-other_eng,Microservices / distributed systems,0.186,0.248,0.75
-other_eng,Observability / tracing / monitoring,0.258,0.351,0.73
-other_eng,CI/CD,0.131,0.182,0.72
+fde,Pre-sales / solution architecture / PoCs,0.486,0.029,16.83
+fde,RAG,0.111,0.045,2.5
+fde,Spark / big data,0.184,0.085,2.18
+fde,Azure (incl. Azure OpenAI),0.223,0.117,1.9
+fde,GCP / Vertex AI,0.214,0.131,1.64
+fde,JavaScript / Node.js,0.17,0.109,1.56
+fde,Cloud (unspecified),0.377,0.25,1.51
+fde,AWS,0.369,0.267,1.38
+ai_ml,TensorFlow / Keras / JAX,0.116,0.008,14.32
+ai_ml,PyTorch,0.163,0.014,11.35
+ai_ml,Deep learning,0.143,0.015,9.78
+ai_ml,Fine-tuning (SFT / LoRA / PEFT),0.112,0.016,6.87
+ai_ml,MLOps / LLMOps,0.137,0.028,4.83
+ai_ml,Computer vision / multimodal / speech,0.151,0.037,4.11
+ai_ml,LLM evaluation / eval harnesses,0.277,0.068,4.06
+ai_ml,Machine learning fundamentals,0.455,0.117,3.89
+data,Workflow orchestration,0.269,0.026,10.36
+data,Data pipelines / ETL,0.642,0.095,6.79
+data,Spark / big data,0.473,0.081,5.85
+data,SQL,0.712,0.21,3.39
+data,Governance / compliance / audit,0.218,0.072,3.03
+data,Kafka / message queues / streaming,0.237,0.081,2.94
+data,Statistics / maths,0.225,0.084,2.68
+data,Time series / anomaly detection,0.104,0.039,2.67
+backend,PostgreSQL / relational DBs,0.227,0.067,3.41
+backend,React / Next.js,0.224,0.07,3.19
+backend,REST / API design & integration,0.217,0.084,2.59
+backend,Full-stack / frontend,0.33,0.128,2.58
+backend,"Testing (pytest, unit/integration)",0.12,0.046,2.58
+backend,TypeScript,0.217,0.089,2.44
+backend,JavaScript / Node.js,0.208,0.087,2.39
+backend,Kafka / message queues / streaming,0.154,0.065,2.37
+frontend,React / Next.js,0.531,0.098,5.45
+frontend,TypeScript,0.378,0.114,3.32
+frontend,Full-stack / frontend,0.553,0.168,3.29
+frontend,JavaScript / Node.js,0.313,0.112,2.8
+frontend,"Testing (pytest, unit/integration)",0.154,0.062,2.47
+frontend,REST / API design & integration,0.254,0.113,2.25
+frontend,"AI coding tools (Claude Code, Cursor, Copilot)",0.15,0.1,1.51
+frontend,Java / Kotlin (Spring),0.311,0.209,1.49
+infra,Terraform / IaC,0.333,0.077,4.31
+infra,Linux / shell,0.274,0.115,2.39
+infra,Kubernetes,0.335,0.143,2.34
+infra,Governance / compliance / audit,0.152,0.067,2.26
+infra,Go,0.26,0.125,2.07
+infra,Docker / containers,0.251,0.129,1.94
+infra,CI/CD,0.303,0.167,1.82
+infra,Cloud (unspecified),0.429,0.242,1.78
+quant,Trading / quant / markets,0.736,0.024,31.19
+quant,Statistics / maths,0.384,0.081,4.73
+quant,Crypto / Web3 / blockchain,0.165,0.041,4.08
+quant,KYC / AML / fraud / risk,0.299,0.1,2.99
+quant,Time series / anomaly detection,0.112,0.04,2.84
+quant,Cost / latency optimization,0.153,0.076,2.02
+quant,Financial services / banking domain,0.306,0.156,1.96
+quant,C++ / C#,0.36,0.186,1.93
+other_eng,System design / architecture,0.271,0.123,2.21
+other_eng,Linux / shell,0.185,0.122,1.51
+other_eng,C++ / C#,0.242,0.178,1.36
+other_eng,Microservices / distributed systems,0.276,0.256,1.08
+other_eng,Java / Kotlin (Spring),0.217,0.21,1.03
+other_eng,AWS,0.26,0.285,0.91
+other_eng,CI/CD,0.158,0.191,0.83
+other_eng,Cloud (unspecified),0.226,0.276,0.82

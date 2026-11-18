@@ -2,11 +2,11 @@
  {
   "date": "2026-11-18",
   "lines": [
-   "17,812 live tech postings in the last 30 days.",
-   "Rising over 90 days: Testing (pytest, unit/integration) (+2.2 pp), Governance / compliance / audit (+2.2 pp), Git (+2.1 pp).",
-   "Hiring more: Shield AI (+269), OpenAI (+118), Elastic (+92).",
-   "Median advertised pay in SG: SGD 89,700 a year, from 1,979 ads.",
-   "Median advertised pay in US: USD 220,500 a year, from 6,773 ads."
+   "22,651 live tech postings in the last 30 days (+4,839 since 2026-11-18).",
+   "Biggest moves since last week: Financial services / banking domain 16% (−16.9 pp), Pre-sales / solution architecture / PoCs 9% (−10.9 pp), Observability / tracing / monitoring 24% (−9.7 pp).",
+   "New on the radar: DNS (120 companies), SIEM (114 companies), TCP (114 companies), CA (113 companies).",
+   "Median advertised pay in SG: SGD 90,000 a year, from 1,912 ads.",
+   "Median advertised pay in US: USD 216,100 a year (-2%), from 7,370 ads."
   ]
  }
 ]

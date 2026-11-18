@@ -1,71 +1,71 @@
 skill,seniority,share
-Pre-sales / solution architecture / PoCs,junior,0.059
-Pre-sales / solution architecture / PoCs,mid,0.146
-Pre-sales / solution architecture / PoCs,senior,0.189
-Pre-sales / solution architecture / PoCs,staff,0.247
-Pre-sales / solution architecture / PoCs,manager,0.244
-AI agents / agentic workflows,junior,0.123
-AI agents / agentic workflows,mid,0.188
-AI agents / agentic workflows,senior,0.243
-AI agents / agentic workflows,staff,0.287
+AI agents / agentic workflows,junior,0.124
+AI agents / agentic workflows,mid,0.196
+AI agents / agentic workflows,senior,0.254
+AI agents / agentic workflows,staff,0.318
 AI agents / agentic workflows,manager,0.3
-Financial services / banking domain,junior,0.192
-Financial services / banking domain,mid,0.247
-Financial services / banking domain,senior,0.338
-Financial services / banking domain,staff,0.352
-Financial services / banking domain,manager,0.456
-LLMs / GenAI (general),junior,0.131
-LLMs / GenAI (general),mid,0.167
-LLMs / GenAI (general),senior,0.21
-LLMs / GenAI (general),staff,0.286
-LLMs / GenAI (general),manager,0.254
-AWS,junior,0.146
-AWS,mid,0.179
-AWS,senior,0.29
-AWS,staff,0.297
-AWS,manager,0.184
-Observability / tracing / monitoring,junior,0.226
-Observability / tracing / monitoring,mid,0.232
-Observability / tracing / monitoring,senior,0.398
-Observability / tracing / monitoring,staff,0.376
-Observability / tracing / monitoring,manager,0.324
-Microservices / distributed systems,junior,0.194
-Microservices / distributed systems,mid,0.12
-Microservices / distributed systems,senior,0.284
-Microservices / distributed systems,staff,0.328
-Microservices / distributed systems,manager,0.244
-LLM evaluation / eval harnesses,junior,0.041
-LLM evaluation / eval harnesses,mid,0.067
-LLM evaluation / eval harnesses,senior,0.091
-LLM evaluation / eval harnesses,staff,0.162
-LLM evaluation / eval harnesses,manager,0.12
-JavaScript / Node.js,junior,0.219
-JavaScript / Node.js,mid,0.14
-JavaScript / Node.js,senior,0.14
+LLMs / GenAI (general),junior,0.161
+LLMs / GenAI (general),mid,0.207
+LLMs / GenAI (general),senior,0.238
+LLMs / GenAI (general),staff,0.31
+LLMs / GenAI (general),manager,0.266
+Observability / tracing / monitoring,junior,0.166
+Observability / tracing / monitoring,mid,0.167
+Observability / tracing / monitoring,senior,0.291
+Observability / tracing / monitoring,staff,0.305
+Observability / tracing / monitoring,manager,0.227
+Microservices / distributed systems,junior,0.208
+Microservices / distributed systems,mid,0.184
+Microservices / distributed systems,senior,0.3
+Microservices / distributed systems,staff,0.344
+Microservices / distributed systems,manager,0.231
+LLM evaluation / eval harnesses,junior,0.043
+LLM evaluation / eval harnesses,mid,0.065
+LLM evaluation / eval harnesses,senior,0.095
+LLM evaluation / eval harnesses,staff,0.168
+LLM evaluation / eval harnesses,manager,0.125
+C++ / C#,junior,0.289
+C++ / C#,mid,0.208
+C++ / C#,senior,0.178
+C++ / C#,staff,0.169
+C++ / C#,manager,0.074
+Guardrails / AI safety,junior,0.033
+Guardrails / AI safety,mid,0.059
+Guardrails / AI safety,senior,0.095
+Guardrails / AI safety,staff,0.149
+Guardrails / AI safety,manager,0.142
+JavaScript / Node.js,junior,0.211
+JavaScript / Node.js,mid,0.13
+JavaScript / Node.js,senior,0.132
 JavaScript / Node.js,staff,0.099
-JavaScript / Node.js,manager,0.057
-LLM provider APIs (OpenAI / Anthropic / Gemini),junior,0.058
-LLM provider APIs (OpenAI / Anthropic / Gemini),mid,0.074
-LLM provider APIs (OpenAI / Anthropic / Gemini),senior,0.123
-LLM provider APIs (OpenAI / Anthropic / Gemini),staff,0.173
-LLM provider APIs (OpenAI / Anthropic / Gemini),manager,0.135
-Cloud (unspecified),junior,0.185
-Cloud (unspecified),mid,0.155
-Cloud (unspecified),senior,0.275
-Cloud (unspecified),staff,0.296
-Cloud (unspecified),manager,0.228
-C++ / C#,junior,0.265
-C++ / C#,mid,0.142
-C++ / C#,senior,0.164
-C++ / C#,staff,0.157
-C++ / C#,manager,0.073
-Guardrails / AI safety,junior,0.034
-Guardrails / AI safety,mid,0.042
-Guardrails / AI safety,senior,0.07
-Guardrails / AI safety,staff,0.14
-Guardrails / AI safety,manager,0.121
-Statistics / maths,junior,0.171
-Statistics / maths,mid,0.081
-Statistics / maths,senior,0.074
-Statistics / maths,staff,0.068
-Statistics / maths,manager,0.077
+JavaScript / Node.js,manager,0.053
+AWS,junior,0.18
+AWS,mid,0.253
+AWS,senior,0.344
+AWS,staff,0.287
+AWS,manager,0.192
+LLM provider APIs (OpenAI / Anthropic / Gemini),junior,0.066
+LLM provider APIs (OpenAI / Anthropic / Gemini),mid,0.066
+LLM provider APIs (OpenAI / Anthropic / Gemini),senior,0.118
+LLM provider APIs (OpenAI / Anthropic / Gemini),staff,0.17
+LLM provider APIs (OpenAI / Anthropic / Gemini),manager,0.134
+Statistics / maths,junior,0.178
+Statistics / maths,mid,0.093
+Statistics / maths,senior,0.08
+Statistics / maths,staff,0.083
+Statistics / maths,manager,0.069
+Kubernetes,junior,0.134
+Kubernetes,mid,0.12
+Kubernetes,senior,0.218
+Kubernetes,staff,0.229
+Kubernetes,manager,0.131
+Git,junior,0.149
+Git,mid,0.082
+Git,senior,0.075
+Git,staff,0.054
+Git,manager,0.021
+Financial services / banking domain,junior,0.102
+Financial services / banking domain,mid,0.131
+Financial services / banking domain,senior,0.152
+Financial services / banking domain,staff,0.193
+Financial services / banking domain,manager,0.256
