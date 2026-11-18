@@ -212,6 +212,70 @@ companies:
   ats: workday
   token: redhat.wd5/jobs
   sector: tech
+- company: Adobe
+  ats: workday
+  token: adobe.wd5/external_experienced
+  sector: tech
+- company: Intel
+  ats: workday
+  token: intel.wd1/External
+  sector: tech
+- company: HP
+  ats: workday
+  token: hp.wd5/ExternalCareerSite
+  sector: tech
+- company: Broadcom
+  ats: workday
+  token: broadcom.wd1/External_Career
+  sector: tech
+- company: Micron
+  ats: workday
+  token: micron.wd1/External
+  sector: tech
+- company: Accenture
+  ats: workday
+  token: accenture.wd103/AccentureCareers
+  sector: tech
+- company: CrowdStrike
+  ats: workday
+  token: crowdstrike.wd5/crowdstrikecareers
+  sector: tech
+- company: Zoom
+  ats: workday
+  token: zoom.wd5/Zoom
+  sector: tech
+- company: Thomson Reuters
+  ats: workday
+  token: thomsonreuters.wd5/External_Career_Site
+  sector: tech
+- company: Bank of America
+  ats: workday
+  token: ghr.wd1/Lateral-US
+  sector: fintech
+- company: Morgan Stanley
+  ats: workday
+  token: ms.wd5/External
+  sector: fintech
+- company: BlackRock
+  ats: workday
+  token: blackrock.wd1/BlackRock_Professional
+  sector: fintech
+- company: State Street
+  ats: workday
+  token: statestreet.wd1/Global
+  sector: fintech
+- company: Fidelity Investments
+  ats: workday
+  token: fmr.wd1/FidelityCareers
+  sector: fintech
+- company: AIA
+  ats: workday
+  token: aia.wd3/External
+  sector: fintech
+- company: Manulife
+  ats: workday
+  token: manulife.wd3/MFCJH_Jobs
+  sector: fintech
 # Big tech careers sites with their own public search.
 - company: Amazon
   ats: amazon

@@ -5,8 +5,11 @@ on:
   workflow_dispatch:
     inputs:
       urls:
-        description: "Space-separated URLs (GET)"
+        description: "Space-separated URLs"
         required: true
+      post_json:
+        description: "If set, POST this JSON body to each URL instead of GET (e.g. Workday job search)"
+        default: ""
 
 permissions:
   contents: read
@@ -19,10 +22,14 @@ jobs:
       - name: Fetch
         env:
           URLS: ${{ inputs.urls }}
+          POST_JSON: ${{ inputs.post_json }}
+          LIMIT: ${{ inputs.post_json && '300' || '2500' }}
         run: |
           for url in $URLS; do
             echo "=== $url"
+            extra=()
+            [ -n "$POST_JSON" ] && extra=(-X POST -H "Content-Type: application/json" --data "$POST_JSON")
             curl -sS -m 30 -A "skillmap/0.1 (+https://github.com/HatefulRock/skillmap; job-market research)" \
-              -H "Accept: application/json" -o body.txt -w "HTTP %{http_code} %{content_type}\n" "$url" || true
-            head -c 2500 body.txt; echo
+              -H "Accept: application/json" "${extra[@]}" -o body.txt -w "HTTP %{http_code} %{content_type}\n" "$url" || true
+            head -c ${LIMIT:-2500} body.txt; echo
           done

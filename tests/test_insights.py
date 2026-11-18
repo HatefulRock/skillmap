@@ -145,7 +145,7 @@ def test_csv_export_covers_every_table(tmp_path):
     data = aggregate.build(rows, TODAY, {"Python": "Languages", "PyTorch": "ML"}, 3, ratings={"Python": 4})
     json.dumps(data, default=str)
     written = exports.write_csvs(data, tmp_path)
-    assert len(written) == 13 and all((tmp_path / name).exists() for name in written)
+    assert len(written) == 15 and all((tmp_path / name).exists() for name in written)
     with (tmp_path / "skills_current.csv").open() as fh:
         current = list(csv.DictReader(fh))
     assert {r["skill"] for r in current} == {"Python", "PyTorch"}

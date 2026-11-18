@@ -14,7 +14,7 @@ from datetime import date
 from decimal import Decimal
 from pathlib import Path
 
-from . import aggregate, audit, digest, discover, exports, heatmap, watchlist
+from . import aggregate, audit, digest, discover, exports, health, heatmap, watchlist
 from .archive import from_env as open_archive
 from .extract.skills import Taxonomy
 from .http import PoliteClient
@@ -26,6 +26,7 @@ ALL_SOURCES = {"boards", "adzuna", "mcf", "hn"}
 MAX_TABLE_BYTES = 420 * 1024 * 1024
 HOST_INTERVALS = {"api.smartrecruiters.com": 0.4, "hn.algolia.com": 0.5,
                   "apply.careers.microsoft.com": 4.0}  # answers 429 after a few quick requests
+HEALTH_DAYS = 70  # earlier runs the health check compares with (about ten weekly runs)
 # Workable answers "429 Too Many Requests" to discovery at the default pace.
 DISCOVER_INTERVALS = {"workable": 1.5}
 
@@ -90,6 +91,7 @@ def main(argv: list[str] | None = None) -> None:
     run.add_argument("--hn-since", type=date.fromisoformat, help="override the HN start month")
     run.add_argument("--out", type=Path, default=Path("data"))
     run.add_argument("--readme", type=Path, help="README whose weekly section gets the new note")
+    run.add_argument("--health", type=Path, help="write problems found by the run-health check here (none: no file)")
     agg = sub.add_parser("aggregate", help="rebuild outputs from stored postings")
     agg.add_argument("--out", type=Path, default=Path("data"))
     agg.add_argument("--readme", type=Path, help="README whose weekly section gets the new note")
@@ -142,6 +144,7 @@ def main(argv: list[str] | None = None) -> None:
         unknown = sources - ALL_SOURCES
         if unknown:
             parser.error(f"unknown sources: {', '.join(sorted(unknown))}")
+        history = store.run_history(HEALTH_DAYS)  # before this run logs its own rows
         client = PoliteClient(min_interval=1.0, per_host_interval=HOST_INTERVALS)
         try:
             platforms = {p.strip() for p in (args.platforms or "").split(",") if p.strip()} or None
@@ -151,6 +154,20 @@ def main(argv: list[str] | None = None) -> None:
             client.close()
         print(report.summary())
         runs = report.as_dicts()
+        current = [{"source": r.name, "fetched": r.fetched, "error": r.error} for r in report.results]
+        # Platform totals are only comparable when this run read everything.
+        full = sources == ALL_SOURCES and not args.board_limit and not platforms
+        problems = health.check(current, history, compare_totals=full)
+        for problem in problems:
+            logging.warning("health: %s", problem)
+        if args.health:
+            clean = args.health.with_suffix(".ok")
+            args.health.unlink(missing_ok=True)
+            clean.unlink(missing_ok=True)
+            if problems:
+                args.health.write_text(health.markdown(problems, os.environ.get("RUN_URL")))
+            elif full:
+                clean.write_text("")
         archive = open_archive() if os.environ.get("DATABASE_URL") else None
         refreshed = reextract(store, taxonomy, today, archive)
         if refreshed:

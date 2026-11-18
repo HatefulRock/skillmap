@@ -80,4 +80,15 @@ def write_csvs(data: dict, out: Path) -> list[str]:
     table("companies.csv", ["company", "live_postings", "previous_window", "delta", "sector", "top_role", "top_skills"],
           ([c["name"], c["n"], c["n_before"], c["delta"], c["sector"], c["families"][0]["key"] if c["families"] else "",
             "; ".join(s["name"] for s in c["skills"])] for c in companies.get("largest", [])))
+    velocity = data.get("velocity") or {}
+    weekly = velocity.get("new_per_week") or {}
+    families = list(weekly.get("by_role") or {})
+    table("new_postings_weekly.csv", ["week", "postings", *families],
+          ([w, n, *[weekly["by_role"][f][i] for f in families]]
+           for i, (w, n) in enumerate(zip(weekly.get("weeks", []), weekly.get("n", []), strict=True))))
+    closed = (velocity.get("time_open") or {}).get("closed") or {}
+    table("days_open.csv", ["group", "key", "closed_ads", "median_days", "p25_days", "p75_days"],
+          ([group, e.get("key") or e.get("name"), e["n"], e["median"], e["p25"], e["p75"]]
+           for group, entries in (("role_family", closed.get("by_role", [])), ("skill", closed.get("by_skill", [])))
+           for e in entries))
     return written

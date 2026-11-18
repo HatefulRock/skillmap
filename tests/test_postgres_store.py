@@ -107,3 +107,14 @@ def test_purge_deletes_only_one_source():
     assert store.purge("workday") == 3
     assert {r["source"] for r in store.rows()} == {"greenhouse"}
     assert not store.finished_before("workday")
+
+
+def test_run_history_returns_recent_runs():
+    from skillmap.store import PostgresStore
+
+    store = PostgresStore(DSN)
+    store.conn.execute("truncate skillmap.postings, skillmap.runs")
+    store.log_run("lever:x", 5, 5, None)
+    store.conn.execute("insert into skillmap.runs (source, fetched, inserted, error, ran_at) "
+                       "values ('lever:old', 1, 1, null, now() - interval '200 days')")
+    assert [r["source"] for r in store.run_history(70)] == ["lever:x"]

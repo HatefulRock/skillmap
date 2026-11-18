@@ -12,7 +12,7 @@ from __future__ import annotations
 
 from collections.abc import Iterable, Iterator
 from dataclasses import asdict, fields
-from datetime import UTC, date
+from datetime import UTC, date, datetime, timedelta
 from pathlib import Path
 from typing import Protocol
 
@@ -46,6 +46,7 @@ class Store(Protocol):
     def trim_text(self, max_bytes: int) -> int: ...
     def text_locations(self, posting_ids: list[str]) -> dict[str, tuple[str | None, str | None]]: ...
     def purge(self, source: str) -> int: ...
+    def run_history(self, days: int) -> list[dict]: ...
 
 
 def _raw_from_row(row: dict) -> RawPosting:
@@ -111,13 +112,18 @@ class MemoryStore:
         return [{key: row[key] for key in POSTING_COLUMNS} for row in self.data.values()]
 
     def log_run(self, source: str, fetched: int, inserted: int, error: str | None) -> None:
-        self.runs.append({"source": source, "fetched": fetched, "inserted": inserted, "error": error})
+        self.runs.append({"source": source, "fetched": fetched, "inserted": inserted, "error": error,
+                          "ran_at": datetime.now(UTC)})
 
     def finished_before(self, source: str) -> bool:
         return any(r["source"] == source and r["error"] is None for r in self.runs)
 
     def trim_text(self, max_bytes: int) -> int:
         return 0
+
+    def run_history(self, days: int) -> list[dict]:
+        since = datetime.now(UTC) - timedelta(days=days)
+        return [r for r in self.runs if r["ran_at"] >= since]
 
     def purge(self, source: str) -> int:
         """Delete every posting and run record of one source; returns the postings deleted."""
@@ -249,6 +255,12 @@ class PostgresStore:
             "select posting_id, description, text_archive from skillmap.postings where posting_id = any(%s) "
             "and (description is not null or text_archive is not null)", (posting_ids,),
         ).fetchall()}
+
+    def run_history(self, days: int) -> list[dict]:
+        return self.conn.execute(
+            "select source, fetched, inserted, error, ran_at from skillmap.runs "
+            "where ran_at > now() - make_interval(days => %s) order by ran_at", (days,),
+        ).fetchall()
 
     def purge(self, source: str) -> int:
         """Delete every posting and run record of one source in one transaction; returns the postings deleted."""

@@ -24,6 +24,7 @@ from .sources import (
     ashby,
     greenhouse,
     hn,
+    jsonld,
     lever,
     mcf,
     microsoft,
@@ -36,9 +37,10 @@ from .store import Store
 log = logging.getLogger("skillmap")
 CONFIG = Path(__file__).resolve().parents[1] / "config"
 BOARDS = {"greenhouse": greenhouse, "lever": lever, "ashby": ashby, "workable": workable,
-          "smartrecruiters": smartrecruiters, "workday": workday, "amazon": amazon, "microsoft": microsoft}
+          "smartrecruiters": smartrecruiters, "workday": workday, "amazon": amazon, "microsoft": microsoft,
+          "jsonld": jsonld}
 # Platforms whose list gives no text: their collectors fetch text only for postings not stored yet.
-NEEDS_KNOWN = {"smartrecruiters", "workday", "microsoft"}
+NEEDS_KNOWN = {"smartrecruiters", "workday", "microsoft", "jsonld"}
 
 
 # After this many boards in a row on one platform fail with "429 Too Many Requests", the rest of
@@ -173,6 +175,8 @@ def collect(store: Store, client: PoliteClient, taxonomy: Taxonomy, today: date,
                 continue
             module = BOARDS[ats]
             extra = {"known": known[ats]} if ats in known else {}
+            if board.get("links"):
+                extra["links"] = board["links"]
             _ingest(store, taxonomy, today, f"{board['ats']}:{board['token']}",
                     lambda b=board, m=module, x=extra: m.collect(client, b["token"], b["company"], b.get("sector"),
                                                                  b.get("region"), **x),
