@@ -8,6 +8,7 @@
 # found, which is reported in the discovery summary.
 
 ai:
+  - Pantheon Lab
   - Anthropic
   - OpenAI
   - Cohere
@@ -144,6 +145,23 @@ ai:
   - Rasa
   - Deepgram
   - AssemblyAI
+  # Banks, exchanges and Asia employers (most hire on Workday or their own sites and won't be found)
+  - Reka AI
+  - Plaud
+  - Tomoro AI
+  - HappyRobot
+  - Airkit
+  - Singtel
+  - H2O.ai
+  - Praxis Intelligence
+  - Resaro
+  - Aidentifi
+  - Votee AI
+  - Exa AI
+  - Akro AI
+  - Dynamo AI
+  - Retell AI
+  - MiAO AI
 
 crypto:
   - Coinbase
@@ -247,6 +265,20 @@ crypto:
   - Wormhole
   - LayerZero Labs
   - Axelar
+  # Banks, exchanges and Asia employers (most hire on Workday or their own sites and won't be found)
+  - CoinMarketCap
+  - RedotPay
+  - Bitdeer
+  - Gate.io
+  - BIT
+  - ParallelChain Lab
+  - Bitget
+  - SynFutures
+  - FCC Analytics
+  - Hermeneutic Investments
+  - Bullish
+  - APEING
+  - BTSE
 
 fintech:
   - Stripe
@@ -359,6 +391,57 @@ fintech:
   - Nomura
   - Societe Generale
   - Revolut Business
+  # Banks, exchanges and Asia employers (most hire on Workday or their own sites and won't be found)
+  - BJAK
+  - Deutsche Bank
+  - Julius Baer
+  - DBS
+  - OCBC
+  - UOB
+  - Arrowpoint
+  - Meridian Saturn Capital
+  - LGT Private Banking
+  - Fooyo
+  - RegASK
+  - FundPark
+  - ATTIX APAC
+  - UBS
+  - PayPal
+  - Visa
+  - Mastercard
+  - ADVANCE.AI / Atome
+  - Tookitaki
+  - Monee
+  - Bank of East Asia
+  - FintruX
+  - J&D Holdings
+  - Golden Horse Fund Management
+  - GIC
+  - Standard Chartered
+  - HSBC
+  - BNP Paribas
+  - "Cr\xE9dit Agricole CIB"
+  - Barclays
+  - Citi
+  - Goldman Sachs
+  - MUFG
+  - Kredivo Group
+  - DV Trading
+  - Tradeweb
+  - WeLab Bank
+  - JPMorgan
+  - Bank of China
+  - Grab Financial Group
+  - Jain Global
+  - "Soci\xE9t\xE9 G\xE9n\xE9rale"
+  - Natixis CIB
+  - AXA
+  - HeyMax
+  - Capital One
+  - Lombard Odier
+  - Pictet
+  - EFG International
+  - Bank J. Safra Sarasin
 
 tech:
   - Shopee
@@ -485,3 +568,9 @@ tech:
   - Kaggle
   - Toptal
   - Andela
+  # Banks, exchanges and Asia employers (most hire on Workday or their own sites and won't be found)
+  - Ebb & Flow Group
+  - Toku
+  - Omio
+  - Google Cloud
+  - BCG X
