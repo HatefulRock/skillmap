@@ -63,7 +63,7 @@ def parse(job: dict, token: str, company: str, sector: str | None, today: date, 
     return RawPosting(
         source="workday",
         native_id=native_id(tenant, job),
-        company=dig(detail, "hiringOrganization", "name", default=None) or company,
+        company=company,  # hiringOrganization is a legal entity ("2100 NVIDIA USA"), not the brand
         title=info.get("title") or job.get("title", ""),
         description=info.get("jobDescription") or "",
         url=info.get("externalUrl") or f"https://{host}/{site}{job.get('externalPath', '')}",

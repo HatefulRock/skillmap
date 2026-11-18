@@ -57,7 +57,7 @@ def test_workday_fetches_text_only_for_new_tech_postings():
     assert [p.native_id for p in out] == ["db:R1", "db:R2", "db:R3"]
     assert len(details) == 1 and bodies[0] == {"appliedFacets": {}, "limit": 20, "offset": 0, "searchText": ""}
     ml, rm, de = out
-    assert (ml.company, ml.description, ml.country_hint, ml.posted_on) == ("Deutsche Bank AG", "<p>PyTorch and Python</p>",
+    assert (ml.company, ml.description, ml.country_hint, ml.posted_on) == ("Deutsche Bank", "<p>PyTorch and Python</p>",
                                                                           "SG", date(2026, 11, 10))
     assert (rm.location, rm.description, rm.posted_on, rm.company) == ("", "", date(2026, 11, 15), "Deutsche Bank")
     assert rm.url == "https://db.wd3.myworkdayjobs.com/DBWebsite/job/Singapore/Relationship-Manager_R2"
