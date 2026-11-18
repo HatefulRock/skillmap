@@ -2,7 +2,7 @@
 
 Every Monday at 02:00 Singapore time, the refresh workflow republishes this folder. Don't edit it by hand.
 
-It answers questions like these. Which skills do AI/ML, forward-deployed and Python job ads ask for? How is that changing? What does the work pay? The data comes from public job boards (Greenhouse, Lever, Ashby, Workable), Workday career sites of banks and large employers, Amazon's careers site, MyCareersFuture, Adzuna and the Hacker News "Who is hiring" threads. How the posts are found and categorised is in the [top-level README](../README.md).
+It answers questions like these. Which skills do AI/ML, forward-deployed and Python job ads ask for? How is that changing? What does the work pay? The data comes from public job boards (Greenhouse, Lever, Ashby, Workable), Workday career sites of banks and large employers, Amazon's and Microsoft's careers sites, MyCareersFuture, Adzuna and the Hacker News "Who is hiring" threads. How the posts are found and categorised is in the [top-level README](../README.md).
 
 ## Files
 

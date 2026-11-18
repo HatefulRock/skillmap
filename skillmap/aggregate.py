@@ -15,7 +15,7 @@ from statistics import median, quantiles
 
 from .extract import roles, salary, sector
 
-SOURCE_PRIORITY = ["greenhouse", "lever", "ashby", "workable", "smartrecruiters", "workday", "amazon", "microsoft", "mcf", "adzuna"]  # who wins a duplicate
+SOURCE_PRIORITY = ["greenhouse", "lever", "ashby", "workable", "smartrecruiters", "workday", "amazon", "microsoft", "jsonld", "mcf", "adzuna"]  # who wins a duplicate
 MIN_GROUP = 30
 CURRENT_DAYS = 30
 SEGMENT_DAYS = 90

@@ -95,9 +95,10 @@ Only sources that publish postings for programmatic reading are used:
 | Source | What it adds | Access |
 |---|---|---|
 | Greenhouse, Lever, Ashby, Workable (SmartRecruiters opt-in: its API host's robots.txt disallows crawlers) | Full postings from ~1,000 companies (`config/boards.yaml`, `config/companies.yaml`) | Public job-board APIs that the companies publish themselves |
-| Workday career sites | Banks and large employers listed in `config/companies.yaml` (text for new technical postings only, up to 150 a site per run) | The JSON each company's own careers page loads |
+| Workday career sites | About 30 banks, insurers and large tech employers listed in `config/companies.yaml` (text for new technical postings only, up to 150 a site per run) | The JSON each company's own careers page loads |
 | Amazon (amazon.jobs) | Technical job categories, newest 3,000 a run | The JSON Amazon's careers site loads |
 | Microsoft (apply.careers.microsoft.com) | Technical searches, newest first; text for new technical postings only | The JSON Microsoft's careers site loads (`/api/pcsx`, allowed by its robots.txt) |
+| Other careers sites (`ats: jsonld`) | Companies with their own site, listed with a listing page or sitemap (`token`) and a job-link pattern (`links`); up to 150 new job pages a site per run | The schema.org `JobPosting` markup each job page carries for search engines; robots.txt is honoured |
 
 Google, Apple and Meta are left out: Google's careers results exist only inside page HTML, Apple's search needs a session token, and Meta's robots.txt forbids automated collection.
 | [Adzuna](https://developer.adzuna.com/) | Broad market in Singapore, the UK and the US | Free API key; "Job data: The Adzuna API". Descriptions are snippets, so its skill counts are a lower bound |
@@ -127,7 +128,10 @@ The first run backfills every HN thread since 2011 and the last 60 days of MyCar
 later runs only fetch what is new. Both workflows can also be started by hand: `refresh` with
 a subset of sources, a board limit or a dry run; `discover` with a candidate limit. `purge`
 (manual only) deletes every stored posting of one source after a collector bug, asking for the
-source name twice; the next refresh collects it again.
+source name twice; the next refresh collects it again. After each run, a problem the run-health
+check finds (a platform fetching less than half its usual count, a source failing, or a board
+failing three runs in a row) opens or updates a `run-health` issue; the next clean full run
+closes it.
 
 ```sh
 uv run skillmap discover --no-yc --limit 50     # probe the first 50 curated names
