@@ -92,3 +92,18 @@ def test_archive_and_reextract_from_postgres(tmp_path):
     assert reextract(store, TAX, day, archive) == 7
     rows = store.conn.execute("select skills, n_words, min_years, degree from skillmap.postings").fetchall()
     assert all(r["skills"] == ["Python", "RAG"] and r["n_words"] == 3 for r in rows)
+
+
+def test_purge_deletes_only_one_source():
+    from skillmap.store import PostgresStore
+
+    store = PostgresStore(DSN)
+    store.conn.execute("truncate skillmap.postings, skillmap.runs")
+    day = date(2026, 11, 10)
+    store.save([(normalise(raw(i, s), TAX, day), raw(i, s)) for s in ("greenhouse", "workday") for i in range(3)],
+               TAX.version)
+    store.log_run("workday:db", 3, 3, None)
+    store.log_run("workday", 3, 3, None)
+    assert store.purge("workday") == 3
+    assert {r["source"] for r in store.rows()} == {"greenhouse"}
+    assert not store.finished_before("workday")

@@ -1,0 +1,34 @@
+name: purge
+# Manual maintenance: delete every stored posting (and run record) of one source, e.g. after a
+# collector bug stored wrong rows. The next refresh collects that source again from scratch.
+on:
+  workflow_dispatch:
+    inputs:
+      source:
+        description: "Source to delete (e.g. workday)"
+        required: true
+      confirm:
+        description: "Type the source name again to confirm"
+        required: true
+
+permissions:
+  contents: read
+
+concurrency:
+  group: refresh  # never while a refresh is writing
+  cancel-in-progress: false
+
+jobs:
+  purge:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+      - run: uv sync --locked --no-dev
+      - name: Delete
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+          SOURCE: ${{ inputs.source }}
+          CONFIRM: ${{ inputs.confirm }}
+        run: uv run skillmap purge --source "$SOURCE" --confirm "$CONFIRM"

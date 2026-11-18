@@ -125,7 +125,9 @@ Repository secrets used by `.github/workflows/refresh.yml`:
 
 The first run backfills every HN thread since 2011 and the last 60 days of MyCareersFuture;
 later runs only fetch what is new. Both workflows can also be started by hand: `refresh` with
-a subset of sources, a board limit or a dry run; `discover` with a candidate limit.
+a subset of sources, a board limit or a dry run; `discover` with a candidate limit. `purge`
+(manual only) deletes every stored posting of one source after a collector bug, asking for the
+source name twice; the next refresh collects it again.
 
 ```sh
 uv run skillmap discover --no-yc --limit 50     # probe the first 50 curated names
@@ -136,8 +138,9 @@ Tests that need Postgres run when `SKILLMAP_TEST_DATABASE_URL` is set; CI provid
 ## Known limits
 
 - Company boards cover companies whose careers pages run on those platforms: mostly
-  startups and scale-ups, US-heavy through Y Combinator. Big employers on Workday or in-house
-  systems are missing; MyCareersFuture (and Adzuna, with a key) cover them for Singapore.
+  startups and scale-ups, US-heavy through Y Combinator. Big employers are covered only where
+  listed in `config/companies.yaml` (Workday sites, Amazon, Microsoft); others on in-house
+  systems are missing, though MyCareersFuture (and Adzuna, with a key) cover them for Singapore.
 - Pay is only what ads state. US ads state it far more often (by law) than Asian ones, so
   per-country figures rest on very different sample sizes; each figure carries its count.
 - HN posters are mostly startups and skew remote and US. That series is shown separately and

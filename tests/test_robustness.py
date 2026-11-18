@@ -80,3 +80,28 @@ def test_a_backfill_cut_short_is_redone_next_run():
     assert not store.finished_before("hn")
     store.log_run("hn", 900, 400, None)
     assert store.finished_before("hn") and not store.finished_before("mcf")
+
+
+def test_purge_removes_one_source_and_its_runs():
+    store = MemoryStore()
+    collect_rows = [("workday", "1"), ("workday", "2"), ("greenhouse", "1")]
+    for source, nid in collect_rows:
+        store.data[f"{source}:{nid}"] = {"source": source}
+    store.log_run("workday:db.wd3/DBWebsite", 2, 2, None)
+    store.log_run("greenhouse", 1, 1, None)
+    assert store.purge("workday") == 2
+    assert list(store.data) == ["greenhouse:1"]
+    assert store.runs == [{"source": "greenhouse", "fetched": 1, "inserted": 1, "error": None}]
+
+
+def test_purge_command_refuses_without_a_matching_confirmation(monkeypatch, capsys):
+    import pytest
+
+    from skillmap import cli
+
+    monkeypatch.setenv("DATABASE_URL", "")
+    for argv in (["purge", "--source", "workday", "--confirm", "greenhouse"],
+                 ["purge", "--source", "nope", "--confirm", "nope"],
+                 ["purge", "--source", "workday", "--confirm", "workday"]):  # no database configured
+        with pytest.raises(SystemExit):
+            cli.main(argv)
