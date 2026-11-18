@@ -108,3 +108,17 @@ def test_roles(title, expected):
 ])
 def test_location(text, hint, expected):
     assert location.normalise(text, hint) == expected
+
+
+def test_benefits_and_generic_monitoring_are_not_skills():
+    tax = Taxonomy.load()
+
+    def found(text):
+        required, nice = tax.extract("Engineer", text)
+        return set(required) | set(nice)
+
+    assert not found("Benefits: health insurance, dental and vision insurance, 401k.")
+    assert "Financial services / banking domain" in found("We build software for the insurance industry.")
+    assert not found("Monitoring of patient outcomes.")
+    assert "Observability / tracing / monitoring" in found("Experience with monitoring and alerting.")
+    assert "Observability / tracing / monitoring" not in found("Own transaction monitoring for AML.")

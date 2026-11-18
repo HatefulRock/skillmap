@@ -42,6 +42,7 @@ class Store(Protocol):
     def update_extraction(self, postings: list[Posting], taxonomy_version: int) -> None: ...
     def rows(self) -> list[dict]: ...
     def log_run(self, source: str, fetched: int, inserted: int, error: str | None) -> None: ...
+    def finished_before(self, source: str) -> bool: ...
     def trim_text(self, max_bytes: int) -> int: ...
     def text_locations(self, posting_ids: list[str]) -> dict[str, tuple[str | None, str | None]]: ...
 
@@ -110,6 +111,9 @@ class MemoryStore:
 
     def log_run(self, source: str, fetched: int, inserted: int, error: str | None) -> None:
         self.runs.append({"source": source, "fetched": fetched, "inserted": inserted, "error": error})
+
+    def finished_before(self, source: str) -> bool:
+        return any(r["source"] == source and r["error"] is None for r in self.runs)
 
     def trim_text(self, max_bytes: int) -> int:
         return 0
@@ -222,6 +226,13 @@ class PostgresStore:
             "insert into skillmap.runs (source, fetched, inserted, error) values (%s, %s, %s, %s)",
             (source, fetched, inserted, error),
         )
+
+    def finished_before(self, source: str) -> bool:
+        """Whether a run of this source ever completed without error (a backfill cut short
+        by time or a failure has not, so the next run reads the full window again)."""
+        return self.conn.execute(
+            "select exists (select 1 from skillmap.runs where source = %s and error is null) as done", (source,),
+        ).fetchone()["done"]
 
     def text_locations(self, posting_ids: list[str]) -> dict[str, tuple[str | None, str | None]]:
         """(text still in the store, archive file holding it) for each posting that has either."""

@@ -142,3 +142,78 @@ companies:
   ats: workable
   token: moomoo
   sector: fintech
+# Workday career sites: token is `<tenant>.<wdN>/<site>` from the careers URL
+# (https://db.wd3.myworkdayjobs.com/DBWebsite → db.wd3/DBWebsite). Banks and large employers.
+- company: Deutsche Bank
+  ats: workday
+  token: db.wd3/DBWebsite
+  sector: fintech
+- company: Citi
+  ats: workday
+  token: citi.wd5/2
+  sector: fintech
+- company: Barclays
+  ats: workday
+  token: barclays.wd3/External_Career_Site_Barclays
+  sector: fintech
+- company: Julius Baer
+  ats: workday
+  token: juliusbaer.wd3/External
+  sector: fintech
+- company: MUFG
+  ats: workday
+  token: mufgub.wd3/MUFG-Careers
+  sector: fintech
+- company: OCBC
+  ats: workday
+  token: ocbc.wd102/External
+  sector: fintech
+- company: UOB
+  ats: workday
+  token: uobgroup.wd3/UOBExternal
+  sector: fintech
+- company: GXS Bank
+  ats: workday
+  token: gxs.wd3/GX_Bank
+  sector: fintech
+- company: Capital One
+  ats: workday
+  token: capitalone.wd12/Capital_One
+  sector: fintech
+- company: Mastercard
+  ats: workday
+  token: mastercard.wd1/CorporateCareers
+  sector: fintech
+- company: Visa
+  ats: workday
+  token: visa.wd5/Visa
+  sector: fintech
+- company: PayPal
+  ats: workday
+  token: paypal.wd1/jobs
+  sector: fintech
+- company: HKEX
+  ats: workday
+  token: hkex.wd3/HKEXCareerPage
+  sector: fintech
+- company: NVIDIA
+  ats: workday
+  token: nvidia.wd5/NVIDIAExternalCareerSite
+  sector: ai
+- company: Salesforce
+  ats: workday
+  token: salesforce.wd12/External_Career_Site
+  sector: tech
+- company: Workday
+  ats: workday
+  token: workday.wd5/Workday
+  sector: tech
+- company: Red Hat
+  ats: workday
+  token: redhat.wd5/jobs
+  sector: tech
+# Big tech careers sites with their own public search.
+- company: Amazon
+  ats: amazon
+  token: amazon
+  sector: tech

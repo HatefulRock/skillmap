@@ -4,11 +4,13 @@ from __future__ import annotations
 
 import logging
 import os
+import time
 from collections.abc import Callable, Iterable
 from dataclasses import dataclass, field
 from datetime import date, timedelta
 from pathlib import Path
 
+import httpx
 import yaml
 
 from .archive import Archive, pack, unpack
@@ -16,13 +18,20 @@ from .extract.skills import Taxonomy
 from .http import PoliteClient
 from .models import RawPosting, normalise_company
 from .normalise import normalise
-from .sources import adzuna, ashby, greenhouse, hn, lever, mcf, smartrecruiters, workable
+from .sources import adzuna, amazon, ashby, greenhouse, hn, lever, mcf, smartrecruiters, workable, workday
 from .store import Store
 
 log = logging.getLogger("skillmap")
 CONFIG = Path(__file__).resolve().parents[1] / "config"
 BOARDS = {"greenhouse": greenhouse, "lever": lever, "ashby": ashby, "workable": workable,
-          "smartrecruiters": smartrecruiters}
+          "smartrecruiters": smartrecruiters, "workday": workday, "amazon": amazon}
+# Platforms whose list gives no text: their collectors fetch text only for postings not stored yet.
+NEEDS_KNOWN = {"smartrecruiters", "workday"}
+
+
+# After this many boards in a row on one platform fail with "429 Too Many Requests", the rest of
+# that platform's boards are skipped for this run instead of each waiting out its retries.
+RATE_LIMITED_BOARDS = 5
 
 
 @dataclass
@@ -31,6 +40,18 @@ class SourceResult:
     fetched: int = 0
     inserted: int = 0
     error: str | None = None
+    rate_limited: bool = False
+
+
+@dataclass
+class Budget:
+    """When collection must stop so the run still has time to aggregate and publish. A source
+    cut short keeps what it saved; the next run picks up the rest."""
+    deadline: float | None = None
+    clock: Callable[[], float] = time.monotonic
+
+    def spent(self) -> bool:
+        return self.deadline is not None and self.clock() > self.deadline
 
 
 @dataclass
@@ -63,7 +84,7 @@ class RunReport:
         return [r.name for r in self.results if r.error and r.name.split(":", 1)[0] in BOARDS]
 
     def as_dicts(self) -> list[dict]:
-        return [vars(r) for r in self.grouped()]
+        return [{k: v for k, v in vars(r).items() if k != "rate_limited"} for r in self.grouped()]
 
     def summary(self) -> str:
         lines = [f"{'source':<32} {'fetched':>8} {'new':>8}  error"]
@@ -93,41 +114,60 @@ def load_boards() -> list[dict]:
 
 
 def _ingest(store: Store, taxonomy: Taxonomy, today: date, name: str, produce: Callable[[], Iterable[RawPosting]],
-            report: RunReport) -> None:
+            report: RunReport, budget: Budget | None = None) -> None:
     result = SourceResult(name)
     batch = []
+    budget = budget or Budget()
     try:
-        for raw in produce():
-            result.fetched += 1
-            batch.append((normalise(raw, taxonomy, today), raw))
-            if len(batch) >= 1000:
-                result.inserted += store.save(batch, taxonomy.version)
-                batch = []
+        if budget.spent():
+            result.error = "skipped: out of time this run"
+        else:
+            for raw in produce():
+                result.fetched += 1
+                batch.append((normalise(raw, taxonomy, today), raw))
+                if len(batch) >= 1000:
+                    result.inserted += store.save(batch, taxonomy.version)
+                    batch = []
+                if result.fetched % 100 == 0 and budget.spent():
+                    result.error = "stopped: out of time this run (the rest is read next run)"
+                    break
     except Exception as exc:  # one broken source must not sink the run
         result.error = f"{type(exc).__name__}: {str(exc)[:160]}"
+        result.rate_limited = isinstance(exc, httpx.HTTPStatusError) and exc.response.status_code == 429
         log.warning("source %s failed: %s", name, result.error)
     finally:
         if batch:
             result.inserted += store.save(batch, taxonomy.version)
     store.log_run(name, result.fetched, result.inserted, result.error)
     report.results.append(result)
-    log.info("%s: fetched %d, new %d", name, result.fetched, result.inserted)
+    log.info("%s: fetched %d, new %d%s", name, result.fetched, result.inserted,
+             f" ({result.error})" if result.error else "")
 
 
 def collect(store: Store, client: PoliteClient, taxonomy: Taxonomy, today: date, sources: set[str],
-            board_limit: int | None = None, hn_since: date | None = None) -> RunReport:
+            board_limit: int | None = None, hn_since: date | None = None,
+            platforms: set[str] | None = None, budget: Budget | None = None) -> RunReport:
     report = RunReport()
+    budget = budget or Budget()
 
     if "boards" in sources:
-        boards = load_boards()[:board_limit]
-        sr_known = store.known_ids("smartrecruiters") if any(b["ats"] == "smartrecruiters" for b in boards) else set()
+        boards = [b for b in load_boards() if not platforms or b["ats"] in platforms][:board_limit]
+        known = {ats: store.known_ids(ats) for ats in NEEDS_KNOWN if any(b["ats"] == ats for b in boards)}
+        limited: dict[str, int] = {}  # boards in a row rate-limited, per platform
         for board in boards:
-            module = BOARDS[board["ats"]]
-            extra = {"known": sr_known} if board["ats"] == "smartrecruiters" else {}
+            ats = board["ats"]
+            if limited.get(ats, 0) >= RATE_LIMITED_BOARDS:
+                report.results.append(SourceResult(f"{ats}:{board['token']}", error="skipped: platform rate-limiting"))
+                continue
+            module = BOARDS[ats]
+            extra = {"known": known[ats]} if ats in known else {}
             _ingest(store, taxonomy, today, f"{board['ats']}:{board['token']}",
                     lambda b=board, m=module, x=extra: m.collect(client, b["token"], b["company"], b.get("sector"),
                                                                  b.get("region"), **x),
-                    report)
+                    report, budget)
+            limited[ats] = limited.get(ats, 0) + 1 if report.results[-1].rate_limited else 0
+            if limited[ats] == RATE_LIMITED_BOARDS:
+                log.warning("%s keeps answering 429: skipping its remaining boards this run", ats)
 
     settings = load_yaml("sources.yaml")
     if "adzuna" in sources:
@@ -138,24 +178,25 @@ def collect(store: Store, client: PoliteClient, taxonomy: Taxonomy, today: date,
                 _ingest(store, taxonomy, today, f"adzuna:{country}",
                         lambda c=country: adzuna.collect(client, app_id, app_key, c, cfg["queries"], cfg["max_days_old"],
                                                          cfg["max_pages"]),
-                        report)
+                        report, budget)
         else:
             report.results.append(SourceResult("adzuna", error="skipped: ADZUNA_APP_ID / ADZUNA_APP_KEY not set"))
 
     if "mcf" in sources:
         cfg = settings["mcf"]
         known = store.known_ids("mcf")
-        # First run: last 60 days. After that: the week since the last run, with a few days' slack.
-        since = today - timedelta(days=60 if not known else 10)
+        # Until one run has finished: the last 60 days. After that: the week since the last run,
+        # with a few days' slack.
+        since = today - timedelta(days=10 if store.finished_before("mcf") else 60)
         _ingest(store, taxonomy, today, "mcf",
-                lambda: mcf.collect(client, cfg["queries"], since, cfg["max_pages"], known), report)
+                lambda: mcf.collect(client, cfg["queries"], since, cfg["max_pages"], known), report, budget)
 
     if "hn" in sources:
         if hn_since is None:
-            has_history = bool(store.known_ids("hn"))
+            has_history = store.finished_before("hn")  # a backfill cut short is redone
             hn_since = (today - timedelta(days=40)) if has_history else date.fromisoformat(
                 str(settings["hn"]["backfill_from"]))
-        _ingest(store, taxonomy, today, "hn", lambda: hn.collect(client, hn_since), report)
+        _ingest(store, taxonomy, today, "hn", lambda: hn.collect(client, hn_since), report, budget)
 
     return report
 

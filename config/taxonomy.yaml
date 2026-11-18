@@ -8,7 +8,7 @@
 #
 # Bump `version` whenever a pattern (or any other extractor, e.g. salary) changes: stored
 # postings are re-extracted on the next run.
-version: 3  # v2: salary from text. v3: ad length, years, unknown terms, degree, visa, equity
+version: 4  # v2: salary from text. v3: ad length, years, unknown terms, degree, visa, equity. v4: no benefits/monitoring false positives
 
 skills:
   # ---------- Languages ----------
@@ -135,7 +135,12 @@ skills:
     patterns: ['\bprompt injections?\b', '\bjailbreaks?\b', '\bowasp (?:top 10 )?(?:for )?llm\b', '\bai security\b', '\bllm security\b']
   Observability / tracing / monitoring:
     category: Eval, safety & observability
-    patterns: ['\bobservability\b', '\bopentelemetry\b', '\bprometheus\b', '\bgrafana\b', '\bdatadog\b', '\bdistributed tracing\b', '\bmonitoring\b']
+    # Bare "monitoring" also matched transaction, patient and brand monitoring.
+    patterns: ['\bobservability\b', '\bopentelemetry\b', '\bprometheus\b', '\bgrafana\b', '\bdatadog\b', '\bdistributed tracing\b',
+               '\bsplunk\b', '\bnew relic\b',
+               '\b(?:application|systems?|infrastructure|production|performance|service|server|network|cloud|model) monitoring\b',
+               '\bmonitoring(?:,| and| &| /|/) ?(?:alerting|logging|observability|tracing)\b',
+               '\b(?:logging|alerting)(?:,| and| &| /|/) ?monitoring\b', '\bmonitoring (?:tools?|systems?|stack|dashboards?)\b']
   LLM tracing tools (Langfuse / LangSmith / Arize):
     category: Eval, safety & observability
     patterns: ['\blangfuse\b', '\blangsmith\b', '\barize\b', '\bphoenix\b(?= (?:tracing|arize))', '\bweights (?:&|and) biases\b', '\bwandb\b', '\bhelicone\b', '\bbraintrust\b']
@@ -293,7 +298,11 @@ skills:
   # ---------- Domain ----------
   Financial services / banking domain:
     category: Domain
-    patterns: ['\bfinancial services\b', '\bbanking\b', '\bwealth management\b', '\binsurance\b', '\bcapital markets\b', '\bfintech\b']
+    # Bare "insurance" matched every US benefits list (health, dental, life insurance).
+    patterns: ['\bfinancial services\b', '\bbanking\b', '\bwealth management\b', '\binsurtech\b', '\bcapital markets\b', '\bfintech\b',
+               '\binsurance (?:industry|compan(?:y|ies)|carriers?|sector|clients|customers|products|domain|technology|claims|underwriting)\b',
+               '\b(?:insurers|reinsurance|underwriting)\b']
+    not: ['\b(?:health|medical|dental|vision|life|disability|pet|travel) insurance\b', '\binsurance (?:coverage|plans?|benefits?|premiums?)\b']
   Payments:
     category: Domain
     patterns: ['\bpayments?\b(?= (?:systems?|infrastructure|platforms?|processing|industry|rails|domain))', '\bcard (?:issuing|acquiring|networks?)\b', '\bremittance\b', '\bcross-border payments?\b', '\bstablecoin payments?\b']

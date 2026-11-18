@@ -1,0 +1,28 @@
+name: probe
+# Manual: fetch a few public URLs from a GitHub runner and print the status and the start of
+# each response. Used to check a careers site's JSON before writing a collector for it.
+on:
+  workflow_dispatch:
+    inputs:
+      urls:
+        description: "Space-separated URLs (GET)"
+        required: true
+
+permissions:
+  contents: read
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Fetch
+        env:
+          URLS: ${{ inputs.urls }}
+        run: |
+          for url in $URLS; do
+            echo "=== $url"
+            curl -sS -m 30 -A "skillmap/0.1 (+https://github.com/HatefulRock/skillmap; job-market research)" \
+              -H "Accept: application/json" -o body.txt -w "HTTP %{http_code} %{content_type}\n" "$url" || true
+            head -c 2500 body.txt; echo
+          done

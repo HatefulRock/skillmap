@@ -13,6 +13,9 @@ on:
       board_limit:
         description: "Only the first N company boards (smoke test); empty for all"
         default: ""
+      platforms:
+        description: "Only company boards on these platforms, e.g. workday,amazon; empty for all"
+        default: ""
       hn_since:
         description: "Re-read HN threads from this date (YYYY-MM-DD); empty for automatic"
         default: ""
@@ -22,7 +25,8 @@ on:
         default: false
 
 concurrency:
-  group: refresh
+  # A dry run writes nothing, so it need not wait for (or hold up) a real run.
+  group: ${{ inputs.dry_run && 'refresh-dry-run' || 'refresh' }}
   cancel-in-progress: false
 
 permissions:
@@ -31,7 +35,9 @@ permissions:
 jobs:
   refresh:
     runs-on: ubuntu-latest
-    timeout-minutes: 340  # the first run backfills ~1,000 boards and HN since 2011
+    # Collecting stops after 270 minutes (`--budget`), leaving time to extract, aggregate and publish
+    # what was read; anything cut short is read on the next run.
+    timeout-minutes: 340
     env:
       DATABASE_URL: ${{ secrets.DATABASE_URL }}
       ADZUNA_APP_ID: ${{ secrets.ADZUNA_APP_ID }}
@@ -55,10 +61,13 @@ jobs:
 
       - name: Collect, extract, aggregate
         env:
-          DATABASE_URL: ${{ inputs.dry_run && '' || secrets.DATABASE_URL }}
+          # `a && '' || b` always gives b in Actions ('' is falsy), so the condition is the other way round.
+          DATABASE_URL: ${{ !inputs.dry_run && secrets.DATABASE_URL || '' }}
+          SUPABASE_SECRET_KEY: ${{ !inputs.dry_run && secrets.SUPABASE_SECRET_KEY || '' }}
         run: |
           args=(--sources "${{ inputs.sources || 'boards,adzuna,mcf,hn' }}" --out data --readme README.md)
           [ -n "${{ inputs.board_limit }}" ] && args+=(--board-limit "${{ inputs.board_limit }}")
+          [ -n "${{ inputs.platforms }}" ] && args+=(--platforms "${{ inputs.platforms }}")
           [ -n "${{ inputs.hn_since }}" ] && args+=(--hn-since "${{ inputs.hn_since }}")
           uv run skillmap run "${args[@]}" | tee run-summary.txt
           { echo '```'; cat run-summary.txt; echo '```'; } >> "$GITHUB_STEP_SUMMARY"
