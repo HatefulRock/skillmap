@@ -1,0 +1,7 @@
+**Week of 2026-11-18**
+
+- 17,812 live tech postings in the last 30 days.
+- Rising over 90 days: Testing (pytest, unit/integration) (+2.2 pp), Governance / compliance / audit (+2.2 pp), Git (+2.1 pp).
+- Hiring more: Shield AI (+269), OpenAI (+118), Elastic (+92).
+- Median advertised pay in SG: SGD 89,700 a year, from 1,979 ads.
+- Median advertised pay in US: USD 220,500 a year, from 6,773 ads.
