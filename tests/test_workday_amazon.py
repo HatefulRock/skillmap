@@ -99,3 +99,30 @@ def test_amazon_reads_tech_categories_with_text():
     assert (first.source, first.native_id, first.company, first.posted_on) == ("amazon", "0", "Amazon", date(2026, 11, 10))
     assert "Basic qualifications\n- 3+ years of Java" in first.description
     assert first.url == "https://www.amazon.jobs/en/jobs/0/sde" and first.location == "Singapore, SGP"
+
+
+def test_microsoft_pages_searches_and_fetches_text_for_new_tech_postings():
+    from skillmap.sources import microsoft
+
+    details = []
+
+    def handler(request: httpx.Request) -> httpx.Response:
+        params = request.url.params
+        if request.url.path == "/api/pcsx/search":
+            if params["query"] != "software engineer" or params["start"] != "0":
+                return httpx.Response(200, json={"data": {"positions": []}})
+            return httpx.Response(200, json={"data": {"positions": [
+                {"id": 11, "displayJobId": "200001", "name": "Software Engineer II", "locations": ["Singapore, Singapore"],
+                 "standardizedLocations": ["Singapore, SG"], "postedTs": 1794986463, "positionUrl": "/careers/job/11"},
+                {"id": 12, "displayJobId": "200002", "name": "Account Executive", "locations": ["Japan, Tokyo"],
+                 "standardizedLocations": ["Tokyo, Tokyo, JP"], "postedTs": 1794986463},
+            ]}})
+        details.append(params["position_id"])
+        return httpx.Response(200, json={"data": {"jobDescription": "<p>C# and Azure</p>"}})
+
+    out = list(microsoft.collect(client_for(handler)))
+    assert [p.native_id for p in out] == ["200001", "200002"] and details == ["11"]
+    swe, ae = out
+    assert (swe.company, swe.country_hint, swe.description, swe.url) == (
+        "Microsoft", "SG", "<p>C# and Azure</p>", "https://apply.careers.microsoft.com/careers/job/11")
+    assert swe.posted_on == date(2026, 11, 18) and ae.description == "" and ae.country_hint == "JP"

@@ -45,6 +45,7 @@ class Store(Protocol):
     def finished_before(self, source: str) -> bool: ...
     def trim_text(self, max_bytes: int) -> int: ...
     def text_locations(self, posting_ids: list[str]) -> dict[str, tuple[str | None, str | None]]: ...
+    def purge(self, source: str) -> int: ...
 
 
 def _raw_from_row(row: dict) -> RawPosting:
@@ -117,6 +118,14 @@ class MemoryStore:
 
     def trim_text(self, max_bytes: int) -> int:
         return 0
+
+    def purge(self, source: str) -> int:
+        """Delete every posting and run record of one source; returns the postings deleted."""
+        gone = [pid for pid, row in self.data.items() if row["source"] == source]
+        for pid in gone:
+            del self.data[pid]
+        self.runs = [r for r in self.runs if r["source"].split(":", 1)[0] != source]
+        return len(gone)
 
     def text_locations(self, posting_ids: list[str]) -> dict[str, tuple[str | None, str | None]]:
         """(text still in the store, archive file holding it) for each posting that has either."""
@@ -240,6 +249,14 @@ class PostgresStore:
             "select posting_id, description, text_archive from skillmap.postings where posting_id = any(%s) "
             "and (description is not null or text_archive is not null)", (posting_ids,),
         ).fetchall()}
+
+    def purge(self, source: str) -> int:
+        """Delete every posting and run record of one source in one transaction; returns the postings deleted."""
+        with self.conn.transaction():
+            deleted = self.conn.execute("delete from skillmap.postings where source = %s", (source,)).rowcount
+            # Board runs are logged as "<platform>:<board>".
+            self.conn.execute("delete from skillmap.runs where source = %s or source like %s", (source, source + ":%"))
+        return deleted
 
     def text_bytes(self) -> int:
         return self.conn.execute("select pg_total_relation_size('skillmap.postings') as n").fetchone()["n"]

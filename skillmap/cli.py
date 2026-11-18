@@ -18,13 +18,14 @@ from . import aggregate, audit, digest, discover, exports, heatmap, watchlist
 from .archive import from_env as open_archive
 from .extract.skills import Taxonomy
 from .http import PoliteClient
-from .runner import Budget, archive_texts, collect, load_boards, load_yaml, reextract
+from .runner import BOARDS, Budget, archive_texts, collect, load_boards, load_yaml, reextract
 from .store import MemoryStore, PostgresStore, Store, today_utc
 
 ALL_SOURCES = {"boards", "adzuna", "mcf", "hn"}
 # Supabase's free plan allows 500 MB; stored text is trimmed (oldest offline postings first) past this.
 MAX_TABLE_BYTES = 420 * 1024 * 1024
-HOST_INTERVALS = {"api.smartrecruiters.com": 0.4, "hn.algolia.com": 0.5}
+HOST_INTERVALS = {"api.smartrecruiters.com": 0.4, "hn.algolia.com": 0.5,
+                  "apply.careers.microsoft.com": 4.0}  # answers 429 after a few quick requests
 # Workable answers "429 Too Many Requests" to discovery at the default pace.
 DISCOVER_INTERVALS = {"workable": 1.5}
 
@@ -103,6 +104,9 @@ def main(argv: list[str] | None = None) -> None:
     aud = sub.add_parser("audit", help="score the skill extraction against Claude on a sample; needs ANTHROPIC_API_KEY")
     aud.add_argument("--sample", type=int, default=audit.SAMPLE)
     aud.add_argument("--out", type=Path, default=Path("data") / "audit.json")
+    purge = sub.add_parser("purge", help="delete every stored posting of one source (maintenance)")
+    purge.add_argument("--source", required=True, help="the source column value, e.g. workday")
+    purge.add_argument("--confirm", required=True, help="the same source name again, as a safety check")
     args = parser.parse_args(argv)
 
     logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s")
@@ -112,6 +116,17 @@ def main(argv: list[str] | None = None) -> None:
     taxonomy = Taxonomy.load()
     store = open_store()
     today = today_utc()
+
+    if args.command == "purge":
+        if args.confirm != args.source:
+            parser.error("--confirm must repeat --source exactly")
+        known = {name.split(":", 1)[0] for name in BOARDS} | {s for s in ALL_SOURCES if s != "boards"}
+        if args.source not in known:
+            parser.error(f"unknown source: {args.source}")
+        if not os.environ.get("DATABASE_URL"):
+            parser.error("purge needs DATABASE_URL")
+        print(f"deleted {store.purge(args.source)} {args.source} postings")
+        return
 
     if args.command == "audit":
         import anthropic

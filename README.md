@@ -97,6 +97,9 @@ Only sources that publish postings for programmatic reading are used:
 | Greenhouse, Lever, Ashby, Workable (SmartRecruiters opt-in: its API host's robots.txt disallows crawlers) | Full postings from ~1,000 companies (`config/boards.yaml`, `config/companies.yaml`) | Public job-board APIs that the companies publish themselves |
 | Workday career sites | Banks and large employers listed in `config/companies.yaml` (text for new technical postings only, up to 150 a site per run) | The JSON each company's own careers page loads |
 | Amazon (amazon.jobs) | Technical job categories, newest 3,000 a run | The JSON Amazon's careers site loads |
+| Microsoft (apply.careers.microsoft.com) | Technical searches, newest first; text for new technical postings only | The JSON Microsoft's careers site loads (`/api/pcsx`, allowed by its robots.txt) |
+
+Google, Apple and Meta are left out: Google's careers results exist only inside page HTML, Apple's search needs a session token, and Meta's robots.txt forbids automated collection.
 | [Adzuna](https://developer.adzuna.com/) | Broad market in Singapore, the UK and the US | Free API key; "Job data: The Adzuna API". Descriptions are snippets, so its skill counts are a lower bound |
 | MyCareersFuture | Singapore's national job portal, including advertised salary ranges | The search API its own site uses, read slowly (one request every 3 s), newest first, stopping at postings already collected |
 | Hacker News "Who is hiring?" | Monthly threads back to 2011: the long trend lines | Official [HN Algolia API](https://hn.algolia.com/api) |
@@ -122,7 +125,9 @@ Repository secrets used by `.github/workflows/refresh.yml`:
 
 The first run backfills every HN thread since 2011 and the last 60 days of MyCareersFuture;
 later runs only fetch what is new. Both workflows can also be started by hand: `refresh` with
-a subset of sources, a board limit or a dry run; `discover` with a candidate limit.
+a subset of sources, a board limit or a dry run; `discover` with a candidate limit. `purge`
+(manual only) deletes every stored posting of one source after a collector bug, asking for the
+source name twice; the next refresh collects it again.
 
 ```sh
 uv run skillmap discover --no-yc --limit 50     # probe the first 50 curated names
@@ -133,8 +138,9 @@ Tests that need Postgres run when `SKILLMAP_TEST_DATABASE_URL` is set; CI provid
 ## Known limits
 
 - Company boards cover companies whose careers pages run on those platforms: mostly
-  startups and scale-ups, US-heavy through Y Combinator. Big employers on Workday or in-house
-  systems are missing; MyCareersFuture (and Adzuna, with a key) cover them for Singapore.
+  startups and scale-ups, US-heavy through Y Combinator. Big employers are covered only where
+  listed in `config/companies.yaml` (Workday sites, Amazon, Microsoft); others on in-house
+  systems are missing, though MyCareersFuture (and Adzuna, with a key) cover them for Singapore.
 - Pay is only what ads state. US ads state it far more often (by law) than Asian ones, so
   per-country figures rest on very different sample sizes; each figure carries its count.
 - HN posters are mostly startups and skew remote and US. That series is shown separately and

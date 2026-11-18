@@ -18,15 +18,27 @@ from .extract.skills import Taxonomy
 from .http import PoliteClient
 from .models import RawPosting, normalise_company
 from .normalise import normalise
-from .sources import adzuna, amazon, ashby, greenhouse, hn, lever, mcf, smartrecruiters, workable, workday
+from .sources import (
+    adzuna,
+    amazon,
+    ashby,
+    greenhouse,
+    hn,
+    lever,
+    mcf,
+    microsoft,
+    smartrecruiters,
+    workable,
+    workday,
+)
 from .store import Store
 
 log = logging.getLogger("skillmap")
 CONFIG = Path(__file__).resolve().parents[1] / "config"
 BOARDS = {"greenhouse": greenhouse, "lever": lever, "ashby": ashby, "workable": workable,
-          "smartrecruiters": smartrecruiters, "workday": workday, "amazon": amazon}
+          "smartrecruiters": smartrecruiters, "workday": workday, "amazon": amazon, "microsoft": microsoft}
 # Platforms whose list gives no text: their collectors fetch text only for postings not stored yet.
-NEEDS_KNOWN = {"smartrecruiters", "workday"}
+NEEDS_KNOWN = {"smartrecruiters", "workday", "microsoft"}
 
 
 # After this many boards in a row on one platform fail with "429 Too Many Requests", the rest of

@@ -217,3 +217,7 @@ companies:
   ats: amazon
   token: amazon
   sector: tech
+- company: Microsoft
+  ats: microsoft
+  token: microsoft.com
+  sector: tech
