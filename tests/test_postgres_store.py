@@ -118,3 +118,15 @@ def test_run_history_returns_recent_runs():
     store.conn.execute("insert into skillmap.runs (source, fetched, inserted, error, ran_at) "
                        "values ('lever:old', 1, 1, null, now() - interval '200 days')")
     assert [r["source"] for r in store.run_history(70)] == ["lever:x"]
+
+
+def test_first_runs_per_platform():
+    from skillmap.store import PostgresStore
+
+    store = PostgresStore(DSN)
+    store.conn.execute("truncate skillmap.postings, skillmap.runs")
+    store.log_run("lever:x", 5, 5, None)
+    store.conn.execute("insert into skillmap.runs (source, fetched, inserted, error, ran_at) "
+                       "values ('lever:y', 1, 1, null, '2026-11-01'), ('hn', 1, 1, null, '2026-10-01')")
+    firsts = store.first_runs()
+    assert firsts["lever"].isoformat() == "2026-11-01" and firsts["hn"].isoformat() == "2026-10-01"

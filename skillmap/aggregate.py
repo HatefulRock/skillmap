@@ -318,10 +318,10 @@ def changes_block(market: list[dict], hn: list[dict], today: date) -> dict:
     }
 
 
-def velocity_block(market: list[dict], today: date, skills: list[str]) -> dict:
+def velocity_block(market: list[dict], today: date, skills: list[str], tracked_since: date | None = None) -> dict:
     from . import velocity
 
-    return {"new_per_week": velocity.weekly_new(market, today, roles.FAMILIES),
+    return {"new_per_week": velocity.weekly_new(market, today, roles.FAMILIES, since=tracked_since),
             "time_open": velocity.time_open(market, today, roles.FAMILIES, skills)}
 
 
@@ -340,11 +340,28 @@ def insights_block(market: list[dict], window: list[dict], pay_rows: list[dict],
     }
 
 
+def observed(rows: list[dict], first_runs: dict[str, date]) -> list[dict]:
+    """Market postings as live only from when this census first read their source.
+
+    A board lists only the ads still open, so an ad posted in 2023 and still up today says
+    nothing about 2023's market; counting it there would build "history" from survivors. Each
+    posting therefore counts as live from the later of its own start and its source's first run.
+    Sources with no recorded run are left as they are."""
+    out = []
+    for r in rows:
+        start = first_runs.get(r["source"])
+        out.append({**r, "first_seen": max(r["first_seen"], start)} if start and r["first_seen"] < start else r)
+    return out
+
+
 def build(rows: list[dict], today: date, categories: dict[str, str], taxonomy_version: int,
-          ratings: dict[str, int] | None = None, runs: list[dict] | None = None) -> dict:
+          ratings: dict[str, int] | None = None, runs: list[dict] | None = None,
+          first_runs: dict[str, date] | None = None) -> dict:
     all_rows = dedupe(rows)
     tech = [r for r in all_rows if r["role_family"] != "non_tech"]
-    market = [r for r in tech if r["source"] != "hn"]
+    first_runs = {s: d for s, d in (first_runs or {}).items() if d <= today}
+    market = observed([r for r in tech if r["source"] != "hn"], first_runs)
+    tracked_since = min((d for s, d in first_runs.items() if s != "hn"), default=None)
     hn = [r for r in tech if r["source"] == "hn"]
 
     current = current_block(market, today, categories)
@@ -372,6 +389,8 @@ def build(rows: list[dict], today: date, categories: dict[str, str], taxonomy_ve
                 "duplicates_merged": len(rows) - len(all_rows),
             },
             "first_seen": min((r["first_seen"] for r in market), default=today).isoformat(),
+            # Live-market series and comparisons only cover time since this date (see observed()).
+            "tracked_since": tracked_since.isoformat() if tracked_since else None,
             "hn_first": min((r["first_seen"] for r in hn), default=today).isoformat(),
             "runs": runs or [],
             "attribution": ["Job data: The Adzuna API", "Hacker News “Who is hiring?” via the HN Algolia API",
@@ -400,7 +419,7 @@ def build(rows: list[dict], today: date, categories: dict[str, str], taxonomy_ve
         "salary": salary_block(active(market, today - timedelta(days=SALARY_DAYS - 1), today), seg_skills),
         "pay": pay_block(active(market, today - timedelta(days=SALARY_DAYS - 1), today)),
         "changes": changes_block(market, hn, today),
-        "velocity": velocity_block(market, today, current_names[:TOP_TREND]),
+        "velocity": velocity_block(market, today, current_names[:TOP_TREND], tracked_since),
         "insights": insights_block(market, window, active(market, today - timedelta(days=SALARY_DAYS - 1), today), today,
                                    categories, ratings or {}),
         "pairs": pairs_block(window, current_names[:20]),

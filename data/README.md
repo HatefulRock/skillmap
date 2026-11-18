@@ -44,6 +44,7 @@ Raw URLs follow the pattern
 | `pay` | `countries[]` (local and USD quartiles) and `role_seniority_usd[country][family][level]`. |
 | `salary` | Singapore monthly pay by skill. |
 | `changes` | `movers` (risers and fallers over 90 days, also `movers_by_role`, `movers_by_seniority` and `hn_movers`), `mix` (role and level mix over time), `per_post` (ad shape: skills, words, years, degree, visa, equity), `companies` (largest and growing), and `terms` (new vocabulary). |
+| `meta.tracked_since` | The day the census first read the job boards. Boards list only open ads, so an old ad still up today says nothing about the month it was posted: every live-market series and comparison (trends, mix, movers, the 30-day change) counts an ad as live only from when its source was first read. Before this date only the HN series has history; live-market comparisons fill in as weekly runs accumulate. |
 | `velocity` | `new_per_week` (postings by the week their ad was posted, overall and per role family) and `time_open`: days from posting to the last run that saw the ad, for ads that closed in the last 90 days (`closed`, per role family and per skill, fastest first) and the age of ads still up (`open_age`). Closed-ad figures fill in over the first weeks of weekly runs. |
 | `insights` | `pay_premium`, `role_dna`, `seniority_ladder`, `stacks`, `requirement_creep` and `learn_next`. |
 | `pairs` | The most common skill pairs. |

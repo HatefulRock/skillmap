@@ -65,6 +65,7 @@ def test_companies_growth_and_cards():
 def test_emerging_terms_count_companies_not_postings():
     rows = [row(i, 5, ["Python"], company="Spammy", terms=["FooDB"]) for i in range(50)]
     rows += [row(100 + i, 5, ["Python"], company=f"C{i}", terms=["BarAI"]) for i in range(20)]
+    rows += [row(300 + i, 120, ["Python"], terms=["Older"]) for i in range(40)]  # an earlier window
     block = trends.emerging_terms(rows, TODAY)
     assert [t["term"] for t in block["common"]] == ["BarAI"]
     assert block["rising"][0] == {"term": "BarAI", "companies": 20, "companies_before": 0}
@@ -177,3 +178,15 @@ def test_an_unreadable_archive_file_is_skipped(tmp_path):
     for r in store.data.values():
         r.update(taxonomy_version=0)
     assert reextract(store, TAX, TODAY, archive) == 2  # the readable file's postings
+
+
+def test_shouted_headings_and_contractions_are_not_terms():
+    text = "WHAT YOU WILL DO\nBuild agents. ABOUT THE ROLE: you'll use DuckDB. WE'RE hiring. NICE TO HAVE: eBPF"
+    found = terms.candidates(text, TAX.known)
+    assert set(found) == {"DuckDB", "eBPF"}
+
+
+def test_no_rising_terms_without_an_earlier_window():
+    rows = [row(i, 5, ["Python"], company=f"C{i}", terms=["BarAI"]) for i in range(20)]
+    block = trends.emerging_terms(rows, TODAY)
+    assert block["common"][0]["term"] == "BarAI" and block["rising"] == []

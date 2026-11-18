@@ -36,3 +36,16 @@ def test_small_groups_are_left_out():
     rows = [posting(TODAY - timedelta(days=40), TODAY - timedelta(days=10)) for _ in range(5)]
     out = velocity.time_open(rows, TODAY, ["backend"], ["Python"])
     assert out["closed"]["by_role"] == [] and out["closed"]["by_skill"] == []
+
+
+def test_market_history_starts_when_tracking_began():
+    from skillmap import aggregate
+
+    start = TODAY - timedelta(days=1)
+    old = {"source": "greenhouse", "first_seen": date(2023, 5, 1), "last_seen": TODAY}
+    new = {"source": "greenhouse", "first_seen": TODAY, "last_seen": TODAY}
+    unknown = {"source": "lever", "first_seen": date(2024, 1, 1), "last_seen": TODAY}
+    out = aggregate.observed([old, new, unknown], {"greenhouse": start})
+    assert [r["first_seen"] for r in out] == [start, TODAY, date(2024, 1, 1)]
+    rows = [posting(TODAY - timedelta(days=30), TODAY), posting(TODAY, TODAY)]
+    assert velocity.weekly_new(rows, TODAY, ["backend"], since=start)["weeks"] == ["2026-11-16"]

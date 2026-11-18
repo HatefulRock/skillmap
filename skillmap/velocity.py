@@ -27,9 +27,14 @@ def _week(day: date) -> date:
     return day - timedelta(days=day.weekday())
 
 
-def weekly_new(rows: list[dict], today: date, families: list[str], weeks: int = WEEKS) -> dict:
+def weekly_new(rows: list[dict], today: date, families: list[str], weeks: int = WEEKS,
+               since: date | None = None) -> dict:
+    """`since`: when tracking began. Earlier weeks are left out: only the ads from them that
+    were still open when tracking began are known, which would make them look quiet."""
     start = _week(today) - timedelta(weeks=weeks - 1)
-    labels = [start + timedelta(weeks=i) for i in range(weeks)]
+    if since:
+        start = max(start, _week(since))
+    labels = [start + timedelta(weeks=i) for i in range((_week(today) - start).days // 7 + 1)]
     total: Counter[date] = Counter()
     by_family: dict[str, Counter[date]] = defaultdict(Counter)
     for r in rows:
