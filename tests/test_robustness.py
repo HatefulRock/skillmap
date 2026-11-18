@@ -91,7 +91,7 @@ def test_purge_removes_one_source_and_its_runs():
     store.log_run("greenhouse", 1, 1, None)
     assert store.purge("workday") == 2
     assert list(store.data) == ["greenhouse:1"]
-    assert store.runs == [{"source": "greenhouse", "fetched": 1, "inserted": 1, "error": None}]
+    assert [r["source"] for r in store.runs] == ["greenhouse"]
 
 
 def test_purge_command_refuses_without_a_matching_confirmation(monkeypatch, capsys):

@@ -318,6 +318,13 @@ def changes_block(market: list[dict], hn: list[dict], today: date) -> dict:
     }
 
 
+def velocity_block(market: list[dict], today: date, skills: list[str]) -> dict:
+    from . import velocity
+
+    return {"new_per_week": velocity.weekly_new(market, today, roles.FAMILIES),
+            "time_open": velocity.time_open(market, today, roles.FAMILIES, skills)}
+
+
 def insights_block(market: list[dict], window: list[dict], pay_rows: list[dict], today: date,
                    categories: dict[str, str], ratings: dict[str, int]) -> dict:
     from . import insights  # builds on this module's helpers
@@ -369,7 +376,8 @@ def build(rows: list[dict], today: date, categories: dict[str, str], taxonomy_ve
             "runs": runs or [],
             "attribution": ["Job data: The Adzuna API", "Hacker News “Who is hiring?” via the HN Algolia API",
                             "MyCareersFuture (Singapore)",
-                            "Company boards on Greenhouse, Lever, Ashby, Workable and SmartRecruiters"],
+                            "Company boards on Greenhouse, Lever, Ashby, Workable, SmartRecruiters and Workday",
+                            "Amazon and Microsoft careers sites"],
         },
         "categories": sorted(set(categories.values())),
         "current": current,
@@ -392,6 +400,7 @@ def build(rows: list[dict], today: date, categories: dict[str, str], taxonomy_ve
         "salary": salary_block(active(market, today - timedelta(days=SALARY_DAYS - 1), today), seg_skills),
         "pay": pay_block(active(market, today - timedelta(days=SALARY_DAYS - 1), today)),
         "changes": changes_block(market, hn, today),
+        "velocity": velocity_block(market, today, current_names[:TOP_TREND]),
         "insights": insights_block(market, window, active(market, today - timedelta(days=SALARY_DAYS - 1), today), today,
                                    categories, ratings or {}),
         "pairs": pairs_block(window, current_names[:20]),

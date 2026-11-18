@@ -31,6 +31,7 @@ concurrency:
 
 permissions:
   contents: write
+  issues: write  # the run-health issue
 
 jobs:
   refresh:
@@ -46,6 +47,7 @@ jobs:
       # with it; without it the text stays in the database.
       SUPABASE_SECRET_KEY: ${{ secrets.SUPABASE_SECRET_KEY }}
       GH_TOKEN: ${{ github.token }}
+      RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
     steps:
       - uses: actions/checkout@v4
       - uses: astral-sh/setup-uv@v6
@@ -65,12 +67,26 @@ jobs:
           DATABASE_URL: ${{ !inputs.dry_run && secrets.DATABASE_URL || '' }}
           SUPABASE_SECRET_KEY: ${{ !inputs.dry_run && secrets.SUPABASE_SECRET_KEY || '' }}
         run: |
-          args=(--sources "${{ inputs.sources || 'boards,adzuna,mcf,hn' }}" --out data --readme README.md)
+          args=(--sources "${{ inputs.sources || 'boards,adzuna,mcf,hn' }}" --out data --readme README.md --health health.md)
           [ -n "${{ inputs.board_limit }}" ] && args+=(--board-limit "${{ inputs.board_limit }}")
           [ -n "${{ inputs.platforms }}" ] && args+=(--platforms "${{ inputs.platforms }}")
           [ -n "${{ inputs.hn_since }}" ] && args+=(--hn-since "${{ inputs.hn_since }}")
           uv run skillmap run "${args[@]}" | tee run-summary.txt
           { echo '```'; cat run-summary.txt; echo '```'; } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Report run health as an issue
+        # One open "run-health" issue at a time: opened or updated when the run found problems,
+        # closed by the first clean run that read every source (health.ok).
+        if: ${{ !inputs.dry_run }}
+        run: |
+          open=$(gh issue list --label run-health --state open --json number --jq '.[0].number')
+          if [ -f health.md ]; then
+            gh label create run-health --color d93f0b --description "Weekly refresh found broken sources" 2>/dev/null || true
+            if [ -n "$open" ]; then gh issue comment "$open" --body-file health.md
+            else gh issue create --title "Refresh: sources need attention" --label run-health --body-file health.md; fi
+          elif [ -n "$open" ] && [ -f health.ok ]; then
+            gh issue close "$open" --comment "The $(date -u +%F) refresh found no problems."
+          fi
 
       - name: Publish live postings (metadata only) as a release asset
         if: ${{ !inputs.dry_run }}
