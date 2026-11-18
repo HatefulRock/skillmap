@@ -19,6 +19,10 @@ on:
       hn_since:
         description: "Re-read HN threads from this date (YYYY-MM-DD); empty for automatic"
         default: ""
+      force_publish:
+        description: "Publish even if the numbers changed sharply since the last publish (after checking they are real)"
+        type: boolean
+        default: false
       dry_run:
         description: "Collect into memory only: no database, nothing published (checks the sources)"
         type: boolean
@@ -72,6 +76,7 @@ jobs:
           [ -n "${{ inputs.board_limit }}" ] && args+=(--board-limit "${{ inputs.board_limit }}")
           [ -n "${{ inputs.platforms }}" ] && args+=(--platforms "${{ inputs.platforms }}")
           [ -n "${{ inputs.hn_since }}" ] && args+=(--hn-since "${{ inputs.hn_since }}")
+          [ "${{ inputs.force_publish }}" = "true" ] && args+=(--force-publish)
           uv run skillmap run "${args[@]}" | tee run-summary.txt
           { echo '```'; cat run-summary.txt; echo '```'; } >> "$GITHUB_STEP_SUMMARY"
 

@@ -10,6 +10,11 @@ Checks:
   than half its median of the previous runs;
 - a source that failed outright this run (skips for missing keys or time are not failures);
 - a board that failed in each of its last three runs.
+
+Before publishing, `publish_check` compares the new numbers with the published ones: a sudden
+collapse in live postings, or a top skill whose share jumps by more than SHARE_JUMP in one run
+under the same taxonomy, is far likelier a bug than the market. The run then keeps the old
+files and reports why, until the change is confirmed with `--force-publish`.
 """
 
 from __future__ import annotations
@@ -23,6 +28,9 @@ INCREMENTAL = {"hn", "mcf", "adzuna"}
 DROP_RATIO = 0.5
 MIN_BASELINE = 50  # ignore drops on platforms too small for a ratio to mean much
 FAILING_RUNS = 3
+LIVE_DROP_RATIO = 0.5  # live postings below half the published count
+SHARE_JUMP = 0.12      # a top skill moving more than 12 points in one run
+TOP_SKILLS = 20
 
 
 def _skipped(error: str | None) -> bool:
@@ -89,10 +97,35 @@ def check(current: list[dict], history: list[dict], compare_totals: bool = True)
     return problems
 
 
-def markdown(problems: list[str], run_url: str | None = None) -> str:
-    lines = ["The weekly refresh found problems with these sources:", ""]
-    lines += [f"- {p}" for p in problems]
-    lines += ["", "The published numbers still include every source that worked."]
+def publish_check(previous: dict | None, data: dict) -> list[str]:
+    """Why the new numbers look too different from the published ones to publish unseen."""
+    if not previous or not previous.get("current", {}).get("n"):
+        return []
+    problems = []
+    before, now = previous["current"]["n"], data["current"]["n"]
+    if now < before * LIVE_DROP_RATIO:
+        problems.append(f"live tech postings fell from {before:,} to {now:,}")
+    if previous.get("meta", {}).get("taxonomy_version") == data["meta"]["taxonomy_version"]:
+        shares = {s["name"]: s["share"] for s in data["current"]["skills"]}
+        for skill in previous["current"]["skills"][:TOP_SKILLS]:
+            new = shares.get(skill["name"], 0.0)
+            if abs(new - skill["share"]) > SHARE_JUMP:
+                problems.append(f"{skill['name']} moved from {skill['share']:.0%} to {new:.0%} of live postings")
+    return problems
+
+
+def markdown(problems: list[str], run_url: str | None = None, held: list[str] | None = None) -> str:
+    lines = []
+    if held:
+        lines += ["**Not published.** The new numbers differ too much from the published ones:", ""]
+        lines += [f"- {p}" for p in held]
+        lines += ["", "The site keeps last week's numbers. If the change is real, re-run the refresh with "
+                  "`force_publish` ticked.", ""]
+    if problems:
+        lines += ["The weekly refresh found problems with these sources:", ""]
+        lines += [f"- {p}" for p in problems]
+        if not held:
+            lines += ["", "The published numbers still include every source that worked."]
     if run_url:
         lines.append(f"Run: {run_url}")
     return "\n".join(lines)
