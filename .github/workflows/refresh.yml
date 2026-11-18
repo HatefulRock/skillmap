@@ -13,6 +13,9 @@ on:
       board_limit:
         description: "Only the first N company boards (smoke test); empty for all"
         default: ""
+      platforms:
+        description: "Only company boards on these platforms, e.g. workday,amazon; empty for all"
+        default: ""
       hn_since:
         description: "Re-read HN threads from this date (YYYY-MM-DD); empty for automatic"
         default: ""
@@ -22,7 +25,8 @@ on:
         default: false
 
 concurrency:
-  group: refresh
+  # A dry run writes nothing, so it need not wait for (or hold up) a real run.
+  group: ${{ inputs.dry_run && 'refresh-dry-run' || 'refresh' }}
   cancel-in-progress: false
 
 permissions:
@@ -59,6 +63,7 @@ jobs:
         run: |
           args=(--sources "${{ inputs.sources || 'boards,adzuna,mcf,hn' }}" --out data --readme README.md)
           [ -n "${{ inputs.board_limit }}" ] && args+=(--board-limit "${{ inputs.board_limit }}")
+          [ -n "${{ inputs.platforms }}" ] && args+=(--platforms "${{ inputs.platforms }}")
           [ -n "${{ inputs.hn_since }}" ] && args+=(--hn-since "${{ inputs.hn_since }}")
           uv run skillmap run "${args[@]}" | tee run-summary.txt
           { echo '```'; cat run-summary.txt; echo '```'; } >> "$GITHUB_STEP_SUMMARY"

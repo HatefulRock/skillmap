@@ -16,13 +16,15 @@ from .extract.skills import Taxonomy
 from .http import PoliteClient
 from .models import RawPosting, normalise_company
 from .normalise import normalise
-from .sources import adzuna, ashby, greenhouse, hn, lever, mcf, smartrecruiters, workable
+from .sources import adzuna, amazon, ashby, greenhouse, hn, lever, mcf, smartrecruiters, workable, workday
 from .store import Store
 
 log = logging.getLogger("skillmap")
 CONFIG = Path(__file__).resolve().parents[1] / "config"
 BOARDS = {"greenhouse": greenhouse, "lever": lever, "ashby": ashby, "workable": workable,
-          "smartrecruiters": smartrecruiters}
+          "smartrecruiters": smartrecruiters, "workday": workday, "amazon": amazon}
+# Platforms whose list gives no text: their collectors fetch text only for postings not stored yet.
+NEEDS_KNOWN = {"smartrecruiters", "workday"}
 
 
 @dataclass
@@ -115,15 +117,16 @@ def _ingest(store: Store, taxonomy: Taxonomy, today: date, name: str, produce: C
 
 
 def collect(store: Store, client: PoliteClient, taxonomy: Taxonomy, today: date, sources: set[str],
-            board_limit: int | None = None, hn_since: date | None = None) -> RunReport:
+            board_limit: int | None = None, hn_since: date | None = None,
+            platforms: set[str] | None = None) -> RunReport:
     report = RunReport()
 
     if "boards" in sources:
-        boards = load_boards()[:board_limit]
-        sr_known = store.known_ids("smartrecruiters") if any(b["ats"] == "smartrecruiters" for b in boards) else set()
+        boards = [b for b in load_boards() if not platforms or b["ats"] in platforms][:board_limit]
+        known = {ats: store.known_ids(ats) for ats in NEEDS_KNOWN if any(b["ats"] == ats for b in boards)}
         for board in boards:
             module = BOARDS[board["ats"]]
-            extra = {"known": sr_known} if board["ats"] == "smartrecruiters" else {}
+            extra = {"known": known[board["ats"]]} if board["ats"] in known else {}
             _ingest(store, taxonomy, today, f"{board['ats']}:{board['token']}",
                     lambda b=board, m=module, x=extra: m.collect(client, b["token"], b["company"], b.get("sector"),
                                                                  b.get("region"), **x),

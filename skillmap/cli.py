@@ -83,6 +83,7 @@ def main(argv: list[str] | None = None) -> None:
     run = sub.add_parser("run", help="collect, store, extract and aggregate")
     run.add_argument("--sources", default=",".join(sorted(ALL_SOURCES)))
     run.add_argument("--board-limit", type=int, help="only the first N company boards (smoke tests)")
+    run.add_argument("--platforms", help="only company boards on these platforms, comma-separated (e.g. workday,amazon)")
     run.add_argument("--hn-since", type=date.fromisoformat, help="override the HN start month")
     run.add_argument("--out", type=Path, default=Path("data"))
     run.add_argument("--readme", type=Path, help="README whose weekly section gets the new note")
@@ -126,7 +127,8 @@ def main(argv: list[str] | None = None) -> None:
             parser.error(f"unknown sources: {', '.join(sorted(unknown))}")
         client = PoliteClient(min_interval=1.0, per_host_interval=HOST_INTERVALS)
         try:
-            report = collect(store, client, taxonomy, today, sources, args.board_limit, args.hn_since)
+            platforms = {p.strip() for p in (args.platforms or "").split(",") if p.strip()} or None
+            report = collect(store, client, taxonomy, today, sources, args.board_limit, args.hn_since, platforms)
         finally:
             client.close()
         print(report.summary())
