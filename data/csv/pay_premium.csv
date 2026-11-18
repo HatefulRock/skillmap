@@ -1,86 +1,70 @@
 skill,premium,matched_postings
-Computer vision / multimodal / speech,0.255,735
-RLHF / DPO / RL,0.225,335
-LLM provider APIs (OpenAI / Anthropic / Gemini),0.216,1510
-Guardrails / AI safety,0.205,848
-GPU / distributed training,0.134,789
-Prompt & context engineering,0.086,347
-"Low-code automation (n8n, Zapier)",0.082,94
-Machine learning fundamentals,0.082,1579
-"LLM security (prompt injection, OWASP LLM)",0.08,92
-Deep learning,0.075,256
-Embeddings / semantic search,0.073,296
-PyTorch,0.073,423
-MLOps / LLMOps,0.069,451
-TensorFlow / Keras / JAX,0.069,237
-Hugging Face Transformers,0.067,23
-LLMs / GenAI (general),0.066,2230
-Fine-tuning (SFT / LoRA / PEFT),0.062,327
-LLM evaluation / eval harnesses,0.062,1151
-"LLM serving / inference optimization (vLLM, TGI)",0.059,275
-Tool / function calling,0.052,268
-AI agents / agentic workflows,0.049,2526
-Trading / quant / markets,0.048,114
-Rust / Scala,0.038,782
-Microservices / distributed systems,0.03,2107
-Pre-sales / solution architecture / PoCs,0.03,1629
-LangGraph,0.023,68
-NLP,0.023,100
-Redis / caching,0.02,397
-Cost / latency optimization,0.018,610
-Go,0.017,1415
-Data pipelines / ETL,0.015,1110
-Kubernetes,0.006,1612
-Temporal / durable execution,0.005,95
-Terraform / IaC,0.005,931
-Governance / compliance / audit,0.004,692
-Python,0.004,3748
-RAG,0.003,255
-Statistics / maths,0.002,617
-Time series / anomaly detection,0.002,319
-MLflow / Kubeflow / SageMaker pipelines,0.001,66
-TypeScript,0.001,1260
-Feature engineering / data preprocessing,0.0,96
-Observability / tracing / monitoring,-0.0,2950
-C++ / C#,-0.001,1297
-Multi-agent systems,-0.002,104
-Workflow orchestration,-0.003,343
-GCP / Vertex AI,-0.01,1304
-Full-stack / frontend,-0.013,1807
-KYC / AML / fraud / risk,-0.013,686
-scikit-learn / classical ML,-0.013,53
-Cloud (unspecified),-0.016,2001
-Azure (incl. Azure OpenAI),-0.017,1012
-Financial services / banking domain,-0.017,3239
-Structured output,-0.018,22
-AWS,-0.019,2037
-Linux / shell,-0.02,939
-CI/CD,-0.021,1357
-On-prem / air-gapped / private cloud deploy,-0.021,301
-Spark / big data,-0.021,802
-"AI coding tools (Claude Code, Cursor, Copilot)",-0.024,844
-React / Next.js,-0.024,1081
-Docker / containers,-0.027,1194
-MCP,-0.027,283
-System design / architecture,-0.028,873
-SQL,-0.036,2135
-CrewAI / AutoGen / other agent SDKs,-0.037,33
-PostgreSQL / relational DBs,-0.037,967
-LLM tracing tools (Langfuse / LangSmith / Arize),-0.041,60
-pandas / NumPy,-0.046,46
-Kafka / message queues / streaming,-0.049,636
-Knowledge graphs / GraphRAG,-0.05,52
-LangChain,-0.052,103
-Django / Flask,-0.053,87
-Celery / background jobs,-0.058,20
-Java / Kotlin (Spring),-0.06,1361
-JavaScript / Node.js,-0.061,1080
-FastAPI,-0.066,64
-"Testing (pytest, unit/integration)",-0.069,316
-REST / API design & integration,-0.07,1049
-Git,-0.082,398
-Vector databases,-0.083,150
-"NoSQL (MongoDB, DynamoDB)",-0.092,537
-Payments,-0.092,114
-Crypto / Web3 / blockchain,-0.111,212
-AWS Bedrock,-0.118,30
+RLHF / DPO / RL,0.275,30
+Trading / quant / markets,0.192,35
+Multi-agent systems,0.128,31
+LangGraph,0.113,21
+GPU / distributed training,0.103,157
+Deep learning,0.062,103
+Prompt & context engineering,0.054,72
+Machine learning fundamentals,0.051,604
+"LLM serving / inference optimization (vLLM, TGI)",0.044,32
+Embeddings / semantic search,0.042,45
+LangChain,0.024,26
+"LLM security (prompt injection, OWASP LLM)",0.023,22
+TensorFlow / Keras / JAX,0.02,87
+GCP / Vertex AI,0.011,176
+NLP,0.01,38
+FastAPI,0.009,25
+LLMs / GenAI (general),0.0,441
+PyTorch,-0.002,109
+Computer vision / multimodal / speech,-0.006,100
+Time series / anomaly detection,-0.007,58
+Spark / big data,-0.01,204
+Django / Flask,-0.011,35
+Redis / caching,-0.014,36
+MLOps / LLMOps,-0.022,90
+LLM evaluation / eval harnesses,-0.023,153
+PostgreSQL / relational DBs,-0.026,316
+Data pipelines / ETL,-0.031,246
+AWS,-0.033,440
+AI agents / agentic workflows,-0.034,483
+LLM provider APIs (OpenAI / Anthropic / Gemini),-0.037,110
+TypeScript,-0.039,233
+Full-stack / frontend,-0.043,825
+Guardrails / AI safety,-0.043,113
+Cloud (unspecified),-0.045,502
+Financial services / banking domain,-0.045,159
+Fine-tuning (SFT / LoRA / PEFT),-0.045,26
+Terraform / IaC,-0.045,181
+Pre-sales / solution architecture / PoCs,-0.046,114
+Workflow orchestration,-0.047,64
+Go,-0.048,155
+Governance / compliance / audit,-0.051,101
+React / Next.js,-0.052,281
+Linux / shell,-0.053,264
+Statistics / maths,-0.056,130
+SQL,-0.06,627
+Git,-0.062,193
+Azure (incl. Azure OpenAI),-0.065,250
+On-prem / air-gapped / private cloud deploy,-0.065,59
+Kafka / message queues / streaming,-0.066,151
+"AI coding tools (Claude Code, Cursor, Copilot)",-0.068,109
+Python,-0.07,883
+REST / API design & integration,-0.07,373
+CI/CD,-0.073,398
+Docker / containers,-0.073,372
+Kubernetes,-0.075,316
+RAG,-0.077,52
+Java / Kotlin (Spring),-0.082,667
+KYC / AML / fraud / risk,-0.082,119
+"NoSQL (MongoDB, DynamoDB)",-0.085,182
+MCP,-0.088,23
+Microservices / distributed systems,-0.088,376
+Observability / tracing / monitoring,-0.09,391
+Cost / latency optimization,-0.093,75
+C++ / C#,-0.096,560
+Rust / Scala,-0.097,86
+System design / architecture,-0.098,219
+JavaScript / Node.js,-0.105,473
+"Testing (pytest, unit/integration)",-0.108,134
+Crypto / Web3 / blockchain,-0.139,23
