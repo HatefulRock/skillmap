@@ -77,7 +77,7 @@ def test_workday_searches_tech_keywords_past_the_page_limit():
     out = list(workday.listings(client_for(handler), "big.wd1/External", max_postings=40))
     assert searches[:2] == [("", 0), ("", 20)]
     assert {s for s, _ in searches[2:]} == set(workday.TECH_QUERIES)
-    assert len(out) == 40 + 20 * len(workday.TECH_QUERIES)  # each keyword search capped at half
+    assert len(out) == 40 + 20 * len(workday.TECH_QUERIES)  # each keyword search capped at a third, one page here
 
 
 def test_amazon_reads_tech_categories_with_text():

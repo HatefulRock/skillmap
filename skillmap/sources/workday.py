@@ -24,7 +24,7 @@ from ..models import RawPosting
 from ._util import dig, parse_date
 
 PAGE = 20  # the most the endpoint returns per request
-TECH_QUERIES = ("engineer", "developer", "data", "machine learning", "AI", "software", "cloud", "quant")
+TECH_QUERIES = ("engineer", "developer", "data", "machine learning")
 _AGO = re.compile(r"(\d+)\+? Days? Ago", re.I)
 _MANY_PLACES = re.compile(r"^\d+ Locations?$", re.I)
 
@@ -96,7 +96,7 @@ def listings(client: PoliteClient, token: str, max_postings: int) -> Iterator[di
                 break
         if text == "" and total and total > cap:
             for query in TECH_QUERIES:
-                yield from search(query, cap // 2)
+                yield from search(query, cap // 3)
 
     yield from search("", max_postings)
 
