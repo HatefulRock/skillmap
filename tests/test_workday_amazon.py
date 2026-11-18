@@ -19,7 +19,7 @@ def client_for(handler):
 
 def wd_job(i, title, posted="Posted 3 Days Ago", place="Singapore"):
     return {"title": title, "externalPath": f"/job/Singapore/{title.replace(' ', '-')}_R{i}",
-            "locationsText": place, "postedOn": posted, "bulletFields": [f"R{i}"]}
+            "locationsText": place, "postedOn": posted, "bulletFields": ["Singapore"]}
 
 
 def test_workday_token_and_dates():

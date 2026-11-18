@@ -47,9 +47,10 @@ def posted(label: str, today: date) -> date | None:
 
 
 def native_id(tenant: str, job: dict) -> str:
-    bullets = job.get("bulletFields") or []
-    req = bullets[0] if bullets else (job.get("externalPath") or "").rsplit("_", 1)[-1]
-    return f"{tenant}:{req}"
+    """The requisition id that ends every job path (`/job/Singapore/AI-Engineer_R0130072-1`).
+    `bulletFields` is not used: some sites put a place or a team there instead of the id."""
+    path = job.get("externalPath") or ""
+    return f"{tenant}:{path.rsplit('_', 1)[-1] if '_' in path else path}"
 
 
 def parse(job: dict, token: str, company: str, sector: str | None, today: date, detail: dict | None = None) -> RawPosting:

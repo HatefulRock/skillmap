@@ -196,10 +196,6 @@ companies:
   ats: workday
   token: hkex.wd3/HKEXCareerPage
   sector: fintech
-- company: Grab
-  ats: workday
-  token: grab.wd3/Careers
-  sector: tech
 - company: NVIDIA
   ats: workday
   token: nvidia.wd5/NVIDIAExternalCareerSite

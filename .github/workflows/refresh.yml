@@ -61,7 +61,9 @@ jobs:
 
       - name: Collect, extract, aggregate
         env:
-          DATABASE_URL: ${{ inputs.dry_run && '' || secrets.DATABASE_URL }}
+          # `a && '' || b` always gives b in Actions ('' is falsy), so the condition is the other way round.
+          DATABASE_URL: ${{ !inputs.dry_run && secrets.DATABASE_URL || '' }}
+          SUPABASE_SECRET_KEY: ${{ !inputs.dry_run && secrets.SUPABASE_SECRET_KEY || '' }}
         run: |
           args=(--sources "${{ inputs.sources || 'boards,adzuna,mcf,hn' }}" --out data --readme README.md)
           [ -n "${{ inputs.board_limit }}" ] && args+=(--board-limit "${{ inputs.board_limit }}")
