@@ -48,7 +48,9 @@ def _json_default(value: object) -> str:
 
 
 def write_outputs(store: Store, taxonomy: Taxonomy, today: date, out: Path, runs: list[dict] | None = None,
-                  readme: Path | None = None) -> dict:
+                  readme: Path | None = None, guard: bool = False) -> tuple[dict, list[str]]:
+    """Build and write every output. With `guard`, nothing is written when the new numbers fail
+    `health.publish_check` against the published file; the reasons are returned instead."""
     rows = store.rows()
     profile = load_yaml("my_skills.yaml") or {}
     ratings = profile.get("ratings") or {}
@@ -57,6 +59,9 @@ def write_outputs(store: Store, taxonomy: Taxonomy, today: date, out: Path, runs
     # The weekly note compares with the previous run's file, so read it before overwriting.
     previous_path = out / "skills-market.json"
     previous = json.loads(previous_path.read_text()) if previous_path.exists() else None
+    held = health.publish_check(previous, data) if guard else []
+    if held:
+        return data, held
     notes = digest.add_note(digest.load_notes(out / "digest.json"), digest.build_note(data, previous))
     data["digest"] = notes[:8]
     (out / "digest.json").write_text(json.dumps(notes, indent=1, ensure_ascii=False))
@@ -76,7 +81,7 @@ def write_outputs(store: Store, taxonomy: Taxonomy, today: date, out: Path, runs
     with gzip.open(out / "postings-live.jsonl.gz", "wt") as fh:
         for row in sorted(live, key=lambda r: r["posting_id"]):
             fh.write(json.dumps(row, default=_json_default) + "\n")
-    return data
+    return data, []
 
 
 def main(argv: list[str] | None = None) -> None:
@@ -92,6 +97,8 @@ def main(argv: list[str] | None = None) -> None:
     run.add_argument("--out", type=Path, default=Path("data"))
     run.add_argument("--readme", type=Path, help="README whose weekly section gets the new note")
     run.add_argument("--health", type=Path, help="write problems found by the run-health check here (none: no file)")
+    run.add_argument("--force-publish", action="store_true",
+                     help="publish even when the new numbers differ sharply from the published ones")
     agg = sub.add_parser("aggregate", help="rebuild outputs from stored postings")
     agg.add_argument("--out", type=Path, default=Path("data"))
     agg.add_argument("--readme", type=Path, help="README whose weekly section gets the new note")
@@ -161,13 +168,8 @@ def main(argv: list[str] | None = None) -> None:
         for problem in problems:
             logging.warning("health: %s", problem)
         if args.health:
-            clean = args.health.with_suffix(".ok")
             args.health.unlink(missing_ok=True)
-            clean.unlink(missing_ok=True)
-            if problems:
-                args.health.write_text(health.markdown(problems, os.environ.get("RUN_URL")))
-            elif full:
-                clean.write_text("")
+            args.health.with_suffix(".ok").unlink(missing_ok=True)
         archive = open_archive() if os.environ.get("DATABASE_URL") else None
         refreshed = reextract(store, taxonomy, today, archive)
         if refreshed:
@@ -181,7 +183,15 @@ def main(argv: list[str] | None = None) -> None:
         if trimmed:
             logging.info("dropped stored text of %d long-closed postings to stay under the size limit", trimmed)
 
-    data = write_outputs(store, taxonomy, today, args.out, runs, readme=args.readme)
+    guard = args.command == "run" and not args.force_publish
+    data, held = write_outputs(store, taxonomy, today, args.out, runs, readme=args.readme, guard=guard)
+    for reason in held:
+        logging.warning("not published: %s", reason)
+    if args.command == "run" and args.health:
+        if problems or held:
+            args.health.write_text(health.markdown(problems, os.environ.get("RUN_URL"), held))
+        elif full:
+            args.health.with_suffix(".ok").write_text("")
     totals = data["meta"]["totals"]
     print(f"postings {totals['postings']} · tech {totals['tech']} · live now {data['current']['n']}")
 

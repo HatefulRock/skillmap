@@ -131,7 +131,9 @@ a subset of sources, a board limit or a dry run; `discover` with a candidate lim
 source name twice; the next refresh collects it again. After each run, a problem the run-health
 check finds (a platform fetching less than half its usual count, a source failing, or a board
 failing three runs in a row) opens or updates a `run-health` issue; the next clean full run
-closes it.
+closes it. Before publishing, the run also compares its numbers with the published ones: if live
+postings fall by half or a top skill moves more than 12 points under the same taxonomy, it keeps
+the old files and says so in that issue. Re-run with `force_publish` once the change is checked.
 
 ```sh
 uv run skillmap discover --no-yc --limit 50     # probe the first 50 curated names

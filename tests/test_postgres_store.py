@@ -54,7 +54,7 @@ def test_outputs_from_postgres(tmp_path):
     r = raw(1, "mcf")
     r.salary_min, r.salary_max, r.salary_currency, r.salary_period = 7000, 9000, "SGD", "month"
     store.save([(normalise(r, TAX, date(2026, 11, 10)), r)], TAX.version)
-    data = write_outputs(store, TAX, date(2026, 11, 10), tmp_path)
+    data, _ = write_outputs(store, TAX, date(2026, 11, 10), tmp_path)
     assert data["salary"]["median_monthly"] == 8000
 
 

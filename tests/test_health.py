@@ -62,3 +62,28 @@ def test_several_runs_on_one_day_count_once():
 def test_partial_runs_do_not_compare_totals():
     past = history([("greenhouse:a", 400, None)])
     assert health.check([row("greenhouse:a", 10)], past, compare_totals=False) == []
+
+
+def market(n, shares, version=6):
+    return {"meta": {"taxonomy_version": version},
+            "current": {"n": n, "skills": [{"name": k, "share": v} for k, v in shares.items()]}}
+
+
+def test_publish_check_passes_ordinary_weekly_change():
+    assert health.publish_check(market(1000, {"Python": 0.41, "SQL": 0.24}),
+                                market(900, {"Python": 0.43, "SQL": 0.22})) == []
+    assert health.publish_check(None, market(10, {})) == []
+
+
+def test_publish_check_holds_a_collapse_or_a_jump():
+    held = health.publish_check(market(1000, {"Python": 0.41}), market(300, {"Python": 0.70}))
+    assert held == ["live tech postings fell from 1,000 to 300", "Python moved from 41% to 70% of live postings"]
+
+
+def test_publish_check_allows_share_shifts_after_a_taxonomy_change():
+    assert health.publish_check(market(1000, {"Python": 0.41}, 5), market(1000, {"Python": 0.70}, 6)) == []
+
+
+def test_held_markdown_says_nothing_was_published():
+    text = health.markdown([], None, ["Python moved from 41% to 70% of live postings"])
+    assert text.startswith("**Not published.**") and "force_publish" in text

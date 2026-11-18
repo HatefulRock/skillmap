@@ -94,7 +94,7 @@ def test_full_run(tmp_path, monkeypatch):
     assert reextract(store, TAX_V2, TODAY) == len(store.data)
     assert reextract(store, TAX_V2, TODAY) == 0
 
-    data = write_outputs(store, TAX, TODAY, tmp_path)
+    data, _ = write_outputs(store, TAX, TODAY, tmp_path)
     assert data["current"]["n"] == 155
     top = {s["name"]: s for s in data["current"]["skills"]}
     assert top["Python"]["share"] == 1.0
@@ -106,6 +106,15 @@ def test_full_run(tmp_path, monkeypatch):
     assert json.loads((tmp_path / "skills-market.json").read_text())["meta"]["as_of"] == "2026-11-17"
     ET.fromstring((tmp_path / "skills-heatmap.svg").read_text())  # well-formed
     assert (tmp_path / "postings-live.jsonl.gz").exists()
+    # A run whose numbers jump far from the published file keeps the old files when guarded.
+    published = json.loads((tmp_path / "skills-market.json").read_text())
+    published["current"]["n"] *= 3
+    (tmp_path / "skills-market.json").write_text(json.dumps(published))
+    _, held = write_outputs(store, TAX, TODAY, tmp_path, guard=True)
+    assert held and "fell from" in held[0]
+    assert json.loads((tmp_path / "skills-market.json").read_text())["current"]["n"] == published["current"]["n"]
+    _, held = write_outputs(store, TAX, TODAY, tmp_path)  # forced
+    assert not held and json.loads((tmp_path / "skills-market.json").read_text())["current"]["n"] == 155
 
 
 def test_dedupe_prefers_company_board():
@@ -134,3 +143,4 @@ def test_small_segments_withhold_shares():
     assert by_key["senior"]["n"] == 29 and by_key["senior"]["shares"] is None
     assert by_key["junior"]["shares"] == {"Python": 0.0, "Go": 1.0}
     assert [s["key"] for s in block["segments"]] == ["junior", "senior"]
+
