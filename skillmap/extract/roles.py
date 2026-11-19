@@ -4,7 +4,7 @@ from __future__ import annotations
 
 import re
 
-FAMILIES = ["fde", "ai_ml", "data", "backend", "frontend", "infra", "quant", "other_eng"]
+FAMILIES = ["fde", "ai_ml", "data", "backend", "frontend", "infra", "quant", "trading_biz", "other_eng"]
 LABELS = {
     "fde": "Forward deployed / solutions",
     "ai_ml": "AI / ML engineering",
@@ -13,6 +13,7 @@ LABELS = {
     "frontend": "Frontend & mobile",
     "infra": "Infra, DevOps & security",
     "quant": "Quant & trading tech",
+    "trading_biz": "Trading desk, ops & product",
     "other_eng": "Other engineering",
 }
 
@@ -27,6 +28,9 @@ RULES: list[tuple[str, re.Pattern[str]]] = [
     ("quant", re.compile(r"\bquants?\b|\bquantitative\b|\balgo(?:rithmic)?[- ]?trad|\bhft\b|high[- ]frequency|market[- ]mak|"
                          r"(?:trading|execution|\balgo\b).*\b(?:engineer|developer|programmer|sre|systems?|software|technolog)|"
                          r"\b(?:engineer|developer|programmer|software|technolog\w*)\b.*\btrading", re.I)),
+    # Trading jobs without a technical title (traders, trading ops and support, trading product
+    # managers): not engineering, but who markets firms hire, so counted in their own group.
+    ("trading_biz", re.compile(r"\btrad(?:ing|er|ers)\b|sales (?:and|&) trading|market[- ]making|\bexecution trader", re.I)),
     ("data", re.compile(r"data (?:engineer|analyst|platform|architect|infrastructure)|analytics engineer|\betl\b|"
                         r"business intelligence|\bbi (?:engineer|developer)|data scien", re.I)),
     ("infra", re.compile(r"devops|\bsre\b|site reliability|platform engineer|infrastructure|cloud (?:engineer|architect)|"

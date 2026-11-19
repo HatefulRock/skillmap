@@ -15,7 +15,7 @@ from statistics import median, quantiles
 
 from .extract import roles, salary, sector
 
-SOURCE_PRIORITY = ["greenhouse", "lever", "ashby", "workable", "smartrecruiters", "workday", "amazon", "microsoft", "jsonld", "mcf", "adzuna"]  # who wins a duplicate
+SOURCE_PRIORITY = ["greenhouse", "lever", "ashby", "workable", "smartrecruiters", "workday", "amazon", "microsoft", "jsonld", "mcf", "himalayas", "jobicy", "remoteok", "arbeitnow", "adzuna"]  # who wins a duplicate
 MIN_GROUP = 30
 CURRENT_DAYS = 30
 SEGMENT_DAYS = 90
@@ -469,7 +469,9 @@ def build(rows: list[dict], today: date, categories: dict[str, str], taxonomy_ve
             "attribution": ["Job data: The Adzuna API", "Hacker News “Who is hiring?” via the HN Algolia API",
                             "MyCareersFuture (Singapore)",
                             "Company boards on Greenhouse, Lever, Ashby, Workable, SmartRecruiters and Workday",
-                            "Amazon and Microsoft careers sites"],
+                            "Amazon and Microsoft careers sites",
+                            "Remote jobs from Himalayas (himalayas.app), Jobicy (jobicy.com) and Remote OK (remoteok.com)",
+                            "European jobs from Arbeitnow (arbeitnow.com)"],
         },
         "categories": sorted(set(categories.values())),
         "current": current,

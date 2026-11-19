@@ -16,3 +16,13 @@ mcf:                        # MyCareersFuture, Singapore
 
 hn:
   backfill_from: 2011-01-01 # first run walks every monthly thread since then
+
+public:                     # public job-board APIs that ask for a credit link (see meta.attribution)
+  boards: [himalayas, jobicy, remoteok, arbeitnow]
+  himalayas:                # remote jobs worldwide, ~118k ads; search is 20 a page, newest first
+    queries: ["software engineer", "machine learning", "ai engineer", "llm", "data engineer", "data scientist",
+              "backend", "frontend", "full stack", "devops", "platform engineer", "solutions engineer",
+              "forward deployed", "security engineer", "mobile developer", "python", "quantitative"]
+    max_pages: 150           # ~1 week of "software engineer" is 60 pages; the search stops at 250
+  jobicy:
+    industries: [dev, data-science, engineering, technical-support]
