@@ -1,71 +1,71 @@
 skill_a,skill_b,postings_together,lift
-Infrastructure as code,Terraform,1959,8.02
-Frontend (general),React,2060,5.41
-React,TypeScript,2262,5.04
-Azure,GCP,3229,4.72
-Full-stack,React,1727,4.52
-Docker,Kubernetes,3835,3.99
-Frontend (general),Full-stack,1742,4.26
-Frontend (general),TypeScript,1912,3.99
-JavaScript,TypeScript,1726,3.97
-Kubernetes,Terraform,1888,3.84
-AWS,GCP,3943,3.1
-Full-stack,TypeScript,1652,3.43
-Infrastructure as code,Kubernetes,1690,3.38
-CI/CD,Infrastructure as code,2029,3.27
-DevOps,Infrastructure as code,977,3.59
-JavaScript,React,1203,3.48
-Docker,Infrastructure as code,1586,3.33
-DevOps,Terraform,955,3.57
-Docker,Terraform,1558,3.32
-CI/CD,DevOps,2132,3.13
-Frontend (general),JavaScript,1238,3.35
-AWS,Azure,3987,2.82
-DevOps,Docker,1601,3.07
-CI/CD,Docker,3270,2.74
-CI/CD,Terraform,1795,2.94
-"SRE (SLOs, on-call)",Terraform,1059,3.16
-CI/CD,Git,1904,2.89
-Cloud (unspecified),GCP,3317,2.69
-GCP,Infrastructure as code,1195,3.06
-GCP,Terraform,1177,3.06
-C++,Java,2264,2.77
-GCP,Kubernetes,2190,2.78
-Infrastructure as code,"SRE (SLOs, on-call)",1043,3.06
-Go,Kubernetes,2041,2.76
-Azure,DevOps,1348,2.84
-Go,"SRE (SLOs, on-call)",1413,2.81
-DevOps,Kubernetes,1510,2.75
-Infrastructure as code,Observability / monitoring,1705,2.69
-Kubernetes,"SRE (SLOs, on-call)",1819,2.65
-Azure,Cloud (unspecified),3338,2.44
-Cloud (unspecified),Infrastructure as code,2028,2.59
-AWS,Cloud (unspecified),5800,2.27
-AWS,Terraform,2036,2.56
-CI/CD,Kubernetes,3024,2.41
-Observability / monitoring,Terraform,1612,2.59
-Observability / monitoring,"SRE (SLOs, on-call)",2154,2.48
-AWS,Infrastructure as code,2015,2.49
-Full-stack,JavaScript,1005,2.71
-JavaScript,REST APIs,1164,2.64
-Git,REST APIs,1068,2.66
-Kubernetes,Observability / monitoring,2934,2.3
-Azure,Kubernetes,2099,2.4
-Docker,GCP,1835,2.44
-REST APIs,React,1180,2.59
-Distributed systems,Go,2099,2.39
-Data pipelines / ETL,SQL,1635,2.47
-Cloud (unspecified),Terraform,1860,2.42
-AI agents / agentic workflows,LLMs / GenAI (general),4704,2.15
-Azure,Infrastructure as code,1115,2.57
-AWS,Kubernetes,3529,2.17
-Go,Terraform,935,2.59
-Go,Infrastructure as code,946,2.58
-Cloud (unspecified),Kubernetes,3427,2.17
-DevOps,Git,764,2.65
-Azure,Docker,1927,2.31
-C++,Linux,1346,2.42
-Git,JavaScript,792,2.59
-Cloud (unspecified),Docker,3206,2.13
-Frontend (general),REST APIs,1183,2.43
-Azure,Terraform,1049,2.46
+OOP / design patterns,System design / architecture,2427,5.5
+Frontend (general),React,2089,5.39
+React,TypeScript,2297,5.06
+Azure,GCP,3325,4.58
+Full-stack,React,1749,4.51
+Docker,Kubernetes,3884,3.98
+Frontend (general),Full-stack,1769,4.27
+Frontend (general),TypeScript,1935,3.99
+JavaScript,TypeScript,1744,3.97
+Incident response / on-call,"SRE (SLOs, on-call)",1664,3.87
+Full-stack,TypeScript,1670,3.44
+AWS,GCP,4079,3.02
+JavaScript,React,1221,3.48
+CI/CD,DevOps,2167,3.12
+Frontend (general),JavaScript,1255,3.35
+AWS,Azure,4072,2.8
+DevOps,Docker,1620,3.04
+CI/CD,Docker,3318,2.73
+CI/CD,Git,1939,2.88
+Cloud (unspecified),GCP,3421,2.64
+C++,Java,2282,2.76
+GCP,Kubernetes,2282,2.75
+Go,Kubernetes,2065,2.77
+Java,OOP / design patterns,1620,2.82
+Go,"SRE (SLOs, on-call)",1423,2.82
+Azure,DevOps,1380,2.83
+DevOps,Kubernetes,1534,2.75
+Kubernetes,"SRE (SLOs, on-call)",1832,2.65
+Azure,Cloud (unspecified),3404,2.43
+AWS,Cloud (unspecified),5896,2.27
+CI/CD,Kubernetes,3063,2.41
+Observability / monitoring,"SRE (SLOs, on-call)",2171,2.48
+Full-stack,JavaScript,1017,2.71
+JavaScript,REST APIs,1180,2.64
+Git,REST APIs,1088,2.65
+Data pipelines / ETL,SQL,1690,2.48
+Azure,Kubernetes,2148,2.4
+Kubernetes,Observability / monitoring,2965,2.3
+Distributed systems,Go,2115,2.4
+REST APIs,React,1197,2.59
+Docker,GCP,1917,2.42
+AI agents / agentic workflows,LLMs / GenAI (general),4744,2.15
+Cloud (unspecified),Kubernetes,3471,2.17
+AWS,Kubernetes,3580,2.15
+DevOps,Git,782,2.64
+Azure,Docker,1972,2.31
+C++,Linux,1364,2.41
+Frontend (general),REST APIs,1206,2.44
+Cloud (unspecified),Docker,3247,2.13
+Go,Java,1769,2.29
+Git,JavaScript,800,2.56
+REST APIs,TypeScript,1358,2.35
+Docker,Git,1230,2.38
+Incident response / on-call,Observability / monitoring,1792,2.24
+AWS,Docker,3274,2.06
+Java,JavaScript,1381,2.27
+Docker,Observability / monitoring,2556,2.08
+C++,OOP / design patterns,1018,2.35
+Docker,Go,1566,2.2
+CI/CD,Observability / monitoring,3208,2.0
+Go,Observability / monitoring,1986,2.11
+Distributed systems,"SRE (SLOs, on-call)",1748,2.14
+Distributed systems,Observability / monitoring,3022,1.98
+Distributed systems,Kubernetes,2452,2.03
+CI/CD,REST APIs,2007,2.08
+Distributed systems,System design / architecture,2004,2.08
+Full-stack,REST APIs,1111,2.25
+Go,TypeScript,1214,2.18
+Java,System design / architecture,1748,2.07
+Azure,CI/CD,2232,2.0

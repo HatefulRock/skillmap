@@ -1,251 +1,329 @@
 skill,premium,matched_postings
-Multimodal / vision-language models,0.405,658
-OpenAI API / GPT models,0.341,1237
-CDN / edge,0.329,623
-Reinforcement learning,0.32,305
-Cohere,0.295,25
-JAX,0.238,121
-Distributed training,0.209,181
-Synthetic data generation,0.199,98
-CUDA,0.185,184
-GPUs (general),0.173,946
-Linear algebra / optimisation,0.158,34
-Quantization,0.155,80
-Anthropic Claude,0.148,878
-RLHF,0.146,52
-Distillation,0.144,53
-Recommender systems,0.139,115
-TensorRT / TensorRT-LLM,0.139,86
-"Kernel networking (DPDK, eBPF)",0.137,194
-DeepSpeed / FSDP / Megatron,0.133,32
+Pretraining,0.692,330
+Interpretability / explainability,0.501,395
+Multimodal / vision-language models,0.407,658
+OpenAI API / GPT models,0.342,1239
+Teradata / legacy warehouses,0.338,30
+CDN / edge,0.33,623
+Reinforcement learning,0.32,306
+Cohere,0.294,25
+Post-training,0.284,279
+JAX,0.239,121
+Distributed training,0.21,181
+Synthetic data generation,0.2,98
+CUDA,0.186,184
+Lua,0.181,27
+GPUs (general),0.174,946
+Verilog / SystemVerilog / VHDL,0.173,40
+Linear algebra / optimisation,0.159,34
+Quantization,0.156,80
+ASIC / RTL design,0.153,103
+Anthropic Claude,0.15,878
+"Compilers (LLVM, MLIR)",0.146,124
+Distillation,0.145,53
+RLHF,0.144,54
+Recommender systems,0.141,115
+TensorRT / TensorRT-LLM,0.14,86
+"Kernel networking (DPDK, eBPF)",0.138,194
+CPU / computer architecture,0.134,116
+DeepSpeed / FSDP / Megatron,0.134,32
 SGLang,0.125,55
 LoRA / PEFT,0.124,20
-Trading / quant / markets,0.124,190
-DPO / GRPO / PPO,0.122,106
-Deep learning,0.12,471
-vLLM,0.12,102
-Guardrails / AI safety,0.114,1117
-Rust,0.113,742
-Fine-tuning,0.098,484
-PyTorch,0.097,695
-Causal inference,0.095,130
-Dagster,0.083,50
-LLM evaluation,0.082,1175
-Windsurf / Codex,0.078,296
-Model serving / inference optimization,0.077,361
+Deep learning,0.121,471
+vLLM,0.121,102
+Embedded Linux / Yocto,0.118,169
+Rust,0.117,744
+Guardrails / AI safety,0.111,1125
+"High-speed interconnects (RDMA, InfiniBand, NVLink)",0.103,145
+SEO,0.097,49
+Fine-tuning,0.096,486
+PyTorch,0.096,699
+DPO / GRPO / PPO,0.094,109
+Dagster,0.094,50
+Causal inference,0.088,131
+LLM evaluation,0.084,1179
+Model serving / inference optimization,0.078,362
+Flink,0.075,128
+ONNX,0.07,23
 Sentry,0.07,24
-ONNX,0.068,23
-Flink,0.067,127
-MLOps / LLMOps,0.065,735
-AI red teaming,0.061,135
-Graph neural networks,0.061,20
-Go,0.06,1973
-Machine learning fundamentals,0.06,2552
-Hadoop / Hive,0.057,116
-Open-weight models,0.053,111
+"GPU clouds & HPC (Slurm, CoreWeave)",0.068,512
+Robotics / ROS,0.068,517
+MLOps / LLMOps,0.067,735
+Go,0.063,1989
+"Build tools (Maven, Gradle, Bazel)",0.062,691
+Graph neural networks,0.062,20
+Machine learning fundamentals,0.06,2567
+Hadoop / Hive,0.059,116
+Trading / quant / markets,0.059,231
+Open-weight models,0.054,111
+Windsurf / Codex,0.052,301
+FinOps / cloud cost,0.051,34
 Context engineering,0.05,79
-Cost / latency optimization,0.05,917
-Financial services / banking domain,0.05,1733
-Distributed systems,0.047,2841
-Pre-sales / solution architecture / PoCs,0.044,1096
+Cost / latency optimization,0.05,923
+Figma / design tools,0.049,137
+Distributed systems,0.048,2856
+Financial services / banking domain,0.046,1756
+Pre-sales / solution architecture / PoCs,0.046,1107
+Airflow,0.045,322
+Low-code / no-code,0.044,91
 Caching,0.043,47
-Low-code / no-code,0.043,91
-Threat detection / intelligence,0.043,540
-LLMs / GenAI (general),0.042,3590
-Airflow,0.039,317
-Kinesis,0.039,44
-AI agents / agentic workflows,0.038,3828
-Temporal,0.035,123
-Kotlin,0.034,388
-Tool / function calling,0.034,490
-Penetration testing,0.031,206
-TensorFlow,0.03,314
-Helm,0.029,102
-Feature stores,0.027,44
-Spark,0.027,629
-Kubernetes,0.024,2611
-Apache Iceberg / Delta Lake,0.023,535
+LLMs / GenAI (general),0.043,3604
+Trino / Presto,0.042,65
+Threat detection / intelligence,0.041,545
+AI red teaming,0.04,141
+AI agents / agentic workflows,0.039,3847
+Kinesis,0.038,46
+Feature stores,0.037,47
+Temporal,0.036,123
+Kotlin,0.034,396
+TensorFlow,0.032,315
+Tool / function calling,0.032,491
+Spark,0.029,813
+Kubernetes,0.025,2627
+Penetration testing,0.025,208
+UIKit / native iOS frameworks,0.022,75
+Apache Iceberg / Delta Lake,0.021,541
+Concurrency / multithreading,0.021,629
+Embedded C / firmware,0.021,697
 LangSmith,0.021,51
-"SRE (SLOs, on-call)",0.018,1857
-Oracle Database,0.016,41
-Cursor,0.015,397
-Data governance,0.015,474
-Redis,0.015,279
-A/B testing / experimentation,0.014,284
-BigQuery,0.014,201
-Express.js,0.014,74
-Data labelling,0.013,316
-Snowflake,0.013,604
-gRPC / Protobuf,0.013,171
-C++,0.012,1737
-Full-stack,0.012,1766
-Knowledge graphs,0.012,115
-Observability / monitoring,0.011,3344
-Prompt engineering,0.011,524
-Fivetran / Airbyte,0.009,83
-Vulnerability management,0.009,398
-ClickHouse,0.008,150
-Swift,0.008,133
-GDPR,0.007,226
-Kubeflow,0.007,26
-Data pipelines / ETL,0.005,1651
-Scala,0.005,330
-ISO 27001,0.004,209
-SOC 2,0.004,367
-BGP / routing,0.003,137
-Python,0.003,5947
-GCP,0.002,1943
-TypeScript,0.002,1855
-"LLM security (prompt injection, OWASP LLM)",0.001,267
-VMware,-0.003,140
-Prometheus,-0.004,327
-Risk modelling,-0.004,535
+BigQuery,0.02,203
+"SRE (SLOs, on-call)",0.019,1864
+Redis,0.017,279
+Data governance,0.015,484
+Express.js,0.015,74
+gRPC / Protobuf,0.015,171
+Data labelling,0.014,316
+Unity Catalog / data catalogs,0.014,427
+C++,0.013,1743
+FPGA,0.013,97
+Knowledge graphs,0.013,115
+Observability / monitoring,0.013,3376
+Query optimization / performance tuning,0.013,1113
+A/B testing / experimentation,0.012,287
+Full-stack,0.012,1787
+Oracle Database,0.012,41
+Snowflake,0.012,611
+ClickHouse,0.011,150
+Fivetran / Airbyte,0.009,84
+GDPR,0.009,226
+Prompt engineering,0.009,529
+TLS / PKI / certificates,0.009,658
+Kubeflow,0.008,26
+Swift,0.008,134
+ISO 27001,0.007,209
+Notion / collaboration tools,0.007,233
+Data pipelines / ETL,0.006,1679
+Python,0.006,5986
+Scala,0.006,333
+Cloud networking (VPC),0.005,123
+RTOS,0.005,76
+BGP / routing,0.004,137
+Vulnerability management,0.004,400
+Helm,0.003,125
+SOC 2,0.003,368
+Service mesh / API gateways,0.003,228
+"Game engines (Unity, Unreal)",0.002,63
+Incident response / on-call,0.002,1777
+Twilio / messaging APIs,0.001,65
+VMware,0.001,142
+dbt,-0.001,283
+Prometheus,-0.002,327
+Risk modelling,-0.002,539
+GCP,-0.003,2046
+Data structures & algorithms,-0.004,1167
+TypeScript,-0.004,1869
+Cursor,-0.005,479
+"LLM security (prompt injection, OWASP LLM)",-0.005,270
+Pulumi / CloudFormation / CDK,-0.005,208
 Ruby on Rails,-0.005,96
-AWS Lambda / serverless,-0.006,349
-Redshift,-0.006,77
-On-prem / air-gapped / private cloud deploy,-0.007,503
-Azure ML,-0.008,24
-Feature engineering,-0.008,136
-KYC / AML / fraud,-0.008,689
-Pulumi / CloudFormation / CDK,-0.008,208
-SSO / SAML,-0.009,293
-Argo CD / GitOps,-0.01,223
-IAM,-0.01,589
-RBAC / access control,-0.01,228
+AWS Lambda / serverless,-0.006,350
+Redshift,-0.006,79
+Azure ML,-0.007,24
+Feature engineering,-0.007,137
+KYC / AML / fraud,-0.007,692
+HashiCorp Vault / secrets management,-0.008,274
+On-prem / air-gapped / private cloud deploy,-0.008,508
+Argo CD / GitOps,-0.009,223
+IAM,-0.009,593
+SSO / SAML,-0.009,295
+RBAC / access control,-0.01,229
 Bayesian methods,-0.011,25
-Ansible,-0.012,363
-dbt,-0.012,277
-Databricks,-0.013,757
-Flutter,-0.013,20
-Hugging Face,-0.013,49
+Load balancing,-0.011,202
+Hugging Face,-0.012,49
+Time series / forecasting,-0.012,406
+Ansible,-0.013,366
 Tailwind CSS,-0.013,40
-Vertex AI,-0.014,56
-React,-0.015,1499
-Terraform,-0.015,1240
-XGBoost / LightGBM,-0.015,27
-Load balancing,-0.016,193
-Time series / forecasting,-0.016,404
-AWS,-0.018,3493
-OpenTelemetry,-0.018,161
-Workflow orchestration,-0.018,364
-TCP/IP,-0.019,366
-OAuth / OIDC,-0.02,322
-DevSecOps,-0.021,303
-Multi-agent systems,-0.021,242
-Payments,-0.021,155
-System design / architecture,-0.021,1467
-Application security (AppSec),-0.022,398
-Cloud (unspecified),-0.023,3650
-MCP,-0.023,589
-Kafka,-0.024,662
+Salesforce,-0.014,569
+XGBoost / LightGBM,-0.014,27
+Databricks,-0.015,771
+OpenTelemetry,-0.016,161
+Workflow orchestration,-0.016,367
+Payments,-0.017,158
+Terraform,-0.017,1248
+Application security (AppSec),-0.018,431
+React,-0.018,1518
+AWS,-0.019,3573
+Flutter,-0.019,21
+"Hardware interfaces (I2C, SPI, UART, CAN)",-0.019,171
+OAuth / OIDC,-0.019,323
+MCP,-0.02,589
+Multi-agent systems,-0.02,242
+Safety-critical standards,-0.02,71
+System design / architecture,-0.021,1494
+Excel / spreadsheets,-0.022,637
+TCP/IP,-0.022,473
+Cloud (unspecified),-0.023,3680
+DevSecOps,-0.023,313
+GRC / compliance,-0.024,605
 WebSockets,-0.024,44
-Next.js,-0.025,215
+Redux / state management,-0.025,197
 Background jobs / task queues,-0.026,39
-GraphQL,-0.028,301
-Grafana,-0.029,457
-Infrastructure as code,-0.029,1204
-CISSP / CISM,-0.03,288
+Data modeling / warehousing,-0.026,867
+"ETL tools (Informatica, SSIS, Talend)",-0.026,147
+Kafka,-0.027,676
+Grafana,-0.028,461
+GraphQL,-0.028,304
+React Native,-0.029,129
+CISSP / CISM,-0.03,291
+Docker,-0.03,2240
+Infrastructure as code,-0.03,1221
 LangGraph,-0.03,144
-Docker,-0.032,2215
-Linux,-0.032,1526
-Statistics,-0.034,885
-Azure,-0.037,2086
-CI/CD,-0.037,2754
-FedRAMP / CMMC,-0.037,247
-NLP,-0.037,218
-Ruby,-0.037,248
-LlamaIndex,-0.039,47
-React Native,-0.039,128
-PostgreSQL,-0.041,960
+"Cloud security posture (Wiz, CSPM)",-0.031,475
+Change data capture (Debezium),-0.032,47
+Linux,-0.032,1553
+PCB / electronics design,-0.032,85
+ELK stack,-0.033,92
+Ethernet / LAN / WAN,-0.033,305
+"Product analytics (Amplitude, Mixpanel)",-0.034,137
+Statistics,-0.034,892
+Ruby,-0.035,248
+FedRAMP / CMMC,-0.036,251
+NLP,-0.036,218
+Okta / identity providers,-0.036,343
+Accessibility (WCAG),-0.038,351
+CI/CD,-0.038,2791
+LlamaIndex,-0.038,47
+Azure,-0.039,2128
 Django,-0.043,113
-ELK stack,-0.043,87
-MySQL,-0.045,355
-CircleCI / Buildkite,-0.046,78
-Frontend (general),-0.046,1482
-Keycloak / Auth0,-0.046,33
-Security operations (SOC / incident response),-0.046,568
-Vue,-0.046,114
-Anomaly detection,-0.047,162
-Flask,-0.049,56
-Structured output,-0.049,58
-Crypto / Web3 / blockchain,-0.05,244
-DynamoDB,-0.05,90
+Vertex AI,-0.043,59
+Next.js,-0.044,220
+Vue,-0.044,114
+CircleCI / Buildkite,-0.045,78
+Frontend (general),-0.045,1500
+Keycloak / Auth0,-0.045,33
+Security operations (SOC / incident response),-0.045,571
+MySQL,-0.046,363
+Perl,-0.046,55
+PostgreSQL,-0.046,972
+Structured output,-0.046,58
+Android,-0.047,345
+Crypto / Web3 / blockchain,-0.048,245
+Computer vision,-0.05,253
+DynamoDB,-0.051,91
 LangChain,-0.051,203
-Android,-0.052,337
-Computer vision,-0.052,253
-Embeddings / semantic search,-0.052,223
-MLflow,-0.054,86
-iOS,-0.054,324
-RAG,-0.055,575
-Splunk,-0.055,136
-pandas,-0.055,73
-DevOps,-0.059,1012
-GitHub Actions,-0.061,258
-Datadog,-0.063,346
-Elasticsearch / OpenSearch,-0.063,242
-Java,-0.065,2055
-SQL,-0.065,2281
-DNS,-0.066,383
-Node.js,-0.066,528
-REST APIs,-0.067,1731
-Reranking / hybrid search,-0.067,27
-SageMaker,-0.067,39
-AI-assisted development,-0.07,981
-Diffusion models,-0.071,23
-scikit-learn,-0.071,103
+Anomaly detection,-0.052,168
+MLflow,-0.053,86
+Embeddings / semantic search,-0.054,224
+RAG,-0.054,576
+pandas,-0.054,73
+Splunk,-0.055,137
+Microsoft Power Platform / SharePoint,-0.056,207
+iOS,-0.057,326
+Oracle Cloud (OCI),-0.058,88
+DevOps,-0.059,1022
+GitHub Actions,-0.059,258
+Elasticsearch / OpenSearch,-0.06,246
+Data quality,-0.061,732
+Flask,-0.062,59
+Microsoft Fabric / Synapse,-0.062,67
+Datadog,-0.064,348
+Node.js,-0.064,532
+Java,-0.065,2084
+DNS,-0.066,384
+Reranking / hybrid search,-0.066,27
+SQL,-0.066,2314
+SageMaker,-0.066,39
+Industrial control (PLC / SCADA),-0.068,233
+AI-assisted development,-0.069,987
+"BDD / mobile and test tools (Cucumber, Appium)",-0.069,73
+OOP / design patterns,-0.069,627
+"Wireless (Wi-Fi, Bluetooth, 5G)",-0.069,97
+Diffusion models,-0.07,23
+REST APIs,-0.07,1747
+scikit-learn,-0.07,103
+Operations research / optimization,-0.071,91
+"Other clouds (IBM, Alibaba, DigitalOcean)",-0.072,344
 CrewAI,-0.073,37
-Bash / shell scripting,-0.075,524
-AI governance,-0.078,230
-AWS Bedrock,-0.079,91
-Microservices,-0.079,806
+Bash / shell scripting,-0.074,524
+"API testing / load testing (Postman, k6)",-0.075,129
+Hyper-V / Citrix / Proxmox,-0.075,33
+Prisma / ORMs,-0.075,60
+SIEM,-0.075,230
+AWS Bedrock,-0.078,91
+NetSuite / ERP,-0.078,110
+AI governance,-0.079,231
 AutoGen,-0.08,21
-Hyper-V / Citrix / Proxmox,-0.08,32
-Zero trust,-0.08,204
-Claude Code,-0.081,508
-SIEM,-0.081,225
-AWS SQS / SNS,-0.083,73
-Event-driven architecture,-0.086,613
-VPN / firewalls,-0.086,460
-Cassandra,-0.087,88
-Google Gemini,-0.089,81
-Looker,-0.089,77
-Stripe,-0.089,144
-FastAPI,-0.091,144
-GitLab CI,-0.094,217
-JavaScript,-0.094,1422
-NoSQL (general),-0.094,258
+Microservices,-0.08,818
+R,-0.08,195
+Zero trust,-0.081,205
+"Firewalls / SASE (Palo Alto, Zscaler)",-0.082,349
+Cassandra,-0.085,92
+Geospatial (GIS),-0.086,96
+macOS,-0.086,146
+VPN / firewalls,-0.087,465
+Event-driven architecture,-0.088,625
+Google Gemini,-0.088,81
+Stripe,-0.088,144
+AWS SQS / SNS,-0.09,74
+"Healthcare data (FHIR, HL7)",-0.09,48
+Looker,-0.09,79
+JavaScript,-0.091,1438
+MATLAB,-0.091,159
+Claude Code,-0.092,513
+Relational databases,-0.093,402
 Vector databases,-0.094,292
-Relational databases,-0.095,396
-BI (general),-0.097,416
-MongoDB,-0.101,259
-TDD,-0.101,108
-HTML / CSS,-0.102,421
-Cisco / Juniper,-0.105,301
-Tableau,-0.107,156
-NIST frameworks,-0.108,275
-PowerShell,-0.109,221
-Git,-0.111,989
-Google Pub/Sub,-0.111,36
-OSCP / CEH / Security+,-0.113,144
-SQL Server,-0.115,198
+Speech (ASR / TTS),-0.095,199
+GitLab CI,-0.096,228
+NoSQL (general),-0.097,262
+MongoDB,-0.099,260
+Cisco / Juniper,-0.1,305
+TDD,-0.1,108
+BI (general),-0.101,430
+PowerShell,-0.103,228
+Google Pub/Sub,-0.105,36
+HTML / CSS,-0.106,463
+NIST frameworks,-0.107,276
+Unit / integration testing,-0.109,888
+Git,-0.112,1004
+Agile / Scrum,-0.113,707
+FastAPI,-0.114,151
+OSCP / CEH / Security+,-0.114,146
 Supabase / Firebase,-0.115,22
-Unit / integration testing,-0.121,689
-C#,-0.122,522
+Tableau,-0.117,168
+HubSpot / CRM tools,-0.119,186
+Playwright / Cypress / Selenium,-0.119,119
+RabbitMQ,-0.119,42
+SQL Server,-0.119,203
+C#,-0.122,528
 NumPy,-0.124,39
-Playwright / Cypress / Selenium,-0.124,116
-Azure OpenAI,-0.129,46
 A2A protocol,-0.132,29
-RabbitMQ,-0.135,41
-Windows Server / Intune,-0.136,171
-Speech (ASR / TTS),-0.137,163
-Spring Boot,-0.138,267
-Angular,-0.141,200
-Jenkins,-0.142,233
-Power BI,-0.15,124
-GitHub Copilot,-0.151,336
-Zapier / Make,-0.154,41
-Active Directory / Entra ID,-0.158,266
+ServiceNow,-0.132,174
+SAP,-0.135,77
+Windows Server / Intune,-0.136,172
+Azure OpenAI,-0.139,47
+Angular,-0.14,205
+Jenkins,-0.141,237
+SOAP / XML services,-0.141,98
+Spring Boot,-0.141,275
+"Java ecosystem (Hibernate, Spring, JUnit)",-0.144,374
+Shopify / e-commerce platforms,-0.147,32
+GitHub Copilot,-0.149,336
+Zapier / Make,-0.153,41
+Active Directory / Entra ID,-0.155,271
+Power BI,-0.156,136
+Jira / Confluence,-0.16,291
 Jest / Vitest,-0.161,30
-.NET,-0.19,235
+.NET,-0.192,239
 n8n,-0.235,29
-PHP,-0.242,54
+PHP,-0.255,55
+Electron / desktop apps,-0.274,38

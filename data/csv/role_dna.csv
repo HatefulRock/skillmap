@@ -1,72 +1,73 @@
 role_family,skill,share,share_elsewhere,lift
-fde,Pre-sales / solution architecture / PoCs,0.5,0.029,17.38
-fde,Databricks,0.126,0.04,3.17
-fde,RAG,0.118,0.051,2.31
-fde,Azure,0.232,0.134,1.73
-fde,GCP,0.203,0.122,1.67
-fde,Cloud (unspecified),0.367,0.248,1.48
-fde,JavaScript,0.131,0.092,1.42
-fde,AWS,0.352,0.26,1.35
-ai_ml,PyTorch,0.151,0.013,11.41
-ai_ml,Deep learning,0.123,0.013,9.45
-ai_ml,LLM evaluation,0.248,0.032,7.65
-ai_ml,Fine-tuning,0.107,0.014,7.64
-ai_ml,Tool / function calling,0.102,0.018,5.74
-ai_ml,MLOps / LLMOps,0.135,0.026,5.25
-ai_ml,RAG,0.147,0.033,4.42
-ai_ml,Prompt engineering,0.118,0.027,4.34
-data,dbt,0.223,0.011,20.5
+fde,Pre-sales / solution architecture / PoCs,0.501,0.029,17.51
+fde,Excel / spreadsheets,0.117,0.034,3.5
+fde,Databricks,0.126,0.04,3.12
+fde,RAG,0.117,0.051,2.31
+fde,Azure,0.231,0.136,1.7
+fde,GCP,0.204,0.127,1.61
+fde,Cloud (unspecified),0.366,0.248,1.48
+fde,JavaScript,0.13,0.092,1.41
+ai_ml,PyTorch,0.15,0.013,11.31
+ai_ml,Deep learning,0.122,0.013,9.37
+ai_ml,Fine-tuning,0.107,0.014,7.73
+ai_ml,LLM evaluation,0.247,0.032,7.68
+ai_ml,Tool / function calling,0.103,0.018,5.84
+ai_ml,MLOps / LLMOps,0.136,0.026,5.31
+ai_ml,RAG,0.148,0.033,4.47
+ai_ml,Prompt engineering,0.118,0.027,4.37
+data,dbt,0.228,0.011,21.11
 data,Redshift,0.103,0.006,17.22
-data,Airflow,0.234,0.014,16.69
-data,Tableau,0.14,0.009,14.9
-data,BI (general),0.309,0.025,12.49
-data,Power BI,0.125,0.011,11.81
-data,BigQuery,0.127,0.013,9.51
-data,Spark,0.313,0.033,9.4
-backend,Full-stack,0.249,0.063,3.94
-backend,PostgreSQL,0.159,0.043,3.71
-backend,Microservices,0.155,0.045,3.47
-backend,Node.js,0.101,0.029,3.45
-backend,React,0.218,0.063,3.43
-backend,Event-driven architecture,0.112,0.033,3.37
-backend,Frontend (general),0.223,0.071,3.15
-backend,Unit / integration testing,0.125,0.045,2.76
-frontend,React Native,0.134,0.006,22.38
-frontend,Swift,0.182,0.008,21.95
-frontend,iOS,0.286,0.015,19.48
-frontend,Android,0.33,0.018,18.41
-frontend,Kotlin,0.23,0.021,10.75
-frontend,HTML / CSS,0.222,0.032,6.88
-frontend,React,0.445,0.089,5.02
-frontend,Frontend (general),0.463,0.095,4.86
-infra,Vulnerability management,0.13,0.007,17.58
-infra,Security operations (SOC / incident response),0.153,0.013,11.69
-infra,Threat detection / intelligence,0.161,0.016,10.18
-infra,Application security (AppSec),0.118,0.016,7.6
-infra,Ansible,0.108,0.015,7.12
-infra,VPN / firewalls,0.105,0.019,5.61
-infra,IAM,0.135,0.026,5.12
-infra,Terraform,0.236,0.056,4.21
-quant,Trading / quant / markets,0.857,0.022,39.49
-quant,Risk modelling,0.345,0.042,8.18
-quant,Statistics,0.496,0.065,7.69
-quant,Time series / forecasting,0.145,0.028,5.18
-quant,C++,0.476,0.126,3.78
-quant,Crypto / Web3 / blockchain,0.108,0.033,3.25
-quant,Cost / latency optimization,0.194,0.067,2.91
-quant,Linux,0.228,0.116,1.97
-trading_biz,Trading / quant / markets,0.532,0.029,18.27
-trading_biz,Crypto / Web3 / blockchain,0.26,0.032,8.03
-trading_biz,Risk modelling,0.326,0.044,7.41
-trading_biz,Financial services / banking domain,0.573,0.149,3.84
-trading_biz,Statistics,0.114,0.07,1.62
-trading_biz,SQL,0.165,0.171,0.96
-trading_biz,Python,0.253,0.402,0.63
-other_eng,System design / architecture,0.206,0.114,1.82
-other_eng,Linux,0.157,0.107,1.47
-other_eng,C++,0.171,0.12,1.42
-other_eng,"SRE (SLOs, on-call)",0.129,0.11,1.17
-other_eng,Distributed systems,0.196,0.199,0.98
-other_eng,Java,0.168,0.174,0.96
-other_eng,AWS,0.223,0.282,0.79
-other_eng,CI/CD,0.165,0.218,0.76
+data,Airflow,0.236,0.014,16.74
+data,Tableau,0.141,0.009,14.81
+data,"ETL tools (Informatica, SSIS, Talend)",0.114,0.008,13.87
+data,Data quality,0.425,0.033,12.91
+data,BI (general),0.316,0.025,12.74
+data,Power BI,0.13,0.011,12.24
+backend,Full-stack,0.249,0.063,3.95
+backend,PostgreSQL,0.16,0.043,3.73
+backend,Microservices,0.156,0.044,3.5
+backend,React,0.218,0.064,3.43
+backend,Node.js,0.101,0.029,3.43
+backend,Event-driven architecture,0.112,0.033,3.39
+backend,Frontend (general),0.223,0.071,3.14
+backend,Kafka,0.101,0.038,2.67
+frontend,React Native,0.134,0.006,22.35
+frontend,Swift,0.183,0.008,22.01
+frontend,iOS,0.286,0.015,19.43
+frontend,Android,0.331,0.018,18.47
+frontend,UIKit / native iOS frameworks,0.102,0.007,14.99
+frontend,Redux / state management,0.164,0.014,11.51
+frontend,Kotlin,0.231,0.021,10.86
+frontend,Accessibility (WCAG),0.141,0.015,9.3
+infra,Vulnerability management,0.129,0.007,17.47
+infra,Security operations (SOC / incident response),0.152,0.013,11.73
+infra,Threat detection / intelligence,0.161,0.016,10.2
+infra,Application security (AppSec),0.124,0.017,7.27
+infra,"Cloud security posture (Wiz, CSPM)",0.129,0.018,7.12
+infra,Ansible,0.108,0.015,7.09
+infra,VPN / firewalls,0.105,0.019,5.67
+infra,IAM,0.135,0.026,5.14
+quant,Trading / quant / markets,0.873,0.028,31.75
+quant,Risk modelling,0.344,0.042,8.21
+quant,Statistics,0.494,0.064,7.71
+quant,Time series / forecasting,0.144,0.028,5.18
+quant,C++,0.475,0.125,3.78
+quant,Crypto / Web3 / blockchain,0.107,0.033,3.26
+quant,Cost / latency optimization,0.197,0.066,2.97
+quant,Data structures & algorithms,0.205,0.084,2.45
+trading_biz,Trading / quant / markets,0.785,0.033,23.95
+trading_biz,Crypto / Web3 / blockchain,0.259,0.032,8.08
+trading_biz,Risk modelling,0.325,0.044,7.43
+trading_biz,Financial services / banking domain,0.574,0.149,3.85
+trading_biz,Excel / spreadsheets,0.117,0.042,2.79
+trading_biz,Statistics,0.114,0.07,1.63
+trading_biz,SQL,0.164,0.173,0.95
+trading_biz,Python,0.252,0.402,0.63
+other_eng,OOP / design patterns,0.159,0.072,2.19
+other_eng,System design / architecture,0.205,0.114,1.81
+other_eng,Linux,0.157,0.108,1.45
+other_eng,C++,0.17,0.12,1.42
+other_eng,"SRE (SLOs, on-call)",0.128,0.109,1.17
+other_eng,Incident response / on-call,0.114,0.101,1.13
+other_eng,Distributed systems,0.194,0.198,0.98
+other_eng,Java,0.167,0.174,0.96
