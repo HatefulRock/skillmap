@@ -1,2 +1,2 @@
-month,postings,skills_mean,skills_median,required_mean,nice_mean,words_median,years_median,remote,pay_stated,degree_any,degree_phd,visa_yes,visa_no,equity
-2026-11,24847,7.14,6,6.19,0.95,754,5,0.1129,0.5327,0.1995,0.0525,0.0067,0.0149,0.3996
+month,postings,skills_mean,skills_median,required_mean,nice_mean,nice_any,words_median,years_median,remote,pay_stated,degree_any,degree_phd,visa_yes,visa_no,equity
+2026-11,24648,7.19,6.0,6.23,0.96,0.3157,755.5,5,0.1138,0.4429,0.1986,0.0524,0.0068,0.0149,0.4013

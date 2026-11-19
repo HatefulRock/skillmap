@@ -1,11 +1,11 @@
 company,live_postings,previous_window,delta,sector,top_role,top_skills
-Amazon,2585,0,2585,tech,other_eng,AWS; System design / architecture; C++ / C#; Java / Kotlin (Spring); Cloud (unspecified); Microservices / distributed systems
+Amazon,2582,0,2582,tech,other_eng,AWS; System design / architecture; C++ / C#; Java / Kotlin (Spring); Cloud (unspecified); Microservices / distributed systems
 Databricks,616,0,616,ai,fde,Spark / big data; Python; AWS; Azure (incl. Azure OpenAI); GCP / Vertex AI; Rust / Scala
 OpenAI,488,0,488,ai,ai_ml,"LLM provider APIs (OpenAI / Anthropic / Gemini); Python; Microservices / distributed systems; Observability / tracing / monitoring; AI agents / agentic workflows; AI coding tools (Claude Code, Cursor, Copilot)"
 Anthropic,352,0,352,ai,ai_ml,Computer vision / multimodal / speech; Financial services / banking domain; Guardrails / AI safety; LLM provider APIs (OpenAI / Anthropic / Gemini); LLMs / GenAI (general); Python
 Shield AI,346,0,346,ai,other_eng,Python; C++ / C#; Linux / shell; CI/CD; Docker / containers; Multi-agent systems
 Microsoft,294,0,294,tech,ai_ml,Python; Azure (incl. Azure OpenAI); C++ / C#; Cloud (unspecified); Machine learning fundamentals; AI agents / agentic workflows
-Stripe,284,0,284,fintech,backend,Financial services / banking domain; KYC / AML / fraud / risk; Java / Kotlin (Spring); Python; Go; Pre-sales / solution architecture / PoCs
+Stripe,283,0,283,fintech,backend,Financial services / banking domain; Java / Kotlin (Spring); Python; KYC / AML / fraud; Go; Pre-sales / solution architecture / PoCs
 Cloudflare,252,0,252,tech,fde,Microservices / distributed systems; Go; Observability / tracing / monitoring; Python; Linux / shell; AI agents / agentic workflows
 Elastic,242,0,242,tech,backend,"Observability / tracing / monitoring; NoSQL (MongoDB, DynamoDB); LLM evaluation / eval harnesses; Java / Kotlin (Spring); Microservices / distributed systems; AI agents / agentic workflows"
 Palantir,225,0,225,tech,fde,Python; Java / Kotlin (Spring); C++ / C#; JavaScript / Node.js; Cloud (unspecified); Full-stack / frontend
@@ -13,29 +13,29 @@ Snowflake,224,0,224,tech,fde,AI agents / agentic workflows; SQL; Python; Cloud (
 Roblox,201,0,201,tech,backend,C++ / C#; Microservices / distributed systems; Python; Go; Observability / tracing / monitoring; Machine learning fundamentals
 Okta,191,0,191,tech,backend,Machine learning fundamentals; AWS; Cloud (unspecified); Microservices / distributed systems; Java / Kotlin (Spring); Observability / tracing / monitoring
 MongoDB,187,0,187,tech,other_eng,"AWS; Azure (incl. Azure OpenAI); Cloud (unspecified); GCP / Vertex AI; NoSQL (MongoDB, DynamoDB); Microservices / distributed systems"
-Qube Research & Technologies,176,0,176,fintech,quant,Python; Trading / quant / markets; C++ / C#; Linux / shell; Cost / latency optimization; Observability / tracing / monitoring
-OKX,174,0,174,crypto,quant,Crypto / Web3 / blockchain; Trading / quant / markets; Financial services / banking domain; Java / Kotlin (Spring); AI agents / agentic workflows; KYC / AML / fraud / risk
-Citi,161,0,161,fintech,backend,Java / Kotlin (Spring); SQL; Python; Microservices / distributed systems; CI/CD; Financial services / banking domain
+Qube Research & Technologies,175,0,175,fintech,quant,Python; Trading / quant / markets; C++ / C#; Linux / shell; Cost / latency optimization; Observability / tracing / monitoring
 Harvey,159,0,159,ai,other_eng,AI agents / agentic workflows; Python; LLMs / GenAI (general); Pre-sales / solution architecture / PoCs; Observability / tracing / monitoring; Prompt & context engineering
 Salesforce,156,0,156,tech,fde,"AI agents / agentic workflows; LLMs / GenAI (general); Python; SQL; AI coding tools (Claude Code, Cursor, Copilot); Java / Kotlin (Spring)"
-Airwallex,155,0,155,fintech,ai_ml,KYC / AML / fraud / risk; Financial services / banking domain; Python; GCP / Vertex AI; Java / Kotlin (Spring); Microservices / distributed systems
-Barclays,154,0,154,fintech,backend,"Testing (pytest, unit/integration); Java / Kotlin (Spring); CI/CD; Financial services / banking domain; AWS; Python"
+Airwallex,155,0,155,fintech,ai_ml,KYC / AML / fraud; Financial services / banking domain; Python; GCP / Vertex AI; Java / Kotlin (Spring); Microservices / distributed systems
+Citi,155,0,155,fintech,backend,Java / Kotlin (Spring); SQL; Microservices / distributed systems; CI/CD; Python; Financial services / banking domain
 ClickHouse,154,0,154,tech,backend,SQL; AWS; Microservices / distributed systems; GCP / Vertex AI; Azure (incl. Azure OpenAI); Observability / tracing / monitoring
-Deutsche Bank,154,0,154,fintech,other_eng,Full-stack / frontend; CI/CD; SQL; Financial services / banking domain; Python; Java / Kotlin (Spring)
-Jane Street,153,0,153,fintech,other_eng,Python; Trading / quant / markets; Machine learning fundamentals; Linux / shell; GPU / distributed training; Deep learning
 CoreWeave,152,0,152,ai,other_eng,Kubernetes; Cloud (unspecified); Python; GPU / distributed training; Observability / tracing / monitoring; Go
 Mastercard,152,0,152,fintech,backend,CI/CD; Observability / tracing / monitoring; Java / Kotlin (Spring); Microservices / distributed systems; Cloud (unspecified); SQL
 Capital One,151,0,151,fintech,backend,AWS; Statistics / maths; Python; Cloud (unspecified); Java / Kotlin (Spring); PostgreSQL / relational DBs
 NVIDIA,151,0,151,ai,other_eng,GPU / distributed training; Python; Linux / shell; C++ / C#; Deep learning; Cloud (unspecified)
 Visa,151,0,151,fintech,ai_ml,"LLMs / GenAI (general); Observability / tracing / monitoring; LLM provider APIs (OpenAI / Anthropic / Gemini); Cloud (unspecified); AI coding tools (Claude Code, Cursor, Copilot); CI/CD"
-Accenture,150,0,150,tech,ai_ml,Python; Cloud (unspecified); GCP / Vertex AI; LLMs / GenAI (general); AI agents / agentic workflows; CI/CD
+Barclays,150,0,150,fintech,backend,"Testing (pytest, unit/integration); Java / Kotlin (Spring); CI/CD; Financial services / banking domain; AWS; Python"
 Broadcom,150,0,150,tech,other_eng,Python; C++ / C#; Linux / shell; Statistics / maths; Java / Kotlin (Spring); Kubernetes
 CrowdStrike,150,0,150,tech,other_eng,Guardrails / AI safety; Microservices / distributed systems; Python; AWS; GCP / Vertex AI; Go
-Fidelity Investments,150,0,150,fintech,quant,AWS; CI/CD; Financial services / banking domain; Python; SQL; Cloud (unspecified)
 HP,150,0,150,tech,ai_ml,Python; SQL; C++ / C#; AI agents / agentic workflows; Azure (incl. Azure OpenAI); LLMs / GenAI (general)
 Intel,150,0,150,tech,other_eng,Python; C++ / C#; Statistics / maths; Linux / shell; Machine learning fundamentals; GPU / distributed training
-Micron,150,0,150,tech,other_eng,KYC / AML / fraud / risk; Python; LLMs / GenAI (general); AI agents / agentic workflows; Deep learning; Statistics / maths
-Morgan Stanley,150,0,150,fintech,backend,Financial services / banking domain; Python; CI/CD; Java / Kotlin (Spring); Linux / shell; Observability / tracing / monitoring
-State Street,150,0,150,fintech,backend,Financial services / banking domain; Cloud (unspecified); SQL; Azure (incl. Azure OpenAI); Java / Kotlin (Spring); AWS
-Thomson Reuters,150,0,150,tech,ai_ml,Python; LLMs / GenAI (general); AWS; AI agents / agentic workflows; Observability / tracing / monitoring; Cloud (unspecified)
+Micron,150,0,150,tech,other_eng,KYC / AML / fraud; Python; LLMs / GenAI (general); AI agents / agentic workflows; Deep learning; Statistics / maths
+OKX,150,0,150,crypto,ai_ml,Crypto / Web3 / blockchain; Financial services / banking domain; Java / Kotlin (Spring); Trading / quant / markets; AI agents / agentic workflows; LLMs / GenAI (general)
 Workday,150,0,150,tech,ai_ml,Python; Cloud (unspecified); AWS; AI agents / agentic workflows; Observability / tracing / monitoring; CI/CD
+Affirm,149,0,149,fintech,backend,Python; Java / Kotlin (Spring); AWS; SQL; Kubernetes; PostgreSQL / relational DBs
+Jane Street,149,0,149,fintech,other_eng,Python; Trading / quant / markets; Machine learning fundamentals; Linux / shell; GPU / distributed training; Deep learning
+Thomson Reuters,149,0,149,tech,ai_ml,Python; LLMs / GenAI (general); AWS; AI agents / agentic workflows; Observability / tracing / monitoring; Cloud (unspecified)
+Accenture,148,0,148,tech,ai_ml,Python; Cloud (unspecified); GCP / Vertex AI; LLMs / GenAI (general); AI agents / agentic workflows; CI/CD
+Deutsche Bank,146,0,146,fintech,other_eng,CI/CD; SQL; Full-stack / frontend; Financial services / banking domain; Python; Java / Kotlin (Spring)
+State Street,146,0,146,fintech,backend,Financial services / banking domain; Cloud (unspecified); SQL; Azure (incl. Azure OpenAI); Java / Kotlin (Spring); AWS
+Morgan Stanley,144,0,144,fintech,backend,Financial services / banking domain; Python; CI/CD; Java / Kotlin (Spring); Linux / shell; Observability / tracing / monitoring

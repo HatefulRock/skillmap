@@ -16,9 +16,9 @@ in that role family that ask for the skill, and the last column is my own rating
 <!-- weekly:start -->
 **Week of 2026-11-19**
 
-- 24,847 live tech postings in the last 30 days (+0 since 2026-11-19).
-- Median advertised pay in SG: SGD 90,000 a year, from 4,101 ads.
-- Median advertised pay in US: USD 216,100 a year, from 7,370 ads.
+- 24,648 live tech postings in the last 30 days (-199 since 2026-11-19).
+- Median advertised pay in SG: SGD 90,000 a year, from 4,093 ads.
+- Median advertised pay in US: USD 216,100 a year, from 7,333 ads.
 <!-- weekly:end -->
 
 [RSS](data/feed.xml) · [all notes](data/digest.json) · [CSV tables](data/csv/) · [JSON](data/skills-market.json)

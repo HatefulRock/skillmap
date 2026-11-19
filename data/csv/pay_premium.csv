@@ -1,9 +1,8 @@
 skill,premium,matched_postings
 RLHF / DPO / RL,0.261,353
 Computer vision / multimodal / speech,0.255,787
-LLM provider APIs (OpenAI / Anthropic / Gemini),0.198,1614
-Trading / quant / markets,0.185,164
-GPU / distributed training,0.146,818
+LLM provider APIs (OpenAI / Anthropic / Gemini),0.199,1614
+GPU / distributed training,0.146,819
 Guardrails / AI safety,0.138,1127
 "Low-code automation (n8n, Zapier)",0.122,114
 PyTorch,0.09,489
@@ -11,78 +10,80 @@ TensorFlow / Keras / JAX,0.09,275
 Deep learning,0.088,318
 "LLM security (prompt injection, OWASP LLM)",0.085,135
 Fine-tuning (SFT / LoRA / PEFT),0.082,362
+Financial services / banking domain,0.08,1379
 "LLM serving / inference optimization (vLLM, TGI)",0.076,304
 Pre-sales / solution architecture / PoCs,0.076,819
 LLM evaluation / eval harnesses,0.073,1275
-Async Python (asyncio),0.066,24
 Embeddings / semantic search,0.066,349
-Financial services / banking domain,0.064,1405
-Machine learning fundamentals,0.06,1823
+Async Python (asyncio),0.065,24
+Trading / quant / markets,0.062,134
 MLOps / LLMOps,0.059,525
-LLMs / GenAI (general),0.055,2610
+Machine learning fundamentals,0.056,1823
+LLMs / GenAI (general),0.055,2600
 Tool / function calling,0.055,326
 Rust / Scala,0.044,848
 Prompt & context engineering,0.042,425
-AI agents / agentic workflows,0.033,2905
+AI agents / agentic workflows,0.033,2907
 Feature engineering / data preprocessing,0.031,111
-Cost / latency optimization,0.03,710
 Redis / caching,0.028,449
-Go,0.025,1553
+Go,0.026,1553
+Cost / latency optimization,0.025,708
 scikit-learn / classical ML,0.023,70
-Governance / compliance / audit,0.021,804
+Governance / compliance / audit,0.022,804
 Workflow orchestration,0.021,372
 Data pipelines / ETL,0.019,1242
 Kubernetes,0.018,1976
-Microservices / distributed systems,0.016,2542
-Terraform / IaC,0.016,1278
+Microservices / distributed systems,0.016,2540
+Terraform / IaC,0.016,1279
 GCP / Vertex AI,0.01,1565
-Python,0.007,4306
 MLflow / Kubeflow / SageMaker pipelines,0.006,80
 TypeScript,0.003,1355
-KYC / AML / fraud / risk,0.002,855
+Risk modelling,0.002,393
 Full-stack / frontend,0.001,2073
-Observability / tracing / monitoring,-0.001,2707
+Python,0.001,4280
 Spark / big data,-0.001,908
+Observability / tracing / monitoring,-0.002,2704
 Structured output,-0.004,26
-Time series / anomaly detection,-0.006,367
+KYC / AML / fraud,-0.006,493
 LangGraph,-0.007,82
-Cloud (unspecified),-0.01,2565
-AWS,-0.011,2527
+Cloud (unspecified),-0.01,2568
+AWS,-0.011,2524
 NLP,-0.012,137
 Temporal / durable execution,-0.013,106
+Time series / anomaly detection,-0.013,367
 React / Next.js,-0.015,1208
-C++ / C#,-0.016,1552
-Statistics / maths,-0.016,723
 On-prem / air-gapped / private cloud deploy,-0.018,359
 MCP,-0.019,336
-Linux / shell,-0.02,1345
 LlamaIndex,-0.02,24
+C++ / C#,-0.021,1547
 Multi-agent systems,-0.021,151
 pandas / NumPy,-0.022,56
 Django / Flask,-0.023,104
+Linux / shell,-0.023,1344
 System design / architecture,-0.023,1023
 Celery / background jobs,-0.024,24
-Azure (incl. Azure OpenAI),-0.025,1481
-CI/CD,-0.03,1800
-SQL,-0.03,2529
+Azure (incl. Azure OpenAI),-0.025,1482
+Statistics / maths,-0.026,720
+SQL,-0.03,2522
+CI/CD,-0.031,1801
 Docker / containers,-0.032,1574
 RAG,-0.034,358
-"AI coding tools (Claude Code, Cursor, Copilot)",-0.037,1006
 Hugging Face Transformers,-0.037,29
+"AI coding tools (Claude Code, Cursor, Copilot)",-0.038,1007
 PostgreSQL / relational DBs,-0.038,1142
-Kafka / message queues / streaming,-0.039,810
-REST / API design & integration,-0.052,1313
-Knowledge graphs / GraphRAG,-0.055,65
+Kafka / message queues / streaming,-0.041,808
+REST / API design & integration,-0.053,1310
+Knowledge graphs / GraphRAG,-0.056,65
 LangChain,-0.062,135
 CrewAI / AutoGen / other agent SDKs,-0.064,48
-Java / Kotlin (Spring),-0.065,1754
+Java / Kotlin (Spring),-0.066,1752
 AWS Bedrock,-0.068,49
-Git,-0.071,539
 LLM tracing tools (Langfuse / LangSmith / Arize),-0.071,72
+Git,-0.072,538
 JavaScript / Node.js,-0.072,1326
 "NoSQL (MongoDB, DynamoDB)",-0.072,608
+Crypto / Web3 / blockchain,-0.077,207
 Vector databases,-0.08,189
-Crypto / Web3 / blockchain,-0.086,221
 Payments,-0.087,120
 FastAPI,-0.094,99
 "Testing (pytest, unit/integration)",-0.105,449
