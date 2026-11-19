@@ -240,29 +240,51 @@ def _init_worker(taxonomy: Taxonomy) -> None:
     _worker_taxonomy = taxonomy
 
 
-def _normalise_chunk(args: tuple[list[RawPosting], date]) -> list:
-    raws, today = args
+Changed = dict[int | None, set[str] | None]
+
+
+def _changed_for(raw: RawPosting, changed: Changed | None) -> set[str] | None:
+    return changed.get(raw.prior[0]) if changed is not None and raw.prior is not None else None
+
+
+def _normalise_chunk(args: tuple[list[RawPosting], date, Changed | None]) -> list:
+    raws, today, changed = args
     assert _worker_taxonomy is not None
-    return [normalise(raw, _worker_taxonomy, today) for raw in raws]
+    return [normalise(raw, _worker_taxonomy, today, _changed_for(raw, changed)) for raw in raws]
 
 
-def _normalise_all(raws: list[RawPosting], taxonomy: Taxonomy, today: date) -> list:
-    """normalise() for each posting, in order, on every CPU core when there are enough of them."""
+def _normalise_all(raws: list[RawPosting], taxonomy: Taxonomy, today: date, changed: Changed | None = None) -> list:
+    """normalise() for each posting, in order, on every CPU core when there are enough of them.
+    `changed` maps a posting's previous taxonomy version to the skills to match again (None: all)."""
     workers = min(os.cpu_count() or 1, 8)
     if workers < 2 or len(raws) < PARALLEL_MIN:
-        return [normalise(raw, taxonomy, today) for raw in raws]
+        return [normalise(raw, taxonomy, today, _changed_for(raw, changed)) for raw in raws]
     from concurrent.futures import ProcessPoolExecutor
 
     size = -(-len(raws) // (workers * 4))
-    chunks = [(raws[i:i + size], today) for i in range(0, len(raws), size)]
+    chunks = [(raws[i:i + size], today, changed) for i in range(0, len(raws), size)]
     with ProcessPoolExecutor(workers, initializer=_init_worker, initargs=(taxonomy,)) as pool:
         return [posting for part in pool.map(_normalise_chunk, chunks) for posting in part]
 
 
 def reextract(store: Store, taxonomy: Taxonomy, today: date, archive: Archive | None = None) -> int:
     """Re-run extraction on postings stored under an older taxonomy version: those whose text is
-    in an archive file (one file at a time), then those whose text is in the database."""
+    in an archive file (one file at a time), then those whose text is in the database.
+
+    Only skills whose patterns changed since a posting's last extraction are matched again;
+    every other field is re-derived in full (cheap next to skill matching)."""
     count = 0
+    store.save_skill_fingerprints(taxonomy.version, taxonomy.fingerprints)
+    changed: Changed = {}
+
+    def changed_for_versions(raws: list[RawPosting]) -> Changed:
+        for raw in raws:
+            version = raw.prior[0] if raw.prior else None
+            if version not in changed:
+                changed[version] = None if version is None else taxonomy.changed_since(store.skill_fingerprints(version))
+                log.info("re-extracting postings from taxonomy v%s: %s", version,
+                         "all skills" if changed[version] is None else f"{len(changed[version] or ())} changed skills")
+        return changed
 
     def run(raws: Iterable[RawPosting], texts: dict[str, str] | None = None) -> None:
         """A posting whose text is missing keeps its extraction: re-extracting an empty text
@@ -280,8 +302,8 @@ def reextract(store: Store, taxonomy: Taxonomy, today: date, archive: Archive | 
             pending.append(raw)
         for start in range(0, len(pending), REEXTRACT_BATCH):
             batch = []
-            for raw, posting in zip(pending[start:start + REEXTRACT_BATCH],
-                                    _normalise_all(pending[start:start + REEXTRACT_BATCH], taxonomy, today), strict=True):
+            chunk = pending[start:start + REEXTRACT_BATCH]
+            for raw, posting in zip(chunk, _normalise_all(chunk, taxonomy, today, changed_for_versions(chunk)), strict=True):
                 if not raw.description and posting.role_family != "non_tech":
                     textless.append(raw.posting_id)
                     continue

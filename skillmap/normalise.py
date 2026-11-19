@@ -13,9 +13,14 @@ from .models import Posting, RawPosting, dedup_key
 REMOTE_TITLE = re.compile(r"(?:^|[(\[,|/–-])\s*(?:fully\s+)?remote\s*(?=$|[)\],|/–(-])", re.I)
 
 
-def normalise(raw: RawPosting, taxonomy: Taxonomy, today: date) -> Posting:
+def normalise(raw: RawPosting, taxonomy: Taxonomy, today: date, changed: set[str] | None = None) -> Posting:
+    """`changed`: when re-extracting a stored posting, the skills whose patterns changed since its
+    last extraction (None: match all). Skill matching is most of the cost of a re-extraction."""
     plain = to_plain(raw.description)
-    skills, nice = taxonomy.extract(raw.title, raw.description)
+    if changed is not None and raw.prior is not None:
+        skills, nice = taxonomy.extract_since(raw.title, raw.description, (raw.prior[1], raw.prior[2]), changed)
+    else:
+        skills, nice = taxonomy.extract(raw.title, raw.description)
     # "Backend Engineer (Remote)" often says so only in the title, with a region as the location.
     remote_hint = raw.remote_hint if raw.remote_hint is not None else (True if REMOTE_TITLE.search(raw.title) else None)
     country, city, region, remote = location.normalise(raw.location, raw.country_hint, remote_hint)

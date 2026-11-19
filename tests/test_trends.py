@@ -295,3 +295,61 @@ def test_parallel_reextraction_matches_one_process(monkeypatch):
             for i in range(40)]
     serial = [normalise(r, TAX, TODAY) for r in raws]
     assert runner._normalise_all(raws, TAX, TODAY) == serial
+
+
+def _variant(version, drop=(), edit=None):
+    import copy
+
+    import yaml
+    from skillmap.extract.skills import DEFAULT_TAXONOMY
+    raw = yaml.safe_load(DEFAULT_TAXONOMY.read_text())
+    raw = copy.deepcopy(raw)
+    raw["version"] = version
+    for name in drop:
+        raw["skills"].pop(name)
+    if edit:
+        name, pattern = edit
+        raw["skills"].setdefault(name, {"category": "Languages", "patterns": []})["patterns"] = [pattern]
+    return Taxonomy(raw)
+
+
+ADS = [
+    ("Senior ML Engineer", "Requirements: Python, PyTorch and Kubernetes. Nice to have: Rust, Elixir and Terraform."),
+    ("Backend Engineer", "You know Go, Elixir and gRPC. Bonus: Kafka. We never interview by leetcode."),
+    ("Data Engineer", "SQL, Spark, dbt. Preferred: Elixir, Airflow, Python."),
+]
+
+
+def test_incremental_extraction_equals_full_extraction():
+    old = _variant(1, drop=["Rust / Scala"])                     # Rust is new in the next version
+    new = _variant(2, edit=("Elixir", r"\belixir\b"))           # Elixir added, Rust back
+    changed = new.changed_since(old.fingerprints)
+    assert changed == {"Rust / Scala", "Elixir"}
+    for title, text in ADS:
+        prior = old.extract(title, text)
+        assert new.extract_since(title, text, prior, changed) == new.extract(title, text), title
+
+
+def test_changed_matching_code_or_unknown_version_rematches_everything():
+    tax = _variant(3)
+    assert tax.changed_since(None) is None
+    assert tax.changed_since({**tax.fingerprints, "__code__": "x"}) is None
+    assert tax.changed_since(tax.fingerprints) == set()
+
+
+def test_reextract_only_rematches_changed_skills_and_matches_a_full_run():
+    from skillmap import runner
+    old, new = _variant(1, drop=["Rust / Scala"]), _variant(2)
+    store = MemoryStore()
+    raws = [RawPosting("greenhouse", str(i), "Acme", title, text) for i, (title, text) in enumerate(ADS)]
+    store.save([(normalise(r, old, TODAY), r) for r in raws], old.version)
+    store.save_skill_fingerprints(old.version, old.fingerprints)
+    calls = []
+    original = new.extract
+    new.extract = lambda title, text, only=None: calls.append(only) or original(title, text, only)  # type: ignore[method-assign]
+    runner.reextract(store, new, TODAY)
+    assert calls and all(only == {"Rust / Scala"} for only in calls)
+    for r in raws:
+        row = store.data[r.posting_id]
+        assert (row["skills"], row["skills_nice"]) == tuple(original(r.title, r.description))
+        assert row["taxonomy_version"] == 2
