@@ -301,6 +301,7 @@ def _variant(version, drop=(), edit=None):
     import copy
 
     import yaml
+
     from skillmap.extract.skills import DEFAULT_TAXONOMY
     raw = yaml.safe_load(DEFAULT_TAXONOMY.read_text())
     raw = copy.deepcopy(raw)

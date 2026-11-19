@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import logging
 import os
+import threading
 import time
 import uuid
 from collections.abc import Callable, Iterable
@@ -129,8 +130,13 @@ def load_boards() -> list[dict]:
     return [*curated, *extra]
 
 
+# Collection runs one thread per site; store writes and the report are shared between them.
+_STORE_LOCK = threading.Lock()
+LANES = 8
+
+
 def _ingest(store: Store, taxonomy: Taxonomy, today: date, name: str, produce: Callable[[], Iterable[RawPosting]],
-            report: RunReport, budget: Budget | None = None) -> None:
+            report: RunReport, budget: Budget | None = None) -> SourceResult:
     result = SourceResult(name)
     batch = []
     budget = budget or Budget()
@@ -142,7 +148,8 @@ def _ingest(store: Store, taxonomy: Taxonomy, today: date, name: str, produce: C
                 result.fetched += 1
                 batch.append((normalise(raw, taxonomy, today), raw))
                 if len(batch) >= 1000:
-                    result.inserted += store.save(batch, taxonomy.version)
+                    with _STORE_LOCK:
+                        result.inserted += store.save(batch, taxonomy.version)
                     batch = []
                 if result.fetched % 100 == 0 and budget.spent():
                     result.error = "stopped: out of time this run (the rest is read next run)"
@@ -152,79 +159,108 @@ def _ingest(store: Store, taxonomy: Taxonomy, today: date, name: str, produce: C
         result.rate_limited = isinstance(exc, httpx.HTTPStatusError) and exc.response.status_code == 429
         log.warning("source %s failed: %s", name, result.error)
     finally:
-        if batch:
-            result.inserted += store.save(batch, taxonomy.version)
-    store.log_run(name, result.fetched, result.inserted, result.error)
-    report.results.append(result)
+        with _STORE_LOCK:
+            if batch:
+                result.inserted += store.save(batch, taxonomy.version)
+            store.log_run(name, result.fetched, result.inserted, result.error)
+            report.results.append(result)
     log.info("%s: fetched %d, new %d%s", name, result.fetched, result.inserted,
              f" ({result.error})" if result.error else "")
+    return result
 
 
 def collect(store: Store, client: PoliteClient, taxonomy: Taxonomy, today: date, sources: set[str],
             board_limit: int | None = None, hn_since: date | None = None,
             platforms: set[str] | None = None, budget: Budget | None = None) -> RunReport:
+    """Every source, one thread per site (each company-board platform, Adzuna, MyCareersFuture,
+    each public board, Hacker News): each keeps its own polite request rate, and none waits for
+    another. Within a site, requests stay sequential."""
     report = RunReport()
     budget = budget or Budget()
+    lanes: list[Callable[[], None]] = []
+
+    def ingest(name: str, produce: Callable[[], Iterable[RawPosting]]) -> SourceResult:
+        return _ingest(store, taxonomy, today, name, produce, report, budget)
 
     if "boards" in sources:
         boards = [b for b in load_boards() if not platforms or b["ats"] in platforms][:board_limit]
         known = {ats: store.known_ids(ats) for ats in NEEDS_KNOWN if any(b["ats"] == ats for b in boards)}
-        limited: dict[str, int] = {}  # boards in a row rate-limited, per platform
+
+        def platform_lane(ats: str, mine: list[dict]) -> None:
+            limited = 0  # boards in a row rate-limited
+            for board in mine:
+                if limited >= RATE_LIMITED_BOARDS:
+                    with _STORE_LOCK:
+                        report.results.append(SourceResult(f"{ats}:{board['token']}", error="skipped: platform rate-limiting"))
+                    continue
+                module = BOARDS[ats]
+                extra = {"known": known[ats]} if ats in known else {}
+                if board.get("links"):
+                    extra["links"] = board["links"]
+                result = ingest(f"{ats}:{board['token']}",
+                                lambda b=board, m=module, x=extra: m.collect(client, b["token"], b["company"], b.get("sector"),
+                                                                             b.get("region"), **x))
+                limited = limited + 1 if result.rate_limited else 0
+                if limited == RATE_LIMITED_BOARDS:
+                    log.warning("%s keeps answering 429: skipping its remaining boards this run", ats)
+
+        by_platform: dict[str, list[dict]] = {}
         for board in boards:
-            ats = board["ats"]
-            if limited.get(ats, 0) >= RATE_LIMITED_BOARDS:
-                report.results.append(SourceResult(f"{ats}:{board['token']}", error="skipped: platform rate-limiting"))
-                continue
-            module = BOARDS[ats]
-            extra = {"known": known[ats]} if ats in known else {}
-            if board.get("links"):
-                extra["links"] = board["links"]
-            _ingest(store, taxonomy, today, f"{board['ats']}:{board['token']}",
-                    lambda b=board, m=module, x=extra: m.collect(client, b["token"], b["company"], b.get("sector"),
-                                                                 b.get("region"), **x),
-                    report, budget)
-            limited[ats] = limited.get(ats, 0) + 1 if report.results[-1].rate_limited else 0
-            if limited[ats] == RATE_LIMITED_BOARDS:
-                log.warning("%s keeps answering 429: skipping its remaining boards this run", ats)
+            by_platform.setdefault(board["ats"], []).append(board)
+        for ats, mine in by_platform.items():
+            lanes.append(lambda a=ats, m=mine: platform_lane(a, m))
 
     settings = load_yaml("sources.yaml")
     if "adzuna" in sources:
         app_id, app_key = os.environ.get("ADZUNA_APP_ID"), os.environ.get("ADZUNA_APP_KEY")
         if app_id and app_key:
             cfg = settings["adzuna"]
-            for country in cfg["countries"]:
-                _ingest(store, taxonomy, today, f"adzuna:{country}",
-                        lambda c=country: adzuna.collect(client, app_id, app_key, c, cfg["queries"], cfg["max_days_old"],
-                                                         cfg["max_pages"]),
-                        report, budget)
+
+            def adzuna_lane() -> None:
+                for country in cfg["countries"]:
+                    ingest(f"adzuna:{country}",
+                           lambda c=country: adzuna.collect(client, app_id, app_key, c, cfg["queries"], cfg["max_days_old"],
+                                                            cfg["max_pages"]))
+            lanes.append(adzuna_lane)
         else:
             report.results.append(SourceResult("adzuna", error="skipped: ADZUNA_APP_ID / ADZUNA_APP_KEY not set"))
 
     if "mcf" in sources:
-        cfg = settings["mcf"]
-        known = store.known_ids("mcf")
+        mcf_cfg = settings["mcf"]
+        mcf_known = store.known_ids("mcf")
         # Until one run has finished: the last 60 days. After that: the week since the last run,
         # with a few days' slack.
-        since = today - timedelta(days=10 if store.finished_before("mcf") else 60)
-        _ingest(store, taxonomy, today, "mcf",
-                lambda: mcf.collect(client, cfg["queries"], since, cfg["max_pages"], known,
-                                    cfg.get("categories"), cfg.get("max_category_pages", 80)), report, budget)
+        mcf_since = today - timedelta(days=10 if store.finished_before("mcf") else 60)
+        lanes.append(lambda: ingest("mcf", lambda: mcf.collect(
+            client, mcf_cfg["queries"], mcf_since, mcf_cfg["max_pages"], mcf_known,
+            mcf_cfg.get("categories"), mcf_cfg.get("max_category_pages", 80))) and None)
 
     if "public" in sources:
-        cfg = settings.get("public") or {}
+        public_cfg = settings.get("public") or {}
         # Until a board has finished one run: the last 30 days. After that: the week since, with slack.
-        for name in cfg.get("boards") or []:
+        for name in public_cfg.get("boards") or []:
             since = today - timedelta(days=10 if store.finished_before(name) else 30)
-            _ingest(store, taxonomy, today, name,
-                    lambda n=name, d=since: boards_public.collect(client, cfg, n, d), report, budget)
+            lanes.append(lambda n=name, d=since: ingest(n, lambda: boards_public.collect(client, public_cfg, n, d)) and None)
 
     if "hn" in sources:
         if hn_since is None:
             has_history = store.finished_before("hn")  # a backfill cut short is redone
             hn_since = (today - timedelta(days=40)) if has_history else date.fromisoformat(
                 str(settings["hn"]["backfill_from"]))
-        _ingest(store, taxonomy, today, "hn", lambda: hn.collect(client, hn_since), report, budget)
+        start = hn_since
+        lanes.append(lambda: ingest("hn", lambda: hn.collect(client, start)) and None)
 
+    if len(lanes) <= 1:
+        for lane in lanes:
+            lane()
+    else:
+        from concurrent.futures import ThreadPoolExecutor
+
+        with ThreadPoolExecutor(min(LANES, len(lanes))) as pool:
+            for future in [pool.submit(lane) for lane in lanes]:
+                future.result()  # a lane's sources catch their own errors; anything else is a bug
+    # Threads finish in any order; the report reads the same every run.
+    report.results.sort(key=lambda r: r.name)
     return report
 
 
