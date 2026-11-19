@@ -187,3 +187,20 @@ def test_watchlist_ranks_boards_by_matching_postings():
     # Tokens Omnideck would reject as slugs stay off the paste-ready lists.
     assert out["omnideck"] == {"watch_ashby": ["beta"], "watch_greenhouse": ["alphaai"], "watch_lever": []}
     assert all(re.fullmatch(r"[a-z0-9-]{1,64}", t) for ts in out["omnideck"].values() for t in ts)
+
+
+def test_pay_can_be_filtered_by_level_so_countries_compare_like_for_like():
+    from skillmap import aggregate
+
+    def ad(i, country, level, pay):
+        return {"posting_id": str(i), "country": country, "seniority": level, "role_family": "backend",
+                "salary_min": pay, "salary_max": pay, "salary_currency": "USD", "salary_period": "year"}
+
+    rows = [ad(i, "US", "senior", 200_000) for i in range(25)] + [ad(100 + i, "US", "junior", 100_000) for i in range(25)]
+    rows += [ad(200 + i, "CA", "junior", 110_000) for i in range(25)]
+    pay = aggregate.pay_block(rows)
+    assert [c["key"] for c in pay["countries"]] == ["US", "CA"]
+    juniors = {c["key"]: c["usd"]["median"] for c in pay["filtered"]["all|junior"]}
+    assert juniors == {"US": 100_000, "CA": 110_000}  # overall the US looks far ahead; at one level it isn't
+    assert [c["key"] for c in pay["filtered"]["backend|senior"]] == ["US"]
+    assert pay["countries"][0]["n_local"] == 50

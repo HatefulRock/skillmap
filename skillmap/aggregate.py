@@ -214,6 +214,29 @@ def _spread(values: list[float]) -> dict:
     return {"median": round(p50, -2), "p25": round(p25, -2), "p75": round(p75, -2)}
 
 
+PAY_LEVELS: dict[str, set[str] | None] = {
+    "all": None, "junior": {"intern", "junior"}, "mid": {"mid"}, "senior": {"senior"}, "staff": {"staff"},
+    "manager": {"manager"}, "mid_senior": {"mid", "senior"},
+}
+
+
+def _pay_countries(points: list[tuple[dict, float, float]]) -> list[dict]:
+    """Per country with PAY_MIN+ ads: count, median and middle half in the ads' main currency
+    (with how many ads use it) and in USD, busiest country first."""
+    by_country: dict[str, list[tuple[dict, float, float]]] = defaultdict(list)
+    for point in points:
+        by_country[point[0].get("country") or "Unknown"].append(point)
+    out = []
+    for country, group in sorted(by_country.items(), key=lambda kv: -len(kv[1])):
+        if country == "Unknown" or len(group) < PAY_MIN:
+            continue
+        currency = Counter(r["salary_currency"] for r, _, _ in group).most_common(1)[0][0]
+        local = [mid for r, mid, _ in group if r["salary_currency"] == currency]
+        out.append({"key": country, "n": len(group), "currency": currency, "n_local": len(local),
+                    "local": _spread(local), "usd": _spread([usd for _, _, usd in group])})
+    return out
+
+
 def pay_block(rows: list[dict]) -> dict:
     """Advertised yearly pay wherever it is stated: per country (local currency and USD), and per
     role family × seniority within the best-covered countries (USD, so levels compare)."""
@@ -221,14 +244,20 @@ def pay_block(rows: list[dict]) -> dict:
     by_country: dict[str, list[tuple[dict, float, float]]] = defaultdict(list)
     for point in points:
         by_country[point[0].get("country") or "Unknown"].append(point)
-    countries = []
-    for country, group in sorted(by_country.items(), key=lambda kv: -len(kv[1])):
-        if country == "Unknown" or len(group) < PAY_MIN:
-            continue
-        currency = Counter(r["salary_currency"] for r, _, _ in group).most_common(1)[0][0]
-        local = [mid for r, mid, _ in group if r["salary_currency"] == currency]
-        countries.append({"key": country, "n": len(group), "currency": currency, "local": _spread(local),
-                          "usd": _spread([usd for _, _, usd in group])})
+    countries = _pay_countries(points)
+    # The same table for one role family and/or level, keyed "family|level" ("all" for either),
+    # so countries can be compared like for like: a country of mostly senior ads otherwise looks
+    # better paid than one of mostly junior ads.
+    filtered = {}
+    for family in ["all", *roles.FAMILIES]:
+        for level, members in PAY_LEVELS.items():
+            if family == "all" and level == "all":
+                continue
+            subset = [p for p in points if (family == "all" or p[0]["role_family"] == family)
+                      and (members is None or p[0]["seniority"] in members)]
+            table = _pay_countries(subset)
+            if table:
+                filtered[f"{family}|{level}"] = table
     matrix = {}
     for entry in countries[:PAY_COUNTRIES]:
         cells: dict[str, dict[str, dict]] = {}
@@ -245,6 +274,7 @@ def pay_block(rows: list[dict]) -> dict:
         "n": len(points),
         "n_rows": len(rows),
         "countries": countries,
+        "filtered": filtered,
         "role_seniority_usd": matrix,
     }
 
