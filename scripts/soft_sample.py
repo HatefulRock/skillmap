@@ -1,4 +1,4 @@
-"""Precision check for the soft-skill patterns: read live ads from a sample of Greenhouse boards
+"""Precision check for a category's patterns (soft skills unless argv[2] names others, comma-separated): read live ads from a sample of Greenhouse boards
 and MyCareersFuture, and print each soft skill's hit rate with random matched sentences, so a
 person can judge whether the matches are real asks or boilerplate. Prints only short sentences."""
 
@@ -16,7 +16,9 @@ from skillmap.sources import greenhouse, mcf
 
 random.seed(7)
 tax = Taxonomy.load()
-soft = [s for s in tax.skills if s.category == "Soft skills"]
+# The probe workflow splits arguments on spaces, so names are rejoined.
+CATEGORIES = {c.strip() for c in (" ".join(sys.argv[2:]) or "Soft skills").split(",")}
+soft = [s for s in tax.skills if s.category in CATEGORIES or s.name in CATEGORIES]
 boards = [b for b in load_boards() if b["ats"] == "greenhouse"]
 random.shuffle(boards)
 client = PoliteClient()

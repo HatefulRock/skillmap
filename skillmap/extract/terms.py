@@ -35,6 +35,10 @@ STOP = {
     "MRR", "GTM", "SEO", "CRM", "ERP", "POC", "PoC", "PoCs", "MVP", "SLA", "SLAs", "SOC2", "SOC", "ISO", "PII", "HIPAA",
     "PCI", "NDA", "Q1", "Q2", "Q3", "Q4", "H1", "H2", "FY", "W2", "W-2", "K-12", "COVID-19", "COVID", "N/A", "TBD",
     "CS", "PM", "PMs", "ABOUT", "ROLE", "NICE", "WHAT", "WHO", "WHY", "HOW", "HAVE", "ARE", "WORK", "DO", "YOUR", "WILL",
+    # Too generic or ambiguous to be a skill: operating system, IP (often intellectual property),
+    # SDLC, and US state codes in locations.
+    "OS", "IP", "SDLC", "CA", "NY", "TX", "WA", "MA", "IL", "NJ", "VA", "GA", "NC", "FL", "DC", "AZ", "CO", "UT", "PA", "OH",
+    "MN", "MI", "MD", "CT", "ET", "PT", "PST", "EST", "CET", "GMT", "UTC",
     "USD", "SGD", "GBP", "EUR", "CAD", "AUD", "HKD", "INR", "JPY", "CNY", "KRW", "AED", "CHF", "OKX", "ETH", "BTC",
 }
 MAX_TERMS = 40

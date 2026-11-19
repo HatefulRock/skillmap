@@ -20,6 +20,10 @@ TOP_MOVERS = 12
 TOP_COMPANIES = 40
 TOP_TERMS = 25
 MIN_TERM_POSTS = 15
+# Hacker News baseline for rising terms: the last half year against the year before it.
+HN_RECENT_DAYS = 180
+HN_BASE_DAYS = 365
+MIN_HN_TERM = 6
 
 
 def _windows(rows: list[dict], today: date, days: int) -> tuple[list[dict], list[dict]]:
@@ -169,11 +173,13 @@ def companies(rows: list[dict], today: date, days: int = 30) -> dict:
     }
 
 
-def emerging_terms(rows: list[dict], today: date, days: int = MOVER_DAYS) -> dict:
+def emerging_terms(rows: list[dict], today: date, days: int = MOVER_DAYS, hn: list[dict] | None = None) -> dict:
     """Tech-looking terms the taxonomy doesn't know yet, most frequent now and fastest growing.
 
     Counted once per company per window, so one company repeating a product name in fifty ads
-    doesn't look like a market trend.
+    doesn't look like a market trend. Live collection is younger than two windows at first, so
+    rising terms also come from Hacker News, whose posts go back years: a term at least twice
+    as common (share of companies) in the last half year as in the year before.
     """
     now, before = _windows([r for r in rows if r.get("terms")], today, days)
 
@@ -190,4 +196,30 @@ def emerging_terms(rows: list[dict], today: date, days: int = MOVER_DAYS) -> dic
          if n >= MIN_TERM_POSTS and n >= 2 * c_before.get(t, 0)),
         key=lambda e: -(e["companies"] - e["companies_before"]),
     )[:TOP_TERMS]
-    return {"days": days, "n_postings": len(now), "common": common, "rising": rising}
+    return {"days": days, "n_postings": len(now), "common": common, "rising": rising,
+            "baseline": "live" if len(before) >= MIN_GROUP else None, "rising_hn": rising_hn_terms(hn or [], today)}
+
+
+def rising_hn_terms(hn: list[dict], today: date) -> dict | None:
+    """Unlisted terms whose share of Hacker News hiring companies at least doubled (see emerging_terms)."""
+    recent_start = today - timedelta(days=HN_RECENT_DAYS - 1)
+    base_start = recent_start - timedelta(days=HN_BASE_DAYS)
+    recent = [r for r in hn if recent_start <= r["first_seen"] <= today]
+    base = [r for r in hn if base_start <= r["first_seen"] < recent_start]
+    n_recent, n_base = len({r["company"] for r in recent}), len({r["company"] for r in base})
+    if n_recent < MIN_GROUP or n_base < MIN_GROUP:
+        return None
+
+    def companies_using(group: list[dict]) -> Counter:
+        return Counter(t for t, _ in {(t, r["company"]) for r in group for t in r.get("terms") or []})
+
+    c_recent, c_base = companies_using(recent), companies_using(base)
+    terms = []
+    for t, n in c_recent.items():
+        share, share_before = n / n_recent, c_base.get(t, 0) / n_base
+        if n >= MIN_HN_TERM and share >= 2 * share_before:
+            terms.append({"term": t, "companies": n, "companies_before": c_base.get(t, 0),
+                          "share": round(share, 4), "share_before": round(share_before, 4)})
+    terms.sort(key=lambda e: (-(e["share"] - e["share_before"]), e["term"]))
+    return {"days": HN_RECENT_DAYS, "base_days": HN_BASE_DAYS, "n_companies": n_recent,
+            "n_companies_before": n_base, "terms": terms[:TOP_TERMS]}

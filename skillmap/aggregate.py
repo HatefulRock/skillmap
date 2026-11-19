@@ -383,7 +383,7 @@ def changes_block(market: list[dict], hn: list[dict], today: date) -> dict:
         "per_post": {"market": trends.per_post_series(full_text, today),
                      "hn": trends.per_post_series(hn, today, full_text=False)},
         "companies": trends.companies(market, today),
-        "terms": trends.emerging_terms(full_text, today),
+        "terms": trends.emerging_terms(full_text, today, hn=hn),
     }
 
 
