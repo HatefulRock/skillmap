@@ -395,13 +395,15 @@ def velocity_block(market: list[dict], today: date, skills: list[str], tracked_s
 
 
 def insights_block(market: list[dict], window: list[dict], pay_rows: list[dict], today: date,
-                   categories: dict[str, str], ratings: dict[str, int]) -> dict:
+                   categories: dict[str, str], ratings: dict[str, int], hn: list[dict] | None = None) -> dict:
     from . import insights  # builds on this module's helpers
 
     premium = insights.pay_premium(pay_rows, sorted(categories))
+    by_role = insights.pay_premium_by_role(pay_rows, sorted(categories))
     return {
         "pay_premium": premium,
-        "pay_premium_by_role": insights.pay_premium_by_role(pay_rows, sorted(categories)),
+        "pay_premium_by_role": by_role,
+        "edge": insights.edge_block(window, hn or [], today, by_role, ratings),
         "role_dna": insights.role_dna(window),
         "seniority_ladder": insights.seniority_ladder(window),
         "stacks": insights.stacks(window),
@@ -498,7 +500,7 @@ def build(rows: list[dict], today: date, categories: dict[str, str], taxonomy_ve
         "changes": changes_block(market, hn, today),
         "velocity": velocity_block(market, today, current_names[:TOP_TREND], tracked_since),
         "insights": insights_block(market, window, active(market, today - timedelta(days=SALARY_DAYS - 1), today), today,
-                                   categories, ratings or {}),
+                                   categories, ratings or {}, hn),
         "soft_skills": soft_block(window, active(market, today - timedelta(days=SALARY_DAYS - 1), today), soft_names),
         "pairs": pairs_block(window, current_names[:20]),
         "me": me_block(window, ratings or {}, categories),

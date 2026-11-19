@@ -238,3 +238,29 @@ def test_soft_skills_leave_the_tech_charts_and_get_their_own_block():
     ai = next(s for s in block["role_family"]["segments"] if s["key"] == "ai_ml")
     assert ai["shares"] == {"Collaboration": 0.0, "Communication": 1.0}
     assert aggregate.soft_block(split, [], []) is None
+
+
+def test_edge_skills_leave_out_the_baseline_and_rank_by_signals():
+    def ad(i, skills, nice=(), level="senior"):
+        return row(i, [*skills, *nice], role_family="ai_ml", seniority=level, skills_nice=list(nice))
+    rows = []
+    for i in range(200):  # every AI ad asks for Python: the baseline, not an edge
+        level = "senior" if i % 2 else "junior"
+        skills = ["Python"]
+        nice = []
+        if i % 10 == 1:          # senior-only and often nice-to-have
+            nice = ["vLLM"]
+        if i % 8 == 0:           # junior-leaning
+            skills.append("pandas")
+        rows.append(ad(i, skills, nice, level))
+    rows += [row(1000 + i, ["Python", "pandas"], role_family="backend") for i in range(200)]
+    block = insights.edge_skills(rows, {"vLLM": {"ratio": 3.0, "share": 0.03, "share_before": 0.01}}, {}, {"pandas": 3}, "ai_ml")
+    names = [e["name"] for e in block["skills"]]
+    assert "Python" not in names and names[0] == "vLLM"
+    top = block["skills"][0]
+    assert top["rising"] == 3.0 and top["senior"] > 1 and "rising" in top["why"]
+    assert next(e for e in block["skills"] if e["name"] == "pandas")["mine"] == 3
+
+
+def test_hn_momentum_needs_both_years():
+    assert insights.hn_momentum([], date(2026, 11, 17)) == {}
