@@ -139,6 +139,7 @@ def main(argv: list[str] | None = None) -> None:
     hist = sub.add_parser("history", help="backfill job ads from Common Crawl's archive of job boards")
     hist.add_argument("--out", type=Path, default=Path("data"))
     hist.add_argument("--budget", type=float, default=300.0, help="minutes before the run stops and saves")
+    hist.add_argument("--publish-only", action="store_true", help="only put the saved series into skills-market.json")
     em = sub.add_parser("email", help="build the weekly email from published files and send it (RESEND_API_KEY, DIGEST_TO)")
     em.add_argument("--data", type=Path, default=Path("data"))
     em.add_argument("--previous", type=Path, required=True, help="folder with last run's skills-market.json and postings")
@@ -153,6 +154,9 @@ def main(argv: list[str] | None = None) -> None:
         run_discover(args)
         return
     if args.command == "history":
+        if args.publish_only:
+            add_history(args.out)
+            return
         client = PoliteClient(min_interval=1.0, per_host_interval=history.INTERVALS, max_retry_after=120)
         try:
             result = history.run(client, Taxonomy.load(), args.out, open_archive(), today_utc(), args.budget)
