@@ -46,7 +46,7 @@ infra,Governance / compliance / audit,0.12,0.065,1.85
 infra,Docker / containers,0.226,0.124,1.82
 infra,Go,0.202,0.118,1.72
 infra,Cloud (unspecified),0.371,0.231,1.61
-infra,Observability / tracing / monitoring,0.331,0.207,1.6
+infra,CI/CD,0.257,0.161,1.6
 quant,Trading / quant / markets,0.729,0.022,33.74
 quant,Statistics / maths,0.375,0.075,5.03
 quant,Crypto / Web3 / blockchain,0.16,0.037,4.32

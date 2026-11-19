@@ -61,17 +61,17 @@ hn,2015-02,422,Python,0.2701
 hn,2015-03,437,Python,0.2311
 hn,2015-06,497,Python,0.2394
 hn,2015-07,694,Python,0.2032
-hn,2015-08,535,Python,0.185
-hn,2015-09,242,Python,0.0702
-hn,2015-10,231,Python,0.039
-hn,2015-11,214,Python,0.0234
-hn,2015-12,121,Python,0.0165
-hn,2016-01,148,Python,0.0338
-hn,2016-02,238,Python,0.0336
-hn,2016-03,230,Python,0.0217
-hn,2016-04,256,Python,0.0312
-hn,2016-05,210,Python,0.019
-hn,2016-06,424,Python,0.1439
+hn,2015-08,655,Python,0.2183
+hn,2015-09,589,Python,0.2224
+hn,2015-10,513,Python,0.2105
+hn,2015-11,569,Python,0.167
+hn,2015-12,288,Python,0.2118
+hn,2016-01,309,Python,0.233
+hn,2016-02,540,Python,0.2185
+hn,2016-03,529,Python,0.206
+hn,2016-04,486,Python,0.1893
+hn,2016-05,542,Python,0.203
+hn,2016-06,605,Python,0.2149
 hn,2016-07,536,Python,0.2407
 hn,2016-08,600,Python,0.2233
 hn,2016-09,527,Python,0.2258
@@ -226,17 +226,17 @@ hn,2015-02,422,AWS,0.1445
 hn,2015-03,437,AWS,0.1304
 hn,2015-06,497,AWS,0.1569
 hn,2015-07,694,AWS,0.1326
-hn,2015-08,535,AWS,0.1439
-hn,2015-09,242,AWS,0.0
-hn,2015-10,231,AWS,0.0
-hn,2015-11,214,AWS,0.0093
-hn,2015-12,121,AWS,0.0165
-hn,2016-01,148,AWS,0.0
-hn,2016-02,238,AWS,0.0126
-hn,2016-03,230,AWS,0.013
-hn,2016-04,256,AWS,0.0078
-hn,2016-05,210,AWS,0.0
-hn,2016-06,424,AWS,0.0755
+hn,2015-08,655,AWS,0.1496
+hn,2015-09,589,AWS,0.1307
+hn,2015-10,513,AWS,0.1579
+hn,2015-11,569,AWS,0.123
+hn,2015-12,288,AWS,0.1042
+hn,2016-01,309,AWS,0.1262
+hn,2016-02,540,AWS,0.1519
+hn,2016-03,529,AWS,0.1342
+hn,2016-04,486,AWS,0.1461
+hn,2016-05,542,AWS,0.1661
+hn,2016-06,605,AWS,0.1521
 hn,2016-07,536,AWS,0.1642
 hn,2016-08,600,AWS,0.1783
 hn,2016-09,527,AWS,0.1917
@@ -391,17 +391,17 @@ hn,2015-02,422,Cloud (unspecified),0.0261
 hn,2015-03,437,Cloud (unspecified),0.016
 hn,2015-06,497,Cloud (unspecified),0.0221
 hn,2015-07,694,Cloud (unspecified),0.0115
-hn,2015-08,535,Cloud (unspecified),0.0131
-hn,2015-09,242,Cloud (unspecified),0.0041
-hn,2015-10,231,Cloud (unspecified),0.0
-hn,2015-11,214,Cloud (unspecified),0.0
-hn,2015-12,121,Cloud (unspecified),0.0083
-hn,2016-01,148,Cloud (unspecified),0.0
-hn,2016-02,238,Cloud (unspecified),0.0042
-hn,2016-03,230,Cloud (unspecified),0.0
-hn,2016-04,256,Cloud (unspecified),0.0
-hn,2016-05,210,Cloud (unspecified),0.0
-hn,2016-06,424,Cloud (unspecified),0.0024
+hn,2015-08,655,Cloud (unspecified),0.0183
+hn,2015-09,589,Cloud (unspecified),0.0153
+hn,2015-10,513,Cloud (unspecified),0.0273
+hn,2015-11,569,Cloud (unspecified),0.0246
+hn,2015-12,288,Cloud (unspecified),0.0104
+hn,2016-01,309,Cloud (unspecified),0.0324
+hn,2016-02,540,Cloud (unspecified),0.0315
+hn,2016-03,529,Cloud (unspecified),0.0189
+hn,2016-04,486,Cloud (unspecified),0.035
+hn,2016-05,542,Cloud (unspecified),0.0185
+hn,2016-06,605,Cloud (unspecified),0.0231
 hn,2016-07,536,Cloud (unspecified),0.0299
 hn,2016-08,600,Cloud (unspecified),0.025
 hn,2016-09,527,Cloud (unspecified),0.0323
@@ -556,17 +556,17 @@ hn,2015-02,422,Microservices / distributed systems,0.0569
 hn,2015-03,437,Microservices / distributed systems,0.0526
 hn,2015-06,497,Microservices / distributed systems,0.0785
 hn,2015-07,694,Microservices / distributed systems,0.0634
-hn,2015-08,535,Microservices / distributed systems,0.0654
-hn,2015-09,242,Microservices / distributed systems,0.0
-hn,2015-10,231,Microservices / distributed systems,0.0
-hn,2015-11,214,Microservices / distributed systems,0.0
-hn,2015-12,121,Microservices / distributed systems,0.0
-hn,2016-01,148,Microservices / distributed systems,0.0
-hn,2016-02,238,Microservices / distributed systems,0.0042
-hn,2016-03,230,Microservices / distributed systems,0.0
-hn,2016-04,256,Microservices / distributed systems,0.0078
-hn,2016-05,210,Microservices / distributed systems,0.0
-hn,2016-06,424,Microservices / distributed systems,0.0519
+hn,2015-08,655,Microservices / distributed systems,0.0855
+hn,2015-09,589,Microservices / distributed systems,0.0832
+hn,2015-10,513,Microservices / distributed systems,0.0663
+hn,2015-11,569,Microservices / distributed systems,0.0773
+hn,2015-12,288,Microservices / distributed systems,0.0903
+hn,2016-01,309,Microservices / distributed systems,0.0906
+hn,2016-02,540,Microservices / distributed systems,0.0741
+hn,2016-03,529,Microservices / distributed systems,0.0737
+hn,2016-04,486,Microservices / distributed systems,0.0556
+hn,2016-05,542,Microservices / distributed systems,0.0627
+hn,2016-06,605,Microservices / distributed systems,0.0826
 hn,2016-07,536,Microservices / distributed systems,0.0709
 hn,2016-08,600,Microservices / distributed systems,0.085
 hn,2016-09,527,Microservices / distributed systems,0.1006
@@ -721,17 +721,17 @@ hn,2015-02,422,LLMs / GenAI (general),0.0
 hn,2015-03,437,LLMs / GenAI (general),0.0
 hn,2015-06,497,LLMs / GenAI (general),0.0
 hn,2015-07,694,LLMs / GenAI (general),0.0
-hn,2015-08,535,LLMs / GenAI (general),0.0
-hn,2015-09,242,LLMs / GenAI (general),0.0
-hn,2015-10,231,LLMs / GenAI (general),0.0
-hn,2015-11,214,LLMs / GenAI (general),0.0
-hn,2015-12,121,LLMs / GenAI (general),0.0
-hn,2016-01,148,LLMs / GenAI (general),0.0
-hn,2016-02,238,LLMs / GenAI (general),0.0
-hn,2016-03,230,LLMs / GenAI (general),0.0
-hn,2016-04,256,LLMs / GenAI (general),0.0
-hn,2016-05,210,LLMs / GenAI (general),0.0
-hn,2016-06,424,LLMs / GenAI (general),0.0
+hn,2015-08,655,LLMs / GenAI (general),0.0
+hn,2015-09,589,LLMs / GenAI (general),0.0
+hn,2015-10,513,LLMs / GenAI (general),0.0
+hn,2015-11,569,LLMs / GenAI (general),0.0
+hn,2015-12,288,LLMs / GenAI (general),0.0
+hn,2016-01,309,LLMs / GenAI (general),0.0
+hn,2016-02,540,LLMs / GenAI (general),0.0
+hn,2016-03,529,LLMs / GenAI (general),0.0
+hn,2016-04,486,LLMs / GenAI (general),0.0
+hn,2016-05,542,LLMs / GenAI (general),0.0
+hn,2016-06,605,LLMs / GenAI (general),0.0
 hn,2016-07,536,LLMs / GenAI (general),0.0
 hn,2016-08,600,LLMs / GenAI (general),0.0
 hn,2016-09,527,LLMs / GenAI (general),0.0
@@ -886,17 +886,17 @@ hn,2015-02,422,AI agents / agentic workflows,0.0
 hn,2015-03,437,AI agents / agentic workflows,0.0
 hn,2015-06,497,AI agents / agentic workflows,0.0
 hn,2015-07,694,AI agents / agentic workflows,0.0
-hn,2015-08,535,AI agents / agentic workflows,0.0
-hn,2015-09,242,AI agents / agentic workflows,0.0
-hn,2015-10,231,AI agents / agentic workflows,0.0
-hn,2015-11,214,AI agents / agentic workflows,0.0
-hn,2015-12,121,AI agents / agentic workflows,0.0
-hn,2016-01,148,AI agents / agentic workflows,0.0
-hn,2016-02,238,AI agents / agentic workflows,0.0
-hn,2016-03,230,AI agents / agentic workflows,0.0
-hn,2016-04,256,AI agents / agentic workflows,0.0
-hn,2016-05,210,AI agents / agentic workflows,0.0
-hn,2016-06,424,AI agents / agentic workflows,0.0
+hn,2015-08,655,AI agents / agentic workflows,0.0
+hn,2015-09,589,AI agents / agentic workflows,0.0
+hn,2015-10,513,AI agents / agentic workflows,0.0
+hn,2015-11,569,AI agents / agentic workflows,0.0
+hn,2015-12,288,AI agents / agentic workflows,0.0
+hn,2016-01,309,AI agents / agentic workflows,0.0
+hn,2016-02,540,AI agents / agentic workflows,0.0
+hn,2016-03,529,AI agents / agentic workflows,0.0
+hn,2016-04,486,AI agents / agentic workflows,0.0
+hn,2016-05,542,AI agents / agentic workflows,0.0
+hn,2016-06,605,AI agents / agentic workflows,0.0
 hn,2016-07,536,AI agents / agentic workflows,0.0
 hn,2016-08,600,AI agents / agentic workflows,0.0017
 hn,2016-09,527,AI agents / agentic workflows,0.0
@@ -1051,17 +1051,17 @@ hn,2015-02,422,Observability / tracing / monitoring,0.0166
 hn,2015-03,437,Observability / tracing / monitoring,0.0069
 hn,2015-06,497,Observability / tracing / monitoring,0.0121
 hn,2015-07,694,Observability / tracing / monitoring,0.0086
-hn,2015-08,535,Observability / tracing / monitoring,0.0093
-hn,2015-09,242,Observability / tracing / monitoring,0.0
-hn,2015-10,231,Observability / tracing / monitoring,0.0
-hn,2015-11,214,Observability / tracing / monitoring,0.0
-hn,2015-12,121,Observability / tracing / monitoring,0.0
-hn,2016-01,148,Observability / tracing / monitoring,0.0
-hn,2016-02,238,Observability / tracing / monitoring,0.0
-hn,2016-03,230,Observability / tracing / monitoring,0.0
-hn,2016-04,256,Observability / tracing / monitoring,0.0
-hn,2016-05,210,Observability / tracing / monitoring,0.0
-hn,2016-06,424,Observability / tracing / monitoring,0.0047
+hn,2015-08,655,Observability / tracing / monitoring,0.0153
+hn,2015-09,589,Observability / tracing / monitoring,0.0068
+hn,2015-10,513,Observability / tracing / monitoring,0.0019
+hn,2015-11,569,Observability / tracing / monitoring,0.0018
+hn,2015-12,288,Observability / tracing / monitoring,0.0069
+hn,2016-01,309,Observability / tracing / monitoring,0.0
+hn,2016-02,540,Observability / tracing / monitoring,0.0093
+hn,2016-03,529,Observability / tracing / monitoring,0.0038
+hn,2016-04,486,Observability / tracing / monitoring,0.0144
+hn,2016-05,542,Observability / tracing / monitoring,0.0055
+hn,2016-06,605,Observability / tracing / monitoring,0.0083
 hn,2016-07,536,Observability / tracing / monitoring,0.0093
 hn,2016-08,600,Observability / tracing / monitoring,0.0083
 hn,2016-09,527,Observability / tracing / monitoring,0.0114
@@ -1216,17 +1216,17 @@ hn,2015-02,422,SQL,0.2062
 hn,2015-03,437,SQL,0.1991
 hn,2015-06,497,SQL,0.1791
 hn,2015-07,694,SQL,0.1744
-hn,2015-08,535,SQL,0.1458
-hn,2015-09,242,SQL,0.0041
-hn,2015-10,231,SQL,0.0
-hn,2015-11,214,SQL,0.0047
-hn,2015-12,121,SQL,0.0
-hn,2016-01,148,SQL,0.0135
-hn,2016-02,238,SQL,0.0126
-hn,2016-03,230,SQL,0.0087
-hn,2016-04,256,SQL,0.0
-hn,2016-05,210,SQL,0.0
-hn,2016-06,424,SQL,0.1226
+hn,2015-08,655,SQL,0.171
+hn,2015-09,589,SQL,0.1732
+hn,2015-10,513,SQL,0.1774
+hn,2015-11,569,SQL,0.1494
+hn,2015-12,288,SQL,0.1632
+hn,2016-01,309,SQL,0.1715
+hn,2016-02,540,SQL,0.1926
+hn,2016-03,529,SQL,0.1645
+hn,2016-04,486,SQL,0.1708
+hn,2016-05,542,SQL,0.1882
+hn,2016-06,605,SQL,0.1917
 hn,2016-07,536,SQL,0.1772
 hn,2016-08,600,SQL,0.185
 hn,2016-09,527,SQL,0.2049
@@ -1381,17 +1381,17 @@ hn,2015-02,422,Java / Kotlin (Spring),0.128
 hn,2015-03,437,Java / Kotlin (Spring),0.1144
 hn,2015-06,497,Java / Kotlin (Spring),0.1368
 hn,2015-07,694,Java / Kotlin (Spring),0.0937
-hn,2015-08,535,Java / Kotlin (Spring),0.0841
-hn,2015-09,242,Java / Kotlin (Spring),0.0331
-hn,2015-10,231,Java / Kotlin (Spring),0.0303
-hn,2015-11,214,Java / Kotlin (Spring),0.0467
-hn,2015-12,121,Java / Kotlin (Spring),0.0083
-hn,2016-01,148,Java / Kotlin (Spring),0.0135
-hn,2016-02,238,Java / Kotlin (Spring),0.0294
-hn,2016-03,230,Java / Kotlin (Spring),0.013
-hn,2016-04,256,Java / Kotlin (Spring),0.0117
-hn,2016-05,210,Java / Kotlin (Spring),0.019
-hn,2016-06,424,Java / Kotlin (Spring),0.0637
+hn,2015-08,655,Java / Kotlin (Spring),0.1069
+hn,2015-09,589,Java / Kotlin (Spring),0.1002
+hn,2015-10,513,Java / Kotlin (Spring),0.0955
+hn,2015-11,569,Java / Kotlin (Spring),0.1125
+hn,2015-12,288,Java / Kotlin (Spring),0.0972
+hn,2016-01,309,Java / Kotlin (Spring),0.0874
+hn,2016-02,540,Java / Kotlin (Spring),0.1111
+hn,2016-03,529,Java / Kotlin (Spring),0.1021
+hn,2016-04,486,Java / Kotlin (Spring),0.107
+hn,2016-05,542,Java / Kotlin (Spring),0.1107
+hn,2016-06,605,Java / Kotlin (Spring),0.124
 hn,2016-07,536,Java / Kotlin (Spring),0.1231
 hn,2016-08,600,Java / Kotlin (Spring),0.1417
 hn,2016-09,527,Java / Kotlin (Spring),0.1385
@@ -1546,17 +1546,17 @@ hn,2015-02,422,C++ / C#,0.0877
 hn,2015-03,437,C++ / C#,0.0892
 hn,2015-06,497,C++ / C#,0.1167
 hn,2015-07,694,C++ / C#,0.1326
-hn,2015-08,535,C++ / C#,0.1009
-hn,2015-09,242,C++ / C#,0.0124
-hn,2015-10,231,C++ / C#,0.0087
-hn,2015-11,214,C++ / C#,0.014
-hn,2015-12,121,C++ / C#,0.0413
-hn,2016-01,148,C++ / C#,0.027
-hn,2016-02,238,C++ / C#,0.0294
-hn,2016-03,230,C++ / C#,0.0217
-hn,2016-04,256,C++ / C#,0.0156
-hn,2016-05,210,C++ / C#,0.019
-hn,2016-06,424,C++ / C#,0.0755
+hn,2015-08,655,C++ / C#,0.1252
+hn,2015-09,589,C++ / C#,0.1273
+hn,2015-10,513,C++ / C#,0.1014
+hn,2015-11,569,C++ / C#,0.1019
+hn,2015-12,288,C++ / C#,0.1319
+hn,2016-01,309,C++ / C#,0.1068
+hn,2016-02,540,C++ / C#,0.1278
+hn,2016-03,529,C++ / C#,0.1172
+hn,2016-04,486,C++ / C#,0.1214
+hn,2016-05,542,C++ / C#,0.1144
+hn,2016-06,605,C++ / C#,0.114
 hn,2016-07,536,C++ / C#,0.1194
 hn,2016-08,600,C++ / C#,0.125
 hn,2016-09,527,C++ / C#,0.1195
@@ -1711,17 +1711,17 @@ hn,2015-02,422,CI/CD,0.0664
 hn,2015-03,437,CI/CD,0.0412
 hn,2015-06,497,CI/CD,0.0423
 hn,2015-07,694,CI/CD,0.0418
-hn,2015-08,535,CI/CD,0.028
-hn,2015-09,242,CI/CD,0.0
-hn,2015-10,231,CI/CD,0.0
-hn,2015-11,214,CI/CD,0.0
-hn,2015-12,121,CI/CD,0.0
-hn,2016-01,148,CI/CD,0.0
-hn,2016-02,238,CI/CD,0.0
-hn,2016-03,230,CI/CD,0.0
-hn,2016-04,256,CI/CD,0.0
-hn,2016-05,210,CI/CD,0.0
-hn,2016-06,424,CI/CD,0.0212
+hn,2015-08,655,CI/CD,0.0351
+hn,2015-09,589,CI/CD,0.0323
+hn,2015-10,513,CI/CD,0.0409
+hn,2015-11,569,CI/CD,0.0334
+hn,2015-12,288,CI/CD,0.0347
+hn,2016-01,309,CI/CD,0.0291
+hn,2016-02,540,CI/CD,0.0389
+hn,2016-03,529,CI/CD,0.0284
+hn,2016-04,486,CI/CD,0.0247
+hn,2016-05,542,CI/CD,0.0406
+hn,2016-06,605,CI/CD,0.0248
 hn,2016-07,536,CI/CD,0.041
 hn,2016-08,600,CI/CD,0.0383
 hn,2016-09,527,CI/CD,0.0474
@@ -1876,17 +1876,17 @@ hn,2015-02,422,Machine learning fundamentals,0.09
 hn,2015-03,437,Machine learning fundamentals,0.0732
 hn,2015-06,497,Machine learning fundamentals,0.0805
 hn,2015-07,694,Machine learning fundamentals,0.0821
-hn,2015-08,535,Machine learning fundamentals,0.0766
-hn,2015-09,242,Machine learning fundamentals,0.0248
-hn,2015-10,231,Machine learning fundamentals,0.0346
-hn,2015-11,214,Machine learning fundamentals,0.028
-hn,2015-12,121,Machine learning fundamentals,0.0496
-hn,2016-01,148,Machine learning fundamentals,0.0405
-hn,2016-02,238,Machine learning fundamentals,0.042
-hn,2016-03,230,Machine learning fundamentals,0.0391
-hn,2016-04,256,Machine learning fundamentals,0.0117
-hn,2016-05,210,Machine learning fundamentals,0.0333
-hn,2016-06,424,Machine learning fundamentals,0.0519
+hn,2015-08,655,Machine learning fundamentals,0.084
+hn,2015-09,589,Machine learning fundamentals,0.09
+hn,2015-10,513,Machine learning fundamentals,0.0604
+hn,2015-11,569,Machine learning fundamentals,0.0756
+hn,2015-12,288,Machine learning fundamentals,0.1111
+hn,2016-01,309,Machine learning fundamentals,0.1165
+hn,2016-02,540,Machine learning fundamentals,0.1019
+hn,2016-03,529,Machine learning fundamentals,0.104
+hn,2016-04,486,Machine learning fundamentals,0.0864
+hn,2016-05,542,Machine learning fundamentals,0.1107
+hn,2016-06,605,Machine learning fundamentals,0.086
 hn,2016-07,536,Machine learning fundamentals,0.097
 hn,2016-08,600,Machine learning fundamentals,0.0967
 hn,2016-09,527,Machine learning fundamentals,0.1063
@@ -2041,17 +2041,17 @@ hn,2015-02,422,Full-stack / frontend,0.4526
 hn,2015-03,437,Full-stack / frontend,0.4897
 hn,2015-06,497,Full-stack / frontend,0.4909
 hn,2015-07,694,Full-stack / frontend,0.4712
-hn,2015-08,535,Full-stack / frontend,0.3925
-hn,2015-09,242,Full-stack / frontend,0.2479
-hn,2015-10,231,Full-stack / frontend,0.2381
-hn,2015-11,214,Full-stack / frontend,0.285
-hn,2015-12,121,Full-stack / frontend,0.2893
-hn,2016-01,148,Full-stack / frontend,0.2973
-hn,2016-02,238,Full-stack / frontend,0.2899
-hn,2016-03,230,Full-stack / frontend,0.2565
-hn,2016-04,256,Full-stack / frontend,0.332
-hn,2016-05,210,Full-stack / frontend,0.3143
-hn,2016-06,424,Full-stack / frontend,0.3585
+hn,2015-08,655,Full-stack / frontend,0.4229
+hn,2015-09,589,Full-stack / frontend,0.4771
+hn,2015-10,513,Full-stack / frontend,0.4464
+hn,2015-11,569,Full-stack / frontend,0.4446
+hn,2015-12,288,Full-stack / frontend,0.4479
+hn,2016-01,309,Full-stack / frontend,0.4498
+hn,2016-02,540,Full-stack / frontend,0.4167
+hn,2016-03,529,Full-stack / frontend,0.4575
+hn,2016-04,486,Full-stack / frontend,0.4691
+hn,2016-05,542,Full-stack / frontend,0.4428
+hn,2016-06,605,Full-stack / frontend,0.4397
 hn,2016-07,536,Full-stack / frontend,0.4701
 hn,2016-08,600,Full-stack / frontend,0.4667
 hn,2016-09,527,Full-stack / frontend,0.4478
@@ -2206,17 +2206,17 @@ hn,2015-02,422,Kubernetes,0.0
 hn,2015-03,437,Kubernetes,0.0
 hn,2015-06,497,Kubernetes,0.004
 hn,2015-07,694,Kubernetes,0.0072
-hn,2015-08,535,Kubernetes,0.0037
-hn,2015-09,242,Kubernetes,0.0
-hn,2015-10,231,Kubernetes,0.0
-hn,2015-11,214,Kubernetes,0.0047
-hn,2015-12,121,Kubernetes,0.0
-hn,2016-01,148,Kubernetes,0.0
-hn,2016-02,238,Kubernetes,0.0
-hn,2016-03,230,Kubernetes,0.0043
-hn,2016-04,256,Kubernetes,0.0
-hn,2016-05,210,Kubernetes,0.0
-hn,2016-06,424,Kubernetes,0.0094
+hn,2015-08,655,Kubernetes,0.0046
+hn,2015-09,589,Kubernetes,0.0034
+hn,2015-10,513,Kubernetes,0.0058
+hn,2015-11,569,Kubernetes,0.0053
+hn,2015-12,288,Kubernetes,0.0139
+hn,2016-01,309,Kubernetes,0.0097
+hn,2016-02,540,Kubernetes,0.0074
+hn,2016-03,529,Kubernetes,0.0151
+hn,2016-04,486,Kubernetes,0.0123
+hn,2016-05,542,Kubernetes,0.0129
+hn,2016-06,605,Kubernetes,0.0215
 hn,2016-07,536,Kubernetes,0.0187
 hn,2016-08,600,Kubernetes,0.0233
 hn,2016-09,527,Kubernetes,0.0228
@@ -2371,17 +2371,17 @@ hn,2015-02,422,Financial services / banking domain,0.0213
 hn,2015-03,437,Financial services / banking domain,0.0137
 hn,2015-06,497,Financial services / banking domain,0.0101
 hn,2015-07,694,Financial services / banking domain,0.0173
-hn,2015-08,535,Financial services / banking domain,0.0262
-hn,2015-09,242,Financial services / banking domain,0.0
-hn,2015-10,231,Financial services / banking domain,0.0
-hn,2015-11,214,Financial services / banking domain,0.0
-hn,2015-12,121,Financial services / banking domain,0.0
-hn,2016-01,148,Financial services / banking domain,0.0
-hn,2016-02,238,Financial services / banking domain,0.0
-hn,2016-03,230,Financial services / banking domain,0.0043
-hn,2016-04,256,Financial services / banking domain,0.0039
-hn,2016-05,210,Financial services / banking domain,0.0
-hn,2016-06,424,Financial services / banking domain,0.0189
+hn,2015-08,655,Financial services / banking domain,0.0229
+hn,2015-09,589,Financial services / banking domain,0.0238
+hn,2015-10,513,Financial services / banking domain,0.0312
+hn,2015-11,569,Financial services / banking domain,0.0176
+hn,2015-12,288,Financial services / banking domain,0.0208
+hn,2016-01,309,Financial services / banking domain,0.0227
+hn,2016-02,540,Financial services / banking domain,0.0204
+hn,2016-03,529,Financial services / banking domain,0.0208
+hn,2016-04,486,Financial services / banking domain,0.0226
+hn,2016-05,542,Financial services / banking domain,0.0166
+hn,2016-06,605,Financial services / banking domain,0.0231
 hn,2016-07,536,Financial services / banking domain,0.0187
 hn,2016-08,600,Financial services / banking domain,0.035
 hn,2016-09,527,Financial services / banking domain,0.0266
@@ -2536,17 +2536,17 @@ hn,2015-02,422,System design / architecture,0.0213
 hn,2015-03,437,System design / architecture,0.0114
 hn,2015-06,497,System design / architecture,0.0121
 hn,2015-07,694,System design / architecture,0.0058
-hn,2015-08,535,System design / architecture,0.0056
-hn,2015-09,242,System design / architecture,0.0
-hn,2015-10,231,System design / architecture,0.0
-hn,2015-11,214,System design / architecture,0.0
-hn,2015-12,121,System design / architecture,0.0
-hn,2016-01,148,System design / architecture,0.0
-hn,2016-02,238,System design / architecture,0.0
-hn,2016-03,230,System design / architecture,0.0
-hn,2016-04,256,System design / architecture,0.0
-hn,2016-05,210,System design / architecture,0.0
-hn,2016-06,424,System design / architecture,0.0047
+hn,2015-08,655,System design / architecture,0.0122
+hn,2015-09,589,System design / architecture,0.0102
+hn,2015-10,513,System design / architecture,0.0078
+hn,2015-11,569,System design / architecture,0.0
+hn,2015-12,288,System design / architecture,0.0104
+hn,2016-01,309,System design / architecture,0.0129
+hn,2016-02,540,System design / architecture,0.0056
+hn,2016-03,529,System design / architecture,0.0076
+hn,2016-04,486,System design / architecture,0.0021
+hn,2016-05,542,System design / architecture,0.0111
+hn,2016-06,605,System design / architecture,0.0066
 hn,2016-07,536,System design / architecture,0.0131
 hn,2016-08,600,System design / architecture,0.0067
 hn,2016-09,527,System design / architecture,0.0095
@@ -2701,17 +2701,17 @@ hn,2015-02,422,Docker / containers,0.0569
 hn,2015-03,437,Docker / containers,0.0664
 hn,2015-06,497,Docker / containers,0.0563
 hn,2015-07,694,Docker / containers,0.0591
-hn,2015-08,535,Docker / containers,0.0636
-hn,2015-09,242,Docker / containers,0.0
-hn,2015-10,231,Docker / containers,0.0
-hn,2015-11,214,Docker / containers,0.0047
-hn,2015-12,121,Docker / containers,0.0
-hn,2016-01,148,Docker / containers,0.0
-hn,2016-02,238,Docker / containers,0.0042
-hn,2016-03,230,Docker / containers,0.0043
-hn,2016-04,256,Docker / containers,0.0
-hn,2016-05,210,Docker / containers,0.0
-hn,2016-06,424,Docker / containers,0.0542
+hn,2015-08,655,Docker / containers,0.0702
+hn,2015-09,589,Docker / containers,0.0577
+hn,2015-10,513,Docker / containers,0.0682
+hn,2015-11,569,Docker / containers,0.0562
+hn,2015-12,288,Docker / containers,0.0729
+hn,2016-01,309,Docker / containers,0.0615
+hn,2016-02,540,Docker / containers,0.0685
+hn,2016-03,529,Docker / containers,0.0681
+hn,2016-04,486,Docker / containers,0.0576
+hn,2016-05,542,Docker / containers,0.0923
+hn,2016-06,605,Docker / containers,0.0942
 hn,2016-07,536,Docker / containers,0.0989
 hn,2016-08,600,Docker / containers,0.095
 hn,2016-09,527,Docker / containers,0.1139
@@ -2866,17 +2866,17 @@ hn,2015-02,422,Linux / shell,0.1114
 hn,2015-03,437,Linux / shell,0.087
 hn,2015-06,497,Linux / shell,0.0845
 hn,2015-07,694,Linux / shell,0.085
-hn,2015-08,535,Linux / shell,0.0579
-hn,2015-09,242,Linux / shell,0.0083
-hn,2015-10,231,Linux / shell,0.0
-hn,2015-11,214,Linux / shell,0.0093
-hn,2015-12,121,Linux / shell,0.0
-hn,2016-01,148,Linux / shell,0.0
-hn,2016-02,238,Linux / shell,0.0
-hn,2016-03,230,Linux / shell,0.0087
-hn,2016-04,256,Linux / shell,0.0039
-hn,2016-05,210,Linux / shell,0.0
-hn,2016-06,424,Linux / shell,0.0448
+hn,2015-08,655,Linux / shell,0.087
+hn,2015-09,589,Linux / shell,0.0781
+hn,2015-10,513,Linux / shell,0.0858
+hn,2015-11,569,Linux / shell,0.0633
+hn,2015-12,288,Linux / shell,0.0833
+hn,2016-01,309,Linux / shell,0.0777
+hn,2016-02,540,Linux / shell,0.0667
+hn,2016-03,529,Linux / shell,0.0643
+hn,2016-04,486,Linux / shell,0.07
+hn,2016-05,542,Linux / shell,0.072
+hn,2016-06,605,Linux / shell,0.0744
 hn,2016-07,536,Linux / shell,0.0578
 hn,2016-08,600,Linux / shell,0.0467
 hn,2016-09,527,Linux / shell,0.0816
@@ -3031,17 +3031,17 @@ hn,2015-02,422,GCP / Vertex AI,0.0024
 hn,2015-03,437,GCP / Vertex AI,0.0046
 hn,2015-06,497,GCP / Vertex AI,0.002
 hn,2015-07,694,GCP / Vertex AI,0.0014
-hn,2015-08,535,GCP / Vertex AI,0.0019
-hn,2015-09,242,GCP / Vertex AI,0.0
-hn,2015-10,231,GCP / Vertex AI,0.0
-hn,2015-11,214,GCP / Vertex AI,0.0
-hn,2015-12,121,GCP / Vertex AI,0.0
-hn,2016-01,148,GCP / Vertex AI,0.0
-hn,2016-02,238,GCP / Vertex AI,0.0
-hn,2016-03,230,GCP / Vertex AI,0.0
-hn,2016-04,256,GCP / Vertex AI,0.0
-hn,2016-05,210,GCP / Vertex AI,0.0
-hn,2016-06,424,GCP / Vertex AI,0.0024
+hn,2015-08,655,GCP / Vertex AI,0.0031
+hn,2015-09,589,GCP / Vertex AI,0.0085
+hn,2015-10,513,GCP / Vertex AI,0.0
+hn,2015-11,569,GCP / Vertex AI,0.0053
+hn,2015-12,288,GCP / Vertex AI,0.0
+hn,2016-01,309,GCP / Vertex AI,0.0129
+hn,2016-02,540,GCP / Vertex AI,0.0056
+hn,2016-03,529,GCP / Vertex AI,0.0076
+hn,2016-04,486,GCP / Vertex AI,0.0082
+hn,2016-05,542,GCP / Vertex AI,0.0074
+hn,2016-06,605,GCP / Vertex AI,0.0083
 hn,2016-07,536,GCP / Vertex AI,0.0037
 hn,2016-08,600,GCP / Vertex AI,0.005
 hn,2016-09,527,GCP / Vertex AI,0.0095
@@ -3196,17 +3196,17 @@ hn,2015-02,422,Go,0.0711
 hn,2015-03,437,Go,0.0549
 hn,2015-06,497,Go,0.0443
 hn,2015-07,694,Go,0.062
-hn,2015-08,535,Go,0.0467
-hn,2015-09,242,Go,0.0041
-hn,2015-10,231,Go,0.0087
-hn,2015-11,214,Go,0.0187
-hn,2015-12,121,Go,0.0083
-hn,2016-01,148,Go,0.0135
-hn,2016-02,238,Go,0.0084
-hn,2016-03,230,Go,0.013
-hn,2016-04,256,Go,0.0039
-hn,2016-05,210,Go,0.0048
-hn,2016-06,424,Go,0.0519
+hn,2015-08,655,Go,0.0595
+hn,2015-09,589,Go,0.0764
+hn,2015-10,513,Go,0.0858
+hn,2015-11,569,Go,0.065
+hn,2015-12,288,Go,0.0938
+hn,2016-01,309,Go,0.1003
+hn,2016-02,540,Go,0.0778
+hn,2016-03,529,Go,0.0699
+hn,2016-04,486,Go,0.0782
+hn,2016-05,542,Go,0.1052
+hn,2016-06,605,Go,0.1041
 hn,2016-07,536,Go,0.0802
 hn,2016-08,600,Go,0.1017
 hn,2016-09,527,Go,0.1101
@@ -3361,17 +3361,17 @@ hn,2015-02,422,Azure (incl. Azure OpenAI),0.0
 hn,2015-03,437,Azure (incl. Azure OpenAI),0.0046
 hn,2015-06,497,Azure (incl. Azure OpenAI),0.002
 hn,2015-07,694,Azure (incl. Azure OpenAI),0.0029
-hn,2015-08,535,Azure (incl. Azure OpenAI),0.0037
-hn,2015-09,242,Azure (incl. Azure OpenAI),0.0
-hn,2015-10,231,Azure (incl. Azure OpenAI),0.0
-hn,2015-11,214,Azure (incl. Azure OpenAI),0.0047
-hn,2015-12,121,Azure (incl. Azure OpenAI),0.0
-hn,2016-01,148,Azure (incl. Azure OpenAI),0.0
-hn,2016-02,238,Azure (incl. Azure OpenAI),0.0
-hn,2016-03,230,Azure (incl. Azure OpenAI),0.0
-hn,2016-04,256,Azure (incl. Azure OpenAI),0.0
-hn,2016-05,210,Azure (incl. Azure OpenAI),0.0
-hn,2016-06,424,Azure (incl. Azure OpenAI),0.0024
+hn,2015-08,655,Azure (incl. Azure OpenAI),0.0031
+hn,2015-09,589,Azure (incl. Azure OpenAI),0.0051
+hn,2015-10,513,Azure (incl. Azure OpenAI),0.0039
+hn,2015-11,569,Azure (incl. Azure OpenAI),0.0088
+hn,2015-12,288,Azure (incl. Azure OpenAI),0.0139
+hn,2016-01,309,Azure (incl. Azure OpenAI),0.0227
+hn,2016-02,540,Azure (incl. Azure OpenAI),0.0037
+hn,2016-03,529,Azure (incl. Azure OpenAI),0.0076
+hn,2016-04,486,Azure (incl. Azure OpenAI),0.0123
+hn,2016-05,542,Azure (incl. Azure OpenAI),0.0111
+hn,2016-06,605,Azure (incl. Azure OpenAI),0.0099
 hn,2016-07,536,Azure (incl. Azure OpenAI),0.0149
 hn,2016-08,600,Azure (incl. Azure OpenAI),0.0167
 hn,2016-09,527,Azure (incl. Azure OpenAI),0.0152
@@ -3526,17 +3526,17 @@ hn,2015-02,422,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0
 hn,2015-03,437,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0
 hn,2015-06,497,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0
 hn,2015-07,694,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0
-hn,2015-08,535,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0
-hn,2015-09,242,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0
-hn,2015-10,231,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0
-hn,2015-11,214,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0
-hn,2015-12,121,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0
-hn,2016-01,148,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0
-hn,2016-02,238,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0
-hn,2016-03,230,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0
-hn,2016-04,256,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0
-hn,2016-05,210,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0
-hn,2016-06,424,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0
+hn,2015-08,655,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0
+hn,2015-09,589,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0
+hn,2015-10,513,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0
+hn,2015-11,569,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0035
+hn,2015-12,288,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0
+hn,2016-01,309,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0
+hn,2016-02,540,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0
+hn,2016-03,529,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0
+hn,2016-04,486,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0
+hn,2016-05,542,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0
+hn,2016-06,605,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0
 hn,2016-07,536,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0
 hn,2016-08,600,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0
 hn,2016-09,527,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0
@@ -3691,17 +3691,17 @@ hn,2015-02,422,REST / API design & integration,0.0521
 hn,2015-03,437,REST / API design & integration,0.0297
 hn,2015-06,497,REST / API design & integration,0.0362
 hn,2015-07,694,REST / API design & integration,0.0274
-hn,2015-08,535,REST / API design & integration,0.0318
-hn,2015-09,242,REST / API design & integration,0.0
-hn,2015-10,231,REST / API design & integration,0.0
-hn,2015-11,214,REST / API design & integration,0.0
-hn,2015-12,121,REST / API design & integration,0.0
-hn,2016-01,148,REST / API design & integration,0.0
-hn,2016-02,238,REST / API design & integration,0.0
-hn,2016-03,230,REST / API design & integration,0.0
-hn,2016-04,256,REST / API design & integration,0.0
-hn,2016-05,210,REST / API design & integration,0.0
-hn,2016-06,424,REST / API design & integration,0.033
+hn,2015-08,655,REST / API design & integration,0.0427
+hn,2015-09,589,REST / API design & integration,0.0407
+hn,2015-10,513,REST / API design & integration,0.0448
+hn,2015-11,569,REST / API design & integration,0.0316
+hn,2015-12,288,REST / API design & integration,0.0312
+hn,2016-01,309,REST / API design & integration,0.0421
+hn,2016-02,540,REST / API design & integration,0.0167
+hn,2016-03,529,REST / API design & integration,0.0227
+hn,2016-04,486,REST / API design & integration,0.0247
+hn,2016-05,542,REST / API design & integration,0.0387
+hn,2016-06,605,REST / API design & integration,0.0397
 hn,2016-07,536,REST / API design & integration,0.0448
 hn,2016-08,600,REST / API design & integration,0.0483
 hn,2016-09,527,REST / API design & integration,0.0342
@@ -3856,17 +3856,17 @@ hn,2015-02,422,TypeScript,0.0047
 hn,2015-03,437,TypeScript,0.0046
 hn,2015-06,497,TypeScript,0.008
 hn,2015-07,694,TypeScript,0.0043
-hn,2015-08,535,TypeScript,0.0
-hn,2015-09,242,TypeScript,0.0
-hn,2015-10,231,TypeScript,0.0
-hn,2015-11,214,TypeScript,0.0
-hn,2015-12,121,TypeScript,0.0
-hn,2016-01,148,TypeScript,0.0
-hn,2016-02,238,TypeScript,0.0042
-hn,2016-03,230,TypeScript,0.0
-hn,2016-04,256,TypeScript,0.0
-hn,2016-05,210,TypeScript,0.0
-hn,2016-06,424,TypeScript,0.0094
+hn,2015-08,655,TypeScript,0.0015
+hn,2015-09,589,TypeScript,0.0
+hn,2015-10,513,TypeScript,0.0039
+hn,2015-11,569,TypeScript,0.0035
+hn,2015-12,288,TypeScript,0.0104
+hn,2016-01,309,TypeScript,0.0129
+hn,2016-02,540,TypeScript,0.0074
+hn,2016-03,529,TypeScript,0.0132
+hn,2016-04,486,TypeScript,0.0206
+hn,2016-05,542,TypeScript,0.0166
+hn,2016-06,605,TypeScript,0.0215
 hn,2016-07,536,TypeScript,0.0187
 hn,2016-08,600,TypeScript,0.025
 hn,2016-09,527,TypeScript,0.0171
@@ -4021,17 +4021,17 @@ hn,2015-02,422,JavaScript / Node.js,0.2796
 hn,2015-03,437,JavaScript / Node.js,0.2632
 hn,2015-06,497,JavaScript / Node.js,0.2636
 hn,2015-07,694,JavaScript / Node.js,0.2522
-hn,2015-08,535,JavaScript / Node.js,0.2206
-hn,2015-09,242,JavaScript / Node.js,0.0455
-hn,2015-10,231,JavaScript / Node.js,0.0519
-hn,2015-11,214,JavaScript / Node.js,0.0514
-hn,2015-12,121,JavaScript / Node.js,0.0331
-hn,2016-01,148,JavaScript / Node.js,0.0338
-hn,2016-02,238,JavaScript / Node.js,0.042
-hn,2016-03,230,JavaScript / Node.js,0.0435
-hn,2016-04,256,JavaScript / Node.js,0.0625
-hn,2016-05,210,JavaScript / Node.js,0.0524
-hn,2016-06,424,JavaScript / Node.js,0.125
+hn,2015-08,655,JavaScript / Node.js,0.2489
+hn,2015-09,589,JavaScript / Node.js,0.2258
+hn,2015-10,513,JavaScript / Node.js,0.2437
+hn,2015-11,569,JavaScript / Node.js,0.2144
+hn,2015-12,288,JavaScript / Node.js,0.2188
+hn,2016-01,309,JavaScript / Node.js,0.2395
+hn,2016-02,540,JavaScript / Node.js,0.2167
+hn,2016-03,529,JavaScript / Node.js,0.2457
+hn,2016-04,486,JavaScript / Node.js,0.2346
+hn,2016-05,542,JavaScript / Node.js,0.2491
+hn,2016-06,605,JavaScript / Node.js,0.2099
 hn,2016-07,536,JavaScript / Node.js,0.25
 hn,2016-08,600,JavaScript / Node.js,0.24
 hn,2016-09,527,JavaScript / Node.js,0.26
@@ -4186,17 +4186,17 @@ hn,2015-02,422,Data pipelines / ETL,0.0071
 hn,2015-03,437,Data pipelines / ETL,0.0092
 hn,2015-06,497,Data pipelines / ETL,0.0161
 hn,2015-07,694,Data pipelines / ETL,0.0043
-hn,2015-08,535,Data pipelines / ETL,0.0056
-hn,2015-09,242,Data pipelines / ETL,0.0
-hn,2015-10,231,Data pipelines / ETL,0.0
-hn,2015-11,214,Data pipelines / ETL,0.0
-hn,2015-12,121,Data pipelines / ETL,0.0
-hn,2016-01,148,Data pipelines / ETL,0.0
-hn,2016-02,238,Data pipelines / ETL,0.0
-hn,2016-03,230,Data pipelines / ETL,0.0
-hn,2016-04,256,Data pipelines / ETL,0.0
-hn,2016-05,210,Data pipelines / ETL,0.0
-hn,2016-06,424,Data pipelines / ETL,0.0142
+hn,2015-08,655,Data pipelines / ETL,0.0076
+hn,2015-09,589,Data pipelines / ETL,0.0051
+hn,2015-10,513,Data pipelines / ETL,0.0156
+hn,2015-11,569,Data pipelines / ETL,0.0105
+hn,2015-12,288,Data pipelines / ETL,0.0104
+hn,2016-01,309,Data pipelines / ETL,0.0065
+hn,2016-02,540,Data pipelines / ETL,0.0111
+hn,2016-03,529,Data pipelines / ETL,0.0132
+hn,2016-04,486,Data pipelines / ETL,0.0041
+hn,2016-05,542,Data pipelines / ETL,0.0166
+hn,2016-06,605,Data pipelines / ETL,0.0198
 hn,2016-07,536,Data pipelines / ETL,0.0093
 hn,2016-08,600,Data pipelines / ETL,0.0183
 hn,2016-09,527,Data pipelines / ETL,0.0247
@@ -4351,17 +4351,17 @@ hn,2015-02,422,Terraform / IaC,0.0332
 hn,2015-03,437,Terraform / IaC,0.0252
 hn,2015-06,497,Terraform / IaC,0.0282
 hn,2015-07,694,Terraform / IaC,0.0173
-hn,2015-08,535,Terraform / IaC,0.0206
-hn,2015-09,242,Terraform / IaC,0.0
-hn,2015-10,231,Terraform / IaC,0.0
-hn,2015-11,214,Terraform / IaC,0.0
-hn,2015-12,121,Terraform / IaC,0.0
-hn,2016-01,148,Terraform / IaC,0.0
-hn,2016-02,238,Terraform / IaC,0.0
-hn,2016-03,230,Terraform / IaC,0.0
-hn,2016-04,256,Terraform / IaC,0.0
-hn,2016-05,210,Terraform / IaC,0.0
-hn,2016-06,424,Terraform / IaC,0.0189
+hn,2015-08,655,Terraform / IaC,0.0229
+hn,2015-09,589,Terraform / IaC,0.0255
+hn,2015-10,513,Terraform / IaC,0.0331
+hn,2015-11,569,Terraform / IaC,0.0246
+hn,2015-12,288,Terraform / IaC,0.0382
+hn,2016-01,309,Terraform / IaC,0.0259
+hn,2016-02,540,Terraform / IaC,0.0315
+hn,2016-03,529,Terraform / IaC,0.0302
+hn,2016-04,486,Terraform / IaC,0.0206
+hn,2016-05,542,Terraform / IaC,0.0258
+hn,2016-06,605,Terraform / IaC,0.0364
 hn,2016-07,536,Terraform / IaC,0.0392
 hn,2016-08,600,Terraform / IaC,0.03
 hn,2016-09,527,Terraform / IaC,0.0398
@@ -4516,17 +4516,17 @@ hn,2015-02,422,React / Next.js,0.1327
 hn,2015-03,437,React / Next.js,0.1304
 hn,2015-06,497,React / Next.js,0.1811
 hn,2015-07,694,React / Next.js,0.1527
-hn,2015-08,535,React / Next.js,0.1364
-hn,2015-09,242,React / Next.js,0.0083
-hn,2015-10,231,React / Next.js,0.0173
-hn,2015-11,214,React / Next.js,0.014
-hn,2015-12,121,React / Next.js,0.0083
-hn,2016-01,148,React / Next.js,0.0135
-hn,2016-02,238,React / Next.js,0.0084
-hn,2016-03,230,React / Next.js,0.0217
-hn,2016-04,256,React / Next.js,0.0117
-hn,2016-05,210,React / Next.js,0.0143
-hn,2016-06,424,React / Next.js,0.1132
+hn,2015-08,655,React / Next.js,0.1527
+hn,2015-09,589,React / Next.js,0.1698
+hn,2015-10,513,React / Next.js,0.191
+hn,2015-11,569,React / Next.js,0.1793
+hn,2015-12,288,React / Next.js,0.2153
+hn,2016-01,309,React / Next.js,0.1974
+hn,2016-02,540,React / Next.js,0.1981
+hn,2016-03,529,React / Next.js,0.206
+hn,2016-04,486,React / Next.js,0.2243
+hn,2016-05,542,React / Next.js,0.2454
+hn,2016-06,605,React / Next.js,0.2298
 hn,2016-07,536,React / Next.js,0.2388
 hn,2016-08,600,React / Next.js,0.2567
 hn,2016-09,527,React / Next.js,0.2467
@@ -4681,17 +4681,17 @@ hn,2015-02,422,LLM evaluation / eval harnesses,0.0047
 hn,2015-03,437,LLM evaluation / eval harnesses,0.0046
 hn,2015-06,497,LLM evaluation / eval harnesses,0.0
 hn,2015-07,694,LLM evaluation / eval harnesses,0.0
-hn,2015-08,535,LLM evaluation / eval harnesses,0.0019
-hn,2015-09,242,LLM evaluation / eval harnesses,0.0
-hn,2015-10,231,LLM evaluation / eval harnesses,0.0
-hn,2015-11,214,LLM evaluation / eval harnesses,0.0
-hn,2015-12,121,LLM evaluation / eval harnesses,0.0
-hn,2016-01,148,LLM evaluation / eval harnesses,0.0
-hn,2016-02,238,LLM evaluation / eval harnesses,0.0
-hn,2016-03,230,LLM evaluation / eval harnesses,0.0
-hn,2016-04,256,LLM evaluation / eval harnesses,0.0
-hn,2016-05,210,LLM evaluation / eval harnesses,0.0
-hn,2016-06,424,LLM evaluation / eval harnesses,0.0
+hn,2015-08,655,LLM evaluation / eval harnesses,0.0031
+hn,2015-09,589,LLM evaluation / eval harnesses,0.0051
+hn,2015-10,513,LLM evaluation / eval harnesses,0.0039
+hn,2015-11,569,LLM evaluation / eval harnesses,0.0
+hn,2015-12,288,LLM evaluation / eval harnesses,0.0035
+hn,2016-01,309,LLM evaluation / eval harnesses,0.0032
+hn,2016-02,540,LLM evaluation / eval harnesses,0.0019
+hn,2016-03,529,LLM evaluation / eval harnesses,0.0019
+hn,2016-04,486,LLM evaluation / eval harnesses,0.0
+hn,2016-05,542,LLM evaluation / eval harnesses,0.0018
+hn,2016-06,605,LLM evaluation / eval harnesses,0.005
 hn,2016-07,536,LLM evaluation / eval harnesses,0.0037
 hn,2016-08,600,LLM evaluation / eval harnesses,0.005
 hn,2016-09,527,LLM evaluation / eval harnesses,0.0019
@@ -4846,17 +4846,17 @@ hn,2015-02,422,PostgreSQL / relational DBs,0.1896
 hn,2015-03,437,PostgreSQL / relational DBs,0.1716
 hn,2015-06,497,PostgreSQL / relational DBs,0.167
 hn,2015-07,694,PostgreSQL / relational DBs,0.1499
-hn,2015-08,535,PostgreSQL / relational DBs,0.1215
-hn,2015-09,242,PostgreSQL / relational DBs,0.0
-hn,2015-10,231,PostgreSQL / relational DBs,0.0
-hn,2015-11,214,PostgreSQL / relational DBs,0.0
-hn,2015-12,121,PostgreSQL / relational DBs,0.0
-hn,2016-01,148,PostgreSQL / relational DBs,0.0068
-hn,2016-02,238,PostgreSQL / relational DBs,0.0042
-hn,2016-03,230,PostgreSQL / relational DBs,0.0087
-hn,2016-04,256,PostgreSQL / relational DBs,0.0
-hn,2016-05,210,PostgreSQL / relational DBs,0.0
-hn,2016-06,424,PostgreSQL / relational DBs,0.1132
+hn,2015-08,655,PostgreSQL / relational DBs,0.1466
+hn,2015-09,589,PostgreSQL / relational DBs,0.1443
+hn,2015-10,513,PostgreSQL / relational DBs,0.1696
+hn,2015-11,569,PostgreSQL / relational DBs,0.1248
+hn,2015-12,288,PostgreSQL / relational DBs,0.1528
+hn,2016-01,309,PostgreSQL / relational DBs,0.1392
+hn,2016-02,540,PostgreSQL / relational DBs,0.1593
+hn,2016-03,529,PostgreSQL / relational DBs,0.1493
+hn,2016-04,486,PostgreSQL / relational DBs,0.1481
+hn,2016-05,542,PostgreSQL / relational DBs,0.1771
+hn,2016-06,605,PostgreSQL / relational DBs,0.1752
 hn,2016-07,536,PostgreSQL / relational DBs,0.1511
 hn,2016-08,600,PostgreSQL / relational DBs,0.1617
 hn,2016-09,527,PostgreSQL / relational DBs,0.1954
@@ -5011,17 +5011,17 @@ hn,2015-02,422,Rust / Scala,0.0308
 hn,2015-03,437,Rust / Scala,0.0526
 hn,2015-06,497,Rust / Scala,0.0584
 hn,2015-07,694,Rust / Scala,0.0504
-hn,2015-08,535,Rust / Scala,0.0523
-hn,2015-09,242,Rust / Scala,0.0041
-hn,2015-10,231,Rust / Scala,0.0087
-hn,2015-11,214,Rust / Scala,0.0187
-hn,2015-12,121,Rust / Scala,0.0083
-hn,2016-01,148,Rust / Scala,0.0068
-hn,2016-02,238,Rust / Scala,0.0084
-hn,2016-03,230,Rust / Scala,0.0217
-hn,2016-04,256,Rust / Scala,0.0
-hn,2016-05,210,Rust / Scala,0.0
-hn,2016-06,424,Rust / Scala,0.0283
+hn,2015-08,655,Rust / Scala,0.0641
+hn,2015-09,589,Rust / Scala,0.0475
+hn,2015-10,513,Rust / Scala,0.0507
+hn,2015-11,569,Rust / Scala,0.051
+hn,2015-12,288,Rust / Scala,0.059
+hn,2016-01,309,Rust / Scala,0.0453
+hn,2016-02,540,Rust / Scala,0.0519
+hn,2016-03,529,Rust / Scala,0.0529
+hn,2016-04,486,Rust / Scala,0.0473
+hn,2016-05,542,Rust / Scala,0.0554
+hn,2016-06,605,Rust / Scala,0.0496
 hn,2016-07,536,Rust / Scala,0.069
 hn,2016-08,600,Rust / Scala,0.045
 hn,2016-09,527,Rust / Scala,0.055
@@ -5176,17 +5176,17 @@ hn,2015-02,422,"AI coding tools (Claude Code, Cursor, Copilot)",0.0
 hn,2015-03,437,"AI coding tools (Claude Code, Cursor, Copilot)",0.0
 hn,2015-06,497,"AI coding tools (Claude Code, Cursor, Copilot)",0.0
 hn,2015-07,694,"AI coding tools (Claude Code, Cursor, Copilot)",0.0
-hn,2015-08,535,"AI coding tools (Claude Code, Cursor, Copilot)",0.0
-hn,2015-09,242,"AI coding tools (Claude Code, Cursor, Copilot)",0.0
-hn,2015-10,231,"AI coding tools (Claude Code, Cursor, Copilot)",0.0
-hn,2015-11,214,"AI coding tools (Claude Code, Cursor, Copilot)",0.0
-hn,2015-12,121,"AI coding tools (Claude Code, Cursor, Copilot)",0.0
-hn,2016-01,148,"AI coding tools (Claude Code, Cursor, Copilot)",0.0
-hn,2016-02,238,"AI coding tools (Claude Code, Cursor, Copilot)",0.0
-hn,2016-03,230,"AI coding tools (Claude Code, Cursor, Copilot)",0.0
-hn,2016-04,256,"AI coding tools (Claude Code, Cursor, Copilot)",0.0
-hn,2016-05,210,"AI coding tools (Claude Code, Cursor, Copilot)",0.0
-hn,2016-06,424,"AI coding tools (Claude Code, Cursor, Copilot)",0.0
+hn,2015-08,655,"AI coding tools (Claude Code, Cursor, Copilot)",0.0
+hn,2015-09,589,"AI coding tools (Claude Code, Cursor, Copilot)",0.0
+hn,2015-10,513,"AI coding tools (Claude Code, Cursor, Copilot)",0.0
+hn,2015-11,569,"AI coding tools (Claude Code, Cursor, Copilot)",0.0
+hn,2015-12,288,"AI coding tools (Claude Code, Cursor, Copilot)",0.0
+hn,2016-01,309,"AI coding tools (Claude Code, Cursor, Copilot)",0.0
+hn,2016-02,540,"AI coding tools (Claude Code, Cursor, Copilot)",0.0
+hn,2016-03,529,"AI coding tools (Claude Code, Cursor, Copilot)",0.0
+hn,2016-04,486,"AI coding tools (Claude Code, Cursor, Copilot)",0.0
+hn,2016-05,542,"AI coding tools (Claude Code, Cursor, Copilot)",0.0
+hn,2016-06,605,"AI coding tools (Claude Code, Cursor, Copilot)",0.0
 hn,2016-07,536,"AI coding tools (Claude Code, Cursor, Copilot)",0.0
 hn,2016-08,600,"AI coding tools (Claude Code, Cursor, Copilot)",0.0
 hn,2016-09,527,"AI coding tools (Claude Code, Cursor, Copilot)",0.0
@@ -5341,17 +5341,17 @@ hn,2015-02,422,Redis / caching,0.0782
 hn,2015-03,437,Redis / caching,0.0549
 hn,2015-06,497,Redis / caching,0.0704
 hn,2015-07,694,Redis / caching,0.0706
-hn,2015-08,535,Redis / caching,0.0766
-hn,2015-09,242,Redis / caching,0.0
-hn,2015-10,231,Redis / caching,0.0
-hn,2015-11,214,Redis / caching,0.0
-hn,2015-12,121,Redis / caching,0.0
-hn,2016-01,148,Redis / caching,0.0
-hn,2016-02,238,Redis / caching,0.0
-hn,2016-03,230,Redis / caching,0.0
-hn,2016-04,256,Redis / caching,0.0
-hn,2016-05,210,Redis / caching,0.0
-hn,2016-06,424,Redis / caching,0.0401
+hn,2015-08,655,Redis / caching,0.0809
+hn,2015-09,589,Redis / caching,0.0662
+hn,2015-10,513,Redis / caching,0.0663
+hn,2015-11,569,Redis / caching,0.0615
+hn,2015-12,288,Redis / caching,0.0729
+hn,2016-01,309,Redis / caching,0.0453
+hn,2016-02,540,Redis / caching,0.0722
+hn,2016-03,529,Redis / caching,0.0643
+hn,2016-04,486,Redis / caching,0.07
+hn,2016-05,542,Redis / caching,0.0738
+hn,2016-06,605,Redis / caching,0.0678
 hn,2016-07,536,Redis / caching,0.0672
 hn,2016-08,600,Redis / caching,0.0633
 hn,2016-09,527,Redis / caching,0.0797

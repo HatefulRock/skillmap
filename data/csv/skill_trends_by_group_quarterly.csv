@@ -45,10 +45,10 @@ by_role,ai_ml,hn,2014-07,74,LLMs / GenAI (general),0.0
 by_role,ai_ml,hn,2014-10,51,LLMs / GenAI (general),0.0
 by_role,ai_ml,hn,2015-01,78,LLMs / GenAI (general),0.0
 by_role,ai_ml,hn,2015-04,42,LLMs / GenAI (general),0.0
-by_role,ai_ml,hn,2015-07,115,LLMs / GenAI (general),0.0
-by_role,ai_ml,hn,2015-10,48,LLMs / GenAI (general),0.0
-by_role,ai_ml,hn,2016-01,57,LLMs / GenAI (general),0.0
-by_role,ai_ml,hn,2016-04,62,LLMs / GenAI (general),0.0
+by_role,ai_ml,hn,2015-07,161,LLMs / GenAI (general),0.0
+by_role,ai_ml,hn,2015-10,122,LLMs / GenAI (general),0.0
+by_role,ai_ml,hn,2016-01,141,LLMs / GenAI (general),0.0
+by_role,ai_ml,hn,2016-04,155,LLMs / GenAI (general),0.0
 by_role,ai_ml,hn,2016-07,159,LLMs / GenAI (general),0.0
 by_role,ai_ml,hn,2016-10,174,LLMs / GenAI (general),0.0
 by_role,ai_ml,hn,2017-01,168,LLMs / GenAI (general),0.0
@@ -101,10 +101,10 @@ by_role,ai_ml,hn,2014-07,74,Python,0.4595
 by_role,ai_ml,hn,2014-10,51,Python,0.451
 by_role,ai_ml,hn,2015-01,78,Python,0.3974
 by_role,ai_ml,hn,2015-04,42,Python,0.4048
-by_role,ai_ml,hn,2015-07,115,Python,0.1826
-by_role,ai_ml,hn,2015-10,48,Python,0.0
-by_role,ai_ml,hn,2016-01,57,Python,0.0175
-by_role,ai_ml,hn,2016-04,62,Python,0.0645
+by_role,ai_ml,hn,2015-07,161,Python,0.2671
+by_role,ai_ml,hn,2015-10,122,Python,0.3033
+by_role,ai_ml,hn,2016-01,141,Python,0.2908
+by_role,ai_ml,hn,2016-04,155,Python,0.2839
 by_role,ai_ml,hn,2016-07,159,Python,0.3396
 by_role,ai_ml,hn,2016-10,174,Python,0.4368
 by_role,ai_ml,hn,2017-01,168,Python,0.3036
@@ -157,10 +157,10 @@ by_role,ai_ml,hn,2014-07,74,Machine learning fundamentals,0.5676
 by_role,ai_ml,hn,2014-10,51,Machine learning fundamentals,0.6275
 by_role,ai_ml,hn,2015-01,78,Machine learning fundamentals,0.5897
 by_role,ai_ml,hn,2015-04,42,Machine learning fundamentals,0.5952
-by_role,ai_ml,hn,2015-07,115,Machine learning fundamentals,0.4783
-by_role,ai_ml,hn,2015-10,48,Machine learning fundamentals,0.4167
-by_role,ai_ml,hn,2016-01,57,Machine learning fundamentals,0.4386
-by_role,ai_ml,hn,2016-04,62,Machine learning fundamentals,0.3871
+by_role,ai_ml,hn,2015-07,161,Machine learning fundamentals,0.5404
+by_role,ai_ml,hn,2015-10,122,Machine learning fundamentals,0.541
+by_role,ai_ml,hn,2016-01,141,Machine learning fundamentals,0.6383
+by_role,ai_ml,hn,2016-04,155,Machine learning fundamentals,0.5613
 by_role,ai_ml,hn,2016-07,159,Machine learning fundamentals,0.5283
 by_role,ai_ml,hn,2016-10,174,Machine learning fundamentals,0.546
 by_role,ai_ml,hn,2017-01,168,Machine learning fundamentals,0.631
@@ -213,10 +213,10 @@ by_role,ai_ml,hn,2014-07,74,AI agents / agentic workflows,0.0
 by_role,ai_ml,hn,2014-10,51,AI agents / agentic workflows,0.0
 by_role,ai_ml,hn,2015-01,78,AI agents / agentic workflows,0.0
 by_role,ai_ml,hn,2015-04,42,AI agents / agentic workflows,0.0
-by_role,ai_ml,hn,2015-07,115,AI agents / agentic workflows,0.0
-by_role,ai_ml,hn,2015-10,48,AI agents / agentic workflows,0.0
-by_role,ai_ml,hn,2016-01,57,AI agents / agentic workflows,0.0
-by_role,ai_ml,hn,2016-04,62,AI agents / agentic workflows,0.0
+by_role,ai_ml,hn,2015-07,161,AI agents / agentic workflows,0.0
+by_role,ai_ml,hn,2015-10,122,AI agents / agentic workflows,0.0
+by_role,ai_ml,hn,2016-01,141,AI agents / agentic workflows,0.0
+by_role,ai_ml,hn,2016-04,155,AI agents / agentic workflows,0.0
 by_role,ai_ml,hn,2016-07,159,AI agents / agentic workflows,0.0063
 by_role,ai_ml,hn,2016-10,174,AI agents / agentic workflows,0.0
 by_role,ai_ml,hn,2017-01,168,AI agents / agentic workflows,0.0
@@ -269,10 +269,10 @@ by_role,ai_ml,hn,2014-07,74,LLM evaluation / eval harnesses,0.0
 by_role,ai_ml,hn,2014-10,51,LLM evaluation / eval harnesses,0.0
 by_role,ai_ml,hn,2015-01,78,LLM evaluation / eval harnesses,0.0
 by_role,ai_ml,hn,2015-04,42,LLM evaluation / eval harnesses,0.0
-by_role,ai_ml,hn,2015-07,115,LLM evaluation / eval harnesses,0.0
-by_role,ai_ml,hn,2015-10,48,LLM evaluation / eval harnesses,0.0
-by_role,ai_ml,hn,2016-01,57,LLM evaluation / eval harnesses,0.0
-by_role,ai_ml,hn,2016-04,62,LLM evaluation / eval harnesses,0.0
+by_role,ai_ml,hn,2015-07,161,LLM evaluation / eval harnesses,0.0
+by_role,ai_ml,hn,2015-10,122,LLM evaluation / eval harnesses,0.0
+by_role,ai_ml,hn,2016-01,141,LLM evaluation / eval harnesses,0.0
+by_role,ai_ml,hn,2016-04,155,LLM evaluation / eval harnesses,0.0065
 by_role,ai_ml,hn,2016-07,159,LLM evaluation / eval harnesses,0.0063
 by_role,ai_ml,hn,2016-10,174,LLM evaluation / eval harnesses,0.023
 by_role,ai_ml,hn,2017-01,168,LLM evaluation / eval harnesses,0.0119
@@ -325,10 +325,10 @@ by_role,ai_ml,hn,2014-07,74,SQL,0.2568
 by_role,ai_ml,hn,2014-10,51,SQL,0.1176
 by_role,ai_ml,hn,2015-01,78,SQL,0.0897
 by_role,ai_ml,hn,2015-04,42,SQL,0.119
-by_role,ai_ml,hn,2015-07,115,SQL,0.0696
-by_role,ai_ml,hn,2015-10,48,SQL,0.0
-by_role,ai_ml,hn,2016-01,57,SQL,0.0175
-by_role,ai_ml,hn,2016-04,62,SQL,0.0323
+by_role,ai_ml,hn,2015-07,161,SQL,0.1118
+by_role,ai_ml,hn,2015-10,122,SQL,0.1148
+by_role,ai_ml,hn,2016-01,141,SQL,0.1064
+by_role,ai_ml,hn,2016-04,155,SQL,0.1419
 by_role,ai_ml,hn,2016-07,159,SQL,0.1572
 by_role,ai_ml,hn,2016-10,174,SQL,0.1954
 by_role,ai_ml,hn,2017-01,168,SQL,0.1012
@@ -381,10 +381,10 @@ by_role,ai_ml,hn,2014-07,74,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0
 by_role,ai_ml,hn,2014-10,51,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0
 by_role,ai_ml,hn,2015-01,78,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0
 by_role,ai_ml,hn,2015-04,42,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0
-by_role,ai_ml,hn,2015-07,115,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0
-by_role,ai_ml,hn,2015-10,48,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0
-by_role,ai_ml,hn,2016-01,57,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0
-by_role,ai_ml,hn,2016-04,62,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0
+by_role,ai_ml,hn,2015-07,161,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0
+by_role,ai_ml,hn,2015-10,122,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0
+by_role,ai_ml,hn,2016-01,141,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0
+by_role,ai_ml,hn,2016-04,155,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0
 by_role,ai_ml,hn,2016-07,159,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0
 by_role,ai_ml,hn,2016-10,174,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0
 by_role,ai_ml,hn,2017-01,168,LLM provider APIs (OpenAI / Anthropic / Gemini),0.006
@@ -437,10 +437,10 @@ by_role,ai_ml,hn,2014-07,74,Statistics / maths,0.2297
 by_role,ai_ml,hn,2014-10,51,Statistics / maths,0.2941
 by_role,ai_ml,hn,2015-01,78,Statistics / maths,0.2308
 by_role,ai_ml,hn,2015-04,42,Statistics / maths,0.1667
-by_role,ai_ml,hn,2015-07,115,Statistics / maths,0.1391
-by_role,ai_ml,hn,2015-10,48,Statistics / maths,0.0
-by_role,ai_ml,hn,2016-01,57,Statistics / maths,0.0
-by_role,ai_ml,hn,2016-04,62,Statistics / maths,0.0323
+by_role,ai_ml,hn,2015-07,161,Statistics / maths,0.1863
+by_role,ai_ml,hn,2015-10,122,Statistics / maths,0.1803
+by_role,ai_ml,hn,2016-01,141,Statistics / maths,0.1986
+by_role,ai_ml,hn,2016-04,155,Statistics / maths,0.1097
 by_role,ai_ml,hn,2016-07,159,Statistics / maths,0.0629
 by_role,ai_ml,hn,2016-10,174,Statistics / maths,0.0632
 by_role,ai_ml,hn,2017-01,168,Statistics / maths,0.0893
@@ -493,10 +493,10 @@ by_role,ai_ml,hn,2014-07,74,Observability / tracing / monitoring,0.0135
 by_role,ai_ml,hn,2014-10,51,Observability / tracing / monitoring,0.0
 by_role,ai_ml,hn,2015-01,78,Observability / tracing / monitoring,0.0
 by_role,ai_ml,hn,2015-04,42,Observability / tracing / monitoring,0.0
-by_role,ai_ml,hn,2015-07,115,Observability / tracing / monitoring,0.0
-by_role,ai_ml,hn,2015-10,48,Observability / tracing / monitoring,0.0
-by_role,ai_ml,hn,2016-01,57,Observability / tracing / monitoring,0.0
-by_role,ai_ml,hn,2016-04,62,Observability / tracing / monitoring,0.0
+by_role,ai_ml,hn,2015-07,161,Observability / tracing / monitoring,0.0
+by_role,ai_ml,hn,2015-10,122,Observability / tracing / monitoring,0.0
+by_role,ai_ml,hn,2016-01,141,Observability / tracing / monitoring,0.0
+by_role,ai_ml,hn,2016-04,155,Observability / tracing / monitoring,0.0
 by_role,ai_ml,hn,2016-07,159,Observability / tracing / monitoring,0.0
 by_role,ai_ml,hn,2016-10,174,Observability / tracing / monitoring,0.023
 by_role,ai_ml,hn,2017-01,168,Observability / tracing / monitoring,0.0
@@ -549,10 +549,10 @@ by_role,ai_ml,hn,2014-07,74,Cloud (unspecified),0.0811
 by_role,ai_ml,hn,2014-10,51,Cloud (unspecified),0.0588
 by_role,ai_ml,hn,2015-01,78,Cloud (unspecified),0.0
 by_role,ai_ml,hn,2015-04,42,Cloud (unspecified),0.0
-by_role,ai_ml,hn,2015-07,115,Cloud (unspecified),0.0174
-by_role,ai_ml,hn,2015-10,48,Cloud (unspecified),0.0
-by_role,ai_ml,hn,2016-01,57,Cloud (unspecified),0.0
-by_role,ai_ml,hn,2016-04,62,Cloud (unspecified),0.0
+by_role,ai_ml,hn,2015-07,161,Cloud (unspecified),0.0186
+by_role,ai_ml,hn,2015-10,122,Cloud (unspecified),0.0492
+by_role,ai_ml,hn,2016-01,141,Cloud (unspecified),0.0284
+by_role,ai_ml,hn,2016-04,155,Cloud (unspecified),0.0387
 by_role,ai_ml,hn,2016-07,159,Cloud (unspecified),0.0314
 by_role,ai_ml,hn,2016-10,174,Cloud (unspecified),0.0287
 by_role,ai_ml,hn,2017-01,168,Cloud (unspecified),0.0536
@@ -605,10 +605,10 @@ by_role,ai_ml,hn,2014-07,74,AWS,0.1892
 by_role,ai_ml,hn,2014-10,51,AWS,0.0784
 by_role,ai_ml,hn,2015-01,78,AWS,0.0897
 by_role,ai_ml,hn,2015-04,42,AWS,0.119
-by_role,ai_ml,hn,2015-07,115,AWS,0.087
-by_role,ai_ml,hn,2015-10,48,AWS,0.0
-by_role,ai_ml,hn,2016-01,57,AWS,0.0175
-by_role,ai_ml,hn,2016-04,62,AWS,0.0323
+by_role,ai_ml,hn,2015-07,161,AWS,0.1242
+by_role,ai_ml,hn,2015-10,122,AWS,0.082
+by_role,ai_ml,hn,2016-01,141,AWS,0.0638
+by_role,ai_ml,hn,2016-04,155,AWS,0.1355
 by_role,ai_ml,hn,2016-07,159,AWS,0.1258
 by_role,ai_ml,hn,2016-10,174,AWS,0.1552
 by_role,ai_ml,hn,2017-01,168,AWS,0.1369
@@ -661,10 +661,10 @@ by_role,ai_ml,hn,2014-07,74,Guardrails / AI safety,0.0
 by_role,ai_ml,hn,2014-10,51,Guardrails / AI safety,0.0
 by_role,ai_ml,hn,2015-01,78,Guardrails / AI safety,0.0
 by_role,ai_ml,hn,2015-04,42,Guardrails / AI safety,0.0
-by_role,ai_ml,hn,2015-07,115,Guardrails / AI safety,0.0
-by_role,ai_ml,hn,2015-10,48,Guardrails / AI safety,0.0
-by_role,ai_ml,hn,2016-01,57,Guardrails / AI safety,0.0
-by_role,ai_ml,hn,2016-04,62,Guardrails / AI safety,0.0
+by_role,ai_ml,hn,2015-07,161,Guardrails / AI safety,0.0
+by_role,ai_ml,hn,2015-10,122,Guardrails / AI safety,0.0
+by_role,ai_ml,hn,2016-01,141,Guardrails / AI safety,0.0
+by_role,ai_ml,hn,2016-04,155,Guardrails / AI safety,0.0
 by_role,ai_ml,hn,2016-07,159,Guardrails / AI safety,0.0
 by_role,ai_ml,hn,2016-10,174,Guardrails / AI safety,0.0
 by_role,ai_ml,hn,2017-01,168,Guardrails / AI safety,0.0
@@ -721,7 +721,10 @@ by_role,data,market,2026-10,973,Observability / tracing / monitoring,0.224
 by_role,data,market,2026-10,973,Statistics / maths,0.2199
 by_role,data,hn,2014-10,34,SQL,0.3824
 by_role,data,hn,2015-01,30,SQL,0.2333
-by_role,data,hn,2015-07,61,SQL,0.2295
+by_role,data,hn,2015-07,79,SQL,0.2152
+by_role,data,hn,2015-10,57,SQL,0.1053
+by_role,data,hn,2016-01,65,SQL,0.2
+by_role,data,hn,2016-04,79,SQL,0.3797
 by_role,data,hn,2016-07,56,SQL,0.2143
 by_role,data,hn,2016-10,76,SQL,0.2763
 by_role,data,hn,2017-01,96,SQL,0.2292
@@ -753,7 +756,10 @@ by_role,data,hn,2023-04,35,SQL,0.2571
 by_role,data,hn,2024-10,31,SQL,0.2903
 by_role,data,hn,2014-10,34,Data pipelines / ETL,0.1471
 by_role,data,hn,2015-01,30,Data pipelines / ETL,0.0333
-by_role,data,hn,2015-07,61,Data pipelines / ETL,0.0656
+by_role,data,hn,2015-07,79,Data pipelines / ETL,0.0633
+by_role,data,hn,2015-10,57,Data pipelines / ETL,0.1053
+by_role,data,hn,2016-01,65,Data pipelines / ETL,0.1077
+by_role,data,hn,2016-04,79,Data pipelines / ETL,0.0633
 by_role,data,hn,2016-07,56,Data pipelines / ETL,0.125
 by_role,data,hn,2016-10,76,Data pipelines / ETL,0.0789
 by_role,data,hn,2017-01,96,Data pipelines / ETL,0.1042
@@ -785,7 +791,10 @@ by_role,data,hn,2023-04,35,Data pipelines / ETL,0.1143
 by_role,data,hn,2024-10,31,Data pipelines / ETL,0.3226
 by_role,data,hn,2014-10,34,Python,0.4412
 by_role,data,hn,2015-01,30,Python,0.1667
-by_role,data,hn,2015-07,61,Python,0.2131
+by_role,data,hn,2015-07,79,Python,0.2025
+by_role,data,hn,2015-10,57,Python,0.193
+by_role,data,hn,2016-01,65,Python,0.2615
+by_role,data,hn,2016-04,79,Python,0.3418
 by_role,data,hn,2016-07,56,Python,0.3036
 by_role,data,hn,2016-10,76,Python,0.4079
 by_role,data,hn,2017-01,96,Python,0.3333
@@ -817,7 +826,10 @@ by_role,data,hn,2023-04,35,Python,0.1714
 by_role,data,hn,2024-10,31,Python,0.2258
 by_role,data,hn,2014-10,34,Spark / big data,0.3824
 by_role,data,hn,2015-01,30,Spark / big data,0.4
-by_role,data,hn,2015-07,61,Spark / big data,0.2459
+by_role,data,hn,2015-07,79,Spark / big data,0.3038
+by_role,data,hn,2015-10,57,Spark / big data,0.2632
+by_role,data,hn,2016-01,65,Spark / big data,0.2769
+by_role,data,hn,2016-04,79,Spark / big data,0.3924
 by_role,data,hn,2016-07,56,Spark / big data,0.3036
 by_role,data,hn,2016-10,76,Spark / big data,0.2763
 by_role,data,hn,2017-01,96,Spark / big data,0.2396
@@ -849,7 +861,10 @@ by_role,data,hn,2023-04,35,Spark / big data,0.0857
 by_role,data,hn,2024-10,31,Spark / big data,0.0968
 by_role,data,hn,2014-10,34,AWS,0.1765
 by_role,data,hn,2015-01,30,AWS,0.1333
-by_role,data,hn,2015-07,61,AWS,0.1803
+by_role,data,hn,2015-07,79,AWS,0.2025
+by_role,data,hn,2015-10,57,AWS,0.1404
+by_role,data,hn,2016-01,65,AWS,0.1077
+by_role,data,hn,2016-04,79,AWS,0.2278
 by_role,data,hn,2016-07,56,AWS,0.125
 by_role,data,hn,2016-10,76,AWS,0.2632
 by_role,data,hn,2017-01,96,AWS,0.2292
@@ -881,7 +896,10 @@ by_role,data,hn,2023-04,35,AWS,0.0857
 by_role,data,hn,2024-10,31,AWS,0.129
 by_role,data,hn,2014-10,34,Workflow orchestration,0.0
 by_role,data,hn,2015-01,30,Workflow orchestration,0.0
-by_role,data,hn,2015-07,61,Workflow orchestration,0.0
+by_role,data,hn,2015-07,79,Workflow orchestration,0.0
+by_role,data,hn,2015-10,57,Workflow orchestration,0.0175
+by_role,data,hn,2016-01,65,Workflow orchestration,0.0
+by_role,data,hn,2016-04,79,Workflow orchestration,0.0
 by_role,data,hn,2016-07,56,Workflow orchestration,0.0
 by_role,data,hn,2016-10,76,Workflow orchestration,0.0526
 by_role,data,hn,2017-01,96,Workflow orchestration,0.0312
@@ -913,7 +931,10 @@ by_role,data,hn,2023-04,35,Workflow orchestration,0.0571
 by_role,data,hn,2024-10,31,Workflow orchestration,0.0968
 by_role,data,hn,2014-10,34,Cloud (unspecified),0.0
 by_role,data,hn,2015-01,30,Cloud (unspecified),0.0
-by_role,data,hn,2015-07,61,Cloud (unspecified),0.0
+by_role,data,hn,2015-07,79,Cloud (unspecified),0.0
+by_role,data,hn,2015-10,57,Cloud (unspecified),0.0175
+by_role,data,hn,2016-01,65,Cloud (unspecified),0.0
+by_role,data,hn,2016-04,79,Cloud (unspecified),0.0
 by_role,data,hn,2016-07,56,Cloud (unspecified),0.0357
 by_role,data,hn,2016-10,76,Cloud (unspecified),0.0263
 by_role,data,hn,2017-01,96,Cloud (unspecified),0.0104
@@ -945,7 +966,10 @@ by_role,data,hn,2023-04,35,Cloud (unspecified),0.0857
 by_role,data,hn,2024-10,31,Cloud (unspecified),0.0645
 by_role,data,hn,2014-10,34,Financial services / banking domain,0.0
 by_role,data,hn,2015-01,30,Financial services / banking domain,0.0333
-by_role,data,hn,2015-07,61,Financial services / banking domain,0.0
+by_role,data,hn,2015-07,79,Financial services / banking domain,0.0
+by_role,data,hn,2015-10,57,Financial services / banking domain,0.0175
+by_role,data,hn,2016-01,65,Financial services / banking domain,0.0462
+by_role,data,hn,2016-04,79,Financial services / banking domain,0.038
 by_role,data,hn,2016-07,56,Financial services / banking domain,0.0357
 by_role,data,hn,2016-10,76,Financial services / banking domain,0.1184
 by_role,data,hn,2017-01,96,Financial services / banking domain,0.0729
@@ -977,7 +1001,10 @@ by_role,data,hn,2023-04,35,Financial services / banking domain,0.0
 by_role,data,hn,2024-10,31,Financial services / banking domain,0.0323
 by_role,data,hn,2014-10,34,Machine learning fundamentals,0.1471
 by_role,data,hn,2015-01,30,Machine learning fundamentals,0.0667
-by_role,data,hn,2015-07,61,Machine learning fundamentals,0.1148
+by_role,data,hn,2015-07,79,Machine learning fundamentals,0.1013
+by_role,data,hn,2015-10,57,Machine learning fundamentals,0.0351
+by_role,data,hn,2016-01,65,Machine learning fundamentals,0.1385
+by_role,data,hn,2016-04,79,Machine learning fundamentals,0.1392
 by_role,data,hn,2016-07,56,Machine learning fundamentals,0.0714
 by_role,data,hn,2016-10,76,Machine learning fundamentals,0.1579
 by_role,data,hn,2017-01,96,Machine learning fundamentals,0.1354
@@ -1009,7 +1036,10 @@ by_role,data,hn,2023-04,35,Machine learning fundamentals,0.0571
 by_role,data,hn,2024-10,31,Machine learning fundamentals,0.1613
 by_role,data,hn,2014-10,34,Kafka / message queues / streaming,0.1765
 by_role,data,hn,2015-01,30,Kafka / message queues / streaming,0.2
-by_role,data,hn,2015-07,61,Kafka / message queues / streaming,0.1311
+by_role,data,hn,2015-07,79,Kafka / message queues / streaming,0.1646
+by_role,data,hn,2015-10,57,Kafka / message queues / streaming,0.1228
+by_role,data,hn,2016-01,65,Kafka / message queues / streaming,0.2
+by_role,data,hn,2016-04,79,Kafka / message queues / streaming,0.2025
 by_role,data,hn,2016-07,56,Kafka / message queues / streaming,0.0893
 by_role,data,hn,2016-10,76,Kafka / message queues / streaming,0.1579
 by_role,data,hn,2017-01,96,Kafka / message queues / streaming,0.1562
@@ -1041,7 +1071,10 @@ by_role,data,hn,2023-04,35,Kafka / message queues / streaming,0.0571
 by_role,data,hn,2024-10,31,Kafka / message queues / streaming,0.0968
 by_role,data,hn,2014-10,34,Observability / tracing / monitoring,0.0
 by_role,data,hn,2015-01,30,Observability / tracing / monitoring,0.0
-by_role,data,hn,2015-07,61,Observability / tracing / monitoring,0.0
+by_role,data,hn,2015-07,79,Observability / tracing / monitoring,0.0
+by_role,data,hn,2015-10,57,Observability / tracing / monitoring,0.0
+by_role,data,hn,2016-01,65,Observability / tracing / monitoring,0.0
+by_role,data,hn,2016-04,79,Observability / tracing / monitoring,0.0127
 by_role,data,hn,2016-07,56,Observability / tracing / monitoring,0.0179
 by_role,data,hn,2016-10,76,Observability / tracing / monitoring,0.0132
 by_role,data,hn,2017-01,96,Observability / tracing / monitoring,0.0104
@@ -1073,7 +1106,10 @@ by_role,data,hn,2023-04,35,Observability / tracing / monitoring,0.0
 by_role,data,hn,2024-10,31,Observability / tracing / monitoring,0.0323
 by_role,data,hn,2014-10,34,Statistics / maths,0.1765
 by_role,data,hn,2015-01,30,Statistics / maths,0.0333
-by_role,data,hn,2015-07,61,Statistics / maths,0.0164
+by_role,data,hn,2015-07,79,Statistics / maths,0.0253
+by_role,data,hn,2015-10,57,Statistics / maths,0.0526
+by_role,data,hn,2016-01,65,Statistics / maths,0.0615
+by_role,data,hn,2016-04,79,Statistics / maths,0.038
 by_role,data,hn,2016-07,56,Statistics / maths,0.0357
 by_role,data,hn,2016-10,76,Statistics / maths,0.0658
 by_role,data,hn,2017-01,96,Statistics / maths,0.0312
@@ -1125,10 +1161,10 @@ by_role,backend,hn,2014-07,318,Microservices / distributed systems,0.0692
 by_role,backend,hn,2014-10,333,Microservices / distributed systems,0.048
 by_role,backend,hn,2015-01,402,Microservices / distributed systems,0.0423
 by_role,backend,hn,2015-04,154,Microservices / distributed systems,0.1039
-by_role,backend,hn,2015-07,520,Microservices / distributed systems,0.0519
-by_role,backend,hn,2015-10,247,Microservices / distributed systems,0.0
-by_role,backend,hn,2016-01,239,Microservices / distributed systems,0.0
-by_role,backend,hn,2016-04,353,Microservices / distributed systems,0.0283
+by_role,backend,hn,2015-07,642,Microservices / distributed systems,0.0903
+by_role,backend,hn,2015-10,436,Microservices / distributed systems,0.0757
+by_role,backend,hn,2016-01,425,Microservices / distributed systems,0.0635
+by_role,backend,hn,2016-04,515,Microservices / distributed systems,0.066
 by_role,backend,hn,2016-07,549,Microservices / distributed systems,0.0874
 by_role,backend,hn,2016-10,663,Microservices / distributed systems,0.0875
 by_role,backend,hn,2017-01,865,Microservices / distributed systems,0.0844
@@ -1181,10 +1217,10 @@ by_role,backend,hn,2014-07,318,Python,0.327
 by_role,backend,hn,2014-10,333,Python,0.3393
 by_role,backend,hn,2015-01,402,Python,0.2935
 by_role,backend,hn,2015-04,154,Python,0.3117
-by_role,backend,hn,2015-07,520,Python,0.2212
-by_role,backend,hn,2015-10,247,Python,0.0526
-by_role,backend,hn,2016-01,239,Python,0.0377
-by_role,backend,hn,2016-04,353,Python,0.0822
+by_role,backend,hn,2015-07,642,Python,0.2741
+by_role,backend,hn,2015-10,436,Python,0.2156
+by_role,backend,hn,2016-01,425,Python,0.2541
+by_role,backend,hn,2016-04,515,Python,0.2272
 by_role,backend,hn,2016-07,549,Python,0.2495
 by_role,backend,hn,2016-10,663,Python,0.2262
 by_role,backend,hn,2017-01,865,Python,0.237
@@ -1237,10 +1273,10 @@ by_role,backend,hn,2014-07,318,Java / Kotlin (Spring),0.1541
 by_role,backend,hn,2014-10,333,Java / Kotlin (Spring),0.1742
 by_role,backend,hn,2015-01,402,Java / Kotlin (Spring),0.1343
 by_role,backend,hn,2015-04,154,Java / Kotlin (Spring),0.1558
-by_role,backend,hn,2015-07,520,Java / Kotlin (Spring),0.1038
-by_role,backend,hn,2015-10,247,Java / Kotlin (Spring),0.0567
-by_role,backend,hn,2016-01,239,Java / Kotlin (Spring),0.0377
-by_role,backend,hn,2016-04,353,Java / Kotlin (Spring),0.034
+by_role,backend,hn,2015-07,642,Java / Kotlin (Spring),0.1386
+by_role,backend,hn,2015-10,436,Java / Kotlin (Spring),0.1445
+by_role,backend,hn,2016-01,425,Java / Kotlin (Spring),0.1271
+by_role,backend,hn,2016-04,515,Java / Kotlin (Spring),0.1379
 by_role,backend,hn,2016-07,549,Java / Kotlin (Spring),0.1621
 by_role,backend,hn,2016-10,663,Java / Kotlin (Spring),0.1433
 by_role,backend,hn,2017-01,865,Java / Kotlin (Spring),0.148
@@ -1293,10 +1329,10 @@ by_role,backend,hn,2014-07,318,Full-stack / frontend,0.4245
 by_role,backend,hn,2014-10,333,Full-stack / frontend,0.4685
 by_role,backend,hn,2015-01,402,Full-stack / frontend,0.4428
 by_role,backend,hn,2015-04,154,Full-stack / frontend,0.4351
-by_role,backend,hn,2015-07,520,Full-stack / frontend,0.3635
-by_role,backend,hn,2015-10,247,Full-stack / frontend,0.2551
-by_role,backend,hn,2016-01,239,Full-stack / frontend,0.2803
-by_role,backend,hn,2016-04,353,Full-stack / frontend,0.3258
+by_role,backend,hn,2015-07,642,Full-stack / frontend,0.4252
+by_role,backend,hn,2015-10,436,Full-stack / frontend,0.4335
+by_role,backend,hn,2016-01,425,Full-stack / frontend,0.4565
+by_role,backend,hn,2016-04,515,Full-stack / frontend,0.4524
 by_role,backend,hn,2016-07,549,Full-stack / frontend,0.4827
 by_role,backend,hn,2016-10,663,Full-stack / frontend,0.4585
 by_role,backend,hn,2017-01,865,Full-stack / frontend,0.459
@@ -1349,10 +1385,10 @@ by_role,backend,hn,2014-07,318,SQL,0.283
 by_role,backend,hn,2014-10,333,SQL,0.3393
 by_role,backend,hn,2015-01,402,SQL,0.2886
 by_role,backend,hn,2015-04,154,SQL,0.2468
-by_role,backend,hn,2015-07,520,SQL,0.1654
-by_role,backend,hn,2015-10,247,SQL,0.004
-by_role,backend,hn,2016-01,239,SQL,0.0167
-by_role,backend,hn,2016-04,353,SQL,0.0595
+by_role,backend,hn,2015-07,642,SQL,0.243
+by_role,backend,hn,2015-10,436,SQL,0.2156
+by_role,backend,hn,2016-01,425,SQL,0.2541
+by_role,backend,hn,2016-04,515,SQL,0.2388
 by_role,backend,hn,2016-07,549,SQL,0.2332
 by_role,backend,hn,2016-10,663,SQL,0.2504
 by_role,backend,hn,2017-01,865,SQL,0.2301
@@ -1405,10 +1441,10 @@ by_role,backend,hn,2014-07,318,Observability / tracing / monitoring,0.0189
 by_role,backend,hn,2014-10,333,Observability / tracing / monitoring,0.021
 by_role,backend,hn,2015-01,402,Observability / tracing / monitoring,0.01
 by_role,backend,hn,2015-04,154,Observability / tracing / monitoring,0.013
-by_role,backend,hn,2015-07,520,Observability / tracing / monitoring,0.0077
-by_role,backend,hn,2015-10,247,Observability / tracing / monitoring,0.0
-by_role,backend,hn,2016-01,239,Observability / tracing / monitoring,0.0
-by_role,backend,hn,2016-04,353,Observability / tracing / monitoring,0.0028
+by_role,backend,hn,2015-07,642,Observability / tracing / monitoring,0.0125
+by_role,backend,hn,2015-10,436,Observability / tracing / monitoring,0.0
+by_role,backend,hn,2016-01,425,Observability / tracing / monitoring,0.0071
+by_role,backend,hn,2016-04,515,Observability / tracing / monitoring,0.0155
 by_role,backend,hn,2016-07,549,Observability / tracing / monitoring,0.0036
 by_role,backend,hn,2016-10,663,Observability / tracing / monitoring,0.0015
 by_role,backend,hn,2017-01,865,Observability / tracing / monitoring,0.0092
@@ -1461,10 +1497,10 @@ by_role,backend,hn,2014-07,318,C++ / C#,0.1824
 by_role,backend,hn,2014-10,333,C++ / C#,0.1712
 by_role,backend,hn,2015-01,402,C++ / C#,0.1144
 by_role,backend,hn,2015-04,154,C++ / C#,0.1104
-by_role,backend,hn,2015-07,520,C++ / C#,0.1173
-by_role,backend,hn,2015-10,247,C++ / C#,0.0243
-by_role,backend,hn,2016-01,239,C++ / C#,0.0293
-by_role,backend,hn,2016-04,353,C++ / C#,0.0482
+by_role,backend,hn,2015-07,642,C++ / C#,0.1651
+by_role,backend,hn,2015-10,436,C++ / C#,0.1239
+by_role,backend,hn,2016-01,425,C++ / C#,0.1482
+by_role,backend,hn,2016-04,515,C++ / C#,0.1553
 by_role,backend,hn,2016-07,549,C++ / C#,0.1639
 by_role,backend,hn,2016-10,663,C++ / C#,0.1463
 by_role,backend,hn,2017-01,865,C++ / C#,0.1595
@@ -1517,10 +1553,10 @@ by_role,backend,hn,2014-07,318,AWS,0.1289
 by_role,backend,hn,2014-10,333,AWS,0.1712
 by_role,backend,hn,2015-01,402,AWS,0.1542
 by_role,backend,hn,2015-04,154,AWS,0.1558
-by_role,backend,hn,2015-07,520,AWS,0.1096
-by_role,backend,hn,2015-10,247,AWS,0.0
-by_role,backend,hn,2016-01,239,AWS,0.0042
-by_role,backend,hn,2016-04,353,AWS,0.0255
+by_role,backend,hn,2015-07,642,AWS,0.1573
+by_role,backend,hn,2015-10,436,AWS,0.1353
+by_role,backend,hn,2016-01,425,AWS,0.1694
+by_role,backend,hn,2016-04,515,AWS,0.1825
 by_role,backend,hn,2016-07,549,AWS,0.2022
 by_role,backend,hn,2016-10,663,AWS,0.1991
 by_role,backend,hn,2017-01,865,AWS,0.1757
@@ -1573,10 +1609,10 @@ by_role,backend,hn,2014-07,318,Cloud (unspecified),0.0252
 by_role,backend,hn,2014-10,333,Cloud (unspecified),0.027
 by_role,backend,hn,2015-01,402,Cloud (unspecified),0.0323
 by_role,backend,hn,2015-04,154,Cloud (unspecified),0.0195
-by_role,backend,hn,2015-07,520,Cloud (unspecified),0.0115
-by_role,backend,hn,2015-10,247,Cloud (unspecified),0.004
-by_role,backend,hn,2016-01,239,Cloud (unspecified),0.0
-by_role,backend,hn,2016-04,353,Cloud (unspecified),0.0
+by_role,backend,hn,2015-07,642,Cloud (unspecified),0.0187
+by_role,backend,hn,2015-10,436,Cloud (unspecified),0.0275
+by_role,backend,hn,2016-01,425,Cloud (unspecified),0.0235
+by_role,backend,hn,2016-04,515,Cloud (unspecified),0.0252
 by_role,backend,hn,2016-07,549,Cloud (unspecified),0.031
 by_role,backend,hn,2016-10,663,Cloud (unspecified),0.0407
 by_role,backend,hn,2017-01,865,Cloud (unspecified),0.0266
@@ -1629,10 +1665,10 @@ by_role,backend,hn,2014-07,318,Kubernetes,0.0031
 by_role,backend,hn,2014-10,333,Kubernetes,0.003
 by_role,backend,hn,2015-01,402,Kubernetes,0.0025
 by_role,backend,hn,2015-04,154,Kubernetes,0.0065
-by_role,backend,hn,2015-07,520,Kubernetes,0.0
-by_role,backend,hn,2015-10,247,Kubernetes,0.004
-by_role,backend,hn,2016-01,239,Kubernetes,0.0
-by_role,backend,hn,2016-04,353,Kubernetes,0.0057
+by_role,backend,hn,2015-07,642,Kubernetes,0.0016
+by_role,backend,hn,2015-10,436,Kubernetes,0.0115
+by_role,backend,hn,2016-01,425,Kubernetes,0.0094
+by_role,backend,hn,2016-04,515,Kubernetes,0.0117
 by_role,backend,hn,2016-07,549,Kubernetes,0.0091
 by_role,backend,hn,2016-10,663,Kubernetes,0.0377
 by_role,backend,hn,2017-01,865,Kubernetes,0.0474
@@ -1685,10 +1721,10 @@ by_role,backend,hn,2014-07,318,CI/CD,0.1101
 by_role,backend,hn,2014-10,333,CI/CD,0.0721
 by_role,backend,hn,2015-01,402,CI/CD,0.0796
 by_role,backend,hn,2015-04,154,CI/CD,0.0584
-by_role,backend,hn,2015-07,520,CI/CD,0.0327
-by_role,backend,hn,2015-10,247,CI/CD,0.0
-by_role,backend,hn,2016-01,239,CI/CD,0.0
-by_role,backend,hn,2016-04,353,CI/CD,0.0085
+by_role,backend,hn,2015-07,642,CI/CD,0.0498
+by_role,backend,hn,2015-10,436,CI/CD,0.0482
+by_role,backend,hn,2016-01,425,CI/CD,0.0306
+by_role,backend,hn,2016-04,515,CI/CD,0.033
 by_role,backend,hn,2016-07,549,CI/CD,0.0474
 by_role,backend,hn,2016-10,663,CI/CD,0.0362
 by_role,backend,hn,2017-01,865,CI/CD,0.0486
@@ -1741,10 +1777,10 @@ by_role,backend,hn,2014-07,318,PostgreSQL / relational DBs,0.2484
 by_role,backend,hn,2014-10,333,PostgreSQL / relational DBs,0.3093
 by_role,backend,hn,2015-01,402,PostgreSQL / relational DBs,0.2537
 by_role,backend,hn,2015-04,154,PostgreSQL / relational DBs,0.2273
-by_role,backend,hn,2015-07,520,PostgreSQL / relational DBs,0.1327
-by_role,backend,hn,2015-10,247,PostgreSQL / relational DBs,0.0
-by_role,backend,hn,2016-01,239,PostgreSQL / relational DBs,0.0084
-by_role,backend,hn,2016-04,353,PostgreSQL / relational DBs,0.0538
+by_role,backend,hn,2015-07,642,PostgreSQL / relational DBs,0.2009
+by_role,backend,hn,2015-10,436,PostgreSQL / relational DBs,0.195
+by_role,backend,hn,2016-01,425,PostgreSQL / relational DBs,0.2188
+by_role,backend,hn,2016-04,515,PostgreSQL / relational DBs,0.2252
 by_role,backend,hn,2016-07,549,PostgreSQL / relational DBs,0.2022
 by_role,backend,hn,2016-10,663,PostgreSQL / relational DBs,0.2368
 by_role,backend,hn,2017-01,865,PostgreSQL / relational DBs,0.2116
@@ -1809,10 +1845,10 @@ by_role,frontend,hn,2014-07,271,Full-stack / frontend,0.6236
 by_role,frontend,hn,2014-10,307,Full-stack / frontend,0.671
 by_role,frontend,hn,2015-01,311,Full-stack / frontend,0.6913
 by_role,frontend,hn,2015-04,147,Full-stack / frontend,0.6667
-by_role,frontend,hn,2015-07,392,Full-stack / frontend,0.5995
-by_role,frontend,hn,2015-10,137,Full-stack / frontend,0.5766
-by_role,frontend,hn,2016-01,150,Full-stack / frontend,0.5667
-by_role,frontend,hn,2016-04,233,Full-stack / frontend,0.5494
+by_role,frontend,hn,2015-07,551,Full-stack / frontend,0.6298
+by_role,frontend,hn,2015-10,419,Full-stack / frontend,0.6134
+by_role,frontend,hn,2016-01,369,Full-stack / frontend,0.626
+by_role,frontend,hn,2016-04,433,Full-stack / frontend,0.5982
 by_role,frontend,hn,2016-07,466,Full-stack / frontend,0.6352
 by_role,frontend,hn,2016-10,461,Full-stack / frontend,0.6725
 by_role,frontend,hn,2017-01,403,Full-stack / frontend,0.7221
@@ -1864,10 +1900,10 @@ by_role,frontend,hn,2014-07,271,React / Next.js,0.1255
 by_role,frontend,hn,2014-10,307,React / Next.js,0.1792
 by_role,frontend,hn,2015-01,311,React / Next.js,0.1961
 by_role,frontend,hn,2015-04,147,React / Next.js,0.2653
-by_role,frontend,hn,2015-07,392,React / Next.js,0.1735
-by_role,frontend,hn,2015-10,137,React / Next.js,0.0365
-by_role,frontend,hn,2016-01,150,React / Next.js,0.0467
-by_role,frontend,hn,2016-04,233,React / Next.js,0.1159
+by_role,frontend,hn,2015-07,551,React / Next.js,0.2178
+by_role,frontend,hn,2015-10,419,React / Next.js,0.3103
+by_role,frontend,hn,2016-01,369,React / Next.js,0.3035
+by_role,frontend,hn,2016-04,433,React / Next.js,0.351
 by_role,frontend,hn,2016-07,466,React / Next.js,0.3863
 by_role,frontend,hn,2016-10,461,React / Next.js,0.4035
 by_role,frontend,hn,2017-01,403,React / Next.js,0.3995
@@ -1919,10 +1955,10 @@ by_role,frontend,hn,2014-07,271,TypeScript,0.0185
 by_role,frontend,hn,2014-10,307,TypeScript,0.0098
 by_role,frontend,hn,2015-01,311,TypeScript,0.0129
 by_role,frontend,hn,2015-04,147,TypeScript,0.0068
-by_role,frontend,hn,2015-07,392,TypeScript,0.0026
-by_role,frontend,hn,2015-10,137,TypeScript,0.0
-by_role,frontend,hn,2016-01,150,TypeScript,0.0067
-by_role,frontend,hn,2016-04,233,TypeScript,0.0043
+by_role,frontend,hn,2015-07,551,TypeScript,0.0036
+by_role,frontend,hn,2015-10,419,TypeScript,0.0072
+by_role,frontend,hn,2016-01,369,TypeScript,0.0108
+by_role,frontend,hn,2016-04,433,TypeScript,0.03
 by_role,frontend,hn,2016-07,466,TypeScript,0.0258
 by_role,frontend,hn,2016-10,461,TypeScript,0.0239
 by_role,frontend,hn,2017-01,403,TypeScript,0.0323
@@ -1974,10 +2010,10 @@ by_role,frontend,hn,2014-07,271,JavaScript / Node.js,0.3616
 by_role,frontend,hn,2014-10,307,JavaScript / Node.js,0.355
 by_role,frontend,hn,2015-01,311,JavaScript / Node.js,0.3505
 by_role,frontend,hn,2015-04,147,JavaScript / Node.js,0.3265
-by_role,frontend,hn,2015-07,392,JavaScript / Node.js,0.2526
-by_role,frontend,hn,2015-10,137,JavaScript / Node.js,0.073
-by_role,frontend,hn,2016-01,150,JavaScript / Node.js,0.0267
-by_role,frontend,hn,2016-04,233,JavaScript / Node.js,0.1159
+by_role,frontend,hn,2015-07,551,JavaScript / Node.js,0.2886
+by_role,frontend,hn,2015-10,419,JavaScript / Node.js,0.2792
+by_role,frontend,hn,2016-01,369,JavaScript / Node.js,0.3008
+by_role,frontend,hn,2016-04,433,JavaScript / Node.js,0.2933
 by_role,frontend,hn,2016-07,466,JavaScript / Node.js,0.279
 by_role,frontend,hn,2016-10,461,JavaScript / Node.js,0.3145
 by_role,frontend,hn,2017-01,403,JavaScript / Node.js,0.3201
@@ -2029,10 +2065,10 @@ by_role,frontend,hn,2014-07,271,Java / Kotlin (Spring),0.1476
 by_role,frontend,hn,2014-10,307,Java / Kotlin (Spring),0.1433
 by_role,frontend,hn,2015-01,311,Java / Kotlin (Spring),0.09
 by_role,frontend,hn,2015-04,147,Java / Kotlin (Spring),0.0952
-by_role,frontend,hn,2015-07,392,Java / Kotlin (Spring),0.074
-by_role,frontend,hn,2015-10,137,Java / Kotlin (Spring),0.0146
-by_role,frontend,hn,2016-01,150,Java / Kotlin (Spring),0.0067
-by_role,frontend,hn,2016-04,233,Java / Kotlin (Spring),0.0429
+by_role,frontend,hn,2015-07,551,Java / Kotlin (Spring),0.0907
+by_role,frontend,hn,2015-10,419,Java / Kotlin (Spring),0.0883
+by_role,frontend,hn,2016-01,369,Java / Kotlin (Spring),0.0894
+by_role,frontend,hn,2016-04,433,Java / Kotlin (Spring),0.1224
 by_role,frontend,hn,2016-07,466,Java / Kotlin (Spring),0.1202
 by_role,frontend,hn,2016-10,461,Java / Kotlin (Spring),0.1128
 by_role,frontend,hn,2017-01,403,Java / Kotlin (Spring),0.0868
@@ -2084,10 +2120,10 @@ by_role,frontend,hn,2014-07,271,REST / API design & integration,0.0664
 by_role,frontend,hn,2014-10,307,REST / API design & integration,0.0521
 by_role,frontend,hn,2015-01,311,REST / API design & integration,0.0707
 by_role,frontend,hn,2015-04,147,REST / API design & integration,0.0272
-by_role,frontend,hn,2015-07,392,REST / API design & integration,0.0153
-by_role,frontend,hn,2015-10,137,REST / API design & integration,0.0
-by_role,frontend,hn,2016-01,150,REST / API design & integration,0.0
-by_role,frontend,hn,2016-04,233,REST / API design & integration,0.0172
+by_role,frontend,hn,2015-07,551,REST / API design & integration,0.0272
+by_role,frontend,hn,2015-10,419,REST / API design & integration,0.0358
+by_role,frontend,hn,2016-01,369,REST / API design & integration,0.0271
+by_role,frontend,hn,2016-04,433,REST / API design & integration,0.0439
 by_role,frontend,hn,2016-07,466,REST / API design & integration,0.0515
 by_role,frontend,hn,2016-10,461,REST / API design & integration,0.0824
 by_role,frontend,hn,2017-01,403,REST / API design & integration,0.0447
@@ -2139,10 +2175,10 @@ by_role,frontend,hn,2014-07,271,CI/CD,0.0074
 by_role,frontend,hn,2014-10,307,CI/CD,0.0391
 by_role,frontend,hn,2015-01,311,CI/CD,0.0257
 by_role,frontend,hn,2015-04,147,CI/CD,0.0
-by_role,frontend,hn,2015-07,392,CI/CD,0.0204
-by_role,frontend,hn,2015-10,137,CI/CD,0.0
-by_role,frontend,hn,2016-01,150,CI/CD,0.0
-by_role,frontend,hn,2016-04,233,CI/CD,0.0086
+by_role,frontend,hn,2015-07,551,CI/CD,0.0218
+by_role,frontend,hn,2015-10,419,CI/CD,0.0167
+by_role,frontend,hn,2016-01,369,CI/CD,0.0352
+by_role,frontend,hn,2016-04,433,CI/CD,0.0162
 by_role,frontend,hn,2016-07,466,CI/CD,0.0258
 by_role,frontend,hn,2016-10,461,CI/CD,0.0217
 by_role,frontend,hn,2017-01,403,CI/CD,0.0124
@@ -2194,10 +2230,10 @@ by_role,frontend,hn,2014-07,271,Financial services / banking domain,0.0074
 by_role,frontend,hn,2014-10,307,Financial services / banking domain,0.0163
 by_role,frontend,hn,2015-01,311,Financial services / banking domain,0.0225
 by_role,frontend,hn,2015-04,147,Financial services / banking domain,0.0136
-by_role,frontend,hn,2015-07,392,Financial services / banking domain,0.0204
-by_role,frontend,hn,2015-10,137,Financial services / banking domain,0.0
-by_role,frontend,hn,2016-01,150,Financial services / banking domain,0.0
-by_role,frontend,hn,2016-04,233,Financial services / banking domain,0.0129
+by_role,frontend,hn,2015-07,551,Financial services / banking domain,0.0236
+by_role,frontend,hn,2015-10,419,Financial services / banking domain,0.0167
+by_role,frontend,hn,2016-01,369,Financial services / banking domain,0.0217
+by_role,frontend,hn,2016-04,433,Financial services / banking domain,0.0231
 by_role,frontend,hn,2016-07,466,Financial services / banking domain,0.03
 by_role,frontend,hn,2016-10,461,Financial services / banking domain,0.0282
 by_role,frontend,hn,2017-01,403,Financial services / banking domain,0.0422
@@ -2249,10 +2285,10 @@ by_role,frontend,hn,2014-07,271,AI agents / agentic workflows,0.0
 by_role,frontend,hn,2014-10,307,AI agents / agentic workflows,0.0
 by_role,frontend,hn,2015-01,311,AI agents / agentic workflows,0.0
 by_role,frontend,hn,2015-04,147,AI agents / agentic workflows,0.0
-by_role,frontend,hn,2015-07,392,AI agents / agentic workflows,0.0
-by_role,frontend,hn,2015-10,137,AI agents / agentic workflows,0.0
-by_role,frontend,hn,2016-01,150,AI agents / agentic workflows,0.0
-by_role,frontend,hn,2016-04,233,AI agents / agentic workflows,0.0
+by_role,frontend,hn,2015-07,551,AI agents / agentic workflows,0.0
+by_role,frontend,hn,2015-10,419,AI agents / agentic workflows,0.0
+by_role,frontend,hn,2016-01,369,AI agents / agentic workflows,0.0
+by_role,frontend,hn,2016-04,433,AI agents / agentic workflows,0.0
 by_role,frontend,hn,2016-07,466,AI agents / agentic workflows,0.0
 by_role,frontend,hn,2016-10,461,AI agents / agentic workflows,0.0
 by_role,frontend,hn,2017-01,403,AI agents / agentic workflows,0.0
@@ -2304,10 +2340,10 @@ by_role,frontend,hn,2014-07,271,System design / architecture,0.0258
 by_role,frontend,hn,2014-10,307,System design / architecture,0.0293
 by_role,frontend,hn,2015-01,311,System design / architecture,0.0193
 by_role,frontend,hn,2015-04,147,System design / architecture,0.0
-by_role,frontend,hn,2015-07,392,System design / architecture,0.0
-by_role,frontend,hn,2015-10,137,System design / architecture,0.0
-by_role,frontend,hn,2016-01,150,System design / architecture,0.0
-by_role,frontend,hn,2016-04,233,System design / architecture,0.0043
+by_role,frontend,hn,2015-07,551,System design / architecture,0.0054
+by_role,frontend,hn,2015-10,419,System design / architecture,0.0
+by_role,frontend,hn,2016-01,369,System design / architecture,0.0054
+by_role,frontend,hn,2016-04,433,System design / architecture,0.0069
 by_role,frontend,hn,2016-07,466,System design / architecture,0.0107
 by_role,frontend,hn,2016-10,461,System design / architecture,0.0195
 by_role,frontend,hn,2017-01,403,System design / architecture,0.0025
@@ -2359,10 +2395,10 @@ by_role,frontend,hn,2014-07,271,Observability / tracing / monitoring,0.0
 by_role,frontend,hn,2014-10,307,Observability / tracing / monitoring,0.0065
 by_role,frontend,hn,2015-01,311,Observability / tracing / monitoring,0.0096
 by_role,frontend,hn,2015-04,147,Observability / tracing / monitoring,0.0068
-by_role,frontend,hn,2015-07,392,Observability / tracing / monitoring,0.0
-by_role,frontend,hn,2015-10,137,Observability / tracing / monitoring,0.0
-by_role,frontend,hn,2016-01,150,Observability / tracing / monitoring,0.0
-by_role,frontend,hn,2016-04,233,Observability / tracing / monitoring,0.0043
+by_role,frontend,hn,2015-07,551,Observability / tracing / monitoring,0.0018
+by_role,frontend,hn,2015-10,419,Observability / tracing / monitoring,0.0048
+by_role,frontend,hn,2016-01,369,Observability / tracing / monitoring,0.0027
+by_role,frontend,hn,2016-04,433,Observability / tracing / monitoring,0.0092
 by_role,frontend,hn,2016-07,466,Observability / tracing / monitoring,0.0021
 by_role,frontend,hn,2016-10,461,Observability / tracing / monitoring,0.0087
 by_role,frontend,hn,2017-01,403,Observability / tracing / monitoring,0.0124
@@ -2414,10 +2450,10 @@ by_role,frontend,hn,2014-07,271,"Testing (pytest, unit/integration)",0.107
 by_role,frontend,hn,2014-10,307,"Testing (pytest, unit/integration)",0.0619
 by_role,frontend,hn,2015-01,311,"Testing (pytest, unit/integration)",0.0547
 by_role,frontend,hn,2015-04,147,"Testing (pytest, unit/integration)",0.0204
-by_role,frontend,hn,2015-07,392,"Testing (pytest, unit/integration)",0.0306
-by_role,frontend,hn,2015-10,137,"Testing (pytest, unit/integration)",0.0
-by_role,frontend,hn,2016-01,150,"Testing (pytest, unit/integration)",0.0
-by_role,frontend,hn,2016-04,233,"Testing (pytest, unit/integration)",0.0129
+by_role,frontend,hn,2015-07,551,"Testing (pytest, unit/integration)",0.0381
+by_role,frontend,hn,2015-10,419,"Testing (pytest, unit/integration)",0.0382
+by_role,frontend,hn,2016-01,369,"Testing (pytest, unit/integration)",0.0678
+by_role,frontend,hn,2016-04,433,"Testing (pytest, unit/integration)",0.0393
 by_role,frontend,hn,2016-07,466,"Testing (pytest, unit/integration)",0.0601
 by_role,frontend,hn,2016-10,461,"Testing (pytest, unit/integration)",0.0542
 by_role,frontend,hn,2017-01,403,"Testing (pytest, unit/integration)",0.0298
@@ -2481,10 +2517,10 @@ by_role,infra,hn,2014-07,109,Cloud (unspecified),0.0183
 by_role,infra,hn,2014-10,105,Cloud (unspecified),0.0381
 by_role,infra,hn,2015-01,133,Cloud (unspecified),0.0451
 by_role,infra,hn,2015-04,68,Cloud (unspecified),0.0588
-by_role,infra,hn,2015-07,184,Cloud (unspecified),0.0163
-by_role,infra,hn,2015-10,50,Cloud (unspecified),0.0
-by_role,infra,hn,2016-01,47,Cloud (unspecified),0.0213
-by_role,infra,hn,2016-04,99,Cloud (unspecified),0.0101
+by_role,infra,hn,2015-07,247,Cloud (unspecified),0.0243
+by_role,infra,hn,2015-10,177,Cloud (unspecified),0.0282
+by_role,infra,hn,2016-01,158,Cloud (unspecified),0.0759
+by_role,infra,hn,2016-04,234,Cloud (unspecified),0.0427
 by_role,infra,hn,2016-07,210,Cloud (unspecified),0.0714
 by_role,infra,hn,2016-10,252,Cloud (unspecified),0.0595
 by_role,infra,hn,2017-01,257,Cloud (unspecified),0.0739
@@ -2537,10 +2573,10 @@ by_role,infra,hn,2014-07,109,AWS,0.2018
 by_role,infra,hn,2014-10,105,AWS,0.2952
 by_role,infra,hn,2015-01,133,AWS,0.2782
 by_role,infra,hn,2015-04,68,AWS,0.2941
-by_role,infra,hn,2015-07,184,AWS,0.2283
-by_role,infra,hn,2015-10,50,AWS,0.06
-by_role,infra,hn,2016-01,47,AWS,0.0213
-by_role,infra,hn,2016-04,99,AWS,0.0707
+by_role,infra,hn,2015-07,247,AWS,0.2267
+by_role,infra,hn,2015-10,177,AWS,0.2203
+by_role,infra,hn,2016-01,158,AWS,0.2215
+by_role,infra,hn,2016-04,234,AWS,0.188
 by_role,infra,hn,2016-07,210,AWS,0.2905
 by_role,infra,hn,2016-10,252,AWS,0.2381
 by_role,infra,hn,2017-01,257,AWS,0.2296
@@ -2593,10 +2629,10 @@ by_role,infra,hn,2014-07,109,Python,0.3486
 by_role,infra,hn,2014-10,105,Python,0.2952
 by_role,infra,hn,2015-01,133,Python,0.3158
 by_role,infra,hn,2015-04,68,Python,0.2647
-by_role,infra,hn,2015-07,184,Python,0.2011
-by_role,infra,hn,2015-10,50,Python,0.02
-by_role,infra,hn,2016-01,47,Python,0.0851
-by_role,infra,hn,2016-04,99,Python,0.0808
+by_role,infra,hn,2015-07,247,Python,0.2186
+by_role,infra,hn,2015-10,177,Python,0.1356
+by_role,infra,hn,2016-01,158,Python,0.1392
+by_role,infra,hn,2016-04,234,Python,0.1667
 by_role,infra,hn,2016-07,210,Python,0.2286
 by_role,infra,hn,2016-10,252,Python,0.2302
 by_role,infra,hn,2017-01,257,Python,0.2685
@@ -2649,10 +2685,10 @@ by_role,infra,hn,2014-07,109,Observability / tracing / monitoring,0.0459
 by_role,infra,hn,2014-10,105,Observability / tracing / monitoring,0.0857
 by_role,infra,hn,2015-01,133,Observability / tracing / monitoring,0.0226
 by_role,infra,hn,2015-04,68,Observability / tracing / monitoring,0.0294
-by_role,infra,hn,2015-07,184,Observability / tracing / monitoring,0.038
-by_role,infra,hn,2015-10,50,Observability / tracing / monitoring,0.0
-by_role,infra,hn,2016-01,47,Observability / tracing / monitoring,0.0
-by_role,infra,hn,2016-04,99,Observability / tracing / monitoring,0.0
+by_role,infra,hn,2015-07,247,Observability / tracing / monitoring,0.0445
+by_role,infra,hn,2015-10,177,Observability / tracing / monitoring,0.0113
+by_role,infra,hn,2016-01,158,Observability / tracing / monitoring,0.0127
+by_role,infra,hn,2016-04,234,Observability / tracing / monitoring,0.0085
 by_role,infra,hn,2016-07,210,Observability / tracing / monitoring,0.0476
 by_role,infra,hn,2016-10,252,Observability / tracing / monitoring,0.0238
 by_role,infra,hn,2017-01,257,Observability / tracing / monitoring,0.0311
@@ -2705,10 +2741,10 @@ by_role,infra,hn,2014-07,109,Terraform / IaC,0.0183
 by_role,infra,hn,2014-10,105,Terraform / IaC,0.1048
 by_role,infra,hn,2015-01,133,Terraform / IaC,0.0602
 by_role,infra,hn,2015-04,68,Terraform / IaC,0.1324
-by_role,infra,hn,2015-07,184,Terraform / IaC,0.0326
-by_role,infra,hn,2015-10,50,Terraform / IaC,0.0
-by_role,infra,hn,2016-01,47,Terraform / IaC,0.0
-by_role,infra,hn,2016-04,99,Terraform / IaC,0.0505
+by_role,infra,hn,2015-07,247,Terraform / IaC,0.0445
+by_role,infra,hn,2015-10,177,Terraform / IaC,0.1017
+by_role,infra,hn,2016-01,158,Terraform / IaC,0.0886
+by_role,infra,hn,2016-04,234,Terraform / IaC,0.0556
 by_role,infra,hn,2016-07,210,Terraform / IaC,0.1143
 by_role,infra,hn,2016-10,252,Terraform / IaC,0.0952
 by_role,infra,hn,2017-01,257,Terraform / IaC,0.0934
@@ -2761,10 +2797,10 @@ by_role,infra,hn,2014-07,109,Kubernetes,0.0
 by_role,infra,hn,2014-10,105,Kubernetes,0.0
 by_role,infra,hn,2015-01,133,Kubernetes,0.0
 by_role,infra,hn,2015-04,68,Kubernetes,0.0
-by_role,infra,hn,2015-07,184,Kubernetes,0.0109
-by_role,infra,hn,2015-10,50,Kubernetes,0.0
-by_role,infra,hn,2016-01,47,Kubernetes,0.0
-by_role,infra,hn,2016-04,99,Kubernetes,0.0101
+by_role,infra,hn,2015-07,247,Kubernetes,0.0081
+by_role,infra,hn,2015-10,177,Kubernetes,0.0113
+by_role,infra,hn,2016-01,158,Kubernetes,0.0253
+by_role,infra,hn,2016-04,234,Kubernetes,0.0556
 by_role,infra,hn,2016-07,210,Kubernetes,0.0667
 by_role,infra,hn,2016-10,252,Kubernetes,0.0754
 by_role,infra,hn,2017-01,257,Kubernetes,0.0895
@@ -2817,10 +2853,10 @@ by_role,infra,hn,2014-07,109,CI/CD,0.0459
 by_role,infra,hn,2014-10,105,CI/CD,0.0667
 by_role,infra,hn,2015-01,133,CI/CD,0.0677
 by_role,infra,hn,2015-04,68,CI/CD,0.1029
-by_role,infra,hn,2015-07,184,CI/CD,0.0435
-by_role,infra,hn,2015-10,50,CI/CD,0.0
-by_role,infra,hn,2016-01,47,CI/CD,0.0
-by_role,infra,hn,2016-04,99,CI/CD,0.0202
+by_role,infra,hn,2015-07,247,CI/CD,0.0445
+by_role,infra,hn,2015-10,177,CI/CD,0.0621
+by_role,infra,hn,2016-01,158,CI/CD,0.0506
+by_role,infra,hn,2016-04,234,CI/CD,0.0598
 by_role,infra,hn,2016-07,210,CI/CD,0.1
 by_role,infra,hn,2016-10,252,CI/CD,0.0754
 by_role,infra,hn,2017-01,257,CI/CD,0.0856
@@ -2873,10 +2909,10 @@ by_role,infra,hn,2014-07,109,Linux / shell,0.1468
 by_role,infra,hn,2014-10,105,Linux / shell,0.2286
 by_role,infra,hn,2015-01,133,Linux / shell,0.1579
 by_role,infra,hn,2015-04,68,Linux / shell,0.1471
-by_role,infra,hn,2015-07,184,Linux / shell,0.1359
-by_role,infra,hn,2015-10,50,Linux / shell,0.0
-by_role,infra,hn,2016-01,47,Linux / shell,0.0213
-by_role,infra,hn,2016-04,99,Linux / shell,0.0505
+by_role,infra,hn,2015-07,247,Linux / shell,0.1619
+by_role,infra,hn,2015-10,177,Linux / shell,0.1582
+by_role,infra,hn,2016-01,158,Linux / shell,0.1203
+by_role,infra,hn,2016-04,234,Linux / shell,0.1239
 by_role,infra,hn,2016-07,210,Linux / shell,0.1524
 by_role,infra,hn,2016-10,252,Linux / shell,0.1587
 by_role,infra,hn,2017-01,257,Linux / shell,0.1751
@@ -2929,10 +2965,10 @@ by_role,infra,hn,2014-07,109,Microservices / distributed systems,0.0826
 by_role,infra,hn,2014-10,105,Microservices / distributed systems,0.1238
 by_role,infra,hn,2015-01,133,Microservices / distributed systems,0.1128
 by_role,infra,hn,2015-04,68,Microservices / distributed systems,0.1029
-by_role,infra,hn,2015-07,184,Microservices / distributed systems,0.0815
-by_role,infra,hn,2015-10,50,Microservices / distributed systems,0.0
-by_role,infra,hn,2016-01,47,Microservices / distributed systems,0.0213
-by_role,infra,hn,2016-04,99,Microservices / distributed systems,0.0303
+by_role,infra,hn,2015-07,247,Microservices / distributed systems,0.0972
+by_role,infra,hn,2015-10,177,Microservices / distributed systems,0.0791
+by_role,infra,hn,2016-01,158,Microservices / distributed systems,0.1139
+by_role,infra,hn,2016-04,234,Microservices / distributed systems,0.0897
 by_role,infra,hn,2016-07,210,Microservices / distributed systems,0.119
 by_role,infra,hn,2016-10,252,Microservices / distributed systems,0.1151
 by_role,infra,hn,2017-01,257,Microservices / distributed systems,0.1323
@@ -2985,10 +3021,10 @@ by_role,infra,hn,2014-07,109,Docker / containers,0.055
 by_role,infra,hn,2014-10,105,Docker / containers,0.0667
 by_role,infra,hn,2015-01,133,Docker / containers,0.1579
 by_role,infra,hn,2015-04,68,Docker / containers,0.1471
-by_role,infra,hn,2015-07,184,Docker / containers,0.1087
-by_role,infra,hn,2015-10,50,Docker / containers,0.0
-by_role,infra,hn,2016-01,47,Docker / containers,0.0
-by_role,infra,hn,2016-04,99,Docker / containers,0.0505
+by_role,infra,hn,2015-07,247,Docker / containers,0.1215
+by_role,infra,hn,2015-10,177,Docker / containers,0.1243
+by_role,infra,hn,2016-01,158,Docker / containers,0.1646
+by_role,infra,hn,2016-04,234,Docker / containers,0.1752
 by_role,infra,hn,2016-07,210,Docker / containers,0.219
 by_role,infra,hn,2016-10,252,Docker / containers,0.2143
 by_role,infra,hn,2017-01,257,Docker / containers,0.214
@@ -3041,10 +3077,10 @@ by_role,infra,hn,2014-07,109,Go,0.1376
 by_role,infra,hn,2014-10,105,Go,0.1238
 by_role,infra,hn,2015-01,133,Go,0.0902
 by_role,infra,hn,2015-04,68,Go,0.0882
-by_role,infra,hn,2015-07,184,Go,0.1087
-by_role,infra,hn,2015-10,50,Go,0.0
-by_role,infra,hn,2016-01,47,Go,0.0
-by_role,infra,hn,2016-04,99,Go,0.0404
+by_role,infra,hn,2015-07,247,Go,0.1377
+by_role,infra,hn,2015-10,177,Go,0.1243
+by_role,infra,hn,2016-01,158,Go,0.1392
+by_role,infra,hn,2016-04,234,Go,0.1453
 by_role,infra,hn,2016-07,210,Go,0.1619
 by_role,infra,hn,2016-10,252,Go,0.1508
 by_role,infra,hn,2017-01,257,Go,0.1556
@@ -3097,10 +3133,10 @@ by_role,infra,hn,2014-07,109,GCP / Vertex AI,0.0
 by_role,infra,hn,2014-10,105,GCP / Vertex AI,0.0
 by_role,infra,hn,2015-01,133,GCP / Vertex AI,0.0075
 by_role,infra,hn,2015-04,68,GCP / Vertex AI,0.0147
-by_role,infra,hn,2015-07,184,GCP / Vertex AI,0.0
-by_role,infra,hn,2015-10,50,GCP / Vertex AI,0.0
-by_role,infra,hn,2016-01,47,GCP / Vertex AI,0.0
-by_role,infra,hn,2016-04,99,GCP / Vertex AI,0.0
+by_role,infra,hn,2015-07,247,GCP / Vertex AI,0.0
+by_role,infra,hn,2015-10,177,GCP / Vertex AI,0.0
+by_role,infra,hn,2016-01,158,GCP / Vertex AI,0.0127
+by_role,infra,hn,2016-04,234,GCP / Vertex AI,0.0085
 by_role,infra,hn,2016-07,210,GCP / Vertex AI,0.0048
 by_role,infra,hn,2016-10,252,GCP / Vertex AI,0.0159
 by_role,infra,hn,2017-01,257,GCP / Vertex AI,0.0389
@@ -3177,10 +3213,10 @@ by_role,other_eng,hn,2014-07,95,Python,0.1789
 by_role,other_eng,hn,2014-10,105,Python,0.219
 by_role,other_eng,hn,2015-01,111,Python,0.0811
 by_role,other_eng,hn,2015-04,55,Python,0.2
-by_role,other_eng,hn,2015-07,173,Python,0.1214
-by_role,other_eng,hn,2015-10,69,Python,0.0
-by_role,other_eng,hn,2016-01,93,Python,0.0
-by_role,other_eng,hn,2016-04,100,Python,0.02
+by_role,other_eng,hn,2015-07,214,Python,0.1449
+by_role,other_eng,hn,2015-10,141,Python,0.1844
+by_role,other_eng,hn,2016-01,185,Python,0.1784
+by_role,other_eng,hn,2016-04,176,Python,0.108
 by_role,other_eng,hn,2016-07,182,Python,0.1264
 by_role,other_eng,hn,2016-10,199,Python,0.1608
 by_role,other_eng,hn,2017-01,225,Python,0.12
@@ -3233,10 +3269,10 @@ by_role,other_eng,hn,2014-07,95,Microservices / distributed systems,0.0526
 by_role,other_eng,hn,2014-10,105,Microservices / distributed systems,0.0381
 by_role,other_eng,hn,2015-01,111,Microservices / distributed systems,0.0541
 by_role,other_eng,hn,2015-04,55,Microservices / distributed systems,0.0727
-by_role,other_eng,hn,2015-07,173,Microservices / distributed systems,0.052
-by_role,other_eng,hn,2015-10,69,Microservices / distributed systems,0.0
-by_role,other_eng,hn,2016-01,93,Microservices / distributed systems,0.0
-by_role,other_eng,hn,2016-04,100,Microservices / distributed systems,0.03
+by_role,other_eng,hn,2015-07,214,Microservices / distributed systems,0.0794
+by_role,other_eng,hn,2015-10,141,Microservices / distributed systems,0.0922
+by_role,other_eng,hn,2016-01,185,Microservices / distributed systems,0.0919
+by_role,other_eng,hn,2016-04,176,Microservices / distributed systems,0.0455
 by_role,other_eng,hn,2016-07,182,Microservices / distributed systems,0.0495
 by_role,other_eng,hn,2016-10,199,Microservices / distributed systems,0.0804
 by_role,other_eng,hn,2017-01,225,Microservices / distributed systems,0.0711
@@ -3289,10 +3325,10 @@ by_role,other_eng,hn,2014-07,95,System design / architecture,0.0
 by_role,other_eng,hn,2014-10,105,System design / architecture,0.0095
 by_role,other_eng,hn,2015-01,111,System design / architecture,0.009
 by_role,other_eng,hn,2015-04,55,System design / architecture,0.0182
-by_role,other_eng,hn,2015-07,173,System design / architecture,0.0058
-by_role,other_eng,hn,2015-10,69,System design / architecture,0.0
-by_role,other_eng,hn,2016-01,93,System design / architecture,0.0
-by_role,other_eng,hn,2016-04,100,System design / architecture,0.0
+by_role,other_eng,hn,2015-07,214,System design / architecture,0.0047
+by_role,other_eng,hn,2015-10,141,System design / architecture,0.0
+by_role,other_eng,hn,2016-01,185,System design / architecture,0.0054
+by_role,other_eng,hn,2016-04,176,System design / architecture,0.0114
 by_role,other_eng,hn,2016-07,182,System design / architecture,0.0055
 by_role,other_eng,hn,2016-10,199,System design / architecture,0.0101
 by_role,other_eng,hn,2017-01,225,System design / architecture,0.0
@@ -3345,10 +3381,10 @@ by_role,other_eng,hn,2014-07,95,AWS,0.0842
 by_role,other_eng,hn,2014-10,105,AWS,0.219
 by_role,other_eng,hn,2015-01,111,AWS,0.0901
 by_role,other_eng,hn,2015-04,55,AWS,0.2182
-by_role,other_eng,hn,2015-07,173,AWS,0.1098
-by_role,other_eng,hn,2015-10,69,AWS,0.0
-by_role,other_eng,hn,2016-01,93,AWS,0.0215
-by_role,other_eng,hn,2016-04,100,AWS,0.04
+by_role,other_eng,hn,2015-07,214,AWS,0.1355
+by_role,other_eng,hn,2015-10,141,AWS,0.1348
+by_role,other_eng,hn,2016-01,185,AWS,0.1135
+by_role,other_eng,hn,2016-04,176,AWS,0.1136
 by_role,other_eng,hn,2016-07,182,AWS,0.1429
 by_role,other_eng,hn,2016-10,199,AWS,0.1709
 by_role,other_eng,hn,2017-01,225,AWS,0.12
@@ -3401,10 +3437,10 @@ by_role,other_eng,hn,2014-07,95,C++ / C#,0.2105
 by_role,other_eng,hn,2014-10,105,C++ / C#,0.1429
 by_role,other_eng,hn,2015-01,111,C++ / C#,0.1171
 by_role,other_eng,hn,2015-04,55,C++ / C#,0.1091
-by_role,other_eng,hn,2015-07,173,C++ / C#,0.0694
-by_role,other_eng,hn,2015-10,69,C++ / C#,0.0145
-by_role,other_eng,hn,2016-01,93,C++ / C#,0.0538
-by_role,other_eng,hn,2016-04,100,C++ / C#,0.04
+by_role,other_eng,hn,2015-07,214,C++ / C#,0.0981
+by_role,other_eng,hn,2015-10,141,C++ / C#,0.0567
+by_role,other_eng,hn,2016-01,185,C++ / C#,0.1081
+by_role,other_eng,hn,2016-04,176,C++ / C#,0.0909
 by_role,other_eng,hn,2016-07,182,C++ / C#,0.0769
 by_role,other_eng,hn,2016-10,199,C++ / C#,0.0754
 by_role,other_eng,hn,2017-01,225,C++ / C#,0.0578
@@ -3457,10 +3493,10 @@ by_role,other_eng,hn,2014-07,95,Cloud (unspecified),0.0526
 by_role,other_eng,hn,2014-10,105,Cloud (unspecified),0.0381
 by_role,other_eng,hn,2015-01,111,Cloud (unspecified),0.018
 by_role,other_eng,hn,2015-04,55,Cloud (unspecified),0.0545
-by_role,other_eng,hn,2015-07,173,Cloud (unspecified),0.0173
-by_role,other_eng,hn,2015-10,69,Cloud (unspecified),0.0
-by_role,other_eng,hn,2016-01,93,Cloud (unspecified),0.0
-by_role,other_eng,hn,2016-04,100,Cloud (unspecified),0.0
+by_role,other_eng,hn,2015-07,214,Cloud (unspecified),0.014
+by_role,other_eng,hn,2015-10,141,Cloud (unspecified),0.0355
+by_role,other_eng,hn,2016-01,185,Cloud (unspecified),0.0324
+by_role,other_eng,hn,2016-04,176,Cloud (unspecified),0.0398
 by_role,other_eng,hn,2016-07,182,Cloud (unspecified),0.0165
 by_role,other_eng,hn,2016-10,199,Cloud (unspecified),0.0302
 by_role,other_eng,hn,2017-01,225,Cloud (unspecified),0.0178
@@ -3513,10 +3549,10 @@ by_role,other_eng,hn,2014-07,95,Java / Kotlin (Spring),0.2105
 by_role,other_eng,hn,2014-10,105,Java / Kotlin (Spring),0.0667
 by_role,other_eng,hn,2015-01,111,Java / Kotlin (Spring),0.1171
 by_role,other_eng,hn,2015-04,55,Java / Kotlin (Spring),0.2
-by_role,other_eng,hn,2015-07,173,Java / Kotlin (Spring),0.0462
-by_role,other_eng,hn,2015-10,69,Java / Kotlin (Spring),0.0
-by_role,other_eng,hn,2016-01,93,Java / Kotlin (Spring),0.0
-by_role,other_eng,hn,2016-04,100,Java / Kotlin (Spring),0.02
+by_role,other_eng,hn,2015-07,214,Java / Kotlin (Spring),0.0467
+by_role,other_eng,hn,2015-10,141,Java / Kotlin (Spring),0.0426
+by_role,other_eng,hn,2016-01,185,Java / Kotlin (Spring),0.0757
+by_role,other_eng,hn,2016-04,176,Java / Kotlin (Spring),0.0852
 by_role,other_eng,hn,2016-07,182,Java / Kotlin (Spring),0.1264
 by_role,other_eng,hn,2016-10,199,Java / Kotlin (Spring),0.1508
 by_role,other_eng,hn,2017-01,225,Java / Kotlin (Spring),0.0933
@@ -3569,10 +3605,10 @@ by_role,other_eng,hn,2014-07,95,Linux / shell,0.1474
 by_role,other_eng,hn,2014-10,105,Linux / shell,0.1333
 by_role,other_eng,hn,2015-01,111,Linux / shell,0.1171
 by_role,other_eng,hn,2015-04,55,Linux / shell,0.1091
-by_role,other_eng,hn,2015-07,173,Linux / shell,0.0347
-by_role,other_eng,hn,2015-10,69,Linux / shell,0.029
-by_role,other_eng,hn,2016-01,93,Linux / shell,0.0
-by_role,other_eng,hn,2016-04,100,Linux / shell,0.03
+by_role,other_eng,hn,2015-07,214,Linux / shell,0.0421
+by_role,other_eng,hn,2015-10,141,Linux / shell,0.078
+by_role,other_eng,hn,2016-01,185,Linux / shell,0.0649
+by_role,other_eng,hn,2016-04,176,Linux / shell,0.1023
 by_role,other_eng,hn,2016-07,182,Linux / shell,0.0604
 by_role,other_eng,hn,2016-10,199,Linux / shell,0.1005
 by_role,other_eng,hn,2017-01,225,Linux / shell,0.0756
@@ -3625,10 +3661,10 @@ by_role,other_eng,hn,2014-07,95,Observability / tracing / monitoring,0.0
 by_role,other_eng,hn,2014-10,105,Observability / tracing / monitoring,0.019
 by_role,other_eng,hn,2015-01,111,Observability / tracing / monitoring,0.018
 by_role,other_eng,hn,2015-04,55,Observability / tracing / monitoring,0.0182
-by_role,other_eng,hn,2015-07,173,Observability / tracing / monitoring,0.0
-by_role,other_eng,hn,2015-10,69,Observability / tracing / monitoring,0.0
-by_role,other_eng,hn,2016-01,93,Observability / tracing / monitoring,0.0
-by_role,other_eng,hn,2016-04,100,Observability / tracing / monitoring,0.0
+by_role,other_eng,hn,2015-07,214,Observability / tracing / monitoring,0.0
+by_role,other_eng,hn,2015-10,141,Observability / tracing / monitoring,0.0
+by_role,other_eng,hn,2016-01,185,Observability / tracing / monitoring,0.0054
+by_role,other_eng,hn,2016-04,176,Observability / tracing / monitoring,0.0
 by_role,other_eng,hn,2016-07,182,Observability / tracing / monitoring,0.0055
 by_role,other_eng,hn,2016-10,199,Observability / tracing / monitoring,0.0201
 by_role,other_eng,hn,2017-01,225,Observability / tracing / monitoring,0.0222
@@ -3681,10 +3717,10 @@ by_role,other_eng,hn,2014-07,95,LLMs / GenAI (general),0.0
 by_role,other_eng,hn,2014-10,105,LLMs / GenAI (general),0.0
 by_role,other_eng,hn,2015-01,111,LLMs / GenAI (general),0.0
 by_role,other_eng,hn,2015-04,55,LLMs / GenAI (general),0.0
-by_role,other_eng,hn,2015-07,173,LLMs / GenAI (general),0.0
-by_role,other_eng,hn,2015-10,69,LLMs / GenAI (general),0.0
-by_role,other_eng,hn,2016-01,93,LLMs / GenAI (general),0.0
-by_role,other_eng,hn,2016-04,100,LLMs / GenAI (general),0.0
+by_role,other_eng,hn,2015-07,214,LLMs / GenAI (general),0.0
+by_role,other_eng,hn,2015-10,141,LLMs / GenAI (general),0.0
+by_role,other_eng,hn,2016-01,185,LLMs / GenAI (general),0.0
+by_role,other_eng,hn,2016-04,176,LLMs / GenAI (general),0.0
 by_role,other_eng,hn,2016-07,182,LLMs / GenAI (general),0.0
 by_role,other_eng,hn,2016-10,199,LLMs / GenAI (general),0.0
 by_role,other_eng,hn,2017-01,225,LLMs / GenAI (general),0.0
@@ -3737,10 +3773,10 @@ by_role,other_eng,hn,2014-07,95,AI agents / agentic workflows,0.0
 by_role,other_eng,hn,2014-10,105,AI agents / agentic workflows,0.0
 by_role,other_eng,hn,2015-01,111,AI agents / agentic workflows,0.0
 by_role,other_eng,hn,2015-04,55,AI agents / agentic workflows,0.0
-by_role,other_eng,hn,2015-07,173,AI agents / agentic workflows,0.0
-by_role,other_eng,hn,2015-10,69,AI agents / agentic workflows,0.0
-by_role,other_eng,hn,2016-01,93,AI agents / agentic workflows,0.0
-by_role,other_eng,hn,2016-04,100,AI agents / agentic workflows,0.0
+by_role,other_eng,hn,2015-07,214,AI agents / agentic workflows,0.0
+by_role,other_eng,hn,2015-10,141,AI agents / agentic workflows,0.0
+by_role,other_eng,hn,2016-01,185,AI agents / agentic workflows,0.0
+by_role,other_eng,hn,2016-04,176,AI agents / agentic workflows,0.0
 by_role,other_eng,hn,2016-07,182,AI agents / agentic workflows,0.0
 by_role,other_eng,hn,2016-10,199,AI agents / agentic workflows,0.0
 by_role,other_eng,hn,2017-01,225,AI agents / agentic workflows,0.0
@@ -3793,10 +3829,10 @@ by_role,other_eng,hn,2014-07,95,CI/CD,0.0526
 by_role,other_eng,hn,2014-10,105,CI/CD,0.0095
 by_role,other_eng,hn,2015-01,111,CI/CD,0.036
 by_role,other_eng,hn,2015-04,55,CI/CD,0.0727
-by_role,other_eng,hn,2015-07,173,CI/CD,0.0347
-by_role,other_eng,hn,2015-10,69,CI/CD,0.0
-by_role,other_eng,hn,2016-01,93,CI/CD,0.0
-by_role,other_eng,hn,2016-04,100,CI/CD,0.02
+by_role,other_eng,hn,2015-07,214,CI/CD,0.0421
+by_role,other_eng,hn,2015-10,141,CI/CD,0.0567
+by_role,other_eng,hn,2016-01,185,CI/CD,0.0541
+by_role,other_eng,hn,2016-04,176,CI/CD,0.0455
 by_role,other_eng,hn,2016-07,182,CI/CD,0.0385
 by_role,other_eng,hn,2016-10,199,CI/CD,0.0704
 by_role,other_eng,hn,2017-01,225,CI/CD,0.0844
@@ -3936,6 +3972,8 @@ by_seniority,mid,market,2026-10,3939,AI agents / agentic workflows,0.1465
 by_seniority,mid,market,2026-10,3939,Microservices / distributed systems,0.1414
 by_seniority,mid,market,2026-10,3939,Linux / shell,0.1412
 by_seniority,mid,hn,2014-10,35,Python,0.2286
+by_seniority,mid,hn,2015-07,38,Python,0.2368
+by_seniority,mid,hn,2016-04,31,Python,0.2258
 by_seniority,mid,hn,2016-07,38,Python,0.3947
 by_seniority,mid,hn,2016-10,40,Python,0.175
 by_seniority,mid,hn,2017-01,45,Python,0.2222
@@ -3958,6 +3996,8 @@ by_seniority,mid,hn,2021-07,36,Python,0.3333
 by_seniority,mid,hn,2021-10,35,Python,0.2571
 by_seniority,mid,hn,2022-01,33,Python,0.4242
 by_seniority,mid,hn,2014-10,35,AWS,0.2
+by_seniority,mid,hn,2015-07,38,AWS,0.2632
+by_seniority,mid,hn,2016-04,31,AWS,0.2258
 by_seniority,mid,hn,2016-07,38,AWS,0.2105
 by_seniority,mid,hn,2016-10,40,AWS,0.2
 by_seniority,mid,hn,2017-01,45,AWS,0.2
@@ -3980,6 +4020,8 @@ by_seniority,mid,hn,2021-07,36,AWS,0.3889
 by_seniority,mid,hn,2021-10,35,AWS,0.2286
 by_seniority,mid,hn,2022-01,33,AWS,0.2121
 by_seniority,mid,hn,2014-10,35,SQL,0.4
+by_seniority,mid,hn,2015-07,38,SQL,0.3158
+by_seniority,mid,hn,2016-04,31,SQL,0.1935
 by_seniority,mid,hn,2016-07,38,SQL,0.3684
 by_seniority,mid,hn,2016-10,40,SQL,0.2
 by_seniority,mid,hn,2017-01,45,SQL,0.1333
@@ -4002,6 +4044,8 @@ by_seniority,mid,hn,2021-07,36,SQL,0.3611
 by_seniority,mid,hn,2021-10,35,SQL,0.3714
 by_seniority,mid,hn,2022-01,33,SQL,0.4242
 by_seniority,mid,hn,2014-10,35,Java / Kotlin (Spring),0.2857
+by_seniority,mid,hn,2015-07,38,Java / Kotlin (Spring),0.1053
+by_seniority,mid,hn,2016-04,31,Java / Kotlin (Spring),0.0645
 by_seniority,mid,hn,2016-07,38,Java / Kotlin (Spring),0.1053
 by_seniority,mid,hn,2016-10,40,Java / Kotlin (Spring),0.1
 by_seniority,mid,hn,2017-01,45,Java / Kotlin (Spring),0.0667
@@ -4024,6 +4068,8 @@ by_seniority,mid,hn,2021-07,36,Java / Kotlin (Spring),0.2778
 by_seniority,mid,hn,2021-10,35,Java / Kotlin (Spring),0.2571
 by_seniority,mid,hn,2022-01,33,Java / Kotlin (Spring),0.1818
 by_seniority,mid,hn,2014-10,35,Cloud (unspecified),0.0857
+by_seniority,mid,hn,2015-07,38,Cloud (unspecified),0.0263
+by_seniority,mid,hn,2016-04,31,Cloud (unspecified),0.0
 by_seniority,mid,hn,2016-07,38,Cloud (unspecified),0.0526
 by_seniority,mid,hn,2016-10,40,Cloud (unspecified),0.0
 by_seniority,mid,hn,2017-01,45,Cloud (unspecified),0.0444
@@ -4046,6 +4092,8 @@ by_seniority,mid,hn,2021-07,36,Cloud (unspecified),0.0278
 by_seniority,mid,hn,2021-10,35,Cloud (unspecified),0.0571
 by_seniority,mid,hn,2022-01,33,Cloud (unspecified),0.0606
 by_seniority,mid,hn,2014-10,35,C++ / C#,0.2857
+by_seniority,mid,hn,2015-07,38,C++ / C#,0.1842
+by_seniority,mid,hn,2016-04,31,C++ / C#,0.129
 by_seniority,mid,hn,2016-07,38,C++ / C#,0.1053
 by_seniority,mid,hn,2016-10,40,C++ / C#,0.125
 by_seniority,mid,hn,2017-01,45,C++ / C#,0.1333
@@ -4068,6 +4116,8 @@ by_seniority,mid,hn,2021-07,36,C++ / C#,0.1111
 by_seniority,mid,hn,2021-10,35,C++ / C#,0.1714
 by_seniority,mid,hn,2022-01,33,C++ / C#,0.0303
 by_seniority,mid,hn,2014-10,35,LLMs / GenAI (general),0.0
+by_seniority,mid,hn,2015-07,38,LLMs / GenAI (general),0.0
+by_seniority,mid,hn,2016-04,31,LLMs / GenAI (general),0.0
 by_seniority,mid,hn,2016-07,38,LLMs / GenAI (general),0.0
 by_seniority,mid,hn,2016-10,40,LLMs / GenAI (general),0.0
 by_seniority,mid,hn,2017-01,45,LLMs / GenAI (general),0.0
@@ -4090,6 +4140,8 @@ by_seniority,mid,hn,2021-07,36,LLMs / GenAI (general),0.0
 by_seniority,mid,hn,2021-10,35,LLMs / GenAI (general),0.0
 by_seniority,mid,hn,2022-01,33,LLMs / GenAI (general),0.0
 by_seniority,mid,hn,2014-10,35,Observability / tracing / monitoring,0.0
+by_seniority,mid,hn,2015-07,38,Observability / tracing / monitoring,0.0263
+by_seniority,mid,hn,2016-04,31,Observability / tracing / monitoring,0.0
 by_seniority,mid,hn,2016-07,38,Observability / tracing / monitoring,0.0
 by_seniority,mid,hn,2016-10,40,Observability / tracing / monitoring,0.0
 by_seniority,mid,hn,2017-01,45,Observability / tracing / monitoring,0.0222
@@ -4112,6 +4164,8 @@ by_seniority,mid,hn,2021-07,36,Observability / tracing / monitoring,0.0833
 by_seniority,mid,hn,2021-10,35,Observability / tracing / monitoring,0.0
 by_seniority,mid,hn,2022-01,33,Observability / tracing / monitoring,0.0
 by_seniority,mid,hn,2014-10,35,Full-stack / frontend,0.5143
+by_seniority,mid,hn,2015-07,38,Full-stack / frontend,0.3684
+by_seniority,mid,hn,2016-04,31,Full-stack / frontend,0.5484
 by_seniority,mid,hn,2016-07,38,Full-stack / frontend,0.6579
 by_seniority,mid,hn,2016-10,40,Full-stack / frontend,0.4
 by_seniority,mid,hn,2017-01,45,Full-stack / frontend,0.4889
@@ -4134,6 +4188,8 @@ by_seniority,mid,hn,2021-07,36,Full-stack / frontend,0.6944
 by_seniority,mid,hn,2021-10,35,Full-stack / frontend,0.6
 by_seniority,mid,hn,2022-01,33,Full-stack / frontend,0.5152
 by_seniority,mid,hn,2014-10,35,AI agents / agentic workflows,0.0
+by_seniority,mid,hn,2015-07,38,AI agents / agentic workflows,0.0
+by_seniority,mid,hn,2016-04,31,AI agents / agentic workflows,0.0
 by_seniority,mid,hn,2016-07,38,AI agents / agentic workflows,0.0
 by_seniority,mid,hn,2016-10,40,AI agents / agentic workflows,0.0
 by_seniority,mid,hn,2017-01,45,AI agents / agentic workflows,0.0
@@ -4156,6 +4212,8 @@ by_seniority,mid,hn,2021-07,36,AI agents / agentic workflows,0.0
 by_seniority,mid,hn,2021-10,35,AI agents / agentic workflows,0.0
 by_seniority,mid,hn,2022-01,33,AI agents / agentic workflows,0.0
 by_seniority,mid,hn,2014-10,35,Microservices / distributed systems,0.1714
+by_seniority,mid,hn,2015-07,38,Microservices / distributed systems,0.0263
+by_seniority,mid,hn,2016-04,31,Microservices / distributed systems,0.0968
 by_seniority,mid,hn,2016-07,38,Microservices / distributed systems,0.1316
 by_seniority,mid,hn,2016-10,40,Microservices / distributed systems,0.0
 by_seniority,mid,hn,2017-01,45,Microservices / distributed systems,0.0222
@@ -4178,6 +4236,8 @@ by_seniority,mid,hn,2021-07,36,Microservices / distributed systems,0.0556
 by_seniority,mid,hn,2021-10,35,Microservices / distributed systems,0.0857
 by_seniority,mid,hn,2022-01,33,Microservices / distributed systems,0.0303
 by_seniority,mid,hn,2014-10,35,Linux / shell,0.4
+by_seniority,mid,hn,2015-07,38,Linux / shell,0.1842
+by_seniority,mid,hn,2016-04,31,Linux / shell,0.1935
 by_seniority,mid,hn,2016-07,38,Linux / shell,0.1316
 by_seniority,mid,hn,2016-10,40,Linux / shell,0.1
 by_seniority,mid,hn,2017-01,45,Linux / shell,0.0889
@@ -4216,10 +4276,10 @@ by_seniority,senior,hn,2014-07,52,Python,0.2692
 by_seniority,senior,hn,2014-10,46,Python,0.2826
 by_seniority,senior,hn,2015-01,86,Python,0.2442
 by_seniority,senior,hn,2015-04,42,Python,0.2143
-by_seniority,senior,hn,2015-07,122,Python,0.1475
-by_seniority,senior,hn,2015-10,85,Python,0.0118
-by_seniority,senior,hn,2016-01,71,Python,0.0423
-by_seniority,senior,hn,2016-04,124,Python,0.0484
+by_seniority,senior,hn,2015-07,129,Python,0.2171
+by_seniority,senior,hn,2015-10,94,Python,0.1383
+by_seniority,senior,hn,2016-01,85,Python,0.2
+by_seniority,senior,hn,2016-04,149,Python,0.2081
 by_seniority,senior,hn,2016-07,160,Python,0.2437
 by_seniority,senior,hn,2016-10,208,Python,0.2548
 by_seniority,senior,hn,2017-01,317,Python,0.2271
@@ -4267,10 +4327,10 @@ by_seniority,senior,hn,2014-07,52,AWS,0.0769
 by_seniority,senior,hn,2014-10,46,AWS,0.1957
 by_seniority,senior,hn,2015-01,86,AWS,0.1628
 by_seniority,senior,hn,2015-04,42,AWS,0.0714
-by_seniority,senior,hn,2015-07,122,AWS,0.1311
-by_seniority,senior,hn,2015-10,85,AWS,0.0235
-by_seniority,senior,hn,2016-01,71,AWS,0.0
-by_seniority,senior,hn,2016-04,124,AWS,0.0403
+by_seniority,senior,hn,2015-07,129,AWS,0.1938
+by_seniority,senior,hn,2015-10,94,AWS,0.1596
+by_seniority,senior,hn,2016-01,85,AWS,0.2
+by_seniority,senior,hn,2016-04,149,AWS,0.1745
 by_seniority,senior,hn,2016-07,160,AWS,0.175
 by_seniority,senior,hn,2016-10,208,AWS,0.226
 by_seniority,senior,hn,2017-01,317,AWS,0.2019
@@ -4318,10 +4378,10 @@ by_seniority,senior,hn,2014-07,52,Cloud (unspecified),0.0
 by_seniority,senior,hn,2014-10,46,Cloud (unspecified),0.0217
 by_seniority,senior,hn,2015-01,86,Cloud (unspecified),0.0581
 by_seniority,senior,hn,2015-04,42,Cloud (unspecified),0.0238
-by_seniority,senior,hn,2015-07,122,Cloud (unspecified),0.0164
-by_seniority,senior,hn,2015-10,85,Cloud (unspecified),0.0
-by_seniority,senior,hn,2016-01,71,Cloud (unspecified),0.0
-by_seniority,senior,hn,2016-04,124,Cloud (unspecified),0.0
+by_seniority,senior,hn,2015-07,129,Cloud (unspecified),0.0155
+by_seniority,senior,hn,2015-10,94,Cloud (unspecified),0.0106
+by_seniority,senior,hn,2016-01,85,Cloud (unspecified),0.0235
+by_seniority,senior,hn,2016-04,149,Cloud (unspecified),0.0403
 by_seniority,senior,hn,2016-07,160,Cloud (unspecified),0.075
 by_seniority,senior,hn,2016-10,208,Cloud (unspecified),0.0529
 by_seniority,senior,hn,2017-01,317,Cloud (unspecified),0.0315
@@ -4369,10 +4429,10 @@ by_seniority,senior,hn,2014-07,52,Microservices / distributed systems,0.0769
 by_seniority,senior,hn,2014-10,46,Microservices / distributed systems,0.1087
 by_seniority,senior,hn,2015-01,86,Microservices / distributed systems,0.0465
 by_seniority,senior,hn,2015-04,42,Microservices / distributed systems,0.119
-by_seniority,senior,hn,2015-07,122,Microservices / distributed systems,0.0164
-by_seniority,senior,hn,2015-10,85,Microservices / distributed systems,0.0
-by_seniority,senior,hn,2016-01,71,Microservices / distributed systems,0.0
-by_seniority,senior,hn,2016-04,124,Microservices / distributed systems,0.0081
+by_seniority,senior,hn,2015-07,129,Microservices / distributed systems,0.0698
+by_seniority,senior,hn,2015-10,94,Microservices / distributed systems,0.1277
+by_seniority,senior,hn,2016-01,85,Microservices / distributed systems,0.1059
+by_seniority,senior,hn,2016-04,149,Microservices / distributed systems,0.0671
 by_seniority,senior,hn,2016-07,160,Microservices / distributed systems,0.0938
 by_seniority,senior,hn,2016-10,208,Microservices / distributed systems,0.1154
 by_seniority,senior,hn,2017-01,317,Microservices / distributed systems,0.1009
@@ -4420,10 +4480,10 @@ by_seniority,senior,hn,2014-07,52,Observability / tracing / monitoring,0.0577
 by_seniority,senior,hn,2014-10,46,Observability / tracing / monitoring,0.0435
 by_seniority,senior,hn,2015-01,86,Observability / tracing / monitoring,0.0116
 by_seniority,senior,hn,2015-04,42,Observability / tracing / monitoring,0.0
-by_seniority,senior,hn,2015-07,122,Observability / tracing / monitoring,0.0
-by_seniority,senior,hn,2015-10,85,Observability / tracing / monitoring,0.0
-by_seniority,senior,hn,2016-01,71,Observability / tracing / monitoring,0.0
-by_seniority,senior,hn,2016-04,124,Observability / tracing / monitoring,0.0081
+by_seniority,senior,hn,2015-07,129,Observability / tracing / monitoring,0.031
+by_seniority,senior,hn,2015-10,94,Observability / tracing / monitoring,0.0
+by_seniority,senior,hn,2016-01,85,Observability / tracing / monitoring,0.0118
+by_seniority,senior,hn,2016-04,149,Observability / tracing / monitoring,0.0268
 by_seniority,senior,hn,2016-07,160,Observability / tracing / monitoring,0.025
 by_seniority,senior,hn,2016-10,208,Observability / tracing / monitoring,0.0096
 by_seniority,senior,hn,2017-01,317,Observability / tracing / monitoring,0.0126
@@ -4471,10 +4531,10 @@ by_seniority,senior,hn,2014-07,52,SQL,0.2115
 by_seniority,senior,hn,2014-10,46,SQL,0.3478
 by_seniority,senior,hn,2015-01,86,SQL,0.1628
 by_seniority,senior,hn,2015-04,42,SQL,0.0714
-by_seniority,senior,hn,2015-07,122,SQL,0.1639
-by_seniority,senior,hn,2015-10,85,SQL,0.0
-by_seniority,senior,hn,2016-01,71,SQL,0.0
-by_seniority,senior,hn,2016-04,124,SQL,0.0323
+by_seniority,senior,hn,2015-07,129,SQL,0.2403
+by_seniority,senior,hn,2015-10,94,SQL,0.2128
+by_seniority,senior,hn,2016-01,85,SQL,0.2235
+by_seniority,senior,hn,2016-04,149,SQL,0.1812
 by_seniority,senior,hn,2016-07,160,SQL,0.2125
 by_seniority,senior,hn,2016-10,208,SQL,0.2596
 by_seniority,senior,hn,2017-01,317,SQL,0.224
@@ -4522,10 +4582,10 @@ by_seniority,senior,hn,2014-07,52,AI agents / agentic workflows,0.0
 by_seniority,senior,hn,2014-10,46,AI agents / agentic workflows,0.0
 by_seniority,senior,hn,2015-01,86,AI agents / agentic workflows,0.0
 by_seniority,senior,hn,2015-04,42,AI agents / agentic workflows,0.0
-by_seniority,senior,hn,2015-07,122,AI agents / agentic workflows,0.0
-by_seniority,senior,hn,2015-10,85,AI agents / agentic workflows,0.0
-by_seniority,senior,hn,2016-01,71,AI agents / agentic workflows,0.0
-by_seniority,senior,hn,2016-04,124,AI agents / agentic workflows,0.0
+by_seniority,senior,hn,2015-07,129,AI agents / agentic workflows,0.0
+by_seniority,senior,hn,2015-10,94,AI agents / agentic workflows,0.0
+by_seniority,senior,hn,2016-01,85,AI agents / agentic workflows,0.0
+by_seniority,senior,hn,2016-04,149,AI agents / agentic workflows,0.0
 by_seniority,senior,hn,2016-07,160,AI agents / agentic workflows,0.0
 by_seniority,senior,hn,2016-10,208,AI agents / agentic workflows,0.0
 by_seniority,senior,hn,2017-01,317,AI agents / agentic workflows,0.0
@@ -4573,10 +4633,10 @@ by_seniority,senior,hn,2014-07,52,LLMs / GenAI (general),0.0
 by_seniority,senior,hn,2014-10,46,LLMs / GenAI (general),0.0
 by_seniority,senior,hn,2015-01,86,LLMs / GenAI (general),0.0
 by_seniority,senior,hn,2015-04,42,LLMs / GenAI (general),0.0
-by_seniority,senior,hn,2015-07,122,LLMs / GenAI (general),0.0
-by_seniority,senior,hn,2015-10,85,LLMs / GenAI (general),0.0
-by_seniority,senior,hn,2016-01,71,LLMs / GenAI (general),0.0
-by_seniority,senior,hn,2016-04,124,LLMs / GenAI (general),0.0
+by_seniority,senior,hn,2015-07,129,LLMs / GenAI (general),0.0
+by_seniority,senior,hn,2015-10,94,LLMs / GenAI (general),0.0
+by_seniority,senior,hn,2016-01,85,LLMs / GenAI (general),0.0
+by_seniority,senior,hn,2016-04,149,LLMs / GenAI (general),0.0
 by_seniority,senior,hn,2016-07,160,LLMs / GenAI (general),0.0
 by_seniority,senior,hn,2016-10,208,LLMs / GenAI (general),0.0
 by_seniority,senior,hn,2017-01,317,LLMs / GenAI (general),0.0
@@ -4624,10 +4684,10 @@ by_seniority,senior,hn,2014-07,52,CI/CD,0.1346
 by_seniority,senior,hn,2014-10,46,CI/CD,0.1739
 by_seniority,senior,hn,2015-01,86,CI/CD,0.0465
 by_seniority,senior,hn,2015-04,42,CI/CD,0.0714
-by_seniority,senior,hn,2015-07,122,CI/CD,0.0656
-by_seniority,senior,hn,2015-10,85,CI/CD,0.0
-by_seniority,senior,hn,2016-01,71,CI/CD,0.0
-by_seniority,senior,hn,2016-04,124,CI/CD,0.0081
+by_seniority,senior,hn,2015-07,129,CI/CD,0.093
+by_seniority,senior,hn,2015-10,94,CI/CD,0.0638
+by_seniority,senior,hn,2016-01,85,CI/CD,0.0235
+by_seniority,senior,hn,2016-04,149,CI/CD,0.0403
 by_seniority,senior,hn,2016-07,160,CI/CD,0.0312
 by_seniority,senior,hn,2016-10,208,CI/CD,0.0577
 by_seniority,senior,hn,2017-01,317,CI/CD,0.0442
@@ -4675,10 +4735,10 @@ by_seniority,senior,hn,2014-07,52,Kubernetes,0.0
 by_seniority,senior,hn,2014-10,46,Kubernetes,0.0
 by_seniority,senior,hn,2015-01,86,Kubernetes,0.0
 by_seniority,senior,hn,2015-04,42,Kubernetes,0.0
-by_seniority,senior,hn,2015-07,122,Kubernetes,0.0
-by_seniority,senior,hn,2015-10,85,Kubernetes,0.0
-by_seniority,senior,hn,2016-01,71,Kubernetes,0.0
-by_seniority,senior,hn,2016-04,124,Kubernetes,0.0
+by_seniority,senior,hn,2015-07,129,Kubernetes,0.0
+by_seniority,senior,hn,2015-10,94,Kubernetes,0.0
+by_seniority,senior,hn,2016-01,85,Kubernetes,0.0
+by_seniority,senior,hn,2016-04,149,Kubernetes,0.0067
 by_seniority,senior,hn,2016-07,160,Kubernetes,0.0
 by_seniority,senior,hn,2016-10,208,Kubernetes,0.0288
 by_seniority,senior,hn,2017-01,317,Kubernetes,0.041
@@ -4726,10 +4786,10 @@ by_seniority,senior,hn,2014-07,52,Java / Kotlin (Spring),0.1923
 by_seniority,senior,hn,2014-10,46,Java / Kotlin (Spring),0.1522
 by_seniority,senior,hn,2015-01,86,Java / Kotlin (Spring),0.0581
 by_seniority,senior,hn,2015-04,42,Java / Kotlin (Spring),0.1667
-by_seniority,senior,hn,2015-07,122,Java / Kotlin (Spring),0.082
-by_seniority,senior,hn,2015-10,85,Java / Kotlin (Spring),0.0353
-by_seniority,senior,hn,2016-01,71,Java / Kotlin (Spring),0.0
-by_seniority,senior,hn,2016-04,124,Java / Kotlin (Spring),0.0242
+by_seniority,senior,hn,2015-07,129,Java / Kotlin (Spring),0.1163
+by_seniority,senior,hn,2015-10,94,Java / Kotlin (Spring),0.0745
+by_seniority,senior,hn,2016-01,85,Java / Kotlin (Spring),0.1176
+by_seniority,senior,hn,2016-04,149,Java / Kotlin (Spring),0.1544
 by_seniority,senior,hn,2016-07,160,Java / Kotlin (Spring),0.1875
 by_seniority,senior,hn,2016-10,208,Java / Kotlin (Spring),0.1875
 by_seniority,senior,hn,2017-01,317,Java / Kotlin (Spring),0.1767
@@ -4777,10 +4837,10 @@ by_seniority,senior,hn,2014-07,52,GCP / Vertex AI,0.0
 by_seniority,senior,hn,2014-10,46,GCP / Vertex AI,0.0217
 by_seniority,senior,hn,2015-01,86,GCP / Vertex AI,0.0116
 by_seniority,senior,hn,2015-04,42,GCP / Vertex AI,0.0
-by_seniority,senior,hn,2015-07,122,GCP / Vertex AI,0.0
-by_seniority,senior,hn,2015-10,85,GCP / Vertex AI,0.0
-by_seniority,senior,hn,2016-01,71,GCP / Vertex AI,0.0
-by_seniority,senior,hn,2016-04,124,GCP / Vertex AI,0.0
+by_seniority,senior,hn,2015-07,129,GCP / Vertex AI,0.0
+by_seniority,senior,hn,2015-10,94,GCP / Vertex AI,0.0
+by_seniority,senior,hn,2016-01,85,GCP / Vertex AI,0.0
+by_seniority,senior,hn,2016-04,149,GCP / Vertex AI,0.0134
 by_seniority,senior,hn,2016-07,160,GCP / Vertex AI,0.0
 by_seniority,senior,hn,2016-10,208,GCP / Vertex AI,0.0096
 by_seniority,senior,hn,2017-01,317,GCP / Vertex AI,0.0063
