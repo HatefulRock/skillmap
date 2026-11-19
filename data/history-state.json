@@ -1,0 +1,103 @@
+{
+ "crawls": {
+  "CC-MAIN-2019-51": {
+   "ads": 0,
+   "archive": null,
+   "done": "2026-11-19",
+   "period": "2019-07",
+   "taxonomy_version": 12
+  },
+  "CC-MAIN-2020-24": {
+   "ads": 0,
+   "archive": null,
+   "done": "2026-11-19",
+   "period": "2020-01",
+   "taxonomy_version": 12
+  },
+  "CC-MAIN-2020-50": {
+   "ads": 0,
+   "archive": null,
+   "done": "2026-11-19",
+   "period": "2020-07",
+   "taxonomy_version": 12
+  },
+  "CC-MAIN-2021-25": {
+   "ads": 0,
+   "archive": null,
+   "done": "2026-11-19",
+   "period": "2021-01",
+   "taxonomy_version": 12
+  },
+  "CC-MAIN-2021-49": {
+   "ads": 0,
+   "archive": null,
+   "done": "2026-11-19",
+   "period": "2021-07",
+   "taxonomy_version": 12
+  },
+  "CC-MAIN-2022-21": {
+   "ads": 0,
+   "archive": null,
+   "done": "2026-11-19",
+   "period": "2022-01",
+   "taxonomy_version": 12
+  },
+  "CC-MAIN-2022-49": {
+   "ads": 0,
+   "archive": null,
+   "done": "2026-11-19",
+   "period": "2022-07",
+   "taxonomy_version": 12
+  },
+  "CC-MAIN-2023-23": {
+   "ads": 0,
+   "archive": null,
+   "done": "2026-11-19",
+   "period": "2023-01",
+   "taxonomy_version": 12
+  },
+  "CC-MAIN-2023-50": {
+   "ads": 0,
+   "archive": null,
+   "done": "2026-11-19",
+   "period": "2023-07",
+   "taxonomy_version": 12
+  },
+  "CC-MAIN-2024-26": {
+   "ads": 0,
+   "archive": null,
+   "done": "2026-11-19",
+   "period": "2024-01",
+   "taxonomy_version": 12
+  },
+  "CC-MAIN-2024-51": {
+   "ads": 0,
+   "archive": null,
+   "done": "2026-11-19",
+   "period": "2024-07",
+   "taxonomy_version": 12
+  },
+  "CC-MAIN-2025-26": {
+   "ads": 0,
+   "archive": null,
+   "done": "2026-11-19",
+   "period": "2025-01",
+   "taxonomy_version": 12
+  },
+  "CC-MAIN-2025-51": {
+   "ads": 0,
+   "archive": null,
+   "done": "2026-11-19",
+   "period": "2025-07",
+   "taxonomy_version": 12
+  },
+  "CC-MAIN-2026-25": {
+   "ads": 0,
+   "archive": null,
+   "done": "2026-11-19",
+   "period": "2026-01",
+   "taxonomy_version": 12
+  }
+ },
+ "taxonomy_version": null
+}
