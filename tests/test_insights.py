@@ -42,6 +42,22 @@ def test_pay_premium_compares_within_country_role_and_level():
     assert rust["premium"] == pytest.approx(0.2, abs=0.001) and rust["n"] == 24
     assert all(e["name"] != "Python" for e in block["skills"])  # never absent in a stratum
     assert block["n_with_pay"] == len(rows)
+    # No spread inside the strata: the interval closes on the estimate. Dollars at the
+    # comparison side's typical pay.
+    assert rust["low"] == rust["high"] == rust["premium"]
+    assert rust["share"] == pytest.approx(34 / 58, abs=0.001)
+    assert rust["usd"] == pytest.approx(0.2 * 154_919, abs=1_000)
+
+
+def test_pay_premium_interval_widens_with_noise_and_by_role_splits_families():
+    rows = []
+    for i in range(30):
+        rows.append(paid(i, ["Python", "Rust"], 120_000 * (1.2 + (0.3 if i % 2 else -0.3))))
+        rows.append(paid(100 + i, ["Python"], 100_000 * (1 + (0.2 if i % 2 else -0.2))))
+    rust = insights.pay_premium(rows, ["Rust"])["skills"][0]
+    assert rust["low"] < rust["premium"] < rust["high"]
+    by_role = insights.pay_premium_by_role(rows, ["Rust"])
+    assert list(by_role) == ["ai_ml"] and by_role["ai_ml"]["label"] == "AI / ML engineering"
 
 
 def test_pay_premium_needs_enough_matched_postings():

@@ -401,6 +401,7 @@ def insights_block(market: list[dict], window: list[dict], pay_rows: list[dict],
     premium = insights.pay_premium(pay_rows, sorted(categories))
     return {
         "pay_premium": premium,
+        "pay_premium_by_role": insights.pay_premium_by_role(pay_rows, sorted(categories)),
         "role_dna": insights.role_dna(window),
         "seniority_ladder": insights.seniority_ladder(window),
         "stacks": insights.stacks(window),
