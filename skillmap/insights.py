@@ -150,23 +150,44 @@ def requirement_creep(rows: list[dict], today: date) -> dict:
     return out
 
 
+# A generic skill counts as covered by the best of the specific ones it stands for: an ad that
+# only says "cloud" is met by someone strong on any one provider.
+COVERED_BY = {"Cloud (unspecified)": ["AWS", "Azure (incl. Azure OpenAI)", "GCP / Vertex AI"]}
+LEARN_FAMILIES = ["ai_ml", "fde"]  # the roles he is aiming at; backend and data dilute the list
+COMFORTABLE = 3  # a rating that meets an ad's ask
+
+
+def effective_rating(skill: str, ratings: dict[str, int]) -> int:
+    return max([ratings.get(skill, 0), *(ratings.get(s, 0) for s in COVERED_BY.get(skill, []))])
+
+
 def learn_next(rows: list[dict], ratings: dict[str, int], premium: dict, categories: dict[str, str],
-               families: list[str], top: int = 12) -> list[dict]:
-    """Skills worth learning next for the target roles: demand in those roles × the gap to a
-    strong rating (5) × a bonus for a pay premium. Unrated skills count as rating 1."""
-    target = [r for r in rows if r["role_family"] in families]
+               families: list[str] = LEARN_FAMILIES, top: int = 12) -> list[dict]:
+    """Skills worth learning next for the target roles. Two parts: how often target ads ask for
+    the skill, scaled by the gap to a comfortable rating, and how many ads it is the *last* gap
+    in (every other skill they ask for is already rated 3+), which favours skills that complete
+    jobs in his direction over common ones that come bundled with other gaps. A pay premium adds
+    a bonus. Skills already rated 3+ are left out."""
+    target = [r for r in rows if r["role_family"] in families and r["skills"]]
     if len(target) < MIN_GROUP:
         return []
     demand = shares(target)
+    last_gap: Counter[str] = Counter()
+    for r in target:
+        gaps = {s for s in r["skills"] if effective_rating(s, ratings) < COMFORTABLE}
+        if len(gaps) == 1:
+            last_gap[gaps.pop()] += 1
     premiums = {e["name"]: e["premium"] for e in premium.get("skills", [])}
     out = []
     for skill, share in demand.items():
-        rating = ratings.get(skill, 1)
-        if rating >= 4 or share < 0.05:
+        rating = effective_rating(skill, ratings)
+        if rating >= COMFORTABLE or share < 0.05:
             continue
+        unlocks = last_gap[skill] / len(target)
         bonus = max(0.0, premiums.get(skill, 0.0))
-        score = share * (5 - rating) / 4 * (1 + bonus)
+        score = (share * (COMFORTABLE - rating) / COMFORTABLE + 10 * unlocks) * (1 + bonus)
         out.append({"name": skill, "category": categories.get(skill, "Other"), "demand": round(share, 3),
-                    "rating": ratings.get(skill), "premium": premiums.get(skill), "score": round(score, 4)})
+                    "unlocks": last_gap[skill], "n_target": len(target), "rating": ratings.get(skill),
+                    "premium": premiums.get(skill), "score": round(score, 4)})
     out.sort(key=lambda e: -e["score"])
     return out[:top]
