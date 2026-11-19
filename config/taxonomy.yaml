@@ -305,7 +305,7 @@ skills:
     patterns: ['\b(?:excellent|strong|great|exceptional|effective|clear|outstanding|good|solid|superb) (?:written,? (?:and|&) (?:verbal|oral) |(?:verbal|oral),? (?:and|&) written |written |verbal |oral |interpersonal (?:and|&) )?communications?(?: and (?:interpersonal|presentation|collaboration) )?(?: skills| abilities)?\b', '\bcommunication skills\b', '\bcommunicate (?:complex|technical|clearly|effectively)\b', '\b(?:explain|translate|articulate) (?:complex|technical|ml|ai)(?: (?:and|or) (?:complex|technical))? (?:concepts|ideas|topics|problems|trade-?offs)\b']
   Stakeholder & client-facing:
     category: Soft skills
-    patterns: ['\bstakeholder (?:management|engagement)\b', '\bmanag(?:e|ing) (?:multiple )?stakeholders\b', '\b(?:customer|client)[- ]facing\b', '\bwork(?:ing)? (?:directly|closely|hand in hand) with (?:our )?(?:customers|clients|end users)\b', '\b(?:build|building|develop|maintain) (?:strong |trusted )?relationships with (?:customers|clients|stakeholders|partners)\b', '\btrusted (?:technical )?advisor\b']
+    patterns: ['\bstakeholder (?:management|engagement)\b', '\bmanag(?:e|ing) (?:multiple )?stakeholders\b', '\b(?:customer|client)[- ]facing\b(?! (?:products?|features?|applications?|apps?|marketing|content|ai|ml|llm|systems?|services?|platforms?|tools?|websites?|surfaces?|experiences?|ui|interfaces?|software|data|agents?|solutions)\b)', '\bwork(?:ing)? (?:directly|closely|hand in hand) with (?:our )?(?:customers|clients|end users)\b', '\b(?:build|building|develop|maintain) (?:strong |trusted )?relationships with (?:customers|clients|stakeholders|partners)\b', '\btrusted (?:technical )?advisor\b']
   Ownership & autonomy:
     category: Soft skills
     patterns: ['\b(?:take|takes|taking|show|demonstrate[sd]?|high|strong|extreme|full|sense of) ownership\b', '\bself[- ](?:starter|motivated|directed|driven)\b', '\bwork(?:s|ing)? (?:independently|autonomously)\b', '\bbias (?:for|to|towards) action\b', '\bminimal (?:supervision|guidance|direction)\b']
@@ -315,7 +315,7 @@ skills:
   Mentoring & leadership:
     category: Soft skills
     # "mentorship programme" is a benefit, so mentoring needs someone to mentor.
-    patterns: ['\bmentor(?:s|ing)?,? (?:and (?:coach|grow|develop|support)(?:ing)? )?(?:junior|other|less[- ]experienced|fellow|new|team ?members|engineers|developers|the team|others|teammates|colleagues)\b', '\bcoach(?:ing)? (?:junior|engineers|developers|team ?members|others)\b', '\btechnical leadership\b', '\bleadership skills\b', '\blead(?:ing)? (?:and (?:mentor|grow)(?:ing)? )?(?:a |the )?(?:small )?team of\b', '\bthought leadership\b']
+    patterns: ['\bmentor(?:s|ing)?,? (?:and (?:coach|grow|develop|support)(?:ing)? )?(?:junior|other|less[- ]experienced|fellow|new|team ?members|engineers|developers|the team|others|teammates|colleagues)\b', '\bcoach(?:ing)? (?:junior|engineers|developers|team ?members|others)\b', '\btechnical leadership\b', '\bleadership skills\b', '\blead(?:ing)? (?:and (?:mentor|grow)(?:ing)? )?(?:a |the )?(?:small )?team of\b']
   Comfort with ambiguity:
     category: Soft skills
     patterns: ['\b(?:ambiguity|ambiguous (?:problems|situations|environments?|requirements|spaces?))\b', '\b(?:thrive|thrives|thriving|comfortable|succeed|excel|flourish) (?:in|working in) (?:a |an )?(?:fast[- ]paced|dynamic|startup|rapidly[- ]changing|ever[- ]changing|high[- ]growth|unstructured)\b', '\bwear(?:ing)? (?:many|multiple) hats\b', '\bscrappy\b']
@@ -324,7 +324,9 @@ skills:
     patterns: ['\bpresent(?:ing|s)? (?:findings |results |technical (?:concepts|content|solutions) |complex (?:ideas|topics) |ideas |work |solutions )?to (?:customers|clients|executives|leadership|stakeholders|senior|c-level|non-technical|technical and non-technical|audiences|the business)\b', '\bpresentation skills\b', '\bpublic speaking\b', '\b(?:conference )?talks? at conferences\b', '\b(?:deliver|run|lead)(?:ing)? (?:technical |product |live )?(?:demos|presentations|workshops)\b']
   Problem solving:
     category: Soft skills
-    patterns: ['\bproblem[- ]solv(?:ing|er|ers)\b', '\bsolve (?:complex|ambiguous|hard|challenging) (?:technical |business )?problems\b', '\b(?:strong |excellent )?analytical (?:and problem[- ]solving )?(?:skills|thinking|mindset)\b', '\bcritical thinking\b', '\bfirst[- ]principles thinking\b']
+    # Interview-process blurbs ("showcase your problem-solving skills") are not asks.
+    not: ['\binterview', '\bassessment\b', '\bwe (?:depend|rely) on\b']
+    patterns: ['\bproblem[- ]solv(?:ing|er|ers)\b', '\b(?:strong |excellent )?analytical (?:and problem[- ]solving )?(?:skills|thinking|mindset)\b', '\bcritical thinking\b', '\bfirst[- ]principles thinking\b']
   Writing & English:
     category: Soft skills
     patterns: ['\b(?:fluent|fluency|proficien(?:t|cy)|excellent|strong|good|professional|business[- ]level) (?:in |with )?(?:(?:written|spoken|verbal),? (?:and|&) (?:written|spoken|verbal) |written |spoken |business |professional )?english\b', '\benglish (?:fluency|proficiency|language skills)\b', '\bwritten english\b', '\b(?:design docs|technical writing|written communication)\b']
