@@ -305,3 +305,23 @@ def test_edge_skips_skills_less_common_in_the_role_than_across_tech():
 
 def test_hn_momentum_needs_both_years():
     assert insights.hn_momentum([], date(2026, 11, 17)) == {}
+
+
+def test_current_keeps_skills_central_to_one_role_even_when_rare_overall(monkeypatch):
+    monkeypatch.setattr(aggregate, "TOP_CURRENT", 2)
+    monkeypatch.setattr(aggregate, "TOP_PER_CATEGORY", 1)
+    monkeypatch.setattr(aggregate, "ROLE_MIN_SHARE", 0.5)
+    today = date(2026, 11, 1)
+
+    def row(role, skills):
+        return {"first_seen": today, "last_seen": today, "role_family": role, "skills": skills}
+
+    rows = [row("backend", ["Python", "SQL", "Go"])] * 200 + [row("ai_ml", ["Python", "Fine-tuning"])] * 40 + [row("ai_ml", ["JAX"])]
+    cats = {"Python": "Languages", "SQL": "Data", "Go": "Languages", "Fine-tuning": "ML", "JAX": "ML"}
+    block = aggregate.current_block(rows, today, cats)
+    names = [s["name"] for s in block["skills"]]
+    assert names[:2] == ["Python", "Go"]  # overall order kept, ties by name
+    assert "Fine-tuning" in names  # in 98% of AI/ML ads, though only 17% of all ads
+    assert "JAX" not in names  # rare everywhere, and not its category's top
+    ft = next(s for s in block["skills"] if s["name"] == "Fine-tuning")
+    assert ft["roles"] == {"ai_ml": 0.9756} and block["n_roles"] == {"ai_ml": 41, "backend": 200}

@@ -21,6 +21,10 @@ CURRENT_DAYS = 30
 SEGMENT_DAYS = 90
 SALARY_DAYS = 180
 TOP_CURRENT = 60
+# Beyond the overall top, the most common skills of each category and every skill in 1%+ of some
+# role's ads are published too, so a niche-but-central skill (fine-tuning in AI/ML ads) isn't cut for being rare across tech.
+TOP_PER_CATEGORY = 15
+ROLE_MIN_SHARE = 0.01
 TOP_TREND = 30
 TOP_SEGMENT = 40
 TARGET_FAMILIES = ["ai_ml", "fde", "backend", "data"]
@@ -89,11 +93,26 @@ def current_block(rows: list[dict], today: date, categories: dict[str, str]) -> 
     before = active(rows, today - timedelta(days=2 * CURRENT_DAYS - 1), today - timedelta(days=CURRENT_DAYS))
     now_shares, before_shares = shares(now), shares(before)
     nice_counts = Counter(s for r in now for s in r.get("skills_nice") or [])
-    ranked = sorted(now_shares.items(), key=lambda kv: (-kv[1], kv[0]))[:TOP_CURRENT]
+    by_share = sorted(now_shares.items(), key=lambda kv: (-kv[1], kv[0]))
+    keep = {name for name, _ in by_share[:TOP_CURRENT]}
+    per_category: Counter[str] = Counter()
+    for name, share in by_share:
+        cat = categories.get(name, "Other")
+        if share > 0 and per_category[cat] < TOP_PER_CATEGORY:
+            per_category[cat] += 1
+            keep.add(name)
+    by_role: dict[str, list[dict]] = {}
+    for r in now:
+        if r.get("role_family"):
+            by_role.setdefault(r["role_family"], []).append(r)
+    role_shares = {k: shares(v) for k, v in by_role.items() if len(v) >= MIN_GROUP}
+    for rs in role_shares.values():
+        keep.update(name for name, share in rs.items() if share >= ROLE_MIN_SHARE)
     comparable = len(before) >= MIN_GROUP
     return {
         "n": len(now),
         "n_previous": len(before),
+        "n_roles": {k: len(v) for k, v in sorted(by_role.items()) if k in role_shares},
         "skills": [
             {
                 "name": name,
@@ -102,8 +121,11 @@ def current_block(rows: list[dict], today: date, categories: dict[str, str]) -> 
                 "count": round(share * len(now)),
                 "nice_share": round(nice_counts.get(name, 0) / len(now), 4) if now else 0,
                 "delta": round(share - before_shares.get(name, 0.0), 4) if comparable else None,
+                # Share of each role's ads (roles with enough ads only); absent means none asked.
+                "roles": {k: rs[name] for k, rs in sorted(role_shares.items()) if rs.get(name)},
             }
-            for name, share in ranked
+            for name, share in by_share
+            if name in keep
         ],
     }
 
