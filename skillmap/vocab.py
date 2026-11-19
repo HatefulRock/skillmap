@@ -99,6 +99,20 @@ def _key(item: str) -> str:
     return re.sub(r"\s+", " ", item.lower())
 
 
+def covered(text: str, start: int, end: int, taxonomy: Taxonomy) -> bool:
+    """Whether a skill matches the sentence around text[start:end] on (part of) those words, so a
+    term a skill needs context for ("Go" in "Go or Rust") counts as covered where it is."""
+    base = max(text.rfind(c, 0, start) for c in "\n.;!?") + 1
+    ends = [i for i in (text.find(c, end) for c in "\n.;!?") if i != -1]
+    sentence = text[base:min(ends) if ends else len(text)]
+    a, b = start - base, end - base
+    for skill in taxonomy.skills:
+        if any(m.start() < b and m.end() > a for p in skill.patterns for m in p.finditer(sentence)):
+            if not any(n.search(sentence) for n in skill.negatives):
+                return True
+    return False
+
+
 def measure(texts: dict[str, tuple[str, str]], taxonomy: Taxonomy, reference: list[Term]) -> dict:
     """texts: posting id -> (company, plain text)."""
     ref_companies: dict[str, set[str]] = defaultdict(set)
@@ -109,10 +123,13 @@ def measure(texts: dict[str, tuple[str, str]], taxonomy: Taxonomy, reference: li
     asked_mentions = asked_hit = 0
     finder = any_term(reference)
     for company, text in texts.values():
-        for name in {m.group(1) for m in finder.finditer(text)}:
+        firsts: dict[str, re.Match[str]] = {}
+        for m in finder.finditer(text):
+            firsts.setdefault(m.group(1), m)
+        for name, m in firsts.items():
             ref_companies[name].add(company)
             ref_mentions[name] += 1
-            if taxonomy.known(name):
+            if taxonomy.known(name) or covered(text, m.start(1), m.end(1), taxonomy):
                 ref_hit[name] += 1
         seen = set()
         for item in asked_items(text):
