@@ -13,8 +13,10 @@ on:
         default: "300"
 
 concurrency:
-  # Shares the refresh's group: both rewrite data/skills-market.json.
-  group: refresh
+  # Its own group, so a long backfill never holds up (or displaces) a queued refresh. Only this
+  # job writes the history files; it puts the series into skills-market.json after pulling the
+  # latest one, and every refresh adds it again too.
+  group: history
   cancel-in-progress: false
 
 permissions:
@@ -44,7 +46,18 @@ jobs:
         run: |
           git config user.name "skillmap-bot"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add -f data/history-ads.jsonl.gz data/history-state.json data/skills-market.json 2>/dev/null || true
-          if git diff --cached --quiet; then echo "No change"; exit 0; fi
-          git commit -m "data: job-ad history $(date -u +%F)"
-          git pull --rebase --quiet && git push
+          [ -f data/history-ads.jsonl.gz ] || { echo "Nothing collected"; exit 0; }
+          keep="$RUNNER_TEMP/history" && mkdir -p "$keep"
+          cp data/history-ads.jsonl.gz data/history-state.json "$keep/"
+          for attempt in 1 2 3; do
+            # Start from the latest main (a refresh may have pushed meanwhile), then lay this run's files on it.
+            git fetch -q origin main && git reset -q --hard origin/main
+            cp "$keep"/* data/
+            uv run skillmap history --publish-only
+            git add -f data/history-ads.jsonl.gz data/history-state.json data/skills-market.json
+            if git diff --cached --quiet; then echo "No change"; exit 0; fi
+            git commit -q -m "data: job-ad history $(date -u +%F)"
+            git push -q origin HEAD:main && exit 0
+            sleep $((attempt * 20))
+          done
+          exit 1
