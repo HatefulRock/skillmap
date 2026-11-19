@@ -253,7 +253,7 @@ def test_edge_skills_leave_out_the_baseline_and_rank_by_signals():
         if i % 8 == 0:           # junior-leaning
             skills.append("pandas")
         rows.append(ad(i, skills, nice, level))
-    rows += [row(1000 + i, ["Python", "pandas"], role_family="backend") for i in range(200)]
+    rows += [row(1000 + i, ["Python", "Go"], role_family="backend") for i in range(200)]
     block = insights.edge_skills(rows, {"vLLM": {"ratio": 3.0, "share": 0.03, "share_before": 0.01}}, {}, {"pandas": 3}, "ai_ml")
     names = [e["name"] for e in block["skills"]]
     assert "Python" not in names and names[0] == "vLLM"
@@ -290,6 +290,17 @@ def test_edge_frontier_ratio_and_next_to_my_stack():
     # Without a frontier list the signal is absent, not zero.
     plain = insights.edge_skills(rows, {}, {}, ratings, "ai_ml")
     assert plain["n_frontier"] == 0 and all("frontier" not in e for e in plain["skills"])
+
+
+def test_edge_skips_skills_less_common_in_the_role_than_across_tech():
+    rows = [row(i, ["Python", "vLLM"] if i % 5 == 0 else ["Python"], role_family="ai_ml",
+                seniority="senior" if i % 2 else "junior") for i in range(200)]
+    # DNS: 10% of AI ads, but 40% of infra ads, so it's an outside skill for AI engineers.
+    rows += [row(1000 + i, ["Python", "DNS"] if i % 10 == 1 else ["Python"], role_family="ai_ml", seniority="senior")
+             for i in range(200)]
+    rows += [row(2000 + i, ["DNS"] if i % 5 < 2 else ["Go"], role_family="infra") for i in range(400)]
+    names = [e["name"] for e in insights.edge_skills(rows, {}, {}, {}, "ai_ml")["skills"]]
+    assert "vLLM" in names and "DNS" not in names
 
 
 def test_hn_momentum_needs_both_years():
