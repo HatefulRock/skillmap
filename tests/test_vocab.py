@@ -27,3 +27,12 @@ def test_reference_terms_match_case_sensitively_with_word_edges():
     assert terms["Go"].search("Go and Rust") and not terms["Go"].search("go to market")
     assert terms["C++"].search("modern C++ code") and terms["Next.js"].search("Next.js apps")
     assert not terms["Java"].search("JavaScript")
+
+
+def test_covered_counts_a_term_a_skill_matches_in_context():
+    tax = Taxonomy.load()
+    text = "We write services in Go and Rust. Let's go to the office."
+    i = text.index("Go")
+    assert vocab.covered(text, i, i + 2, tax)
+    j = text.index("Rust")
+    assert vocab.covered(text, j, j + 4, tax)
