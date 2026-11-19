@@ -223,3 +223,18 @@ def test_lost_text_keeps_extraction_and_comes_back_when_seen_again(tmp_path):
     store.save([(normalise(r, TAX, TODAY), r) for r in raws[1:2]], TAX.version)  # seen again, with text
     assert store.data["greenhouse:1"]["description"] and store.data["greenhouse:1"]["taxonomy_version"] is None
     assert reextract(store, TAX, TODAY, archive) == 1
+
+
+def test_month_on_month_movers_wait_for_two_full_months_of_collection():
+    from skillmap import trends
+
+    start = date(2026, 11, 17)
+
+    def r(i, day, skills):
+        d = start + timedelta(days=day)
+        return {"posting_id": str(i), "first_seen": d, "last_seen": d, "skills": skills}
+
+    rows = [r(i, i % 30, ["Python"]) for i in range(60)] + [r(100 + i, 30 + i % 30, ["Python", "Go"]) for i in range(60)]
+    assert trends.movers(rows, start + timedelta(days=58), days=30, since=start) is None
+    block = trends.movers(rows, start + timedelta(days=59), days=30, since=start)
+    assert block["risers"][0]["name"] == "Go" and block["n_before"] == 60

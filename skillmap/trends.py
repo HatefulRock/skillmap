@@ -27,12 +27,18 @@ def _windows(rows: list[dict], today: date, days: int) -> tuple[list[dict], list
     return now, before
 
 
-def movers(rows: list[dict], today: date, days: int = MOVER_DAYS, min_share: float = 0.02) -> dict | None:
+def movers(rows: list[dict], today: date, days: int = MOVER_DAYS, min_share: float = 0.02,
+           since: date | None = None) -> dict | None:
     """Skills whose share rose or fell most between the last `days` and the `days` before.
+
+    With `since` (when collection started), nothing is returned until both windows lie wholly
+    after it: a half-collected earlier window would compare a few days against a full month.
 
     Ranked by percentage-point change; `ratio` says how many times more (or less) common the
     skill is now. Skills under `min_share` in both windows are noise and skipped.
     """
+    if since and today - timedelta(days=2 * days - 1) < since:
+        return None
     now, before = _windows(rows, today, days)
     if len(now) < MIN_GROUP or len(before) < MIN_GROUP:
         return None
@@ -54,10 +60,11 @@ def movers(rows: list[dict], today: date, days: int = MOVER_DAYS, min_share: flo
     }
 
 
-def grouped_movers(rows: list[dict], today: date, key: str, keys: list[str], days: int = MOVER_DAYS) -> dict:
+def grouped_movers(rows: list[dict], today: date, key: str, keys: list[str], days: int = MOVER_DAYS,
+                   since: date | None = None) -> dict:
     out = {}
     for value in keys:
-        block = movers([r for r in rows if r.get(key) == value], today, days)
+        block = movers([r for r in rows if r.get(key) == value], today, days, since=since)
         if block:
             out[value] = block
     return out

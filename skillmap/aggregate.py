@@ -298,10 +298,13 @@ def changes_block(market: list[dict], hn: list[dict], today: date) -> dict:
 
     regions = [k for k, _ in Counter(r.get("region") or "Unknown" for r in market).most_common(8)]
     full_text = [r for r in market if r["source"] != "adzuna"]
+    since = min((r["first_seen"] for r in market), default=None)
     return {
-        "movers": trends.movers(market, today),
-        "movers_by_role": trends.grouped_movers(market, today, "role_family", roles.FAMILIES),
-        "movers_by_seniority": trends.grouped_movers(market, today, "seniority", SENIORITY_ORDER[:-1]),
+        "movers": trends.movers(market, today, since=since),
+        # Month on month: the first live comparison, about two months after collection starts.
+        "movers_30d": trends.movers(market, today, days=30, since=since),
+        "movers_by_role": trends.grouped_movers(market, today, "role_family", roles.FAMILIES, since=since),
+        "movers_by_seniority": trends.grouped_movers(market, today, "seniority", SENIORITY_ORDER[:-1], since=since),
         "hn_movers": trends.movers(hn, today, days=365),
         "mix": {
             "role_family": {"market": trends.mix_series(market, "role_family", roles.FAMILIES, today),
