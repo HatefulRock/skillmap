@@ -147,3 +147,12 @@ def test_small_segments_withhold_shares():
     assert by_key["junior"]["shares"] == {"Python": 0.0, "Go": 1.0}
     assert [s["key"] for s in block["segments"]] == ["junior", "senior"]
 
+
+
+def test_stop_words_and_their_plurals_are_never_terms():
+    from skillmap.extract import terms
+
+    found = terms.candidates("Benefits: FSA and HSA. STEM degree. Write RFPs and SOPs for the HQ. We use DSPy and CSS.",
+                             lambda t: t == "CSS")
+    assert found == ["DSPy"]
+    assert terms.ignored("UIs") and terms.ignored("RFPs") and not terms.ignored("AWS") and not terms.ignored("DSPy")

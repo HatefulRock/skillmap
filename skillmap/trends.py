@@ -13,6 +13,7 @@ from datetime import date, timedelta
 from statistics import mean, median
 
 from .aggregate import MIN_GROUP, active, month_end, month_starts, shares
+from .extract.terms import ignored
 
 MOVER_DAYS = 90
 PAY_MANDATORY = {"mcf"}
@@ -184,7 +185,8 @@ def emerging_terms(rows: list[dict], today: date, days: int = MOVER_DAYS, hn: li
     now, before = _windows([r for r in rows if r.get("terms")], today, days)
 
     def companies_using(group: list[dict]) -> Counter:
-        pairs = {(term, r["company"]) for r in group for term in r["terms"]}
+        # Postings keep the terms found when they were extracted; words added to the stop list since drop out here.
+        pairs = {(term, r["company"]) for r in group for term in r["terms"] if not ignored(term)}
         return Counter(term for term, _ in pairs)
 
     c_now, c_before = companies_using(now), companies_using(before)
@@ -211,7 +213,7 @@ def rising_hn_terms(hn: list[dict], today: date) -> dict | None:
         return None
 
     def companies_using(group: list[dict]) -> Counter:
-        return Counter(t for t, _ in {(t, r["company"]) for r in group for t in r.get("terms") or []})
+        return Counter(t for t, _ in {(t, r["company"]) for r in group for t in r.get("terms") or [] if not ignored(t)})
 
     c_recent, c_base = companies_using(recent), companies_using(base)
     terms = []
