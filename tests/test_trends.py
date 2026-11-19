@@ -261,3 +261,27 @@ def test_pay_rate_leaves_out_sources_where_pay_is_mandatory():
               "salary_min": 100 if i % 4 == 0 else None} for i in range(40)]
     out = trends.per_post_series(rows, day)
     assert out["pay_stated"][-1] == 0.25 and out["nice_any"][-1] == 0.0
+
+
+def test_rising_terms_from_hacker_news_compare_shares_of_companies():
+    def hn(i, days_ago, terms_):
+        return row(i, days_ago, ["Python"], source="hn", company=f"H{i}", terms=terms_)
+    # Recent half year: 40 companies, 10 name NewThing, 4 name Steady. Year before: 80, 2 and 8.
+    recent = [hn(i, 30, ["NewThing"] if i < 10 else ["Steady"] if i < 14 else []) for i in range(40)]
+    base = [hn(1000 + i, 300, ["NewThing"] if i < 2 else ["Steady"] if i < 10 else []) for i in range(80)]
+    block = trends.emerging_terms([], TODAY, hn=recent + base)
+    assert block["baseline"] is None
+    rising = block["rising_hn"]
+    assert rising["n_companies"] == 40 and rising["n_companies_before"] == 80
+    assert [t["term"] for t in rising["terms"]] == ["NewThing"]  # Steady is 10% now, 10% before
+    assert rising["terms"][0]["companies_before"] == 2
+
+
+def test_no_hacker_news_rising_terms_without_enough_posts():
+    assert trends.emerging_terms([], TODAY, hn=[])["rising_hn"] is None
+
+
+def test_infrastructure_and_security_names_are_tracked_skills():
+    for term in ["CI", "REST", "IAM", "DNS", "SRE", "SIEM", "OAuth", "RBAC", "GitOps", "iOS", "NIST", "VMware"]:
+        assert TAX.known(term), term
+    assert terms.candidates("Runs on any OS, CA based, owns the SDLC and IP", TAX.known) == []

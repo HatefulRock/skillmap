@@ -8,7 +8,7 @@
 #
 # Bump `version` whenever a pattern (or any other extractor, e.g. salary) changes: stored
 # postings are re-extracted on the next run.
-version: 8  # v2: salary from text. v3: ad length, years, unknown terms, degree, visa, equity. v4: no benefits/monitoring false positives. v5: seniority (bank grades, solutions architects), non-software engineering, pre-sales, more countries. v6: no shouted-heading words as unknown terms. v8: trading desk, ops and product roles as their own group. v7: soft skills (own section); quant roles need a quant or trading-tech title (no PMs, quantum, trading ops); risk modelling split from KYC/AML
+version: 9  # v9: security, identity, networking, DevOps/SRE, mobile, BI, Windows and virtualisation skills; bare CI, GitOps and GitLab. v2: salary from text. v3: ad length, years, unknown terms, degree, visa, equity. v4: no benefits/monitoring false positives. v5: seniority (bank grades, solutions architects), non-software engineering, pre-sales, more countries. v6: no shouted-heading words as unknown terms. v8: trading desk, ops and product roles as their own group. v7: soft skills (own section); quant roles need a quant or trading-tech title (no PMs, quantum, trading ops); risk modelling split from KYC/AML
 
 skills:
   # ---------- Languages ----------
@@ -116,6 +116,10 @@ skills:
   Kafka / message queues / streaming:
     category: Retrieval & data
     patterns: ['\bkafka\b', '\brabbitmq\b', '\bpub/?sub\b', '\bkinesis\b', '\bmessage (?:queues?|brokers?)\b', '\bevent[- ]driven\b', '\bstream processing\b', '\bflink\b']
+  BI / dashboards (Power BI, Tableau, Looker):
+    category: Retrieval & data
+    patterns: ['\bpower ?bi\b', '\btableau\b', '\blooker\b', '\bbusiness intelligence\b', '\bmetabase\b', '\bqlik\w*', '\bsuperset\b(?=\s*(?:,|/|\)|dashboards?))']
+    cs: ['\bBI\b(?!-)']
   Spark / big data:
     category: Retrieval & data
     patterns: ['\bapache spark\b', '\bpyspark\b', '\bspark\b(?=\s*(?:,|/|\)|sql|streaming|jobs?|clusters?))', '\bhadoop\b', '\bdatabricks\b', '\bbig data\b', '\bhive\b(?=\s*(?:,|/|\)|sql|tables?))']
@@ -219,6 +223,7 @@ skills:
   REST / API design & integration:
     category: Backend
     patterns: ['\brest(?:ful)?\b(?:\s*apis?)?(?=.{0,20}\bapis?\b)|\brestful\b', '\bapi (?:design|development|integrations?)\b', '\bgraphql\b', '\bgrpc\b', '\bopenapi\b', '\bweb ?hooks?\b']
+    cs: ['\bREST\b']
   Microservices / distributed systems:
     category: Backend
     patterns: ['\bmicro-?services?\b', '\bdistributed systems?\b', '\bservice[- ]oriented\b', '\bhigh[- ]availability\b', '\bscalable (?:systems|services|backend)\b']
@@ -242,6 +247,28 @@ skills:
   React / Next.js:
     category: Frontend
     patterns: ['\breact(?:\.?js)?\b(?! native)', '\bnext\.?js\b', '\breact native\b', '\bvue(?:\.?js)?\b', '\bangular\b', '\bsvelte\b']
+
+  Mobile (iOS / Android):
+    category: Frontend
+    patterns: ['\bios\b', '\bandroid\b', '\bswift ?ui\b', '\bswift\b(?=\s*(?:,|/|\)|and\b|or\b|developer|engineer|programming))', '\breact native\b', '\bflutter\b', '\bmobile (?:apps?|development|engineer\w*)\b']
+
+  # ---------- Security & networking ----------
+  Security engineering (SIEM, AppSec, threat detection):
+    category: Security & networking
+    patterns: ['\bsiem\b', '\bsoar\b', '\b[ex]dr\b', '\bdevsecops\b', '\bappsec\b', '\bapplication security\b', '\bthreat (?:detection|hunting|intelligence|model(?:l?ing)?)\b',
+               '\bpenetration test\w*', '\bpen ?test\w*', '\bvulnerability (?:management|scann\w*|assessments?)\b', '\bsecurity operations\b', '\bsoc analysts?\b',
+               '\bzero trust\b', '\bsast\b', '\bdast\b', '\bincident response\b', '\bsplunk es\b']
+  Identity & access (IAM, SSO, OAuth, RBAC):
+    category: Security & networking
+    patterns: ['\biam\b', '\bsso\b', '\bsingle sign[- ]on\b', '\boauth ?2?(?:\.0)?\b', '\bopenid connect\b', '\boidc\b', '\bsaml\b', '\brbac\b', '\babac\b', '\bokta\b',
+               '\bactive directory\b', '\bentra id\b', '\bldap\b', '\bkeycloak\b', '\bidentity and access management\b']
+  Security frameworks & certs (NIST, CISSP, ISO 27001):
+    category: Security & networking
+    patterns: ['\bnist\b', '\bcissp\b', '\bcism\b', '\boscp\b', '\bceh\b', '\bsecurity\+', '\bfedramp\b', '\bcmmc\b', '\bcis (?:benchmarks?|controls)\b', '\biso ?27001\b', '\bmitre att&ck\b']
+  Networking (TCP/IP, DNS, load balancing):
+    category: Security & networking
+    patterns: ['\btcp(?:/ip)?\b', '\budp\b', '\bdns\b', '\bbgp\b', '\bvpns?\b', '\bfirewalls?\b', '\bload[- ]balanc\w+', '\bvlans?\b', '\bsd-?wan\b', '\bcdns?\b', '\bnetwork(?:ing)? protocols?\b',
+               '\bip (?:networking|routing|addressing)\b', '\bcisco\b']
 
   # ---------- Cloud & DevOps ----------
   AWS:
@@ -270,16 +297,26 @@ skills:
     patterns: ['\bterraform\b', '\binfrastructure[- ]as[- ]code\b', '\biac\b', '\bpulumi\b', '\bcloudformation\b', '\bansible\b']
   CI/CD:
     category: Cloud & DevOps
-    patterns: ['\bci ?/ ?cd\b', '\bcontinuous (?:integration|delivery|deployment)\b', '\bgithub actions\b', '\bgitlab ci\b', '\bjenkins\b', '\bcircleci\b', '\bargo ?cd\b']
+    patterns: ['\bci ?/ ?cd\b', '\bcontinuous (?:integration|delivery|deployment)\b', '\bgithub actions\b', '\bgitlab ci\b', '\bjenkins\b', '\bcircleci\b', '\bargo ?cd\b', '\bgitops\b', '\bflux ?cd\b']
+    cs: ['\bCI\b']
   Git:
     category: Cloud & DevOps
-    patterns: ['\bgit\b(?!hub actions)', '\bversion control\b']
+    patterns: ['\bgit\b(?!hub actions)', '\bversion control\b', '\bgitlab\b', '\bbitbucket\b']
   Linux / shell:
     category: Cloud & DevOps
     patterns: ['\blinux\b', '\bunix\b', '\bbash\b', '\bshell scripting\b']
   On-prem / air-gapped / private cloud deploy:
     category: Cloud & DevOps
     patterns: ['\bon-?prem(?:ise|ises)?\b', '\bair[- ]gapped\b', '\bprivate cloud\b', '\bself[- ]hosted\b']
+  DevOps / SRE (SLOs, on-call):
+    category: Cloud & DevOps
+    patterns: ['\bdevops\b', '\bsre\b', '\bsite reliability\b', '\bslos?\b', '\bslis?\b', '\berror budgets?\b', '\bon[- ]call\b', '\bpost-?mortems?\b', '\bchaos engineering\b']
+  Windows / PowerShell:
+    category: Cloud & DevOps
+    patterns: ['\bpowershell\b', '\bwindows server\b', '\bintune\b', '\bsccm\b']
+  Virtualisation (VMware, Hyper-V):
+    category: Cloud & DevOps
+    patterns: ['\bvmware\b', '\bvsphere\b', '\besxi\b', '\bhyper-v\b', '\bproxmox\b', '\bcitrix\b', '\bvirtuali[sz]ation\b']
   Temporal / durable execution:
     category: Cloud & DevOps
     patterns: ['\btemporal(?:\.io)?\b(?= (?:workflows?|io|cloud)|,|/|\))', '\bdurable execution\b']
