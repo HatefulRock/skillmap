@@ -103,6 +103,9 @@ def test_full_run(tmp_path, monkeypatch):
     assert families["ai_ml"]["n"] == 65 and families["ai_ml"]["shares"]["Python"] == 1.0
     assert families["fde"]["n"] == 30 and families["fde"]["shares"]["SQL"] == 1.0
     assert data["salary"]["n"] == 35 and data["salary"]["median_monthly"] > 6000
+    # Adzuna was skipped, so its credit line is left out (it is owed only for its data).
+    assert not any("Adzuna" in a for a in data["meta"]["attribution"])
+    assert any("Hacker News" in a for a in data["meta"]["attribution"])
     assert json.loads((tmp_path / "skills-market.json").read_text())["meta"]["as_of"] == "2026-11-17"
     ET.fromstring((tmp_path / "skills-heatmap.svg").read_text())  # well-formed
     assert (tmp_path / "postings-live.jsonl.gz").exists()

@@ -494,7 +494,7 @@ def build(rows: list[dict], today: date, categories: dict[str, str], taxonomy_ve
             "tracked_since": tracked_since.isoformat() if tracked_since else None,
             "hn_first": min((r["first_seen"] for r in hn), default=today).isoformat(),
             "runs": runs or [],
-            "attribution": ["Job data: The Adzuna API", "Hacker News “Who is hiring?” via the HN Algolia API",
+            "attribution": ["Job data: The Adzuna API"] * any(r["source"] == "adzuna" for r in rows) + ["Hacker News “Who is hiring?” via the HN Algolia API",
                             "MyCareersFuture (Singapore)",
                             "Company boards on Greenhouse, Lever, Ashby, Workable, SmartRecruiters and Workday",
                             "Amazon and Microsoft careers sites",
