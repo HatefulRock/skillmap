@@ -56,3 +56,47 @@ def test_mcf_maps_level_salary_and_skill_tags():
     assert (job.salary_min, job.salary_period, job.salary_currency) == (7000, "month", "SGD")
     assert "Skills: Python, Docker" in job.description
     assert job.country_hint == "SG" and job.posted_on == date(2026, 11, 10)
+
+
+def test_mcf_reads_the_whole_category_then_new_keyword_hits():
+    import httpx
+
+    from skillmap.http import PoliteClient
+
+    def job(i, day):
+        return {"uuid": f"j{i}", "title": "Engineer", "metadata": {"newPostingDate": f"2026-{day}"}}
+
+    calls = []
+
+    def handler(request):
+        body = json.loads(request.content)
+        page = int(request.url.params["page"])
+        calls.append(((body.get("categories") or [body.get("search")])[0], page))
+        if body.get("categories"):
+            # 150 open IT ads, most of them older than `since`: all are read.
+            jobs = [job(i, "09-01") for i in range(page * 100, min(150, page * 100 + 100))]
+        else:
+            jobs = [job(0, "11-15"), job(500, "11-15"), job(501, "08-01")]
+        return httpx.Response(200, json={"results": jobs})
+
+    client = PoliteClient(min_interval=0, transport=httpx.MockTransport(handler), retries=0)
+    client.sleep = lambda s: None
+    got = [p.native_id for p in mcf.collect(client, ["python"], since=date(2026, 11, 1),
+                                            categories=["Information Technology"])]
+    assert len(got) == 151 and len(set(got)) == 151 and "j500" in got and "j501" not in got
+    assert calls == [("Information Technology", 0), ("Information Technology", 1), ("python", 0)]
+
+
+def test_mcf_category_failure_still_runs_the_keyword_searches():
+    import httpx
+
+    from skillmap.http import PoliteClient
+
+    def handler(request):
+        if json.loads(request.content).get("categories"):
+            return httpx.Response(500)
+        return httpx.Response(200, json={"results": [{"uuid": "k1", "title": "AI Engineer"}]})
+
+    client = PoliteClient(min_interval=0, transport=httpx.MockTransport(handler), retries=0)
+    client.sleep = lambda s: None
+    assert [p.native_id for p in mcf.collect(client, ["llm"], categories=["Information Technology"])] == ["k1"]

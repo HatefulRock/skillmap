@@ -7,6 +7,8 @@ adzuna:
   max_pages: 5
 
 mcf:                        # MyCareersFuture, Singapore
+  categories: ["Information Technology"]  # read in full every run (~5,000 open ads, ~50 pages)
+  max_category_pages: 80
   queries: ["ai engineer", "machine learning", "llm", "generative ai", "data scientist", "forward deployed",
             "solutions engineer", "python", "backend engineer", "software engineer", "data engineer",
             "blockchain", "quantitative developer"]
