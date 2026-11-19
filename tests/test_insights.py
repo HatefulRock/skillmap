@@ -206,3 +206,19 @@ def test_pay_can_be_filtered_by_level_so_countries_compare_like_for_like():
     assert juniors == {"US": 100_000, "CA": 110_000}  # overall the US looks far ahead; at one level it isn't
     assert [c["key"] for c in pay["filtered"]["backend|senior"]] == ["US"]
     assert pay["countries"][0]["n_local"] == 50
+
+
+def test_soft_skills_leave_the_tech_charts_and_get_their_own_block():
+    from skillmap import aggregate
+
+    categories = {"Python": "Languages", "Communication": "Soft skills", "Collaboration": "Soft skills"}
+    rows = [row(i, ["Python", "Communication"], role_family="ai_ml") for i in range(40)]
+    rows += [row(100 + i, ["Python", "Collaboration"], role_family="backend") for i in range(40)]
+    split = aggregate.split_soft(rows, categories)
+    assert split[0]["skills"] == ["Python"] and split[0]["soft"] == ["Communication"]
+    assert aggregate.split_soft(split, categories) == split
+    block = aggregate.soft_block(split, [], ["Collaboration", "Communication"])
+    assert block["skills"] == [{"name": "Collaboration", "share": 0.5}, {"name": "Communication", "share": 0.5}]
+    ai = next(s for s in block["role_family"]["segments"] if s["key"] == "ai_ml")
+    assert ai["shares"] == {"Collaboration": 0.0, "Communication": 1.0}
+    assert aggregate.soft_block(split, [], []) is None

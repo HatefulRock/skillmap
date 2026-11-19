@@ -51,7 +51,7 @@ def write_outputs(store: Store, taxonomy: Taxonomy, today: date, out: Path, runs
                   readme: Path | None = None, guard: bool = False) -> tuple[dict, list[str]]:
     """Build and write every output. With `guard`, nothing is written when the new numbers fail
     `health.publish_check` against the published file; the reasons are returned instead."""
-    rows = store.rows()
+    rows = aggregate.split_soft(store.rows(), taxonomy.categories)
     profile = load_yaml("my_skills.yaml") or {}
     ratings = profile.get("ratings") or {}
     data = aggregate.build(rows, today, taxonomy.categories, taxonomy.version, ratings, runs, store.first_runs())

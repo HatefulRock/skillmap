@@ -53,6 +53,7 @@ def dedupe(rows: Iterable[dict]) -> list[dict]:
             merged["first_seen"] = min(r["first_seen"] for r in members)
             merged["last_seen"] = max(r["last_seen"] for r in members)
             merged["skills"] = sorted(set().union(*(r["skills"] for r in members)))
+            merged["soft"] = sorted(set().union(*(r.get("soft") or [] for r in members)))
             kept = [merged]
         out.extend(kept)
     return out
@@ -128,6 +129,41 @@ def trend_series(rows: list[dict], skills: list[str], today: date, step: int = 1
         for skill in skills:
             out["shares"][skill].append(month_shares.get(skill))
     return out
+
+
+SOFT_CATEGORY = "Soft skills"
+
+
+def split_soft(rows: list[dict], categories: dict[str, str]) -> list[dict]:
+    """Move soft skills out of `skills` into their own `soft` list. Every tech-skill chart, the
+    watchlist and learn-next read `skills`, and "communication" in half the ads would crowd them;
+    soft skills get their own block instead. Running it twice changes nothing."""
+    soft = {name for name, category in categories.items() if category == SOFT_CATEGORY}
+    out = []
+    for r in rows:
+        skills = r.get("skills") or []
+        mine = sorted(set(r.get("soft") or []) | {s for s in skills if s in soft})
+        out.append({**r, "skills": [s for s in skills if s not in soft],
+                    "skills_nice": [s for s in r.get("skills_nice") or [] if s not in soft], "soft": mine})
+    return out
+
+
+def soft_block(window: list[dict], pay_rows: list[dict], names: list[str]) -> dict | None:
+    """Soft skills on their own: overall share, by role family and seniority, and pay premium."""
+    from . import insights
+
+    if not names:
+        return None
+    rows = [{**r, "skills": r.get("soft") or []} for r in window]
+    overall = shares(rows, names)
+    ranked = sorted(names, key=lambda n: -overall[n])
+    return {
+        "n": len(rows),
+        "skills": [{"name": n, "share": overall[n]} for n in ranked],
+        "role_family": segment_block(rows, "role_family", ranked, roles.FAMILIES, roles.LABELS),
+        "seniority": segment_block(rows, "seniority", ranked, SENIORITY_ORDER),
+        "premium": insights.pay_premium([{**r, "skills": r.get("soft") or []} for r in pay_rows], ranked),
+    }
 
 
 def segment_block(rows: list[dict], key: str, skills: list[str], order: list[str] | None = None,
@@ -390,6 +426,9 @@ def observed(rows: list[dict], first_runs: dict[str, date]) -> list[dict]:
 def build(rows: list[dict], today: date, categories: dict[str, str], taxonomy_version: int,
           ratings: dict[str, int] | None = None, runs: list[dict] | None = None,
           first_runs: dict[str, date] | None = None) -> dict:
+    soft_names = sorted(n for n, c in categories.items() if c == SOFT_CATEGORY)
+    rows = split_soft(rows, categories)
+    categories = {n: c for n, c in categories.items() if c != SOFT_CATEGORY}
     all_rows = dedupe(rows)
     tech = [r for r in all_rows if r["role_family"] != "non_tech"]
     first_runs = {s: d for s, d in (first_runs or {}).items() if d <= today}
@@ -455,6 +494,7 @@ def build(rows: list[dict], today: date, categories: dict[str, str], taxonomy_ve
         "velocity": velocity_block(market, today, current_names[:TOP_TREND], tracked_since),
         "insights": insights_block(market, window, active(market, today - timedelta(days=SALARY_DAYS - 1), today), today,
                                    categories, ratings or {}),
+        "soft_skills": soft_block(window, active(market, today - timedelta(days=SALARY_DAYS - 1), today), soft_names),
         "pairs": pairs_block(window, current_names[:20]),
         "me": me_block(window, ratings or {}, categories),
     }
