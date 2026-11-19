@@ -23,6 +23,7 @@ from .sources import (
     adzuna,
     amazon,
     ashby,
+    boards_public,
     greenhouse,
     hn,
     jsonld,
@@ -208,6 +209,14 @@ def collect(store: Store, client: PoliteClient, taxonomy: Taxonomy, today: date,
         _ingest(store, taxonomy, today, "mcf",
                 lambda: mcf.collect(client, cfg["queries"], since, cfg["max_pages"], known,
                                     cfg.get("categories"), cfg.get("max_category_pages", 80)), report, budget)
+
+    if "public" in sources:
+        cfg = settings.get("public") or {}
+        # Until a board has finished one run: the last 30 days. After that: the week since, with slack.
+        for name in cfg.get("boards") or []:
+            since = today - timedelta(days=10 if store.finished_before(name) else 30)
+            _ingest(store, taxonomy, today, name,
+                    lambda n=name, d=since: boards_public.collect(client, cfg, n, d), report, budget)
 
     if "hn" in sources:
         if hn_since is None:

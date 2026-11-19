@@ -21,7 +21,7 @@ from .http import PoliteClient
 from .runner import BOARDS, Budget, archive_texts, check_archives, collect, load_boards, load_yaml, reextract
 from .store import MemoryStore, PostgresStore, Store, today_utc
 
-ALL_SOURCES = {"boards", "adzuna", "mcf", "hn"}
+ALL_SOURCES = {"boards", "adzuna", "mcf", "hn", "public"}
 # Supabase's free plan allows 500 MB; stored text is trimmed (oldest offline postings first) past this.
 MAX_TABLE_BYTES = 420 * 1024 * 1024
 HOST_INTERVALS = {"api.smartrecruiters.com": 0.4, "hn.algolia.com": 0.5,
