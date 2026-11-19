@@ -226,6 +226,7 @@ def learn_next(rows: list[dict], ratings: dict[str, int], premium: dict, categor
 EDGE_FAMILIES = ["ai_ml", "fde", "backend", "data", "infra", "frontend"]
 EDGE_MAX_SHARE = 0.25  # past this a skill is the baseline everyone has, not an edge
 EDGE_MIN_ADS = 15
+EDGE_MIN_LIFT = 1.0  # at least as common in the role as across tech: role-relevant, not an outside skill
 EDGE_TOP = 25
 EDGE_SPLIT_MIN = 10  # ads that both name the skill and separate nice-to-haves, for the nice ratio
 EDGE_LEVEL_MIN = 40  # ads on each side of the senior/junior comparison
@@ -319,6 +320,8 @@ def edge_skills(window: list[dict], momentum: dict[str, dict], premium_by_role: 
         e: dict = {"name": skill, "share": round(share, 4), "n": c, "mine": ratings.get(skill)}
         parts: dict[str, float] = {}
         lift = share / all_share[skill]
+        if lift < EDGE_MIN_LIFT:
+            continue  # senior infra ads ask for DNS too, but that isn't what sets an AI engineer apart
         e["specific"] = round(lift, 2)
         # Inside a role nearly every role-typical skill is "specific", so this weighs half.
         parts["specific"] = 0.5 * _clip(math.log2(lift), -1, 2)
