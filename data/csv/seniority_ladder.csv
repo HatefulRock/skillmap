@@ -1,71 +1,71 @@
 skill,seniority,share
-AI agents / agentic workflows,junior,0.099
-AI agents / agentic workflows,mid,0.147
-AI agents / agentic workflows,senior,0.237
-AI agents / agentic workflows,staff,0.311
-AI agents / agentic workflows,manager,0.277
-Microservices / distributed systems,junior,0.167
-Microservices / distributed systems,mid,0.142
-Microservices / distributed systems,senior,0.282
-Microservices / distributed systems,staff,0.338
-Microservices / distributed systems,manager,0.216
-LLMs / GenAI (general),junior,0.136
-LLMs / GenAI (general),mid,0.158
-LLMs / GenAI (general),senior,0.223
-LLMs / GenAI (general),staff,0.302
-LLMs / GenAI (general),manager,0.252
-Observability / tracing / monitoring,junior,0.157
-Observability / tracing / monitoring,mid,0.151
-Observability / tracing / monitoring,senior,0.28
-Observability / tracing / monitoring,staff,0.298
-Observability / tracing / monitoring,manager,0.213
-LLM evaluation / eval harnesses,junior,0.034
-LLM evaluation / eval harnesses,mid,0.05
-LLM evaluation / eval harnesses,senior,0.088
-LLM evaluation / eval harnesses,staff,0.164
-LLM evaluation / eval harnesses,manager,0.115
-AWS,junior,0.162
-AWS,mid,0.213
-AWS,senior,0.327
-AWS,staff,0.284
-AWS,manager,0.183
+AI agents / agentic workflows,junior,0.114
+AI agents / agentic workflows,mid,0.171
+AI agents / agentic workflows,senior,0.249
+AI agents / agentic workflows,staff,0.309
+AI agents / agentic workflows,manager,0.272
+Distributed systems,junior,0.123
+Distributed systems,mid,0.125
+Distributed systems,senior,0.21
+Distributed systems,staff,0.3
+Distributed systems,manager,0.236
+LLMs / GenAI (general),junior,0.146
+LLMs / GenAI (general),mid,0.223
+LLMs / GenAI (general),senior,0.242
+LLMs / GenAI (general),staff,0.31
+LLMs / GenAI (general),manager,0.312
+Observability / monitoring,junior,0.151
+Observability / monitoring,mid,0.142
+Observability / monitoring,senior,0.248
+Observability / monitoring,staff,0.303
+Observability / monitoring,manager,0.207
+Cloud (unspecified),junior,0.2
+Cloud (unspecified),mid,0.19
+Cloud (unspecified),senior,0.315
+Cloud (unspecified),staff,0.321
+Cloud (unspecified),manager,0.223
+"SRE (SLOs, on-call)",junior,0.047
+"SRE (SLOs, on-call)",mid,0.076
+"SRE (SLOs, on-call)",senior,0.13
+"SRE (SLOs, on-call)",staff,0.151
+"SRE (SLOs, on-call)",manager,0.127
+Kubernetes,junior,0.131
+Kubernetes,mid,0.113
+Kubernetes,senior,0.214
+Kubernetes,staff,0.234
+Kubernetes,manager,0.123
+AWS,junior,0.202
+AWS,mid,0.225
+AWS,senior,0.325
+AWS,staff,0.304
+AWS,manager,0.179
+Financial services / banking domain,junior,0.072
+Financial services / banking domain,mid,0.151
+Financial services / banking domain,senior,0.134
+Financial services / banking domain,staff,0.164
+Financial services / banking domain,manager,0.284
+Git,junior,0.154
+Git,mid,0.114
+Git,senior,0.1
+Git,staff,0.067
+Git,manager,0.023
+JavaScript,junior,0.163
+JavaScript,mid,0.117
+JavaScript,senior,0.108
+JavaScript,staff,0.077
+JavaScript,manager,0.026
 Guardrails / AI safety,junior,0.026
-Guardrails / AI safety,mid,0.046
-Guardrails / AI safety,senior,0.089
-Guardrails / AI safety,staff,0.146
-Guardrails / AI safety,manager,0.135
-LLM provider APIs (OpenAI / Anthropic / Gemini),junior,0.053
-LLM provider APIs (OpenAI / Anthropic / Gemini),mid,0.05
-LLM provider APIs (OpenAI / Anthropic / Gemini),senior,0.11
-LLM provider APIs (OpenAI / Anthropic / Gemini),staff,0.165
-LLM provider APIs (OpenAI / Anthropic / Gemini),manager,0.124
-Financial services / banking domain,junior,0.079
-Financial services / banking domain,mid,0.104
-Financial services / banking domain,senior,0.142
-Financial services / banking domain,staff,0.19
-Financial services / banking domain,manager,0.233
-Kubernetes,junior,0.115
-Kubernetes,mid,0.107
-Kubernetes,senior,0.213
-Kubernetes,staff,0.225
-Kubernetes,manager,0.124
-Cloud (unspecified),junior,0.187
-Cloud (unspecified),mid,0.177
-Cloud (unspecified),senior,0.313
-Cloud (unspecified),staff,0.287
-Cloud (unspecified),manager,0.23
-Kafka / message queues / streaming,junior,0.037
-Kafka / message queues / streaming,mid,0.055
-Kafka / message queues / streaming,senior,0.11
-Kafka / message queues / streaming,staff,0.116
-Kafka / message queues / streaming,manager,0.064
-JavaScript / Node.js,junior,0.176
-JavaScript / Node.js,mid,0.109
-JavaScript / Node.js,senior,0.125
-JavaScript / Node.js,staff,0.099
-JavaScript / Node.js,manager,0.053
-"AI coding tools (Claude Code, Cursor, Copilot)",junior,0.045
-"AI coding tools (Claude Code, Cursor, Copilot)",mid,0.055
-"AI coding tools (Claude Code, Cursor, Copilot)",senior,0.092
-"AI coding tools (Claude Code, Cursor, Copilot)",staff,0.12
-"AI coding tools (Claude Code, Cursor, Copilot)",manager,0.096
+Guardrails / AI safety,mid,0.05
+Guardrails / AI safety,senior,0.064
+Guardrails / AI safety,staff,0.106
+Guardrails / AI safety,manager,0.099
+CI/CD,junior,0.174
+CI/CD,mid,0.175
+CI/CD,senior,0.264
+CI/CD,staff,0.254
+CI/CD,manager,0.141
+Cost / latency optimization,junior,0.026
+Cost / latency optimization,mid,0.043
+Cost / latency optimization,senior,0.069
+Cost / latency optimization,staff,0.105
+Cost / latency optimization,manager,0.066
