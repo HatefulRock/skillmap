@@ -108,6 +108,7 @@ def main(argv: list[str] | None = None) -> None:
     disc.add_argument("--platforms", default=",".join(discover.DEFAULT_ATS))
     disc.add_argument("--limit", type=int, help="only the first N candidate companies (smoke tests)")
     disc.add_argument("--no-yc", action="store_true", help="only config/candidates.yaml")
+    disc.add_argument("--no-crawl", action="store_true", help="skip board tokens from the Common Crawl URL index")
     disc.add_argument("--interval", type=float, default=0.4, help="seconds between requests to one platform")
     disc.add_argument("--budget", type=float, default=150.0,
                       help="minutes before each platform stops probing and the boards found so far are written")
@@ -206,9 +207,17 @@ def run_discover(args: argparse.Namespace) -> None:
     unknown = set(platforms) - set(discover.ATS)
     if unknown:
         raise SystemExit(f"unknown platforms: {', '.join(sorted(unknown))}")
-    client = PoliteClient(min_interval=0.5)
+    # The crawl index asks for gentle use and answers 503 when busy.
+    client = PoliteClient(min_interval=0.5, per_host_interval={"index.commoncrawl.org": 2.0}, retries=3,
+                          max_retry_after=60.0)
+    # Boards the named companies will find again anyway; crawl-found ones are re-probed each time,
+    # since boards.yaml is rewritten from this run's results.
+    known = {(b["ats"], str(b["token"]).lower()) for b in load_boards()
+             if b.get("ats") and b.get("token") and b.get("origin") != "commoncrawl"}
     try:
-        candidates = discover.load_candidates(client, include_yc=not args.no_yc)[: args.limit]
+        candidates = discover.load_candidates(client, include_yc=not args.no_yc,
+                                              crawl_platforms=[] if args.no_crawl else platforms,
+                                              known=known)[: args.limit]
     finally:
         client.close()
     logging.info("probing %d companies on %s", len(candidates), ", ".join(platforms))
