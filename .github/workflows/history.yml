@@ -1,0 +1,50 @@
+name: history
+# Job ads from past years, out of Common Crawl's archive of Greenhouse and Lever job pages
+# (skillmap/history.py). Each run backfills the half-years not done yet, newest first, within its
+# time budget, and the next run carries on; once the backfill is done, a run only adds the
+# half-year that just ended. Wednesdays at 02:00 Singapore time, away from the Monday refresh.
+on:
+  schedule:
+    - cron: "0 18 * * 2"
+  workflow_dispatch:
+    inputs:
+      budget:
+        description: "Minutes of collecting before the run saves and stops"
+        default: "300"
+
+concurrency:
+  # Shares the refresh's group: both rewrite data/skills-market.json.
+  group: refresh
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  history:
+    runs-on: ubuntu-latest
+    timeout-minutes: 340
+    env:
+      # Only for the private text bucket (re-extraction after a taxonomy change); no database use.
+      DATABASE_URL: ${{ secrets.DATABASE_URL }}
+      SUPABASE_SECRET_KEY: ${{ secrets.SUPABASE_SECRET_KEY }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+      - run: uv sync --locked --no-dev
+
+      - name: Backfill from Common Crawl
+        run: |
+          set -o pipefail
+          uv run skillmap history --budget "${{ inputs.budget || '300' }}" | tee history.txt
+          { echo '```'; cat history.txt; echo '```'; } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Commit
+        if: ${{ always() }}  # each finished half-year is saved as it completes; keep them even if the run fails later
+        run: |
+          git config user.name "skillmap-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -f data/history-ads.jsonl.gz data/history-state.json data/skills-market.json 2>/dev/null || true
+          if git diff --cached --quiet; then echo "No change"; exit 0; fi
+          git commit -m "data: job-ad history $(date -u +%F)"
+          git pull --rebase --quiet && git push

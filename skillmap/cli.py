@@ -14,7 +14,7 @@ from datetime import date
 from decimal import Decimal
 from pathlib import Path
 
-from . import aggregate, audit, digest, discover, exports, health, heatmap, mail, vocab, watchlist
+from . import aggregate, audit, digest, discover, exports, health, heatmap, history, mail, vocab, watchlist
 from .archive import from_env as open_archive
 from .extract.skills import Taxonomy
 from .http import PoliteClient
@@ -72,6 +72,7 @@ def write_outputs(store: Store, taxonomy: Taxonomy, today: date, out: Path, runs
     if readme:
         digest.update_readme(readme, notes[0])
     data["audit"] = audit.headline(out / "audit.json")
+    add_history(out, data)
     exports.write_csvs(data, out / "csv")
     watch = watchlist.build(rows, load_boards(), profile.get("targets") or {}, ratings, today)
     (out / "watchlist.json").write_text(json.dumps(watch, indent=1, ensure_ascii=False))
@@ -84,6 +85,20 @@ def write_outputs(store: Store, taxonomy: Taxonomy, today: date, out: Path, runs
         for row in sorted(live, key=lambda r: r["posting_id"]):
             fh.write(json.dumps(row, default=_json_default) + "\n")
     return data, []
+
+
+def add_history(out: Path, data: dict | None = None) -> None:
+    """Put the Common Crawl series into the published data, next to the HN one. Without `data`
+    it updates the published file in place (after a history run, which has no database)."""
+    path = out / "skills-market.json"
+    target = data if data is not None else (json.loads(path.read_text()) if path.exists() else None)
+    rows = history.load_rows(out / "history-ads.jsonl.gz")
+    if target is None or not rows:
+        return
+    skills = list(target["trends"]["hn"]["shares"])
+    target["trends"]["archive"] = history.series(rows, skills)
+    if data is None:
+        path.write_text(json.dumps(target, separators=(",", ":"), default=_json_default))
 
 
 def main(argv: list[str] | None = None) -> None:
@@ -121,6 +136,9 @@ def main(argv: list[str] | None = None) -> None:
     voc = sub.add_parser("vocab", help="how complete the skill list is: tech terms in stored ads no skill matches")
     voc.add_argument("--sample", type=int, default=vocab.SAMPLE)
     voc.add_argument("--out", type=Path, help="also write the full report as JSON")
+    hist = sub.add_parser("history", help="backfill job ads from Common Crawl's archive of job boards")
+    hist.add_argument("--out", type=Path, default=Path("data"))
+    hist.add_argument("--budget", type=float, default=300.0, help="minutes before the run stops and saves")
     em = sub.add_parser("email", help="build the weekly email from published files and send it (RESEND_API_KEY, DIGEST_TO)")
     em.add_argument("--data", type=Path, default=Path("data"))
     em.add_argument("--previous", type=Path, required=True, help="folder with last run's skills-market.json and postings")
@@ -133,6 +151,15 @@ def main(argv: list[str] | None = None) -> None:
     logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s")
     if args.command == "discover":
         run_discover(args)
+        return
+    if args.command == "history":
+        client = PoliteClient(min_interval=1.0, per_host_interval=history.INTERVALS, max_retry_after=120)
+        try:
+            result = history.run(client, Taxonomy.load(), args.out, open_archive(), today_utc(), args.budget)
+        finally:
+            client.close()
+        add_history(args.out)
+        print(result)
         return
     if args.command == "email":
         sent = mail.run(args.data, args.previous, load_yaml("my_skills.yaml") or {}, args.html)
@@ -174,7 +201,7 @@ def main(argv: list[str] | None = None) -> None:
         unknown = sources - ALL_SOURCES
         if unknown:
             parser.error(f"unknown sources: {', '.join(sorted(unknown))}")
-        history = store.run_history(HEALTH_DAYS)  # before this run logs its own rows
+        run_log = store.run_history(HEALTH_DAYS)  # before this run logs its own rows
         checked = open_archive() if args.check_archives and os.environ.get("DATABASE_URL") else None
         if checked is not None:
             logging.info("cleared %d pointers to missing archived text", check_archives(store, checked))
@@ -190,7 +217,7 @@ def main(argv: list[str] | None = None) -> None:
         current = [{"source": r.name, "fetched": r.fetched, "error": r.error} for r in report.results]
         # Platform totals are only comparable when this run read everything.
         full = sources == ALL_SOURCES and not args.board_limit and not platforms
-        problems = health.check(current, history, compare_totals=full)
+        problems = health.check(current, run_log, compare_totals=full)
         for problem in problems:
             logging.warning("health: %s", problem)
         if args.health:
