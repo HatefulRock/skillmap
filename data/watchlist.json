@@ -1,6 +1,6 @@
 {
  "version": 1,
- "generated_at": "2026-11-19T01:51:55Z",
+ "generated_at": "2026-11-19T01:59:37Z",
  "generated": "2026-11-19",
  "targets": {
   "role_families": [
@@ -26,7 +26,7 @@
    "sector": "fintech",
    "matching": 128,
    "live_tech": 149,
-   "skill_fit": 0.52,
+   "skill_fit": 0.61,
    "countries": [
     "remote",
     "CA",
@@ -39,13 +39,32 @@
    ]
   },
   {
+   "company": "ClickHouse",
+   "ats": "ashby",
+   "token": "clickhouse",
+   "sector": "tech",
+   "matching": 74,
+   "live_tech": 154,
+   "skill_fit": 0.63,
+   "countries": [
+    "US",
+    "DE",
+    "CA"
+   ],
+   "titles": [
+    "Senior Software Engineer (Backend) - AI/ML",
+    "Senior Software Engineer - Integrations - AI/ML",
+    "Senior Full Stack Engineer - ClickStack"
+   ]
+  },
+  {
    "company": "Coinbase",
    "ats": "greenhouse",
    "token": "coinbase",
    "sector": "crypto",
    "matching": 78,
    "live_tech": 126,
-   "skill_fit": 0.53,
+   "skill_fit": 0.57,
    "countries": [
     "US",
     "CA",
@@ -64,7 +83,7 @@
    "sector": "ai",
    "matching": 87,
    "live_tech": 616,
-   "skill_fit": 0.42,
+   "skill_fit": 0.44,
    "countries": [
     "US",
     "JP",
@@ -77,51 +96,13 @@
    ]
   },
   {
-   "company": "ClickHouse",
-   "ats": "ashby",
-   "token": "clickhouse",
-   "sector": "tech",
-   "matching": 74,
-   "live_tech": 154,
-   "skill_fit": 0.54,
-   "countries": [
-    "US",
-    "DE",
-    "CA"
-   ],
-   "titles": [
-    "Senior Software Engineer (Backend) - AI/ML",
-    "Senior Software Engineer - Integrations - AI/ML",
-    "Senior Full Stack Engineer - ClickStack"
-   ]
-  },
-  {
-   "company": "Reddit",
-   "ats": "greenhouse",
-   "token": "reddit",
-   "sector": "tech",
-   "matching": 68,
-   "live_tech": 95,
-   "skill_fit": 0.54,
-   "countries": [
-    "US",
-    "CA",
-    "GB"
-   ],
-   "titles": [
-    "Senior Software Engineer, Ads",
-    "Senior Machine Learning Engineer",
-    "Staff Data Scientist, Marketing"
-   ]
-  },
-  {
    "company": "Samsara",
    "ats": "greenhouse",
    "token": "samsara",
    "sector": "tech",
    "matching": 70,
    "live_tech": 109,
-   "skill_fit": 0.48,
+   "skill_fit": 0.57,
    "countries": [
     "remote",
     "US",
@@ -134,13 +115,32 @@
    ]
   },
   {
+   "company": "Reddit",
+   "ats": "greenhouse",
+   "token": "reddit",
+   "sector": "tech",
+   "matching": 68,
+   "live_tech": 95,
+   "skill_fit": 0.58,
+   "countries": [
+    "US",
+    "CA",
+    "GB"
+   ],
+   "titles": [
+    "Senior Software Engineer, Ads",
+    "Senior Machine Learning Engineer",
+    "Staff Data Scientist, Marketing"
+   ]
+  },
+  {
    "company": "GitLab",
    "ats": "greenhouse",
    "token": "gitlab",
    "sector": "tech",
    "matching": 55,
    "live_tech": 114,
-   "skill_fit": 0.67,
+   "skill_fit": 0.74,
    "countries": [
     "CA",
     "US",
@@ -159,7 +159,7 @@
    "sector": "tech",
    "matching": 51,
    "live_tech": 82,
-   "skill_fit": 0.7,
+   "skill_fit": 0.77,
    "countries": [
     "US",
     "CA",
@@ -178,7 +178,7 @@
    "sector": "ai",
    "matching": 43,
    "live_tech": 488,
-   "skill_fit": 0.73,
+   "skill_fit": 0.9,
    "countries": [
     "JP",
     "SG",
@@ -197,7 +197,7 @@
    "sector": "crypto",
    "matching": 54,
    "live_tech": 174,
-   "skill_fit": 0.43,
+   "skill_fit": 0.47,
    "countries": [
     "HK",
     "SG",
@@ -216,7 +216,7 @@
    "sector": "tech",
    "matching": 47,
    "live_tech": 66,
-   "skill_fit": 0.51,
+   "skill_fit": 0.58,
    "countries": [
     "TH",
     "SG"
@@ -228,32 +228,13 @@
    ]
   },
   {
-   "company": "Snowflake",
-   "ats": "ashby",
-   "token": "snowflake",
-   "sector": "tech",
-   "matching": 41,
-   "live_tech": 224,
-   "skill_fit": 0.63,
-   "countries": [
-    "US",
-    "JP",
-    "SG"
-   ],
-   "titles": [
-    "Senior Solution Engineer",
-    "Solution Engineer",
-    "Senior Solutions Engineer, Observe"
-   ]
-  },
-  {
    "company": "TRM Labs",
    "ats": "ashby",
    "token": "trm-labs",
    "sector": "crypto",
    "matching": 45,
    "live_tech": 65,
-   "skill_fit": 0.52,
+   "skill_fit": 0.61,
    "countries": [
     "US",
     "BR",
@@ -266,13 +247,32 @@
    ]
   },
   {
+   "company": "Snowflake",
+   "ats": "ashby",
+   "token": "snowflake",
+   "sector": "tech",
+   "matching": 41,
+   "live_tech": 224,
+   "skill_fit": 0.64,
+   "countries": [
+    "US",
+    "JP",
+    "SG"
+   ],
+   "titles": [
+    "Senior Solution Engineer",
+    "Solution Engineer",
+    "Senior Solutions Engineer, Observe"
+   ]
+  },
+  {
    "company": "Airwallex",
    "ats": "ashby",
    "token": "airwallex",
    "sector": "fintech",
    "matching": 45,
    "live_tech": 155,
-   "skill_fit": 0.44,
+   "skill_fit": 0.46,
    "countries": [
     "SG",
     "KR",
@@ -285,32 +285,13 @@
    ]
   },
   {
-   "company": "Appier",
-   "ats": "greenhouse",
-   "token": "appier",
-   "sector": "ai",
-   "matching": 36,
-   "live_tech": 38,
-   "skill_fit": 0.56,
-   "countries": [
-    "TW",
-    "JP",
-    "KR"
-   ],
-   "titles": [
-    "Senior Machine Learning Scientist (Ad Cloud, RTB) - Tokyo,Japan",
-    "(Senior) Machine Learning Scientist (Modeling & Evaluation)",
-    "(Senior) Machine Learning Scientist (LLM & Agents)"
-   ]
-  },
-  {
    "company": "Stripe",
    "ats": "greenhouse",
    "token": "stripe",
    "sector": "fintech",
    "matching": 41,
    "live_tech": 284,
-   "skill_fit": 0.43,
+   "skill_fit": 0.52,
    "countries": [
     "US",
     "SG",
@@ -323,13 +304,51 @@
    ]
   },
   {
+   "company": "Appier",
+   "ats": "greenhouse",
+   "token": "appier",
+   "sector": "ai",
+   "matching": 36,
+   "live_tech": 38,
+   "skill_fit": 0.65,
+   "countries": [
+    "TW",
+    "JP",
+    "KR"
+   ],
+   "titles": [
+    "Senior Machine Learning Scientist (Ad Cloud, RTB) - Tokyo,Japan",
+    "(Senior) Machine Learning Scientist (Modeling & Evaluation)",
+    "(Senior) Machine Learning Scientist (LLM & Agents)"
+   ]
+  },
+  {
+   "company": "ElevenLabs",
+   "ats": "ashby",
+   "token": "elevenlabs",
+   "sector": "ai",
+   "matching": 30,
+   "live_tech": 44,
+   "skill_fit": 0.83,
+   "countries": [
+    "GB",
+    "CH",
+    "US"
+   ],
+   "titles": [
+    "Deployment Strategist - Colombia",
+    "Applied AI Engineer",
+    "Research Engineer - Data Infrastructure"
+   ]
+  },
+  {
    "company": "Pinterest",
    "ats": "greenhouse",
    "token": "pinterest",
    "sector": "tech",
    "matching": 38,
    "live_tech": 84,
-   "skill_fit": 0.45,
+   "skill_fit": 0.54,
    "countries": [
     "US"
    ],
@@ -346,7 +365,7 @@
    "sector": "tech",
    "matching": 34,
    "live_tech": 46,
-   "skill_fit": 0.55,
+   "skill_fit": 0.57,
    "countries": [
     "US",
     "SG",
@@ -359,32 +378,13 @@
    ]
   },
   {
-   "company": "ElevenLabs",
-   "ats": "ashby",
-   "token": "elevenlabs",
-   "sector": "ai",
-   "matching": 30,
-   "live_tech": 44,
-   "skill_fit": 0.69,
-   "countries": [
-    "GB",
-    "CH",
-    "US"
-   ],
-   "titles": [
-    "Deployment Strategist - Colombia",
-    "Applied AI Engineer",
-    "Research Engineer - Data Infrastructure"
-   ]
-  },
-  {
    "company": "Cresta",
    "ats": "greenhouse",
    "token": "cresta",
    "sector": "ai",
    "matching": 31,
    "live_tech": 51,
-   "skill_fit": 0.63,
+   "skill_fit": 0.65,
    "countries": [
     "US",
     "CA",
@@ -397,32 +397,13 @@
    ]
   },
   {
-   "company": "Datadog",
-   "ats": "greenhouse",
-   "token": "datadog",
-   "sector": "tech",
-   "matching": 33,
-   "live_tech": 118,
-   "skill_fit": 0.5,
-   "countries": [
-    "US",
-    "JP",
-    "KR"
-   ],
-   "titles": [
-    "Senior Security Sales Engineer",
-    "Enterprise Sales Engineer",
-    "Sales Engineer - Enterprise"
-   ]
-  },
-  {
    "company": "Supabase",
    "ats": "ashby",
    "token": "supabase",
    "sector": "tech",
    "matching": 27,
    "live_tech": 54,
-   "skill_fit": 0.72,
+   "skill_fit": 0.81,
    "countries": [
     "remote",
     "US",
@@ -435,13 +416,32 @@
    ]
   },
   {
+   "company": "Datadog",
+   "ats": "greenhouse",
+   "token": "datadog",
+   "sector": "tech",
+   "matching": 33,
+   "live_tech": 118,
+   "skill_fit": 0.53,
+   "countries": [
+    "US",
+    "JP",
+    "KR"
+   ],
+   "titles": [
+    "Senior Security Sales Engineer",
+    "Enterprise Sales Engineer",
+    "Sales Engineer - Enterprise"
+   ]
+  },
+  {
    "company": "Cohere",
    "ats": "ashby",
    "token": "cohere",
    "sector": "ai",
    "matching": 28,
    "live_tech": 67,
-   "skill_fit": 0.61,
+   "skill_fit": 0.65,
    "countries": [
     "CA",
     "US",
@@ -479,7 +479,7 @@
    "sector": "tech",
    "matching": 25,
    "live_tech": 33,
-   "skill_fit": 0.57,
+   "skill_fit": 0.6,
    "countries": [
     "US",
     "CA"
@@ -491,51 +491,13 @@
    ]
   },
   {
-   "company": "Anthropic",
-   "ats": "greenhouse",
-   "token": "anthropic",
-   "sector": "ai",
-   "matching": 24,
-   "live_tech": 352,
-   "skill_fit": 0.54,
-   "countries": [
-    "US",
-    "JP",
-    "GB"
-   ],
-   "titles": [
-    "Applied AI Architect",
-    "Applied AI Architects, Partner",
-    "Software Engineer, Datacenter Server Lifecycle"
-   ]
-  },
-  {
-   "company": "Twilio",
-   "ats": "greenhouse",
-   "token": "twilio",
-   "sector": "tech",
-   "matching": 30,
-   "live_tech": 42,
-   "skill_fit": 0.33,
-   "countries": [
-    "remote",
-    "IN",
-    "GB"
-   ],
-   "titles": [
-    "Presales Engineer",
-    "Principal Presales Engineer",
-    "Technical Account Manager 3"
-   ]
-  },
-  {
    "company": "Cursor",
    "ats": "ashby",
    "token": "cursor",
    "sector": "ai",
    "matching": 20,
    "live_tech": 39,
-   "skill_fit": 0.72,
+   "skill_fit": 0.85,
    "countries": [
     "US",
     "JP",
@@ -548,22 +510,22 @@
    ]
   },
   {
-   "company": "Docker",
-   "ats": "ashby",
-   "token": "docker",
+   "company": "Twilio",
+   "ats": "greenhouse",
+   "token": "twilio",
    "sector": "tech",
-   "matching": 22,
-   "live_tech": 32,
-   "skill_fit": 0.59,
+   "matching": 30,
+   "live_tech": 42,
+   "skill_fit": 0.39,
    "countries": [
-    "US",
-    "GB",
-    "AU"
+    "remote",
+    "IN",
+    "GB"
    ],
    "titles": [
-    "Senior Principal Software Engineer, Networking",
-    "Staff Software Engineer, Developer Experience",
-    "Principal Software Engineer, Developer Tools (US West Coast)"
+    "Presales Engineer",
+    "Principal Presales Engineer",
+    "Technical Account Manager 3"
    ]
   },
   {
@@ -573,7 +535,7 @@
    "sector": "tech",
    "matching": 24,
    "live_tech": 32,
-   "skill_fit": 0.47,
+   "skill_fit": 0.59,
    "countries": [
     "US",
     "CA",
@@ -586,13 +548,69 @@
    ]
   },
   {
+   "company": "Anthropic",
+   "ats": "greenhouse",
+   "token": "anthropic",
+   "sector": "ai",
+   "matching": 24,
+   "live_tech": 352,
+   "skill_fit": 0.57,
+   "countries": [
+    "US",
+    "JP",
+    "GB"
+   ],
+   "titles": [
+    "Applied AI Architect",
+    "Applied AI Architects, Partner",
+    "Software Engineer, Datacenter Server Lifecycle"
+   ]
+  },
+  {
+   "company": "Tailor",
+   "ats": "ashby",
+   "token": "tailor",
+   "sector": "tech",
+   "matching": 20,
+   "live_tech": 29,
+   "skill_fit": 0.77,
+   "countries": [
+    "JP",
+    "remote"
+   ],
+   "titles": [
+    "AI Engineer",
+    "Software Engineer, Application [業務委託]",
+    "Software Engineer [就業型インターンシップ]"
+   ]
+  },
+  {
+   "company": "Docker",
+   "ats": "ashby",
+   "token": "docker",
+   "sector": "tech",
+   "matching": 22,
+   "live_tech": 32,
+   "skill_fit": 0.63,
+   "countries": [
+    "US",
+    "GB",
+    "AU"
+   ],
+   "titles": [
+    "Senior Principal Software Engineer, Networking",
+    "Staff Software Engineer, Developer Experience",
+    "Principal Software Engineer, Developer Tools (US West Coast)"
+   ]
+  },
+  {
    "company": "Temus",
    "ats": "greenhouse",
    "token": "temus",
    "sector": "fintech",
    "matching": 22,
    "live_tech": 28,
-   "skill_fit": 0.54,
+   "skill_fit": 0.59,
    "countries": [
     "SG",
     "VN"
@@ -610,7 +628,7 @@
    "sector": "fintech",
    "matching": 23,
    "live_tech": 40,
-   "skill_fit": 0.47,
+   "skill_fit": 0.49,
    "countries": [
     "remote",
     "JP",
@@ -623,31 +641,13 @@
    ]
   },
   {
-   "company": "Tailor",
-   "ats": "ashby",
-   "token": "tailor",
-   "sector": "tech",
-   "matching": 20,
-   "live_tech": 29,
-   "skill_fit": 0.6,
-   "countries": [
-    "JP",
-    "remote"
-   ],
-   "titles": [
-    "AI Engineer",
-    "Software Engineer, Application [業務委託]",
-    "Software Engineer [就業型インターンシップ]"
-   ]
-  },
-  {
    "company": "Deepgram",
    "ats": "ashby",
    "token": "deepgram",
    "sector": "ai",
    "matching": 23,
    "live_tech": 30,
-   "skill_fit": 0.41,
+   "skill_fit": 0.44,
    "countries": [
     "US",
     "remote",
@@ -666,7 +666,7 @@
    "sector": "tech",
    "matching": 19,
    "live_tech": 41,
-   "skill_fit": 0.59,
+   "skill_fit": 0.63,
    "countries": [
     "US",
     "GB",
@@ -685,7 +685,7 @@
    "sector": "fintech",
    "matching": 17,
    "live_tech": 176,
-   "skill_fit": 0.48,
+   "skill_fit": 0.51,
    "countries": [
     "HK",
     "SG"
@@ -703,7 +703,7 @@
    "sector": "tech",
    "matching": 15,
    "live_tech": 61,
-   "skill_fit": 0.59,
+   "skill_fit": 0.62,
    "countries": [
     "US",
     "remote",
@@ -722,7 +722,7 @@
    "sector": "tech",
    "matching": 11,
    "live_tech": 11,
-   "skill_fit": 0.96,
+   "skill_fit": 0.99,
    "countries": [
     "MY",
     "PH"
@@ -740,7 +740,7 @@
    "sector": "fintech",
    "matching": 14,
    "live_tech": 16,
-   "skill_fit": 0.54,
+   "skill_fit": 0.59,
    "countries": [
     "BR",
     "CO",
@@ -750,6 +750,23 @@
     "Senior Backend Engineer",
     "Senior AI Engineer",
     "Forward Deployed Engineer"
+   ]
+  },
+  {
+   "company": "Mercury",
+   "ats": "greenhouse",
+   "token": "mercury",
+   "sector": "fintech",
+   "matching": 14,
+   "live_tech": 25,
+   "skill_fit": 0.58,
+   "countries": [
+    "US"
+   ],
+   "titles": [
+    "Senior Full-Stack Engineer",
+    "Senior Data Analyst - Reconciliation",
+    "Senior Software Engineer - Cards"
    ]
   },
   {
@@ -772,6 +789,44 @@
    ]
   },
   {
+   "company": "Arize AI",
+   "ats": "greenhouse",
+   "token": "arizeai",
+   "sector": "ai",
+   "matching": 11,
+   "live_tech": 14,
+   "skill_fit": 0.78,
+   "countries": [
+    "US",
+    "SG",
+    "remote"
+   ],
+   "titles": [
+    "Forward Deployed Engineer, APJ",
+    "Forward Deployed AI Engineer, West",
+    "Applied AI Engineer"
+   ]
+  },
+  {
+   "company": "WorldQuant",
+   "ats": "greenhouse",
+   "token": "worldquant",
+   "sector": "fintech",
+   "matching": 13,
+   "live_tech": 56,
+   "skill_fit": 0.57,
+   "countries": [
+    "VN",
+    "SG",
+    "CN"
+   ],
+   "titles": [
+    "Data Scientist",
+    "Full Stack Engineer",
+    "Senior Software Engineer"
+   ]
+  },
+  {
    "company": "Jane Street",
    "ats": "greenhouse",
    "token": "janestreet",
@@ -790,68 +845,13 @@
    ]
   },
   {
-   "company": "Arize AI",
-   "ats": "greenhouse",
-   "token": "arizeai",
-   "sector": "ai",
-   "matching": 11,
-   "live_tech": 14,
-   "skill_fit": 0.73,
-   "countries": [
-    "US",
-    "SG",
-    "remote"
-   ],
-   "titles": [
-    "Forward Deployed Engineer, APJ",
-    "Forward Deployed AI Engineer, West",
-    "Applied AI Engineer"
-   ]
-  },
-  {
-   "company": "Mercury",
-   "ats": "greenhouse",
-   "token": "mercury",
-   "sector": "fintech",
-   "matching": 14,
-   "live_tech": 25,
-   "skill_fit": 0.42,
-   "countries": [
-    "US"
-   ],
-   "titles": [
-    "Senior Full-Stack Engineer",
-    "Senior Data Analyst - Reconciliation",
-    "Senior Software Engineer - Cards"
-   ]
-  },
-  {
-   "company": "WorldQuant",
-   "ats": "greenhouse",
-   "token": "worldquant",
-   "sector": "fintech",
-   "matching": 13,
-   "live_tech": 56,
-   "skill_fit": 0.49,
-   "countries": [
-    "VN",
-    "SG",
-    "CN"
-   ],
-   "titles": [
-    "Data Scientist",
-    "Full Stack Engineer",
-    "Senior Software Engineer"
-   ]
-  },
-  {
    "company": "Hims & Hers",
    "ats": "ashby",
    "token": "hims-and-hers",
    "sector": "tech",
    "matching": 12,
    "live_tech": 28,
-   "skill_fit": 0.52,
+   "skill_fit": 0.55,
    "countries": [
     "US"
    ],
@@ -862,13 +862,51 @@
    ]
   },
   {
+   "company": "Cognition",
+   "ats": "ashby",
+   "token": "cognition",
+   "sector": "ai",
+   "matching": 9,
+   "live_tech": 41,
+   "skill_fit": 0.89,
+   "countries": [
+    "SG",
+    "AU",
+    "JP"
+   ],
+   "titles": [
+    "AI Support Engineer",
+    "Forward Deployed Engineer - ANZ",
+    "Forward Deployed Engineer - South Korea"
+   ]
+  },
+  {
+   "company": "Palantir",
+   "ats": "lever",
+   "token": "palantir",
+   "sector": "tech",
+   "matching": 11,
+   "live_tech": 225,
+   "skill_fit": 0.62,
+   "countries": [
+    "KR",
+    "JP",
+    "SG"
+   ],
+   "titles": [
+    "Deployment Strategist",
+    "Forward Deployed Software Engineer - Japan Government",
+    "Forward Deployed Software Engineer"
+   ]
+  },
+  {
    "company": "Surge AI",
    "ats": "ashby",
    "token": "surge-ai",
    "sector": "ai",
    "matching": 9,
    "live_tech": 12,
-   "skill_fit": 0.83,
+   "skill_fit": 0.85,
    "countries": [
     "US"
    ],
@@ -879,13 +917,50 @@
    ]
   },
   {
+   "company": "Fieldguide",
+   "ats": "ashby",
+   "token": "fieldguide",
+   "sector": "ai",
+   "matching": 9,
+   "live_tech": 17,
+   "skill_fit": 0.78,
+   "countries": [
+    "US",
+    "KR"
+   ],
+   "titles": [
+    "AI Engineer (Korea)",
+    "Senior Software Engineer, Production Support",
+    "Customer Success Engineer, Advisory"
+   ]
+  },
+  {
+   "company": "Overview",
+   "ats": "ashby",
+   "token": "overview",
+   "sector": "ai",
+   "matching": 12,
+   "live_tech": 52,
+   "skill_fit": 0.46,
+   "countries": [
+    "CN",
+    "TW",
+    "MX"
+   ],
+   "titles": [
+    "Senior Field Engineer (Controls)",
+    "Technical Sales Engineer",
+    "Technical Sales Engineer, Taiwan"
+   ]
+  },
+  {
    "company": "Netomi",
    "ats": "lever",
    "token": "netomi",
    "sector": "ai",
    "matching": 10,
    "live_tech": 13,
-   "skill_fit": 0.63,
+   "skill_fit": 0.65,
    "countries": [
     "IN",
     "CA",
@@ -904,7 +979,7 @@
    "sector": "tech",
    "matching": 12,
    "live_tech": 89,
-   "skill_fit": 0.43,
+   "skill_fit": 0.45,
    "countries": [
     "CN",
     "KR",
@@ -917,40 +992,22 @@
    ]
   },
   {
-   "company": "Fieldguide",
-   "ats": "ashby",
-   "token": "fieldguide",
-   "sector": "ai",
-   "matching": 9,
-   "live_tech": 17,
-   "skill_fit": 0.71,
-   "countries": [
-    "US",
-    "KR"
-   ],
-   "titles": [
-    "AI Engineer (Korea)",
-    "Senior Software Engineer, Production Support",
-    "Customer Success Engineer, Advisory"
-   ]
-  },
-  {
-   "company": "Palantir",
-   "ats": "lever",
-   "token": "palantir",
+   "company": "Dropbox",
+   "ats": "greenhouse",
+   "token": "dropbox",
    "sector": "tech",
-   "matching": 11,
-   "live_tech": 225,
-   "skill_fit": 0.49,
+   "matching": 9,
+   "live_tech": 20,
+   "skill_fit": 0.74,
    "countries": [
-    "KR",
-    "JP",
-    "SG"
+    "remote",
+    "MX",
+    "CA"
    ],
    "titles": [
-    "Deployment Strategist",
-    "Forward Deployed Software Engineer - Japan Government",
-    "Forward Deployed Software Engineer"
+    "Full Stack Product Software Engineer",
+    "Principal Software Engineer, Product Engineering",
+    "Senior Security Engineer, AI Security"
    ]
   },
   {
@@ -960,7 +1017,7 @@
    "sector": "fintech",
    "matching": 12,
    "live_tech": 21,
-   "skill_fit": 0.4,
+   "skill_fit": 0.41,
    "countries": [
     "GB",
     "ES"
@@ -972,13 +1029,31 @@
    ]
   },
   {
+   "company": "Bybit",
+   "ats": "greenhouse",
+   "token": "bybit",
+   "sector": "crypto",
+   "matching": 11,
+   "live_tech": 69,
+   "skill_fit": 0.49,
+   "countries": [
+    "MY",
+    "HK"
+   ],
+   "titles": [
+    "Lead Backend Development Engineer",
+    "Principal Backend Development Engineer",
+    "(Principal) Backend Development Engineer"
+   ]
+  },
+  {
    "company": "Teleport",
    "ats": "ashby",
    "token": "goteleport",
    "sector": "tech",
    "matching": 11,
    "live_tech": 14,
-   "skill_fit": 0.47,
+   "skill_fit": 0.49,
    "countries": [
     "US",
     "IE",
@@ -988,6 +1063,41 @@
     "Senior Backend Engineer - Cloud Platform",
     "Solutions Engineer - West Coast",
     "Senior Full Stack Engineer"
+   ]
+  },
+  {
+   "company": "HUD",
+   "ats": "ashby",
+   "token": "hud",
+   "sector": "ai",
+   "matching": 10,
+   "live_tech": 18,
+   "skill_fit": 0.57,
+   "countries": [
+    "US"
+   ],
+   "titles": [
+    "Research Engineer, Robotics Evals",
+    "Research Engineer, Robotics Data",
+    "Forward Deployed Research Engineer"
+   ]
+  },
+  {
+   "company": "Resend",
+   "ats": "ashby",
+   "token": "resend",
+   "sector": "tech",
+   "matching": 9,
+   "live_tech": 13,
+   "skill_fit": 0.68,
+   "countries": [
+    "US",
+    "remote"
+   ],
+   "titles": [
+    "Backend Engineer",
+    "Software Engineer, Trust & Safety",
+    "Backend Engineer, MTA"
    ]
   },
   {
@@ -1008,31 +1118,13 @@
    ]
   },
   {
-   "company": "Bybit",
-   "ats": "greenhouse",
-   "token": "bybit",
-   "sector": "crypto",
-   "matching": 11,
-   "live_tech": 69,
-   "skill_fit": 0.43,
-   "countries": [
-    "MY",
-    "HK"
-   ],
-   "titles": [
-    "Lead Backend Development Engineer",
-    "Principal Backend Development Engineer",
-    "(Principal) Backend Development Engineer"
-   ]
-  },
-  {
    "company": "Roboflow",
    "ats": "ashby",
    "token": "roboflow",
    "sector": "ai",
    "matching": 10,
    "live_tech": 20,
-   "skill_fit": 0.47,
+   "skill_fit": 0.52,
    "countries": [
     "US",
     "SG"
@@ -1044,20 +1136,40 @@
    ]
   },
   {
-   "company": "HUD",
+   "company": "Render",
    "ats": "ashby",
-   "token": "hud",
-   "sector": "ai",
-   "matching": 10,
-   "live_tech": 18,
-   "skill_fit": 0.45,
+   "token": "render",
+   "sector": "tech",
+   "matching": 9,
+   "live_tech": 26,
+   "skill_fit": 0.62,
    "countries": [
-    "US"
+    "US",
+    "CA"
    ],
    "titles": [
-    "Research Engineer, Robotics Evals",
-    "Research Engineer, Robotics Data",
-    "Forward Deployed Research Engineer"
+    "Software Engineer, Dev Velocity (all levels)",
+    "Software Engineer, Agent Access & Governance",
+    "Software Engineer, Expansion (all levels)"
+   ]
+  },
+  {
+   "company": "Webflow",
+   "ats": "ashby",
+   "token": "webflow",
+   "sector": "tech",
+   "matching": 8,
+   "live_tech": 13,
+   "skill_fit": 0.69,
+   "countries": [
+    "AR",
+    "US",
+    "CA"
+   ],
+   "titles": [
+    "Staff Product Designer, Agentic CMS",
+    "Senior Software Engineer, Build Loop",
+    "Staff Data Engineer"
    ]
   },
   {
@@ -1080,125 +1192,13 @@
    ]
   },
   {
-   "company": "Cognition",
-   "ats": "ashby",
-   "token": "cognition",
-   "sector": "ai",
-   "matching": 9,
-   "live_tech": 41,
-   "skill_fit": 0.53,
-   "countries": [
-    "SG",
-    "AU",
-    "JP"
-   ],
-   "titles": [
-    "AI Support Engineer",
-    "Forward Deployed Engineer - ANZ",
-    "Forward Deployed Engineer - South Korea"
-   ]
-  },
-  {
-   "company": "Dropbox",
-   "ats": "greenhouse",
-   "token": "dropbox",
-   "sector": "tech",
-   "matching": 9,
-   "live_tech": 20,
-   "skill_fit": 0.53,
-   "countries": [
-    "remote",
-    "MX",
-    "CA"
-   ],
-   "titles": [
-    "Full Stack Product Software Engineer",
-    "Principal Software Engineer, Product Engineering",
-    "Senior Security Engineer, AI Security"
-   ]
-  },
-  {
-   "company": "Resend",
-   "ats": "ashby",
-   "token": "resend",
-   "sector": "tech",
-   "matching": 9,
-   "live_tech": 13,
-   "skill_fit": 0.52,
-   "countries": [
-    "US",
-    "remote"
-   ],
-   "titles": [
-    "Backend Engineer",
-    "Software Engineer, Trust & Safety",
-    "Backend Engineer, MTA"
-   ]
-  },
-  {
-   "company": "Webflow",
-   "ats": "ashby",
-   "token": "webflow",
-   "sector": "tech",
-   "matching": 8,
-   "live_tech": 13,
-   "skill_fit": 0.64,
-   "countries": [
-    "AR",
-    "US",
-    "CA"
-   ],
-   "titles": [
-    "Staff Product Designer, Agentic CMS",
-    "Senior Software Engineer, Build Loop",
-    "Staff Data Engineer"
-   ]
-  },
-  {
-   "company": "Render",
-   "ats": "ashby",
-   "token": "render",
-   "sector": "tech",
-   "matching": 9,
-   "live_tech": 26,
-   "skill_fit": 0.49,
-   "countries": [
-    "US",
-    "CA"
-   ],
-   "titles": [
-    "Software Engineer, Dev Velocity (all levels)",
-    "Software Engineer, Agent Access & Governance",
-    "Software Engineer, Expansion (all levels)"
-   ]
-  },
-  {
-   "company": "Overview",
-   "ats": "ashby",
-   "token": "overview",
-   "sector": "ai",
-   "matching": 12,
-   "live_tech": 52,
-   "skill_fit": 0.24,
-   "countries": [
-    "CN",
-    "TW",
-    "MX"
-   ],
-   "titles": [
-    "Senior Field Engineer (Controls)",
-    "Technical Sales Engineer",
-    "Technical Sales Engineer, Taiwan"
-   ]
-  },
-  {
    "company": "Ramp",
    "ats": "ashby",
    "token": "ramp",
    "sector": "fintech",
    "matching": 8,
    "live_tech": 51,
-   "skill_fit": 0.6,
+   "skill_fit": 0.67,
    "countries": [
     "US"
    ],
@@ -1215,7 +1215,7 @@
    "sector": "tech",
    "matching": 9,
    "live_tech": 187,
-   "skill_fit": 0.46,
+   "skill_fit": 0.51,
    "countries": [
     "SG",
     "JP",
@@ -1228,13 +1228,49 @@
    ]
   },
   {
+   "company": "Pika",
+   "ats": "ashby",
+   "token": "pika",
+   "sector": "ai",
+   "matching": 8,
+   "live_tech": 12,
+   "skill_fit": 0.59,
+   "countries": [
+    "US"
+   ],
+   "titles": [
+    "Research Scientist, Post-Training — Video Generation",
+    "Senior/Staff Software Engineer, Product",
+    "Principal Software Engineer, Product"
+   ]
+  },
+  {
+   "company": "Ashby",
+   "ats": "ashby",
+   "token": "ashby",
+   "sector": "tech",
+   "matching": 6,
+   "live_tech": 35,
+   "skill_fit": 0.94,
+   "countries": [
+    "US",
+    "ES",
+    "GB"
+   ],
+   "titles": [
+    "Mid-Market Solutions Engineering Manager",
+    "Senior Software Engineer, Product Engineering - EU",
+    "Staff Software Engineer, Product Engineering - EU"
+   ]
+  },
+  {
    "company": "Linear",
    "ats": "ashby",
    "token": "linear",
    "sector": "tech",
    "matching": 7,
    "live_tech": 12,
-   "skill_fit": 0.62,
+   "skill_fit": 0.71,
    "countries": [
     "US",
     "remote",
@@ -1253,7 +1289,7 @@
    "sector": "crypto",
    "matching": 8,
    "live_tech": 34,
-   "skill_fit": 0.48,
+   "skill_fit": 0.49,
    "countries": [
     "HK",
     "SG",
@@ -1266,20 +1302,22 @@
    ]
   },
   {
-   "company": "Pika",
+   "company": "Shield AI",
    "ats": "ashby",
-   "token": "pika",
+   "token": "shield",
    "sector": "ai",
    "matching": 8,
-   "live_tech": 12,
-   "skill_fit": 0.48,
+   "live_tech": 346,
+   "skill_fit": 0.47,
    "countries": [
-    "US"
+    "US",
+    "GB",
+    "ES"
    ],
    "titles": [
-    "Research Scientist, Post-Training — Video Generation",
-    "Senior/Staff Software Engineer, Product",
-    "Principal Software Engineer, Product"
+    "Forward Deployed Engineer II (5951)",
+    "Staff Deep Learning Engineer, State Estimation (R5785)",
+    "Senior Staff Data Engineer, Databricks (R6508)"
    ]
   },
   {
@@ -1301,32 +1339,13 @@
    ]
   },
   {
-   "company": "Shield AI",
-   "ats": "ashby",
-   "token": "shield",
-   "sector": "ai",
-   "matching": 8,
-   "live_tech": 346,
-   "skill_fit": 0.45,
-   "countries": [
-    "US",
-    "GB",
-    "ES"
-   ],
-   "titles": [
-    "Forward Deployed Engineer II (5951)",
-    "Staff Deep Learning Engineer, State Estimation (R5785)",
-    "Senior Staff Data Engineer, Databricks (R6508)"
-   ]
-  },
-  {
    "company": "voize",
    "ats": "ashby",
    "token": "voize",
    "sector": "ai",
    "matching": 8,
    "live_tech": 19,
-   "skill_fit": 0.44,
+   "skill_fit": 0.46,
    "countries": [
     "DE",
     "PL"
@@ -1338,22 +1357,20 @@
    ]
   },
   {
-   "company": "Ashby",
-   "ats": "ashby",
-   "token": "ashby",
+   "company": "Flexport",
+   "ats": "greenhouse",
+   "token": "flexport",
    "sector": "tech",
-   "matching": 6,
-   "live_tech": 35,
-   "skill_fit": 0.72,
+   "matching": 7,
+   "live_tech": 29,
+   "skill_fit": 0.54,
    "countries": [
-    "US",
-    "ES",
-    "GB"
+    "CN"
    ],
    "titles": [
-    "Mid-Market Solutions Engineering Manager",
-    "Senior Software Engineer, Product Engineering - EU",
-    "Staff Software Engineer, Product Engineering - EU"
+    "Software Engineer II",
+    "Software Engineer Ⅰ",
+    "Software Engineer I"
    ]
   },
   {
@@ -1393,47 +1410,13 @@
    ]
   },
   {
-   "company": "CircuitHub",
-   "ats": "ashby",
-   "token": "circuithub",
-   "sector": "tech",
-   "matching": 6,
-   "live_tech": 7,
-   "skill_fit": 0.61,
-   "countries": [
-    "GB"
-   ],
-   "titles": [
-    "Software Engineer, Computer Vision",
-    "Software Engineer, Operations Research",
-    "Software Engineer, Product"
-   ]
-  },
-  {
-   "company": "Flexport",
-   "ats": "greenhouse",
-   "token": "flexport",
-   "sector": "tech",
-   "matching": 7,
-   "live_tech": 29,
-   "skill_fit": 0.45,
-   "countries": [
-    "CN"
-   ],
-   "titles": [
-    "Software Engineer II",
-    "Software Engineer Ⅰ",
-    "Software Engineer I"
-   ]
-  },
-  {
    "company": "Recidiviz",
    "ats": "greenhouse",
    "token": "recidiviz",
    "sector": "tech",
    "matching": 7,
    "live_tech": 7,
-   "skill_fit": 0.44,
+   "skill_fit": 0.49,
    "countries": [
     "US"
    ],
@@ -1444,13 +1427,30 @@
    ]
   },
   {
+   "company": "CircuitHub",
+   "ats": "ashby",
+   "token": "circuithub",
+   "sector": "tech",
+   "matching": 6,
+   "live_tech": 7,
+   "skill_fit": 0.65,
+   "countries": [
+    "GB"
+   ],
+   "titles": [
+    "Software Engineer, Computer Vision",
+    "Software Engineer, Operations Research",
+    "Software Engineer, Product"
+   ]
+  },
+  {
    "company": "Amplitude",
    "ats": "ashby",
    "token": "amplitude",
    "sector": "tech",
    "matching": 5,
    "live_tech": 20,
-   "skill_fit": 0.77,
+   "skill_fit": 0.86,
    "countries": [
     "US"
    ],
@@ -1461,13 +1461,30 @@
    ]
   },
   {
+   "company": "Thunes",
+   "ats": "greenhouse",
+   "token": "thunes",
+   "sector": "fintech",
+   "matching": 6,
+   "live_tech": 14,
+   "skill_fit": 0.62,
+   "countries": [
+    "SG"
+   ],
+   "titles": [
+    "Senior Software Engineer (B2B/B2X)",
+    "Senior Software Engineer (Core)",
+    "Software Engineering Lead (Core)"
+   ]
+  },
+  {
    "company": "SpruceID",
    "ats": "ashby",
    "token": "spruceid",
    "sector": "crypto",
    "matching": 7,
    "live_tech": 7,
-   "skill_fit": 0.38,
+   "skill_fit": 0.46,
    "countries": [
     "US",
     "remote"
@@ -1479,48 +1496,13 @@
    ]
   },
   {
-   "company": "FirstWork",
-   "ats": "ashby",
-   "token": "firstwork",
-   "sector": "ai",
-   "matching": 5,
-   "live_tech": 6,
-   "skill_fit": 0.73,
-   "countries": [
-    "IN",
-    "remote"
-   ],
-   "titles": [
-    "AI Deployment Specialist (EMEA & LATAM)",
-    "Senior Software Engineer (Remote)",
-    "Forward Deployed Engineer"
-   ]
-  },
-  {
-   "company": "Thunes",
-   "ats": "greenhouse",
-   "token": "thunes",
-   "sector": "fintech",
-   "matching": 6,
-   "live_tech": 14,
-   "skill_fit": 0.52,
-   "countries": [
-    "SG"
-   ],
-   "titles": [
-    "Senior Software Engineer (B2B/B2X)",
-    "Senior Software Engineer (Core)",
-    "Software Engineering Lead (Core)"
-   ]
-  },
-  {
    "company": "Exa",
    "ats": "ashby",
    "token": "exa",
    "sector": "ai",
    "matching": 5,
    "live_tech": 38,
-   "skill_fit": 0.71,
+   "skill_fit": 0.82,
    "countries": [
     "SG",
     "US",
@@ -1530,6 +1512,41 @@
     "Software Engineer, Web Crawling",
     "Forward Deployed Engineer, APJ",
     "Solutions Architect, US Remote"
+   ]
+  },
+  {
+   "company": "Curri",
+   "ats": "ashby",
+   "token": "curri",
+   "sector": "tech",
+   "matching": 5,
+   "live_tech": 7,
+   "skill_fit": 0.79,
+   "countries": [
+    "US"
+   ],
+   "titles": [
+    "Senior Software Engineer",
+    "Software Engineer",
+    "Senior Software Engineer, Finance"
+   ]
+  },
+  {
+   "company": "FirstWork",
+   "ats": "ashby",
+   "token": "firstwork",
+   "sector": "ai",
+   "matching": 5,
+   "live_tech": 6,
+   "skill_fit": 0.77,
+   "countries": [
+    "IN",
+    "remote"
+   ],
+   "titles": [
+    "AI Deployment Specialist (EMEA & LATAM)",
+    "Senior Software Engineer (Remote)",
+    "Forward Deployed Engineer"
    ]
   },
   {
@@ -1569,6 +1586,24 @@
    ]
   },
   {
+   "company": "Thoughtworks",
+   "ats": "ashby",
+   "token": "thoughtworks",
+   "sector": "tech",
+   "matching": 5,
+   "live_tech": 46,
+   "skill_fit": 0.67,
+   "countries": [
+    "SG",
+    "TH"
+   ],
+   "titles": [
+    "Principal Solutions Architect/Engineer (pre-sales)",
+    "Senior Full Stack Developer (Node.js & Cloud)",
+    "Fullstack Developer (Vue.js, TypeScript, Node.js)"
+   ]
+  },
+  {
    "company": "Luma AI",
    "ats": "ashby",
    "token": "lumaai",
@@ -1587,31 +1622,13 @@
    ]
   },
   {
-   "company": "Thoughtworks",
-   "ats": "ashby",
-   "token": "thoughtworks",
-   "sector": "tech",
-   "matching": 5,
-   "live_tech": 46,
-   "skill_fit": 0.6,
-   "countries": [
-    "SG",
-    "TH"
-   ],
-   "titles": [
-    "Principal Solutions Architect/Engineer (pre-sales)",
-    "Senior Full Stack Developer (Node.js & Cloud)",
-    "Fullstack Developer (Vue.js, TypeScript, Node.js)"
-   ]
-  },
-  {
    "company": "CaptivateIQ",
    "ats": "lever",
    "token": "captivateiq",
    "sector": "tech",
    "matching": 4,
    "live_tech": 8,
-   "skill_fit": 0.86,
+   "skill_fit": 0.91,
    "countries": [
     "US",
     "PL"
@@ -1629,7 +1646,7 @@
    "sector": "tech",
    "matching": 4,
    "live_tech": 7,
-   "skill_fit": 0.79,
+   "skill_fit": 0.88,
    "countries": [
     "US",
     "AU"
@@ -1641,20 +1658,38 @@
    ]
   },
   {
-   "company": "Curri",
-   "ats": "ashby",
-   "token": "curri",
-   "sector": "tech",
-   "matching": 5,
-   "live_tech": 7,
-   "skill_fit": 0.52,
+   "company": "Qventus",
+   "ats": "greenhouse",
+   "token": "qventus",
+   "sector": "ai",
+   "matching": 4,
+   "live_tech": 4,
+   "skill_fit": 0.78,
    "countries": [
-    "US"
+    "US",
+    "remote"
    ],
    "titles": [
-    "Senior Software Engineer",
-    "Software Engineer",
-    "Senior Software Engineer, Finance"
+    "Senior Data Engineer",
+    "Sr. Software Engineer - PAT Assist",
+    "AI Tooling Engineer"
+   ]
+  },
+  {
+   "company": "Vetcove",
+   "ats": "ashby",
+   "token": "vetcove",
+   "sector": "tech",
+   "matching": 4,
+   "live_tech": 7,
+   "skill_fit": 0.78,
+   "countries": [
+    "remote"
+   ],
+   "titles": [
+    "Staff Software Engineer",
+    "Staff Developer Experience Engineer",
+    "Senior Software Engineer"
    ]
   },
   {
@@ -1675,13 +1710,32 @@
    ]
   },
   {
+   "company": "SkydropX",
+   "ats": "ashby",
+   "token": "skydropx",
+   "sector": "tech",
+   "matching": 5,
+   "live_tech": 8,
+   "skill_fit": 0.52,
+   "countries": [
+    "CO",
+    "BR",
+    "AR"
+   ],
+   "titles": [
+    "Data Engineer",
+    "Senior Software Engineer (Ruby on Rails & .NET)",
+    "Analista Desenvolvedor Fullstack Senior"
+   ]
+  },
+  {
    "company": "Schonfeld",
    "ats": "greenhouse",
    "token": "schonfeld",
    "sector": "fintech",
    "matching": 5,
    "live_tech": 38,
-   "skill_fit": 0.5,
+   "skill_fit": 0.51,
    "countries": [
     "HK",
     "SG"
@@ -1693,31 +1747,13 @@
    ]
   },
   {
-   "company": "Qventus",
-   "ats": "greenhouse",
-   "token": "qventus",
-   "sector": "ai",
-   "matching": 4,
-   "live_tech": 4,
-   "skill_fit": 0.71,
-   "countries": [
-    "US",
-    "remote"
-   ],
-   "titles": [
-    "Senior Data Engineer",
-    "Sr. Software Engineer - PAT Assist",
-    "AI Tooling Engineer"
-   ]
-  },
-  {
    "company": "Toptal",
    "ats": "lever",
    "token": "toptal",
    "sector": "tech",
    "matching": 4,
    "live_tech": 4,
-   "skill_fit": 0.69,
+   "skill_fit": 0.75,
    "countries": [
     "US",
     "ES",
@@ -1736,7 +1772,7 @@
    "sector": "ai",
    "matching": 4,
    "live_tech": 5,
-   "skill_fit": 0.67,
+   "skill_fit": 0.7,
    "countries": [
     "US"
    ],
@@ -1783,39 +1819,72 @@
    ]
   },
   {
-   "company": "SkydropX",
-   "ats": "ashby",
-   "token": "skydropx",
-   "sector": "tech",
-   "matching": 5,
-   "live_tech": 8,
-   "skill_fit": 0.42,
-   "countries": [
-    "CO",
-    "BR",
-    "AR"
-   ],
-   "titles": [
-    "Data Engineer",
-    "Senior Software Engineer (Ruby on Rails & .NET)",
-    "Analista Desenvolvedor Fullstack Senior"
-   ]
-  },
-  {
-   "company": "Vetcove",
-   "ats": "ashby",
-   "token": "vetcove",
-   "sector": "tech",
+   "company": "Extend",
+   "ats": "greenhouse",
+   "token": "extend",
+   "sector": "ai",
    "matching": 4,
-   "live_tech": 7,
-   "skill_fit": 0.65,
+   "live_tech": 4,
+   "skill_fit": 0.58,
    "countries": [
     "remote"
    ],
    "titles": [
-    "Staff Software Engineer",
-    "Staff Developer Experience Engineer",
-    "Senior Software Engineer"
+    "Software Engineer II - Fulfillments Team",
+    "Senior Data Platform Engineer, Enterprise Merchant Integrations",
+    "Senior Data Scientist, Revenue & Risk Analytics"
+   ]
+  },
+  {
+   "company": "Mysten Labs",
+   "ats": "ashby",
+   "token": "mystenlabs",
+   "sector": "crypto",
+   "matching": 4,
+   "live_tech": 8,
+   "skill_fit": 0.58,
+   "countries": [
+    "US",
+    "GR"
+   ],
+   "titles": [
+    "Product Lead, AI",
+    "Software Engineer, Partner Solutions (Greece)",
+    "Senior Dealmaker - AI"
+   ]
+  },
+  {
+   "company": "RADAR",
+   "ats": "ashby",
+   "token": "radar",
+   "sector": "ai",
+   "matching": 4,
+   "live_tech": 14,
+   "skill_fit": 0.58,
+   "countries": [
+    "US"
+   ],
+   "titles": [
+    "Senior / Staff Data Platform Engineer",
+    "Senior/Staff Software Engineer, Search",
+    "Senior / Staff Product Engineer, Backend"
+   ]
+  },
+  {
+   "company": "Substack",
+   "ats": "ashby",
+   "token": "substack",
+   "sector": "tech",
+   "matching": 3,
+   "live_tech": 3,
+   "skill_fit": 0.94,
+   "countries": [
+    "US"
+   ],
+   "titles": [
+    "Full Stack Software Engineer - Payments",
+    "Full Stack Software Engineer - Growth",
+    "Full Stack Software Engineer - Sponsorships"
    ]
   },
   {
@@ -1825,7 +1894,7 @@
    "sector": "ai",
    "matching": 3,
    "live_tech": 41,
-   "skill_fit": 0.89,
+   "skill_fit": 0.92,
    "countries": [
     "JP",
     "KR"
@@ -1836,20 +1905,55 @@
    ]
   },
   {
-   "company": "Extend",
-   "ats": "greenhouse",
-   "token": "extend",
+   "company": "Reacher",
+   "ats": "ashby",
+   "token": "reacher",
    "sector": "ai",
+   "matching": 3,
+   "live_tech": 5,
+   "skill_fit": 0.89,
+   "countries": [
+    "US"
+   ],
+   "titles": [
+    "Backend Software Engineer - India",
+    "Full Stack Software Engineer - Canada",
+    "Software Engineer - Latam"
+   ]
+  },
+  {
+   "company": "Prolific",
+   "ats": "greenhouse",
+   "token": "prolific",
+   "sector": "tech",
    "matching": 4,
-   "live_tech": 4,
+   "live_tech": 18,
    "skill_fit": 0.53,
    "countries": [
     "remote"
    ],
    "titles": [
-    "Software Engineer II - Fulfillments Team",
-    "Senior Data Platform Engineer, Enterprise Merchant Integrations",
-    "Senior Data Scientist, Revenue & Risk Analytics"
+    "Senior Product Marketing Manager, Sales Enablement (AI & Research)",
+    "Senior Product Marketing Manager, AI (Frontier Labs & Enterprise)",
+    "Analytics Engineer"
+   ]
+  },
+  {
+   "company": "Invert",
+   "ats": "ashby",
+   "token": "invert",
+   "sector": "ai",
+   "matching": 3,
+   "live_tech": 3,
+   "skill_fit": 0.87,
+   "countries": [
+    "US",
+    "remote"
+   ],
+   "titles": [
+    "Senior Software Engineer (EU)",
+    "Senior Software Engineer (North America)",
+    "Solutions Engineer"
    ]
   },
   {
@@ -1871,38 +1975,21 @@
    ]
   },
   {
-   "company": "Mysten Labs",
+   "company": "Phantom",
    "ats": "ashby",
-   "token": "mystenlabs",
+   "token": "phantom",
    "sector": "crypto",
    "matching": 4,
-   "live_tech": 8,
-   "skill_fit": 0.52,
-   "countries": [
-    "US",
-    "GR"
-   ],
-   "titles": [
-    "Product Lead, AI",
-    "Software Engineer, Partner Solutions (Greece)",
-    "Senior Dealmaker - AI"
-   ]
-  },
-  {
-   "company": "Prolific",
-   "ats": "greenhouse",
-   "token": "prolific",
-   "sector": "tech",
-   "matching": 4,
-   "live_tech": 18,
+   "live_tech": 10,
    "skill_fit": 0.51,
    "countries": [
-    "remote"
+    "remote",
+    "US"
    ],
    "titles": [
-    "Senior Product Marketing Manager, Sales Enablement (AI & Research)",
-    "Senior Product Marketing Manager, AI (Frontier Labs & Enterprise)",
-    "Analytics Engineer"
+    "Staff Engineer, Full Stack (Trust, Safety & Risk)",
+    "Staff Data Scientist",
+    "Senior Engineer, Backend (Data Platform)"
    ]
   },
   {
@@ -1923,6 +2010,24 @@
    ]
   },
   {
+   "company": "Short Story",
+   "ats": "ashby",
+   "token": "shortstory",
+   "sector": "ai",
+   "matching": 3,
+   "live_tech": 4,
+   "skill_fit": 0.82,
+   "countries": [
+    "US",
+    "CA"
+   ],
+   "titles": [
+    "Senior Software Engineer, Full Stack (US, Canada, SF)",
+    "Staff Engineer, Full Stack (US, Canada, SF)",
+    "Senior Software Engineer, Back-End (Remote Canada)"
+   ]
+  },
+  {
    "company": "SigNoz",
    "ats": "ashby",
    "token": "signoz",
@@ -1937,58 +2042,6 @@
     "Sr Backend Engineer - AI",
     "Staff Backend Engineer - Core",
     "Technical Account Executive"
-   ]
-  },
-  {
-   "company": "Reacher",
-   "ats": "ashby",
-   "token": "reacher",
-   "sector": "ai",
-   "matching": 3,
-   "live_tech": 5,
-   "skill_fit": 0.79,
-   "countries": [
-    "US"
-   ],
-   "titles": [
-    "Backend Software Engineer - India",
-    "Full Stack Software Engineer - Canada",
-    "Software Engineer - Latam"
-   ]
-  },
-  {
-   "company": "Invert",
-   "ats": "ashby",
-   "token": "invert",
-   "sector": "ai",
-   "matching": 3,
-   "live_tech": 3,
-   "skill_fit": 0.78,
-   "countries": [
-    "US",
-    "remote"
-   ],
-   "titles": [
-    "Senior Software Engineer (EU)",
-    "Senior Software Engineer (North America)",
-    "Solutions Engineer"
-   ]
-  },
-  {
-   "company": "Substack",
-   "ats": "ashby",
-   "token": "substack",
-   "sector": "tech",
-   "matching": 3,
-   "live_tech": 3,
-   "skill_fit": 0.76,
-   "countries": [
-    "US"
-   ],
-   "titles": [
-    "Full Stack Software Engineer - Payments",
-    "Full Stack Software Engineer - Growth",
-    "Full Stack Software Engineer - Sponsorships"
    ]
   },
   {
@@ -2047,39 +2100,106 @@
    ]
   },
   {
-   "company": "Short Story",
-   "ats": "ashby",
-   "token": "shortstory",
-   "sector": "ai",
+   "company": "Doximity",
+   "ats": "greenhouse",
+   "token": "doximity",
+   "sector": "tech",
    "matching": 3,
    "live_tech": 4,
-   "skill_fit": 0.69,
+   "skill_fit": 0.71,
    "countries": [
-    "US",
-    "CA"
-   ],
-   "titles": [
-    "Senior Software Engineer, Full Stack (US, Canada, SF)",
-    "Staff Engineer, Full Stack (US, Canada, SF)",
-    "Senior Software Engineer, Back-End (Remote Canada)"
-   ]
-  },
-  {
-   "company": "Phantom",
-   "ats": "ashby",
-   "token": "phantom",
-   "sector": "crypto",
-   "matching": 4,
-   "live_tech": 10,
-   "skill_fit": 0.38,
-   "countries": [
-    "remote",
     "US"
    ],
    "titles": [
-    "Staff Engineer, Full Stack (Trust, Safety & Risk)",
-    "Staff Data Scientist",
-    "Senior Engineer, Backend (Data Platform)"
+    "Senior Software Engineer, Data",
+    "Commercial Data Scientist",
+    "Business Intelligence Analyst (Contractor)"
+   ]
+  },
+  {
+   "company": "Upgrade",
+   "ats": "greenhouse",
+   "token": "upgrade",
+   "sector": "fintech",
+   "matching": 3,
+   "live_tech": 9,
+   "skill_fit": 0.71,
+   "countries": [
+    "CA"
+   ],
+   "titles": [
+    "Senior QA Automation Developer (Platform)",
+    "Senior QA Automation Developer (HELOC)",
+    "AI Experience Engineer (Conversational AI)"
+   ]
+  },
+  {
+   "company": "Dispatch",
+   "ats": "ashby",
+   "token": "dispatch",
+   "sector": "tech",
+   "matching": 3,
+   "live_tech": 3,
+   "skill_fit": 0.7,
+   "countries": [
+    "US"
+   ],
+   "titles": [
+    "Fullstack Engineer",
+    "Backend Engineer",
+    "Senior Fullstack Engineer"
+   ]
+  },
+  {
+   "company": "Baseten",
+   "ats": "ashby",
+   "token": "baseten",
+   "sector": "ai",
+   "matching": 3,
+   "live_tech": 51,
+   "skill_fit": 0.69,
+   "countries": [
+    "US"
+   ],
+   "titles": [
+    "Software Engineer, Cloud Platform",
+    "Solutions Architect, EMEA",
+    "Forward Deployed Engineer"
+   ]
+  },
+  {
+   "company": "PlanetScale",
+   "ats": "greenhouse",
+   "token": "planetscale",
+   "sector": "tech",
+   "matching": 3,
+   "live_tech": 7,
+   "skill_fit": 0.69,
+   "countries": [
+    "remote"
+   ],
+   "titles": [
+    "Solutions Engineer",
+    "AI Developer Experience Engineer",
+    "Software Engineer - PlanetScale Postgres"
+   ]
+  },
+  {
+   "company": "Eloquent AI",
+   "ats": "ashby",
+   "token": "eloquentai",
+   "sector": "fintech",
+   "matching": 3,
+   "live_tech": 10,
+   "skill_fit": 0.67,
+   "countries": [
+    "US",
+    "GB"
+   ],
+   "titles": [
+    "Lead Software Engineer",
+    "Senior Software Engineer, Full-Stack",
+    "AI Engineer, London"
    ]
   },
   {
@@ -2099,71 +2219,35 @@
    ]
   },
   {
-   "company": "RADAR",
-   "ats": "ashby",
-   "token": "radar",
-   "sector": "ai",
-   "matching": 4,
-   "live_tech": 14,
-   "skill_fit": 0.36,
-   "countries": [
-    "US"
-   ],
-   "titles": [
-    "Senior / Staff Data Platform Engineer",
-    "Senior/Staff Software Engineer, Search",
-    "Senior / Staff Product Engineer, Backend"
-   ]
-  },
-  {
-   "company": "Doximity",
+   "company": "Mixpanel",
    "ats": "greenhouse",
-   "token": "doximity",
+   "token": "mixpanel",
    "sector": "tech",
    "matching": 3,
-   "live_tech": 4,
-   "skill_fit": 0.64,
-   "countries": [
-    "US"
-   ],
-   "titles": [
-    "Senior Software Engineer, Data",
-    "Commercial Data Scientist",
-    "Business Intelligence Analyst (Contractor)"
-   ]
-  },
-  {
-   "company": "PlanetScale",
-   "ats": "greenhouse",
-   "token": "planetscale",
-   "sector": "tech",
-   "matching": 3,
-   "live_tech": 7,
-   "skill_fit": 0.61,
+   "live_tech": 13,
+   "skill_fit": 0.67,
    "countries": [
     "remote"
    ],
    "titles": [
-    "Solutions Engineer",
-    "AI Developer Experience Engineer",
-    "Software Engineer - PlanetScale Postgres"
+    "Senior Customer Engineer - LATAM (Spanish Speaking)"
    ]
   },
   {
-   "company": "Upgrade",
-   "ats": "greenhouse",
-   "token": "upgrade",
-   "sector": "fintech",
+   "company": "Unstructured",
+   "ats": "ashby",
+   "token": "unstructured",
+   "sector": "ai",
    "matching": 3,
-   "live_tech": 9,
-   "skill_fit": 0.61,
+   "live_tech": 3,
+   "skill_fit": 0.63,
    "countries": [
-    "CA"
+    "remote"
    ],
    "titles": [
-    "Senior QA Automation Developer (Platform)",
-    "Senior QA Automation Developer (HELOC)",
-    "AI Experience Engineer (Conversational AI)"
+    "AI Engineer - Public Sector",
+    "Principal + Staff Software Engineers",
+    "Software Engineer - Public Sector"
    ]
   },
   {
@@ -2218,70 +2302,55 @@
    ]
   },
   {
-   "company": "Baseten",
+   "company": "Weave",
    "ats": "ashby",
-   "token": "baseten",
-   "sector": "ai",
+   "token": "weave",
+   "sector": "tech",
    "matching": 3,
-   "live_tech": 51,
-   "skill_fit": 0.57,
+   "live_tech": 8,
+   "skill_fit": 0.54,
+   "countries": [
+    "IN",
+    "US"
+   ],
+   "titles": [
+    "Senior Backend Engineer - India (Golang + Distributed Systems)",
+    "Senior Backend Software Engineer",
+    "Senior ML - GenAI Engineer, Voice & Speech"
+   ]
+  },
+  {
+   "company": "Human Interest",
+   "ats": "greenhouse",
+   "token": "humaninterest",
+   "sector": "fintech",
+   "matching": 3,
+   "live_tech": 5,
+   "skill_fit": 0.52,
    "countries": [
     "US"
    ],
    "titles": [
-    "Software Engineer, Cloud Platform",
-    "Solutions Architect, EMEA",
-    "Forward Deployed Engineer"
+    "Senior Software Engineer",
+    "Sr Software Engineer - Builder Tools",
+    "Product Manager - AI Augmented"
    ]
   },
   {
-   "company": "Mixpanel",
-   "ats": "greenhouse",
-   "token": "mixpanel",
-   "sector": "tech",
-   "matching": 3,
-   "live_tech": 13,
-   "skill_fit": 0.56,
-   "countries": [
-    "remote"
-   ],
-   "titles": [
-    "Senior Customer Engineer - LATAM (Spanish Speaking)"
-   ]
-  },
-  {
-   "company": "Unstructured",
+   "company": "Double",
    "ats": "ashby",
-   "token": "unstructured",
-   "sector": "ai",
-   "matching": 3,
-   "live_tech": 3,
-   "skill_fit": 0.56,
-   "countries": [
-    "remote"
-   ],
-   "titles": [
-    "AI Engineer - Public Sector",
-    "Principal + Staff Software Engineers",
-    "Software Engineer - Public Sector"
-   ]
-  },
-  {
-   "company": "Eloquent AI",
-   "ats": "ashby",
-   "token": "eloquentai",
+   "token": "double",
    "sector": "fintech",
-   "matching": 3,
-   "live_tech": 10,
-   "skill_fit": 0.55,
+   "matching": 2,
+   "live_tech": 2,
+   "skill_fit": 1.0,
    "countries": [
-    "US",
-    "GB"
+    "AR",
+    "BR"
    ],
    "titles": [
-    "Lead Software Engineer",
-    "Senior Software Engineer, Full-Stack",
-    "AI Engineer, London"
+    "Senior Fullstack Engineer (ARG/UY based only)",
+    "Senior Fullstack Engineer (BR based only)"
    ]
   },
   {
@@ -2315,41 +2384,6 @@
     "AI Image Generation Specialist (Pooling)",
     "AI Operations Manager",
     "AI Operations Team Lead (25328)"
-   ]
-  },
-  {
-   "company": "Weave",
-   "ats": "ashby",
-   "token": "weave",
-   "sector": "tech",
-   "matching": 3,
-   "live_tech": 8,
-   "skill_fit": 0.5,
-   "countries": [
-    "IN",
-    "US"
-   ],
-   "titles": [
-    "Senior Backend Engineer - India (Golang + Distributed Systems)",
-    "Senior Backend Software Engineer",
-    "Senior ML - GenAI Engineer, Voice & Speech"
-   ]
-  },
-  {
-   "company": "Dispatch",
-   "ats": "ashby",
-   "token": "dispatch",
-   "sector": "tech",
-   "matching": 3,
-   "live_tech": 3,
-   "skill_fit": 0.49,
-   "countries": [
-    "US"
-   ],
-   "titles": [
-    "Fullstack Engineer",
-    "Backend Engineer",
-    "Senior Fullstack Engineer"
    ]
   },
   {
@@ -2389,6 +2423,39 @@
    ]
   },
   {
+   "company": "Braintrust",
+   "ats": "ashby",
+   "token": "braintrust",
+   "sector": "ai",
+   "matching": 2,
+   "live_tech": 13,
+   "skill_fit": 0.94,
+   "countries": [
+    "US"
+   ],
+   "titles": [
+    "Software Engineer, SDK",
+    "Solutions Engineer (Central Region)"
+   ]
+  },
+  {
+   "company": "Mashgin",
+   "ats": "lever",
+   "token": "mashgin",
+   "sector": "ai",
+   "matching": 3,
+   "live_tech": 8,
+   "skill_fit": 0.46,
+   "countries": [
+    "BR",
+    "US"
+   ],
+   "titles": [
+    "Software Engineer, Full-Stack",
+    "Sales Engineer"
+   ]
+  },
+  {
    "company": "Gemini",
    "ats": "greenhouse",
    "token": "gemini",
@@ -2406,29 +2473,13 @@
    ]
   },
   {
-   "company": "Braintrust",
-   "ats": "ashby",
-   "token": "braintrust",
-   "sector": "ai",
-   "matching": 2,
-   "live_tech": 13,
-   "skill_fit": 0.89,
-   "countries": [
-    "US"
-   ],
-   "titles": [
-    "Software Engineer, SDK",
-    "Solutions Engineer (Central Region)"
-   ]
-  },
-  {
    "company": "Squarepoint Capital",
    "ats": "greenhouse",
    "token": "squarepointcapital",
    "sector": "fintech",
    "matching": 3,
    "live_tech": 51,
-   "skill_fit": 0.37,
+   "skill_fit": 0.41,
    "countries": [
     "SG"
    ],
@@ -2439,20 +2490,52 @@
    ]
   },
   {
-   "company": "Human Interest",
+   "company": "Breeze",
    "ats": "greenhouse",
-   "token": "humaninterest",
-   "sector": "fintech",
+   "token": "breezecash",
+   "sector": "crypto",
    "matching": 3,
-   "live_tech": 5,
-   "skill_fit": 0.36,
+   "live_tech": 7,
+   "skill_fit": 0.39,
    "countries": [
-    "US"
+    "SG"
    ],
    "titles": [
+    "Staff Software Engineer",
     "Senior Software Engineer",
-    "Sr Software Engineer - Builder Tools",
-    "Product Manager - AI Augmented"
+    "Staff Machine Learning Engineer - Risk"
+   ]
+  },
+  {
+   "company": "MorphoAI",
+   "ats": "ashby",
+   "token": "morpho",
+   "sector": "ai",
+   "matching": 2,
+   "live_tech": 4,
+   "skill_fit": 0.83,
+   "countries": [
+    "FR"
+   ],
+   "titles": [
+    "Staff Fullstack Engineer",
+    "Staff Backend Engineer"
+   ]
+  },
+  {
+   "company": "Lightdash",
+   "ats": "ashby",
+   "token": "lightdash",
+   "sector": "tech",
+   "matching": 2,
+   "live_tech": 3,
+   "skill_fit": 0.8,
+   "countries": [
+    "GB"
+   ],
+   "titles": [
+    "Technical Account Executive",
+    "Analytics Engineering Advocate - Europe"
    ]
   },
   {
@@ -2491,6 +2574,22 @@
    ]
   },
   {
+   "company": "Close",
+   "ats": "ashby",
+   "token": "close",
+   "sector": "tech",
+   "matching": 2,
+   "live_tech": 3,
+   "skill_fit": 0.76,
+   "countries": [
+    "US"
+   ],
+   "titles": [
+    "Full Stack Data Analyst - GTM (USA Only, 100% Remote)",
+    "Senior Software Engineer – Backend (USA Only, 100% Remote)"
+   ]
+  },
+  {
    "company": "Point72",
    "ats": "greenhouse",
    "token": "point72",
@@ -2506,6 +2605,54 @@
     "Cubist Data Scientist",
     "Cubist Senior Data Scientist",
     "AI Product Analyst, Market Intelligence, Singapore"
+   ]
+  },
+  {
+   "company": "Sendbird",
+   "ats": "greenhouse",
+   "token": "sendbird",
+   "sector": "ai",
+   "matching": 2,
+   "live_tech": 4,
+   "skill_fit": 0.76,
+   "countries": [
+    "KR"
+   ],
+   "titles": [
+    "Software Engineer, AI Agent",
+    "AI Agent Engineer, Intern"
+   ]
+  },
+  {
+   "company": "Freshpaint",
+   "ats": "ashby",
+   "token": "freshpaint",
+   "sector": "tech",
+   "matching": 2,
+   "live_tech": 3,
+   "skill_fit": 0.75,
+   "countries": [
+    "remote"
+   ],
+   "titles": [
+    "Enterprise Implementation Engineer",
+    "Product Manager, Data & AI"
+   ]
+  },
+  {
+   "company": "Redis",
+   "ats": "ashby",
+   "token": "redis",
+   "sector": "tech",
+   "matching": 2,
+   "live_tech": 6,
+   "skill_fit": 0.75,
+   "countries": [
+    "US"
+   ],
+   "titles": [
+    "Sr. Solution Architect",
+    "Solution Architect - NY Metro"
    ]
   },
   {
@@ -2543,168 +2690,20 @@
    ]
   },
   {
-   "company": "Sendbird",
-   "ats": "greenhouse",
-   "token": "sendbird",
-   "sector": "ai",
-   "matching": 2,
+   "company": "Infisical",
+   "ats": "ashby",
+   "token": "infisical",
+   "sector": "tech",
+   "matching": 3,
    "live_tech": 4,
-   "skill_fit": 0.73,
-   "countries": [
-    "KR"
-   ],
-   "titles": [
-    "Software Engineer, AI Agent",
-    "AI Agent Engineer, Intern"
-   ]
-  },
-  {
-   "company": "Mashgin",
-   "ats": "lever",
-   "token": "mashgin",
-   "sector": "ai",
-   "matching": 3,
-   "live_tech": 8,
-   "skill_fit": 0.31,
-   "countries": [
-    "BR",
-    "US"
-   ],
-   "titles": [
-    "Software Engineer, Full-Stack",
-    "Sales Engineer"
-   ]
-  },
-  {
-   "company": "Cockroach Labs",
-   "ats": "greenhouse",
-   "token": "cockroachlabs",
-   "sector": "tech",
-   "matching": 2,
-   "live_tech": 7,
-   "skill_fit": 0.71,
-   "countries": [
-    "US",
-    "AU"
-   ],
-   "titles": [
-    "Member of Technical Staff (Storage)",
-    "Senior Staff Sales Engineer, Australia"
-   ]
-  },
-  {
-   "company": "Double",
-   "ats": "ashby",
-   "token": "double",
-   "sector": "fintech",
-   "matching": 2,
-   "live_tech": 2,
-   "skill_fit": 0.67,
-   "countries": [
-    "AR",
-    "BR"
-   ],
-   "titles": [
-    "Senior Fullstack Engineer (ARG/UY based only)",
-    "Senior Fullstack Engineer (BR based only)"
-   ]
-  },
-  {
-   "company": "Pinecone",
-   "ats": "ashby",
-   "token": "pinecone",
-   "sector": "ai",
-   "matching": 2,
-   "live_tech": 5,
-   "skill_fit": 0.67,
+   "skill_fit": 0.33,
    "countries": [
     "US"
    ],
    "titles": [
-    "Solutions Engineer",
-    "Staff Developer Advocate"
-   ]
-  },
-  {
-   "company": "Breeze",
-   "ats": "greenhouse",
-   "token": "breezecash",
-   "sector": "crypto",
-   "matching": 3,
-   "live_tech": 7,
-   "skill_fit": 0.27,
-   "countries": [
-    "SG"
-   ],
-   "titles": [
-    "Staff Software Engineer",
-    "Senior Software Engineer",
-    "Staff Machine Learning Engineer - Risk"
-   ]
-  },
-  {
-   "company": "Lightdash",
-   "ats": "ashby",
-   "token": "lightdash",
-   "sector": "tech",
-   "matching": 2,
-   "live_tech": 3,
-   "skill_fit": 0.6,
-   "countries": [
-    "GB"
-   ],
-   "titles": [
-    "Technical Account Executive",
-    "Analytics Engineering Advocate - Europe"
-   ]
-  },
-  {
-   "company": "Cortex",
-   "ats": "greenhouse",
-   "token": "cortex",
-   "sector": "tech",
-   "matching": 2,
-   "live_tech": 2,
-   "skill_fit": 0.59,
-   "countries": [
-    "remote"
-   ],
-   "titles": [
-    "Senior Data Engineer",
-    "Lead Software Engineer, Backend"
-   ]
-  },
-  {
-   "company": "Snyk",
-   "ats": "ashby",
-   "token": "snyk",
-   "sector": "tech",
-   "matching": 2,
-   "live_tech": 10,
-   "skill_fit": 0.59,
-   "countries": [
-    "US",
-    "GB"
-   ],
-   "titles": [
-    "Solutions Architect",
-    "Senior Solutions Engineer (French Speaking)"
-   ]
-  },
-  {
-   "company": "Close",
-   "ats": "ashby",
-   "token": "close",
-   "sector": "tech",
-   "matching": 2,
-   "live_tech": 3,
-   "skill_fit": 0.58,
-   "countries": [
-    "US"
-   ],
-   "titles": [
-    "Full Stack Data Analyst - GTM (USA Only, 100% Remote)",
-    "Senior Software Engineer – Backend (USA Only, 100% Remote)"
+    "Full Stack Engineer",
+    "Senior Full Stack Engineer",
+    "Solutions Engineer"
    ]
   }
  ],
@@ -2712,151 +2711,151 @@
   "watch_ashby": [
    "clickhouse",
    "openai",
-   "snowflake",
    "trm-labs",
+   "snowflake",
    "airwallex",
-   "temporal",
    "elevenlabs",
+   "temporal",
    "supabase",
    "cohere",
    "sierra",
    "cursor",
-   "docker",
    "vanta",
    "tailor",
+   "docker",
    "deepgram",
    "hims-and-hers",
+   "cognition",
    "surge-ai",
    "fieldguide",
-   "goteleport",
-   "roboflow",
-   "hud",
-   "cognition",
-   "resend",
-   "webflow",
-   "render",
    "overview",
+   "goteleport",
+   "hud",
+   "resend",
+   "roboflow",
+   "render",
+   "webflow",
    "ramp",
-   "linear",
    "pika",
-   "rescale",
-   "shield",
-   "voize",
    "ashby",
+   "linear",
+   "shield",
+   "rescale",
+   "voize",
    "wayve",
    "circuithub",
    "amplitude",
    "spruceid",
-   "firstwork",
    "exa",
+   "curri",
+   "firstwork",
    "zip",
    "harvey",
-   "lumaai",
    "thoughtworks",
+   "lumaai",
    "nash",
-   "curri",
-   "tremendous",
-   "skydropx",
    "vetcove",
-   "notion",
+   "skydropx",
+   "tremendous",
    "mystenlabs",
-   "signoz",
+   "radar",
+   "substack",
+   "notion",
    "reacher",
    "invert",
-   "substack",
+   "phantom",
+   "shortstory",
+   "signoz",
    "synthesia",
    "fireworks",
-   "shortstory",
-   "phantom",
-   "miro",
-   "radar",
-   "authzed",
-   "baseten",
-   "unstructured",
-   "eloquentai",
-   "weave",
    "dispatch",
+   "baseten",
+   "eloquentai",
+   "miro",
+   "unstructured",
+   "authzed",
+   "weave",
+   "double",
    "rogo",
    "liquid-ai",
    "braintrust",
+   "morpho",
+   "lightdash",
    "sift",
    "paxos",
+   "close",
+   "freshpaint",
+   "redis",
    "zapier",
-   "double",
-   "pinecone",
-   "lightdash",
-   "snyk",
-   "close"
+   "infisical"
   ],
   "watch_greenhouse": [
    "affirm",
    "coinbase",
    "databricks",
-   "reddit",
    "samsara",
+   "reddit",
    "gitlab",
    "grafanalabs",
    "okx",
    "agoda",
-   "appier",
    "stripe",
+   "appier",
    "pinterest",
    "cresta",
    "datadog",
    "instacart",
-   "anthropic",
    "twilio",
+   "anthropic",
    "temus",
    "alpaca",
    "quberesearchandtechnologies",
    "airbnb",
-   "fivetran",
-   "janestreet",
-   "arizeai",
    "mercury",
+   "fivetran",
+   "arizeai",
    "worldquant",
+   "janestreet",
    "riotgames",
-   "monzo",
-   "snorkelai",
-   "bybit",
-   "jumptrading",
    "dropbox",
+   "monzo",
+   "bybit",
+   "snorkelai",
+   "jumptrading",
    "mongodb",
    "flexport",
    "recidiviz",
    "thunes",
+   "qventus",
    "maymobility",
    "schonfeld",
-   "qventus",
    "descript",
    "towerresearchcapital",
    "extend",
-   "elastic",
    "prolific",
+   "elastic",
    "veriff",
    "doximity",
-   "planetscale",
    "upgrade",
+   "planetscale",
+   "mixpanel",
    "discord",
    "lithic",
-   "mixpanel",
+   "humaninterest",
    "fireblocks",
    "gemini",
    "squarepointcapital",
-   "humaninterest",
-   "point72",
-   "flowtraders",
-   "sendbird",
-   "cockroachlabs",
    "breezecash",
-   "cortex"
+   "point72",
+   "sendbird",
+   "flowtraders"
   ],
   "watch_lever": [
    "spotify",
    "ninjavan",
    "tryjeeves",
-   "netomi",
    "palantir",
+   "netomi",
    "crypto",
    "blue",
    "captivateiq",
