@@ -10,6 +10,9 @@ on:
       post_json:
         description: "If set, POST this JSON body to each URL instead of GET (e.g. Workday job search)"
         default: ""
+      jq:
+        description: "If set, print this jq filter of each JSON response instead of its start (e.g. '{total, n: (.results|length)}')"
+        default: ""
 
 permissions:
   contents: read
@@ -23,6 +26,7 @@ jobs:
         env:
           URLS: ${{ inputs.urls }}
           POST_JSON: ${{ inputs.post_json }}
+          JQ: ${{ inputs.jq }}
           LIMIT: ${{ inputs.post_json && '300' || '2500' }}
         run: |
           for url in $URLS; do
@@ -31,5 +35,5 @@ jobs:
             [ -n "$POST_JSON" ] && extra=(-X POST -H "Content-Type: application/json" --data "$POST_JSON")
             curl -sS -m 30 -A "skillmap/0.1 (+https://github.com/HatefulRock/skillmap; job-market research)" \
               -H "Accept: application/json" "${extra[@]}" -o body.txt -w "HTTP %{http_code} %{content_type}\n" "$url" || true
-            head -c ${LIMIT:-2500} body.txt; echo
+            if [ -n "$JQ" ]; then jq -c "$JQ" body.txt 2>&1 | head -c 4000 || true; else head -c ${LIMIT:-2500} body.txt; fi; echo
           done
