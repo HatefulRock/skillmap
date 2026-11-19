@@ -1,0 +1,126 @@
+import gzip
+import json
+from datetime import date
+
+import httpx
+
+from skillmap import history
+from skillmap.archive import LocalArchive
+from skillmap.extract.skills import Taxonomy
+from skillmap.http import PoliteClient
+
+TAX = Taxonomy.load()
+TODAY = date(2026, 11, 19)
+CDX = "https://index.commoncrawl.org/CC-MAIN-2024-33-index"
+
+
+def warc(html: str, status: str = "200 OK") -> bytes:
+    body = html.encode()
+    http = f"HTTP/1.1 {status}\r\nContent-Type: text/html; charset=utf-8\r\n\r\n".encode() + body
+    return gzip.compress(b"WARC/1.0\r\nWARC-Type: response\r\n\r\n" + http)
+
+
+def page(title, company, body):
+    return (f"<html><head><title>Job Application for {title} at {company}</title><script>var x='Kubernetes'</script>"
+            f"</head><body><div id=content><p>{body}</p></div></body></html>")
+
+
+JOBS = {  # (token, id) -> html
+    ("acme", "1"): page("Machine Learning Engineer", "Acme", "We use Python, PyTorch and Kubernetes."),
+    ("acme", "2"): page("Backend Engineer", "Acme", "Go and PostgreSQL."),
+    ("acme", "3"): page("Account Executive", "Acme", "Sell Salesforce."),
+    ("beta", "9"): page("Data Engineer", "Beta", "Spark, Airflow and SQL."),
+}
+
+
+def handler(request: httpx.Request) -> httpx.Response:
+    url = str(request.url)
+    if url.startswith(history.COLLINFO):
+        return httpx.Response(200, json=[
+            {"id": "CC-MAIN-2026-40", "cdx-api": "https://index.commoncrawl.org/CC-MAIN-2026-40-index"},  # running half
+            {"id": "CC-MAIN-2024-33", "cdx-api": CDX},
+            {"id": "CC-MAIN-2024-30", "cdx-api": "https://index.commoncrawl.org/CC-MAIN-2024-30-index"},  # older, same half
+            {"id": "CC-MAIN-2012-10", "cdx-api": "x"},
+        ])
+    if url.startswith(CDX):
+        host = request.url.params["url"].split("/")[0]
+        if request.url.params.get("showNumPages"):
+            return httpx.Response(200, json={"pages": 1 if host == "boards.greenhouse.io" else 0})
+        lines = [json.dumps({"url": f"https://boards.greenhouse.io/{t}/jobs/{i}", "timestamp": "20240810120000",
+                             "filename": f"crawl/{t}-{i}.warc.gz", "offset": "0", "length": str(len(warc(h)))})
+                 for (t, i), h in JOBS.items()]
+        lines.append(json.dumps({"url": "https://boards.greenhouse.io/acme", "timestamp": "20240810120000"}))
+        return httpx.Response(200, text="\n".join(lines))
+    if url.startswith(history.DATA):
+        name = url.removeprefix(history.DATA + "crawl/").removesuffix(".warc.gz")
+        token, job = name.split("-")
+        assert request.headers["Range"].startswith("bytes=0-")
+        return httpx.Response(206, content=warc(JOBS[(token, job)]))
+    return httpx.Response(404)
+
+
+def client():
+    c = PoliteClient(min_interval=0, transport=httpx.MockTransport(handler), retries=0)
+    c.sleep = lambda s: None
+    return c
+
+
+def test_pick_crawls_last_of_each_half_year_skipping_the_running_one():
+    crawls = history.pick_crawls(client().get_json(history.COLLINFO), TODAY)
+    assert [(c.id, c.period) for c in crawls] == [("CC-MAIN-2024-33", "2024-07")]
+
+
+def test_job_key_only_job_pages():
+    assert history.job_key("https://boards.greenhouse.io/acme/jobs/123") == ("boards.greenhouse.io", "acme", "123")
+    assert history.job_key("https://jobs.lever.co/acme/0f5a3b2c-1111-2222-3333-444455556666") is not None
+    assert history.job_key("https://jobs.lever.co/acme/0f5a3b2c-1111-2222-3333-444455556666/apply") is None
+    assert history.job_key("https://boards.greenhouse.io/acme") is None
+    assert history.job_key("https://boards.greenhouse.io/embed/jobs/1") is None
+
+
+def test_page_title_and_text_drop_scripts():
+    html = JOBS[("acme", "1")]
+    assert history.page_title(html, "boards.greenhouse.io") == "Machine Learning Engineer"
+    assert "Kubernetes'" not in history.page_text(html) and "PyTorch" in history.page_text(html)
+    lever = "<title>Acme - Senior Data Scientist</title>"
+    assert history.page_title(lever, "jobs.lever.co") == "Senior Data Scientist"
+
+
+def test_parse_warc_skips_non_200():
+    assert history.parse_warc(warc("<p>x</p>", "404 Not Found")) is None
+
+
+def test_run_backfills_tech_ads_archives_text_and_resumes(tmp_path):
+    archive = LocalArchive(tmp_path / "archive")
+    result = history.run(client(), TAX, tmp_path, archive, TODAY, budget_minutes=10)
+    assert result["crawls_added"] == 1 and result["crawls_left"] == 0
+    rows = history.load_rows(tmp_path / "history-ads.jsonl.gz")
+    by_title = {r["title"]: r for r in rows}
+    assert set(by_title) == {"Machine Learning Engineer", "Backend Engineer", "Data Engineer"}  # no sales role
+    ml = by_title["Machine Learning Engineer"]
+    assert "Python" in ml["skills"] and "Kubernetes" in ml["skills"] and ml["period"] == "2024-07"
+    assert ml["captured"] == "2024-08-10" and ml["company"] == "acme"
+    state = json.loads((tmp_path / "history-state.json").read_text())
+    assert state["crawls"]["CC-MAIN-2024-33"]["ads"] == 3
+    # A second run has nothing left to fetch.
+    assert history.run(client(), TAX, tmp_path, archive, TODAY, budget_minutes=10)["crawls_added"] == 0
+    # A taxonomy change re-extracts from the archived text without fetching.
+    newer = Taxonomy.load()
+    newer.version = TAX.version + 1
+    offline = PoliteClient(min_interval=0, transport=httpx.MockTransport(
+        lambda r: handler(r) if str(r.url).startswith(history.COLLINFO) else httpx.Response(500)), retries=0)
+    assert history.run(offline, newer, tmp_path, archive, TODAY, budget_minutes=10)["reextracted"] == 3
+
+
+def test_out_of_time_saves_nothing_partial(tmp_path):
+    ticks = iter([0.0] + [10_000.0] * 100)
+    result = history.run(client(), TAX, tmp_path, None, TODAY, budget_minutes=1, clock=lambda: next(ticks))
+    assert result["crawls_added"] == 0 and not (tmp_path / "history-ads.jsonl.gz").exists()
+
+
+def test_series_withholds_thin_half_years():
+    rows = [{"period": "2019-01", "company": f"c{i % 30}", "skills": ["Python"] * (i % 2)} for i in range(120)]
+    rows += [{"period": "2019-07", "company": "c", "skills": ["Python"]}] * 5
+    s = history.series(rows, ["Python", "Go"])
+    assert s["months"] == ["2019-01", "2019-07"] and s["n"] == [120, 5] and s["companies"] == [30, 1]
+    assert s["shares"]["Python"] == [0.5, None] and s["shares"]["Go"] == [0.0, None]

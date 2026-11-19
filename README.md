@@ -102,6 +102,7 @@ Only sources that publish postings for programmatic reading are used:
 
 Google, Apple and Meta are left out: Google's careers results exist only inside page HTML, Apple's search needs a session token, and Meta's robots.txt forbids automated collection.
 | [Adzuna](https://developer.adzuna.com/) | Broad market in Singapore, the UK and the US | Free API key; "Job data: The Adzuna API". Descriptions are snippets, so its skill counts are a lower bound |
+| [Common Crawl](https://commoncrawl.org) | Job ads from past years: archived Greenhouse and Lever job pages, up to 400 tech ads per half-year since 2015 (`skillmap history`, the weekly `history` workflow) | Public web archive; its index and byte-range reads of single pages, one request every 0.5–2 s |
 | MyCareersFuture | Singapore's national job portal, including advertised salary ranges | The search API its own site uses, read slowly (one request every 3 s), newest first, stopping at postings already collected |
 | Hacker News "Who is hiring?" | Monthly threads back to 2011: the long trend lines | Official [HN Algolia API](https://hn.algolia.com/api) |
 
