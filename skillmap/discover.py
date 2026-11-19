@@ -53,6 +53,7 @@ class Candidate:
     origin: str  # yc | curated
     website: str | None = None
     tokens: list[str] = field(default_factory=list)
+    platform: str | None = None  # known to be on this platform: probe only there, only `tokens`
 
 
 @dataclass
@@ -198,7 +199,11 @@ def scan(ats: str, candidates: list[Candidate], client: PoliteClient, deadline: 
         if deadline is not None and clock() > deadline:
             log.warning("%s: out of time after %d/%d candidates, %d boards", ats, i, len(candidates), len(found))
             return found, False
-        for token in slug_variants(candidate.name, candidate.website, candidate.tokens):
+        if candidate.platform and candidate.platform != ats:
+            continue
+        tokens = candidate.tokens if candidate.platform else slug_variants(candidate.name, candidate.website,
+                                                                           candidate.tokens)
+        for token in tokens:
             try:
                 hit = probe(client, token)
             except (httpx.HTTPError, RuntimeError) as exc:
@@ -210,6 +215,12 @@ def scan(ats: str, candidates: list[Candidate], client: PoliteClient, deadline: 
                     return found, False
                 continue
             limited = 0
+            if candidate.platform:
+                # Seen in a web crawl: the board is real, the name is only its token, so trust the
+                # platform's own name and skip boards too small to be worth a request every week.
+                if hit and hit[0] >= CRAWL_MIN_JOBS:
+                    found.append(Board(hit[1] or candidate.name, ats, token, candidate.sector, hit[0], candidate.origin))
+                break
             if hit and hit[0] > 0 and same_company(hit[1], candidate.name):
                 found.append(Board(candidate.name, ats, token, candidate.sector, hit[0], candidate.origin))
                 break
@@ -266,7 +277,67 @@ def load_previous(path: Path) -> list[dict]:
         return []
 
 
-def load_candidates(client: PoliteClient, include_yc: bool = True) -> list[Candidate]:
+# Common Crawl's URL index lists every job-board page the crawl saw, which names boards no list of
+# companies would think of. The first path segment is the board token on each of these hosts.
+CRAWL_INDEX = "https://index.commoncrawl.org/collinfo.json"
+CRAWL_HOSTS = {
+    "greenhouse": ["boards.greenhouse.io", "job-boards.greenhouse.io"],
+    "lever": ["jobs.lever.co"],
+    "ashby": ["jobs.ashbyhq.com"],
+    "workable": ["apply.workable.com"],
+}
+CRAWL_MIN_JOBS = 5
+CRAWL_MAX_PAGES = 20  # index pages per host; each holds a few thousand URLs
+_TOKEN = re.compile(r"^[A-Za-z0-9][A-Za-z0-9_.-]{1,60}$")
+_NOT_TOKENS = {"embed", "api", "v1", "jobs", "j", "careers", "static", "assets", "favicon.ico", "robots.txt",
+               "sitemap.xml", "search", "login", "signin", "privacy", "terms", "en", "job_board"}
+
+
+def crawl_tokens(lines: Iterable[str], host: str) -> set[str]:
+    """Board tokens from Common Crawl index lines (one JSON object with a `url` per line)."""
+    out = set()
+    for line in lines:
+        match = re.search(r'"url":\s*"([^"]+)"', line)
+        if not match:
+            continue
+        url = urlparse(match.group(1))
+        if url.netloc.lower().split(":")[0] != host:
+            continue
+        first = url.path.strip("/").split("/", 1)[0]
+        if _TOKEN.match(first) and first.lower() not in _NOT_TOKENS:
+            out.add(first.lower())
+    return out
+
+
+def crawl_candidates(client: PoliteClient, platforms: Iterable[str], known: set[tuple[str, str]] = frozenset(),
+                     max_pages: int = CRAWL_MAX_PAGES) -> list[Candidate]:
+    """One candidate per board token seen in the latest Common Crawl, on platforms being probed,
+    minus boards already known. Any failure just means fewer candidates."""
+    try:
+        crawl = client.get_json(CRAWL_INDEX)[0]["cdx-api"]
+    except Exception as exc:  # noqa: BLE001 - optional source
+        log.warning("common crawl index unavailable: %s", exc)
+        return []
+    out: list[Candidate] = []
+    for ats in platforms:
+        tokens: set[str] = set()
+        for host in CRAWL_HOSTS.get(ats, []):
+            query = {"url": f"{host}/*", "output": "json", "fl": "url"}
+            try:
+                pages = int(client.get_json(crawl, params={**query, "showNumPages": "true"}).get("pages", 0))
+                for page in range(min(pages, max_pages)):
+                    text = client.get_text(crawl, params={**query, "page": page})
+                    tokens |= crawl_tokens(text.splitlines(), host)
+            except Exception as exc:  # noqa: BLE001 - keep what earlier pages gave
+                log.warning("common crawl %s: %s", host, exc)
+        fresh = sorted(t for t in tokens if (ats, t) not in known)
+        log.info("common crawl: %d %s boards, %d not known yet", len(tokens), ats, len(fresh))
+        out += [Candidate(token, "other", "commoncrawl", None, [token], ats) for token in fresh]
+    return out
+
+
+def load_candidates(client: PoliteClient, include_yc: bool = True, crawl_platforms: Iterable[str] = (),
+                    known: set[tuple[str, str]] = frozenset()) -> list[Candidate]:
     curated = curated_candidates(yaml.safe_load((CONFIG / "candidates.yaml").read_text()))
     yc = yc_candidates(client.get_json(YC_URL)) if include_yc else []
     # Curated names first: they carry a hand-picked sector, and win a name clash.
@@ -276,7 +347,8 @@ def load_candidates(client: PoliteClient, include_yc: bool = True) -> list[Candi
         if key and key not in seen:
             seen.add(key)
             out.append(candidate)
-    return out
+    # Crawl tokens last, so a platform cut short by its time budget has covered the named companies.
+    return out + crawl_candidates(client, crawl_platforms, known) if crawl_platforms else out
 
 
 def write_boards(boards: list[Board], path: Path, today: date, n_candidates: int,

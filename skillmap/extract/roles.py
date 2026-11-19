@@ -23,7 +23,10 @@ RULES: list[tuple[str, re.Pattern[str]]] = [
     ("ai_ml", re.compile(r"\bai\b|\bml\b|machine learning|\bllm|gen ?ai|generative|deep learning|computer vision|\bnlp\b|"
                          r"applied scientist|research (?:engineer|scientist)|mlops|prompt engineer|agentic|agents? engineer|"
                          r"artificial intelligence|data scientist", re.I)),
-    ("quant", re.compile(r"quant|trading|algorithmic|market maker|execution (?:engineer|developer)", re.I)),
+    # "quant" alone also matched quantum computing, and "trading" product managers and ops desks.
+    ("quant", re.compile(r"\bquants?\b|\bquantitative\b|\balgo(?:rithmic)?[- ]?trad|\bhft\b|high[- ]frequency|market[- ]mak|"
+                         r"(?:trading|execution|\balgo\b).*\b(?:engineer|developer|programmer|sre|systems?|software|technolog)|"
+                         r"\b(?:engineer|developer|programmer|software|technolog\w*)\b.*\btrading", re.I)),
     ("data", re.compile(r"data (?:engineer|analyst|platform|architect|infrastructure)|analytics engineer|\betl\b|"
                         r"business intelligence|\bbi (?:engineer|developer)|data scien", re.I)),
     ("infra", re.compile(r"devops|\bsre\b|site reliability|platform engineer|infrastructure|cloud (?:engineer|architect)|"

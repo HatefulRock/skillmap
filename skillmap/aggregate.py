@@ -25,7 +25,7 @@ TOP_TREND = 30
 TOP_SEGMENT = 40
 TARGET_FAMILIES = ["ai_ml", "fde", "backend", "data"]
 SENIORITY_ORDER = ["intern", "junior", "mid", "senior", "staff", "manager", "unspecified"]
-TOP_GROUP_TREND = 12
+TOP_GROUP_TREND = 30
 PAY_MIN = 20  # postings with stated pay before a country gets a figure
 PAY_CELL = 10  # ...and before a role × seniority cell does
 PAY_COUNTRIES = 4
@@ -53,6 +53,7 @@ def dedupe(rows: Iterable[dict]) -> list[dict]:
             merged["first_seen"] = min(r["first_seen"] for r in members)
             merged["last_seen"] = max(r["last_seen"] for r in members)
             merged["skills"] = sorted(set().union(*(r["skills"] for r in members)))
+            merged["soft"] = sorted(set().union(*(r.get("soft") or [] for r in members)))
             kept = [merged]
         out.extend(kept)
     return out
@@ -128,6 +129,41 @@ def trend_series(rows: list[dict], skills: list[str], today: date, step: int = 1
         for skill in skills:
             out["shares"][skill].append(month_shares.get(skill))
     return out
+
+
+SOFT_CATEGORY = "Soft skills"
+
+
+def split_soft(rows: list[dict], categories: dict[str, str]) -> list[dict]:
+    """Move soft skills out of `skills` into their own `soft` list. Every tech-skill chart, the
+    watchlist and learn-next read `skills`, and "communication" in half the ads would crowd them;
+    soft skills get their own block instead. Running it twice changes nothing."""
+    soft = {name for name, category in categories.items() if category == SOFT_CATEGORY}
+    out = []
+    for r in rows:
+        skills = r.get("skills") or []
+        mine = sorted(set(r.get("soft") or []) | {s for s in skills if s in soft})
+        out.append({**r, "skills": [s for s in skills if s not in soft],
+                    "skills_nice": [s for s in r.get("skills_nice") or [] if s not in soft], "soft": mine})
+    return out
+
+
+def soft_block(window: list[dict], pay_rows: list[dict], names: list[str]) -> dict | None:
+    """Soft skills on their own: overall share, by role family and seniority, and pay premium."""
+    from . import insights
+
+    if not names:
+        return None
+    rows = [{**r, "skills": r.get("soft") or []} for r in window]
+    overall = shares(rows, names)
+    ranked = sorted(names, key=lambda n: -overall[n])
+    return {
+        "n": len(rows),
+        "skills": [{"name": n, "share": overall[n]} for n in ranked],
+        "role_family": segment_block(rows, "role_family", ranked, roles.FAMILIES, roles.LABELS),
+        "seniority": segment_block(rows, "seniority", ranked, SENIORITY_ORDER),
+        "premium": insights.pay_premium([{**r, "skills": r.get("soft") or []} for r in pay_rows], ranked),
+    }
 
 
 def segment_block(rows: list[dict], key: str, skills: list[str], order: list[str] | None = None,
@@ -214,6 +250,29 @@ def _spread(values: list[float]) -> dict:
     return {"median": round(p50, -2), "p25": round(p25, -2), "p75": round(p75, -2)}
 
 
+PAY_LEVELS: dict[str, set[str] | None] = {
+    "all": None, "junior": {"intern", "junior"}, "mid": {"mid"}, "senior": {"senior"}, "staff": {"staff"},
+    "manager": {"manager"}, "mid_senior": {"mid", "senior"},
+}
+
+
+def _pay_countries(points: list[tuple[dict, float, float]]) -> list[dict]:
+    """Per country with PAY_MIN+ ads: count, median and middle half in the ads' main currency
+    (with how many ads use it) and in USD, busiest country first."""
+    by_country: dict[str, list[tuple[dict, float, float]]] = defaultdict(list)
+    for point in points:
+        by_country[point[0].get("country") or "Unknown"].append(point)
+    out = []
+    for country, group in sorted(by_country.items(), key=lambda kv: -len(kv[1])):
+        if country == "Unknown" or len(group) < PAY_MIN:
+            continue
+        currency = Counter(r["salary_currency"] for r, _, _ in group).most_common(1)[0][0]
+        local = [mid for r, mid, _ in group if r["salary_currency"] == currency]
+        out.append({"key": country, "n": len(group), "currency": currency, "n_local": len(local),
+                    "local": _spread(local), "usd": _spread([usd for _, _, usd in group])})
+    return out
+
+
 def pay_block(rows: list[dict]) -> dict:
     """Advertised yearly pay wherever it is stated: per country (local currency and USD), and per
     role family × seniority within the best-covered countries (USD, so levels compare)."""
@@ -221,14 +280,20 @@ def pay_block(rows: list[dict]) -> dict:
     by_country: dict[str, list[tuple[dict, float, float]]] = defaultdict(list)
     for point in points:
         by_country[point[0].get("country") or "Unknown"].append(point)
-    countries = []
-    for country, group in sorted(by_country.items(), key=lambda kv: -len(kv[1])):
-        if country == "Unknown" or len(group) < PAY_MIN:
-            continue
-        currency = Counter(r["salary_currency"] for r, _, _ in group).most_common(1)[0][0]
-        local = [mid for r, mid, _ in group if r["salary_currency"] == currency]
-        countries.append({"key": country, "n": len(group), "currency": currency, "local": _spread(local),
-                          "usd": _spread([usd for _, _, usd in group])})
+    countries = _pay_countries(points)
+    # The same table for one role family and/or level, keyed "family|level" ("all" for either),
+    # so countries can be compared like for like: a country of mostly senior ads otherwise looks
+    # better paid than one of mostly junior ads.
+    filtered = {}
+    for family in ["all", *roles.FAMILIES]:
+        for level, members in PAY_LEVELS.items():
+            if family == "all" and level == "all":
+                continue
+            subset = [p for p in points if (family == "all" or p[0]["role_family"] == family)
+                      and (members is None or p[0]["seniority"] in members)]
+            table = _pay_countries(subset)
+            if table:
+                filtered[f"{family}|{level}"] = table
     matrix = {}
     for entry in countries[:PAY_COUNTRIES]:
         cells: dict[str, dict[str, dict]] = {}
@@ -245,6 +310,7 @@ def pay_block(rows: list[dict]) -> dict:
         "n": len(points),
         "n_rows": len(rows),
         "countries": countries,
+        "filtered": filtered,
         "role_seniority_usd": matrix,
     }
 
@@ -298,10 +364,13 @@ def changes_block(market: list[dict], hn: list[dict], today: date) -> dict:
 
     regions = [k for k, _ in Counter(r.get("region") or "Unknown" for r in market).most_common(8)]
     full_text = [r for r in market if r["source"] != "adzuna"]
+    since = min((r["first_seen"] for r in market), default=None)
     return {
-        "movers": trends.movers(market, today),
-        "movers_by_role": trends.grouped_movers(market, today, "role_family", roles.FAMILIES),
-        "movers_by_seniority": trends.grouped_movers(market, today, "seniority", SENIORITY_ORDER[:-1]),
+        "movers": trends.movers(market, today, since=since),
+        # Month on month: the first live comparison, about two months after collection starts.
+        "movers_30d": trends.movers(market, today, days=30, since=since),
+        "movers_by_role": trends.grouped_movers(market, today, "role_family", roles.FAMILIES, since=since),
+        "movers_by_seniority": trends.grouped_movers(market, today, "seniority", SENIORITY_ORDER[:-1], since=since),
         "hn_movers": trends.movers(hn, today, days=365),
         "mix": {
             "role_family": {"market": trends.mix_series(market, "role_family", roles.FAMILIES, today),
@@ -332,6 +401,7 @@ def insights_block(market: list[dict], window: list[dict], pay_rows: list[dict],
     premium = insights.pay_premium(pay_rows, sorted(categories))
     return {
         "pay_premium": premium,
+        "pay_premium_by_role": insights.pay_premium_by_role(pay_rows, sorted(categories)),
         "role_dna": insights.role_dna(window),
         "seniority_ladder": insights.seniority_ladder(window),
         "stacks": insights.stacks(window),
@@ -357,6 +427,9 @@ def observed(rows: list[dict], first_runs: dict[str, date]) -> list[dict]:
 def build(rows: list[dict], today: date, categories: dict[str, str], taxonomy_version: int,
           ratings: dict[str, int] | None = None, runs: list[dict] | None = None,
           first_runs: dict[str, date] | None = None) -> dict:
+    soft_names = sorted(n for n, c in categories.items() if c == SOFT_CATEGORY)
+    rows = split_soft(rows, categories)
+    categories = {n: c for n, c in categories.items() if c != SOFT_CATEGORY}
     all_rows = dedupe(rows)
     tech = [r for r in all_rows if r["role_family"] != "non_tech"]
     first_runs = {s: d for s, d in (first_runs or {}).items() if d <= today}
@@ -422,6 +495,7 @@ def build(rows: list[dict], today: date, categories: dict[str, str], taxonomy_ve
         "velocity": velocity_block(market, today, current_names[:TOP_TREND], tracked_since),
         "insights": insights_block(market, window, active(market, today - timedelta(days=SALARY_DAYS - 1), today), today,
                                    categories, ratings or {}),
+        "soft_skills": soft_block(window, active(market, today - timedelta(days=SALARY_DAYS - 1), today), soft_names),
         "pairs": pairs_block(window, current_names[:20]),
         "me": me_block(window, ratings or {}, categories),
     }

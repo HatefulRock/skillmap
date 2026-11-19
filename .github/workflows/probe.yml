@@ -6,9 +6,12 @@ on:
     inputs:
       urls:
         description: "Space-separated URLs"
-        required: true
+        default: ""
       post_json:
         description: "If set, POST this JSON body to each URL instead of GET (e.g. Workday job search)"
+        default: ""
+      script:
+        description: "If set, run this repo script (scripts/NAME.py, with its arguments) instead of fetching the URLs"
         default: ""
       jq:
         description: "If set, print this jq filter of each JSON response instead of its start (e.g. '{total, n: (.results|length)}')"
@@ -22,7 +25,21 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
+      - uses: actions/checkout@v4
+        if: inputs.script != ''
+      - uses: astral-sh/setup-uv@v6
+        if: inputs.script != ''
+      - name: Script
+        if: inputs.script != ''
+        env:
+          SCRIPT: ${{ inputs.script }}
+        run: |
+          uv sync --locked --no-dev
+          read -r name args <<< "$SCRIPT"
+          case "$name" in *[!a-z0-9_]*) echo "bad script name"; exit 1;; esac
+          uv run python "scripts/$name.py" $args
       - name: Fetch
+        if: inputs.script == ''
         env:
           URLS: ${{ inputs.urls }}
           POST_JSON: ${{ inputs.post_json }}

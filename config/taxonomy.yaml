@@ -8,7 +8,7 @@
 #
 # Bump `version` whenever a pattern (or any other extractor, e.g. salary) changes: stored
 # postings are re-extracted on the next run.
-version: 6  # v2: salary from text. v3: ad length, years, unknown terms, degree, visa, equity. v4: no benefits/monitoring false positives. v5: seniority (bank grades, solutions architects), non-software engineering, pre-sales, more countries. v6: no shouted-heading words as unknown terms
+version: 7  # v2: salary from text. v3: ad length, years, unknown terms, degree, visa, equity. v4: no benefits/monitoring false positives. v5: seniority (bank grades, solutions architects), non-software engineering, pre-sales, more countries. v6: no shouted-heading words as unknown terms. v7: soft skills (own section); quant roles need a quant or trading-tech title (no PMs, quantum, trading ops); risk modelling split from KYC/AML
 
 skills:
   # ---------- Languages ----------
@@ -296,6 +296,44 @@ skills:
     # Bare "PoC", "customer-facing" and "stakeholder management" appear in ordinary engineering ads.
     patterns: ['\bpre-?sales\b', '\bsolutions? architecture\b', '\bproofs? of concepts? (?:for|with) (?:customers|clients|prospects)\b', '\b(?:customer|client) pocs?\b', '\btechnical (?:discovery|demos?)\b', '\b(?:customer|client|prospect)[- ](?:demos?|workshops?)\b', '\bsales cycles?\b', '\bsolution design for (?:customers|clients)\b']
 
+  # ---------- Soft skills ----------
+  # Kept out of every tech-skill chart (aggregate.split_soft): they get their own section. Each
+  # pattern needs the ask itself ("strong communication skills"), never a bare word, because
+  # culture blurbs, benefits and EEO text use the same words.
+  Communication:
+    category: Soft skills
+    patterns: ['\b(?:excellent|strong|great|exceptional|effective|clear|outstanding|good|solid|superb) (?:written,? (?:and|&) (?:verbal|oral) |(?:verbal|oral),? (?:and|&) written |written |verbal |oral |interpersonal (?:and|&) )?communications?(?: and (?:interpersonal|presentation|collaboration) )?(?: skills| abilities)?\b', '\bcommunication skills\b', '\bcommunicate (?:complex|technical|clearly|effectively)\b', '\b(?:explain|translate|articulate) (?:complex|technical|ml|ai)(?: (?:and|or) (?:complex|technical))? (?:concepts|ideas|topics|problems|trade-?offs)\b']
+  Stakeholder & client-facing:
+    category: Soft skills
+    patterns: ['\bstakeholder (?:management|engagement)\b', '\bmanag(?:e|ing) (?:multiple )?stakeholders\b', '\b(?:customer|client)[- ]facing\b(?! (?:products?|features?|applications?|apps?|marketing|content|ai|ml|llm|systems?|services?|platforms?|tools?|websites?|surfaces?|experiences?|ui|interfaces?|software|data|agents?|solutions)\b)', '\bwork(?:ing)? (?:directly|closely|hand in hand) with (?:our )?(?:customers|clients|end users)\b', '\b(?:build|building|develop|maintain) (?:strong |trusted )?relationships with (?:customers|clients|stakeholders|partners)\b', '\btrusted (?:technical )?advisor\b']
+  Ownership & autonomy:
+    category: Soft skills
+    patterns: ['\b(?:take|takes|taking|show|demonstrate[sd]?|high|strong|extreme|full|sense of) ownership\b', '\bself[- ](?:starter|motivated|directed|driven)\b', '\bwork(?:s|ing)? (?:independently|autonomously)\b', '\bbias (?:for|to|towards) action\b', '\bminimal (?:supervision|guidance|direction)\b']
+  Collaboration:
+    category: Soft skills
+    patterns: ['\bteam player\b', '\bcross[- ]functional(?:ly)? (?:teams?|collaboration|partners|stakeholders|peers)\b', '\bcollaborat(?:e|es|ing|ive(?:ly)?) (?:closely |effectively |well )?(?:with|across) (?:cross[- ]functional|product|design|engineering|research|business|other|teams|stakeholders|data)\b', '\bcollaboration skills\b', '\bwork(?:s|ing)? well (?:in|with|as part of) (?:a )?teams?\b']
+  Mentoring & leadership:
+    category: Soft skills
+    # "mentorship programme" is a benefit, so mentoring needs someone to mentor.
+    patterns: ['\bmentor(?:s|ing)?,? (?:and (?:coach|grow|develop|support)(?:ing)? )?(?:junior|other|less[- ]experienced|fellow|new|team ?members|engineers|developers|the team|others|teammates|colleagues)\b', '\bcoach(?:ing)? (?:junior|engineers|developers|team ?members|others)\b', '\btechnical leadership\b', '\bleadership skills\b', '\blead(?:ing)? (?:and (?:mentor|grow)(?:ing)? )?(?:a |the )?(?:small )?team of\b']
+  Comfort with ambiguity:
+    category: Soft skills
+    patterns: ['\b(?:ambiguity|ambiguous (?:problems|situations|environments?|requirements|spaces?))\b', '\b(?:thrive|thrives|thriving|comfortable|succeed|excel|flourish) (?:in|working in) (?:a |an )?(?:fast[- ]paced|dynamic|startup|rapidly[- ]changing|ever[- ]changing|high[- ]growth|unstructured)\b', '\bwear(?:ing)? (?:many|multiple) hats\b', '\bscrappy\b']
+  Presenting & demos:
+    category: Soft skills
+    patterns: ['\bpresent(?:ing|s)? (?:findings |results |technical (?:concepts|content|solutions) |complex (?:ideas|topics) |ideas |work |solutions )?to (?:customers|clients|executives|leadership|stakeholders|senior|c-level|non-technical|technical and non-technical|audiences|the business)\b', '\bpresentation skills\b', '\bpublic speaking\b', '\b(?:conference )?talks? at conferences\b', '\b(?:deliver|run|lead)(?:ing)? (?:technical |product |live )?(?:demos|presentations|workshops)\b']
+  Problem solving:
+    category: Soft skills
+    # Interview-process blurbs ("showcase your problem-solving skills") are not asks.
+    not: ['\binterview', '\bassessment\b', '\bwe (?:depend|rely) on\b']
+    patterns: ['\bproblem[- ]solv(?:ing|er|ers)\b', '\b(?:strong |excellent )?analytical (?:and problem[- ]solving )?(?:skills|thinking|mindset)\b', '\bcritical thinking\b', '\bfirst[- ]principles thinking\b']
+  Writing & English:
+    category: Soft skills
+    patterns: ['\b(?:fluent|fluency|proficien(?:t|cy)|excellent|strong|good|professional|business[- ]level) (?:in |with )?(?:(?:written|spoken|verbal),? (?:and|&) (?:written|spoken|verbal) |written |spoken |business |professional )?english\b', '\benglish (?:fluency|proficiency|language skills)\b', '\bwritten english\b', '\b(?:design docs|technical writing|written communication)\b']
+  Other languages (Mandarin, Japanese…):
+    category: Soft skills
+    patterns: ['\b(?:fluent|fluency|proficien(?:t|cy)|native|bilingual|business[- ]level|conversational|speak(?:s|ing)?|read and write) (?:in |with )?(?:english and |both english and )?(?:mandarin|chinese|cantonese|japanese|korean|bahasa(?: indonesia| melayu)?|malay|vietnamese|thai|tagalog|hindi|german|french|spanish|italian|portuguese|dutch|arabic)\b', '\b(?:mandarin|cantonese|japanese|korean|bahasa|vietnamese|thai|german|french|spanish|portuguese|arabic)(?:[- ]speaking| speakers?| language skills| proficiency| fluency| \(?jlpt)\b', '\bjlpt\b', '\bhsk ?\d\b']
+
   # ---------- Domain ----------
   Financial services / banking domain:
     category: Domain
@@ -313,6 +351,10 @@ skills:
   Trading / quant / markets:
     category: Domain
     patterns: ['\bquant(?:itative)? (?:trading|research|finance|developer|analyst)\b', '\balgorithmic trading\b', '\bhigh[- ]frequency trading\b', '\bmarket[- ]making\b', '\bderivatives\b', '\border ?books?\b', '\btrading (?:systems?|strategies|platforms?)\b']
-  KYC / AML / fraud / risk:
+  KYC / AML / fraud:
     category: Domain
-    patterns: ['\bkyc\b', '\baml\b', '\banti[- ]money laundering\b', '\bfraud (?:detection|prevention)\b', '\bfraud\b', '\bcredit risk\b', '\brisk (?:models?|modell?ing|management)\b', '\bsanctions screening\b', '\btransaction monitoring\b']
+    patterns: ['\bkyc\b', '\baml\b', '\banti[- ]money laundering\b', '\bfraud (?:detection|prevention)\b', '\bfraud\b', '\bsanctions screening\b', '\btransaction monitoring\b']
+  Risk modelling:
+    category: Domain
+    # Split from KYC/AML: quant and lending ads ask for risk models, not compliance checks.
+    patterns: ['\bcredit risk\b', '\bmarket risk\b', '\brisk (?:models?|modell?ing|management|analytics)\b', '\bvar\b(?= (?:models?|calculation))', '\bvalue[- ]at[- ]risk\b']

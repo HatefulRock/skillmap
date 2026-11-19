@@ -9,7 +9,7 @@ from __future__ import annotations
 import math
 from collections import Counter, defaultdict
 from datetime import date
-from statistics import median
+from statistics import median, variance
 
 from .aggregate import MIN_GROUP, SENIORITY_ORDER, _pay_points, active, month_end, month_starts, shares
 from .extract import roles
@@ -25,15 +25,19 @@ def pay_premium(rows: list[dict], skills: list[str]) -> dict:
     Postings are compared only within the same country, role family and seniority, so a skill
     common in senior US roles doesn't look valuable just for being senior and American. Within
     each stratum the gap is the difference in median log pay (with vs without); strata are
-    averaged weighted by the smaller side. Reported as a percentage, with the matched count.
+    averaged weighted by the smaller side. Reported as a percentage, with the matched count, a
+    90% interval (from the spread inside each stratum, so a premium resting on 25 ads shows as
+    the guess it is), the share of paid ads asking for the skill, and the gap in US dollars a
+    year at the matched ads' typical pay.
     """
     points = _pay_points(rows)
     strata: dict[tuple, list[tuple[set[str], float]]] = defaultdict(list)
     for r, _, usd in points:
         strata[(r.get("country"), r["role_family"], r["seniority"])].append((set(r["skills"]), math.log(usd)))
+    counts = Counter(skill for r, _, _ in points for skill in set(r["skills"]))
     out = []
     for skill in skills:
-        total_w, total, n_with = 0.0, 0.0, 0
+        total_w, total, n_with, var, base = 0.0, 0.0, 0, 0.0, []
         for members in strata.values():
             yes = [v for s, v in members if skill in s]
             no = [v for s, v in members if skill not in s]
@@ -43,10 +47,32 @@ def pay_premium(rows: list[dict], skills: list[str]) -> dict:
             total += weight * (median(yes) - median(no))
             total_w += weight
             n_with += len(yes)
+            # Variance of a median is about pi/2 times that of a mean.
+            var += weight ** 2 * (math.pi / 2) * (variance(yes) / len(yes) + variance(no) / len(no))
+            base.extend(no)
         if n_with >= PREMIUM_MIN and total_w:
-            out.append({"name": skill, "premium": round(math.exp(total / total_w) - 1, 3), "n": n_with})
+            gap, se = total / total_w, math.sqrt(var) / total_w
+            premium = math.exp(gap) - 1
+            out.append({"name": skill, "premium": round(premium, 3), "n": n_with,
+                        "low": round(math.exp(gap - 1.645 * se) - 1, 3), "high": round(math.exp(gap + 1.645 * se) - 1, 3),
+                        "share": round(counts[skill] / len(points), 4),
+                        "usd": round(premium * math.exp(median(base)), -3)})
     out.sort(key=lambda e: -e["premium"])
     return {"n_with_pay": len(points), "skills": out}
+
+
+PREMIUM_FAMILIES = ["ai_ml", "fde", "backend", "data", "infra", "frontend", "quant"]
+
+
+def pay_premium_by_role(rows: list[dict], skills: list[str]) -> dict:
+    """The same premium inside each role family that has enough paid ads: within AI/ML, what
+    does PyTorch add over other AI/ML ads? Families too thin for any skill are left out."""
+    out = {}
+    for family in PREMIUM_FAMILIES:
+        block = pay_premium([r for r in rows if r["role_family"] == family], skills)
+        if block["skills"]:
+            out[family] = {"label": roles.LABELS[family], **block}
+    return out
 
 
 def role_dna(rows: list[dict], top: int = 8, min_share: float = 0.1) -> dict:
@@ -65,7 +91,11 @@ def role_dna(rows: list[dict], top: int = 8, min_share: float = 0.1) -> dict:
              for s, v in a.items() if v >= min_share),
             key=lambda e: -(e["lift"] or 99),
         )
-        out[family] = {"n": len(mine), "label": roles.LABELS[family], "skills": ranked[:top]}
+        common = sorted(({"name": s, "share": round(v, 3), "elsewhere": round(b.get(s, 0.0), 3)}
+                         for s, v in a.items()), key=lambda e: (-e["share"], e["name"]))
+        # "skills" is what sets the role apart (lift); "common" is its core stack, which lift hides
+        # when every tech role shares it (Python, SQL).
+        out[family] = {"n": len(mine), "label": roles.LABELS[family], "skills": ranked[:top], "common": common[:top]}
     return out
 
 

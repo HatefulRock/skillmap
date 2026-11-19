@@ -42,6 +42,22 @@ def test_pay_premium_compares_within_country_role_and_level():
     assert rust["premium"] == pytest.approx(0.2, abs=0.001) and rust["n"] == 24
     assert all(e["name"] != "Python" for e in block["skills"])  # never absent in a stratum
     assert block["n_with_pay"] == len(rows)
+    # No spread inside the strata: the interval closes on the estimate. Dollars at the
+    # comparison side's typical pay.
+    assert rust["low"] == rust["high"] == rust["premium"]
+    assert rust["share"] == pytest.approx(34 / 58, abs=0.001)
+    assert rust["usd"] == pytest.approx(0.2 * 154_919, abs=1_000)
+
+
+def test_pay_premium_interval_widens_with_noise_and_by_role_splits_families():
+    rows = []
+    for i in range(30):
+        rows.append(paid(i, ["Python", "Rust"], 120_000 * (1.2 + (0.3 if i % 2 else -0.3))))
+        rows.append(paid(100 + i, ["Python"], 100_000 * (1 + (0.2 if i % 2 else -0.2))))
+    rust = insights.pay_premium(rows, ["Rust"])["skills"][0]
+    assert rust["low"] < rust["premium"] < rust["high"]
+    by_role = insights.pay_premium_by_role(rows, ["Rust"])
+    assert list(by_role) == ["ai_ml"] and by_role["ai_ml"]["label"] == "AI / ML engineering"
 
 
 def test_pay_premium_needs_enough_matched_postings():
@@ -56,6 +72,8 @@ def test_role_dna_ranks_by_lift_against_other_roles():
     assert dna["ai_ml"]["skills"][0] == {"name": "PyTorch", "share": 1.0, "elsewhere": 0.0, "lift": None}
     python = next(s for s in dna["backend"]["skills"] if s["name"] == "Python")
     assert python["lift"] == 1.0
+    # The core stack shows too, even when every role shares it.
+    assert {"name": "Python", "share": 1.0, "elsewhere": 1.0} in dna["backend"]["common"][:2]
 
 
 def test_seniority_ladder_and_profile():
@@ -187,3 +205,36 @@ def test_watchlist_ranks_boards_by_matching_postings():
     # Tokens Omnideck would reject as slugs stay off the paste-ready lists.
     assert out["omnideck"] == {"watch_ashby": ["beta"], "watch_greenhouse": ["alphaai"], "watch_lever": []}
     assert all(re.fullmatch(r"[a-z0-9-]{1,64}", t) for ts in out["omnideck"].values() for t in ts)
+
+
+def test_pay_can_be_filtered_by_level_so_countries_compare_like_for_like():
+    from skillmap import aggregate
+
+    def ad(i, country, level, pay):
+        return {"posting_id": str(i), "country": country, "seniority": level, "role_family": "backend",
+                "salary_min": pay, "salary_max": pay, "salary_currency": "USD", "salary_period": "year"}
+
+    rows = [ad(i, "US", "senior", 200_000) for i in range(25)] + [ad(100 + i, "US", "junior", 100_000) for i in range(25)]
+    rows += [ad(200 + i, "CA", "junior", 110_000) for i in range(25)]
+    pay = aggregate.pay_block(rows)
+    assert [c["key"] for c in pay["countries"]] == ["US", "CA"]
+    juniors = {c["key"]: c["usd"]["median"] for c in pay["filtered"]["all|junior"]}
+    assert juniors == {"US": 100_000, "CA": 110_000}  # overall the US looks far ahead; at one level it isn't
+    assert [c["key"] for c in pay["filtered"]["backend|senior"]] == ["US"]
+    assert pay["countries"][0]["n_local"] == 50
+
+
+def test_soft_skills_leave_the_tech_charts_and_get_their_own_block():
+    from skillmap import aggregate
+
+    categories = {"Python": "Languages", "Communication": "Soft skills", "Collaboration": "Soft skills"}
+    rows = [row(i, ["Python", "Communication"], role_family="ai_ml") for i in range(40)]
+    rows += [row(100 + i, ["Python", "Collaboration"], role_family="backend") for i in range(40)]
+    split = aggregate.split_soft(rows, categories)
+    assert split[0]["skills"] == ["Python"] and split[0]["soft"] == ["Communication"]
+    assert aggregate.split_soft(split, categories) == split
+    block = aggregate.soft_block(split, [], ["Collaboration", "Communication"])
+    assert block["skills"] == [{"name": "Collaboration", "share": 0.5}, {"name": "Communication", "share": 0.5}]
+    ai = next(s for s in block["role_family"]["segments"] if s["key"] == "ai_ml")
+    assert ai["shares"] == {"Collaboration": 0.0, "Communication": 1.0}
+    assert aggregate.soft_block(split, [], []) is None

@@ -65,6 +65,11 @@ class PoliteClient:
         response.raise_for_status()
         return response.json()
 
+    def get_text(self, url: str, **kwargs: Any) -> str:
+        response = self.request("GET", url, **kwargs)
+        response.raise_for_status()
+        return response.text
+
     def post_json(self, url: str, payload: Any, **kwargs: Any) -> Any:
         response = self.request("POST", url, json=payload, **kwargs)
         response.raise_for_status()

@@ -15,6 +15,7 @@ from statistics import mean, median
 from .aggregate import MIN_GROUP, active, month_end, month_starts, shares
 
 MOVER_DAYS = 90
+PAY_MANDATORY = {"mcf"}
 TOP_MOVERS = 12
 TOP_COMPANIES = 40
 TOP_TERMS = 25
@@ -27,12 +28,18 @@ def _windows(rows: list[dict], today: date, days: int) -> tuple[list[dict], list
     return now, before
 
 
-def movers(rows: list[dict], today: date, days: int = MOVER_DAYS, min_share: float = 0.02) -> dict | None:
+def movers(rows: list[dict], today: date, days: int = MOVER_DAYS, min_share: float = 0.02,
+           since: date | None = None) -> dict | None:
     """Skills whose share rose or fell most between the last `days` and the `days` before.
+
+    With `since` (when collection started), nothing is returned until both windows lie wholly
+    after it: a half-collected earlier window would compare a few days against a full month.
 
     Ranked by percentage-point change; `ratio` says how many times more (or less) common the
     skill is now. Skills under `min_share` in both windows are noise and skipped.
     """
+    if since and today - timedelta(days=2 * days - 1) < since:
+        return None
     now, before = _windows(rows, today, days)
     if len(now) < MIN_GROUP or len(before) < MIN_GROUP:
         return None
@@ -54,10 +61,11 @@ def movers(rows: list[dict], today: date, days: int = MOVER_DAYS, min_share: flo
     }
 
 
-def grouped_movers(rows: list[dict], today: date, key: str, keys: list[str], days: int = MOVER_DAYS) -> dict:
+def grouped_movers(rows: list[dict], today: date, key: str, keys: list[str], days: int = MOVER_DAYS,
+                   since: date | None = None) -> dict:
     out = {}
     for value in keys:
-        block = movers([r for r in rows if r.get(key) == value], today, days)
+        block = movers([r for r in rows if r.get(key) == value], today, days, since=since)
         if block:
             out[value] = block
     return out
@@ -90,8 +98,8 @@ def per_post_series(rows: list[dict], today: date, full_text: bool = True) -> di
     """The shape of the average ad, month by month: how many skills it asks for, how long it is,
     how many years it wants, and what it states or offers. `full_text` is False for sources whose
     text is a snippet, where lengths and counts would mean little."""
-    metrics = ["skills_mean", "skills_median", "required_mean", "nice_mean", "words_median", "years_median",
-               "remote", "pay_stated", "degree_any", "degree_phd", "visa_yes", "visa_no", "equity"]
+    metrics = ["skills_mean", "skills_median", "required_mean", "nice_mean", "nice_any", "words_median",
+               "years_median", "remote", "pay_stated", "degree_any", "degree_phd", "visa_yes", "visa_no", "equity"]
     out = {"months": [], "n": [], **{m: [] for m in metrics}}
     for month, group in _periods(rows, today):
         out["months"].append(month)
@@ -108,10 +116,14 @@ def per_post_series(rows: list[dict], today: date, full_text: bool = True) -> di
             "skills_median": median(counts),
             "required_mean": round(mean(c - n for c, n in zip(counts, nice, strict=True)), 2),
             "nice_mean": round(mean(nice), 2),
+            # Most ads don't split required from preferred; nice_mean only counts the ones that do.
+            "nice_any": _rate(group, lambda r: r.get("skills_nice")),
             "words_median": median(r.get("n_words") or 0 for r in group) if full_text else None,
             "years_median": median(years) if len(years) >= MIN_GROUP else None,
             "remote": _rate(group, lambda r: r.get("remote")),
-            "pay_stated": _rate(group, lambda r: r.get("salary_min")),
+            # MyCareersFuture makes a range mandatory, so its ads would only measure the rule.
+            "pay_stated": _rate([r for r in group if r.get("source") not in PAY_MANDATORY] or group,
+                                lambda r: r.get("salary_min")),
             "degree_any": _rate(group, lambda r: r.get("degree")),
             "degree_phd": _rate(group, lambda r: r.get("degree") == "phd"),
             "visa_yes": _rate(group, lambda r: r.get("visa_sponsorship") is True),
