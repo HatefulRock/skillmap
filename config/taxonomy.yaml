@@ -9,7 +9,7 @@
 #
 # Bump `version` whenever a pattern (or any other extractor, e.g. salary) changes: stored
 # postings are re-extracted on the next run.
-version: 10  # v10: one skill per specific technology (React, Next.js, Vue apart; each vector DB, eval tool, model provider, serving engine), each with a `group` for roll-ups. v9: security, identity, networking, DevOps/SRE, mobile, BI, Windows and virtualisation skills; bare CI, GitOps and GitLab. v2: salary from text. v3: ad length, years, unknown terms, degree, visa, equity. v4: no benefits/monitoring false positives. v5: seniority (bank grades, solutions architects), non-software engineering, pre-sales, more countries. v6: no shouted-heading words as unknown terms. v8: trading desk, ops and product roles as their own group. v7: soft skills (own section); quant roles need a quant or trading-tech title (no PMs, quantum, trading ops); risk modelling split from KYC/AML
+version: 11  # v11: fewer false matches (Gemini the exchange, recruiting-fraud notices, DPO offices, 'embedding' as a verb, payment rails, non-AI guardrails and benchmarks). v10: one skill per specific technology (React, Next.js, Vue apart; each vector DB, eval tool, model provider, serving engine), each with a `group` for roll-ups. v9: security, identity, networking, DevOps/SRE, mobile, BI, Windows and virtualisation skills; bare CI, GitOps and GitLab. v2: salary from text. v3: ad length, years, unknown terms, degree, visa, equity. v4: no benefits/monitoring false positives. v5: seniority (bank grades, solutions architects), non-software engineering, pre-sales, more countries. v6: no shouted-heading words as unknown terms. v8: trading desk, ops and product roles as their own group. v7: soft skills (own section); quant roles need a quant or trading-tech title (no PMs, quantum, trading ops); risk modelling split from KYC/AML
 
 skills:
   Python:
@@ -92,6 +92,8 @@ skills:
     patterns:
     - \bruby on rails\b
     - \brails\b(?= (?:apps?|applications?|developers?|engineers?|apis?|backend|monolith)|,|/)
+    not:
+    - \b(?:payments?|bank(?:ing)?|money|fiat|crypto|stablecoin|card|settlement|transfer) rails\b
   PHP:
     category: Languages
     group: PHP
@@ -307,7 +309,15 @@ skills:
     category: Frameworks
     group: Model providers
     patterns:
-    - \bgemini\b(?! exchange)
+    - \bgoogle gemini\b
+    - \bgemini (?:api|models?|pro|flash|ultra|nano|cli|code assist|enterprise|\d)
+    - \b(?:claude|gpt|openai|anthropic|chatgpt|llms?|copilot|vertex ai|mistral|llama)\b.{0,80}\bgemini\b
+    - \bgemini\b.{0,80}\b(?:claude|gpt|openai|anthropic|chatgpt|llms?|copilot|vertex ai|mistral|llama)\b
+    not:
+    - \bwinklevoss\b
+    - \bgemini (?:is|was|has|will)\b
+    - \b(?:at|join) gemini\b
+    - \bgemini['’]s\b
   Mistral:
     category: Frameworks
     group: Model providers
@@ -399,7 +409,8 @@ skills:
     category: Retrieval & data
     group: Vector search
     patterns:
-    - \bembeddings?\b
+    - \bembeddings\b
+    - \b(?:text |vector |sentence )?embedding (?:models?|vectors?|spaces?|search|generation|pipelines?|inference|apis?|and rerank\w*)\b
     - \bsemantic search\b
     - \bdense retrieval\b
   Reranking / hybrid search:
@@ -650,9 +661,9 @@ skills:
     patterns:
     - \bevals\b
     - \b(?:llm|model|ai|offline|online) evaluations?\b
-    - \bevaluation (?:frameworks?|harness(?:es)?|pipelines?|sets?|datasets?)\b
+    - \b(?:ai|llms?|genai|models?|agents?|agentic|prompts?|ml|machine learning)\b.{0,60}\b(?:evaluation (?:frameworks?|harness(?:es)?|pipelines?|sets?|datasets?)|benchmarks?)\b
+    - \b(?:evaluation (?:frameworks?|harness(?:es)?|pipelines?|sets?|datasets?)|benchmarks?)\b.{0,60}\b(?:ai|llms?|genai|models?|agents?|agentic|prompts?|ml|machine learning)\b
     - \bllm[- ]as[- ]a?[- ]?judge\b
-    - \bbenchmarks?\b
   Ragas:
     category: Eval, safety & observability
     group: Evals
@@ -685,7 +696,8 @@ skills:
     category: Eval, safety & observability
     group: AI safety
     patterns:
-    - \bguardrails?\b
+    - \b(?:ai|llms?|genai|models?|agents?|agentic|prompts?|ml|machine learning)\b.{0,60}\bguardrails?\b
+    - \bguardrails?\b.{0,60}\b(?:ai|llms?|genai|models?|agents?|agentic|prompts?|ml|machine learning)\b
     - \bai safety\b
     - \bresponsible ai\b
     - \balignment\b(?=.{0,40}(?:model|ai|llm))
@@ -928,6 +940,9 @@ skills:
     - \bgrpo\b
     - \bppo\b
     - \bdirect preference optimi[sz]ation\b
+    not:
+    - \bdpo office\b
+    - \bdata protection officers?\b
   Reinforcement learning:
     category: ML
     group: Post-training
@@ -1252,6 +1267,7 @@ skills:
     patterns:
     - \bexpress\.?js\b
     - \bexpress\b(?= (?:framework|server|apis?|backend)|,|/|\))
+    - \bnode(?:\.?js)?\s*(?:/|,|\+|and|&)\s*express\b
   NestJS:
     category: Backend
     group: Node web
@@ -1306,8 +1322,8 @@ skills:
     patterns:
     - \basyncio\b
     - \basync python\b
-    - \basynchronous programming\b
-    - \basync/await\b
+    - \bpython\b.{0,60}\basync(?:hronous)?\b
+    - \basync(?:hronous)?\b.{0,60}\bpython\b
   Celery:
     category: Backend
     group: Background jobs
@@ -1375,6 +1391,7 @@ skills:
     group: Backend platforms
     patterns:
     - \bstripe\b(?= (?:api|integration|payments?|billing)|,|/|\))
+    - \bintegrat\w* with stripe\b
   React:
     category: Frontend
     group: Web frameworks
@@ -2079,6 +2096,10 @@ skills:
     - \bfraud\b
     - \bsanctions screening\b
     - \btransaction monitoring\b
+    not:
+    - \b(?:recruit(?:ing|ment)|hiring|job|interview) (?:fraud|scams?)\b
+    - \bfraud(?:ulent)? (?:alert|notice|warning)\b
+    - \bfraudulent (?:job|offers?|emails?|recruit\w*|messages?)\b
   Risk modelling:
     category: Domain
     group: Domain
