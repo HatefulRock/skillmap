@@ -14,7 +14,7 @@ from datetime import date
 from decimal import Decimal
 from pathlib import Path
 
-from . import aggregate, audit, digest, discover, exports, health, heatmap, watchlist
+from . import aggregate, audit, digest, discover, exports, health, heatmap, vocab, watchlist
 from .archive import from_env as open_archive
 from .extract.skills import Taxonomy
 from .http import PoliteClient
@@ -118,6 +118,9 @@ def main(argv: list[str] | None = None) -> None:
     aud = sub.add_parser("audit", help="score the skill extraction against Claude on a sample; needs ANTHROPIC_API_KEY")
     aud.add_argument("--sample", type=int, default=audit.SAMPLE)
     aud.add_argument("--out", type=Path, default=Path("data") / "audit.json")
+    voc = sub.add_parser("vocab", help="how complete the skill list is: tech terms in stored ads no skill matches")
+    voc.add_argument("--sample", type=int, default=vocab.SAMPLE)
+    voc.add_argument("--out", type=Path, help="also write the full report as JSON")
     purge = sub.add_parser("purge", help="delete every stored posting of one source (maintenance)")
     purge.add_argument("--source", required=True, help="the source column value, e.g. workday")
     purge.add_argument("--confirm", required=True, help="the same source name again, as a safety check")
@@ -148,6 +151,13 @@ def main(argv: list[str] | None = None) -> None:
         report = audit.run(store, open_archive(), taxonomy, anthropic.Anthropic(), today, args.sample)
         audit.write(report, args.out)
         print(audit.summary(report))
+        return
+
+    if args.command == "vocab":
+        report = vocab.run(store, open_archive(), taxonomy, today, args.sample)
+        if args.out:
+            args.out.write_text(json.dumps(report, indent=1, ensure_ascii=False))
+        print(vocab.summary(report))
         return
 
     runs = None

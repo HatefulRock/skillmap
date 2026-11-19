@@ -1,0 +1,42 @@
+name: vocab
+# On demand: how complete the skill list is. Reads a sample of stored ads (read-only) and lists the
+# tech terms they ask for that no skill in config/taxonomy.yaml matches. Writes nothing back.
+on:
+  workflow_dispatch:
+    inputs:
+      sample:
+        description: "Ads to read"
+        default: "4000"
+
+concurrency:
+  group: vocab
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  vocab:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    env:
+      DATABASE_URL: ${{ secrets.DATABASE_URL }}
+      SUPABASE_SECRET_KEY: ${{ secrets.SUPABASE_SECRET_KEY }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+      - run: uv sync --locked --no-dev
+
+      - name: Require the database
+        run: |
+          if [ -z "$DATABASE_URL" ]; then echo "::error::Set the DATABASE_URL repository secret."; exit 1; fi
+
+      - name: Measure coverage
+        run: |
+          uv run skillmap vocab --sample "${{ inputs.sample || '4000' }}" --out vocab.json | tee vocab.txt
+          { echo '```'; cat vocab.txt; echo '```'; } >> "$GITHUB_STEP_SUMMARY"
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: vocab
+          path: vocab.json
