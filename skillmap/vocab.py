@@ -107,9 +107,9 @@ def covered(text: str, start: int, end: int, taxonomy: Taxonomy) -> bool:
     sentence = text[base:min(ends) if ends else len(text)]
     a, b = start - base, end - base
     for skill in taxonomy.skills:
-        if any(m.start() < b and m.end() > a for p in skill.patterns for m in p.finditer(sentence)):
-            if not any(n.search(sentence) for n in skill.negatives):
-                return True
+        hit = any(m.start() < b and m.end() > a for p in skill.patterns for m in p.finditer(sentence))
+        if hit and not any(n.search(sentence) for n in skill.negatives):
+            return True
     return False
 
 
