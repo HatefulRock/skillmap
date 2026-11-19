@@ -123,6 +123,7 @@ Repository secrets used by `.github/workflows/refresh.yml`:
 | `DATABASE_URL` | yes | Supabase → Connect → Session pooler URI |
 | `SUPABASE_SECRET_KEY` | recommended (without it, posting text stays in the database and fills it within months) | Supabase → Project Settings → API Keys → secret key |
 | `ADZUNA_APP_ID`, `ADZUNA_APP_KEY` | no (Adzuna is skipped without them) | developer.adzuna.com |
+| `RESEND_API_KEY`, `DIGEST_TO` | no (the weekly email is built but not sent without them) | resend.com → API Keys; `DIGEST_TO` is the address to send to. With Resend's shared sender it must be the address the Resend account was opened with; set `DIGEST_FROM` to send from a domain verified in Resend |
 
 The first run backfills every HN thread since 2011 and the last 60 days of MyCareersFuture;
 later runs only fetch what is new. Both workflows can also be started by hand: `refresh` with
