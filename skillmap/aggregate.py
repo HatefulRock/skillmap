@@ -395,7 +395,8 @@ def velocity_block(market: list[dict], today: date, skills: list[str], tracked_s
 
 
 def insights_block(market: list[dict], window: list[dict], pay_rows: list[dict], today: date,
-                   categories: dict[str, str], ratings: dict[str, int], hn: list[dict] | None = None) -> dict:
+                   categories: dict[str, str], ratings: dict[str, int], hn: list[dict] | None = None,
+                   frontier: frozenset[str] = frozenset()) -> dict:
     from . import insights  # builds on this module's helpers
 
     premium = insights.pay_premium(pay_rows, sorted(categories))
@@ -403,7 +404,7 @@ def insights_block(market: list[dict], window: list[dict], pay_rows: list[dict],
     return {
         "pay_premium": premium,
         "pay_premium_by_role": by_role,
-        "edge": insights.edge_block(window, hn or [], today, by_role, ratings),
+        "edge": insights.edge_block(window, hn or [], today, by_role, ratings, frontier),
         "role_dna": insights.role_dna(window),
         "seniority_ladder": insights.seniority_ladder(window),
         "stacks": insights.stacks(window),
@@ -428,7 +429,8 @@ def observed(rows: list[dict], first_runs: dict[str, date]) -> list[dict]:
 
 def build(rows: list[dict], today: date, categories: dict[str, str], taxonomy_version: int,
           ratings: dict[str, int] | None = None, runs: list[dict] | None = None,
-          first_runs: dict[str, date] | None = None, groups: dict[str, str] | None = None) -> dict:
+          first_runs: dict[str, date] | None = None, groups: dict[str, str] | None = None,
+          frontier: frozenset[str] = frozenset()) -> dict:
     soft_names = sorted(n for n, c in categories.items() if c == SOFT_CATEGORY)
     rows = split_soft(rows, categories)
     categories = {n: c for n, c in categories.items() if c != SOFT_CATEGORY}
@@ -500,7 +502,7 @@ def build(rows: list[dict], today: date, categories: dict[str, str], taxonomy_ve
         "changes": changes_block(market, hn, today),
         "velocity": velocity_block(market, today, current_names[:TOP_TREND], tracked_since),
         "insights": insights_block(market, window, active(market, today - timedelta(days=SALARY_DAYS - 1), today), today,
-                                   categories, ratings or {}, hn),
+                                   categories, ratings or {}, hn, frontier),
         "soft_skills": soft_block(window, active(market, today - timedelta(days=SALARY_DAYS - 1), today), soft_names),
         "pairs": pairs_block(window, current_names[:20]),
         "me": me_block(window, ratings or {}, categories),

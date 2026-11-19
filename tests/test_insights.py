@@ -262,5 +262,35 @@ def test_edge_skills_leave_out_the_baseline_and_rank_by_signals():
     assert next(e for e in block["skills"] if e["name"] == "pandas")["mine"] == 3
 
 
+def test_edge_frontier_ratio_and_next_to_my_stack():
+    rows = []
+    for i in range(300):
+        lab = i < 60  # a fifth of the ads come from a frontier lab
+        skills = ["Python"]
+        if lab and i % 3 == 0:
+            skills.append("DSPy")  # asked by the lab, rarely elsewhere
+        if not lab and i % 40 == 0:
+            skills.append("DSPy")
+        if i % 5 == 0:
+            skills += ["PyTorch", "Docker", "vLLM"]  # vLLM sits next to my stack
+        if i % 6 == 1:
+            skills.append("Rust")  # unrelated to my stack
+        rows.append(row(i, skills, company=f"Lab{i % 4}" if lab else f"Co{i % 7}"))
+    ratings = {"PyTorch": 4, "Docker": 3, "Rust": 1}
+    block = insights.edge_skills(rows, {}, {}, ratings, "ai_ml", frozenset({"lab0", "lab1", "lab2", "lab3"}))
+    by = {e["name"]: e for e in block["skills"]}
+    assert block["n_frontier"] == 60
+    assert by["DSPy"]["frontier"] > 3 and "frontier" in by["DSPy"]["why"]
+    assert by["vLLM"]["near"] > 2 and by["Rust"]["near"] <= 1
+    assert "near" not in by["PyTorch"]  # already mine
+    # One vendor alone asking for a skill isn't a frontier signal.
+    solo = [dict(r, company="Lab0") if r["company"].startswith("Lab") else r for r in rows]
+    alone = insights.edge_skills(solo, {}, {}, ratings, "ai_ml", frozenset({"lab0"}))
+    assert all("frontier" not in e for e in alone["skills"])
+    # Without a frontier list the signal is absent, not zero.
+    plain = insights.edge_skills(rows, {}, {}, ratings, "ai_ml")
+    assert plain["n_frontier"] == 0 and all("frontier" not in e for e in plain["skills"])
+
+
 def test_hn_momentum_needs_both_years():
     assert insights.hn_momentum([], date(2026, 11, 17)) == {}

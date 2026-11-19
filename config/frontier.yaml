@@ -1,0 +1,45 @@
+# Frontier AI companies: model labs, AI-native product companies and AI infrastructure
+# providers whose hiring tends to show what the rest of the market asks for next. The edge view
+# compares how often their ads name a skill against everyone else's. Names match the `company`
+# field of postings, case-insensitively.
+companies:
+- Anthropic
+- OpenAI
+- Google DeepMind
+- Cohere
+- Mistral AI
+- xAI
+- Thinking Machines Lab
+- Physical Intelligence
+- Liquid AI
+- Black Forest Labs
+- Perplexity
+- Cursor
+- Cognition
+- Replit
+- Harvey
+- Sierra
+- Decagon
+- ElevenLabs
+- Character AI
+- Suno
+- Pika
+- Runway
+- Luma AI
+- Writer
+- Cresta
+- Abridge
+- Scale AI
+- Snorkel AI
+- Databricks
+- Hugging Face
+- LangChain
+- Modal
+- Together AI
+- Fireworks AI
+- Baseten
+- Anyscale
+- Cerebras
+- CoreWeave
+- Crusoe
+- Lambda

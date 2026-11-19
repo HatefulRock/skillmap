@@ -230,6 +230,10 @@ EDGE_TOP = 25
 EDGE_SPLIT_MIN = 10  # ads that both name the skill and separate nice-to-haves, for the nice ratio
 EDGE_LEVEL_MIN = 40  # ads on each side of the senior/junior comparison
 EDGE_HN_MIN = 8  # HN posts naming the skill in the recent year, for momentum
+EDGE_FRONTIER_MIN = 40  # frontier-company ads in the role, for the frontier ratio
+EDGE_LAB_MIN = 5  # a frontier company's ads in the role before its asks count
+EDGE_LABS_MIN = 3  # frontier companies that must name a skill, so no one vendor makes the signal
+EDGE_NEAR_MIN = 2  # of my 3+ skills an ad must also name to count as next to my stack
 
 
 def _clip(x: float, low: float, high: float) -> float:
@@ -257,7 +261,7 @@ def hn_momentum(hn: list[dict], today: date) -> dict[str, dict]:
 
 
 def edge_skills(window: list[dict], momentum: dict[str, dict], premium_by_role: dict, ratings: dict[str, int],
-                family: str) -> dict | None:
+                family: str, frontier: frozenset[str] = frozenset()) -> dict | None:
     """Skills that set a candidate apart in one role family, rather than the baseline every ad asks for.
 
     Only skills in at most a quarter of the family's ads count. Each gets up to five signals, all
@@ -268,6 +272,10 @@ def edge_skills(window: list[dict], momentum: dict[str, dict], premium_by_role: 
       senior    - how much more common in senior and staff ads than in junior and mid ones
       pay       - the pay premium within the family (same country and level), when measured
       rising    - its share of Hacker News hiring posts this year against last year
+      frontier  - how much more often frontier AI companies' ads name it than everyone else's
+    Separately, `near` is the share of the skill's ads that also name at least two of the
+    skills I rate 3+, against the role's average: a short step from my stack. It doesn't move
+    the score, which is about the market, but the site can sort or mark by it.
     The edge score adds the signals on comparable scales (log ratios, clipped); a missing
     signal adds nothing, so a skill isn't punished for a thin sample.
     """
@@ -287,6 +295,21 @@ def edge_skills(window: list[dict], momentum: dict[str, dict], premium_by_role: 
     c_junior = Counter(s for r in junior for s in set(r["skills"]))
     levels = len(senior) >= EDGE_LEVEL_MIN and len(junior) >= EDGE_LEVEL_MIN
     pay = {e["name"]: e for e in (premium_by_role.get(family) or {}).get("skills", [])}
+    front = [r for r in fam if r["company"].lower() in frontier]
+    rest = [r for r in fam if r["company"].lower() not in frontier]
+    has_front = len(front) >= EDGE_FRONTIER_MIN and len(rest) >= EDGE_FRONTIER_MIN
+    # Each frontier company counts once, whatever its ad volume, so one vendor asking for its
+    # own product (Databricks and MLflow) can't make that product look like a frontier signal.
+    by_lab: dict[str, list[dict]] = defaultdict(list)
+    for r in front:
+        by_lab[r["company"].lower()].append(r)
+    labs = {k: v for k, v in by_lab.items() if len(v) >= EDGE_LAB_MIN}
+    lab_share = {k: Counter(s for r in v for s in set(r["skills"])) for k, v in labs.items()}
+    c_rest = Counter(s for r in rest for s in set(r["skills"]))
+    mine = {s for s, v in ratings.items() if (v or 0) >= 3}
+    near_ads = [r for r in fam if len(mine.intersection(r["skills"])) >= EDGE_NEAR_MIN]
+    base_near = len(near_ads) / n
+    c_near = Counter(s for r in near_ads for s in set(r["skills"]))
 
     out = []
     for skill, c in count.items():
@@ -317,18 +340,29 @@ def edge_skills(window: list[dict], momentum: dict[str, dict], premium_by_role: 
             m = momentum[skill]
             e.update(rising=m["ratio"], hn_share=m["share"], hn_share_before=m["share_before"])
             parts["rising"] = _clip(math.log2(m["ratio"]), -1, 1.5)
+        naming = sum(1 for k in labs if lab_share[k][skill])
+        if has_front and len(labs) >= EDGE_LABS_MIN and naming >= EDGE_LABS_MIN:
+            # Drop the keenest company, so a vendor's own product isn't carried by that vendor.
+            shares_ = sorted(lab_share[k][skill] / len(labs[k]) for k in labs)[:-1]
+            lab_mean = sum(shares_) / len(shares_)
+            ratio = (lab_mean + 1 / len(front)) / ((c_rest[skill] + 1) / len(rest))
+            e.update(frontier=round(ratio, 2), frontier_share=round(lab_mean, 4), frontier_labs=naming)
+            parts["frontier"] = _clip(math.log2(ratio), -1, 1.5)
+        if mine and base_near > 0 and skill not in mine:
+            e["near"] = round((c_near[skill] / c) / base_near, 2)
         e["score"] = round(sum(parts.values()), 3)
         # The signals that carry it, strongest first, for the one-line "why".
         e["why"] = [k for k, v in sorted(parts.items(), key=lambda kv: -kv[1]) if v >= 0.4][:3]
         out.append(e)
     out.sort(key=lambda e: (-e["score"], e["name"]))
     return {"label": roles.LABELS[family], "n": n, "n_split": len(split), "base_nice": round(base_nice, 3),
-            "n_senior": len(senior), "n_junior": len(junior), "skills": out[:EDGE_TOP]}
+            "n_senior": len(senior), "n_junior": len(junior), "n_frontier": len(front) if has_front else 0,
+            "skills": out[:EDGE_TOP]}
 
 
 def edge_block(window: list[dict], hn: list[dict], today: date, premium_by_role: dict,
-               ratings: dict[str, int]) -> dict:
+               ratings: dict[str, int], frontier: frozenset[str] = frozenset()) -> dict:
     momentum = hn_momentum(hn, today)
     families = {f: block for f in EDGE_FAMILIES
-                if (block := edge_skills(window, momentum, premium_by_role, ratings, f)) is not None}
+                if (block := edge_skills(window, momentum, premium_by_role, ratings, f, frontier)) is not None}
     return {"max_share": EDGE_MAX_SHARE, "momentum_from_hn": bool(momentum), "families": families}
