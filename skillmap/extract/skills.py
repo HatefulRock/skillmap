@@ -27,6 +27,7 @@ class Skill:
     patterns: list[re.Pattern[str]]
     negatives: list[re.Pattern[str]]
     fingerprint: str = ""
+    group: str = ""
 
     def matches(self, sentence: str) -> bool:
         if not any(pattern.search(sentence) for pattern in self.patterns):
@@ -44,7 +45,8 @@ class Taxonomy:
             negatives = [re.compile(p, re.I) for p in spec.get("not", [])]
             key = json.dumps([spec["category"], spec.get("patterns", []), spec.get("cs", []), spec.get("not", [])])
             fingerprint = hashlib.sha1(key.encode()).hexdigest()[:16]
-            self.skills.append(Skill(name, spec["category"], patterns, negatives, fingerprint))
+            self.skills.append(Skill(name, spec["category"], patterns, negatives, fingerprint,
+                                     spec.get("group") or spec["category"]))
 
     @classmethod
     def load(cls, path: Path = DEFAULT_TAXONOMY) -> Taxonomy:
@@ -53,6 +55,11 @@ class Taxonomy:
     @cached_property
     def categories(self) -> dict[str, str]:
         return {skill.name: skill.category for skill in self.skills}
+
+    @cached_property
+    def groups(self) -> dict[str, str]:
+        """The broader family each skill rolls up into (React and Vue: "Web frameworks")."""
+        return {skill.name: skill.group for skill in self.skills}
 
     @cached_property
     def fingerprints(self) -> dict[str, str]:

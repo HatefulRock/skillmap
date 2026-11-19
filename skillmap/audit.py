@@ -46,9 +46,9 @@ def system_prompt(taxonomy: Taxonomy) -> str:
     return (
         "You label job postings for a study of which skills employers ask for. You get one posting. "
         "Return every skill from the list below that the posting asks the candidate to have or to "
-        "work with, whether it is required or only nice to have. A name like \"Rust / Scala\" or "
-        "\"Java / Kotlin (Spring)\" is one entry: return it if the posting asks for any of the things "
-        "it names. Leave out skills that appear only in the company description, in a list of "
+        "work with, whether it is required or only nice to have. A name that lists alternatives, like "
+        "\"XGBoost / LightGBM\", is one entry: return it if the posting asks for any of the things it "
+        "names. Leave out skills that appear only in the company description, in a list of "
         "products the company sells, or in a sentence saying the skill is not needed. Return names "
         "exactly as written in the list, and nothing that is not in it. An empty list is a valid answer.\n\n"
         f"Skills, by category:\n{listing}"

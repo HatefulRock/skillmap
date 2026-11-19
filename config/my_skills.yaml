@@ -4,6 +4,9 @@
 #
 # DRAFT: to be corrected by the owner.
 ratings:
+  # v10 split the broad buckets into specific technologies. Each old bucket's rating was
+  # carried to the parts it clearly covered; parts that may not apply are marked "(from bucket)"
+  # for the owner to check.
   Python: 5
   TypeScript: 3
   SQL: 3
@@ -12,47 +15,65 @@ ratings:
   AI agents / agentic workflows: 4
   Multi-agent systems: 4
   Tool / function calling: 4
-  Prompt & context engineering: 4
+  Prompt engineering: 4
+  Context engineering: 4
   Structured output: 4
   MCP: 4
   LangChain: 4
   LangGraph: 4
-  LLM provider APIs (OpenAI / Anthropic / Gemini): 4
+  OpenAI API / GPT models: 4  # (from bucket)
+  Anthropic Claude: 4  # (from bucket)
+  Google Gemini: 4
   Vector databases: 4
   Embeddings / semantic search: 4
-  Hybrid search / reranking / chunking: 4
-  Knowledge graphs / GraphRAG: 3
-  PostgreSQL / relational DBs: 4
-  LLM evaluation / eval harnesses: 4
+  Reranking / hybrid search: 4
+  Chunking strategies: 4
+  Knowledge graphs: 3
+  GraphRAG: 3  # (from bucket)
+  PostgreSQL: 4
+  Relational databases: 4
+  LLM evaluation: 4
   Guardrails / AI safety: 3
   LLM security (prompt injection, OWASP LLM): 4
-  Observability / tracing / monitoring: 3
-  LLM tracing tools (Langfuse / LangSmith / Arize): 4
+  Observability / monitoring: 3
+  Langfuse: 4
   Machine learning fundamentals: 3
-  Computer vision / multimodal / speech: 2
-  pandas / NumPy: 3
+  Computer vision: 2  # (from bucket)
+  Multimodal / vision-language models: 2  # (from bucket)
+  pandas: 3
+  NumPy: 3  # (from bucket)
   FastAPI: 4
-  REST / API design & integration: 4
-  Microservices / distributed systems: 3
+  REST APIs: 4
+  Microservices: 3
+  Distributed systems: 3  # (from bucket)
   System design / architecture: 3
-  Testing (pytest, unit/integration): 3
-  React / Next.js: 3
-  Azure (incl. Azure OpenAI): 4
-  Docker / containers: 4
-  Terraform / IaC: 3
+  pytest: 3
+  Unit / integration testing: 3
+  React: 3
+  Next.js: 3
+  Azure: 4
+  Azure OpenAI: 4  # (from bucket)
+  Docker: 4
+  Terraform: 3
+  Infrastructure as code: 3
   CI/CD: 3
-  Temporal / durable execution: 3
+  GitHub Actions: 3
+  Temporal: 3
   Pre-sales / solution architecture / PoCs: 3
   # From the résumé's stack lists (Lexiwyn on Cloud Run with Gemini, React/Next.js, Redis,
   # Service Bus, PyTorch / Hugging Face) and daily use of AI coding tools.
-  JavaScript / Node.js: 3
-  Full-stack / frontend: 3
-  Redis / caching: 3
-  AI coding tools (Claude Code, Cursor, Copilot): 4
-  GCP / Vertex AI: 2
+  JavaScript: 3
+  Node.js: 3  # (from bucket)
+  Full-stack: 3
+  Frontend (general): 3
+  HTML / CSS: 3  # (from bucket)
+  Redis: 3
+  Claude Code: 4  # (from bucket)
+  AI-assisted development: 4
+  GCP: 2
   PyTorch: 2
-  Hugging Face Transformers: 2
-  Kafka / message queues / streaming: 2
+  Hugging Face: 2
+  Event-driven architecture: 2
 
 # What a "matching" job is, for data/watchlist.json (the company boards worth watching, read by
 # Omnideck's career.discovery agent) and the "what to learn next" list.

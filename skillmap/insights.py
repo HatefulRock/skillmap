@@ -8,7 +8,7 @@ from __future__ import annotations
 
 import math
 from collections import Counter, defaultdict
-from datetime import date
+from datetime import date, timedelta
 from statistics import median, variance
 
 from .aggregate import MIN_GROUP, SENIORITY_ORDER, _pay_points, active, month_end, month_starts, shares
@@ -182,7 +182,7 @@ def requirement_creep(rows: list[dict], today: date) -> dict:
 
 # A generic skill counts as covered by the best of the specific ones it stands for: an ad that
 # only says "cloud" is met by someone strong on any one provider.
-COVERED_BY = {"Cloud (unspecified)": ["AWS", "Azure (incl. Azure OpenAI)", "GCP / Vertex AI"]}
+COVERED_BY = {"Cloud (unspecified)": ["AWS", "Azure", "GCP"]}
 LEARN_FAMILIES = ["ai_ml", "fde"]  # the roles he is aiming at; backend and data dilute the list
 COMFORTABLE = 3  # a rating that meets an ad's ask
 
@@ -221,3 +221,114 @@ def learn_next(rows: list[dict], ratings: dict[str, int], premium: dict, categor
                     "premium": premiums.get(skill), "score": round(score, 4)})
     out.sort(key=lambda e: -e["score"])
     return out[:top]
+
+
+EDGE_FAMILIES = ["ai_ml", "fde", "backend", "data", "infra", "frontend"]
+EDGE_MAX_SHARE = 0.25  # past this a skill is the baseline everyone has, not an edge
+EDGE_MIN_ADS = 15
+EDGE_TOP = 25
+EDGE_SPLIT_MIN = 10  # ads that both name the skill and separate nice-to-haves, for the nice ratio
+EDGE_LEVEL_MIN = 40  # ads on each side of the senior/junior comparison
+EDGE_HN_MIN = 8  # HN posts naming the skill in the recent year, for momentum
+
+
+def _clip(x: float, low: float, high: float) -> float:
+    return max(low, min(high, x))
+
+
+def hn_momentum(hn: list[dict], today: date) -> dict[str, dict]:
+    """Share of Hacker News hiring posts naming each skill: the last year against the year before."""
+
+    now = [r for r in hn if today - timedelta(days=364) <= r["first_seen"] <= today]
+    before = [r for r in hn if today - timedelta(days=729) <= r["first_seen"] < today - timedelta(days=364)]
+    if len(now) < 200 or len(before) < 200:
+        return {}
+    c_now = Counter(s for r in now for s in set(r["skills"]))
+    c_before = Counter(s for r in before for s in set(r["skills"]))
+    out = {}
+    for skill, n in c_now.items():
+        if n < EDGE_HN_MIN:
+            continue
+        share, share_before = n / len(now), c_before.get(skill, 0) / len(before)
+        # A skill absent the year before counts as 1 post, so a new name reads as fast-rising, not infinite.
+        out[skill] = {"share": round(share, 4), "share_before": round(share_before, 4),
+                      "ratio": round(share / max(share_before, 1 / len(before)), 2)}
+    return out
+
+
+def edge_skills(window: list[dict], momentum: dict[str, dict], premium_by_role: dict, ratings: dict[str, int],
+                family: str) -> dict | None:
+    """Skills that set a candidate apart in one role family, rather than the baseline every ad asks for.
+
+    Only skills in at most a quarter of the family's ads count. Each gets up to five signals, all
+    relative so that common skills don't win by volume:
+      specific  - how much more common in this family than across all tech ads
+      nice      - how often ads that separate requirements list it as nice-to-have: wanted but
+                  rarely found, compared with the family's average skill
+      senior    - how much more common in senior and staff ads than in junior and mid ones
+      pay       - the pay premium within the family (same country and level), when measured
+      rising    - its share of Hacker News hiring posts this year against last year
+    The edge score adds the signals on comparable scales (log ratios, clipped); a missing
+    signal adds nothing, so a skill isn't punished for a thin sample.
+    """
+    fam = [r for r in window if r["role_family"] == family]
+    if len(fam) < 100:
+        return None
+    n = len(fam)
+    count = Counter(s for r in fam for s in set(r["skills"]))
+    all_share = {s: c / len(window) for s, c in Counter(s for r in window for s in set(r["skills"])).items()}
+    split = [r for r in fam if r.get("skills_nice")]
+    named_split = Counter(s for r in split for s in set(r["skills"]))
+    nice_split = Counter(s for r in split for s in set(r["skills_nice"]))
+    base_nice = sum(nice_split.values()) / max(1, sum(named_split.values()))
+    senior = [r for r in fam if r["seniority"] in ("senior", "staff")]
+    junior = [r for r in fam if r["seniority"] in ("junior", "mid")]
+    c_senior = Counter(s for r in senior for s in set(r["skills"]))
+    c_junior = Counter(s for r in junior for s in set(r["skills"]))
+    levels = len(senior) >= EDGE_LEVEL_MIN and len(junior) >= EDGE_LEVEL_MIN
+    pay = {e["name"]: e for e in (premium_by_role.get(family) or {}).get("skills", [])}
+
+    out = []
+    for skill, c in count.items():
+        share = c / n
+        if c < EDGE_MIN_ADS or share > EDGE_MAX_SHARE:
+            continue
+        e: dict = {"name": skill, "share": round(share, 4), "n": c, "mine": ratings.get(skill)}
+        parts: dict[str, float] = {}
+        lift = share / all_share[skill]
+        e["specific"] = round(lift, 2)
+        # Inside a role nearly every role-typical skill is "specific", so this weighs half.
+        parts["specific"] = 0.5 * _clip(math.log2(lift), -1, 2)
+        if named_split[skill] >= EDGE_SPLIT_MIN:
+            ratio = nice_split[skill] / named_split[skill]
+            e["nice"] = round(ratio, 3)
+            parts["nice"] = _clip(2 * (ratio - base_nice), -1, 1.5)
+        if levels and c_senior[skill] + c_junior[skill] >= EDGE_MIN_ADS:
+            # Two pseudo-ads on each side, so 12 senior ads against 1 junior isn't a 12x lift.
+            ratio = ((c_senior[skill] + 2) / len(senior)) / ((c_junior[skill] + 2) / len(junior))
+            e["senior"] = round(ratio, 2)
+            parts["senior"] = _clip(math.log2(ratio), -1, 1.5)
+        if skill in pay:
+            p = pay[skill]
+            e.update(premium=p["premium"], premium_low=p.get("low"), premium_high=p.get("high"), usd=p.get("usd"))
+            sure = (p.get("low") or 0) > 0 or (p.get("high") or 0) < 0
+            parts["pay"] = _clip(p["premium"] * (6 if sure else 2), -1, 1.5)
+        if skill in momentum:
+            m = momentum[skill]
+            e.update(rising=m["ratio"], hn_share=m["share"], hn_share_before=m["share_before"])
+            parts["rising"] = _clip(math.log2(m["ratio"]), -1, 1.5)
+        e["score"] = round(sum(parts.values()), 3)
+        # The signals that carry it, strongest first, for the one-line "why".
+        e["why"] = [k for k, v in sorted(parts.items(), key=lambda kv: -kv[1]) if v >= 0.4][:3]
+        out.append(e)
+    out.sort(key=lambda e: (-e["score"], e["name"]))
+    return {"label": roles.LABELS[family], "n": n, "n_split": len(split), "base_nice": round(base_nice, 3),
+            "n_senior": len(senior), "n_junior": len(junior), "skills": out[:EDGE_TOP]}
+
+
+def edge_block(window: list[dict], hn: list[dict], today: date, premium_by_role: dict,
+               ratings: dict[str, int]) -> dict:
+    momentum = hn_momentum(hn, today)
+    families = {f: block for f in EDGE_FAMILIES
+                if (block := edge_skills(window, momentum, premium_by_role, ratings, f)) is not None}
+    return {"max_share": EDGE_MAX_SHARE, "momentum_from_hn": bool(momentum), "families": families}
