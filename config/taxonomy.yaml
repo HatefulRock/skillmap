@@ -257,10 +257,11 @@ skills:
     category: Security & networking
     patterns: ['\bsiem\b', '\bsoar\b', '\b[ex]dr\b', '\bdevsecops\b', '\bappsec\b', '\bapplication security\b', '\bthreat (?:detection|hunting|intelligence|model(?:l?ing)?)\b',
                '\bpenetration test\w*', '\bpen ?test\w*', '\bvulnerability (?:management|scann\w*|assessments?)\b', '\bsecurity operations\b', '\bsoc analysts?\b',
-               '\bzero trust\b', '\bsast\b', '\bdast\b', '\bincident response\b', '\bsplunk es\b']
+               '\bzero trust\b', '\bsast\b', '\bdast\b', '\bsecurity incident response\b', '\bsplunk es\b']
   Identity & access (IAM, SSO, OAuth, RBAC):
     category: Security & networking
-    patterns: ['\biam\b', '\bsso\b', '\bsingle sign[- ]on\b', '\boauth ?2?(?:\.0)?\b', '\bopenid connect\b', '\boidc\b', '\bsaml\b', '\brbac\b', '\babac\b', '\bokta\b',
+    # Not bare Okta: its own ads end with "The Okta Experience" and "Okta is an Equal Opportunity Employer".
+    patterns: ['\biam\b', '\bsso\b', '\bsingle sign[- ]on\b', '\boauth ?2?(?:\.0)?\b', '\bopenid connect\b', '\boidc\b', '\bsaml\b', '\brbac\b', '\babac\b',
                '\bactive directory\b', '\bentra id\b', '\bldap\b', '\bkeycloak\b', '\bidentity and access management\b']
   Security frameworks & certs (NIST, CISSP, ISO 27001):
     category: Security & networking
