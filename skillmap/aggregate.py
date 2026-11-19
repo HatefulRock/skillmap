@@ -336,7 +336,7 @@ def insights_block(market: list[dict], window: list[dict], pay_rows: list[dict],
         "seniority_ladder": insights.seniority_ladder(window),
         "stacks": insights.stacks(window),
         "requirement_creep": insights.requirement_creep([r for r in market if r["source"] != "adzuna"], today),
-        "learn_next": insights.learn_next(window, ratings, premium, categories, TARGET_FAMILIES),
+        "learn_next": insights.learn_next(window, ratings, premium, categories),
     }
 
 

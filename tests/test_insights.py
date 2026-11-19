@@ -90,9 +90,17 @@ def test_learn_next_weighs_demand_gap_and_premium():
     rows = [row(i, ["Python", "Go", "Rust"] if i % 2 else ["Python", "Go"], role_family="backend") for i in range(40)]
     premium = {"skills": [{"name": "Rust", "premium": 1.0, "n": 30}]}
     out = insights.learn_next(rows, {"Python": 5, "Go": 2}, premium, {"Go": "Languages"}, ["backend"])
-    assert [e["name"] for e in out] == ["Rust", "Go"]  # 0.5 × 1 × 2 beats 1.0 × 0.75; Python is already strong
-    assert out[1] == {"name": "Go", "category": "Languages", "demand": 1.0, "rating": 2, "premium": None, "score": 0.75}
+    # Go is the last gap in the 20 ads without Rust: 1.0 × 1/3 + 10 × 0.5 beats Rust's (0.5 + 0) × 2.
+    assert [e["name"] for e in out] == ["Go", "Rust"]
+    assert out[0] == {"name": "Go", "category": "Languages", "demand": 1.0, "unlocks": 20, "n_target": 40,
+                      "rating": 2, "premium": None, "score": 5.3333}
     assert insights.learn_next(rows, {}, premium, {}, ["ai_ml"]) == []
+
+
+def test_learn_next_counts_generic_cloud_as_covered_by_a_provider():
+    rows = [row(i, ["Python", "Cloud (unspecified)", "Go"], role_family="ai_ml") for i in range(40)]
+    out = insights.learn_next(rows, {"Python": 5, "Azure (incl. Azure OpenAI)": 4}, {}, {})
+    assert [e["name"] for e in out] == ["Go"] and out[0]["unlocks"] == 40
 
 
 # --- the weekly note -----------------------------------------------------------------------

@@ -43,6 +43,16 @@ ratings:
   CI/CD: 3
   Temporal / durable execution: 3
   Pre-sales / solution architecture / PoCs: 3
+  # From the résumé's stack lists (Lexiwyn on Cloud Run with Gemini, React/Next.js, Redis,
+  # Service Bus, PyTorch / Hugging Face) and daily use of AI coding tools.
+  JavaScript / Node.js: 3
+  Full-stack / frontend: 3
+  Redis / caching: 3
+  AI coding tools (Claude Code, Cursor, Copilot): 4
+  GCP / Vertex AI: 2
+  PyTorch: 2
+  Hugging Face Transformers: 2
+  Kafka / message queues / streaming: 2
 
 # What a "matching" job is, for data/watchlist.json (the company boards worth watching, read by
 # Omnideck's career.discovery agent) and the "what to learn next" list.
