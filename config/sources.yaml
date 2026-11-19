@@ -23,6 +23,6 @@ public:                     # public job-board APIs that ask for a credit link (
     queries: ["software engineer", "machine learning", "ai engineer", "llm", "data engineer", "data scientist",
               "backend", "frontend", "full stack", "devops", "platform engineer", "solutions engineer",
               "forward deployed", "security engineer", "mobile developer", "python", "quantitative"]
-    max_pages: 50
+    max_pages: 150           # ~1 week of "software engineer" is 60 pages; the search stops at 250
   jobicy:
     industries: [dev, data-science, engineering, technical-support]

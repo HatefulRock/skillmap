@@ -18,6 +18,7 @@ class Fake:
 
 def test_himalayas_keeps_tech_ads_until_since_and_reads_pay_and_level():
     jobs = [
+        {"guid": "f", "title": "Featured Old Backend Engineer", "pubDate": "1700000000"},
         {"guid": "a", "title": "Senior ML Engineer", "companyName": "Acme", "description": "<p>PyTorch</p>",
          "pubDate": "1795000000", "minSalary": 150000, "maxSalary": 180000, "currency": "USD",
          "salaryPeriod": "yearly", "seniority": ["Senior"], "locationRestrictions": ["Singapore"]},
@@ -30,7 +31,7 @@ def test_himalayas_keeps_tech_ads_until_since_and_reads_pay_and_level():
     a = out[0]
     assert (a.salary_min, a.salary_max, a.salary_currency, a.salary_period) == (150000, 180000, "USD", "year")
     assert a.seniority_hint == "senior" and a.remote_hint and a.location == "Singapore"
-    assert len(client.calls) == 1  # the old ad stopped the query
+    assert len(client.calls) == 1  # the page ended on an old ad, so the query stopped
 
 
 def test_jobicy_follows_the_cursor_and_remoteok_skips_the_notice():

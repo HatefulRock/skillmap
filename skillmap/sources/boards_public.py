@@ -82,23 +82,22 @@ def himalayas_job(job: dict) -> RawPosting:
     )
 
 
-def himalayas(client: PoliteClient, queries: list[str], since: date, max_pages: int = 50) -> Iterator[RawPosting]:
-    """Search results, newest first (20 a page): each query stops at the first ad before `since`."""
+def himalayas(client: PoliteClient, queries: list[str], since: date, max_pages: int = 150) -> Iterator[RawPosting]:
+    """Search results, newest first (20 a page, 250 pages at most): each query stops at a page ending before `since`."""
     seen: set[str] = set()
     for query in queries:
         for page in range(1, max_pages + 1):
             jobs = client.get_json(HIMALAYAS, params={"q": query, "sort": "recent", "page": page}).get("jobs") or []
-            stop = not jobs
-            for job in jobs:
-                posting = himalayas_job(job)
-                if posting.posted_on and posting.posted_on < since:
-                    stop = True
+            postings = [himalayas_job(job) for job in jobs]
+            for posting in postings:
+                if (posting.posted_on and posting.posted_on < since) or posting.native_id in seen:
                     continue
-                if posting.native_id in seen or not roles.classify(posting.title):
-                    continue
-                seen.add(posting.native_id)
-                yield posting
-            if stop:
+                if roles.classify(posting.title):
+                    seen.add(posting.native_id)
+                    yield posting
+            # Featured ads sit at the top of page 1 whatever their age, so the page's last ad
+            # says whether the rest are older.
+            if not postings or (postings[-1].posted_on and postings[-1].posted_on < since):
                 break
 
 
@@ -196,7 +195,7 @@ def collect(client: PoliteClient, cfg: dict, name: str, since: date) -> Iterator
     """One board's new tech ads, so each board is logged and fails on its own."""
     client.per_host_interval.update(HOST_INTERVAL)
     if name == "himalayas":
-        yield from himalayas(client, cfg["himalayas"]["queries"], since, cfg["himalayas"].get("max_pages", 50))
+        yield from himalayas(client, cfg["himalayas"]["queries"], since, cfg["himalayas"].get("max_pages", 150))
     elif name == "jobicy":
         yield from jobicy(client, cfg["jobicy"]["industries"], since)
     elif name == "remoteok":
