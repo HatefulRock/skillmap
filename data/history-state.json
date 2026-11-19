@@ -1,102 +1,118 @@
 {
  "crawls": {
-  "CC-MAIN-2019-51": {
-   "ads": 0,
-   "archive": null,
-   "done": "2026-11-19",
-   "period": "2019-07",
-   "taxonomy_version": 12
-  },
-  "CC-MAIN-2020-24": {
-   "ads": 0,
-   "archive": null,
-   "done": "2026-11-19",
-   "period": "2020-01",
-   "taxonomy_version": 12
-  },
-  "CC-MAIN-2020-50": {
-   "ads": 0,
-   "archive": null,
-   "done": "2026-11-19",
-   "period": "2020-07",
-   "taxonomy_version": 12
-  },
-  "CC-MAIN-2021-25": {
-   "ads": 0,
-   "archive": null,
-   "done": "2026-11-19",
-   "period": "2021-01",
-   "taxonomy_version": 12
-  },
-  "CC-MAIN-2021-49": {
-   "ads": 0,
-   "archive": null,
-   "done": "2026-11-19",
-   "period": "2021-07",
-   "taxonomy_version": 12
-  },
-  "CC-MAIN-2022-21": {
-   "ads": 0,
-   "archive": null,
-   "done": "2026-11-19",
-   "period": "2022-01",
-   "taxonomy_version": 12
-  },
-  "CC-MAIN-2022-49": {
-   "ads": 0,
-   "archive": null,
-   "done": "2026-11-19",
-   "period": "2022-07",
-   "taxonomy_version": 12
-  },
   "CC-MAIN-2023-23": {
-   "ads": 0,
-   "archive": null,
+   "ads": 286,
+   "archives": [
+    "history/CC-MAIN-2023-23-2026-11-19.jsonl.gz"
+   ],
    "done": "2026-11-19",
    "period": "2023-01",
    "taxonomy_version": 12
   },
   "CC-MAIN-2023-50": {
-   "ads": 0,
-   "archive": null,
+   "ads": 313,
+   "archives": [
+    "history/CC-MAIN-2023-50-2026-11-19.jsonl.gz"
+   ],
    "done": "2026-11-19",
    "period": "2023-07",
    "taxonomy_version": 12
   },
   "CC-MAIN-2024-26": {
-   "ads": 0,
-   "archive": null,
+   "ads": 248,
+   "archives": [
+    "history/CC-MAIN-2024-26-2026-11-19.jsonl.gz"
+   ],
    "done": "2026-11-19",
    "period": "2024-01",
    "taxonomy_version": 12
   },
   "CC-MAIN-2024-51": {
-   "ads": 0,
-   "archive": null,
+   "ads": 296,
+   "archives": [
+    "history/CC-MAIN-2024-51-2026-11-19.jsonl.gz"
+   ],
    "done": "2026-11-19",
    "period": "2024-07",
    "taxonomy_version": 12
   },
   "CC-MAIN-2025-26": {
-   "ads": 0,
-   "archive": null,
+   "ads": 299,
+   "archives": [
+    "history/CC-MAIN-2025-26-2026-11-19.jsonl.gz"
+   ],
    "done": "2026-11-19",
    "period": "2025-01",
    "taxonomy_version": 12
-  },
-  "CC-MAIN-2025-51": {
-   "ads": 0,
-   "archive": null,
-   "done": "2026-11-19",
-   "period": "2025-07",
-   "taxonomy_version": 12
-  },
-  "CC-MAIN-2026-25": {
-   "ads": 0,
-   "archive": null,
-   "done": "2026-11-19",
-   "period": "2026-01",
-   "taxonomy_version": 12
+  }
+ },
+ "empty": {
+  "CC-MAIN-2022-49": 1,
+  "CC-MAIN-2025-51": 1,
+  "CC-MAIN-2026-25": 1
+ },
+ "partial": {
+  "CC-MAIN-2022-21": {
+   "archives": [
+    "history/CC-MAIN-2022-21-2026-11-19-1.jsonl.gz"
+   ],
+   "failed": 0,
+   "fetched": 53,
+   "tried": [
+    "boards.greenhouse.io|2k|5021139003",
+    "boards.greenhouse.io|accuweather|3970574",
+    "boards.greenhouse.io|acronis|5789604002",
+    "boards.greenhouse.io|algolia|4305832004",
+    "boards.greenhouse.io|assemblyosminc|4003518005",
+    "boards.greenhouse.io|bandwidth|3738170",
+    "boards.greenhouse.io|bayada|5529237002",
+    "boards.greenhouse.io|betsson|3020333",
+    "boards.greenhouse.io|boxinc|3820378",
+    "boards.greenhouse.io|canonical|3756791",
+    "boards.greenhouse.io|capco|3830963",
+    "boards.greenhouse.io|capco|3849939",
+    "boards.greenhouse.io|celofoundation|4307848004",
+    "boards.greenhouse.io|celonis|4848326003",
+    "boards.greenhouse.io|codility|5111840003",
+    "boards.greenhouse.io|coinhako|4013582005",
+    "boards.greenhouse.io|cora|6114572002",
+    "boards.greenhouse.io|dandy|4685197003",
+    "boards.greenhouse.io|deliveroo|3736934",
+    "boards.greenhouse.io|deliveroo|3865247",
+    "boards.greenhouse.io|depop|4949584003",
+    "boards.greenhouse.io|doordashhighvolume|4212649",
+    "boards.greenhouse.io|epicgames|4291963004",
+    "boards.greenhouse.io|fender|3989133",
+    "boards.greenhouse.io|foodpandasingapore|3520411",
+    "boards.greenhouse.io|github|4031197",
+    "boards.greenhouse.io|github|4081658",
+    "boards.greenhouse.io|github|4083703",
+    "boards.greenhouse.io|godaddy|4916750003",
+    "boards.greenhouse.io|ibkr|5793814002",
+    "boards.greenhouse.io|jobber|6137378002",
+    "boards.greenhouse.io|kinaxis|5788990002",
+    "boards.greenhouse.io|kinaxis|5862349002",
+    "boards.greenhouse.io|ocadotechnology|5758838002",
+    "boards.greenhouse.io|pantheon|4224535",
+    "boards.greenhouse.io|playq|3719817",
+    "boards.greenhouse.io|propertyfinder|5005255003",
+    "boards.greenhouse.io|purestorage|3757259",
+    "boards.greenhouse.io|qwick|4517567004",
+    "boards.greenhouse.io|raininstantpay|4316278004",
+    "boards.greenhouse.io|rivian|4298976003",
+    "boards.greenhouse.io|shopee|4016599002",
+    "boards.greenhouse.io|simplisafe|3818773",
+    "boards.greenhouse.io|smartly|4305646004",
+    "boards.greenhouse.io|smartsheet|3793123",
+    "boards.greenhouse.io|sonymusiccareersfrance|6088337002",
+    "boards.greenhouse.io|soundagriculture|5105777003",
+    "boards.greenhouse.io|sovrn|3909920",
+    "boards.greenhouse.io|sunday|4490088004",
+    "boards.greenhouse.io|tekion|4885814003",
+    "boards.greenhouse.io|thirtymadison|5884102002",
+    "boards.greenhouse.io|trylove|4312725004",
+    "boards.greenhouse.io|tusimple|4991990002"
+   ]
   }
  },
  "taxonomy_version": null
