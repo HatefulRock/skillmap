@@ -1,12 +1,15 @@
 """MyCareersFuture (Singapore's national job portal), via the search API its own site uses.
 
 It is included for Singapore coverage. It is not a documented public API, so this
-collector is deliberately gentle: one request every 3 seconds, newest-first paging that stops
-at postings already collected, and only the fields the dashboard needs.
+collector is deliberately gentle: one request every 3 seconds and only the fields the dashboard
+needs. Two passes: every open ad in the "Information Technology" category (~5,000, ~50 pages),
+read in full each run so ads that stay open keep counting as live; then keyword searches,
+newest first and stopping at `since`, for tech roles filed under other categories.
 """
 
 from __future__ import annotations
 
+import logging
 import re
 from collections.abc import Iterator
 from datetime import date
@@ -14,6 +17,8 @@ from datetime import date
 from ..http import PoliteClient
 from ..models import RawPosting
 from ._util import dig, parse_date
+
+log = logging.getLogger(__name__)
 
 SEARCH = "https://api.mycareersfuture.gov.sg/v2/search"
 JOBS = "https://api.mycareersfuture.gov.sg/v2/jobs"
@@ -65,6 +70,11 @@ def parse_job(job: dict) -> RawPosting:
     )
 
 
+def category_page(client: PoliteClient, category: str, page: int, limit: int = 100) -> dict:
+    return client.post_json(SEARCH, {"sessionId": "", "categories": [category], "sortBy": ["new_posting_date"]},
+                            params={"limit": limit, "page": page})
+
+
 def search_page(client: PoliteClient, query: str, page: int, limit: int = 100) -> dict:
     try:
         return client.post_json(
@@ -76,10 +86,26 @@ def search_page(client: PoliteClient, query: str, page: int, limit: int = 100) -
 
 
 def collect(client: PoliteClient, queries: list[str], since: date | None = None, max_pages: int = 20,
-            known_ids: set[str] | None = None) -> Iterator[RawPosting]:
+            known_ids: set[str] | None = None, categories: list[str] | None = None,
+            max_category_pages: int = 80) -> Iterator[RawPosting]:
     known_ids = known_ids or set()
     client.per_host_interval.update(HOST_INTERVAL)
     seen_this_run: set[str] = set()
+    for category in categories or []:
+        # The whole category, not just since the last run: a re-read is what keeps an ad live.
+        for page in range(max_category_pages):
+            try:
+                results = category_page(client, category, page).get("results") or []
+            except Exception as error:  # the keyword searches below still cover the main roles
+                log.warning("mcf category %r page %d failed: %s", category, page, error)
+                break
+            for job in results:
+                posting = parse_job(job)
+                if posting.native_id not in seen_this_run:
+                    seen_this_run.add(posting.native_id)
+                    yield posting
+            if len(results) < 100:
+                break
     for query in queries:
         for page in range(max_pages):
             payload = search_page(client, query, page)

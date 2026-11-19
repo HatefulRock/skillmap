@@ -206,7 +206,8 @@ def collect(store: Store, client: PoliteClient, taxonomy: Taxonomy, today: date,
         # with a few days' slack.
         since = today - timedelta(days=10 if store.finished_before("mcf") else 60)
         _ingest(store, taxonomy, today, "mcf",
-                lambda: mcf.collect(client, cfg["queries"], since, cfg["max_pages"], known), report, budget)
+                lambda: mcf.collect(client, cfg["queries"], since, cfg["max_pages"], known,
+                                    cfg.get("categories"), cfg.get("max_category_pages", 80)), report, budget)
 
     if "hn" in sources:
         if hn_since is None:
