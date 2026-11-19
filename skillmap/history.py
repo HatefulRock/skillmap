@@ -290,9 +290,13 @@ def collect_crawl(client: PoliteClient, crawl: Crawl, taxonomy: Taxonomy, deadli
     per_company: Counter = Counter(r["company"] for r in prior)
     tried: set[str] = set(resume.get("tried", []))
     fetched, failed = int(resume.get("fetched", 0)), int(resume.get("failed", 0))
+    # What became of the pages, kept in the state file so a thin or empty half-year can be explained.
+    stats: Counter = Counter()
+    skipped: list[str] = []
 
     def progress(finished: bool) -> dict:
-        return {"finished": finished, "tried": sorted(tried), "fetched": fetched, "failed": failed}
+        return {"finished": finished, "tried": sorted(tried), "fetched": fetched, "failed": failed,
+                "stats": {"captures": len(captures), **stats, "skipped_titles": skipped[:8]}}
 
     for cap in sample(captures, crawl.id):
         if len(prior) + len(rows) >= SAMPLE or fetched >= MAX_FETCHES:
@@ -310,14 +314,18 @@ def collect_crawl(client: PoliteClient, crawl: Crawl, taxonomy: Taxonomy, deadli
             html = fetch(client, cap)
         except Exception as exc:  # noqa: BLE001 - skip one page, stop if the archive is down
             failed += 1
+            stats[f"error {str(exc)[:40]}"] += 1
             if failed >= 25 and failed > fetched / 2:
                 raise RuntimeError(f"most fetches failing ({exc})") from exc
             continue
         if not html:
+            stats["not_a_page"] += 1
             continue
         title, text = page_title(html, cap["key"][0]), page_text(html)
         row = row_for(crawl, cap, title, text, taxonomy)
         if row is None:
+            stats["not_tech"] += 1
+            skipped.append(title or f"(no title) {cap.get('url', '')}")
             continue
         per_company[row["company"]] += 1
         rows.append(row)
@@ -434,12 +442,15 @@ def run(client: PoliteClient, taxonomy: Taxonomy, out: Path, archive: Archive | 
         state.get("partial", {}).pop(crawl.id, None)
         got = len(prior) + len(new)
         if not got and tries.get(crawl.id, 0) + 1 < EMPTY_TRIES:
-            log.warning("history %s: no ads; the next run tries again", crawl.id)
+            log.warning("history %s: no ads; the next run tries again (%s)", crawl.id, progress["stats"])
             state.setdefault("empty", {})[crawl.id] = tries.get(crawl.id, 0) + 1
+            state.setdefault("empty_stats", {})[crawl.id] = progress["stats"]
             state_path.write_text(json.dumps(state, indent=1, sort_keys=True))
             continue
         state["crawls"][crawl.id] = {"period": crawl.period, "ads": got, "archives": parts,
-                                     "taxonomy_version": taxonomy.version, "done": today.isoformat()}
+                                     "taxonomy_version": taxonomy.version, "done": today.isoformat(),
+                                     "stats": progress["stats"]}
+        state.get("empty_stats", {}).pop(crawl.id, None)
         if not got:
             state["crawls"][crawl.id]["tries"] = tries.get(crawl.id, 0) + 1
         state.get("empty", {}).pop(crawl.id, None)
@@ -451,7 +462,8 @@ def run(client: PoliteClient, taxonomy: Taxonomy, out: Path, archive: Archive | 
         save_rows(rows_path, rows)
         state_path.write_text(json.dumps(state, indent=1, sort_keys=True))
     left = sum(1 for c in crawls if c.id not in state["crawls"])
-    return {"crawls_added": added, "reextracted": redone, "crawls_left": left, "ads": len(rows)}
+    return {"crawls_added": added, "reextracted": redone, "crawls_left": left, "ads": len(rows),
+            "empty": state.get("empty_stats") or {}}
 
 
 # The series the site draws -----------------------------------------------------------------------

@@ -127,6 +127,8 @@ def test_run_backfills_tech_ads_archives_text_and_resumes(tmp_path):
     assert ml["captured"] == "2024-08-10" and ml["company"] == "acme"
     state = json.loads((tmp_path / "history-state.json").read_text())
     assert state["crawls"]["CC-MAIN-2024-33"]["ads"] == 3
+    stats = state["crawls"]["CC-MAIN-2024-33"]["stats"]
+    assert stats["captures"] == 5 and stats["not_tech"] == 1 and stats["skipped_titles"] == ["Account Executive"]
     # A second run has nothing left to fetch.
     assert history.run(client(), TAX, tmp_path, archive, TODAY, budget_minutes=10)["crawls_added"] == 0
     # A taxonomy change re-extracts from the archived text without fetching.
