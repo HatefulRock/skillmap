@@ -7,7 +7,7 @@ import re
 FAMILIES = ["fde", "ai_ml", "data", "backend", "frontend", "infra", "quant", "trading_biz", "other_eng"]
 LABELS = {
     "fde": "Forward deployed / solutions",
-    "ai_ml": "AI / ML engineering",
+    "ai_ml": "AI/ML engineering",
     "data": "Data engineering & science",
     "backend": "Backend / Python",
     "frontend": "Frontend & mobile",

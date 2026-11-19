@@ -57,7 +57,7 @@ def test_pay_premium_interval_widens_with_noise_and_by_role_splits_families():
     rust = insights.pay_premium(rows, ["Rust"])["skills"][0]
     assert rust["low"] < rust["premium"] < rust["high"]
     by_role = insights.pay_premium_by_role(rows, ["Rust"])
-    assert list(by_role) == ["ai_ml"] and by_role["ai_ml"]["label"] == "AI / ML engineering"
+    assert list(by_role) == ["ai_ml"] and by_role["ai_ml"]["label"] == "AI/ML engineering"
 
 
 def test_pay_premium_needs_enough_matched_postings():
