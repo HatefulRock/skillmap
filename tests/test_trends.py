@@ -238,3 +238,26 @@ def test_month_on_month_movers_wait_for_two_full_months_of_collection():
     assert trends.movers(rows, start + timedelta(days=58), days=30, since=start) is None
     block = trends.movers(rows, start + timedelta(days=59), days=30, since=start)
     assert block["risers"][0]["name"] == "Go" and block["n_before"] == 60
+
+
+def test_remote_in_the_title_counts_and_product_names_do_not():
+    from skillmap.normalise import REMOTE_TITLE
+
+    assert REMOTE_TITLE.search("QA Engineer - Core Database (remote)")
+    assert REMOTE_TITLE.search("Backend Engineer, Remote")
+    assert REMOTE_TITLE.search("Remote - Data Engineer")
+    assert REMOTE_TITLE.search("Software Engineer (Remote, US)")
+    assert not REMOTE_TITLE.search("Tech Lead - Remote Assist, Robotaxi")
+    assert not REMOTE_TITLE.search("Remote Sensing Scientist (Onsite)")
+
+
+def test_pay_rate_leaves_out_sources_where_pay_is_mandatory():
+    from skillmap import trends
+
+    day = date(2026, 11, 18)
+    rows = [{"posting_id": f"m{i}", "source": "mcf", "first_seen": day, "last_seen": day, "skills": ["Python"],
+             "salary_min": 5000} for i in range(40)]
+    rows += [{"posting_id": f"g{i}", "source": "greenhouse", "first_seen": day, "last_seen": day, "skills": ["Python"],
+              "salary_min": 100 if i % 4 == 0 else None} for i in range(40)]
+    out = trends.per_post_series(rows, day)
+    assert out["pay_stated"][-1] == 0.25 and out["nice_any"][-1] == 0.0

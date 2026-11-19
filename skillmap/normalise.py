@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import re
 from datetime import date
 
 from .extract import location, perks, roles, salary, sector, seniority, terms
@@ -9,11 +10,15 @@ from .extract.skills import Taxonomy
 from .extract.text import to_plain
 from .models import Posting, RawPosting, dedup_key
 
+REMOTE_TITLE = re.compile(r"(?:^|[(\[,|/–-])\s*(?:fully\s+)?remote\s*(?=$|[)\],|/–(-])", re.I)
+
 
 def normalise(raw: RawPosting, taxonomy: Taxonomy, today: date) -> Posting:
     plain = to_plain(raw.description)
     skills, nice = taxonomy.extract(raw.title, raw.description)
-    country, city, region, remote = location.normalise(raw.location, raw.country_hint, raw.remote_hint)
+    # "Backend Engineer (Remote)" often says so only in the title, with a region as the location.
+    remote_hint = raw.remote_hint if raw.remote_hint is not None else (True if REMOTE_TITLE.search(raw.title) else None)
+    country, city, region, remote = location.normalise(raw.location, raw.country_hint, remote_hint)
     family = roles.classify(raw.title)
     if raw.source == "hn" and family is None:
         # HN headers often name several roles at once ("Engineers, Designer"); fall back to the body.
