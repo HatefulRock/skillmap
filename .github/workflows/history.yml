@@ -1,11 +1,11 @@
 name: history
 # Job ads from past years, out of Common Crawl's archive of Greenhouse and Lever job pages
 # (skillmap/history.py). Each run backfills the half-years not done yet, newest first, within its
-# time budget, and the next run carries on; once the backfill is done, a run only adds the
-# half-year that just ended. Wednesdays at 02:00 Singapore time, away from the Monday refresh.
+# time budget, and the next run carries on (mid-half-year too); once the backfill is done, a run
+# only adds the half-year that just ended and takes a minute. Daily at 02:00 Singapore time.
 on:
   schedule:
-    - cron: "0 18 * * 2"
+    - cron: "0 18 * * *"
   workflow_dispatch:
     inputs:
       budget:
@@ -42,7 +42,7 @@ jobs:
           { echo '```'; cat history.txt; echo '```'; } >> "$GITHUB_STEP_SUMMARY"
 
       - name: Commit
-        if: ${{ always() }}  # each finished half-year is saved as it completes; keep them even if the run fails later
+        if: ${{ always() }}  # finished half-years and the unfinished one's progress are saved; keep them even if the run fails later
         run: |
           git config user.name "skillmap-bot"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"

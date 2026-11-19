@@ -50,7 +50,7 @@ MAX_FETCHES = 1000  # page fetches per crawl, since many pages turn out not to b
 INDEX_PAGES = 12  # index blocks (3,000 captures each) read per host, spread across the alphabet of board names
 EMPTY_TRIES = 3  # runs a crawl may come back empty before it counts as done with no ads
 MIN_PERIOD = 100  # a half-year with fewer tech ads gets no shares
-INTERVALS = {"index.commoncrawl.org": 2.0, "data.commoncrawl.org": 0.3}
+INTERVALS = {"index.commoncrawl.org": 2.0, "data.commoncrawl.org": 1.0}  # it answers 503 when pressed
 
 # (host, path pattern): the job page of one ad, with the board token and the job's id.
 JOB_PAGES = {
@@ -273,8 +273,12 @@ def row_for(crawl: Crawl, cap: dict, title: str, text: str, taxonomy: Taxonomy) 
 
 
 def collect_crawl(client: PoliteClient, crawl: Crawl, taxonomy: Taxonomy, deadline: float,
-                  clock: Callable[[], float] = time.monotonic) -> tuple[list[dict], list[tuple[str, str]], bool]:
-    """(rows, (id, text) pairs, finished). Not finished when the deadline came first."""
+                  clock: Callable[[], float] = time.monotonic, resume: dict | None = None,
+                  prior: list[dict] | None = None) -> tuple[list[dict], list[tuple[str, str]], dict]:
+    """(new rows, (id, text) pairs, progress). progress["finished"] is False when the deadline came
+    first; progress then holds the jobs already tried, so the next run carries on from there.
+    `prior` are the rows an earlier, unfinished run of this crawl kept."""
+    resume, prior = resume or {}, prior or []
     captures = []
     for host in JOB_PAGES:
         try:
@@ -283,16 +287,25 @@ def collect_crawl(client: PoliteClient, crawl: Crawl, taxonomy: Taxonomy, deadli
             log.warning("history %s %s: %s", crawl.id, host, exc)
     rows: list[dict] = []
     texts: list[tuple[str, str]] = []
-    per_company: Counter = Counter()
-    fetched = failed = 0
+    per_company: Counter = Counter(r["company"] for r in prior)
+    tried: set[str] = set(resume.get("tried", []))
+    fetched, failed = int(resume.get("fetched", 0)), int(resume.get("failed", 0))
+
+    def progress(finished: bool) -> dict:
+        return {"finished": finished, "tried": sorted(tried), "fetched": fetched, "failed": failed}
+
     for cap in sample(captures, crawl.id):
-        if len(rows) >= SAMPLE or fetched >= MAX_FETCHES:
+        if len(prior) + len(rows) >= SAMPLE or fetched >= MAX_FETCHES:
             break
-        if clock() > deadline:
-            return rows, texts, False
-        if per_company[cap["key"][1]] >= PER_COMPANY:
+        job = "|".join(cap["key"])
+        if job in tried or per_company[cap["key"][1]] >= PER_COMPANY:
             continue
+        if clock() > deadline:
+            log.info("history %s: out of time after %d fetched, %d tech ads", crawl.id, fetched,
+                     len(prior) + len(rows))
+            return rows, texts, progress(False)
         fetched += 1
+        tried.add(job)
         try:
             html = fetch(client, cap)
         except Exception as exc:  # noqa: BLE001 - skip one page, stop if the archive is down
@@ -310,8 +323,8 @@ def collect_crawl(client: PoliteClient, crawl: Crawl, taxonomy: Taxonomy, deadli
         rows.append(row)
         texts.append((row["id"], f"{title}\n{text}"))
     log.info("history %s (%s): %d captures, %d fetched, %d tech ads", crawl.id, crawl.period, len(captures),
-             fetched, len(rows))
-    return rows, texts, True
+             fetched, len(prior) + len(rows))
+    return rows, texts, progress(True)
 
 
 # Files -------------------------------------------------------------------------------------------
@@ -337,6 +350,11 @@ def load_state(path: Path) -> dict:
         return {"taxonomy_version": None, "crawls": {}}
 
 
+def archive_names(info: dict) -> list[str]:
+    """A crawl collected over several runs has its text in several archive files."""
+    return list(info.get("archives") or ([info["archive"]] if info.get("archive") else []))
+
+
 def reextract(rows: list[dict], state: dict, archive: Archive | None, taxonomy: Taxonomy) -> int:
     """Re-extract stored ads after a taxonomy change, from the archived text. Crawls whose text
     can't be read keep their old skills and their old version, so a later run tries again."""
@@ -347,10 +365,13 @@ def reextract(rows: list[dict], state: dict, archive: Archive | None, taxonomy: 
     for row in rows:
         by_crawl[row["crawl"]].append(row)
     for crawl_id, info in state["crawls"].items():
-        if info.get("taxonomy_version") == taxonomy.version or not info.get("archive"):
+        names = archive_names(info)
+        if info.get("taxonomy_version") == taxonomy.version or not names:
             continue
+        texts: dict[str, str] = {}
         try:
-            texts = unpack(archive.get(info["archive"]))
+            for name in names:
+                texts.update(unpack(archive.get(name)))
         except Exception as exc:  # noqa: BLE001
             log.warning("history: text of %s unavailable: %s", crawl_id, exc)
             continue
@@ -384,31 +405,42 @@ def run(client: PoliteClient, taxonomy: Taxonomy, out: Path, archive: Archive | 
     for crawl in crawls:
         if crawl.id in state["crawls"] or clock() > deadline:
             continue
+        resume = (state.get("partial") or {}).get(crawl.id)
+        prior = [r for r in rows if r["crawl"] == crawl.id] if resume else []
         try:
-            new, texts, finished = collect_crawl(client, crawl, taxonomy, deadline, clock)
+            new, texts, progress = collect_crawl(client, crawl, taxonomy, deadline, clock, resume, prior)
         except Exception as exc:  # noqa: BLE001 - the next run tries this crawl again
             log.warning("history %s: %s", crawl.id, exc)
             continue
-        if not finished:
-            log.info("history: out of time during %s; the next run redoes it", crawl.id)
-            break
-        name = None
+        parts = list(resume.get("archives", [])) if resume else []
         if archive is not None and texts:
-            name = f"history/{crawl.id}-{today.isoformat()}.jsonl.gz"
+            name = f"history/{crawl.id}-{today.isoformat()}{'' if progress['finished'] and not parts else f'-{len(parts) + 1}'}.jsonl.gz"
             try:
                 archive.put(name, pack(texts))
-            except Exception as exc:  # noqa: BLE001 - fields are kept; only re-extraction loses this crawl
+                parts.append(name)
+            except Exception as exc:  # noqa: BLE001 - fields are kept; only re-extraction loses this text
                 log.warning("history: could not archive %s: %s", crawl.id, exc)
-                name = None
-        rows = [r for r in rows if r["crawl"] != crawl.id] + new
-        if not new and tries.get(crawl.id, 0) + 1 < EMPTY_TRIES:
+        rows = [r for r in rows if r["crawl"] != crawl.id] + prior + new
+        if not progress["finished"]:
+            # Keep what this run fetched; the next run carries on with the jobs not tried yet.
+            state.setdefault("partial", {})[crawl.id] = {
+                "tried": progress["tried"], "fetched": progress["fetched"], "failed": progress["failed"],
+                "archives": parts}
+            save_rows(rows_path, rows)
+            state_path.write_text(json.dumps(state, indent=1, sort_keys=True))
+            log.info("history: out of time during %s; the next run carries on (%d ads so far)", crawl.id,
+                     len(prior) + len(new))
+            break
+        state.get("partial", {}).pop(crawl.id, None)
+        got = len(prior) + len(new)
+        if not got and tries.get(crawl.id, 0) + 1 < EMPTY_TRIES:
             log.warning("history %s: no ads; the next run tries again", crawl.id)
             state.setdefault("empty", {})[crawl.id] = tries.get(crawl.id, 0) + 1
             state_path.write_text(json.dumps(state, indent=1, sort_keys=True))
             continue
-        state["crawls"][crawl.id] = {"period": crawl.period, "ads": len(new), "archive": name,
+        state["crawls"][crawl.id] = {"period": crawl.period, "ads": got, "archives": parts,
                                      "taxonomy_version": taxonomy.version, "done": today.isoformat()}
-        if not new:
+        if not got:
             state["crawls"][crawl.id]["tries"] = tries.get(crawl.id, 0) + 1
         state.get("empty", {}).pop(crawl.id, None)
         added += 1
