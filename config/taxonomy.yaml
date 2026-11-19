@@ -9,7 +9,7 @@
 #
 # Bump `version` whenever a pattern (or any other extractor, e.g. salary) changes: stored
 # postings are re-extracted on the next run.
-version: 11  # v11: fewer false matches (Gemini the exchange, recruiting-fraud notices, DPO offices, 'embedding' as a verb, payment rails, non-AI guardrails and benchmarks). v10: one skill per specific technology (React, Next.js, Vue apart; each vector DB, eval tool, model provider, serving engine), each with a `group` for roll-ups. v9: security, identity, networking, DevOps/SRE, mobile, BI, Windows and virtualisation skills; bare CI, GitOps and GitLab. v2: salary from text. v3: ad length, years, unknown terms, degree, visa, equity. v4: no benefits/monitoring false positives. v5: seniority (bank grades, solutions architects), non-software engineering, pre-sales, more countries. v6: no shouted-heading words as unknown terms. v8: trading desk, ops and product roles as their own group. v7: soft skills (own section); quant roles need a quant or trading-tech title (no PMs, quantum, trading ops); risk modelling split from KYC/AML
+version: 12  # v12: ~90 more skills from a coverage check on stored ads (skillmap vocab): hardware and embedded, business apps (Salesforce, SAP, ServiceNow), R, MATLAB, Agile, Jira, Figma, Excel, identity, compliance, TLS/PKI, networking, build tools, ETL tools, data modelling and quality, pretraining, post-training, hyperparameter tuning, interpretability; AWS, Azure and GCP service names; context-free Cursor, Helm and Spark. v11: fewer false matches (Gemini the exchange, recruiting-fraud notices, DPO offices, 'embedding' as a verb, payment rails, non-AI guardrails and benchmarks). v10: one skill per specific technology (React, Next.js, Vue apart; each vector DB, eval tool, model provider, serving engine), each with a `group` for roll-ups. v9: security, identity, networking, DevOps/SRE, mobile, BI, Windows and virtualisation skills; bare CI, GitOps and GitLab. v2: salary from text. v3: ad length, years, unknown terms, degree, visa, equity. v4: no benefits/monitoring false positives. v5: seniority (bank grades, solutions architects), non-software engineering, pre-sales, more countries. v6: no shouted-heading words as unknown terms. v8: trading desk, ops and product roles as their own group. v7: soft skills (own section); quant roles need a quant or trading-tech title (no PMs, quantum, trading ops); risk modelling split from KYC/AML
 
 skills:
   Python:
@@ -576,6 +576,8 @@ skills:
     - \bapache spark\b
     - \bpyspark\b
     - \bspark\b(?=\s*(?:,|/|\)|sql|streaming|jobs?|clusters?|and\b))
+    cs:
+    - (?:,|/|\(|\band|\bor|\bwith|\busing|\bin)\s+Spark\b(?! (?:joy|of|curiosity|ideas?|innovation|conversations?|change))
   Databricks:
     category: Retrieval & data
     group: Big data
@@ -749,6 +751,8 @@ skills:
     group: Observability
     patterns:
     - \bgrafana\b
+    - \bloki\b
+    - \bgrafana (?:tempo|mimir|alloy)\b
   Datadog:
     category: Eval, safety & observability
     group: Observability
@@ -1112,6 +1116,9 @@ skills:
     - \btext[- ]to[- ]speech\b
     - \bwhisper\b(?= (?:model|asr|api)|,|/|\))
     - \bvoice ai\b
+    - \belevenlabs\b
+    - \bdeepgram\b
+    - \bassemblyai\b
   Feature engineering:
     category: ML
     group: ML data
@@ -1374,6 +1381,10 @@ skills:
     - \bunit testing\b
     - \bautomated testing\b
     - \bend[- ]to[- ]end tests?\b
+    - \buser acceptance testing\b
+    - \bregression testing\b
+    cs:
+    - \bUAT\b
   TDD:
     category: Backend
     group: Testing
@@ -1424,6 +1435,10 @@ skills:
     patterns:
     - \bhtml5?\b
     - \bcss3?\b
+    - \bjquery\b
+    - \bbootstrap\b(?= (?:css|framework|5|4)|,|/|\))
+    - \bsass\b
+    - \bscss\b
   Tailwind CSS:
     category: Frontend
     group: Web basics
@@ -1495,6 +1510,11 @@ skills:
     - \bdast\b
     - \bsecure code review\b
     - \bowasp\b(?! (?:top 10 )?(?:for )?llm)
+    - \bsnyk\b
+    - \bcheckmarx\b
+    - \bveracode\b
+    - \bsoftware composition analysis\b
+    - \bsbom\b
   DevSecOps:
     category: Security & networking
     group: AppSec
@@ -1609,6 +1629,14 @@ skills:
     - \budp\b
     - \bnetwork(?:ing)? protocols?\b
     - \bip (?:networking|routing|addressing)\b
+    - \bwireshark\b
+    - \btcpdump\b
+    - \bhttp/[23]\b
+    - \bquic\b
+    - \bsnmp\b
+    - \bnetflow\b
+    cs:
+    - \bHTTPS?\b(?!s?:)(?= (?:protocols?|APIs?|servers?|requests?|/)|,|/)
   DNS:
     category: Security & networking
     group: Networking
@@ -1673,6 +1701,20 @@ skills:
     - \bs3\b
     - \becs\b
     - \beks\b
+    - \bcloudwatch\b
+    - \bcloudtrail\b
+    - \bcloudfront\b
+    - \bfargate\b
+    - \beventbridge\b
+    - \b(?:aws )?step functions\b
+    - \bamazon (?:rds|aurora|emr|athena|elasticache|msk)\b
+    - \baws (?:rds|emr|govcloud|cdk)\b
+    - \bgovcloud\b
+    - \broute ?53\b
+    - \belasticache\b
+    cs:
+    - \bRDS\b
+    - \bEMR\b(?= (?:clusters?|serverless|on EKS)|,|/|\))
   AWS Lambda / serverless:
     category: Cloud & DevOps
     group: Serverless
@@ -1692,6 +1734,13 @@ skills:
     group: Cloud providers
     patterns:
     - \bazure\b(?! (?:openai|ml|machine learning|ad))
+    - \bcosmos ?db\b
+    - \bservice bus\b
+    - \bevent hubs?\b
+    - \blogic apps\b
+    - \bblob storage\b
+    - \baks\b
+    - \bazure functions\b
   Azure OpenAI:
     category: Cloud & DevOps
     group: Cloud AI platforms
@@ -1704,6 +1753,13 @@ skills:
     patterns:
     - \bgcp\b
     - \bgoogle cloud\b
+    - \bdataproc\b
+    - \bbigtable\b
+    - \bcloud run\b
+    - \bgke\b
+    - \bdataflow\b(?= (?:pipelines?|jobs?)|,|/|\))
+    - \bcloud storage\b(?= \(gcs\)|,|/)
+    - \bgcs\b
   Vertex AI:
     category: Cloud & DevOps
     group: Cloud AI platforms
@@ -1737,6 +1793,8 @@ skills:
     group: Containers
     patterns:
     - \bhelm\b(?= charts?|,|/|\))
+    cs:
+    - (?:,|/|\(|\band|\bor|\bwith|\busing)\s+Helm\b
   Terraform:
     category: Cloud & DevOps
     group: Infrastructure as code
@@ -1763,6 +1821,10 @@ skills:
     patterns:
     - \binfrastructure[- ]as[- ]code\b
     - \biac\b
+    - \bbicep\b
+    - \barm templates?\b
+    - \bkustomize\b
+    - \bcrossplane\b
   CI/CD:
     category: Cloud & DevOps
     group: CI/CD
@@ -1813,6 +1875,12 @@ skills:
     patterns:
     - \blinux\b
     - \bunix\b
+    - \bred hat\b
+    - \brhel\b
+    - \bubuntu\b
+    - \bdebian\b
+    - \bcentos\b
+    - \bsystemd\b
   Bash / shell scripting:
     category: Cloud & DevOps
     group: Linux
@@ -1887,6 +1955,8 @@ skills:
     group: AI coding tools
     patterns:
     - \bcursor\b(?= (?:ide|ai|editor)|,|/|\))
+    cs:
+    - \bCursor\b
   GitHub Copilot:
     category: Ways of working
     group: AI coding tools
@@ -2085,6 +2155,10 @@ skills:
     - \bderivatives\b
     - \border ?books?\b
     - \btrading (?:systems?|strategies|platforms?)\b
+    - \bfixed income\b
+    - \bbloomberg (?:terminal|api|blpapi|data)\b
+    - \bkdb\+?\b
+    - \bfix protocol\b
   KYC / AML / fraud:
     category: Domain
     group: Domain
@@ -2109,3 +2183,834 @@ skills:
     - \brisk (?:models?|modell?ing|management|analytics)\b
     - \bvar\b(?= (?:models?|calculation))
     - \bvalue[- ]at[- ]risk\b
+  R:
+    category: Languages
+    group: R
+    patterns:
+    - \brstudio\b
+    - \btidyverse\b
+    - \bggplot2?\b
+    - \bR (?:programming|language|shiny)\b
+    cs:
+    - (?:,|/|\(|\band|\bor|\bin|\bwith|\busing)\s+R\b(?![&'’-]|\s*&|\s+(?:and|&)\s+D\b)
+    - \bR\b(?=\s*(?:,|/|\)|or\b|programming|language|scripts?|packages?)(?!\s*&))
+  MATLAB:
+    category: Languages
+    group: MATLAB
+    patterns:
+    - \bmatlab\b
+    - \bsimulink\b
+  Perl:
+    category: Languages
+    group: Scripting languages
+    patterns:
+    - \bperl\b
+  Lua:
+    category: Languages
+    group: Scripting languages
+    cs:
+    - \bLua\b
+  Dart:
+    category: Languages
+    group: Mobile languages
+    cs:
+    - \bDart\b
+  Objective-C:
+    category: Languages
+    group: Mobile languages
+    patterns:
+    - \bobjective[- ]c\b
+  Groovy:
+    category: Languages
+    group: JVM
+    cs:
+    - \bGroovy\b
+  VBA / Excel macros:
+    category: Languages
+    group: Scripting languages
+    patterns:
+    - \bvba\b
+    - \bexcel macros?\b
+    - \bvisual basic\b
+  SAS:
+    category: Languages
+    group: Statistics software
+    cs:
+    - \bSAS\b(?!\s+(?:institute\s+)?(?:token|url|signature))
+    not:
+    - \bSAS (?:drives?|controllers?|disks?|interface)\b
+  Verilog / SystemVerilog / VHDL:
+    category: Hardware & embedded
+    group: Chip design
+    patterns:
+    - \b(?:system ?)?verilog\b
+    - \bvhdl\b
+    - \buvm\b
+  FPGA:
+    category: Hardware & embedded
+    group: Chip design
+    patterns:
+    - \bfpgas?\b
+    - \bvivado\b
+    - \bquartus\b
+  ASIC / RTL design:
+    category: Hardware & embedded
+    group: Chip design
+    patterns:
+    - \basics?\b
+    - \brtl\b(?! (?:languages?|text|layout|support))
+    - \bphysical design\b
+    - \bdesign verification\b
+    - \b(?:cadence|synopsys) (?:tools|virtuoso|innovus|design compiler|vcs)\b
+    - \beda tools\b
+  Embedded C / firmware:
+    category: Hardware & embedded
+    group: Embedded
+    patterns:
+    - \bembedded (?:c|c\+\+|software|systems?|linux|firmware)\b
+    - \bfirmware\b
+    - \bmicrocontrollers?\b
+    - \bstm32\b
+    - \bbare[- ]metal\b
+  RTOS:
+    category: Hardware & embedded
+    group: Embedded
+    patterns:
+    - \brtos\b
+    - \bfreertos\b
+    - \bzephyr (?:rtos|os)\b
+    - \breal[- ]time operating systems?\b
+  Embedded Linux / Yocto:
+    category: Hardware & embedded
+    group: Embedded
+    patterns:
+    - \byocto\b
+    - \bbuildroot\b
+    - \bu-boot\b
+    - \blinux kernel\b
+    - \bdevice drivers?\b
+    - \bkernel (?:drivers?|modules?|development)\b
+  Hardware interfaces (I2C, SPI, UART, CAN):
+    category: Hardware & embedded
+    group: Embedded
+    cs:
+    - \bI2C\b
+    - \bI²C\b
+    - \bSPI\b
+    - \bUART\b
+    - \bJTAG\b
+    - \bCAN[- ]?(?:bus|FD)\b
+    - \bPCIe\b
+    - \bUSB\b(?= ?(?:protocols?|drivers?|stack|,|/))
+  PCB / electronics design:
+    category: Hardware & embedded
+    group: Electronics
+    patterns:
+    - \bpcbs?\b
+    - \baltium\b
+    - \bkicad\b
+    - \bschematic (?:capture|design)\b
+    - \bcircuit design\b
+    - \banalog (?:circuit|design)\b
+  Robotics / ROS:
+    category: Hardware & embedded
+    group: Robotics
+    patterns:
+    - \bros ?2\b
+    - \brobot operating system\b
+    - \bgazebo\b
+    - \bisaac (?:sim|lab|ros)\b
+    - \bslam\b
+    - \bmotion planning\b
+    - \brobotics\b
+    cs:
+    - \bROS\b
+  Industrial control (PLC / SCADA):
+    category: Hardware & embedded
+    group: Industrial
+    patterns:
+    - \bplcs?\b
+    - \bscada\b
+    - \bmodbus\b
+    - \bopc[- ]ua\b
+    - \bhardware[- ]in[- ]the[- ]loop\b
+    cs:
+    - \bHIL\b
+  Safety-critical standards:
+    category: Hardware & embedded
+    group: Industrial
+    patterns:
+    - \biso 26262\b
+    - \bdo-178[bc]?\b
+    - \biec 61508\b
+    - \bautosar\b
+    - \bmisra\b
+  CPU / computer architecture:
+    category: Hardware & embedded
+    group: Chip design
+    patterns:
+    - \bcomputer architecture\b
+    - \bcpu (?:architecture|design|microarchitecture|performance)\b
+    - \bmicroarchitecture\b
+    - \brisc-v\b
+    - \bx86(?:-64)?\b
+    - \barm(?:64|v8|v9)\b
+    cs:
+    - \bARM\b(?= (?:architecture|cores?|processors?|cortex|assembly|SoCs?|-based)|,|/)
+  High-speed interconnects (RDMA, InfiniBand, NVLink):
+    category: Security & networking
+    group: Networking
+    patterns:
+    - \brdma\b
+    - \binfiniband\b
+    - \broce(?:v2)?\b
+    - \bnvlink\b
+    - \bnvswitch\b
+    - \bcxl\b
+  Ethernet / LAN / WAN:
+    category: Security & networking
+    group: Networking
+    patterns:
+    - \bethernet\b
+    - \bvlans?\b
+    - \bsd-wan\b
+    - \bswitching (?:and|&) routing\b
+    - \bdhcp\b
+    - \blan/wan\b
+    - \b(?:lan|wan)s?\b(?= (?:networks?|infrastructure|technologies|links|optimi[sz]ation))
+  Wireless (Wi-Fi, Bluetooth, 5G):
+    category: Security & networking
+    group: Networking
+    patterns:
+    - \bwi-?fi\b(?! (?:access|available|provided|allowance|stipend))
+    - \bbluetooth\b
+    - \bble\b
+    - \b5g\b(?= (?:networks?|nr|ran|core|protocols?)|,|/)
+    - \blte\b
+    - \bzigbee\b
+    - \blorawan\b
+    - \bmqtt\b
+  TLS / PKI / certificates:
+    category: Security & networking
+    group: Cryptography
+    patterns:
+    - \bm?tls\b
+    - \bssl\b(?= (?:certificates?|/tls)|,|/)
+    - \bpki\b
+    - \bx\.509\b
+    - \bcertificate (?:management|authority|authorities|lifecycle)\b
+    - \bhsms?\b
+    - \bkms\b
+    - \bcryptograph(?:y|ic)\b
+    - \bencryption\b
+  Okta / identity providers:
+    category: Security & networking
+    group: Identity
+    patterns:
+    - \bokta\b
+    - \bping (?:identity|federate)\b
+    - \bcyberark\b
+    - \bsailpoint\b
+    - \bscim\b
+    - \bmfa\b
+    - \bmulti[- ]factor authentication\b
+    - \bprivileged access management\b
+  Firewalls / SASE (Palo Alto, Zscaler):
+    category: Security & networking
+    group: Network security
+    patterns:
+    - \bpalo alto(?:\s+networks)?\b(?= (?:firewalls?|ngfw|panorama|prisma|cortex)|,|/|\))
+    - \bzscaler\b
+    - \bsase\b
+    - \bcasb\b
+    - \bfortinet\b
+    - \bfortigate\b
+    - \bcheck point\b(?= firewalls?)
+    - \bnext[- ]gen(?:eration)? firewalls?\b
+    - \bwaf\b
+    - \bweb application firewalls?\b
+    - \bdlp\b
+    - \bdata loss prevention\b
+  Cloud security posture (Wiz, CSPM):
+    category: Security & networking
+    group: Cloud security
+    patterns:
+    - \bwiz\b(?=,|/|\)| (?:cnapp|cspm|platform))
+    - \bcspm\b
+    - \bcnapp\b
+    - \bcwpp\b
+    - \bcloud security posture\b
+    - \bprisma cloud\b
+    - \bcloud security\b
+  GRC / compliance:
+    category: Security & networking
+    group: Compliance
+    patterns:
+    - \bgrc\b
+    - \bgovernance,? risk,? (?:and|&) compliance\b
+    - \bhipaa\b
+    - \bpci[- ]dss\b
+    - \bsox\b(?= (?:compliance|controls|404))
+    - \bsarbanes[- ]oxley\b
+    - \bvanta\b
+    - \bdrata\b
+    - \bcompliance (?:frameworks?|automation|controls)\b
+  Incident response / on-call:
+    category: Cloud & DevOps
+    group: Reliability
+    patterns:
+    - \bincident (?:response|management|command)\b
+    - \bpagerduty\b
+    - \bopsgenie\b
+    - \bpostmortems?\b
+    - \bpost-mortems?\b
+    - \broot cause analysis\b
+  HashiCorp Vault / secrets management:
+    category: Cloud & DevOps
+    group: Infrastructure as code
+    patterns:
+    - \bhashicorp vault\b
+    - \bsecrets? management\b
+    - \bsecrets manager\b
+    - \bconsul\b
+    - \bnomad\b(?= (?:clusters?|jobs?|scheduler)|,|/)
+    cs:
+    - (?:,|/|\(|\band|\bor)\s+Vault\b
+    - \bVault\b(?=\s*(?:,|/|\)))
+  Service mesh / API gateways:
+    category: Cloud & DevOps
+    group: Networking
+    patterns:
+    - \bistio\b
+    - \blinkerd\b
+    - \benvoy\b(?=,|/|\)|\s+proxy)
+    - \bservice mesh\b
+    - \bapi gateways?\b
+    - \bapigee\b
+    - \bkong\b(?= (?:gateway|api|mesh|konnect)|,|/|\))
+    - \bnginx\b
+    - \btraefik\b
+    - \bcilium\b
+  Build tools (Maven, Gradle, Bazel):
+    category: Cloud & DevOps
+    group: Build systems
+    patterns:
+    - \bmaven\b
+    - \bgradle\b
+    - \bbazel\b
+    - \bcmake\b
+    - \bbuck2?\b(?= build)
+    - \bbuild systems?\b
+    - \bwebpack\b
+    - \bvite\b
+    - \besbuild\b
+  Oracle Cloud (OCI):
+    category: Cloud & DevOps
+    group: Other clouds
+    patterns:
+    - \boracle cloud\b
+    - \boracle cloud infrastructure\b
+    cs:
+    - \bOCI\b
+  Other clouds (IBM, Alibaba, DigitalOcean):
+    category: Cloud & DevOps
+    group: Other clouds
+    patterns:
+    - \bibm cloud\b
+    - \balibaba cloud\b
+    - \baliyun\b
+    - \bdigitalocean\b
+    - \bopenstack\b
+    - \bheroku\b
+    - \bvercel\b(?! ai sdk)
+    - \bnetlify\b
+    - \bcloudflare\b
+  GPU clouds & HPC (Slurm, CoreWeave):
+    category: MLOps & platform
+    group: GPU & training
+    patterns:
+    - \bslurm\b
+    - \bhpc\b
+    - \bhigh[- ]performance computing\b
+    - \bcoreweave\b
+    - \blambda labs\b
+    - \brunpod\b
+    - \bgpu clusters?\b
+    - \bmpi\b
+    - \bnccl\b
+  Pretraining:
+    category: ML
+    group: GPU & training
+    patterns:
+    - \bpre-?train(?:ing|ed)? (?:runs?|models?|data|datasets?|pipelines?|at scale|large)\b
+    - \b(?:llm|model|foundation model|large[- ]scale) pre-?training\b
+    - \bpre-?training (?:and|&|/) (?:post-?training|fine-?tuning)\b
+    - \bscaling laws?\b
+  Post-training:
+    category: ML
+    group: Post-training
+    patterns:
+    - \bpost-?training\b
+    - \bsupervised fine-?tuning\b
+    - \binstruction tuning\b
+    - \bpreference (?:tuning|optimization|data)\b
+    - \breward model(?:s|ing|l?ing)?\b
+    cs:
+    - \bSFT\b
+  Hyperparameter tuning:
+    category: ML
+    group: ML concepts
+    patterns:
+    - \bhyper-?parameter (?:tuning|optimi[sz]ation|search|sweeps?)\b
+    - \boptuna\b
+    - \bhyperopt\b
+  Interpretability / explainability:
+    category: ML
+    group: ML concepts
+    patterns:
+    - \binterpretability\b
+    - \bexplainab(?:le|ility) ai\b
+    - \bexplainability\b
+    - \bxai\b(?= (?:methods|techniques))
+    - \bshap\b
+    - \blime\b(?= (?:and|or|,|/))
+    - \bmechanistic interp\w*\b
+  NLP libraries (spaCy, NLTK):
+    category: ML
+    group: ML libraries
+    patterns:
+    - \bspacy\b
+    - \bnltk\b
+    - \bgensim\b
+    - \bstatsmodels\b
+  Operations research / optimization:
+    category: ML
+    group: Math
+    patterns:
+    - \boperations research\b
+    - \bmathematical (?:optimi[sz]ation|programming)\b
+    - \blinear programming\b
+    - \binteger programming\b
+    - \bmixed[- ]integer\b
+    - \bconvex optimi[sz]ation\b
+    - \bgurobi\b
+    - \bcplex\b
+    - \bor-tools\b
+  Monte Carlo / simulation:
+    category: ML
+    group: Math
+    patterns:
+    - \bmonte carlo (?:simulations?|methods?|modell?ing|sampling|tree search)\b
+    - \bstochastic (?:calculus|processes?|modell?ing)\b
+    - \bdiscrete[- ]event simulation\b
+  Agile / Scrum:
+    category: Ways of working
+    group: Delivery practices
+    patterns:
+    - \bagile\b(?= (?:methodolog\w*|practices|development|delivery|frameworks?|ceremonies|processes|principles|software|project management|coach)|/|\))
+    - \bscrum\b
+    - \bkanban\b
+    - \bsafe\b(?= (?:agile|framework))
+    - \bsprint planning\b
+    - \bagile (?:and|&|/) scrum\b
+    not:
+    - \b(?:be|being|stay|remain|are|is|nimble and|fast and|small,?) agile\b
+  Jira / Confluence:
+    category: Ways of working
+    group: Team tools
+    patterns:
+    - \bjira\b
+    - \bconfluence\b
+    - \batlassian\b(?= (?:suite|tools|stack|products))
+    - \blinear\b(?= \(issue|,? jira| or jira)
+  Figma / design tools:
+    category: Frontend
+    group: Design tools
+    patterns:
+    - \bfigma\b
+    - \bsketch\b(?= (?:app|or figma)|,|/)
+    - \badobe xd\b
+    - \bstorybook\b
+  Excel / spreadsheets:
+    category: Retrieval & data
+    group: BI
+    patterns:
+    - \bexcel\b(?! (?:in|at)\b)
+    - \bspreadsheets?\b
+    - \bgoogle sheets\b
+    not:
+    - \bexcel(?:s|led|ling|lence|lent)\b
+  Salesforce:
+    category: Business apps
+    group: CRM
+    patterns:
+    - \bsalesforce\b
+    - \bsfdc\b
+    - \bapex\b(?= (?:code|classes|triggers)|,|/)
+    - \blightning web components?\b
+  HubSpot / CRM tools:
+    category: Business apps
+    group: CRM
+    patterns:
+    - \bhubspot\b
+    - \bzendesk\b
+    - \bmarketo\b
+    - \bdynamics 365\b
+    - \bmicrosoft dynamics\b
+    - \bcrm (?:systems?|platforms?|tools?|integrations?)\b
+  SAP:
+    category: Business apps
+    group: ERP
+    cs:
+    - \bSAP\b(?! (?:Concur|SuccessFactors) (?:to|for) (?:submit|apply))
+    - \bS/4 ?HANA\b
+    - \bABAP\b
+  ServiceNow:
+    category: Business apps
+    group: IT service management
+    patterns:
+    - \bservicenow\b
+    - \bitsm\b
+    - \bitil\b
+  NetSuite / ERP:
+    category: Business apps
+    group: ERP
+    patterns:
+    - \bnetsuite\b
+    - \berp (?:systems?|platforms?|integrations?|implementations?)\b
+    - \boracle (?:ebs|e-business suite|fusion)\b
+    - \bworkday (?:hcm|financials|integrations?|studio|extend)\b
+  Microsoft Power Platform / SharePoint:
+    category: Business apps
+    group: Microsoft 365
+    patterns:
+    - \bpower (?:apps|automate|platform)\b
+    - \bsharepoint\b
+    - \bmicrosoft 365\b
+    - \bm365\b
+    - \bgoogle workspace\b(?= (?:admin|apis?|administration))
+  Shopify / e-commerce platforms:
+    category: Business apps
+    group: E-commerce
+    patterns:
+    - \bshopify\b
+    - \bmagento\b
+    - \bwoocommerce\b
+    - \bbigcommerce\b
+    - \bsalesforce commerce cloud\b
+  Twilio / messaging APIs:
+    category: Backend
+    group: Communications APIs
+    patterns:
+    - \btwilio\b
+    - \bsendgrid\b
+    - \bwebrtc\b
+    - \blivekit\b
+  Game engines (Unity, Unreal):
+    category: Frontend
+    group: 3D & games
+    patterns:
+    - \bunreal engine\b
+    - \bue5\b
+    - \bgodot\b
+    - \bunity3d\b
+    - \bunity (?:engine|3d|developer|game)\b
+    - \bthree\.js\b
+    - \bwebgl\b
+    - \bwebgpu\b
+  Geospatial (GIS):
+    category: Retrieval & data
+    group: Geospatial
+    patterns:
+    - \bgis\b
+    - \barcgis\b
+    - \besri\b
+    - \bqgis\b
+    - \bpostgis\b
+    - \bgeospatial\b
+    - \bmapbox\b
+  Healthcare data (FHIR, HL7):
+    category: Domain
+    group: Domain
+    patterns:
+    - \bfhir\b
+    - \bhl7\b
+    - \bdicom\b
+    - \bemr systems?\b
+    - \behr (?:systems?|integration|data)\b
+    - \bepic (?:systems|ehr|integration)\b
+  Trino / Presto:
+    category: Retrieval & data
+    group: Big data
+    patterns:
+    - \btrino\b
+    - \bpresto(?:db)?\b
+    - \bathena\b(?= (?:queries|sql)|,|/|\))
+    - \bamazon athena\b
+  Teradata / legacy warehouses:
+    category: Retrieval & data
+    group: Warehouses
+    patterns:
+    - \bteradata\b
+    - \bvertica\b
+    - \bgreenplum\b
+    - \bnetezza\b
+    - \bexadata\b
+  ETL tools (Informatica, SSIS, Talend):
+    category: Retrieval & data
+    group: Data integration
+    patterns:
+    - \binformatica\b
+    - \bssis\b
+    - \btalend\b
+    - \bmatillion\b
+    - \bazure data factory\b
+    - \baws glue\b
+    - \bglue (?:jobs?|catalog|etl)\b
+    - \bnifi\b
+    - \bssrs\b
+    - \bssas\b
+  Microsoft Fabric / Synapse:
+    category: Retrieval & data
+    group: Warehouses
+    patterns:
+    - \bmicrosoft fabric\b
+    - \bfabric (?:lakehouse|warehouse|data factory)\b
+    - \bazure synapse\b
+    - \bsynapse analytics\b
+  Unity Catalog / data catalogs:
+    category: Retrieval & data
+    group: Data governance
+    patterns:
+    - \bunity catalog\b
+    - \bdata catalogs?\b
+    - \bcollibra\b
+    - \balation\b
+    - \bdatahub\b
+    - \bdata lineage\b
+  Change data capture (Debezium):
+    category: Retrieval & data
+    group: Streaming
+    patterns:
+    - \bchange data capture\b
+    - \bdebezium\b
+    cs:
+    - \bCDC\b(?! (?:guidelines|recommend))
+  Product analytics (Amplitude, Mixpanel):
+    category: Retrieval & data
+    group: Product analytics
+    patterns:
+    - \bamplitude\b(?= (?:analytics)|,|/|\))
+    - \bmixpanel\b
+    - \bposthog\b
+    - \bsegment\b(?= (?:cdp|\.io|\.com))
+    - \bgoogle analytics\b
+    - \bga4\b
+    - \bproduct analytics\b
+    - \bheap analytics\b
+  Data modeling / warehousing:
+    category: Retrieval & data
+    group: Warehouses
+    patterns:
+    - \bdata model(?:l?ing)\b
+    - \bdimensional model(?:l?ing)\b
+    - \bstar schemas?\b
+    - \bdata warehous(?:e|es|ing)\b
+    - \bkimball\b
+    - \bdata vault\b
+    - \bolap\b
+  Data quality:
+    category: Retrieval & data
+    group: Data governance
+    patterns:
+    - \bdata quality\b
+    - \bgreat expectations\b
+    - \bdata observability\b
+    - \bdata contracts?\b
+    - \bmonte carlo\b(?= data)
+  Query optimization / performance tuning:
+    category: Backend
+    group: Performance
+    patterns:
+    - \bquery (?:optimi[sz]ation|tuning|performance)\b
+    - \bperformance (?:tuning|optimi[sz]ation|engineering|profiling)\b
+    - \bprofiling\b(?= (?:tools?|and|&)|,|/)
+    - \bprofilers?\b
+    - \bflame ?graphs?\b
+  Concurrency / multithreading:
+    category: Backend
+    group: Performance
+    patterns:
+    - \bconcurrency\b
+    - \bmulti-?threading\b
+    - \bmulti-?threaded\b
+    - \bparallel programming\b
+    - \block-free\b
+    - \bmemory management\b
+  Compilers (LLVM, MLIR):
+    category: Backend
+    group: Systems programming
+    patterns:
+    - \bcompilers?\b(?! (?:of|and editors))
+    - \bllvm\b
+    - \bmlir\b
+    - \bxla\b
+    - \btvm\b
+    - \bcodegen\b
+  OOP / design patterns:
+    category: Backend
+    group: Software design
+    patterns:
+    - \bobject[- ]oriented (?:programming|design|languages?|principles)\b
+    - \boop\b
+    - \bsolid principles\b
+    - \bdesign patterns\b
+    - \bdomain[- ]driven design\b
+    - \bddd\b
+    - \bcqrs\b
+    - \bevent sourcing\b
+    - \bclean architecture\b
+    - \bfunctional programming\b
+  Data structures & algorithms:
+    category: Backend
+    group: CS fundamentals
+    patterns:
+    - \bdata structures\b
+    - \balgorithms\b(?! (?:team|teams))
+    - \bcomputer science fundamentals\b
+    - \bcs fundamentals\b
+  Java ecosystem (Hibernate, Spring, JUnit):
+    category: Frameworks
+    group: JVM
+    patterns:
+    - \bhibernate\b
+    - \bjpa\b
+    - \bjunit\b
+    - \bmockito\b
+    - \btestng\b
+    - \bspring (?:security|data|integration)\b
+    cs:
+    - (?:,|/|\(|\band|\bor|\bwith)\s+Spring\b(?! (?:break|semester|term|season))
+    - \bSpring\b(?=\s*(?:,|/|\)|Boot|framework))
+  Redux / state management:
+    category: Frontend
+    group: Web frameworks
+    patterns:
+    - \bredux\b
+    - \bzustand\b
+    - \bmobx\b
+    - \brecoil\b
+    - \btanstack query\b
+    - \breact query\b
+    - \bstate management\b
+  Prisma / ORMs:
+    category: Backend
+    group: Data access
+    patterns:
+    - \bprisma\b(?! cloud)
+    - \bdrizzle\b
+    - \bsequelize\b
+    - \btypeorm\b
+    - \bsqlalchemy\b
+    - \borms?\b
+    - \bobject[- ]relational mapp\w*\b
+  SOAP / XML services:
+    category: Backend
+    group: APIs
+    patterns:
+    - \bsoap\b(?= (?:apis?|services?|web services)|,|/|\))
+    - \bxml\b
+    - \bwsdl\b
+    - \bxslt\b
+  API testing / load testing (Postman, k6):
+    category: Backend
+    group: Testing
+    patterns:
+    - \bpostman\b
+    - \bk6\b
+    - \bjmeter\b
+    - \blocust\b
+    - \bgatling\b
+    - \bload testing\b
+    - \bperformance testing\b
+    - \bsoapui\b
+  BDD / mobile and test tools (Cucumber, Appium):
+    category: Backend
+    group: Testing
+    patterns:
+    - \bcucumber\b
+    - \bgherkin\b
+    - \bbdd\b
+    - \bappium\b
+    - \bxcuitest\b
+    - \bespresso\b(?= (?:tests?|framework)|,|/)
+    - \bsonarqube\b
+    - \btestcontainers\b
+  Accessibility (WCAG):
+    category: Frontend
+    group: Web platform
+    patterns:
+    - \bwcag\b
+    - \baccessibility\b(?= (?:standards|best practices|guidelines|testing|compliance)|,|/|\))
+    - \ba11y\b
+    - \baria\b(?= (?:roles|attributes|patterns))
+    - \bscreen readers?\b
+  SEO:
+    category: Frontend
+    group: Web platform
+    cs:
+    - \bSEO\b
+  Electron / desktop apps:
+    category: Frontend
+    group: Desktop
+    patterns:
+    - \belectron\b(?= (?:apps?|js|framework)|,|/|\))
+    - \btauri\b
+    - \bdesktop applications?\b
+    - \bqt\b(?= (?:framework|quick|qml)|,|/)
+    - \bwpf\b
+  UIKit / native iOS frameworks:
+    category: Frontend
+    group: Mobile
+    patterns:
+    - \buikit\b
+    - \bswiftui\b
+    - \bcore data\b
+    - \bxcode\b
+  Streamlit / Gradio:
+    category: Frameworks
+    group: Python apps
+    patterns:
+    - \bstreamlit\b
+    - \bgradio\b
+    - \bplotly dash\b
+    - \bshiny\b(?= apps?|,|/)
+  Notion / collaboration tools:
+    category: Ways of working
+    group: Team tools
+    cs:
+    - \bNotion\b(?= (?:docs|ai|databases?)|,|/|\))
+    - \bSlack\b(?= (?:apps?|bots?|api|integrations?)|,|/|\))
+  FinOps / cloud cost:
+    category: Cloud & DevOps
+    group: Cloud cost
+    patterns:
+    - \bfinops\b
+    - \bcloud (?:cost|spend) (?:optimi[sz]ation|management|governance)\b
+  Cloud networking (VPC):
+    category: Cloud & DevOps
+    group: Networking
+    patterns:
+    - \bvpcs?\b
+    - \bvpc peering\b
+    - \btransit gateway\b
+    - \bdirect connect\b
+    - \bprivatelink\b
+  macOS:
+    category: Cloud & DevOps
+    group: Endpoint
+    cs:
+    - \bmacOS\b
+    - \bOS X\b
+    patterns:
+    - \bjamf\b
