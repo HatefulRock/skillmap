@@ -1,37 +1,37 @@
 series,month,postings,skill,share
-market,2026-11,22651,Python,0.4222
-market,2026-11,22651,AWS,0.2799
-market,2026-11,22651,Cloud (unspecified),0.2658
-market,2026-11,22651,Microservices / distributed systems,0.2602
-market,2026-11,22651,LLMs / GenAI (general),0.2554
-market,2026-11,22651,AI agents / agentic workflows,0.2539
-market,2026-11,22651,Observability / tracing / monitoring,0.2372
-market,2026-11,22651,SQL,0.2308
-market,2026-11,22651,Java / Kotlin (Spring),0.2118
-market,2026-11,22651,C++ / C#,0.1911
-market,2026-11,22651,CI/CD,0.1843
-market,2026-11,22651,Machine learning fundamentals,0.1835
-market,2026-11,22651,Full-stack / frontend,0.1775
-market,2026-11,22651,Kubernetes,0.168
-market,2026-11,22651,Financial services / banking domain,0.1607
-market,2026-11,22651,System design / architecture,0.1537
-market,2026-11,22651,Docker / containers,0.1448
-market,2026-11,22651,Go,0.1424
-market,2026-11,22651,GCP / Vertex AI,0.141
-market,2026-11,22651,Linux / shell,0.1354
-market,2026-11,22651,LLM provider APIs (OpenAI / Anthropic / Gemini),0.1313
-market,2026-11,22651,Azure (incl. Azure OpenAI),0.1304
-market,2026-11,22651,TypeScript,0.1203
-market,2026-11,22651,Data pipelines / ETL,0.117
-market,2026-11,22651,JavaScript / Node.js,0.1167
-market,2026-11,22651,REST / API design & integration,0.1166
-market,2026-11,22651,Terraform / IaC,0.1099
-market,2026-11,22651,LLM evaluation / eval harnesses,0.1093
-market,2026-11,22651,React / Next.js,0.1082
-market,2026-11,22651,PostgreSQL / relational DBs,0.1062
-market,2026-11,22651,Rust / Scala,0.0884
-market,2026-11,22651,"AI coding tools (Claude Code, Cursor, Copilot)",0.1008
-market,2026-11,22651,Redis / caching,0.0475
+market,2026-11,24847,Python,0.3911
+market,2026-11,24847,AWS,0.2644
+market,2026-11,24847,Cloud (unspecified),0.2527
+market,2026-11,24847,Microservices / distributed systems,0.2406
+market,2026-11,24847,LLMs / GenAI (general),0.2362
+market,2026-11,24847,AI agents / agentic workflows,0.2333
+market,2026-11,24847,Observability / tracing / monitoring,0.2259
+market,2026-11,24847,SQL,0.2185
+market,2026-11,24847,Java / Kotlin (Spring),0.1991
+market,2026-11,24847,C++ / C#,0.177
+market,2026-11,24847,CI/CD,0.1751
+market,2026-11,24847,Machine learning fundamentals,0.169
+market,2026-11,24847,Full-stack / frontend,0.1677
+market,2026-11,24847,Kubernetes,0.1606
+market,2026-11,24847,Financial services / banking domain,0.1503
+market,2026-11,24847,System design / architecture,0.142
+market,2026-11,24847,Docker / containers,0.1395
+market,2026-11,24847,Linux / shell,0.1344
+market,2026-11,24847,GCP / Vertex AI,0.133
+market,2026-11,24847,Go,0.1306
+market,2026-11,24847,Azure (incl. Azure OpenAI),0.1281
+market,2026-11,24847,LLM provider APIs (OpenAI / Anthropic / Gemini),0.1204
+market,2026-11,24847,REST / API design & integration,0.1112
+market,2026-11,24847,TypeScript,0.111
+market,2026-11,24847,JavaScript / Node.js,0.1108
+market,2026-11,24847,Data pipelines / ETL,0.1083
+market,2026-11,24847,Terraform / IaC,0.1081
+market,2026-11,24847,React / Next.js,0.1014
+market,2026-11,24847,LLM evaluation / eval harnesses,0.1005
+market,2026-11,24847,PostgreSQL / relational DBs,0.1005
+market,2026-11,24847,Rust / Scala,0.0807
+market,2026-11,24847,"AI coding tools (Claude Code, Cursor, Copilot)",0.0927
+market,2026-11,24847,Redis / caching,0.0434
 hn,2013-01,150,Python,0.28
 hn,2013-02,165,Python,0.2061
 hn,2013-03,240,Python,0.1625
@@ -2837,336 +2837,6 @@ hn,2026-08,206,Docker / containers,0.1019
 hn,2026-09,221,Docker / containers,0.1086
 hn,2026-10,225,Docker / containers,0.04
 hn,2026-11,216,Docker / containers,0.0694
-hn,2013-01,150,Go,0.0133
-hn,2013-02,165,Go,0.0061
-hn,2013-03,240,Go,0.0042
-hn,2013-04,285,Go,0.007
-hn,2013-05,250,Go,0.016
-hn,2013-06,210,Go,0.0286
-hn,2013-07,235,Go,0.0
-hn,2013-08,235,Go,0.0255
-hn,2013-09,181,Go,0.0166
-hn,2013-10,322,Go,0.0311
-hn,2013-11,223,Go,0.0269
-hn,2013-12,207,Go,0.0193
-hn,2014-01,169,Go,0.0178
-hn,2014-02,258,Go,0.0233
-hn,2014-03,249,Go,0.0402
-hn,2014-04,267,Go,0.0524
-hn,2014-05,322,Go,0.0528
-hn,2014-06,263,Go,0.0494
-hn,2014-07,316,Go,0.0538
-hn,2014-08,387,Go,0.062
-hn,2014-09,208,Go,0.0625
-hn,2014-10,290,Go,0.0517
-hn,2014-11,277,Go,0.0542
-hn,2014-12,382,Go,0.0524
-hn,2015-01,230,Go,0.0609
-hn,2015-02,422,Go,0.0711
-hn,2015-03,437,Go,0.0549
-hn,2015-06,497,Go,0.0443
-hn,2015-07,694,Go,0.062
-hn,2015-08,535,Go,0.0467
-hn,2015-09,242,Go,0.0041
-hn,2015-10,231,Go,0.0087
-hn,2015-11,214,Go,0.0187
-hn,2015-12,121,Go,0.0083
-hn,2016-01,148,Go,0.0135
-hn,2016-02,238,Go,0.0084
-hn,2016-03,230,Go,0.013
-hn,2016-04,256,Go,0.0039
-hn,2016-05,210,Go,0.0048
-hn,2016-06,424,Go,0.0519
-hn,2016-07,536,Go,0.0802
-hn,2016-08,600,Go,0.1017
-hn,2016-09,527,Go,0.1101
-hn,2016-10,636,Go,0.1006
-hn,2016-11,690,Go,0.1043
-hn,2016-12,541,Go,0.1128
-hn,2017-01,534,Go,0.088
-hn,2017-02,811,Go,0.0826
-hn,2017-03,708,Go,0.0862
-hn,2017-04,637,Go,0.0973
-hn,2017-05,722,Go,0.097
-hn,2017-06,650,Go,0.0877
-hn,2017-07,663,Go,0.0935
-hn,2017-08,634,Go,0.1041
-hn,2017-09,687,Go,0.0917
-hn,2017-10,787,Go,0.0953
-hn,2017-11,785,Go,0.0879
-hn,2017-12,682,Go,0.0953
-hn,2018-01,571,Go,0.0946
-hn,2018-02,685,Go,0.0978
-hn,2018-03,750,Go,0.1093
-hn,2018-04,739,Go,0.1177
-hn,2018-05,858,Go,0.1014
-hn,2018-06,667,Go,0.1034
-hn,2018-07,656,Go,0.1052
-hn,2018-08,766,Go,0.1305
-hn,2018-09,594,Go,0.1279
-hn,2018-10,786,Go,0.117
-hn,2018-11,758,Go,0.1253
-hn,2018-12,657,Go,0.1035
-hn,2019-01,668,Go,0.1093
-hn,2019-02,611,Go,0.1162
-hn,2019-03,655,Go,0.1069
-hn,2019-04,651,Go,0.1183
-hn,2019-05,714,Go,0.1078
-hn,2019-06,575,Go,0.1061
-hn,2019-07,663,Go,0.1267
-hn,2019-08,648,Go,0.1049
-hn,2019-09,536,Go,0.1157
-hn,2019-10,632,Go,0.1218
-hn,2019-11,539,Go,0.1002
-hn,2019-12,491,Go,0.1079
-hn,2020-01,491,Go,0.1059
-hn,2020-02,493,Go,0.0892
-hn,2020-03,554,Go,0.0776
-hn,2020-04,392,Go,0.0791
-hn,2020-05,422,Go,0.0972
-hn,2020-06,430,Go,0.0907
-hn,2020-07,456,Go,0.0833
-hn,2020-08,551,Go,0.1216
-hn,2020-09,518,Go,0.1004
-hn,2020-10,622,Go,0.0997
-hn,2020-11,593,Go,0.1079
-hn,2020-12,601,Go,0.1148
-hn,2021-01,620,Go,0.0968
-hn,2021-02,815,Go,0.1006
-hn,2021-03,778,Go,0.1118
-hn,2021-04,757,Go,0.1123
-hn,2021-05,729,Go,0.1111
-hn,2021-06,819,Go,0.0916
-hn,2021-07,739,Go,0.1015
-hn,2021-08,715,Go,0.1007
-hn,2021-09,749,Go,0.0841
-hn,2021-10,642,Go,0.1044
-hn,2021-11,818,Go,0.1064
-hn,2021-12,632,Go,0.1013
-hn,2022-01,566,Go,0.1078
-hn,2022-02,674,Go,0.1098
-hn,2022-03,684,Go,0.1243
-hn,2022-04,629,Go,0.1017
-hn,2022-05,647,Go,0.1113
-hn,2022-06,600,Go,0.1083
-hn,2022-07,421,Go,0.1045
-hn,2022-08,538,Go,0.0911
-hn,2022-09,431,Go,0.0858
-hn,2022-10,381,Go,0.105
-hn,2022-11,451,Go,0.1175
-hn,2022-12,396,Go,0.1061
-hn,2023-01,305,Go,0.0787
-hn,2023-02,370,Go,0.0919
-hn,2023-03,349,Go,0.0946
-hn,2023-04,307,Go,0.0977
-hn,2023-05,294,Go,0.1156
-hn,2023-06,286,Go,0.1049
-hn,2023-07,257,Go,0.0934
-hn,2023-08,292,Go,0.089
-hn,2023-09,246,Go,0.0813
-hn,2023-10,277,Go,0.0722
-hn,2023-11,315,Go,0.0762
-hn,2023-12,276,Go,0.0725
-hn,2024-01,242,Go,0.0661
-hn,2024-02,296,Go,0.0574
-hn,2024-03,259,Go,0.0811
-hn,2024-04,243,Go,0.0905
-hn,2024-05,338,Go,0.0828
-hn,2024-06,303,Go,0.1023
-hn,2024-07,342,Go,0.0702
-hn,2024-08,289,Go,0.0727
-hn,2024-09,273,Go,0.0769
-hn,2024-10,296,Go,0.0878
-hn,2024-11,284,Go,0.0599
-hn,2024-12,285,Go,0.0807
-hn,2025-01,249,Go,0.0442
-hn,2025-02,361,Go,0.0776
-hn,2025-03,319,Go,0.0846
-hn,2025-04,278,Go,0.0827
-hn,2025-05,269,Go,0.0929
-hn,2025-06,326,Go,0.0798
-hn,2025-07,302,Go,0.0927
-hn,2025-08,271,Go,0.0886
-hn,2025-09,270,Go,0.0778
-hn,2025-10,312,Go,0.0609
-hn,2025-11,364,Go,0.0934
-hn,2025-12,342,Go,0.076
-hn,2026-01,234,Go,0.0684
-hn,2026-02,372,Go,0.0753
-hn,2026-03,289,Go,0.0761
-hn,2026-04,302,Go,0.0728
-hn,2026-05,283,Go,0.0742
-hn,2026-06,283,Go,0.0954
-hn,2026-07,234,Go,0.047
-hn,2026-08,206,Go,0.0728
-hn,2026-09,221,Go,0.0588
-hn,2026-10,225,Go,0.0667
-hn,2026-11,216,Go,0.0741
-hn,2013-01,150,GCP / Vertex AI,0.0
-hn,2013-02,165,GCP / Vertex AI,0.0
-hn,2013-03,240,GCP / Vertex AI,0.0
-hn,2013-04,285,GCP / Vertex AI,0.0
-hn,2013-05,250,GCP / Vertex AI,0.0
-hn,2013-06,210,GCP / Vertex AI,0.0
-hn,2013-07,235,GCP / Vertex AI,0.0
-hn,2013-08,235,GCP / Vertex AI,0.0
-hn,2013-09,181,GCP / Vertex AI,0.0
-hn,2013-10,322,GCP / Vertex AI,0.0
-hn,2013-11,223,GCP / Vertex AI,0.0
-hn,2013-12,207,GCP / Vertex AI,0.0
-hn,2014-01,169,GCP / Vertex AI,0.0
-hn,2014-02,258,GCP / Vertex AI,0.0039
-hn,2014-03,249,GCP / Vertex AI,0.004
-hn,2014-04,267,GCP / Vertex AI,0.0
-hn,2014-05,322,GCP / Vertex AI,0.0
-hn,2014-06,263,GCP / Vertex AI,0.0
-hn,2014-07,316,GCP / Vertex AI,0.0095
-hn,2014-08,387,GCP / Vertex AI,0.0078
-hn,2014-09,208,GCP / Vertex AI,0.0048
-hn,2014-10,290,GCP / Vertex AI,0.0034
-hn,2014-11,277,GCP / Vertex AI,0.0
-hn,2014-12,382,GCP / Vertex AI,0.0052
-hn,2015-01,230,GCP / Vertex AI,0.013
-hn,2015-02,422,GCP / Vertex AI,0.0024
-hn,2015-03,437,GCP / Vertex AI,0.0046
-hn,2015-06,497,GCP / Vertex AI,0.002
-hn,2015-07,694,GCP / Vertex AI,0.0014
-hn,2015-08,535,GCP / Vertex AI,0.0019
-hn,2015-09,242,GCP / Vertex AI,0.0
-hn,2015-10,231,GCP / Vertex AI,0.0
-hn,2015-11,214,GCP / Vertex AI,0.0
-hn,2015-12,121,GCP / Vertex AI,0.0
-hn,2016-01,148,GCP / Vertex AI,0.0
-hn,2016-02,238,GCP / Vertex AI,0.0
-hn,2016-03,230,GCP / Vertex AI,0.0
-hn,2016-04,256,GCP / Vertex AI,0.0
-hn,2016-05,210,GCP / Vertex AI,0.0
-hn,2016-06,424,GCP / Vertex AI,0.0024
-hn,2016-07,536,GCP / Vertex AI,0.0037
-hn,2016-08,600,GCP / Vertex AI,0.005
-hn,2016-09,527,GCP / Vertex AI,0.0095
-hn,2016-10,636,GCP / Vertex AI,0.0157
-hn,2016-11,690,GCP / Vertex AI,0.0159
-hn,2016-12,541,GCP / Vertex AI,0.0129
-hn,2017-01,534,GCP / Vertex AI,0.0169
-hn,2017-02,811,GCP / Vertex AI,0.0197
-hn,2017-03,708,GCP / Vertex AI,0.0198
-hn,2017-04,637,GCP / Vertex AI,0.0188
-hn,2017-05,722,GCP / Vertex AI,0.0222
-hn,2017-06,650,GCP / Vertex AI,0.0185
-hn,2017-07,663,GCP / Vertex AI,0.0211
-hn,2017-08,634,GCP / Vertex AI,0.0252
-hn,2017-09,687,GCP / Vertex AI,0.0233
-hn,2017-10,787,GCP / Vertex AI,0.028
-hn,2017-11,785,GCP / Vertex AI,0.028
-hn,2017-12,682,GCP / Vertex AI,0.0279
-hn,2018-01,571,GCP / Vertex AI,0.0298
-hn,2018-02,685,GCP / Vertex AI,0.0277
-hn,2018-03,750,GCP / Vertex AI,0.032
-hn,2018-04,739,GCP / Vertex AI,0.0298
-hn,2018-05,858,GCP / Vertex AI,0.0373
-hn,2018-06,667,GCP / Vertex AI,0.0375
-hn,2018-07,656,GCP / Vertex AI,0.0351
-hn,2018-08,766,GCP / Vertex AI,0.0392
-hn,2018-09,594,GCP / Vertex AI,0.0354
-hn,2018-10,786,GCP / Vertex AI,0.0433
-hn,2018-11,758,GCP / Vertex AI,0.0422
-hn,2018-12,657,GCP / Vertex AI,0.0335
-hn,2019-01,668,GCP / Vertex AI,0.0449
-hn,2019-02,611,GCP / Vertex AI,0.0556
-hn,2019-03,655,GCP / Vertex AI,0.0489
-hn,2019-04,651,GCP / Vertex AI,0.0399
-hn,2019-05,714,GCP / Vertex AI,0.035
-hn,2019-06,575,GCP / Vertex AI,0.0365
-hn,2019-07,663,GCP / Vertex AI,0.0483
-hn,2019-08,648,GCP / Vertex AI,0.0463
-hn,2019-09,536,GCP / Vertex AI,0.0354
-hn,2019-10,632,GCP / Vertex AI,0.0506
-hn,2019-11,539,GCP / Vertex AI,0.0445
-hn,2019-12,491,GCP / Vertex AI,0.0489
-hn,2020-01,491,GCP / Vertex AI,0.057
-hn,2020-02,493,GCP / Vertex AI,0.069
-hn,2020-03,554,GCP / Vertex AI,0.056
-hn,2020-04,392,GCP / Vertex AI,0.0255
-hn,2020-05,422,GCP / Vertex AI,0.0427
-hn,2020-06,430,GCP / Vertex AI,0.0442
-hn,2020-07,456,GCP / Vertex AI,0.0439
-hn,2020-08,551,GCP / Vertex AI,0.0635
-hn,2020-09,518,GCP / Vertex AI,0.0444
-hn,2020-10,622,GCP / Vertex AI,0.0482
-hn,2020-11,593,GCP / Vertex AI,0.0337
-hn,2020-12,601,GCP / Vertex AI,0.0466
-hn,2021-01,620,GCP / Vertex AI,0.0484
-hn,2021-02,815,GCP / Vertex AI,0.0515
-hn,2021-03,778,GCP / Vertex AI,0.054
-hn,2021-04,757,GCP / Vertex AI,0.0608
-hn,2021-05,729,GCP / Vertex AI,0.0617
-hn,2021-06,819,GCP / Vertex AI,0.0525
-hn,2021-07,739,GCP / Vertex AI,0.0568
-hn,2021-08,715,GCP / Vertex AI,0.0727
-hn,2021-09,749,GCP / Vertex AI,0.0507
-hn,2021-10,642,GCP / Vertex AI,0.067
-hn,2021-11,818,GCP / Vertex AI,0.0575
-hn,2021-12,632,GCP / Vertex AI,0.0554
-hn,2022-01,566,GCP / Vertex AI,0.0565
-hn,2022-02,674,GCP / Vertex AI,0.0534
-hn,2022-03,684,GCP / Vertex AI,0.057
-hn,2022-04,629,GCP / Vertex AI,0.0397
-hn,2022-05,647,GCP / Vertex AI,0.0479
-hn,2022-06,600,GCP / Vertex AI,0.04
-hn,2022-07,421,GCP / Vertex AI,0.0523
-hn,2022-08,538,GCP / Vertex AI,0.0576
-hn,2022-09,431,GCP / Vertex AI,0.058
-hn,2022-10,381,GCP / Vertex AI,0.063
-hn,2022-11,451,GCP / Vertex AI,0.0687
-hn,2022-12,396,GCP / Vertex AI,0.048
-hn,2023-01,305,GCP / Vertex AI,0.0623
-hn,2023-02,370,GCP / Vertex AI,0.0459
-hn,2023-03,349,GCP / Vertex AI,0.0344
-hn,2023-04,307,GCP / Vertex AI,0.0521
-hn,2023-05,294,GCP / Vertex AI,0.0544
-hn,2023-06,286,GCP / Vertex AI,0.0385
-hn,2023-07,257,GCP / Vertex AI,0.0428
-hn,2023-08,292,GCP / Vertex AI,0.0377
-hn,2023-09,246,GCP / Vertex AI,0.0488
-hn,2023-10,277,GCP / Vertex AI,0.0542
-hn,2023-11,315,GCP / Vertex AI,0.0317
-hn,2023-12,276,GCP / Vertex AI,0.0435
-hn,2024-01,242,GCP / Vertex AI,0.0496
-hn,2024-02,296,GCP / Vertex AI,0.0473
-hn,2024-03,259,GCP / Vertex AI,0.0463
-hn,2024-04,243,GCP / Vertex AI,0.0329
-hn,2024-05,338,GCP / Vertex AI,0.0355
-hn,2024-06,303,GCP / Vertex AI,0.0396
-hn,2024-07,342,GCP / Vertex AI,0.0497
-hn,2024-08,289,GCP / Vertex AI,0.0415
-hn,2024-09,273,GCP / Vertex AI,0.044
-hn,2024-10,296,GCP / Vertex AI,0.0473
-hn,2024-11,284,GCP / Vertex AI,0.0423
-hn,2024-12,285,GCP / Vertex AI,0.0491
-hn,2025-01,249,GCP / Vertex AI,0.0562
-hn,2025-02,361,GCP / Vertex AI,0.0693
-hn,2025-03,319,GCP / Vertex AI,0.0721
-hn,2025-04,278,GCP / Vertex AI,0.0612
-hn,2025-05,269,GCP / Vertex AI,0.0855
-hn,2025-06,326,GCP / Vertex AI,0.0767
-hn,2025-07,302,GCP / Vertex AI,0.0695
-hn,2025-08,271,GCP / Vertex AI,0.059
-hn,2025-09,270,GCP / Vertex AI,0.0852
-hn,2025-10,312,GCP / Vertex AI,0.0705
-hn,2025-11,364,GCP / Vertex AI,0.0769
-hn,2025-12,342,GCP / Vertex AI,0.0585
-hn,2026-01,234,GCP / Vertex AI,0.0641
-hn,2026-02,372,GCP / Vertex AI,0.0806
-hn,2026-03,289,GCP / Vertex AI,0.0588
-hn,2026-04,302,GCP / Vertex AI,0.0497
-hn,2026-05,283,GCP / Vertex AI,0.0636
-hn,2026-06,283,GCP / Vertex AI,0.0424
-hn,2026-07,234,GCP / Vertex AI,0.0598
-hn,2026-08,206,GCP / Vertex AI,0.0534
-hn,2026-09,221,GCP / Vertex AI,0.0588
-hn,2026-10,225,GCP / Vertex AI,0.04
-hn,2026-11,216,GCP / Vertex AI,0.0602
 hn,2013-01,150,Linux / shell,0.1133
 hn,2013-02,165,Linux / shell,0.1091
 hn,2013-03,240,Linux / shell,0.0792
@@ -3332,171 +3002,336 @@ hn,2026-08,206,Linux / shell,0.0583
 hn,2026-09,221,Linux / shell,0.0588
 hn,2026-10,225,Linux / shell,0.0578
 hn,2026-11,216,Linux / shell,0.0741
-hn,2013-01,150,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0
-hn,2013-02,165,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0
-hn,2013-03,240,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0
-hn,2013-04,285,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0
-hn,2013-05,250,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0
-hn,2013-06,210,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0
-hn,2013-07,235,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0
-hn,2013-08,235,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0
-hn,2013-09,181,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0
-hn,2013-10,322,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0
-hn,2013-11,223,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0
-hn,2013-12,207,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0
-hn,2014-01,169,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0
-hn,2014-02,258,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0
-hn,2014-03,249,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0
-hn,2014-04,267,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0
-hn,2014-05,322,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0
-hn,2014-06,263,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0
-hn,2014-07,316,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0
-hn,2014-08,387,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0
-hn,2014-09,208,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0
-hn,2014-10,290,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0
-hn,2014-11,277,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0
-hn,2014-12,382,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0
-hn,2015-01,230,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0
-hn,2015-02,422,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0
-hn,2015-03,437,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0
-hn,2015-06,497,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0
-hn,2015-07,694,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0
-hn,2015-08,535,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0
-hn,2015-09,242,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0
-hn,2015-10,231,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0
-hn,2015-11,214,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0
-hn,2015-12,121,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0
-hn,2016-01,148,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0
-hn,2016-02,238,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0
-hn,2016-03,230,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0
-hn,2016-04,256,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0
-hn,2016-05,210,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0
-hn,2016-06,424,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0
-hn,2016-07,536,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0
-hn,2016-08,600,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0
-hn,2016-09,527,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0
-hn,2016-10,636,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0
-hn,2016-11,690,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0
-hn,2016-12,541,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0018
-hn,2017-01,534,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0019
-hn,2017-02,811,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0025
-hn,2017-03,708,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0
-hn,2017-04,637,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0
-hn,2017-05,722,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0
-hn,2017-06,650,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0015
-hn,2017-07,663,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0015
-hn,2017-08,634,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0
-hn,2017-09,687,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0015
-hn,2017-10,787,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0
-hn,2017-11,785,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0
-hn,2017-12,682,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0015
-hn,2018-01,571,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0018
-hn,2018-02,685,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0015
-hn,2018-03,750,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0013
-hn,2018-04,739,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0
-hn,2018-05,858,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0023
-hn,2018-06,667,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0015
-hn,2018-07,656,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0015
-hn,2018-08,766,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0
-hn,2018-09,594,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0
-hn,2018-10,786,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0013
-hn,2018-11,758,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0
-hn,2018-12,657,LLM provider APIs (OpenAI / Anthropic / Gemini),0.003
-hn,2019-01,668,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0015
-hn,2019-02,611,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0016
-hn,2019-03,655,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0015
-hn,2019-04,651,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0031
-hn,2019-05,714,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0028
-hn,2019-06,575,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0035
-hn,2019-07,663,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0045
-hn,2019-08,648,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0046
-hn,2019-09,536,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0019
-hn,2019-10,632,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0032
-hn,2019-11,539,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0
-hn,2019-12,491,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0
-hn,2020-01,491,LLM provider APIs (OpenAI / Anthropic / Gemini),0.002
-hn,2020-02,493,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0041
-hn,2020-03,554,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0018
-hn,2020-04,392,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0051
-hn,2020-05,422,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0024
-hn,2020-06,430,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0023
-hn,2020-07,456,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0022
-hn,2020-08,551,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0036
-hn,2020-09,518,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0039
-hn,2020-10,622,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0048
-hn,2020-11,593,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0034
-hn,2020-12,601,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0017
-hn,2021-01,620,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0032
-hn,2021-02,815,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0037
-hn,2021-03,778,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0026
-hn,2021-04,757,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0053
-hn,2021-05,729,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0041
-hn,2021-06,819,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0012
-hn,2021-07,739,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0027
-hn,2021-08,715,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0014
-hn,2021-09,749,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0027
-hn,2021-10,642,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0078
-hn,2021-11,818,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0049
-hn,2021-12,632,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0063
-hn,2022-01,566,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0035
-hn,2022-02,674,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0074
-hn,2022-03,684,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0088
-hn,2022-04,629,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0079
-hn,2022-05,647,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0046
-hn,2022-06,600,LLM provider APIs (OpenAI / Anthropic / Gemini),0.005
-hn,2022-07,421,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0071
-hn,2022-08,538,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0037
-hn,2022-09,431,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0046
-hn,2022-10,381,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0079
-hn,2022-11,451,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0111
-hn,2022-12,396,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0101
-hn,2023-01,305,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0033
-hn,2023-02,370,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0054
-hn,2023-03,349,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0115
-hn,2023-04,307,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0195
-hn,2023-05,294,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0102
-hn,2023-06,286,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0105
-hn,2023-07,257,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0428
-hn,2023-08,292,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0103
-hn,2023-09,246,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0285
-hn,2023-10,277,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0253
-hn,2023-11,315,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0317
-hn,2023-12,276,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0399
-hn,2024-01,242,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0248
-hn,2024-02,296,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0338
-hn,2024-03,259,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0154
-hn,2024-04,243,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0329
-hn,2024-05,338,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0266
-hn,2024-06,303,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0132
-hn,2024-07,342,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0205
-hn,2024-08,289,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0277
-hn,2024-09,273,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0256
-hn,2024-10,296,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0169
-hn,2024-11,284,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0387
-hn,2024-12,285,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0211
-hn,2025-01,249,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0442
-hn,2025-02,361,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0388
-hn,2025-03,319,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0408
-hn,2025-04,278,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0432
-hn,2025-05,269,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0446
-hn,2025-06,326,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0429
-hn,2025-07,302,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0497
-hn,2025-08,271,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0443
-hn,2025-09,270,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0519
-hn,2025-10,312,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0545
-hn,2025-11,364,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0769
-hn,2025-12,342,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0409
-hn,2026-01,234,LLM provider APIs (OpenAI / Anthropic / Gemini),0.047
-hn,2026-02,372,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0753
-hn,2026-03,289,LLM provider APIs (OpenAI / Anthropic / Gemini),0.09
-hn,2026-04,302,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0894
-hn,2026-05,283,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0848
-hn,2026-06,283,LLM provider APIs (OpenAI / Anthropic / Gemini),0.1272
-hn,2026-07,234,LLM provider APIs (OpenAI / Anthropic / Gemini),0.1154
-hn,2026-08,206,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0874
-hn,2026-09,221,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0905
-hn,2026-10,225,LLM provider APIs (OpenAI / Anthropic / Gemini),0.08
-hn,2026-11,216,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0741
+hn,2013-01,150,GCP / Vertex AI,0.0
+hn,2013-02,165,GCP / Vertex AI,0.0
+hn,2013-03,240,GCP / Vertex AI,0.0
+hn,2013-04,285,GCP / Vertex AI,0.0
+hn,2013-05,250,GCP / Vertex AI,0.0
+hn,2013-06,210,GCP / Vertex AI,0.0
+hn,2013-07,235,GCP / Vertex AI,0.0
+hn,2013-08,235,GCP / Vertex AI,0.0
+hn,2013-09,181,GCP / Vertex AI,0.0
+hn,2013-10,322,GCP / Vertex AI,0.0
+hn,2013-11,223,GCP / Vertex AI,0.0
+hn,2013-12,207,GCP / Vertex AI,0.0
+hn,2014-01,169,GCP / Vertex AI,0.0
+hn,2014-02,258,GCP / Vertex AI,0.0039
+hn,2014-03,249,GCP / Vertex AI,0.004
+hn,2014-04,267,GCP / Vertex AI,0.0
+hn,2014-05,322,GCP / Vertex AI,0.0
+hn,2014-06,263,GCP / Vertex AI,0.0
+hn,2014-07,316,GCP / Vertex AI,0.0095
+hn,2014-08,387,GCP / Vertex AI,0.0078
+hn,2014-09,208,GCP / Vertex AI,0.0048
+hn,2014-10,290,GCP / Vertex AI,0.0034
+hn,2014-11,277,GCP / Vertex AI,0.0
+hn,2014-12,382,GCP / Vertex AI,0.0052
+hn,2015-01,230,GCP / Vertex AI,0.013
+hn,2015-02,422,GCP / Vertex AI,0.0024
+hn,2015-03,437,GCP / Vertex AI,0.0046
+hn,2015-06,497,GCP / Vertex AI,0.002
+hn,2015-07,694,GCP / Vertex AI,0.0014
+hn,2015-08,535,GCP / Vertex AI,0.0019
+hn,2015-09,242,GCP / Vertex AI,0.0
+hn,2015-10,231,GCP / Vertex AI,0.0
+hn,2015-11,214,GCP / Vertex AI,0.0
+hn,2015-12,121,GCP / Vertex AI,0.0
+hn,2016-01,148,GCP / Vertex AI,0.0
+hn,2016-02,238,GCP / Vertex AI,0.0
+hn,2016-03,230,GCP / Vertex AI,0.0
+hn,2016-04,256,GCP / Vertex AI,0.0
+hn,2016-05,210,GCP / Vertex AI,0.0
+hn,2016-06,424,GCP / Vertex AI,0.0024
+hn,2016-07,536,GCP / Vertex AI,0.0037
+hn,2016-08,600,GCP / Vertex AI,0.005
+hn,2016-09,527,GCP / Vertex AI,0.0095
+hn,2016-10,636,GCP / Vertex AI,0.0157
+hn,2016-11,690,GCP / Vertex AI,0.0159
+hn,2016-12,541,GCP / Vertex AI,0.0129
+hn,2017-01,534,GCP / Vertex AI,0.0169
+hn,2017-02,811,GCP / Vertex AI,0.0197
+hn,2017-03,708,GCP / Vertex AI,0.0198
+hn,2017-04,637,GCP / Vertex AI,0.0188
+hn,2017-05,722,GCP / Vertex AI,0.0222
+hn,2017-06,650,GCP / Vertex AI,0.0185
+hn,2017-07,663,GCP / Vertex AI,0.0211
+hn,2017-08,634,GCP / Vertex AI,0.0252
+hn,2017-09,687,GCP / Vertex AI,0.0233
+hn,2017-10,787,GCP / Vertex AI,0.028
+hn,2017-11,785,GCP / Vertex AI,0.028
+hn,2017-12,682,GCP / Vertex AI,0.0279
+hn,2018-01,571,GCP / Vertex AI,0.0298
+hn,2018-02,685,GCP / Vertex AI,0.0277
+hn,2018-03,750,GCP / Vertex AI,0.032
+hn,2018-04,739,GCP / Vertex AI,0.0298
+hn,2018-05,858,GCP / Vertex AI,0.0373
+hn,2018-06,667,GCP / Vertex AI,0.0375
+hn,2018-07,656,GCP / Vertex AI,0.0351
+hn,2018-08,766,GCP / Vertex AI,0.0392
+hn,2018-09,594,GCP / Vertex AI,0.0354
+hn,2018-10,786,GCP / Vertex AI,0.0433
+hn,2018-11,758,GCP / Vertex AI,0.0422
+hn,2018-12,657,GCP / Vertex AI,0.0335
+hn,2019-01,668,GCP / Vertex AI,0.0449
+hn,2019-02,611,GCP / Vertex AI,0.0556
+hn,2019-03,655,GCP / Vertex AI,0.0489
+hn,2019-04,651,GCP / Vertex AI,0.0399
+hn,2019-05,714,GCP / Vertex AI,0.035
+hn,2019-06,575,GCP / Vertex AI,0.0365
+hn,2019-07,663,GCP / Vertex AI,0.0483
+hn,2019-08,648,GCP / Vertex AI,0.0463
+hn,2019-09,536,GCP / Vertex AI,0.0354
+hn,2019-10,632,GCP / Vertex AI,0.0506
+hn,2019-11,539,GCP / Vertex AI,0.0445
+hn,2019-12,491,GCP / Vertex AI,0.0489
+hn,2020-01,491,GCP / Vertex AI,0.057
+hn,2020-02,493,GCP / Vertex AI,0.069
+hn,2020-03,554,GCP / Vertex AI,0.056
+hn,2020-04,392,GCP / Vertex AI,0.0255
+hn,2020-05,422,GCP / Vertex AI,0.0427
+hn,2020-06,430,GCP / Vertex AI,0.0442
+hn,2020-07,456,GCP / Vertex AI,0.0439
+hn,2020-08,551,GCP / Vertex AI,0.0635
+hn,2020-09,518,GCP / Vertex AI,0.0444
+hn,2020-10,622,GCP / Vertex AI,0.0482
+hn,2020-11,593,GCP / Vertex AI,0.0337
+hn,2020-12,601,GCP / Vertex AI,0.0466
+hn,2021-01,620,GCP / Vertex AI,0.0484
+hn,2021-02,815,GCP / Vertex AI,0.0515
+hn,2021-03,778,GCP / Vertex AI,0.054
+hn,2021-04,757,GCP / Vertex AI,0.0608
+hn,2021-05,729,GCP / Vertex AI,0.0617
+hn,2021-06,819,GCP / Vertex AI,0.0525
+hn,2021-07,739,GCP / Vertex AI,0.0568
+hn,2021-08,715,GCP / Vertex AI,0.0727
+hn,2021-09,749,GCP / Vertex AI,0.0507
+hn,2021-10,642,GCP / Vertex AI,0.067
+hn,2021-11,818,GCP / Vertex AI,0.0575
+hn,2021-12,632,GCP / Vertex AI,0.0554
+hn,2022-01,566,GCP / Vertex AI,0.0565
+hn,2022-02,674,GCP / Vertex AI,0.0534
+hn,2022-03,684,GCP / Vertex AI,0.057
+hn,2022-04,629,GCP / Vertex AI,0.0397
+hn,2022-05,647,GCP / Vertex AI,0.0479
+hn,2022-06,600,GCP / Vertex AI,0.04
+hn,2022-07,421,GCP / Vertex AI,0.0523
+hn,2022-08,538,GCP / Vertex AI,0.0576
+hn,2022-09,431,GCP / Vertex AI,0.058
+hn,2022-10,381,GCP / Vertex AI,0.063
+hn,2022-11,451,GCP / Vertex AI,0.0687
+hn,2022-12,396,GCP / Vertex AI,0.048
+hn,2023-01,305,GCP / Vertex AI,0.0623
+hn,2023-02,370,GCP / Vertex AI,0.0459
+hn,2023-03,349,GCP / Vertex AI,0.0344
+hn,2023-04,307,GCP / Vertex AI,0.0521
+hn,2023-05,294,GCP / Vertex AI,0.0544
+hn,2023-06,286,GCP / Vertex AI,0.0385
+hn,2023-07,257,GCP / Vertex AI,0.0428
+hn,2023-08,292,GCP / Vertex AI,0.0377
+hn,2023-09,246,GCP / Vertex AI,0.0488
+hn,2023-10,277,GCP / Vertex AI,0.0542
+hn,2023-11,315,GCP / Vertex AI,0.0317
+hn,2023-12,276,GCP / Vertex AI,0.0435
+hn,2024-01,242,GCP / Vertex AI,0.0496
+hn,2024-02,296,GCP / Vertex AI,0.0473
+hn,2024-03,259,GCP / Vertex AI,0.0463
+hn,2024-04,243,GCP / Vertex AI,0.0329
+hn,2024-05,338,GCP / Vertex AI,0.0355
+hn,2024-06,303,GCP / Vertex AI,0.0396
+hn,2024-07,342,GCP / Vertex AI,0.0497
+hn,2024-08,289,GCP / Vertex AI,0.0415
+hn,2024-09,273,GCP / Vertex AI,0.044
+hn,2024-10,296,GCP / Vertex AI,0.0473
+hn,2024-11,284,GCP / Vertex AI,0.0423
+hn,2024-12,285,GCP / Vertex AI,0.0491
+hn,2025-01,249,GCP / Vertex AI,0.0562
+hn,2025-02,361,GCP / Vertex AI,0.0693
+hn,2025-03,319,GCP / Vertex AI,0.0721
+hn,2025-04,278,GCP / Vertex AI,0.0612
+hn,2025-05,269,GCP / Vertex AI,0.0855
+hn,2025-06,326,GCP / Vertex AI,0.0767
+hn,2025-07,302,GCP / Vertex AI,0.0695
+hn,2025-08,271,GCP / Vertex AI,0.059
+hn,2025-09,270,GCP / Vertex AI,0.0852
+hn,2025-10,312,GCP / Vertex AI,0.0705
+hn,2025-11,364,GCP / Vertex AI,0.0769
+hn,2025-12,342,GCP / Vertex AI,0.0585
+hn,2026-01,234,GCP / Vertex AI,0.0641
+hn,2026-02,372,GCP / Vertex AI,0.0806
+hn,2026-03,289,GCP / Vertex AI,0.0588
+hn,2026-04,302,GCP / Vertex AI,0.0497
+hn,2026-05,283,GCP / Vertex AI,0.0636
+hn,2026-06,283,GCP / Vertex AI,0.0424
+hn,2026-07,234,GCP / Vertex AI,0.0598
+hn,2026-08,206,GCP / Vertex AI,0.0534
+hn,2026-09,221,GCP / Vertex AI,0.0588
+hn,2026-10,225,GCP / Vertex AI,0.04
+hn,2026-11,216,GCP / Vertex AI,0.0602
+hn,2013-01,150,Go,0.0133
+hn,2013-02,165,Go,0.0061
+hn,2013-03,240,Go,0.0042
+hn,2013-04,285,Go,0.007
+hn,2013-05,250,Go,0.016
+hn,2013-06,210,Go,0.0286
+hn,2013-07,235,Go,0.0
+hn,2013-08,235,Go,0.0255
+hn,2013-09,181,Go,0.0166
+hn,2013-10,322,Go,0.0311
+hn,2013-11,223,Go,0.0269
+hn,2013-12,207,Go,0.0193
+hn,2014-01,169,Go,0.0178
+hn,2014-02,258,Go,0.0233
+hn,2014-03,249,Go,0.0402
+hn,2014-04,267,Go,0.0524
+hn,2014-05,322,Go,0.0528
+hn,2014-06,263,Go,0.0494
+hn,2014-07,316,Go,0.0538
+hn,2014-08,387,Go,0.062
+hn,2014-09,208,Go,0.0625
+hn,2014-10,290,Go,0.0517
+hn,2014-11,277,Go,0.0542
+hn,2014-12,382,Go,0.0524
+hn,2015-01,230,Go,0.0609
+hn,2015-02,422,Go,0.0711
+hn,2015-03,437,Go,0.0549
+hn,2015-06,497,Go,0.0443
+hn,2015-07,694,Go,0.062
+hn,2015-08,535,Go,0.0467
+hn,2015-09,242,Go,0.0041
+hn,2015-10,231,Go,0.0087
+hn,2015-11,214,Go,0.0187
+hn,2015-12,121,Go,0.0083
+hn,2016-01,148,Go,0.0135
+hn,2016-02,238,Go,0.0084
+hn,2016-03,230,Go,0.013
+hn,2016-04,256,Go,0.0039
+hn,2016-05,210,Go,0.0048
+hn,2016-06,424,Go,0.0519
+hn,2016-07,536,Go,0.0802
+hn,2016-08,600,Go,0.1017
+hn,2016-09,527,Go,0.1101
+hn,2016-10,636,Go,0.1006
+hn,2016-11,690,Go,0.1043
+hn,2016-12,541,Go,0.1128
+hn,2017-01,534,Go,0.088
+hn,2017-02,811,Go,0.0826
+hn,2017-03,708,Go,0.0862
+hn,2017-04,637,Go,0.0973
+hn,2017-05,722,Go,0.097
+hn,2017-06,650,Go,0.0877
+hn,2017-07,663,Go,0.0935
+hn,2017-08,634,Go,0.1041
+hn,2017-09,687,Go,0.0917
+hn,2017-10,787,Go,0.0953
+hn,2017-11,785,Go,0.0879
+hn,2017-12,682,Go,0.0953
+hn,2018-01,571,Go,0.0946
+hn,2018-02,685,Go,0.0978
+hn,2018-03,750,Go,0.1093
+hn,2018-04,739,Go,0.1177
+hn,2018-05,858,Go,0.1014
+hn,2018-06,667,Go,0.1034
+hn,2018-07,656,Go,0.1052
+hn,2018-08,766,Go,0.1305
+hn,2018-09,594,Go,0.1279
+hn,2018-10,786,Go,0.117
+hn,2018-11,758,Go,0.1253
+hn,2018-12,657,Go,0.1035
+hn,2019-01,668,Go,0.1093
+hn,2019-02,611,Go,0.1162
+hn,2019-03,655,Go,0.1069
+hn,2019-04,651,Go,0.1183
+hn,2019-05,714,Go,0.1078
+hn,2019-06,575,Go,0.1061
+hn,2019-07,663,Go,0.1267
+hn,2019-08,648,Go,0.1049
+hn,2019-09,536,Go,0.1157
+hn,2019-10,632,Go,0.1218
+hn,2019-11,539,Go,0.1002
+hn,2019-12,491,Go,0.1079
+hn,2020-01,491,Go,0.1059
+hn,2020-02,493,Go,0.0892
+hn,2020-03,554,Go,0.0776
+hn,2020-04,392,Go,0.0791
+hn,2020-05,422,Go,0.0972
+hn,2020-06,430,Go,0.0907
+hn,2020-07,456,Go,0.0833
+hn,2020-08,551,Go,0.1216
+hn,2020-09,518,Go,0.1004
+hn,2020-10,622,Go,0.0997
+hn,2020-11,593,Go,0.1079
+hn,2020-12,601,Go,0.1148
+hn,2021-01,620,Go,0.0968
+hn,2021-02,815,Go,0.1006
+hn,2021-03,778,Go,0.1118
+hn,2021-04,757,Go,0.1123
+hn,2021-05,729,Go,0.1111
+hn,2021-06,819,Go,0.0916
+hn,2021-07,739,Go,0.1015
+hn,2021-08,715,Go,0.1007
+hn,2021-09,749,Go,0.0841
+hn,2021-10,642,Go,0.1044
+hn,2021-11,818,Go,0.1064
+hn,2021-12,632,Go,0.1013
+hn,2022-01,566,Go,0.1078
+hn,2022-02,674,Go,0.1098
+hn,2022-03,684,Go,0.1243
+hn,2022-04,629,Go,0.1017
+hn,2022-05,647,Go,0.1113
+hn,2022-06,600,Go,0.1083
+hn,2022-07,421,Go,0.1045
+hn,2022-08,538,Go,0.0911
+hn,2022-09,431,Go,0.0858
+hn,2022-10,381,Go,0.105
+hn,2022-11,451,Go,0.1175
+hn,2022-12,396,Go,0.1061
+hn,2023-01,305,Go,0.0787
+hn,2023-02,370,Go,0.0919
+hn,2023-03,349,Go,0.0946
+hn,2023-04,307,Go,0.0977
+hn,2023-05,294,Go,0.1156
+hn,2023-06,286,Go,0.1049
+hn,2023-07,257,Go,0.0934
+hn,2023-08,292,Go,0.089
+hn,2023-09,246,Go,0.0813
+hn,2023-10,277,Go,0.0722
+hn,2023-11,315,Go,0.0762
+hn,2023-12,276,Go,0.0725
+hn,2024-01,242,Go,0.0661
+hn,2024-02,296,Go,0.0574
+hn,2024-03,259,Go,0.0811
+hn,2024-04,243,Go,0.0905
+hn,2024-05,338,Go,0.0828
+hn,2024-06,303,Go,0.1023
+hn,2024-07,342,Go,0.0702
+hn,2024-08,289,Go,0.0727
+hn,2024-09,273,Go,0.0769
+hn,2024-10,296,Go,0.0878
+hn,2024-11,284,Go,0.0599
+hn,2024-12,285,Go,0.0807
+hn,2025-01,249,Go,0.0442
+hn,2025-02,361,Go,0.0776
+hn,2025-03,319,Go,0.0846
+hn,2025-04,278,Go,0.0827
+hn,2025-05,269,Go,0.0929
+hn,2025-06,326,Go,0.0798
+hn,2025-07,302,Go,0.0927
+hn,2025-08,271,Go,0.0886
+hn,2025-09,270,Go,0.0778
+hn,2025-10,312,Go,0.0609
+hn,2025-11,364,Go,0.0934
+hn,2025-12,342,Go,0.076
+hn,2026-01,234,Go,0.0684
+hn,2026-02,372,Go,0.0753
+hn,2026-03,289,Go,0.0761
+hn,2026-04,302,Go,0.0728
+hn,2026-05,283,Go,0.0742
+hn,2026-06,283,Go,0.0954
+hn,2026-07,234,Go,0.047
+hn,2026-08,206,Go,0.0728
+hn,2026-09,221,Go,0.0588
+hn,2026-10,225,Go,0.0667
+hn,2026-11,216,Go,0.0741
 hn,2013-01,150,Azure (incl. Azure OpenAI),0.0
 hn,2013-02,165,Azure (incl. Azure OpenAI),0.0061
 hn,2013-03,240,Azure (incl. Azure OpenAI),0.0
@@ -3662,501 +3497,171 @@ hn,2026-08,206,Azure (incl. Azure OpenAI),0.034
 hn,2026-09,221,Azure (incl. Azure OpenAI),0.0317
 hn,2026-10,225,Azure (incl. Azure OpenAI),0.0267
 hn,2026-11,216,Azure (incl. Azure OpenAI),0.0278
-hn,2013-01,150,TypeScript,0.0
-hn,2013-02,165,TypeScript,0.0
-hn,2013-03,240,TypeScript,0.0
-hn,2013-04,285,TypeScript,0.0
-hn,2013-05,250,TypeScript,0.008
-hn,2013-06,210,TypeScript,0.0048
-hn,2013-07,235,TypeScript,0.0
-hn,2013-08,235,TypeScript,0.0043
-hn,2013-09,181,TypeScript,0.0
-hn,2013-10,322,TypeScript,0.0
-hn,2013-11,223,TypeScript,0.0045
-hn,2013-12,207,TypeScript,0.0048
-hn,2014-01,169,TypeScript,0.0
-hn,2014-02,258,TypeScript,0.0039
-hn,2014-03,249,TypeScript,0.004
-hn,2014-04,267,TypeScript,0.0075
-hn,2014-05,322,TypeScript,0.0093
-hn,2014-06,263,TypeScript,0.0076
-hn,2014-07,316,TypeScript,0.0158
-hn,2014-08,387,TypeScript,0.0103
-hn,2014-09,208,TypeScript,0.0096
-hn,2014-10,290,TypeScript,0.0069
-hn,2014-11,277,TypeScript,0.0036
-hn,2014-12,382,TypeScript,0.0052
-hn,2015-01,230,TypeScript,0.0087
-hn,2015-02,422,TypeScript,0.0047
-hn,2015-03,437,TypeScript,0.0046
-hn,2015-06,497,TypeScript,0.008
-hn,2015-07,694,TypeScript,0.0043
-hn,2015-08,535,TypeScript,0.0
-hn,2015-09,242,TypeScript,0.0
-hn,2015-10,231,TypeScript,0.0
-hn,2015-11,214,TypeScript,0.0
-hn,2015-12,121,TypeScript,0.0
-hn,2016-01,148,TypeScript,0.0
-hn,2016-02,238,TypeScript,0.0042
-hn,2016-03,230,TypeScript,0.0
-hn,2016-04,256,TypeScript,0.0
-hn,2016-05,210,TypeScript,0.0
-hn,2016-06,424,TypeScript,0.0094
-hn,2016-07,536,TypeScript,0.0187
-hn,2016-08,600,TypeScript,0.025
-hn,2016-09,527,TypeScript,0.0171
-hn,2016-10,636,TypeScript,0.0283
-hn,2016-11,690,TypeScript,0.0188
-hn,2016-12,541,TypeScript,0.0296
-hn,2017-01,534,TypeScript,0.0243
-hn,2017-02,811,TypeScript,0.0185
-hn,2017-03,708,TypeScript,0.0212
-hn,2017-04,637,TypeScript,0.033
-hn,2017-05,722,TypeScript,0.0346
-hn,2017-06,650,TypeScript,0.0323
-hn,2017-07,663,TypeScript,0.0362
-hn,2017-08,634,TypeScript,0.0284
-hn,2017-09,687,TypeScript,0.0378
-hn,2017-10,787,TypeScript,0.0343
-hn,2017-11,785,TypeScript,0.0306
-hn,2017-12,682,TypeScript,0.0352
-hn,2018-01,571,TypeScript,0.035
-hn,2018-02,685,TypeScript,0.0438
-hn,2018-03,750,TypeScript,0.0613
-hn,2018-04,739,TypeScript,0.0447
-hn,2018-05,858,TypeScript,0.0524
-hn,2018-06,667,TypeScript,0.051
-hn,2018-07,656,TypeScript,0.0381
-hn,2018-08,766,TypeScript,0.0731
-hn,2018-09,594,TypeScript,0.0774
-hn,2018-10,786,TypeScript,0.0598
-hn,2018-11,758,TypeScript,0.0541
-hn,2018-12,657,TypeScript,0.0791
-hn,2019-01,668,TypeScript,0.0928
-hn,2019-02,611,TypeScript,0.09
-hn,2019-03,655,TypeScript,0.0992
-hn,2019-04,651,TypeScript,0.0845
-hn,2019-05,714,TypeScript,0.098
-hn,2019-06,575,TypeScript,0.0939
-hn,2019-07,663,TypeScript,0.0965
-hn,2019-08,648,TypeScript,0.1265
-hn,2019-09,536,TypeScript,0.1306
-hn,2019-10,632,TypeScript,0.1203
-hn,2019-11,539,TypeScript,0.102
-hn,2019-12,491,TypeScript,0.1018
-hn,2020-01,491,TypeScript,0.1405
-hn,2020-02,493,TypeScript,0.1562
-hn,2020-03,554,TypeScript,0.1588
-hn,2020-04,392,TypeScript,0.1505
-hn,2020-05,422,TypeScript,0.1422
-hn,2020-06,430,TypeScript,0.1535
-hn,2020-07,456,TypeScript,0.136
-hn,2020-08,551,TypeScript,0.1597
-hn,2020-09,518,TypeScript,0.1506
-hn,2020-10,622,TypeScript,0.1817
-hn,2020-11,593,TypeScript,0.1568
-hn,2020-12,601,TypeScript,0.1714
-hn,2021-01,620,TypeScript,0.1581
-hn,2021-02,815,TypeScript,0.1485
-hn,2021-03,778,TypeScript,0.1697
-hn,2021-04,757,TypeScript,0.1717
-hn,2021-05,729,TypeScript,0.1756
-hn,2021-06,819,TypeScript,0.1795
-hn,2021-07,739,TypeScript,0.1637
-hn,2021-08,715,TypeScript,0.1972
-hn,2021-09,749,TypeScript,0.1802
-hn,2021-10,642,TypeScript,0.1947
-hn,2021-11,818,TypeScript,0.1675
-hn,2021-12,632,TypeScript,0.182
-hn,2022-01,566,TypeScript,0.1961
-hn,2022-02,674,TypeScript,0.1869
-hn,2022-03,684,TypeScript,0.2208
-hn,2022-04,629,TypeScript,0.2242
-hn,2022-05,647,TypeScript,0.2303
-hn,2022-06,600,TypeScript,0.2117
-hn,2022-07,421,TypeScript,0.2019
-hn,2022-08,538,TypeScript,0.1989
-hn,2022-09,431,TypeScript,0.2111
-hn,2022-10,381,TypeScript,0.1864
-hn,2022-11,451,TypeScript,0.1996
-hn,2022-12,396,TypeScript,0.1818
-hn,2023-01,305,TypeScript,0.1705
-hn,2023-02,370,TypeScript,0.1703
-hn,2023-03,349,TypeScript,0.1834
-hn,2023-04,307,TypeScript,0.1954
-hn,2023-05,294,TypeScript,0.1633
-hn,2023-06,286,TypeScript,0.1608
-hn,2023-07,257,TypeScript,0.1946
-hn,2023-08,292,TypeScript,0.2158
-hn,2023-09,246,TypeScript,0.2358
-hn,2023-10,277,TypeScript,0.1733
-hn,2023-11,315,TypeScript,0.2032
-hn,2023-12,276,TypeScript,0.1377
-hn,2024-01,242,TypeScript,0.1694
-hn,2024-02,296,TypeScript,0.1486
-hn,2024-03,259,TypeScript,0.1931
-hn,2024-04,243,TypeScript,0.1811
-hn,2024-05,338,TypeScript,0.1864
-hn,2024-06,303,TypeScript,0.1914
-hn,2024-07,342,TypeScript,0.1959
-hn,2024-08,289,TypeScript,0.1938
-hn,2024-09,273,TypeScript,0.2161
-hn,2024-10,296,TypeScript,0.25
-hn,2024-11,284,TypeScript,0.2183
-hn,2024-12,285,TypeScript,0.1789
-hn,2025-01,249,TypeScript,0.1807
-hn,2025-02,361,TypeScript,0.1994
-hn,2025-03,319,TypeScript,0.2257
-hn,2025-04,278,TypeScript,0.2194
-hn,2025-05,269,TypeScript,0.2862
-hn,2025-06,326,TypeScript,0.2301
-hn,2025-07,302,TypeScript,0.2649
-hn,2025-08,271,TypeScript,0.2435
-hn,2025-09,270,TypeScript,0.3037
-hn,2025-10,312,TypeScript,0.2308
-hn,2025-11,364,TypeScript,0.2665
-hn,2025-12,342,TypeScript,0.2602
-hn,2026-01,234,TypeScript,0.2521
-hn,2026-02,372,TypeScript,0.293
-hn,2026-03,289,TypeScript,0.263
-hn,2026-04,302,TypeScript,0.2417
-hn,2026-05,283,TypeScript,0.2297
-hn,2026-06,283,TypeScript,0.2332
-hn,2026-07,234,TypeScript,0.2564
-hn,2026-08,206,TypeScript,0.2476
-hn,2026-09,221,TypeScript,0.2127
-hn,2026-10,225,TypeScript,0.2489
-hn,2026-11,216,TypeScript,0.2222
-hn,2013-01,150,Data pipelines / ETL,0.0067
-hn,2013-02,165,Data pipelines / ETL,0.0061
-hn,2013-03,240,Data pipelines / ETL,0.0042
-hn,2013-04,285,Data pipelines / ETL,0.0105
-hn,2013-05,250,Data pipelines / ETL,0.004
-hn,2013-06,210,Data pipelines / ETL,0.0048
-hn,2013-07,235,Data pipelines / ETL,0.0085
-hn,2013-08,235,Data pipelines / ETL,0.0
-hn,2013-09,181,Data pipelines / ETL,0.0
-hn,2013-10,322,Data pipelines / ETL,0.0031
-hn,2013-11,223,Data pipelines / ETL,0.0
-hn,2013-12,207,Data pipelines / ETL,0.0
-hn,2014-01,169,Data pipelines / ETL,0.0118
-hn,2014-02,258,Data pipelines / ETL,0.0078
-hn,2014-03,249,Data pipelines / ETL,0.004
-hn,2014-04,267,Data pipelines / ETL,0.0112
-hn,2014-05,322,Data pipelines / ETL,0.0124
-hn,2014-06,263,Data pipelines / ETL,0.0076
-hn,2014-07,316,Data pipelines / ETL,0.0158
-hn,2014-08,387,Data pipelines / ETL,0.0103
-hn,2014-09,208,Data pipelines / ETL,0.0288
-hn,2014-10,290,Data pipelines / ETL,0.0207
-hn,2014-11,277,Data pipelines / ETL,0.0072
-hn,2014-12,382,Data pipelines / ETL,0.0157
-hn,2015-01,230,Data pipelines / ETL,0.0043
-hn,2015-02,422,Data pipelines / ETL,0.0071
-hn,2015-03,437,Data pipelines / ETL,0.0092
-hn,2015-06,497,Data pipelines / ETL,0.0161
-hn,2015-07,694,Data pipelines / ETL,0.0043
-hn,2015-08,535,Data pipelines / ETL,0.0056
-hn,2015-09,242,Data pipelines / ETL,0.0
-hn,2015-10,231,Data pipelines / ETL,0.0
-hn,2015-11,214,Data pipelines / ETL,0.0
-hn,2015-12,121,Data pipelines / ETL,0.0
-hn,2016-01,148,Data pipelines / ETL,0.0
-hn,2016-02,238,Data pipelines / ETL,0.0
-hn,2016-03,230,Data pipelines / ETL,0.0
-hn,2016-04,256,Data pipelines / ETL,0.0
-hn,2016-05,210,Data pipelines / ETL,0.0
-hn,2016-06,424,Data pipelines / ETL,0.0142
-hn,2016-07,536,Data pipelines / ETL,0.0093
-hn,2016-08,600,Data pipelines / ETL,0.0183
-hn,2016-09,527,Data pipelines / ETL,0.0247
-hn,2016-10,636,Data pipelines / ETL,0.0142
-hn,2016-11,690,Data pipelines / ETL,0.0232
-hn,2016-12,541,Data pipelines / ETL,0.0092
-hn,2017-01,534,Data pipelines / ETL,0.0187
-hn,2017-02,811,Data pipelines / ETL,0.0136
-hn,2017-03,708,Data pipelines / ETL,0.0169
-hn,2017-04,637,Data pipelines / ETL,0.0188
-hn,2017-05,722,Data pipelines / ETL,0.018
-hn,2017-06,650,Data pipelines / ETL,0.02
-hn,2017-07,663,Data pipelines / ETL,0.0256
-hn,2017-08,634,Data pipelines / ETL,0.0174
-hn,2017-09,687,Data pipelines / ETL,0.0247
-hn,2017-10,787,Data pipelines / ETL,0.0318
-hn,2017-11,785,Data pipelines / ETL,0.0293
-hn,2017-12,682,Data pipelines / ETL,0.0249
-hn,2018-01,571,Data pipelines / ETL,0.021
-hn,2018-02,685,Data pipelines / ETL,0.0292
-hn,2018-03,750,Data pipelines / ETL,0.0253
-hn,2018-04,739,Data pipelines / ETL,0.023
-hn,2018-05,858,Data pipelines / ETL,0.0245
-hn,2018-06,667,Data pipelines / ETL,0.0225
-hn,2018-07,656,Data pipelines / ETL,0.0229
-hn,2018-08,766,Data pipelines / ETL,0.0261
-hn,2018-09,594,Data pipelines / ETL,0.0236
-hn,2018-10,786,Data pipelines / ETL,0.0229
-hn,2018-11,758,Data pipelines / ETL,0.0198
-hn,2018-12,657,Data pipelines / ETL,0.0259
-hn,2019-01,668,Data pipelines / ETL,0.021
-hn,2019-02,611,Data pipelines / ETL,0.0147
-hn,2019-03,655,Data pipelines / ETL,0.0198
-hn,2019-04,651,Data pipelines / ETL,0.0276
-hn,2019-05,714,Data pipelines / ETL,0.0252
-hn,2019-06,575,Data pipelines / ETL,0.0278
-hn,2019-07,663,Data pipelines / ETL,0.0271
-hn,2019-08,648,Data pipelines / ETL,0.0231
-hn,2019-09,536,Data pipelines / ETL,0.0205
-hn,2019-10,632,Data pipelines / ETL,0.0142
-hn,2019-11,539,Data pipelines / ETL,0.0315
-hn,2019-12,491,Data pipelines / ETL,0.0285
-hn,2020-01,491,Data pipelines / ETL,0.0285
-hn,2020-02,493,Data pipelines / ETL,0.0325
-hn,2020-03,554,Data pipelines / ETL,0.0289
-hn,2020-04,392,Data pipelines / ETL,0.0332
-hn,2020-05,422,Data pipelines / ETL,0.0166
-hn,2020-06,430,Data pipelines / ETL,0.0488
-hn,2020-07,456,Data pipelines / ETL,0.0263
-hn,2020-08,551,Data pipelines / ETL,0.0345
-hn,2020-09,518,Data pipelines / ETL,0.0232
-hn,2020-10,622,Data pipelines / ETL,0.037
-hn,2020-11,593,Data pipelines / ETL,0.027
-hn,2020-12,601,Data pipelines / ETL,0.0316
-hn,2021-01,620,Data pipelines / ETL,0.0323
-hn,2021-02,815,Data pipelines / ETL,0.0294
-hn,2021-03,778,Data pipelines / ETL,0.0296
-hn,2021-04,757,Data pipelines / ETL,0.0357
-hn,2021-05,729,Data pipelines / ETL,0.0288
-hn,2021-06,819,Data pipelines / ETL,0.0244
-hn,2021-07,739,Data pipelines / ETL,0.0257
-hn,2021-08,715,Data pipelines / ETL,0.0308
-hn,2021-09,749,Data pipelines / ETL,0.0294
-hn,2021-10,642,Data pipelines / ETL,0.0327
-hn,2021-11,818,Data pipelines / ETL,0.0281
-hn,2021-12,632,Data pipelines / ETL,0.0253
-hn,2022-01,566,Data pipelines / ETL,0.0318
-hn,2022-02,674,Data pipelines / ETL,0.0312
-hn,2022-03,684,Data pipelines / ETL,0.0336
-hn,2022-04,629,Data pipelines / ETL,0.0302
-hn,2022-05,647,Data pipelines / ETL,0.0309
-hn,2022-06,600,Data pipelines / ETL,0.0267
-hn,2022-07,421,Data pipelines / ETL,0.0333
-hn,2022-08,538,Data pipelines / ETL,0.0428
-hn,2022-09,431,Data pipelines / ETL,0.0302
-hn,2022-10,381,Data pipelines / ETL,0.042
-hn,2022-11,451,Data pipelines / ETL,0.0355
-hn,2022-12,396,Data pipelines / ETL,0.0227
-hn,2023-01,305,Data pipelines / ETL,0.0393
-hn,2023-02,370,Data pipelines / ETL,0.0378
-hn,2023-03,349,Data pipelines / ETL,0.0287
-hn,2023-04,307,Data pipelines / ETL,0.0228
-hn,2023-05,294,Data pipelines / ETL,0.0476
-hn,2023-06,286,Data pipelines / ETL,0.0245
-hn,2023-07,257,Data pipelines / ETL,0.0117
-hn,2023-08,292,Data pipelines / ETL,0.0411
-hn,2023-09,246,Data pipelines / ETL,0.0366
-hn,2023-10,277,Data pipelines / ETL,0.0289
-hn,2023-11,315,Data pipelines / ETL,0.0413
-hn,2023-12,276,Data pipelines / ETL,0.029
-hn,2024-01,242,Data pipelines / ETL,0.0496
-hn,2024-02,296,Data pipelines / ETL,0.0338
-hn,2024-03,259,Data pipelines / ETL,0.027
-hn,2024-04,243,Data pipelines / ETL,0.0412
-hn,2024-05,338,Data pipelines / ETL,0.0473
-hn,2024-06,303,Data pipelines / ETL,0.0231
-hn,2024-07,342,Data pipelines / ETL,0.0439
-hn,2024-08,289,Data pipelines / ETL,0.0277
-hn,2024-09,273,Data pipelines / ETL,0.0366
-hn,2024-10,296,Data pipelines / ETL,0.0338
-hn,2024-11,284,Data pipelines / ETL,0.0352
-hn,2024-12,285,Data pipelines / ETL,0.0526
-hn,2025-01,249,Data pipelines / ETL,0.0562
-hn,2025-02,361,Data pipelines / ETL,0.0582
-hn,2025-03,319,Data pipelines / ETL,0.0502
-hn,2025-04,278,Data pipelines / ETL,0.0396
-hn,2025-05,269,Data pipelines / ETL,0.0669
-hn,2025-06,326,Data pipelines / ETL,0.046
-hn,2025-07,302,Data pipelines / ETL,0.0662
-hn,2025-08,271,Data pipelines / ETL,0.0627
-hn,2025-09,270,Data pipelines / ETL,0.0444
-hn,2025-10,312,Data pipelines / ETL,0.0609
-hn,2025-11,364,Data pipelines / ETL,0.0659
-hn,2025-12,342,Data pipelines / ETL,0.0556
-hn,2026-01,234,Data pipelines / ETL,0.0684
-hn,2026-02,372,Data pipelines / ETL,0.0726
-hn,2026-03,289,Data pipelines / ETL,0.0727
-hn,2026-04,302,Data pipelines / ETL,0.0563
-hn,2026-05,283,Data pipelines / ETL,0.0848
-hn,2026-06,283,Data pipelines / ETL,0.106
-hn,2026-07,234,Data pipelines / ETL,0.0641
-hn,2026-08,206,Data pipelines / ETL,0.068
-hn,2026-09,221,Data pipelines / ETL,0.0543
-hn,2026-10,225,Data pipelines / ETL,0.04
-hn,2026-11,216,Data pipelines / ETL,0.037
-hn,2013-01,150,JavaScript / Node.js,0.3133
-hn,2013-02,165,JavaScript / Node.js,0.2545
-hn,2013-03,240,JavaScript / Node.js,0.2875
-hn,2013-04,285,JavaScript / Node.js,0.2526
-hn,2013-05,250,JavaScript / Node.js,0.308
-hn,2013-06,210,JavaScript / Node.js,0.3095
-hn,2013-07,235,JavaScript / Node.js,0.3021
-hn,2013-08,235,JavaScript / Node.js,0.3447
-hn,2013-09,181,JavaScript / Node.js,0.2486
-hn,2013-10,322,JavaScript / Node.js,0.2857
-hn,2013-11,223,JavaScript / Node.js,0.3049
-hn,2013-12,207,JavaScript / Node.js,0.2271
-hn,2014-01,169,JavaScript / Node.js,0.3195
-hn,2014-02,258,JavaScript / Node.js,0.2946
-hn,2014-03,249,JavaScript / Node.js,0.3012
-hn,2014-04,267,JavaScript / Node.js,0.3109
-hn,2014-05,322,JavaScript / Node.js,0.264
-hn,2014-06,263,JavaScript / Node.js,0.2852
-hn,2014-07,316,JavaScript / Node.js,0.2975
-hn,2014-08,387,JavaScript / Node.js,0.3152
-hn,2014-09,208,JavaScript / Node.js,0.4087
-hn,2014-10,290,JavaScript / Node.js,0.2966
-hn,2014-11,277,JavaScript / Node.js,0.361
-hn,2014-12,382,JavaScript / Node.js,0.356
-hn,2015-01,230,JavaScript / Node.js,0.3348
-hn,2015-02,422,JavaScript / Node.js,0.2796
-hn,2015-03,437,JavaScript / Node.js,0.2632
-hn,2015-06,497,JavaScript / Node.js,0.2636
-hn,2015-07,694,JavaScript / Node.js,0.2522
-hn,2015-08,535,JavaScript / Node.js,0.2206
-hn,2015-09,242,JavaScript / Node.js,0.0455
-hn,2015-10,231,JavaScript / Node.js,0.0519
-hn,2015-11,214,JavaScript / Node.js,0.0514
-hn,2015-12,121,JavaScript / Node.js,0.0331
-hn,2016-01,148,JavaScript / Node.js,0.0338
-hn,2016-02,238,JavaScript / Node.js,0.042
-hn,2016-03,230,JavaScript / Node.js,0.0435
-hn,2016-04,256,JavaScript / Node.js,0.0625
-hn,2016-05,210,JavaScript / Node.js,0.0524
-hn,2016-06,424,JavaScript / Node.js,0.125
-hn,2016-07,536,JavaScript / Node.js,0.25
-hn,2016-08,600,JavaScript / Node.js,0.24
-hn,2016-09,527,JavaScript / Node.js,0.26
-hn,2016-10,636,JavaScript / Node.js,0.2469
-hn,2016-11,690,JavaScript / Node.js,0.2565
-hn,2016-12,541,JavaScript / Node.js,0.22
-hn,2017-01,534,JavaScript / Node.js,0.2191
-hn,2017-02,811,JavaScript / Node.js,0.2182
-hn,2017-03,708,JavaScript / Node.js,0.2274
-hn,2017-04,637,JavaScript / Node.js,0.2057
-hn,2017-05,722,JavaScript / Node.js,0.2285
-hn,2017-06,650,JavaScript / Node.js,0.2015
-hn,2017-07,663,JavaScript / Node.js,0.2127
-hn,2017-08,634,JavaScript / Node.js,0.2303
-hn,2017-09,687,JavaScript / Node.js,0.2271
-hn,2017-10,787,JavaScript / Node.js,0.2478
-hn,2017-11,785,JavaScript / Node.js,0.2331
-hn,2017-12,682,JavaScript / Node.js,0.2302
-hn,2018-01,571,JavaScript / Node.js,0.2399
-hn,2018-02,685,JavaScript / Node.js,0.238
-hn,2018-03,750,JavaScript / Node.js,0.216
-hn,2018-04,739,JavaScript / Node.js,0.2165
-hn,2018-05,858,JavaScript / Node.js,0.2145
-hn,2018-06,667,JavaScript / Node.js,0.2189
-hn,2018-07,656,JavaScript / Node.js,0.1799
-hn,2018-08,766,JavaScript / Node.js,0.201
-hn,2018-09,594,JavaScript / Node.js,0.2239
-hn,2018-10,786,JavaScript / Node.js,0.2239
-hn,2018-11,758,JavaScript / Node.js,0.1873
-hn,2018-12,657,JavaScript / Node.js,0.1887
-hn,2019-01,668,JavaScript / Node.js,0.2066
-hn,2019-02,611,JavaScript / Node.js,0.1931
-hn,2019-03,655,JavaScript / Node.js,0.2015
-hn,2019-04,651,JavaScript / Node.js,0.1889
-hn,2019-05,714,JavaScript / Node.js,0.1681
-hn,2019-06,575,JavaScript / Node.js,0.1739
-hn,2019-07,663,JavaScript / Node.js,0.178
-hn,2019-08,648,JavaScript / Node.js,0.2099
-hn,2019-09,536,JavaScript / Node.js,0.1959
-hn,2019-10,632,JavaScript / Node.js,0.2041
-hn,2019-11,539,JavaScript / Node.js,0.2189
-hn,2019-12,491,JavaScript / Node.js,0.1772
-hn,2020-01,491,JavaScript / Node.js,0.2179
-hn,2020-02,493,JavaScript / Node.js,0.1866
-hn,2020-03,554,JavaScript / Node.js,0.2094
-hn,2020-04,392,JavaScript / Node.js,0.1709
-hn,2020-05,422,JavaScript / Node.js,0.1848
-hn,2020-06,430,JavaScript / Node.js,0.1977
-hn,2020-07,456,JavaScript / Node.js,0.193
-hn,2020-08,551,JavaScript / Node.js,0.1615
-hn,2020-09,518,JavaScript / Node.js,0.168
-hn,2020-10,622,JavaScript / Node.js,0.1624
-hn,2020-11,593,JavaScript / Node.js,0.145
-hn,2020-12,601,JavaScript / Node.js,0.1797
-hn,2021-01,620,JavaScript / Node.js,0.1629
-hn,2021-02,815,JavaScript / Node.js,0.1595
-hn,2021-03,778,JavaScript / Node.js,0.1684
-hn,2021-04,757,JavaScript / Node.js,0.144
-hn,2021-05,729,JavaScript / Node.js,0.1866
-hn,2021-06,819,JavaScript / Node.js,0.1661
-hn,2021-07,739,JavaScript / Node.js,0.1624
-hn,2021-08,715,JavaScript / Node.js,0.165
-hn,2021-09,749,JavaScript / Node.js,0.1495
-hn,2021-10,642,JavaScript / Node.js,0.1776
-hn,2021-11,818,JavaScript / Node.js,0.1565
-hn,2021-12,632,JavaScript / Node.js,0.1582
-hn,2022-01,566,JavaScript / Node.js,0.1537
-hn,2022-02,674,JavaScript / Node.js,0.1484
-hn,2022-03,684,JavaScript / Node.js,0.1667
-hn,2022-04,629,JavaScript / Node.js,0.1606
-hn,2022-05,647,JavaScript / Node.js,0.1484
-hn,2022-06,600,JavaScript / Node.js,0.155
-hn,2022-07,421,JavaScript / Node.js,0.1496
-hn,2022-08,538,JavaScript / Node.js,0.1301
-hn,2022-09,431,JavaScript / Node.js,0.1671
-hn,2022-10,381,JavaScript / Node.js,0.1417
-hn,2022-11,451,JavaScript / Node.js,0.1308
-hn,2022-12,396,JavaScript / Node.js,0.1061
-hn,2023-01,305,JavaScript / Node.js,0.1148
-hn,2023-02,370,JavaScript / Node.js,0.1108
-hn,2023-03,349,JavaScript / Node.js,0.1032
-hn,2023-04,307,JavaScript / Node.js,0.101
-hn,2023-05,294,JavaScript / Node.js,0.0918
-hn,2023-06,286,JavaScript / Node.js,0.1224
-hn,2023-07,257,JavaScript / Node.js,0.0934
-hn,2023-08,292,JavaScript / Node.js,0.1096
-hn,2023-09,246,JavaScript / Node.js,0.1016
-hn,2023-10,277,JavaScript / Node.js,0.1191
-hn,2023-11,315,JavaScript / Node.js,0.073
-hn,2023-12,276,JavaScript / Node.js,0.0797
-hn,2024-01,242,JavaScript / Node.js,0.0826
-hn,2024-02,296,JavaScript / Node.js,0.0946
-hn,2024-03,259,JavaScript / Node.js,0.1351
-hn,2024-04,243,JavaScript / Node.js,0.107
-hn,2024-05,338,JavaScript / Node.js,0.1065
-hn,2024-06,303,JavaScript / Node.js,0.1254
-hn,2024-07,342,JavaScript / Node.js,0.1111
-hn,2024-08,289,JavaScript / Node.js,0.0934
-hn,2024-09,273,JavaScript / Node.js,0.0842
-hn,2024-10,296,JavaScript / Node.js,0.0912
-hn,2024-11,284,JavaScript / Node.js,0.0704
-hn,2024-12,285,JavaScript / Node.js,0.0947
-hn,2025-01,249,JavaScript / Node.js,0.0763
-hn,2025-02,361,JavaScript / Node.js,0.0803
-hn,2025-03,319,JavaScript / Node.js,0.0784
-hn,2025-04,278,JavaScript / Node.js,0.0899
-hn,2025-05,269,JavaScript / Node.js,0.1152
-hn,2025-06,326,JavaScript / Node.js,0.092
-hn,2025-07,302,JavaScript / Node.js,0.1026
-hn,2025-08,271,JavaScript / Node.js,0.1107
-hn,2025-09,270,JavaScript / Node.js,0.1037
-hn,2025-10,312,JavaScript / Node.js,0.109
-hn,2025-11,364,JavaScript / Node.js,0.1126
-hn,2025-12,342,JavaScript / Node.js,0.0848
-hn,2026-01,234,JavaScript / Node.js,0.1154
-hn,2026-02,372,JavaScript / Node.js,0.0833
-hn,2026-03,289,JavaScript / Node.js,0.1142
-hn,2026-04,302,JavaScript / Node.js,0.106
-hn,2026-05,283,JavaScript / Node.js,0.1025
-hn,2026-06,283,JavaScript / Node.js,0.0742
-hn,2026-07,234,JavaScript / Node.js,0.0983
-hn,2026-08,206,JavaScript / Node.js,0.1019
-hn,2026-09,221,JavaScript / Node.js,0.095
-hn,2026-10,225,JavaScript / Node.js,0.08
-hn,2026-11,216,JavaScript / Node.js,0.0787
+hn,2013-01,150,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0
+hn,2013-02,165,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0
+hn,2013-03,240,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0
+hn,2013-04,285,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0
+hn,2013-05,250,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0
+hn,2013-06,210,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0
+hn,2013-07,235,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0
+hn,2013-08,235,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0
+hn,2013-09,181,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0
+hn,2013-10,322,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0
+hn,2013-11,223,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0
+hn,2013-12,207,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0
+hn,2014-01,169,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0
+hn,2014-02,258,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0
+hn,2014-03,249,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0
+hn,2014-04,267,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0
+hn,2014-05,322,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0
+hn,2014-06,263,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0
+hn,2014-07,316,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0
+hn,2014-08,387,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0
+hn,2014-09,208,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0
+hn,2014-10,290,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0
+hn,2014-11,277,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0
+hn,2014-12,382,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0
+hn,2015-01,230,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0
+hn,2015-02,422,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0
+hn,2015-03,437,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0
+hn,2015-06,497,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0
+hn,2015-07,694,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0
+hn,2015-08,535,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0
+hn,2015-09,242,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0
+hn,2015-10,231,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0
+hn,2015-11,214,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0
+hn,2015-12,121,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0
+hn,2016-01,148,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0
+hn,2016-02,238,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0
+hn,2016-03,230,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0
+hn,2016-04,256,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0
+hn,2016-05,210,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0
+hn,2016-06,424,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0
+hn,2016-07,536,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0
+hn,2016-08,600,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0
+hn,2016-09,527,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0
+hn,2016-10,636,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0
+hn,2016-11,690,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0
+hn,2016-12,541,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0018
+hn,2017-01,534,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0019
+hn,2017-02,811,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0025
+hn,2017-03,708,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0
+hn,2017-04,637,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0
+hn,2017-05,722,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0
+hn,2017-06,650,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0015
+hn,2017-07,663,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0015
+hn,2017-08,634,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0
+hn,2017-09,687,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0015
+hn,2017-10,787,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0
+hn,2017-11,785,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0
+hn,2017-12,682,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0015
+hn,2018-01,571,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0018
+hn,2018-02,685,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0015
+hn,2018-03,750,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0013
+hn,2018-04,739,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0
+hn,2018-05,858,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0023
+hn,2018-06,667,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0015
+hn,2018-07,656,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0015
+hn,2018-08,766,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0
+hn,2018-09,594,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0
+hn,2018-10,786,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0013
+hn,2018-11,758,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0
+hn,2018-12,657,LLM provider APIs (OpenAI / Anthropic / Gemini),0.003
+hn,2019-01,668,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0015
+hn,2019-02,611,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0016
+hn,2019-03,655,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0015
+hn,2019-04,651,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0031
+hn,2019-05,714,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0028
+hn,2019-06,575,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0035
+hn,2019-07,663,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0045
+hn,2019-08,648,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0046
+hn,2019-09,536,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0019
+hn,2019-10,632,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0032
+hn,2019-11,539,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0
+hn,2019-12,491,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0
+hn,2020-01,491,LLM provider APIs (OpenAI / Anthropic / Gemini),0.002
+hn,2020-02,493,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0041
+hn,2020-03,554,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0018
+hn,2020-04,392,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0051
+hn,2020-05,422,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0024
+hn,2020-06,430,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0023
+hn,2020-07,456,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0022
+hn,2020-08,551,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0036
+hn,2020-09,518,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0039
+hn,2020-10,622,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0048
+hn,2020-11,593,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0034
+hn,2020-12,601,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0017
+hn,2021-01,620,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0032
+hn,2021-02,815,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0037
+hn,2021-03,778,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0026
+hn,2021-04,757,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0053
+hn,2021-05,729,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0041
+hn,2021-06,819,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0012
+hn,2021-07,739,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0027
+hn,2021-08,715,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0014
+hn,2021-09,749,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0027
+hn,2021-10,642,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0078
+hn,2021-11,818,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0049
+hn,2021-12,632,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0063
+hn,2022-01,566,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0035
+hn,2022-02,674,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0074
+hn,2022-03,684,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0088
+hn,2022-04,629,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0079
+hn,2022-05,647,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0046
+hn,2022-06,600,LLM provider APIs (OpenAI / Anthropic / Gemini),0.005
+hn,2022-07,421,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0071
+hn,2022-08,538,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0037
+hn,2022-09,431,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0046
+hn,2022-10,381,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0079
+hn,2022-11,451,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0111
+hn,2022-12,396,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0101
+hn,2023-01,305,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0033
+hn,2023-02,370,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0054
+hn,2023-03,349,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0115
+hn,2023-04,307,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0195
+hn,2023-05,294,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0102
+hn,2023-06,286,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0105
+hn,2023-07,257,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0428
+hn,2023-08,292,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0103
+hn,2023-09,246,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0285
+hn,2023-10,277,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0253
+hn,2023-11,315,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0317
+hn,2023-12,276,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0399
+hn,2024-01,242,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0248
+hn,2024-02,296,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0338
+hn,2024-03,259,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0154
+hn,2024-04,243,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0329
+hn,2024-05,338,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0266
+hn,2024-06,303,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0132
+hn,2024-07,342,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0205
+hn,2024-08,289,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0277
+hn,2024-09,273,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0256
+hn,2024-10,296,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0169
+hn,2024-11,284,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0387
+hn,2024-12,285,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0211
+hn,2025-01,249,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0442
+hn,2025-02,361,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0388
+hn,2025-03,319,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0408
+hn,2025-04,278,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0432
+hn,2025-05,269,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0446
+hn,2025-06,326,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0429
+hn,2025-07,302,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0497
+hn,2025-08,271,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0443
+hn,2025-09,270,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0519
+hn,2025-10,312,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0545
+hn,2025-11,364,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0769
+hn,2025-12,342,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0409
+hn,2026-01,234,LLM provider APIs (OpenAI / Anthropic / Gemini),0.047
+hn,2026-02,372,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0753
+hn,2026-03,289,LLM provider APIs (OpenAI / Anthropic / Gemini),0.09
+hn,2026-04,302,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0894
+hn,2026-05,283,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0848
+hn,2026-06,283,LLM provider APIs (OpenAI / Anthropic / Gemini),0.1272
+hn,2026-07,234,LLM provider APIs (OpenAI / Anthropic / Gemini),0.1154
+hn,2026-08,206,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0874
+hn,2026-09,221,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0905
+hn,2026-10,225,LLM provider APIs (OpenAI / Anthropic / Gemini),0.08
+hn,2026-11,216,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0741
 hn,2013-01,150,REST / API design & integration,0.0067
 hn,2013-02,165,REST / API design & integration,0.0121
 hn,2013-03,240,REST / API design & integration,0.0292
@@ -4322,6 +3827,501 @@ hn,2026-08,206,REST / API design & integration,0.068
 hn,2026-09,221,REST / API design & integration,0.0814
 hn,2026-10,225,REST / API design & integration,0.0667
 hn,2026-11,216,REST / API design & integration,0.0602
+hn,2013-01,150,TypeScript,0.0
+hn,2013-02,165,TypeScript,0.0
+hn,2013-03,240,TypeScript,0.0
+hn,2013-04,285,TypeScript,0.0
+hn,2013-05,250,TypeScript,0.008
+hn,2013-06,210,TypeScript,0.0048
+hn,2013-07,235,TypeScript,0.0
+hn,2013-08,235,TypeScript,0.0043
+hn,2013-09,181,TypeScript,0.0
+hn,2013-10,322,TypeScript,0.0
+hn,2013-11,223,TypeScript,0.0045
+hn,2013-12,207,TypeScript,0.0048
+hn,2014-01,169,TypeScript,0.0
+hn,2014-02,258,TypeScript,0.0039
+hn,2014-03,249,TypeScript,0.004
+hn,2014-04,267,TypeScript,0.0075
+hn,2014-05,322,TypeScript,0.0093
+hn,2014-06,263,TypeScript,0.0076
+hn,2014-07,316,TypeScript,0.0158
+hn,2014-08,387,TypeScript,0.0103
+hn,2014-09,208,TypeScript,0.0096
+hn,2014-10,290,TypeScript,0.0069
+hn,2014-11,277,TypeScript,0.0036
+hn,2014-12,382,TypeScript,0.0052
+hn,2015-01,230,TypeScript,0.0087
+hn,2015-02,422,TypeScript,0.0047
+hn,2015-03,437,TypeScript,0.0046
+hn,2015-06,497,TypeScript,0.008
+hn,2015-07,694,TypeScript,0.0043
+hn,2015-08,535,TypeScript,0.0
+hn,2015-09,242,TypeScript,0.0
+hn,2015-10,231,TypeScript,0.0
+hn,2015-11,214,TypeScript,0.0
+hn,2015-12,121,TypeScript,0.0
+hn,2016-01,148,TypeScript,0.0
+hn,2016-02,238,TypeScript,0.0042
+hn,2016-03,230,TypeScript,0.0
+hn,2016-04,256,TypeScript,0.0
+hn,2016-05,210,TypeScript,0.0
+hn,2016-06,424,TypeScript,0.0094
+hn,2016-07,536,TypeScript,0.0187
+hn,2016-08,600,TypeScript,0.025
+hn,2016-09,527,TypeScript,0.0171
+hn,2016-10,636,TypeScript,0.0283
+hn,2016-11,690,TypeScript,0.0188
+hn,2016-12,541,TypeScript,0.0296
+hn,2017-01,534,TypeScript,0.0243
+hn,2017-02,811,TypeScript,0.0185
+hn,2017-03,708,TypeScript,0.0212
+hn,2017-04,637,TypeScript,0.033
+hn,2017-05,722,TypeScript,0.0346
+hn,2017-06,650,TypeScript,0.0323
+hn,2017-07,663,TypeScript,0.0362
+hn,2017-08,634,TypeScript,0.0284
+hn,2017-09,687,TypeScript,0.0378
+hn,2017-10,787,TypeScript,0.0343
+hn,2017-11,785,TypeScript,0.0306
+hn,2017-12,682,TypeScript,0.0352
+hn,2018-01,571,TypeScript,0.035
+hn,2018-02,685,TypeScript,0.0438
+hn,2018-03,750,TypeScript,0.0613
+hn,2018-04,739,TypeScript,0.0447
+hn,2018-05,858,TypeScript,0.0524
+hn,2018-06,667,TypeScript,0.051
+hn,2018-07,656,TypeScript,0.0381
+hn,2018-08,766,TypeScript,0.0731
+hn,2018-09,594,TypeScript,0.0774
+hn,2018-10,786,TypeScript,0.0598
+hn,2018-11,758,TypeScript,0.0541
+hn,2018-12,657,TypeScript,0.0791
+hn,2019-01,668,TypeScript,0.0928
+hn,2019-02,611,TypeScript,0.09
+hn,2019-03,655,TypeScript,0.0992
+hn,2019-04,651,TypeScript,0.0845
+hn,2019-05,714,TypeScript,0.098
+hn,2019-06,575,TypeScript,0.0939
+hn,2019-07,663,TypeScript,0.0965
+hn,2019-08,648,TypeScript,0.1265
+hn,2019-09,536,TypeScript,0.1306
+hn,2019-10,632,TypeScript,0.1203
+hn,2019-11,539,TypeScript,0.102
+hn,2019-12,491,TypeScript,0.1018
+hn,2020-01,491,TypeScript,0.1405
+hn,2020-02,493,TypeScript,0.1562
+hn,2020-03,554,TypeScript,0.1588
+hn,2020-04,392,TypeScript,0.1505
+hn,2020-05,422,TypeScript,0.1422
+hn,2020-06,430,TypeScript,0.1535
+hn,2020-07,456,TypeScript,0.136
+hn,2020-08,551,TypeScript,0.1597
+hn,2020-09,518,TypeScript,0.1506
+hn,2020-10,622,TypeScript,0.1817
+hn,2020-11,593,TypeScript,0.1568
+hn,2020-12,601,TypeScript,0.1714
+hn,2021-01,620,TypeScript,0.1581
+hn,2021-02,815,TypeScript,0.1485
+hn,2021-03,778,TypeScript,0.1697
+hn,2021-04,757,TypeScript,0.1717
+hn,2021-05,729,TypeScript,0.1756
+hn,2021-06,819,TypeScript,0.1795
+hn,2021-07,739,TypeScript,0.1637
+hn,2021-08,715,TypeScript,0.1972
+hn,2021-09,749,TypeScript,0.1802
+hn,2021-10,642,TypeScript,0.1947
+hn,2021-11,818,TypeScript,0.1675
+hn,2021-12,632,TypeScript,0.182
+hn,2022-01,566,TypeScript,0.1961
+hn,2022-02,674,TypeScript,0.1869
+hn,2022-03,684,TypeScript,0.2208
+hn,2022-04,629,TypeScript,0.2242
+hn,2022-05,647,TypeScript,0.2303
+hn,2022-06,600,TypeScript,0.2117
+hn,2022-07,421,TypeScript,0.2019
+hn,2022-08,538,TypeScript,0.1989
+hn,2022-09,431,TypeScript,0.2111
+hn,2022-10,381,TypeScript,0.1864
+hn,2022-11,451,TypeScript,0.1996
+hn,2022-12,396,TypeScript,0.1818
+hn,2023-01,305,TypeScript,0.1705
+hn,2023-02,370,TypeScript,0.1703
+hn,2023-03,349,TypeScript,0.1834
+hn,2023-04,307,TypeScript,0.1954
+hn,2023-05,294,TypeScript,0.1633
+hn,2023-06,286,TypeScript,0.1608
+hn,2023-07,257,TypeScript,0.1946
+hn,2023-08,292,TypeScript,0.2158
+hn,2023-09,246,TypeScript,0.2358
+hn,2023-10,277,TypeScript,0.1733
+hn,2023-11,315,TypeScript,0.2032
+hn,2023-12,276,TypeScript,0.1377
+hn,2024-01,242,TypeScript,0.1694
+hn,2024-02,296,TypeScript,0.1486
+hn,2024-03,259,TypeScript,0.1931
+hn,2024-04,243,TypeScript,0.1811
+hn,2024-05,338,TypeScript,0.1864
+hn,2024-06,303,TypeScript,0.1914
+hn,2024-07,342,TypeScript,0.1959
+hn,2024-08,289,TypeScript,0.1938
+hn,2024-09,273,TypeScript,0.2161
+hn,2024-10,296,TypeScript,0.25
+hn,2024-11,284,TypeScript,0.2183
+hn,2024-12,285,TypeScript,0.1789
+hn,2025-01,249,TypeScript,0.1807
+hn,2025-02,361,TypeScript,0.1994
+hn,2025-03,319,TypeScript,0.2257
+hn,2025-04,278,TypeScript,0.2194
+hn,2025-05,269,TypeScript,0.2862
+hn,2025-06,326,TypeScript,0.2301
+hn,2025-07,302,TypeScript,0.2649
+hn,2025-08,271,TypeScript,0.2435
+hn,2025-09,270,TypeScript,0.3037
+hn,2025-10,312,TypeScript,0.2308
+hn,2025-11,364,TypeScript,0.2665
+hn,2025-12,342,TypeScript,0.2602
+hn,2026-01,234,TypeScript,0.2521
+hn,2026-02,372,TypeScript,0.293
+hn,2026-03,289,TypeScript,0.263
+hn,2026-04,302,TypeScript,0.2417
+hn,2026-05,283,TypeScript,0.2297
+hn,2026-06,283,TypeScript,0.2332
+hn,2026-07,234,TypeScript,0.2564
+hn,2026-08,206,TypeScript,0.2476
+hn,2026-09,221,TypeScript,0.2127
+hn,2026-10,225,TypeScript,0.2489
+hn,2026-11,216,TypeScript,0.2222
+hn,2013-01,150,JavaScript / Node.js,0.3133
+hn,2013-02,165,JavaScript / Node.js,0.2545
+hn,2013-03,240,JavaScript / Node.js,0.2875
+hn,2013-04,285,JavaScript / Node.js,0.2526
+hn,2013-05,250,JavaScript / Node.js,0.308
+hn,2013-06,210,JavaScript / Node.js,0.3095
+hn,2013-07,235,JavaScript / Node.js,0.3021
+hn,2013-08,235,JavaScript / Node.js,0.3447
+hn,2013-09,181,JavaScript / Node.js,0.2486
+hn,2013-10,322,JavaScript / Node.js,0.2857
+hn,2013-11,223,JavaScript / Node.js,0.3049
+hn,2013-12,207,JavaScript / Node.js,0.2271
+hn,2014-01,169,JavaScript / Node.js,0.3195
+hn,2014-02,258,JavaScript / Node.js,0.2946
+hn,2014-03,249,JavaScript / Node.js,0.3012
+hn,2014-04,267,JavaScript / Node.js,0.3109
+hn,2014-05,322,JavaScript / Node.js,0.264
+hn,2014-06,263,JavaScript / Node.js,0.2852
+hn,2014-07,316,JavaScript / Node.js,0.2975
+hn,2014-08,387,JavaScript / Node.js,0.3152
+hn,2014-09,208,JavaScript / Node.js,0.4087
+hn,2014-10,290,JavaScript / Node.js,0.2966
+hn,2014-11,277,JavaScript / Node.js,0.361
+hn,2014-12,382,JavaScript / Node.js,0.356
+hn,2015-01,230,JavaScript / Node.js,0.3348
+hn,2015-02,422,JavaScript / Node.js,0.2796
+hn,2015-03,437,JavaScript / Node.js,0.2632
+hn,2015-06,497,JavaScript / Node.js,0.2636
+hn,2015-07,694,JavaScript / Node.js,0.2522
+hn,2015-08,535,JavaScript / Node.js,0.2206
+hn,2015-09,242,JavaScript / Node.js,0.0455
+hn,2015-10,231,JavaScript / Node.js,0.0519
+hn,2015-11,214,JavaScript / Node.js,0.0514
+hn,2015-12,121,JavaScript / Node.js,0.0331
+hn,2016-01,148,JavaScript / Node.js,0.0338
+hn,2016-02,238,JavaScript / Node.js,0.042
+hn,2016-03,230,JavaScript / Node.js,0.0435
+hn,2016-04,256,JavaScript / Node.js,0.0625
+hn,2016-05,210,JavaScript / Node.js,0.0524
+hn,2016-06,424,JavaScript / Node.js,0.125
+hn,2016-07,536,JavaScript / Node.js,0.25
+hn,2016-08,600,JavaScript / Node.js,0.24
+hn,2016-09,527,JavaScript / Node.js,0.26
+hn,2016-10,636,JavaScript / Node.js,0.2469
+hn,2016-11,690,JavaScript / Node.js,0.2565
+hn,2016-12,541,JavaScript / Node.js,0.22
+hn,2017-01,534,JavaScript / Node.js,0.2191
+hn,2017-02,811,JavaScript / Node.js,0.2182
+hn,2017-03,708,JavaScript / Node.js,0.2274
+hn,2017-04,637,JavaScript / Node.js,0.2057
+hn,2017-05,722,JavaScript / Node.js,0.2285
+hn,2017-06,650,JavaScript / Node.js,0.2015
+hn,2017-07,663,JavaScript / Node.js,0.2127
+hn,2017-08,634,JavaScript / Node.js,0.2303
+hn,2017-09,687,JavaScript / Node.js,0.2271
+hn,2017-10,787,JavaScript / Node.js,0.2478
+hn,2017-11,785,JavaScript / Node.js,0.2331
+hn,2017-12,682,JavaScript / Node.js,0.2302
+hn,2018-01,571,JavaScript / Node.js,0.2399
+hn,2018-02,685,JavaScript / Node.js,0.238
+hn,2018-03,750,JavaScript / Node.js,0.216
+hn,2018-04,739,JavaScript / Node.js,0.2165
+hn,2018-05,858,JavaScript / Node.js,0.2145
+hn,2018-06,667,JavaScript / Node.js,0.2189
+hn,2018-07,656,JavaScript / Node.js,0.1799
+hn,2018-08,766,JavaScript / Node.js,0.201
+hn,2018-09,594,JavaScript / Node.js,0.2239
+hn,2018-10,786,JavaScript / Node.js,0.2239
+hn,2018-11,758,JavaScript / Node.js,0.1873
+hn,2018-12,657,JavaScript / Node.js,0.1887
+hn,2019-01,668,JavaScript / Node.js,0.2066
+hn,2019-02,611,JavaScript / Node.js,0.1931
+hn,2019-03,655,JavaScript / Node.js,0.2015
+hn,2019-04,651,JavaScript / Node.js,0.1889
+hn,2019-05,714,JavaScript / Node.js,0.1681
+hn,2019-06,575,JavaScript / Node.js,0.1739
+hn,2019-07,663,JavaScript / Node.js,0.178
+hn,2019-08,648,JavaScript / Node.js,0.2099
+hn,2019-09,536,JavaScript / Node.js,0.1959
+hn,2019-10,632,JavaScript / Node.js,0.2041
+hn,2019-11,539,JavaScript / Node.js,0.2189
+hn,2019-12,491,JavaScript / Node.js,0.1772
+hn,2020-01,491,JavaScript / Node.js,0.2179
+hn,2020-02,493,JavaScript / Node.js,0.1866
+hn,2020-03,554,JavaScript / Node.js,0.2094
+hn,2020-04,392,JavaScript / Node.js,0.1709
+hn,2020-05,422,JavaScript / Node.js,0.1848
+hn,2020-06,430,JavaScript / Node.js,0.1977
+hn,2020-07,456,JavaScript / Node.js,0.193
+hn,2020-08,551,JavaScript / Node.js,0.1615
+hn,2020-09,518,JavaScript / Node.js,0.168
+hn,2020-10,622,JavaScript / Node.js,0.1624
+hn,2020-11,593,JavaScript / Node.js,0.145
+hn,2020-12,601,JavaScript / Node.js,0.1797
+hn,2021-01,620,JavaScript / Node.js,0.1629
+hn,2021-02,815,JavaScript / Node.js,0.1595
+hn,2021-03,778,JavaScript / Node.js,0.1684
+hn,2021-04,757,JavaScript / Node.js,0.144
+hn,2021-05,729,JavaScript / Node.js,0.1866
+hn,2021-06,819,JavaScript / Node.js,0.1661
+hn,2021-07,739,JavaScript / Node.js,0.1624
+hn,2021-08,715,JavaScript / Node.js,0.165
+hn,2021-09,749,JavaScript / Node.js,0.1495
+hn,2021-10,642,JavaScript / Node.js,0.1776
+hn,2021-11,818,JavaScript / Node.js,0.1565
+hn,2021-12,632,JavaScript / Node.js,0.1582
+hn,2022-01,566,JavaScript / Node.js,0.1537
+hn,2022-02,674,JavaScript / Node.js,0.1484
+hn,2022-03,684,JavaScript / Node.js,0.1667
+hn,2022-04,629,JavaScript / Node.js,0.1606
+hn,2022-05,647,JavaScript / Node.js,0.1484
+hn,2022-06,600,JavaScript / Node.js,0.155
+hn,2022-07,421,JavaScript / Node.js,0.1496
+hn,2022-08,538,JavaScript / Node.js,0.1301
+hn,2022-09,431,JavaScript / Node.js,0.1671
+hn,2022-10,381,JavaScript / Node.js,0.1417
+hn,2022-11,451,JavaScript / Node.js,0.1308
+hn,2022-12,396,JavaScript / Node.js,0.1061
+hn,2023-01,305,JavaScript / Node.js,0.1148
+hn,2023-02,370,JavaScript / Node.js,0.1108
+hn,2023-03,349,JavaScript / Node.js,0.1032
+hn,2023-04,307,JavaScript / Node.js,0.101
+hn,2023-05,294,JavaScript / Node.js,0.0918
+hn,2023-06,286,JavaScript / Node.js,0.1224
+hn,2023-07,257,JavaScript / Node.js,0.0934
+hn,2023-08,292,JavaScript / Node.js,0.1096
+hn,2023-09,246,JavaScript / Node.js,0.1016
+hn,2023-10,277,JavaScript / Node.js,0.1191
+hn,2023-11,315,JavaScript / Node.js,0.073
+hn,2023-12,276,JavaScript / Node.js,0.0797
+hn,2024-01,242,JavaScript / Node.js,0.0826
+hn,2024-02,296,JavaScript / Node.js,0.0946
+hn,2024-03,259,JavaScript / Node.js,0.1351
+hn,2024-04,243,JavaScript / Node.js,0.107
+hn,2024-05,338,JavaScript / Node.js,0.1065
+hn,2024-06,303,JavaScript / Node.js,0.1254
+hn,2024-07,342,JavaScript / Node.js,0.1111
+hn,2024-08,289,JavaScript / Node.js,0.0934
+hn,2024-09,273,JavaScript / Node.js,0.0842
+hn,2024-10,296,JavaScript / Node.js,0.0912
+hn,2024-11,284,JavaScript / Node.js,0.0704
+hn,2024-12,285,JavaScript / Node.js,0.0947
+hn,2025-01,249,JavaScript / Node.js,0.0763
+hn,2025-02,361,JavaScript / Node.js,0.0803
+hn,2025-03,319,JavaScript / Node.js,0.0784
+hn,2025-04,278,JavaScript / Node.js,0.0899
+hn,2025-05,269,JavaScript / Node.js,0.1152
+hn,2025-06,326,JavaScript / Node.js,0.092
+hn,2025-07,302,JavaScript / Node.js,0.1026
+hn,2025-08,271,JavaScript / Node.js,0.1107
+hn,2025-09,270,JavaScript / Node.js,0.1037
+hn,2025-10,312,JavaScript / Node.js,0.109
+hn,2025-11,364,JavaScript / Node.js,0.1126
+hn,2025-12,342,JavaScript / Node.js,0.0848
+hn,2026-01,234,JavaScript / Node.js,0.1154
+hn,2026-02,372,JavaScript / Node.js,0.0833
+hn,2026-03,289,JavaScript / Node.js,0.1142
+hn,2026-04,302,JavaScript / Node.js,0.106
+hn,2026-05,283,JavaScript / Node.js,0.1025
+hn,2026-06,283,JavaScript / Node.js,0.0742
+hn,2026-07,234,JavaScript / Node.js,0.0983
+hn,2026-08,206,JavaScript / Node.js,0.1019
+hn,2026-09,221,JavaScript / Node.js,0.095
+hn,2026-10,225,JavaScript / Node.js,0.08
+hn,2026-11,216,JavaScript / Node.js,0.0787
+hn,2013-01,150,Data pipelines / ETL,0.0067
+hn,2013-02,165,Data pipelines / ETL,0.0061
+hn,2013-03,240,Data pipelines / ETL,0.0042
+hn,2013-04,285,Data pipelines / ETL,0.0105
+hn,2013-05,250,Data pipelines / ETL,0.004
+hn,2013-06,210,Data pipelines / ETL,0.0048
+hn,2013-07,235,Data pipelines / ETL,0.0085
+hn,2013-08,235,Data pipelines / ETL,0.0
+hn,2013-09,181,Data pipelines / ETL,0.0
+hn,2013-10,322,Data pipelines / ETL,0.0031
+hn,2013-11,223,Data pipelines / ETL,0.0
+hn,2013-12,207,Data pipelines / ETL,0.0
+hn,2014-01,169,Data pipelines / ETL,0.0118
+hn,2014-02,258,Data pipelines / ETL,0.0078
+hn,2014-03,249,Data pipelines / ETL,0.004
+hn,2014-04,267,Data pipelines / ETL,0.0112
+hn,2014-05,322,Data pipelines / ETL,0.0124
+hn,2014-06,263,Data pipelines / ETL,0.0076
+hn,2014-07,316,Data pipelines / ETL,0.0158
+hn,2014-08,387,Data pipelines / ETL,0.0103
+hn,2014-09,208,Data pipelines / ETL,0.0288
+hn,2014-10,290,Data pipelines / ETL,0.0207
+hn,2014-11,277,Data pipelines / ETL,0.0072
+hn,2014-12,382,Data pipelines / ETL,0.0157
+hn,2015-01,230,Data pipelines / ETL,0.0043
+hn,2015-02,422,Data pipelines / ETL,0.0071
+hn,2015-03,437,Data pipelines / ETL,0.0092
+hn,2015-06,497,Data pipelines / ETL,0.0161
+hn,2015-07,694,Data pipelines / ETL,0.0043
+hn,2015-08,535,Data pipelines / ETL,0.0056
+hn,2015-09,242,Data pipelines / ETL,0.0
+hn,2015-10,231,Data pipelines / ETL,0.0
+hn,2015-11,214,Data pipelines / ETL,0.0
+hn,2015-12,121,Data pipelines / ETL,0.0
+hn,2016-01,148,Data pipelines / ETL,0.0
+hn,2016-02,238,Data pipelines / ETL,0.0
+hn,2016-03,230,Data pipelines / ETL,0.0
+hn,2016-04,256,Data pipelines / ETL,0.0
+hn,2016-05,210,Data pipelines / ETL,0.0
+hn,2016-06,424,Data pipelines / ETL,0.0142
+hn,2016-07,536,Data pipelines / ETL,0.0093
+hn,2016-08,600,Data pipelines / ETL,0.0183
+hn,2016-09,527,Data pipelines / ETL,0.0247
+hn,2016-10,636,Data pipelines / ETL,0.0142
+hn,2016-11,690,Data pipelines / ETL,0.0232
+hn,2016-12,541,Data pipelines / ETL,0.0092
+hn,2017-01,534,Data pipelines / ETL,0.0187
+hn,2017-02,811,Data pipelines / ETL,0.0136
+hn,2017-03,708,Data pipelines / ETL,0.0169
+hn,2017-04,637,Data pipelines / ETL,0.0188
+hn,2017-05,722,Data pipelines / ETL,0.018
+hn,2017-06,650,Data pipelines / ETL,0.02
+hn,2017-07,663,Data pipelines / ETL,0.0256
+hn,2017-08,634,Data pipelines / ETL,0.0174
+hn,2017-09,687,Data pipelines / ETL,0.0247
+hn,2017-10,787,Data pipelines / ETL,0.0318
+hn,2017-11,785,Data pipelines / ETL,0.0293
+hn,2017-12,682,Data pipelines / ETL,0.0249
+hn,2018-01,571,Data pipelines / ETL,0.021
+hn,2018-02,685,Data pipelines / ETL,0.0292
+hn,2018-03,750,Data pipelines / ETL,0.0253
+hn,2018-04,739,Data pipelines / ETL,0.023
+hn,2018-05,858,Data pipelines / ETL,0.0245
+hn,2018-06,667,Data pipelines / ETL,0.0225
+hn,2018-07,656,Data pipelines / ETL,0.0229
+hn,2018-08,766,Data pipelines / ETL,0.0261
+hn,2018-09,594,Data pipelines / ETL,0.0236
+hn,2018-10,786,Data pipelines / ETL,0.0229
+hn,2018-11,758,Data pipelines / ETL,0.0198
+hn,2018-12,657,Data pipelines / ETL,0.0259
+hn,2019-01,668,Data pipelines / ETL,0.021
+hn,2019-02,611,Data pipelines / ETL,0.0147
+hn,2019-03,655,Data pipelines / ETL,0.0198
+hn,2019-04,651,Data pipelines / ETL,0.0276
+hn,2019-05,714,Data pipelines / ETL,0.0252
+hn,2019-06,575,Data pipelines / ETL,0.0278
+hn,2019-07,663,Data pipelines / ETL,0.0271
+hn,2019-08,648,Data pipelines / ETL,0.0231
+hn,2019-09,536,Data pipelines / ETL,0.0205
+hn,2019-10,632,Data pipelines / ETL,0.0142
+hn,2019-11,539,Data pipelines / ETL,0.0315
+hn,2019-12,491,Data pipelines / ETL,0.0285
+hn,2020-01,491,Data pipelines / ETL,0.0285
+hn,2020-02,493,Data pipelines / ETL,0.0325
+hn,2020-03,554,Data pipelines / ETL,0.0289
+hn,2020-04,392,Data pipelines / ETL,0.0332
+hn,2020-05,422,Data pipelines / ETL,0.0166
+hn,2020-06,430,Data pipelines / ETL,0.0488
+hn,2020-07,456,Data pipelines / ETL,0.0263
+hn,2020-08,551,Data pipelines / ETL,0.0345
+hn,2020-09,518,Data pipelines / ETL,0.0232
+hn,2020-10,622,Data pipelines / ETL,0.037
+hn,2020-11,593,Data pipelines / ETL,0.027
+hn,2020-12,601,Data pipelines / ETL,0.0316
+hn,2021-01,620,Data pipelines / ETL,0.0323
+hn,2021-02,815,Data pipelines / ETL,0.0294
+hn,2021-03,778,Data pipelines / ETL,0.0296
+hn,2021-04,757,Data pipelines / ETL,0.0357
+hn,2021-05,729,Data pipelines / ETL,0.0288
+hn,2021-06,819,Data pipelines / ETL,0.0244
+hn,2021-07,739,Data pipelines / ETL,0.0257
+hn,2021-08,715,Data pipelines / ETL,0.0308
+hn,2021-09,749,Data pipelines / ETL,0.0294
+hn,2021-10,642,Data pipelines / ETL,0.0327
+hn,2021-11,818,Data pipelines / ETL,0.0281
+hn,2021-12,632,Data pipelines / ETL,0.0253
+hn,2022-01,566,Data pipelines / ETL,0.0318
+hn,2022-02,674,Data pipelines / ETL,0.0312
+hn,2022-03,684,Data pipelines / ETL,0.0336
+hn,2022-04,629,Data pipelines / ETL,0.0302
+hn,2022-05,647,Data pipelines / ETL,0.0309
+hn,2022-06,600,Data pipelines / ETL,0.0267
+hn,2022-07,421,Data pipelines / ETL,0.0333
+hn,2022-08,538,Data pipelines / ETL,0.0428
+hn,2022-09,431,Data pipelines / ETL,0.0302
+hn,2022-10,381,Data pipelines / ETL,0.042
+hn,2022-11,451,Data pipelines / ETL,0.0355
+hn,2022-12,396,Data pipelines / ETL,0.0227
+hn,2023-01,305,Data pipelines / ETL,0.0393
+hn,2023-02,370,Data pipelines / ETL,0.0378
+hn,2023-03,349,Data pipelines / ETL,0.0287
+hn,2023-04,307,Data pipelines / ETL,0.0228
+hn,2023-05,294,Data pipelines / ETL,0.0476
+hn,2023-06,286,Data pipelines / ETL,0.0245
+hn,2023-07,257,Data pipelines / ETL,0.0117
+hn,2023-08,292,Data pipelines / ETL,0.0411
+hn,2023-09,246,Data pipelines / ETL,0.0366
+hn,2023-10,277,Data pipelines / ETL,0.0289
+hn,2023-11,315,Data pipelines / ETL,0.0413
+hn,2023-12,276,Data pipelines / ETL,0.029
+hn,2024-01,242,Data pipelines / ETL,0.0496
+hn,2024-02,296,Data pipelines / ETL,0.0338
+hn,2024-03,259,Data pipelines / ETL,0.027
+hn,2024-04,243,Data pipelines / ETL,0.0412
+hn,2024-05,338,Data pipelines / ETL,0.0473
+hn,2024-06,303,Data pipelines / ETL,0.0231
+hn,2024-07,342,Data pipelines / ETL,0.0439
+hn,2024-08,289,Data pipelines / ETL,0.0277
+hn,2024-09,273,Data pipelines / ETL,0.0366
+hn,2024-10,296,Data pipelines / ETL,0.0338
+hn,2024-11,284,Data pipelines / ETL,0.0352
+hn,2024-12,285,Data pipelines / ETL,0.0526
+hn,2025-01,249,Data pipelines / ETL,0.0562
+hn,2025-02,361,Data pipelines / ETL,0.0582
+hn,2025-03,319,Data pipelines / ETL,0.0502
+hn,2025-04,278,Data pipelines / ETL,0.0396
+hn,2025-05,269,Data pipelines / ETL,0.0669
+hn,2025-06,326,Data pipelines / ETL,0.046
+hn,2025-07,302,Data pipelines / ETL,0.0662
+hn,2025-08,271,Data pipelines / ETL,0.0627
+hn,2025-09,270,Data pipelines / ETL,0.0444
+hn,2025-10,312,Data pipelines / ETL,0.0609
+hn,2025-11,364,Data pipelines / ETL,0.0659
+hn,2025-12,342,Data pipelines / ETL,0.0556
+hn,2026-01,234,Data pipelines / ETL,0.0684
+hn,2026-02,372,Data pipelines / ETL,0.0726
+hn,2026-03,289,Data pipelines / ETL,0.0727
+hn,2026-04,302,Data pipelines / ETL,0.0563
+hn,2026-05,283,Data pipelines / ETL,0.0848
+hn,2026-06,283,Data pipelines / ETL,0.106
+hn,2026-07,234,Data pipelines / ETL,0.0641
+hn,2026-08,206,Data pipelines / ETL,0.068
+hn,2026-09,221,Data pipelines / ETL,0.0543
+hn,2026-10,225,Data pipelines / ETL,0.04
+hn,2026-11,216,Data pipelines / ETL,0.037
 hn,2013-01,150,Terraform / IaC,0.0
 hn,2013-02,165,Terraform / IaC,0.0061
 hn,2013-03,240,Terraform / IaC,0.0
@@ -4487,171 +4487,6 @@ hn,2026-08,206,Terraform / IaC,0.0971
 hn,2026-09,221,Terraform / IaC,0.0995
 hn,2026-10,225,Terraform / IaC,0.0756
 hn,2026-11,216,Terraform / IaC,0.0694
-hn,2013-01,150,LLM evaluation / eval harnesses,0.0
-hn,2013-02,165,LLM evaluation / eval harnesses,0.0
-hn,2013-03,240,LLM evaluation / eval harnesses,0.0
-hn,2013-04,285,LLM evaluation / eval harnesses,0.0
-hn,2013-05,250,LLM evaluation / eval harnesses,0.0
-hn,2013-06,210,LLM evaluation / eval harnesses,0.0
-hn,2013-07,235,LLM evaluation / eval harnesses,0.0085
-hn,2013-08,235,LLM evaluation / eval harnesses,0.0043
-hn,2013-09,181,LLM evaluation / eval harnesses,0.0
-hn,2013-10,322,LLM evaluation / eval harnesses,0.0
-hn,2013-11,223,LLM evaluation / eval harnesses,0.0045
-hn,2013-12,207,LLM evaluation / eval harnesses,0.0
-hn,2014-01,169,LLM evaluation / eval harnesses,0.0059
-hn,2014-02,258,LLM evaluation / eval harnesses,0.0
-hn,2014-03,249,LLM evaluation / eval harnesses,0.008
-hn,2014-04,267,LLM evaluation / eval harnesses,0.0037
-hn,2014-05,322,LLM evaluation / eval harnesses,0.0031
-hn,2014-06,263,LLM evaluation / eval harnesses,0.0076
-hn,2014-07,316,LLM evaluation / eval harnesses,0.0063
-hn,2014-08,387,LLM evaluation / eval harnesses,0.0129
-hn,2014-09,208,LLM evaluation / eval harnesses,0.0096
-hn,2014-10,290,LLM evaluation / eval harnesses,0.0138
-hn,2014-11,277,LLM evaluation / eval harnesses,0.0072
-hn,2014-12,382,LLM evaluation / eval harnesses,0.0079
-hn,2015-01,230,LLM evaluation / eval harnesses,0.0
-hn,2015-02,422,LLM evaluation / eval harnesses,0.0047
-hn,2015-03,437,LLM evaluation / eval harnesses,0.0046
-hn,2015-06,497,LLM evaluation / eval harnesses,0.0
-hn,2015-07,694,LLM evaluation / eval harnesses,0.0
-hn,2015-08,535,LLM evaluation / eval harnesses,0.0019
-hn,2015-09,242,LLM evaluation / eval harnesses,0.0
-hn,2015-10,231,LLM evaluation / eval harnesses,0.0
-hn,2015-11,214,LLM evaluation / eval harnesses,0.0
-hn,2015-12,121,LLM evaluation / eval harnesses,0.0
-hn,2016-01,148,LLM evaluation / eval harnesses,0.0
-hn,2016-02,238,LLM evaluation / eval harnesses,0.0
-hn,2016-03,230,LLM evaluation / eval harnesses,0.0
-hn,2016-04,256,LLM evaluation / eval harnesses,0.0
-hn,2016-05,210,LLM evaluation / eval harnesses,0.0
-hn,2016-06,424,LLM evaluation / eval harnesses,0.0
-hn,2016-07,536,LLM evaluation / eval harnesses,0.0037
-hn,2016-08,600,LLM evaluation / eval harnesses,0.005
-hn,2016-09,527,LLM evaluation / eval harnesses,0.0019
-hn,2016-10,636,LLM evaluation / eval harnesses,0.0047
-hn,2016-11,690,LLM evaluation / eval harnesses,0.0058
-hn,2016-12,541,LLM evaluation / eval harnesses,0.0018
-hn,2017-01,534,LLM evaluation / eval harnesses,0.0037
-hn,2017-02,811,LLM evaluation / eval harnesses,0.0012
-hn,2017-03,708,LLM evaluation / eval harnesses,0.0056
-hn,2017-04,637,LLM evaluation / eval harnesses,0.0031
-hn,2017-05,722,LLM evaluation / eval harnesses,0.0
-hn,2017-06,650,LLM evaluation / eval harnesses,0.0015
-hn,2017-07,663,LLM evaluation / eval harnesses,0.0015
-hn,2017-08,634,LLM evaluation / eval harnesses,0.0016
-hn,2017-09,687,LLM evaluation / eval harnesses,0.0015
-hn,2017-10,787,LLM evaluation / eval harnesses,0.0038
-hn,2017-11,785,LLM evaluation / eval harnesses,0.0013
-hn,2017-12,682,LLM evaluation / eval harnesses,0.0044
-hn,2018-01,571,LLM evaluation / eval harnesses,0.0035
-hn,2018-02,685,LLM evaluation / eval harnesses,0.0029
-hn,2018-03,750,LLM evaluation / eval harnesses,0.004
-hn,2018-04,739,LLM evaluation / eval harnesses,0.0027
-hn,2018-05,858,LLM evaluation / eval harnesses,0.0035
-hn,2018-06,667,LLM evaluation / eval harnesses,0.0045
-hn,2018-07,656,LLM evaluation / eval harnesses,0.003
-hn,2018-08,766,LLM evaluation / eval harnesses,0.0039
-hn,2018-09,594,LLM evaluation / eval harnesses,0.0034
-hn,2018-10,786,LLM evaluation / eval harnesses,0.0
-hn,2018-11,758,LLM evaluation / eval harnesses,0.0053
-hn,2018-12,657,LLM evaluation / eval harnesses,0.003
-hn,2019-01,668,LLM evaluation / eval harnesses,0.0045
-hn,2019-02,611,LLM evaluation / eval harnesses,0.0065
-hn,2019-03,655,LLM evaluation / eval harnesses,0.0015
-hn,2019-04,651,LLM evaluation / eval harnesses,0.0015
-hn,2019-05,714,LLM evaluation / eval harnesses,0.0028
-hn,2019-06,575,LLM evaluation / eval harnesses,0.0
-hn,2019-07,663,LLM evaluation / eval harnesses,0.0
-hn,2019-08,648,LLM evaluation / eval harnesses,0.0015
-hn,2019-09,536,LLM evaluation / eval harnesses,0.0
-hn,2019-10,632,LLM evaluation / eval harnesses,0.0032
-hn,2019-11,539,LLM evaluation / eval harnesses,0.0037
-hn,2019-12,491,LLM evaluation / eval harnesses,0.0041
-hn,2020-01,491,LLM evaluation / eval harnesses,0.0
-hn,2020-02,493,LLM evaluation / eval harnesses,0.0
-hn,2020-03,554,LLM evaluation / eval harnesses,0.0
-hn,2020-04,392,LLM evaluation / eval harnesses,0.0
-hn,2020-05,422,LLM evaluation / eval harnesses,0.0
-hn,2020-06,430,LLM evaluation / eval harnesses,0.0047
-hn,2020-07,456,LLM evaluation / eval harnesses,0.0022
-hn,2020-08,551,LLM evaluation / eval harnesses,0.0036
-hn,2020-09,518,LLM evaluation / eval harnesses,0.0
-hn,2020-10,622,LLM evaluation / eval harnesses,0.0016
-hn,2020-11,593,LLM evaluation / eval harnesses,0.0
-hn,2020-12,601,LLM evaluation / eval harnesses,0.0017
-hn,2021-01,620,LLM evaluation / eval harnesses,0.0
-hn,2021-02,815,LLM evaluation / eval harnesses,0.0012
-hn,2021-03,778,LLM evaluation / eval harnesses,0.0039
-hn,2021-04,757,LLM evaluation / eval harnesses,0.0026
-hn,2021-05,729,LLM evaluation / eval harnesses,0.0027
-hn,2021-06,819,LLM evaluation / eval harnesses,0.0061
-hn,2021-07,739,LLM evaluation / eval harnesses,0.0027
-hn,2021-08,715,LLM evaluation / eval harnesses,0.0042
-hn,2021-09,749,LLM evaluation / eval harnesses,0.0053
-hn,2021-10,642,LLM evaluation / eval harnesses,0.0047
-hn,2021-11,818,LLM evaluation / eval harnesses,0.0061
-hn,2021-12,632,LLM evaluation / eval harnesses,0.0047
-hn,2022-01,566,LLM evaluation / eval harnesses,0.0035
-hn,2022-02,674,LLM evaluation / eval harnesses,0.0045
-hn,2022-03,684,LLM evaluation / eval harnesses,0.0029
-hn,2022-04,629,LLM evaluation / eval harnesses,0.0016
-hn,2022-05,647,LLM evaluation / eval harnesses,0.0
-hn,2022-06,600,LLM evaluation / eval harnesses,0.0067
-hn,2022-07,421,LLM evaluation / eval harnesses,0.0095
-hn,2022-08,538,LLM evaluation / eval harnesses,0.0037
-hn,2022-09,431,LLM evaluation / eval harnesses,0.0046
-hn,2022-10,381,LLM evaluation / eval harnesses,0.0026
-hn,2022-11,451,LLM evaluation / eval harnesses,0.0022
-hn,2022-12,396,LLM evaluation / eval harnesses,0.0025
-hn,2023-01,305,LLM evaluation / eval harnesses,0.0033
-hn,2023-02,370,LLM evaluation / eval harnesses,0.0027
-hn,2023-03,349,LLM evaluation / eval harnesses,0.0
-hn,2023-04,307,LLM evaluation / eval harnesses,0.0033
-hn,2023-05,294,LLM evaluation / eval harnesses,0.0
-hn,2023-06,286,LLM evaluation / eval harnesses,0.0035
-hn,2023-07,257,LLM evaluation / eval harnesses,0.0039
-hn,2023-08,292,LLM evaluation / eval harnesses,0.0
-hn,2023-09,246,LLM evaluation / eval harnesses,0.0
-hn,2023-10,277,LLM evaluation / eval harnesses,0.0
-hn,2023-11,315,LLM evaluation / eval harnesses,0.0
-hn,2023-12,276,LLM evaluation / eval harnesses,0.0
-hn,2024-01,242,LLM evaluation / eval harnesses,0.0
-hn,2024-02,296,LLM evaluation / eval harnesses,0.0
-hn,2024-03,259,LLM evaluation / eval harnesses,0.0039
-hn,2024-04,243,LLM evaluation / eval harnesses,0.0
-hn,2024-05,338,LLM evaluation / eval harnesses,0.003
-hn,2024-06,303,LLM evaluation / eval harnesses,0.0033
-hn,2024-07,342,LLM evaluation / eval harnesses,0.0029
-hn,2024-08,289,LLM evaluation / eval harnesses,0.0069
-hn,2024-09,273,LLM evaluation / eval harnesses,0.0037
-hn,2024-10,296,LLM evaluation / eval harnesses,0.0034
-hn,2024-11,284,LLM evaluation / eval harnesses,0.0035
-hn,2024-12,285,LLM evaluation / eval harnesses,0.0105
-hn,2025-01,249,LLM evaluation / eval harnesses,0.008
-hn,2025-02,361,LLM evaluation / eval harnesses,0.0111
-hn,2025-03,319,LLM evaluation / eval harnesses,0.0125
-hn,2025-04,278,LLM evaluation / eval harnesses,0.0108
-hn,2025-05,269,LLM evaluation / eval harnesses,0.0074
-hn,2025-06,326,LLM evaluation / eval harnesses,0.0184
-hn,2025-07,302,LLM evaluation / eval harnesses,0.0166
-hn,2025-08,271,LLM evaluation / eval harnesses,0.0037
-hn,2025-09,270,LLM evaluation / eval harnesses,0.0
-hn,2025-10,312,LLM evaluation / eval harnesses,0.0224
-hn,2025-11,364,LLM evaluation / eval harnesses,0.0137
-hn,2025-12,342,LLM evaluation / eval harnesses,0.0205
-hn,2026-01,234,LLM evaluation / eval harnesses,0.0299
-hn,2026-02,372,LLM evaluation / eval harnesses,0.0242
-hn,2026-03,289,LLM evaluation / eval harnesses,0.0242
-hn,2026-04,302,LLM evaluation / eval harnesses,0.0132
-hn,2026-05,283,LLM evaluation / eval harnesses,0.0565
-hn,2026-06,283,LLM evaluation / eval harnesses,0.0565
-hn,2026-07,234,LLM evaluation / eval harnesses,0.0299
-hn,2026-08,206,LLM evaluation / eval harnesses,0.0437
-hn,2026-09,221,LLM evaluation / eval harnesses,0.0724
-hn,2026-10,225,LLM evaluation / eval harnesses,0.0533
-hn,2026-11,216,LLM evaluation / eval harnesses,0.0556
 hn,2013-01,150,React / Next.js,0.0067
 hn,2013-02,165,React / Next.js,0.0
 hn,2013-03,240,React / Next.js,0.0208
@@ -4817,6 +4652,171 @@ hn,2026-08,206,React / Next.js,0.267
 hn,2026-09,221,React / Next.js,0.2262
 hn,2026-10,225,React / Next.js,0.2667
 hn,2026-11,216,React / Next.js,0.2361
+hn,2013-01,150,LLM evaluation / eval harnesses,0.0
+hn,2013-02,165,LLM evaluation / eval harnesses,0.0
+hn,2013-03,240,LLM evaluation / eval harnesses,0.0
+hn,2013-04,285,LLM evaluation / eval harnesses,0.0
+hn,2013-05,250,LLM evaluation / eval harnesses,0.0
+hn,2013-06,210,LLM evaluation / eval harnesses,0.0
+hn,2013-07,235,LLM evaluation / eval harnesses,0.0085
+hn,2013-08,235,LLM evaluation / eval harnesses,0.0043
+hn,2013-09,181,LLM evaluation / eval harnesses,0.0
+hn,2013-10,322,LLM evaluation / eval harnesses,0.0
+hn,2013-11,223,LLM evaluation / eval harnesses,0.0045
+hn,2013-12,207,LLM evaluation / eval harnesses,0.0
+hn,2014-01,169,LLM evaluation / eval harnesses,0.0059
+hn,2014-02,258,LLM evaluation / eval harnesses,0.0
+hn,2014-03,249,LLM evaluation / eval harnesses,0.008
+hn,2014-04,267,LLM evaluation / eval harnesses,0.0037
+hn,2014-05,322,LLM evaluation / eval harnesses,0.0031
+hn,2014-06,263,LLM evaluation / eval harnesses,0.0076
+hn,2014-07,316,LLM evaluation / eval harnesses,0.0063
+hn,2014-08,387,LLM evaluation / eval harnesses,0.0129
+hn,2014-09,208,LLM evaluation / eval harnesses,0.0096
+hn,2014-10,290,LLM evaluation / eval harnesses,0.0138
+hn,2014-11,277,LLM evaluation / eval harnesses,0.0072
+hn,2014-12,382,LLM evaluation / eval harnesses,0.0079
+hn,2015-01,230,LLM evaluation / eval harnesses,0.0
+hn,2015-02,422,LLM evaluation / eval harnesses,0.0047
+hn,2015-03,437,LLM evaluation / eval harnesses,0.0046
+hn,2015-06,497,LLM evaluation / eval harnesses,0.0
+hn,2015-07,694,LLM evaluation / eval harnesses,0.0
+hn,2015-08,535,LLM evaluation / eval harnesses,0.0019
+hn,2015-09,242,LLM evaluation / eval harnesses,0.0
+hn,2015-10,231,LLM evaluation / eval harnesses,0.0
+hn,2015-11,214,LLM evaluation / eval harnesses,0.0
+hn,2015-12,121,LLM evaluation / eval harnesses,0.0
+hn,2016-01,148,LLM evaluation / eval harnesses,0.0
+hn,2016-02,238,LLM evaluation / eval harnesses,0.0
+hn,2016-03,230,LLM evaluation / eval harnesses,0.0
+hn,2016-04,256,LLM evaluation / eval harnesses,0.0
+hn,2016-05,210,LLM evaluation / eval harnesses,0.0
+hn,2016-06,424,LLM evaluation / eval harnesses,0.0
+hn,2016-07,536,LLM evaluation / eval harnesses,0.0037
+hn,2016-08,600,LLM evaluation / eval harnesses,0.005
+hn,2016-09,527,LLM evaluation / eval harnesses,0.0019
+hn,2016-10,636,LLM evaluation / eval harnesses,0.0047
+hn,2016-11,690,LLM evaluation / eval harnesses,0.0058
+hn,2016-12,541,LLM evaluation / eval harnesses,0.0018
+hn,2017-01,534,LLM evaluation / eval harnesses,0.0037
+hn,2017-02,811,LLM evaluation / eval harnesses,0.0012
+hn,2017-03,708,LLM evaluation / eval harnesses,0.0056
+hn,2017-04,637,LLM evaluation / eval harnesses,0.0031
+hn,2017-05,722,LLM evaluation / eval harnesses,0.0
+hn,2017-06,650,LLM evaluation / eval harnesses,0.0015
+hn,2017-07,663,LLM evaluation / eval harnesses,0.0015
+hn,2017-08,634,LLM evaluation / eval harnesses,0.0016
+hn,2017-09,687,LLM evaluation / eval harnesses,0.0015
+hn,2017-10,787,LLM evaluation / eval harnesses,0.0038
+hn,2017-11,785,LLM evaluation / eval harnesses,0.0013
+hn,2017-12,682,LLM evaluation / eval harnesses,0.0044
+hn,2018-01,571,LLM evaluation / eval harnesses,0.0035
+hn,2018-02,685,LLM evaluation / eval harnesses,0.0029
+hn,2018-03,750,LLM evaluation / eval harnesses,0.004
+hn,2018-04,739,LLM evaluation / eval harnesses,0.0027
+hn,2018-05,858,LLM evaluation / eval harnesses,0.0035
+hn,2018-06,667,LLM evaluation / eval harnesses,0.0045
+hn,2018-07,656,LLM evaluation / eval harnesses,0.003
+hn,2018-08,766,LLM evaluation / eval harnesses,0.0039
+hn,2018-09,594,LLM evaluation / eval harnesses,0.0034
+hn,2018-10,786,LLM evaluation / eval harnesses,0.0
+hn,2018-11,758,LLM evaluation / eval harnesses,0.0053
+hn,2018-12,657,LLM evaluation / eval harnesses,0.003
+hn,2019-01,668,LLM evaluation / eval harnesses,0.0045
+hn,2019-02,611,LLM evaluation / eval harnesses,0.0065
+hn,2019-03,655,LLM evaluation / eval harnesses,0.0015
+hn,2019-04,651,LLM evaluation / eval harnesses,0.0015
+hn,2019-05,714,LLM evaluation / eval harnesses,0.0028
+hn,2019-06,575,LLM evaluation / eval harnesses,0.0
+hn,2019-07,663,LLM evaluation / eval harnesses,0.0
+hn,2019-08,648,LLM evaluation / eval harnesses,0.0015
+hn,2019-09,536,LLM evaluation / eval harnesses,0.0
+hn,2019-10,632,LLM evaluation / eval harnesses,0.0032
+hn,2019-11,539,LLM evaluation / eval harnesses,0.0037
+hn,2019-12,491,LLM evaluation / eval harnesses,0.0041
+hn,2020-01,491,LLM evaluation / eval harnesses,0.0
+hn,2020-02,493,LLM evaluation / eval harnesses,0.0
+hn,2020-03,554,LLM evaluation / eval harnesses,0.0
+hn,2020-04,392,LLM evaluation / eval harnesses,0.0
+hn,2020-05,422,LLM evaluation / eval harnesses,0.0
+hn,2020-06,430,LLM evaluation / eval harnesses,0.0047
+hn,2020-07,456,LLM evaluation / eval harnesses,0.0022
+hn,2020-08,551,LLM evaluation / eval harnesses,0.0036
+hn,2020-09,518,LLM evaluation / eval harnesses,0.0
+hn,2020-10,622,LLM evaluation / eval harnesses,0.0016
+hn,2020-11,593,LLM evaluation / eval harnesses,0.0
+hn,2020-12,601,LLM evaluation / eval harnesses,0.0017
+hn,2021-01,620,LLM evaluation / eval harnesses,0.0
+hn,2021-02,815,LLM evaluation / eval harnesses,0.0012
+hn,2021-03,778,LLM evaluation / eval harnesses,0.0039
+hn,2021-04,757,LLM evaluation / eval harnesses,0.0026
+hn,2021-05,729,LLM evaluation / eval harnesses,0.0027
+hn,2021-06,819,LLM evaluation / eval harnesses,0.0061
+hn,2021-07,739,LLM evaluation / eval harnesses,0.0027
+hn,2021-08,715,LLM evaluation / eval harnesses,0.0042
+hn,2021-09,749,LLM evaluation / eval harnesses,0.0053
+hn,2021-10,642,LLM evaluation / eval harnesses,0.0047
+hn,2021-11,818,LLM evaluation / eval harnesses,0.0061
+hn,2021-12,632,LLM evaluation / eval harnesses,0.0047
+hn,2022-01,566,LLM evaluation / eval harnesses,0.0035
+hn,2022-02,674,LLM evaluation / eval harnesses,0.0045
+hn,2022-03,684,LLM evaluation / eval harnesses,0.0029
+hn,2022-04,629,LLM evaluation / eval harnesses,0.0016
+hn,2022-05,647,LLM evaluation / eval harnesses,0.0
+hn,2022-06,600,LLM evaluation / eval harnesses,0.0067
+hn,2022-07,421,LLM evaluation / eval harnesses,0.0095
+hn,2022-08,538,LLM evaluation / eval harnesses,0.0037
+hn,2022-09,431,LLM evaluation / eval harnesses,0.0046
+hn,2022-10,381,LLM evaluation / eval harnesses,0.0026
+hn,2022-11,451,LLM evaluation / eval harnesses,0.0022
+hn,2022-12,396,LLM evaluation / eval harnesses,0.0025
+hn,2023-01,305,LLM evaluation / eval harnesses,0.0033
+hn,2023-02,370,LLM evaluation / eval harnesses,0.0027
+hn,2023-03,349,LLM evaluation / eval harnesses,0.0
+hn,2023-04,307,LLM evaluation / eval harnesses,0.0033
+hn,2023-05,294,LLM evaluation / eval harnesses,0.0
+hn,2023-06,286,LLM evaluation / eval harnesses,0.0035
+hn,2023-07,257,LLM evaluation / eval harnesses,0.0039
+hn,2023-08,292,LLM evaluation / eval harnesses,0.0
+hn,2023-09,246,LLM evaluation / eval harnesses,0.0
+hn,2023-10,277,LLM evaluation / eval harnesses,0.0
+hn,2023-11,315,LLM evaluation / eval harnesses,0.0
+hn,2023-12,276,LLM evaluation / eval harnesses,0.0
+hn,2024-01,242,LLM evaluation / eval harnesses,0.0
+hn,2024-02,296,LLM evaluation / eval harnesses,0.0
+hn,2024-03,259,LLM evaluation / eval harnesses,0.0039
+hn,2024-04,243,LLM evaluation / eval harnesses,0.0
+hn,2024-05,338,LLM evaluation / eval harnesses,0.003
+hn,2024-06,303,LLM evaluation / eval harnesses,0.0033
+hn,2024-07,342,LLM evaluation / eval harnesses,0.0029
+hn,2024-08,289,LLM evaluation / eval harnesses,0.0069
+hn,2024-09,273,LLM evaluation / eval harnesses,0.0037
+hn,2024-10,296,LLM evaluation / eval harnesses,0.0034
+hn,2024-11,284,LLM evaluation / eval harnesses,0.0035
+hn,2024-12,285,LLM evaluation / eval harnesses,0.0105
+hn,2025-01,249,LLM evaluation / eval harnesses,0.008
+hn,2025-02,361,LLM evaluation / eval harnesses,0.0111
+hn,2025-03,319,LLM evaluation / eval harnesses,0.0125
+hn,2025-04,278,LLM evaluation / eval harnesses,0.0108
+hn,2025-05,269,LLM evaluation / eval harnesses,0.0074
+hn,2025-06,326,LLM evaluation / eval harnesses,0.0184
+hn,2025-07,302,LLM evaluation / eval harnesses,0.0166
+hn,2025-08,271,LLM evaluation / eval harnesses,0.0037
+hn,2025-09,270,LLM evaluation / eval harnesses,0.0
+hn,2025-10,312,LLM evaluation / eval harnesses,0.0224
+hn,2025-11,364,LLM evaluation / eval harnesses,0.0137
+hn,2025-12,342,LLM evaluation / eval harnesses,0.0205
+hn,2026-01,234,LLM evaluation / eval harnesses,0.0299
+hn,2026-02,372,LLM evaluation / eval harnesses,0.0242
+hn,2026-03,289,LLM evaluation / eval harnesses,0.0242
+hn,2026-04,302,LLM evaluation / eval harnesses,0.0132
+hn,2026-05,283,LLM evaluation / eval harnesses,0.0565
+hn,2026-06,283,LLM evaluation / eval harnesses,0.0565
+hn,2026-07,234,LLM evaluation / eval harnesses,0.0299
+hn,2026-08,206,LLM evaluation / eval harnesses,0.0437
+hn,2026-09,221,LLM evaluation / eval harnesses,0.0724
+hn,2026-10,225,LLM evaluation / eval harnesses,0.0533
+hn,2026-11,216,LLM evaluation / eval harnesses,0.0556
 hn,2013-01,150,PostgreSQL / relational DBs,0.2133
 hn,2013-02,165,PostgreSQL / relational DBs,0.1394
 hn,2013-03,240,PostgreSQL / relational DBs,0.1333

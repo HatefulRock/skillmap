@@ -1,244 +1,244 @@
 dimension,key,label,postings,skill,share
-seniority,intern,intern,691,Python,0.6729
-seniority,intern,intern,691,AWS,0.1592
-seniority,intern,intern,691,Cloud (unspecified),0.2287
-seniority,intern,intern,691,Microservices / distributed systems,0.1606
-seniority,intern,intern,691,LLMs / GenAI (general),0.2634
-seniority,intern,intern,691,AI agents / agentic workflows,0.165
-seniority,intern,intern,691,Observability / tracing / monitoring,0.0666
-seniority,intern,intern,691,SQL,0.2489
-seniority,intern,intern,691,Java / Kotlin (Spring),0.3213
-seniority,intern,intern,691,C++ / C#,0.3878
-seniority,intern,intern,691,CI/CD,0.1216
-seniority,intern,intern,691,Machine learning fundamentals,0.2981
-seniority,intern,intern,691,Full-stack / frontend,0.1881
-seniority,intern,intern,691,Kubernetes,0.055
-seniority,intern,intern,691,Financial services / banking domain,0.1201
-seniority,intern,intern,691,System design / architecture,0.081
-seniority,intern,intern,691,Docker / containers,0.0622
-seniority,intern,intern,691,Go,0.1404
-seniority,intern,intern,691,GCP / Vertex AI,0.0564
-seniority,intern,intern,691,Linux / shell,0.1389
-seniority,intern,intern,691,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0535
-seniority,intern,intern,691,Azure (incl. Azure OpenAI),0.0593
-seniority,intern,intern,691,TypeScript,0.1708
-seniority,intern,intern,691,Data pipelines / ETL,0.0781
-seniority,intern,intern,691,JavaScript / Node.js,0.1983
-seniority,intern,intern,691,REST / API design & integration,0.0535
-seniority,intern,intern,691,Terraform / IaC,0.0217
-seniority,intern,intern,691,LLM evaluation / eval harnesses,0.0651
-seniority,intern,intern,691,React / Next.js,0.1389
-seniority,intern,intern,691,PostgreSQL / relational DBs,0.0637
-seniority,intern,intern,691,KYC / AML / fraud / risk,0.1592
-seniority,intern,intern,691,"AI coding tools (Claude Code, Cursor, Copilot)",0.1418
-seniority,intern,intern,691,Spark / big data,0.0868
-seniority,intern,intern,691,Guardrails / AI safety,0.0333
-seniority,intern,intern,691,Statistics / maths,0.2243
-seniority,intern,intern,691,Rust / Scala,0.1129
-seniority,intern,intern,691,Kafka / message queues / streaming,0.0333
-seniority,intern,intern,691,Pre-sales / solution architecture / PoCs,0.0203
-seniority,intern,intern,691,"NoSQL (MongoDB, DynamoDB)",0.1085
-seniority,intern,intern,691,Cost / latency optimization,0.068
-seniority,junior,junior,821,Python,0.4884
-seniority,junior,junior,821,AWS,0.1803
-seniority,junior,junior,821,Cloud (unspecified),0.2119
-seniority,junior,junior,821,Microservices / distributed systems,0.2083
-seniority,junior,junior,821,LLMs / GenAI (general),0.1608
-seniority,junior,junior,821,AI agents / agentic workflows,0.1242
-seniority,junior,junior,821,Observability / tracing / monitoring,0.1657
-seniority,junior,junior,821,SQL,0.2302
-seniority,junior,junior,821,Java / Kotlin (Spring),0.2948
-seniority,junior,junior,821,C++ / C#,0.2887
-seniority,junior,junior,821,CI/CD,0.1778
-seniority,junior,junior,821,Machine learning fundamentals,0.1632
-seniority,junior,junior,821,Full-stack / frontend,0.2607
-seniority,junior,junior,821,Kubernetes,0.134
-seniority,junior,junior,821,Financial services / banking domain,0.1023
-seniority,junior,junior,821,System design / architecture,0.1486
-seniority,junior,junior,821,Docker / containers,0.1523
-seniority,junior,junior,821,Go,0.1669
-seniority,junior,junior,821,GCP / Vertex AI,0.1145
-seniority,junior,junior,821,Linux / shell,0.1413
-seniority,junior,junior,821,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0658
-seniority,junior,junior,821,Azure (incl. Azure OpenAI),0.1048
-seniority,junior,junior,821,TypeScript,0.1681
-seniority,junior,junior,821,Data pipelines / ETL,0.0962
-seniority,junior,junior,821,JavaScript / Node.js,0.2107
-seniority,junior,junior,821,REST / API design & integration,0.0853
-seniority,junior,junior,821,Terraform / IaC,0.0987
-seniority,junior,junior,821,LLM evaluation / eval harnesses,0.0426
-seniority,junior,junior,821,React / Next.js,0.1023
-seniority,junior,junior,821,PostgreSQL / relational DBs,0.1632
-seniority,junior,junior,821,KYC / AML / fraud / risk,0.1084
-seniority,junior,junior,821,"AI coding tools (Claude Code, Cursor, Copilot)",0.0548
-seniority,junior,junior,821,Spark / big data,0.0901
-seniority,junior,junior,821,Guardrails / AI safety,0.0329
-seniority,junior,junior,821,Statistics / maths,0.1778
-seniority,junior,junior,821,Rust / Scala,0.134
-seniority,junior,junior,821,Kafka / message queues / streaming,0.0451
-seniority,junior,junior,821,Pre-sales / solution architecture / PoCs,0.0219
-seniority,junior,junior,821,"NoSQL (MongoDB, DynamoDB)",0.1462
-seniority,junior,junior,821,Cost / latency optimization,0.0378
-seniority,mid,mid,2851,Python,0.4114
-seniority,mid,mid,2851,AWS,0.2532
-seniority,mid,mid,2851,Cloud (unspecified),0.2013
-seniority,mid,mid,2851,Microservices / distributed systems,0.1845
-seniority,mid,mid,2851,LLMs / GenAI (general),0.2073
-seniority,mid,mid,2851,AI agents / agentic workflows,0.1964
-seniority,mid,mid,2851,Observability / tracing / monitoring,0.1673
-seniority,mid,mid,2851,SQL,0.2504
-seniority,mid,mid,2851,Java / Kotlin (Spring),0.2441
-seniority,mid,mid,2851,C++ / C#,0.208
-seniority,mid,mid,2851,CI/CD,0.1599
-seniority,mid,mid,2851,Machine learning fundamentals,0.1677
-seniority,mid,mid,2851,Full-stack / frontend,0.1768
-seniority,mid,mid,2851,Kubernetes,0.1196
-seniority,mid,mid,2851,Financial services / banking domain,0.1308
-seniority,mid,mid,2851,System design / architecture,0.1663
-seniority,mid,mid,2851,Docker / containers,0.1287
-seniority,mid,mid,2851,Go,0.0993
-seniority,mid,mid,2851,GCP / Vertex AI,0.0989
-seniority,mid,mid,2851,Linux / shell,0.147
-seniority,mid,mid,2851,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0656
-seniority,mid,mid,2851,Azure (incl. Azure OpenAI),0.1098
-seniority,mid,mid,2851,TypeScript,0.088
-seniority,mid,mid,2851,Data pipelines / ETL,0.1245
-seniority,mid,mid,2851,JavaScript / Node.js,0.1298
-seniority,mid,mid,2851,REST / API design & integration,0.1333
-seniority,mid,mid,2851,Terraform / IaC,0.088
-seniority,mid,mid,2851,LLM evaluation / eval harnesses,0.0652
-seniority,mid,mid,2851,React / Next.js,0.1101
-seniority,mid,mid,2851,PostgreSQL / relational DBs,0.1228
-seniority,mid,mid,2851,KYC / AML / fraud / risk,0.0824
-seniority,mid,mid,2851,"AI coding tools (Claude Code, Cursor, Copilot)",0.073
-seniority,mid,mid,2851,Spark / big data,0.0765
-seniority,mid,mid,2851,Guardrails / AI safety,0.0586
-seniority,mid,mid,2851,Statistics / maths,0.0926
-seniority,mid,mid,2851,Rust / Scala,0.041
-seniority,mid,mid,2851,Kafka / message queues / streaming,0.0673
-seniority,mid,mid,2851,Pre-sales / solution architecture / PoCs,0.0582
-seniority,mid,mid,2851,"NoSQL (MongoDB, DynamoDB)",0.0723
-seniority,mid,mid,2851,Cost / latency optimization,0.0638
-seniority,senior,senior,6676,Python,0.4564
-seniority,senior,senior,6676,AWS,0.3436
-seniority,senior,senior,6676,Cloud (unspecified),0.327
-seniority,senior,senior,6676,Microservices / distributed systems,0.2996
-seniority,senior,senior,6676,LLMs / GenAI (general),0.2377
-seniority,senior,senior,6676,AI agents / agentic workflows,0.2537
-seniority,senior,senior,6676,Observability / tracing / monitoring,0.2912
-seniority,senior,senior,6676,SQL,0.2668
-seniority,senior,senior,6676,Java / Kotlin (Spring),0.2163
-seniority,senior,senior,6676,C++ / C#,0.1784
-seniority,senior,senior,6676,CI/CD,0.2296
-seniority,senior,senior,6676,Machine learning fundamentals,0.1747
-seniority,senior,senior,6676,Full-stack / frontend,0.1786
-seniority,senior,senior,6676,Kubernetes,0.2182
-seniority,senior,senior,6676,Financial services / banking domain,0.1522
-seniority,senior,senior,6676,System design / architecture,0.1505
-seniority,senior,senior,6676,Docker / containers,0.179
-seniority,senior,senior,6676,Go,0.1786
-seniority,senior,senior,6676,GCP / Vertex AI,0.1956
-seniority,senior,senior,6676,Linux / shell,0.1526
-seniority,senior,senior,6676,LLM provider APIs (OpenAI / Anthropic / Gemini),0.1176
-seniority,senior,senior,6676,Azure (incl. Azure OpenAI),0.1769
-seniority,senior,senior,6676,TypeScript,0.1348
-seniority,senior,senior,6676,Data pipelines / ETL,0.1363
-seniority,senior,senior,6676,JavaScript / Node.js,0.1317
-seniority,senior,senior,6676,REST / API design & integration,0.1514
-seniority,senior,senior,6676,Terraform / IaC,0.1414
-seniority,senior,senior,6676,LLM evaluation / eval harnesses,0.0948
-seniority,senior,senior,6676,React / Next.js,0.1144
-seniority,senior,senior,6676,PostgreSQL / relational DBs,0.1237
-seniority,senior,senior,6676,KYC / AML / fraud / risk,0.1086
-seniority,senior,senior,6676,"AI coding tools (Claude Code, Cursor, Copilot)",0.0983
-seniority,senior,senior,6676,Spark / big data,0.1249
-seniority,senior,senior,6676,Guardrails / AI safety,0.0954
-seniority,senior,senior,6676,Statistics / maths,0.0795
-seniority,senior,senior,6676,Rust / Scala,0.1055
-seniority,senior,senior,6676,Kafka / message queues / streaming,0.1167
-seniority,senior,senior,6676,Pre-sales / solution architecture / PoCs,0.1031
-seniority,senior,senior,6676,"NoSQL (MongoDB, DynamoDB)",0.0971
-seniority,senior,senior,6676,Cost / latency optimization,0.078
-seniority,staff,staff,3919,Python,0.4139
-seniority,staff,staff,3919,AWS,0.2866
-seniority,staff,staff,3919,Cloud (unspecified),0.2911
-seniority,staff,staff,3919,Microservices / distributed systems,0.3442
-seniority,staff,staff,3919,LLMs / GenAI (general),0.3103
-seniority,staff,staff,3919,AI agents / agentic workflows,0.3177
-seniority,staff,staff,3919,Observability / tracing / monitoring,0.3054
-seniority,staff,staff,3919,SQL,0.2279
-seniority,staff,staff,3919,Java / Kotlin (Spring),0.2171
-seniority,staff,staff,3919,C++ / C#,0.1694
-seniority,staff,staff,3919,CI/CD,0.224
-seniority,staff,staff,3919,Machine learning fundamentals,0.2123
-seniority,staff,staff,3919,Full-stack / frontend,0.1761
-seniority,staff,staff,3919,Kubernetes,0.2286
-seniority,staff,staff,3919,Financial services / banking domain,0.1929
-seniority,staff,staff,3919,System design / architecture,0.1498
-seniority,staff,staff,3919,Docker / containers,0.1763
-seniority,staff,staff,3919,Go,0.1809
-seniority,staff,staff,3919,GCP / Vertex AI,0.1725
-seniority,staff,staff,3919,Linux / shell,0.109
-seniority,staff,staff,3919,LLM provider APIs (OpenAI / Anthropic / Gemini),0.1699
-seniority,staff,staff,3919,Azure (incl. Azure OpenAI),0.1551
-seniority,staff,staff,3919,TypeScript,0.1202
-seniority,staff,staff,3919,Data pipelines / ETL,0.1304
-seniority,staff,staff,3919,JavaScript / Node.js,0.099
-seniority,staff,staff,3919,REST / API design & integration,0.1207
-seniority,staff,staff,3919,Terraform / IaC,0.1368
-seniority,staff,staff,3919,LLM evaluation / eval harnesses,0.1679
-seniority,staff,staff,3919,React / Next.js,0.1184
-seniority,staff,staff,3919,PostgreSQL / relational DBs,0.1148
-seniority,staff,staff,3919,KYC / AML / fraud / risk,0.1278
-seniority,staff,staff,3919,"AI coding tools (Claude Code, Cursor, Copilot)",0.1227
-seniority,staff,staff,3919,Spark / big data,0.1092
-seniority,staff,staff,3919,Guardrails / AI safety,0.149
-seniority,staff,staff,3919,Statistics / maths,0.0829
-seniority,staff,staff,3919,Rust / Scala,0.1049
-seniority,staff,staff,3919,Kafka / message queues / streaming,0.1197
-seniority,staff,staff,3919,Pre-sales / solution architecture / PoCs,0.0783
-seniority,staff,staff,3919,"NoSQL (MongoDB, DynamoDB)",0.0893
-seniority,staff,staff,3919,Cost / latency optimization,0.1041
-seniority,manager,manager,1629,Python,0.1915
-seniority,manager,manager,1629,AWS,0.1921
-seniority,manager,manager,1629,Cloud (unspecified),0.2339
-seniority,manager,manager,1629,Microservices / distributed systems,0.2314
-seniority,manager,manager,1629,LLMs / GenAI (general),0.2658
-seniority,manager,manager,1629,AI agents / agentic workflows,0.3002
-seniority,manager,manager,1629,Observability / tracing / monitoring,0.2271
-seniority,manager,manager,1629,SQL,0.1614
-seniority,manager,manager,1629,Java / Kotlin (Spring),0.0952
-seniority,manager,manager,1629,C++ / C#,0.0737
-seniority,manager,manager,1629,CI/CD,0.1461
-seniority,manager,manager,1629,Machine learning fundamentals,0.1614
-seniority,manager,manager,1629,Full-stack / frontend,0.1486
-seniority,manager,manager,1629,Kubernetes,0.1308
-seniority,manager,manager,1629,Financial services / banking domain,0.256
-seniority,manager,manager,1629,System design / architecture,0.1019
-seniority,manager,manager,1629,Docker / containers,0.0921
-seniority,manager,manager,1629,Go,0.0773
-seniority,manager,manager,1629,GCP / Vertex AI,0.1093
-seniority,manager,manager,1629,Linux / shell,0.0626
-seniority,manager,manager,1629,LLM provider APIs (OpenAI / Anthropic / Gemini),0.1338
-seniority,manager,manager,1629,Azure (incl. Azure OpenAI),0.1074
-seniority,manager,manager,1629,TypeScript,0.0706
-seniority,manager,manager,1629,Data pipelines / ETL,0.1007
-seniority,manager,manager,1629,JavaScript / Node.js,0.0534
-seniority,manager,manager,1629,REST / API design & integration,0.0731
-seniority,manager,manager,1629,Terraform / IaC,0.0786
-seniority,manager,manager,1629,LLM evaluation / eval harnesses,0.1252
-seniority,manager,manager,1629,React / Next.js,0.0853
-seniority,manager,manager,1629,PostgreSQL / relational DBs,0.0712
-seniority,manager,manager,1629,KYC / AML / fraud / risk,0.159
-seniority,manager,manager,1629,"AI coding tools (Claude Code, Cursor, Copilot)",0.1044
-seniority,manager,manager,1629,Spark / big data,0.0964
-seniority,manager,manager,1629,Guardrails / AI safety,0.1424
-seniority,manager,manager,1629,Statistics / maths,0.0688
-seniority,manager,manager,1629,Rust / Scala,0.0405
-seniority,manager,manager,1629,Kafka / message queues / streaming,0.0688
-seniority,manager,manager,1629,Pre-sales / solution architecture / PoCs,0.0921
-seniority,manager,manager,1629,"NoSQL (MongoDB, DynamoDB)",0.0473
-seniority,manager,manager,1629,Cost / latency optimization,0.0798
+seniority,intern,intern,701,Python,0.6648
+seniority,intern,intern,701,AWS,0.1569
+seniority,intern,intern,701,Cloud (unspecified),0.2268
+seniority,intern,intern,701,Microservices / distributed systems,0.1583
+seniority,intern,intern,701,LLMs / GenAI (general),0.2668
+seniority,intern,intern,701,AI agents / agentic workflows,0.1641
+seniority,intern,intern,701,Observability / tracing / monitoring,0.0656
+seniority,intern,intern,701,SQL,0.2468
+seniority,intern,intern,701,Java / Kotlin (Spring),0.3167
+seniority,intern,intern,701,C++ / C#,0.3837
+seniority,intern,intern,701,CI/CD,0.1198
+seniority,intern,intern,701,Machine learning fundamentals,0.2967
+seniority,intern,intern,701,Full-stack / frontend,0.1854
+seniority,intern,intern,701,Kubernetes,0.0542
+seniority,intern,intern,701,Financial services / banking domain,0.1184
+seniority,intern,intern,701,System design / architecture,0.0813
+seniority,intern,intern,701,Docker / containers,0.0628
+seniority,intern,intern,701,Linux / shell,0.1398
+seniority,intern,intern,701,GCP / Vertex AI,0.0556
+seniority,intern,intern,701,Go,0.1384
+seniority,intern,intern,701,Azure (incl. Azure OpenAI),0.0585
+seniority,intern,intern,701,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0542
+seniority,intern,intern,701,REST / API design & integration,0.0528
+seniority,intern,intern,701,TypeScript,0.1683
+seniority,intern,intern,701,JavaScript / Node.js,0.1969
+seniority,intern,intern,701,Data pipelines / ETL,0.077
+seniority,intern,intern,701,Terraform / IaC,0.0214
+seniority,intern,intern,701,React / Next.js,0.1369
+seniority,intern,intern,701,PostgreSQL / relational DBs,0.0642
+seniority,intern,intern,701,LLM evaluation / eval harnesses,0.0656
+seniority,intern,intern,701,KYC / AML / fraud / risk,0.1569
+seniority,intern,intern,701,"AI coding tools (Claude Code, Cursor, Copilot)",0.1412
+seniority,intern,intern,701,Spark / big data,0.087
+seniority,intern,intern,701,Guardrails / AI safety,0.0328
+seniority,intern,intern,701,Pre-sales / solution architecture / PoCs,0.02
+seniority,intern,intern,701,Statistics / maths,0.2225
+seniority,intern,intern,701,Kafka / message queues / streaming,0.0328
+seniority,intern,intern,701,Rust / Scala,0.1113
+seniority,intern,intern,701,"NoSQL (MongoDB, DynamoDB)",0.1084
+seniority,intern,intern,701,Governance / compliance / audit,0.0157
+seniority,junior,junior,1038,Python,0.3979
+seniority,junior,junior,1038,AWS,0.1609
+seniority,junior,junior,1038,Cloud (unspecified),0.1859
+seniority,junior,junior,1038,Microservices / distributed systems,0.1657
+seniority,junior,junior,1038,LLMs / GenAI (general),0.1349
+seniority,junior,junior,1038,AI agents / agentic workflows,0.0983
+seniority,junior,junior,1038,Observability / tracing / monitoring,0.1561
+seniority,junior,junior,1038,SQL,0.2004
+seniority,junior,junior,1038,Java / Kotlin (Spring),0.2447
+seniority,junior,junior,1038,C++ / C#,0.2351
+seniority,junior,junior,1038,CI/CD,0.1551
+seniority,junior,junior,1038,Machine learning fundamentals,0.1378
+seniority,junior,junior,1038,Full-stack / frontend,0.2168
+seniority,junior,junior,1038,Kubernetes,0.1146
+seniority,junior,junior,1038,Financial services / banking domain,0.0819
+seniority,junior,junior,1038,System design / architecture,0.1204
+seniority,junior,junior,1038,Docker / containers,0.1426
+seniority,junior,junior,1038,Linux / shell,0.1397
+seniority,junior,junior,1038,GCP / Vertex AI,0.0992
+seniority,junior,junior,1038,Go,0.132
+seniority,junior,junior,1038,Azure (incl. Azure OpenAI),0.0915
+seniority,junior,junior,1038,LLM provider APIs (OpenAI / Anthropic / Gemini),0.053
+seniority,junior,junior,1038,REST / API design & integration,0.0713
+seniority,junior,junior,1038,TypeScript,0.1349
+seniority,junior,junior,1038,JavaScript / Node.js,0.1753
+seniority,junior,junior,1038,Data pipelines / ETL,0.078
+seniority,junior,junior,1038,Terraform / IaC,0.0934
+seniority,junior,junior,1038,React / Next.js,0.0838
+seniority,junior,junior,1038,PostgreSQL / relational DBs,0.1358
+seniority,junior,junior,1038,LLM evaluation / eval harnesses,0.0337
+seniority,junior,junior,1038,KYC / AML / fraud / risk,0.0896
+seniority,junior,junior,1038,"AI coding tools (Claude Code, Cursor, Copilot)",0.0443
+seniority,junior,junior,1038,Spark / big data,0.0723
+seniority,junior,junior,1038,Guardrails / AI safety,0.026
+seniority,junior,junior,1038,Pre-sales / solution architecture / PoCs,0.0183
+seniority,junior,junior,1038,Statistics / maths,0.1445
+seniority,junior,junior,1038,Kafka / message queues / streaming,0.0366
+seniority,junior,junior,1038,Rust / Scala,0.106
+seniority,junior,junior,1038,"NoSQL (MongoDB, DynamoDB)",0.1156
+seniority,junior,junior,1038,Governance / compliance / audit,0.027
+seniority,mid,mid,3939,Python,0.3168
+seniority,mid,mid,3939,AWS,0.2122
+seniority,mid,mid,3939,Cloud (unspecified),0.1759
+seniority,mid,mid,3939,Microservices / distributed systems,0.1414
+seniority,mid,mid,3939,LLMs / GenAI (general),0.1579
+seniority,mid,mid,3939,AI agents / agentic workflows,0.1465
+seniority,mid,mid,3939,Observability / tracing / monitoring,0.1511
+seniority,mid,mid,3939,SQL,0.2077
+seniority,mid,mid,3939,Java / Kotlin (Spring),0.195
+seniority,mid,mid,3939,C++ / C#,0.1587
+seniority,mid,mid,3939,CI/CD,0.1338
+seniority,mid,mid,3939,Machine learning fundamentals,0.1254
+seniority,mid,mid,3939,Full-stack / frontend,0.148
+seniority,mid,mid,3939,Kubernetes,0.1066
+seniority,mid,mid,3939,Financial services / banking domain,0.1059
+seniority,mid,mid,3939,System design / architecture,0.1244
+seniority,mid,mid,3939,Docker / containers,0.1147
+seniority,mid,mid,3939,Linux / shell,0.1412
+seniority,mid,mid,3939,GCP / Vertex AI,0.0848
+seniority,mid,mid,3939,Go,0.0741
+seniority,mid,mid,3939,Azure (incl. Azure OpenAI),0.1092
+seniority,mid,mid,3939,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0495
+seniority,mid,mid,3939,REST / API design & integration,0.1145
+seniority,mid,mid,3939,TypeScript,0.0696
+seniority,mid,mid,3939,JavaScript / Node.js,0.1084
+seniority,mid,mid,3939,Data pipelines / ETL,0.0955
+seniority,mid,mid,3939,Terraform / IaC,0.0853
+seniority,mid,mid,3939,React / Next.js,0.0909
+seniority,mid,mid,3939,PostgreSQL / relational DBs,0.1005
+seniority,mid,mid,3939,LLM evaluation / eval harnesses,0.0498
+seniority,mid,mid,3939,KYC / AML / fraud / risk,0.068
+seniority,mid,mid,3939,"AI coding tools (Claude Code, Cursor, Copilot)",0.0543
+seniority,mid,mid,3939,Spark / big data,0.0592
+seniority,mid,mid,3939,Guardrails / AI safety,0.0462
+seniority,mid,mid,3939,Pre-sales / solution architecture / PoCs,0.0576
+seniority,mid,mid,3939,Statistics / maths,0.0701
+seniority,mid,mid,3939,Kafka / message queues / streaming,0.0546
+seniority,mid,mid,3939,Rust / Scala,0.03
+seniority,mid,mid,3939,"NoSQL (MongoDB, DynamoDB)",0.0548
+seniority,mid,mid,3939,Governance / compliance / audit,0.0449
+seniority,senior,senior,7253,Python,0.4263
+seniority,senior,senior,7253,AWS,0.3251
+seniority,senior,senior,7253,Cloud (unspecified),0.3112
+seniority,senior,senior,7253,Microservices / distributed systems,0.2804
+seniority,senior,senior,7253,LLMs / GenAI (general),0.2218
+seniority,senior,senior,7253,AI agents / agentic workflows,0.2355
+seniority,senior,senior,7253,Observability / tracing / monitoring,0.2788
+seniority,senior,senior,7253,SQL,0.2537
+seniority,senior,senior,7253,Java / Kotlin (Spring),0.2041
+seniority,senior,senior,7253,C++ / C#,0.167
+seniority,senior,senior,7253,CI/CD,0.2205
+seniority,senior,senior,7253,Machine learning fundamentals,0.1619
+seniority,senior,senior,7253,Full-stack / frontend,0.1693
+seniority,senior,senior,7253,Kubernetes,0.2118
+seniority,senior,senior,7253,Financial services / banking domain,0.1435
+seniority,senior,senior,7253,System design / architecture,0.1413
+seniority,senior,senior,7253,Docker / containers,0.1728
+seniority,senior,senior,7253,Linux / shell,0.1507
+seniority,senior,senior,7253,GCP / Vertex AI,0.1838
+seniority,senior,senior,7253,Go,0.1657
+seniority,senior,senior,7253,Azure (incl. Azure OpenAI),0.1733
+seniority,senior,senior,7253,LLM provider APIs (OpenAI / Anthropic / Gemini),0.1091
+seniority,senior,senior,7253,REST / API design & integration,0.1435
+seniority,senior,senior,7253,TypeScript,0.1248
+seniority,senior,senior,7253,JavaScript / Node.js,0.1246
+seniority,senior,senior,7253,Data pipelines / ETL,0.1268
+seniority,senior,senior,7253,Terraform / IaC,0.1401
+seniority,senior,senior,7253,React / Next.js,0.1066
+seniority,senior,senior,7253,PostgreSQL / relational DBs,0.1183
+seniority,senior,senior,7253,LLM evaluation / eval harnesses,0.0882
+seniority,senior,senior,7253,KYC / AML / fraud / risk,0.1034
+seniority,senior,senior,7253,"AI coding tools (Claude Code, Cursor, Copilot)",0.0915
+seniority,senior,senior,7253,Spark / big data,0.116
+seniority,senior,senior,7253,Guardrails / AI safety,0.0887
+seniority,senior,senior,7253,Pre-sales / solution architecture / PoCs,0.0989
+seniority,senior,senior,7253,Statistics / maths,0.0738
+seniority,senior,senior,7253,Kafka / message queues / streaming,0.1096
+seniority,senior,senior,7253,Rust / Scala,0.0972
+seniority,senior,senior,7253,"NoSQL (MongoDB, DynamoDB)",0.0907
+seniority,senior,senior,7253,Governance / compliance / audit,0.0881
+seniority,staff,staff,4041,Python,0.4044
+seniority,staff,staff,4041,AWS,0.2831
+seniority,staff,staff,4041,Cloud (unspecified),0.2863
+seniority,staff,staff,4041,Microservices / distributed systems,0.337
+seniority,staff,staff,4041,LLMs / GenAI (general),0.3017
+seniority,staff,staff,4041,AI agents / agentic workflows,0.3096
+seniority,staff,staff,4041,Observability / tracing / monitoring,0.2984
+seniority,staff,staff,4041,SQL,0.2237
+seniority,staff,staff,4041,Java / Kotlin (Spring),0.2131
+seniority,staff,staff,4041,C++ / C#,0.1656
+seniority,staff,staff,4041,CI/CD,0.2202
+seniority,staff,staff,4041,Machine learning fundamentals,0.2064
+seniority,staff,staff,4041,Full-stack / frontend,0.1742
+seniority,staff,staff,4041,Kubernetes,0.2244
+seniority,staff,staff,4041,Financial services / banking domain,0.1898
+seniority,staff,staff,4041,System design / architecture,0.1463
+seniority,staff,staff,4041,Docker / containers,0.1737
+seniority,staff,staff,4041,Linux / shell,0.1086
+seniority,staff,staff,4041,GCP / Vertex AI,0.1695
+seniority,staff,staff,4041,Go,0.1755
+seniority,staff,staff,4041,Azure (incl. Azure OpenAI),0.1539
+seniority,staff,staff,4041,LLM provider APIs (OpenAI / Anthropic / Gemini),0.1651
+seniority,staff,staff,4041,REST / API design & integration,0.1198
+seniority,staff,staff,4041,TypeScript,0.1168
+seniority,staff,staff,4041,JavaScript / Node.js,0.0985
+seniority,staff,staff,4041,Data pipelines / ETL,0.1272
+seniority,staff,staff,4041,Terraform / IaC,0.1359
+seniority,staff,staff,4041,React / Next.js,0.1168
+seniority,staff,staff,4041,PostgreSQL / relational DBs,0.1126
+seniority,staff,staff,4041,LLM evaluation / eval harnesses,0.1638
+seniority,staff,staff,4041,KYC / AML / fraud / risk,0.1255
+seniority,staff,staff,4041,"AI coding tools (Claude Code, Cursor, Copilot)",0.12
+seniority,staff,staff,4041,Spark / big data,0.1067
+seniority,staff,staff,4041,Guardrails / AI safety,0.1455
+seniority,staff,staff,4041,Pre-sales / solution architecture / PoCs,0.0782
+seniority,staff,staff,4041,Statistics / maths,0.0804
+seniority,staff,staff,4041,Kafka / message queues / streaming,0.1166
+seniority,staff,staff,4041,Rust / Scala,0.1017
+seniority,staff,staff,4041,"NoSQL (MongoDB, DynamoDB)",0.0866
+seniority,staff,staff,4041,Governance / compliance / audit,0.0876
+seniority,manager,manager,1811,Python,0.1773
+seniority,manager,manager,1811,AWS,0.1795
+seniority,manager,manager,1811,Cloud (unspecified),0.2258
+seniority,manager,manager,1811,Microservices / distributed systems,0.2115
+seniority,manager,manager,1811,LLMs / GenAI (general),0.2474
+seniority,manager,manager,1811,AI agents / agentic workflows,0.2739
+seniority,manager,manager,1811,Observability / tracing / monitoring,0.2104
+seniority,manager,manager,1811,SQL,0.1485
+seniority,manager,manager,1811,Java / Kotlin (Spring),0.0966
+seniority,manager,manager,1811,C++ / C#,0.069
+seniority,manager,manager,1811,CI/CD,0.1386
+seniority,manager,manager,1811,Machine learning fundamentals,0.1485
+seniority,manager,manager,1811,Full-stack / frontend,0.1375
+seniority,manager,manager,1811,Kubernetes,0.122
+seniority,manager,manager,1811,Financial services / banking domain,0.238
+seniority,manager,manager,1811,System design / architecture,0.0933
+seniority,manager,manager,1811,Docker / containers,0.0872
+seniority,manager,manager,1811,Linux / shell,0.0674
+seniority,manager,manager,1811,GCP / Vertex AI,0.1055
+seniority,manager,manager,1811,Go,0.0701
+seniority,manager,manager,1811,Azure (incl. Azure OpenAI),0.1044
+seniority,manager,manager,1811,LLM provider APIs (OpenAI / Anthropic / Gemini),0.1215
+seniority,manager,manager,1811,REST / API design & integration,0.069
+seniority,manager,manager,1811,TypeScript,0.0652
+seniority,manager,manager,1811,JavaScript / Node.js,0.0525
+seniority,manager,manager,1811,Data pipelines / ETL,0.0939
+seniority,manager,manager,1811,Terraform / IaC,0.0762
+seniority,manager,manager,1811,React / Next.js,0.0795
+seniority,manager,manager,1811,PostgreSQL / relational DBs,0.0652
+seniority,manager,manager,1811,LLM evaluation / eval harnesses,0.1132
+seniority,manager,manager,1811,KYC / AML / fraud / risk,0.1579
+seniority,manager,manager,1811,"AI coding tools (Claude Code, Cursor, Copilot)",0.0939
+seniority,manager,manager,1811,Spark / big data,0.0878
+seniority,manager,manager,1811,Guardrails / AI safety,0.132
+seniority,manager,manager,1811,Pre-sales / solution architecture / PoCs,0.0911
+seniority,manager,manager,1811,Statistics / maths,0.0629
+seniority,manager,manager,1811,Kafka / message queues / streaming,0.0624
+seniority,manager,manager,1811,Rust / Scala,0.037
+seniority,manager,manager,1811,"NoSQL (MongoDB, DynamoDB)",0.0425
+seniority,manager,manager,1811,Governance / compliance / audit,0.1143
 seniority,unspecified,unspecified,6064,Python,0.4194
 seniority,unspecified,unspecified,6064,AWS,0.2686
 seniority,unspecified,unspecified,6064,Cloud (unspecified),0.2325
@@ -256,349 +256,349 @@ seniority,unspecified,unspecified,6064,Kubernetes,0.1237
 seniority,unspecified,unspecified,6064,Financial services / banking domain,0.1501
 seniority,unspecified,unspecified,6064,System design / architecture,0.1766
 seniority,unspecified,unspecified,6064,Docker / containers,0.1169
-seniority,unspecified,unspecified,6064,Go,0.1125
-seniority,unspecified,unspecified,6064,GCP / Vertex AI,0.1021
 seniority,unspecified,unspecified,6064,Linux / shell,0.1463
-seniority,unspecified,unspecified,6064,LLM provider APIs (OpenAI / Anthropic / Gemini),0.1692
+seniority,unspecified,unspecified,6064,GCP / Vertex AI,0.1021
+seniority,unspecified,unspecified,6064,Go,0.1125
 seniority,unspecified,unspecified,6064,Azure (incl. Azure OpenAI),0.0907
-seniority,unspecified,unspecified,6064,TypeScript,0.1205
-seniority,unspecified,unspecified,6064,Data pipelines / ETL,0.0952
-seniority,unspecified,unspecified,6064,JavaScript / Node.js,0.1006
+seniority,unspecified,unspecified,6064,LLM provider APIs (OpenAI / Anthropic / Gemini),0.1692
 seniority,unspecified,unspecified,6064,REST / API design & integration,0.0909
+seniority,unspecified,unspecified,6064,TypeScript,0.1205
+seniority,unspecified,unspecified,6064,JavaScript / Node.js,0.1006
+seniority,unspecified,unspecified,6064,Data pipelines / ETL,0.0952
 seniority,unspecified,unspecified,6064,Terraform / IaC,0.0881
-seniority,unspecified,unspecified,6064,LLM evaluation / eval harnesses,0.1177
 seniority,unspecified,unspecified,6064,React / Next.js,0.0973
 seniority,unspecified,unspecified,6064,PostgreSQL / relational DBs,0.08
+seniority,unspecified,unspecified,6064,LLM evaluation / eval harnesses,0.1177
 seniority,unspecified,unspecified,6064,KYC / AML / fraud / risk,0.0785
 seniority,unspecified,unspecified,6064,"AI coding tools (Claude Code, Cursor, Copilot)",0.1031
 seniority,unspecified,unspecified,6064,Spark / big data,0.0704
 seniority,unspecified,unspecified,6064,Guardrails / AI safety,0.0785
-seniority,unspecified,unspecified,6064,Statistics / maths,0.0829
-seniority,unspecified,unspecified,6064,Rust / Scala,0.0851
-seniority,unspecified,unspecified,6064,Kafka / message queues / streaming,0.0594
 seniority,unspecified,unspecified,6064,Pre-sales / solution architecture / PoCs,0.1013
+seniority,unspecified,unspecified,6064,Statistics / maths,0.0829
+seniority,unspecified,unspecified,6064,Kafka / message queues / streaming,0.0594
+seniority,unspecified,unspecified,6064,Rust / Scala,0.0851
 seniority,unspecified,unspecified,6064,"NoSQL (MongoDB, DynamoDB)",0.0538
-seniority,unspecified,unspecified,6064,Cost / latency optimization,0.0742
-role_family,fde,Forward deployed / solutions,2847,Python,0.3955
-role_family,fde,Forward deployed / solutions,2847,AWS,0.3688
-role_family,fde,Forward deployed / solutions,2847,Cloud (unspecified),0.3772
-role_family,fde,Forward deployed / solutions,2847,Microservices / distributed systems,0.1356
-role_family,fde,Forward deployed / solutions,2847,LLMs / GenAI (general),0.287
-role_family,fde,Forward deployed / solutions,2847,AI agents / agentic workflows,0.2936
-role_family,fde,Forward deployed / solutions,2847,Observability / tracing / monitoring,0.1482
-role_family,fde,Forward deployed / solutions,2847,SQL,0.202
-role_family,fde,Forward deployed / solutions,2847,Java / Kotlin (Spring),0.1219
-role_family,fde,Forward deployed / solutions,2847,C++ / C#,0.0692
-role_family,fde,Forward deployed / solutions,2847,CI/CD,0.1173
-role_family,fde,Forward deployed / solutions,2847,Machine learning fundamentals,0.1054
-role_family,fde,Forward deployed / solutions,2847,Full-stack / frontend,0.1019
-role_family,fde,Forward deployed / solutions,2847,Kubernetes,0.1106
-role_family,fde,Forward deployed / solutions,2847,Financial services / banking domain,0.1581
-role_family,fde,Forward deployed / solutions,2847,System design / architecture,0.1036
-role_family,fde,Forward deployed / solutions,2847,Docker / containers,0.1057
-role_family,fde,Forward deployed / solutions,2847,Go,0.0847
-role_family,fde,Forward deployed / solutions,2847,GCP / Vertex AI,0.2143
-role_family,fde,Forward deployed / solutions,2847,Linux / shell,0.0948
-role_family,fde,Forward deployed / solutions,2847,LLM provider APIs (OpenAI / Anthropic / Gemini),0.1233
-role_family,fde,Forward deployed / solutions,2847,Azure (incl. Azure OpenAI),0.223
-role_family,fde,Forward deployed / solutions,2847,TypeScript,0.1159
-role_family,fde,Forward deployed / solutions,2847,Data pipelines / ETL,0.1275
-role_family,fde,Forward deployed / solutions,2847,JavaScript / Node.js,0.17
-role_family,fde,Forward deployed / solutions,2847,REST / API design & integration,0.1033
-role_family,fde,Forward deployed / solutions,2847,Terraform / IaC,0.0671
-role_family,fde,Forward deployed / solutions,2847,LLM evaluation / eval harnesses,0.0955
-role_family,fde,Forward deployed / solutions,2847,React / Next.js,0.052
-role_family,fde,Forward deployed / solutions,2847,PostgreSQL / relational DBs,0.0502
-role_family,fde,Forward deployed / solutions,2847,KYC / AML / fraud / risk,0.0731
-role_family,fde,Forward deployed / solutions,2847,"AI coding tools (Claude Code, Cursor, Copilot)",0.0685
-role_family,fde,Forward deployed / solutions,2847,Spark / big data,0.1844
-role_family,fde,Forward deployed / solutions,2847,Guardrails / AI safety,0.0713
-role_family,fde,Forward deployed / solutions,2847,Statistics / maths,0.0323
-role_family,fde,Forward deployed / solutions,2847,Rust / Scala,0.0699
-role_family,fde,Forward deployed / solutions,2847,Kafka / message queues / streaming,0.0495
-role_family,fde,Forward deployed / solutions,2847,Pre-sales / solution architecture / PoCs,0.4865
-role_family,fde,Forward deployed / solutions,2847,"NoSQL (MongoDB, DynamoDB)",0.0653
-role_family,fde,Forward deployed / solutions,2847,Cost / latency optimization,0.0306
-role_family,ai_ml,AI / ML engineering,4467,Python,0.5337
-role_family,ai_ml,AI / ML engineering,4467,AWS,0.1981
-role_family,ai_ml,AI / ML engineering,4467,Cloud (unspecified),0.2024
-role_family,ai_ml,AI / ML engineering,4467,Microservices / distributed systems,0.1811
-role_family,ai_ml,AI / ML engineering,4467,LLMs / GenAI (general),0.5482
-role_family,ai_ml,AI / ML engineering,4467,AI agents / agentic workflows,0.4477
-role_family,ai_ml,AI / ML engineering,4467,Observability / tracing / monitoring,0.2145
-role_family,ai_ml,AI / ML engineering,4467,SQL,0.2212
-role_family,ai_ml,AI / ML engineering,4467,Java / Kotlin (Spring),0.15
-role_family,ai_ml,AI / ML engineering,4467,C++ / C#,0.1585
-role_family,ai_ml,AI / ML engineering,4467,CI/CD,0.1242
-role_family,ai_ml,AI / ML engineering,4467,Machine learning fundamentals,0.4549
-role_family,ai_ml,AI / ML engineering,4467,Full-stack / frontend,0.1285
-role_family,ai_ml,AI / ML engineering,4467,Kubernetes,0.1186
-role_family,ai_ml,AI / ML engineering,4467,Financial services / banking domain,0.1627
-role_family,ai_ml,AI / ML engineering,4467,System design / architecture,0.1088
-role_family,ai_ml,AI / ML engineering,4467,Docker / containers,0.116
-role_family,ai_ml,AI / ML engineering,4467,Go,0.081
-role_family,ai_ml,AI / ML engineering,4467,GCP / Vertex AI,0.1254
-role_family,ai_ml,AI / ML engineering,4467,Linux / shell,0.064
-role_family,ai_ml,AI / ML engineering,4467,LLM provider APIs (OpenAI / Anthropic / Gemini),0.2183
-role_family,ai_ml,AI / ML engineering,4467,Azure (incl. Azure OpenAI),0.1021
-role_family,ai_ml,AI / ML engineering,4467,TypeScript,0.0779
-role_family,ai_ml,AI / ML engineering,4467,Data pipelines / ETL,0.139
-role_family,ai_ml,AI / ML engineering,4467,JavaScript / Node.js,0.0672
-role_family,ai_ml,AI / ML engineering,4467,REST / API design & integration,0.0833
-role_family,ai_ml,AI / ML engineering,4467,Terraform / IaC,0.0589
-role_family,ai_ml,AI / ML engineering,4467,LLM evaluation / eval harnesses,0.2767
-role_family,ai_ml,AI / ML engineering,4467,React / Next.js,0.0528
-role_family,ai_ml,AI / ML engineering,4467,PostgreSQL / relational DBs,0.054
-role_family,ai_ml,AI / ML engineering,4467,KYC / AML / fraud / risk,0.1247
-role_family,ai_ml,AI / ML engineering,4467,"AI coding tools (Claude Code, Cursor, Copilot)",0.1386
-role_family,ai_ml,AI / ML engineering,4467,Spark / big data,0.1081
-role_family,ai_ml,AI / ML engineering,4467,Guardrails / AI safety,0.1914
-role_family,ai_ml,AI / ML engineering,4467,Statistics / maths,0.2133
-role_family,ai_ml,AI / ML engineering,4467,Rust / Scala,0.0495
-role_family,ai_ml,AI / ML engineering,4467,Kafka / message queues / streaming,0.0479
-role_family,ai_ml,AI / ML engineering,4467,Pre-sales / solution architecture / PoCs,0.06
-role_family,ai_ml,AI / ML engineering,4467,"NoSQL (MongoDB, DynamoDB)",0.0358
-role_family,ai_ml,AI / ML engineering,4467,Cost / latency optimization,0.0835
-role_family,data,Data engineering & science,932,Python,0.6513
-role_family,data,Data engineering & science,932,AWS,0.3348
-role_family,data,Data engineering & science,932,Cloud (unspecified),0.2436
-role_family,data,Data engineering & science,932,Microservices / distributed systems,0.1609
-role_family,data,Data engineering & science,932,LLMs / GenAI (general),0.1856
-role_family,data,Data engineering & science,932,AI agents / agentic workflows,0.1577
-role_family,data,Data engineering & science,932,Observability / tracing / monitoring,0.2339
-role_family,data,Data engineering & science,932,SQL,0.7124
-role_family,data,Data engineering & science,932,Java / Kotlin (Spring),0.1738
-role_family,data,Data engineering & science,932,C++ / C#,0.0408
-role_family,data,Data engineering & science,932,CI/CD,0.191
-role_family,data,Data engineering & science,932,Machine learning fundamentals,0.2371
-role_family,data,Data engineering & science,932,Full-stack / frontend,0.0912
-role_family,data,Data engineering & science,932,Kubernetes,0.1094
-role_family,data,Data engineering & science,932,Financial services / banking domain,0.2403
-role_family,data,Data engineering & science,932,System design / architecture,0.0976
-role_family,data,Data engineering & science,932,Docker / containers,0.1009
-role_family,data,Data engineering & science,932,Go,0.0601
-role_family,data,Data engineering & science,932,GCP / Vertex AI,0.1964
-role_family,data,Data engineering & science,932,Linux / shell,0.0558
-role_family,data,Data engineering & science,932,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0923
-role_family,data,Data engineering & science,932,Azure (incl. Azure OpenAI),0.147
-role_family,data,Data engineering & science,932,TypeScript,0.0225
-role_family,data,Data engineering & science,932,Data pipelines / ETL,0.6416
-role_family,data,Data engineering & science,932,JavaScript / Node.js,0.0258
-role_family,data,Data engineering & science,932,REST / API design & integration,0.0633
-role_family,data,Data engineering & science,932,Terraform / IaC,0.1309
-role_family,data,Data engineering & science,932,LLM evaluation / eval harnesses,0.0644
-role_family,data,Data engineering & science,932,React / Next.js,0.0193
-role_family,data,Data engineering & science,932,PostgreSQL / relational DBs,0.1878
-role_family,data,Data engineering & science,932,KYC / AML / fraud / risk,0.1105
-role_family,data,Data engineering & science,932,"AI coding tools (Claude Code, Cursor, Copilot)",0.0848
-role_family,data,Data engineering & science,932,Spark / big data,0.4732
-role_family,data,Data engineering & science,932,Guardrails / AI safety,0.0794
-role_family,data,Data engineering & science,932,Statistics / maths,0.2253
-role_family,data,Data engineering & science,932,Rust / Scala,0.1556
-role_family,data,Data engineering & science,932,Kafka / message queues / streaming,0.2371
-role_family,data,Data engineering & science,932,Pre-sales / solution architecture / PoCs,0.0075
-role_family,data,Data engineering & science,932,"NoSQL (MongoDB, DynamoDB)",0.1084
-role_family,data,Data engineering & science,932,Cost / latency optimization,0.0933
-role_family,backend,Backend / Python,5565,Python,0.3765
-role_family,backend,Backend / Python,5565,AWS,0.273
-role_family,backend,Backend / Python,5565,Cloud (unspecified),0.2568
-role_family,backend,Backend / Python,5565,Microservices / distributed systems,0.4095
-role_family,backend,Backend / Python,5565,LLMs / GenAI (general),0.1641
-role_family,backend,Backend / Python,5565,AI agents / agentic workflows,0.2138
-role_family,backend,Backend / Python,5565,Observability / tracing / monitoring,0.3019
-role_family,backend,Backend / Python,5565,SQL,0.3042
-role_family,backend,Backend / Python,5565,Java / Kotlin (Spring),0.3421
-role_family,backend,Backend / Python,5565,C++ / C#,0.2749
-role_family,backend,Backend / Python,5565,CI/CD,0.234
-role_family,backend,Backend / Python,5565,Machine learning fundamentals,0.1137
-role_family,backend,Backend / Python,5565,Full-stack / frontend,0.3299
-role_family,backend,Backend / Python,5565,Kubernetes,0.244
-role_family,backend,Backend / Python,5565,Financial services / banking domain,0.1626
-role_family,backend,Backend / Python,5565,System design / architecture,0.1574
-role_family,backend,Backend / Python,5565,Docker / containers,0.2061
-role_family,backend,Backend / Python,5565,Go,0.23
-role_family,backend,Backend / Python,5565,GCP / Vertex AI,0.14
-role_family,backend,Backend / Python,5565,Linux / shell,0.1146
-role_family,backend,Backend / Python,5565,LLM provider APIs (OpenAI / Anthropic / Gemini),0.1276
-role_family,backend,Backend / Python,5565,Azure (incl. Azure OpenAI),0.1384
-role_family,backend,Backend / Python,5565,TypeScript,0.2169
-role_family,backend,Backend / Python,5565,Data pipelines / ETL,0.1031
-role_family,backend,Backend / Python,5565,JavaScript / Node.js,0.2079
-role_family,backend,Backend / Python,5565,REST / API design & integration,0.2174
-role_family,backend,Backend / Python,5565,Terraform / IaC,0.103
-role_family,backend,Backend / Python,5565,LLM evaluation / eval harnesses,0.0863
-role_family,backend,Backend / Python,5565,React / Next.js,0.2243
-role_family,backend,Backend / Python,5565,PostgreSQL / relational DBs,0.2273
-role_family,backend,Backend / Python,5565,KYC / AML / fraud / risk,0.0855
-role_family,backend,Backend / Python,5565,"AI coding tools (Claude Code, Cursor, Copilot)",0.1233
-role_family,backend,Backend / Python,5565,Spark / big data,0.0719
-role_family,backend,Backend / Python,5565,Guardrails / AI safety,0.0589
-role_family,backend,Backend / Python,5565,Statistics / maths,0.039
-role_family,backend,Backend / Python,5565,Rust / Scala,0.1409
-role_family,backend,Backend / Python,5565,Kafka / message queues / streaming,0.1545
-role_family,backend,Backend / Python,5565,Pre-sales / solution architecture / PoCs,0.0108
-role_family,backend,Backend / Python,5565,"NoSQL (MongoDB, DynamoDB)",0.1412
-role_family,backend,Backend / Python,5565,Cost / latency optimization,0.0942
-role_family,frontend,Frontend & mobile,559,Python,0.1091
-role_family,frontend,Frontend & mobile,559,AWS,0.0966
-role_family,frontend,Frontend & mobile,559,Cloud (unspecified),0.068
-role_family,frontend,Frontend & mobile,559,Microservices / distributed systems,0.1145
-role_family,frontend,Frontend & mobile,559,LLMs / GenAI (general),0.0948
-role_family,frontend,Frontend & mobile,559,AI agents / agentic workflows,0.1968
-role_family,frontend,Frontend & mobile,559,Observability / tracing / monitoring,0.1592
-role_family,frontend,Frontend & mobile,559,SQL,0.102
-role_family,frontend,Frontend & mobile,559,Java / Kotlin (Spring),0.3113
-role_family,frontend,Frontend & mobile,559,C++ / C#,0.0894
-role_family,frontend,Frontend & mobile,559,CI/CD,0.2236
-role_family,frontend,Frontend & mobile,559,Machine learning fundamentals,0.0519
-role_family,frontend,Frontend & mobile,559,Full-stack / frontend,0.5528
-role_family,frontend,Frontend & mobile,559,Kubernetes,0.0555
-role_family,frontend,Frontend & mobile,559,Financial services / banking domain,0.1896
-role_family,frontend,Frontend & mobile,559,System design / architecture,0.1914
-role_family,frontend,Frontend & mobile,559,Docker / containers,0.0787
-role_family,frontend,Frontend & mobile,559,Go,0.0465
-role_family,frontend,Frontend & mobile,559,GCP / Vertex AI,0.0304
-role_family,frontend,Frontend & mobile,559,Linux / shell,0.0465
-role_family,frontend,Frontend & mobile,559,LLM provider APIs (OpenAI / Anthropic / Gemini),0.102
-role_family,frontend,Frontend & mobile,559,Azure (incl. Azure OpenAI),0.0465
-role_family,frontend,Frontend & mobile,559,TypeScript,0.3775
-role_family,frontend,Frontend & mobile,559,Data pipelines / ETL,0.0107
-role_family,frontend,Frontend & mobile,559,JavaScript / Node.js,0.3131
-role_family,frontend,Frontend & mobile,559,REST / API design & integration,0.254
-role_family,frontend,Frontend & mobile,559,Terraform / IaC,0.0233
-role_family,frontend,Frontend & mobile,559,LLM evaluation / eval harnesses,0.0322
-role_family,frontend,Frontend & mobile,559,React / Next.js,0.5313
-role_family,frontend,Frontend & mobile,559,PostgreSQL / relational DBs,0.0698
-role_family,frontend,Frontend & mobile,559,KYC / AML / fraud / risk,0.0948
-role_family,frontend,Frontend & mobile,559,"AI coding tools (Claude Code, Cursor, Copilot)",0.1503
-role_family,frontend,Frontend & mobile,559,Spark / big data,0.0143
-role_family,frontend,Frontend & mobile,559,Guardrails / AI safety,0.0644
-role_family,frontend,Frontend & mobile,559,Statistics / maths,0.0626
-role_family,frontend,Frontend & mobile,559,Rust / Scala,0.0322
-role_family,frontend,Frontend & mobile,559,Kafka / message queues / streaming,0.0358
-role_family,frontend,Frontend & mobile,559,Pre-sales / solution architecture / PoCs,0.0
-role_family,frontend,Frontend & mobile,559,"NoSQL (MongoDB, DynamoDB)",0.0268
-role_family,frontend,Frontend & mobile,559,Cost / latency optimization,0.0143
-role_family,infra,"Infra, DevOps & security",2901,Python,0.4578
-role_family,infra,"Infra, DevOps & security",2901,AWS,0.4316
-role_family,infra,"Infra, DevOps & security",2901,Cloud (unspecified),0.4292
-role_family,infra,"Infra, DevOps & security",2901,Microservices / distributed systems,0.2923
-role_family,infra,"Infra, DevOps & security",2901,LLMs / GenAI (general),0.162
-role_family,infra,"Infra, DevOps & security",2901,AI agents / agentic workflows,0.202
-role_family,infra,"Infra, DevOps & security",2901,Observability / tracing / monitoring,0.3744
-role_family,infra,"Infra, DevOps & security",2901,SQL,0.1368
-role_family,infra,"Infra, DevOps & security",2901,Java / Kotlin (Spring),0.152
-role_family,infra,"Infra, DevOps & security",2901,C++ / C#,0.1468
-role_family,infra,"Infra, DevOps & security",2901,CI/CD,0.3033
-role_family,infra,"Infra, DevOps & security",2901,Machine learning fundamentals,0.0931
-role_family,infra,"Infra, DevOps & security",2901,Full-stack / frontend,0.0731
-role_family,infra,"Infra, DevOps & security",2901,Kubernetes,0.3354
-role_family,infra,"Infra, DevOps & security",2901,Financial services / banking domain,0.1741
-role_family,infra,"Infra, DevOps & security",2901,System design / architecture,0.1055
-role_family,infra,"Infra, DevOps & security",2901,Docker / containers,0.2509
-role_family,infra,"Infra, DevOps & security",2901,Go,0.2596
-role_family,infra,"Infra, DevOps & security",2901,GCP / Vertex AI,0.2203
-role_family,infra,"Infra, DevOps & security",2901,Linux / shell,0.2744
-role_family,infra,"Infra, DevOps & security",2901,LLM provider APIs (OpenAI / Anthropic / Gemini),0.1158
-role_family,infra,"Infra, DevOps & security",2901,Azure (incl. Azure OpenAI),0.1848
-role_family,infra,"Infra, DevOps & security",2901,TypeScript,0.0817
-role_family,infra,"Infra, DevOps & security",2901,Data pipelines / ETL,0.0552
-role_family,infra,"Infra, DevOps & security",2901,JavaScript / Node.js,0.0627
-role_family,infra,"Infra, DevOps & security",2901,REST / API design & integration,0.06
-role_family,infra,"Infra, DevOps & security",2901,Terraform / IaC,0.3326
-role_family,infra,"Infra, DevOps & security",2901,LLM evaluation / eval harnesses,0.0493
-role_family,infra,"Infra, DevOps & security",2901,React / Next.js,0.04
-role_family,infra,"Infra, DevOps & security",2901,PostgreSQL / relational DBs,0.0651
-role_family,infra,"Infra, DevOps & security",2901,KYC / AML / fraud / risk,0.1403
-role_family,infra,"Infra, DevOps & security",2901,"AI coding tools (Claude Code, Cursor, Copilot)",0.0703
-role_family,infra,"Infra, DevOps & security",2901,Spark / big data,0.04
-role_family,infra,"Infra, DevOps & security",2901,Guardrails / AI safety,0.1337
-role_family,infra,"Infra, DevOps & security",2901,Statistics / maths,0.0269
-role_family,infra,"Infra, DevOps & security",2901,Rust / Scala,0.0848
-role_family,infra,"Infra, DevOps & security",2901,Kafka / message queues / streaming,0.0607
-role_family,infra,"Infra, DevOps & security",2901,Pre-sales / solution architecture / PoCs,0.0238
-role_family,infra,"Infra, DevOps & security",2901,"NoSQL (MongoDB, DynamoDB)",0.0748
-role_family,infra,"Infra, DevOps & security",2901,Cost / latency optimization,0.0851
-role_family,quant,Quant & trading tech,659,Python,0.6115
-role_family,quant,Quant & trading tech,659,AWS,0.0592
-role_family,quant,Quant & trading tech,659,Cloud (unspecified),0.0546
-role_family,quant,Quant & trading tech,659,Microservices / distributed systems,0.0804
-role_family,quant,Quant & trading tech,659,LLMs / GenAI (general),0.0531
-role_family,quant,Quant & trading tech,659,AI agents / agentic workflows,0.0455
-role_family,quant,Quant & trading tech,659,Observability / tracing / monitoring,0.1168
-role_family,quant,Quant & trading tech,659,SQL,0.22
-role_family,quant,Quant & trading tech,659,Java / Kotlin (Spring),0.1153
-role_family,quant,Quant & trading tech,659,C++ / C#,0.3596
-role_family,quant,Quant & trading tech,659,CI/CD,0.0819
-role_family,quant,Quant & trading tech,659,Machine learning fundamentals,0.2428
-role_family,quant,Quant & trading tech,659,Full-stack / frontend,0.0607
-role_family,quant,Quant & trading tech,659,Kubernetes,0.0531
-role_family,quant,Quant & trading tech,659,Financial services / banking domain,0.3065
-role_family,quant,Quant & trading tech,659,System design / architecture,0.0607
-role_family,quant,Quant & trading tech,659,Docker / containers,0.0653
-role_family,quant,Quant & trading tech,659,Go,0.0243
-role_family,quant,Quant & trading tech,659,GCP / Vertex AI,0.0167
-role_family,quant,Quant & trading tech,659,Linux / shell,0.1912
-role_family,quant,Quant & trading tech,659,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0167
-role_family,quant,Quant & trading tech,659,Azure (incl. Azure OpenAI),0.0076
-role_family,quant,Quant & trading tech,659,TypeScript,0.0076
-role_family,quant,Quant & trading tech,659,Data pipelines / ETL,0.0804
-role_family,quant,Quant & trading tech,659,JavaScript / Node.js,0.0182
-role_family,quant,Quant & trading tech,659,REST / API design & integration,0.0273
-role_family,quant,Quant & trading tech,659,Terraform / IaC,0.0349
-role_family,quant,Quant & trading tech,659,LLM evaluation / eval harnesses,0.0273
-role_family,quant,Quant & trading tech,659,React / Next.js,0.0425
-role_family,quant,Quant & trading tech,659,PostgreSQL / relational DBs,0.0516
-role_family,quant,Quant & trading tech,659,KYC / AML / fraud / risk,0.2989
-role_family,quant,Quant & trading tech,659,"AI coding tools (Claude Code, Cursor, Copilot)",0.0364
-role_family,quant,Quant & trading tech,659,Spark / big data,0.0319
-role_family,quant,Quant & trading tech,659,Guardrails / AI safety,0.0061
-role_family,quant,Quant & trading tech,659,Statistics / maths,0.3839
-role_family,quant,Quant & trading tech,659,Rust / Scala,0.044
-role_family,quant,Quant & trading tech,659,Kafka / message queues / streaming,0.0653
-role_family,quant,Quant & trading tech,659,Pre-sales / solution architecture / PoCs,0.003
-role_family,quant,Quant & trading tech,659,"NoSQL (MongoDB, DynamoDB)",0.0243
-role_family,quant,Quant & trading tech,659,Cost / latency optimization,0.1533
-role_family,other_eng,Other engineering,4721,Python,0.3302
-role_family,other_eng,Other engineering,4721,AWS,0.2601
-role_family,other_eng,Other engineering,4721,Cloud (unspecified),0.2262
-role_family,other_eng,Other engineering,4721,Microservices / distributed systems,0.2762
-role_family,other_eng,Other engineering,4721,LLMs / GenAI (general),0.1856
-role_family,other_eng,Other engineering,4721,AI agents / agentic workflows,0.1807
-role_family,other_eng,Other engineering,4721,Observability / tracing / monitoring,0.1784
-role_family,other_eng,Other engineering,4721,SQL,0.1502
-role_family,other_eng,Other engineering,4721,Java / Kotlin (Spring),0.2169
-role_family,other_eng,Other engineering,4721,C++ / C#,0.2419
-role_family,other_eng,Other engineering,4721,CI/CD,0.158
-role_family,other_eng,Other engineering,4721,Machine learning fundamentals,0.1082
-role_family,other_eng,Other engineering,4721,Full-stack / frontend,0.143
-role_family,other_eng,Other engineering,4721,Kubernetes,0.0976
-role_family,other_eng,Other engineering,4721,Financial services / banking domain,0.1101
-role_family,other_eng,Other engineering,4721,System design / architecture,0.2711
-role_family,other_eng,Other engineering,4721,Docker / containers,0.0858
-role_family,other_eng,Other engineering,4721,Go,0.1042
-role_family,other_eng,Other engineering,4721,GCP / Vertex AI,0.0837
-role_family,other_eng,Other engineering,4721,Linux / shell,0.1847
-role_family,other_eng,Other engineering,4721,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0947
-role_family,other_eng,Other engineering,4721,Azure (incl. Azure OpenAI),0.0824
-role_family,other_eng,Other engineering,4721,TypeScript,0.0773
-role_family,other_eng,Other engineering,4721,Data pipelines / ETL,0.0583
-role_family,other_eng,Other engineering,4721,JavaScript / Node.js,0.0657
-role_family,other_eng,Other engineering,4721,REST / API design & integration,0.0788
-role_family,other_eng,Other engineering,4721,Terraform / IaC,0.0718
-role_family,other_eng,Other engineering,4721,LLM evaluation / eval harnesses,0.0525
-role_family,other_eng,Other engineering,4721,React / Next.js,0.0763
-role_family,other_eng,Other engineering,4721,PostgreSQL / relational DBs,0.0676
-role_family,other_eng,Other engineering,4721,KYC / AML / fraud / risk,0.0835
-role_family,other_eng,Other engineering,4721,"AI coding tools (Claude Code, Cursor, Copilot)",0.083
-role_family,other_eng,Other engineering,4721,Spark / big data,0.0432
-role_family,other_eng,Other engineering,4721,Guardrails / AI safety,0.0546
-role_family,other_eng,Other engineering,4721,Statistics / maths,0.0419
-role_family,other_eng,Other engineering,4721,Rust / Scala,0.0763
-role_family,other_eng,Other engineering,4721,Kafka / message queues / streaming,0.0629
-role_family,other_eng,Other engineering,4721,Pre-sales / solution architecture / PoCs,0.0352
-role_family,other_eng,Other engineering,4721,"NoSQL (MongoDB, DynamoDB)",0.068
-role_family,other_eng,Other engineering,4721,Cost / latency optimization,0.0724
+seniority,unspecified,unspecified,6064,Governance / compliance / audit,0.0663
+role_family,fde,Forward deployed / solutions,2990,Python,0.3783
+role_family,fde,Forward deployed / solutions,2990,AWS,0.3585
+role_family,fde,Forward deployed / solutions,2990,Cloud (unspecified),0.3679
+role_family,fde,Forward deployed / solutions,2990,Microservices / distributed systems,0.1324
+role_family,fde,Forward deployed / solutions,2990,LLMs / GenAI (general),0.2742
+role_family,fde,Forward deployed / solutions,2990,AI agents / agentic workflows,0.2809
+role_family,fde,Forward deployed / solutions,2990,Observability / tracing / monitoring,0.1425
+role_family,fde,Forward deployed / solutions,2990,SQL,0.1957
+role_family,fde,Forward deployed / solutions,2990,Java / Kotlin (Spring),0.1211
+role_family,fde,Forward deployed / solutions,2990,C++ / C#,0.0672
+role_family,fde,Forward deployed / solutions,2990,CI/CD,0.1137
+role_family,fde,Forward deployed / solutions,2990,Machine learning fundamentals,0.1007
+role_family,fde,Forward deployed / solutions,2990,Full-stack / frontend,0.0977
+role_family,fde,Forward deployed / solutions,2990,Kubernetes,0.1087
+role_family,fde,Forward deployed / solutions,2990,Financial services / banking domain,0.1548
+role_family,fde,Forward deployed / solutions,2990,System design / architecture,0.104
+role_family,fde,Forward deployed / solutions,2990,Docker / containers,0.1017
+role_family,fde,Forward deployed / solutions,2990,Linux / shell,0.0923
+role_family,fde,Forward deployed / solutions,2990,GCP / Vertex AI,0.2097
+role_family,fde,Forward deployed / solutions,2990,Go,0.0806
+role_family,fde,Forward deployed / solutions,2990,Azure (incl. Azure OpenAI),0.2204
+role_family,fde,Forward deployed / solutions,2990,LLM provider APIs (OpenAI / Anthropic / Gemini),0.1174
+role_family,fde,Forward deployed / solutions,2990,REST / API design & integration,0.101
+role_family,fde,Forward deployed / solutions,2990,TypeScript,0.1104
+role_family,fde,Forward deployed / solutions,2990,JavaScript / Node.js,0.1635
+role_family,fde,Forward deployed / solutions,2990,Data pipelines / ETL,0.1247
+role_family,fde,Forward deployed / solutions,2990,Terraform / IaC,0.0642
+role_family,fde,Forward deployed / solutions,2990,React / Next.js,0.0505
+role_family,fde,Forward deployed / solutions,2990,PostgreSQL / relational DBs,0.0482
+role_family,fde,Forward deployed / solutions,2990,LLM evaluation / eval harnesses,0.091
+role_family,fde,Forward deployed / solutions,2990,KYC / AML / fraud / risk,0.0712
+role_family,fde,Forward deployed / solutions,2990,"AI coding tools (Claude Code, Cursor, Copilot)",0.0652
+role_family,fde,Forward deployed / solutions,2990,Spark / big data,0.1779
+role_family,fde,Forward deployed / solutions,2990,Guardrails / AI safety,0.0679
+role_family,fde,Forward deployed / solutions,2990,Pre-sales / solution architecture / PoCs,0.4863
+role_family,fde,Forward deployed / solutions,2990,Statistics / maths,0.0308
+role_family,fde,Forward deployed / solutions,2990,Kafka / message queues / streaming,0.0482
+role_family,fde,Forward deployed / solutions,2990,Rust / Scala,0.0666
+role_family,fde,Forward deployed / solutions,2990,"NoSQL (MongoDB, DynamoDB)",0.0625
+role_family,fde,Forward deployed / solutions,2990,Governance / compliance / audit,0.0957
+role_family,ai_ml,AI / ML engineering,4655,Python,0.5197
+role_family,ai_ml,AI / ML engineering,4655,AWS,0.1921
+role_family,ai_ml,AI / ML engineering,4655,Cloud (unspecified),0.1976
+role_family,ai_ml,AI / ML engineering,4655,Microservices / distributed systems,0.1749
+role_family,ai_ml,AI / ML engineering,4655,LLMs / GenAI (general),0.5381
+role_family,ai_ml,AI / ML engineering,4655,AI agents / agentic workflows,0.4367
+role_family,ai_ml,AI / ML engineering,4655,Observability / tracing / monitoring,0.2071
+role_family,ai_ml,AI / ML engineering,4655,SQL,0.2137
+role_family,ai_ml,AI / ML engineering,4655,Java / Kotlin (Spring),0.1459
+role_family,ai_ml,AI / ML engineering,4655,C++ / C#,0.153
+role_family,ai_ml,AI / ML engineering,4655,CI/CD,0.1216
+role_family,ai_ml,AI / ML engineering,4655,Machine learning fundamentals,0.4425
+role_family,ai_ml,AI / ML engineering,4655,Full-stack / frontend,0.1278
+role_family,ai_ml,AI / ML engineering,4655,Kubernetes,0.1162
+role_family,ai_ml,AI / ML engineering,4655,Financial services / banking domain,0.1605
+role_family,ai_ml,AI / ML engineering,4655,System design / architecture,0.1048
+role_family,ai_ml,AI / ML engineering,4655,Docker / containers,0.1154
+role_family,ai_ml,AI / ML engineering,4655,Linux / shell,0.0632
+role_family,ai_ml,AI / ML engineering,4655,GCP / Vertex AI,0.1224
+role_family,ai_ml,AI / ML engineering,4655,Go,0.078
+role_family,ai_ml,AI / ML engineering,4655,Azure (incl. Azure OpenAI),0.102
+role_family,ai_ml,AI / ML engineering,4655,LLM provider APIs (OpenAI / Anthropic / Gemini),0.2122
+role_family,ai_ml,AI / ML engineering,4655,REST / API design & integration,0.0831
+role_family,ai_ml,AI / ML engineering,4655,TypeScript,0.076
+role_family,ai_ml,AI / ML engineering,4655,JavaScript / Node.js,0.0666
+role_family,ai_ml,AI / ML engineering,4655,Data pipelines / ETL,0.1356
+role_family,ai_ml,AI / ML engineering,4655,Terraform / IaC,0.0574
+role_family,ai_ml,AI / ML engineering,4655,React / Next.js,0.0518
+role_family,ai_ml,AI / ML engineering,4655,PostgreSQL / relational DBs,0.0524
+role_family,ai_ml,AI / ML engineering,4655,LLM evaluation / eval harnesses,0.2698
+role_family,ai_ml,AI / ML engineering,4655,KYC / AML / fraud / risk,0.1214
+role_family,ai_ml,AI / ML engineering,4655,"AI coding tools (Claude Code, Cursor, Copilot)",0.1338
+role_family,ai_ml,AI / ML engineering,4655,Spark / big data,0.1057
+role_family,ai_ml,AI / ML engineering,4655,Guardrails / AI safety,0.1888
+role_family,ai_ml,AI / ML engineering,4655,Pre-sales / solution architecture / PoCs,0.0593
+role_family,ai_ml,AI / ML engineering,4655,Statistics / maths,0.2075
+role_family,ai_ml,AI / ML engineering,4655,Kafka / message queues / streaming,0.0473
+role_family,ai_ml,AI / ML engineering,4655,Rust / Scala,0.0475
+role_family,ai_ml,AI / ML engineering,4655,"NoSQL (MongoDB, DynamoDB)",0.0346
+role_family,ai_ml,AI / ML engineering,4655,Governance / compliance / audit,0.095
+role_family,data,Data engineering & science,973,Python,0.6269
+role_family,data,Data engineering & science,973,AWS,0.3248
+role_family,data,Data engineering & science,973,Cloud (unspecified),0.2333
+role_family,data,Data engineering & science,973,Microservices / distributed systems,0.1562
+role_family,data,Data engineering & science,973,LLMs / GenAI (general),0.1829
+role_family,data,Data engineering & science,973,AI agents / agentic workflows,0.1511
+role_family,data,Data engineering & science,973,Observability / tracing / monitoring,0.224
+role_family,data,Data engineering & science,973,SQL,0.6927
+role_family,data,Data engineering & science,973,Java / Kotlin (Spring),0.1665
+role_family,data,Data engineering & science,973,C++ / C#,0.0391
+role_family,data,Data engineering & science,973,CI/CD,0.185
+role_family,data,Data engineering & science,973,Machine learning fundamentals,0.2302
+role_family,data,Data engineering & science,973,Full-stack / frontend,0.0874
+role_family,data,Data engineering & science,973,Kubernetes,0.1048
+role_family,data,Data engineering & science,973,Financial services / banking domain,0.2323
+role_family,data,Data engineering & science,973,System design / architecture,0.0935
+role_family,data,Data engineering & science,973,Docker / containers,0.0966
+role_family,data,Data engineering & science,973,Linux / shell,0.0555
+role_family,data,Data engineering & science,973,GCP / Vertex AI,0.1891
+role_family,data,Data engineering & science,973,Go,0.0576
+role_family,data,Data engineering & science,973,Azure (incl. Azure OpenAI),0.1429
+role_family,data,Data engineering & science,973,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0894
+role_family,data,Data engineering & science,973,REST / API design & integration,0.0606
+role_family,data,Data engineering & science,973,TypeScript,0.0216
+role_family,data,Data engineering & science,973,JavaScript / Node.js,0.0257
+role_family,data,Data engineering & science,973,Data pipelines / ETL,0.631
+role_family,data,Data engineering & science,973,Terraform / IaC,0.1264
+role_family,data,Data engineering & science,973,React / Next.js,0.0185
+role_family,data,Data engineering & science,973,PostgreSQL / relational DBs,0.184
+role_family,data,Data engineering & science,973,LLM evaluation / eval harnesses,0.0617
+role_family,data,Data engineering & science,973,KYC / AML / fraud / risk,0.112
+role_family,data,Data engineering & science,973,"AI coding tools (Claude Code, Cursor, Copilot)",0.0812
+role_family,data,Data engineering & science,973,Spark / big data,0.4573
+role_family,data,Data engineering & science,973,Guardrails / AI safety,0.0761
+role_family,data,Data engineering & science,973,Pre-sales / solution architecture / PoCs,0.0072
+role_family,data,Data engineering & science,973,Statistics / maths,0.2199
+role_family,data,Data engineering & science,973,Kafka / message queues / streaming,0.2292
+role_family,data,Data engineering & science,973,Rust / Scala,0.149
+role_family,data,Data engineering & science,973,"NoSQL (MongoDB, DynamoDB)",0.1048
+role_family,data,Data engineering & science,973,Governance / compliance / audit,0.2107
+role_family,backend,Backend / Python,5767,Python,0.365
+role_family,backend,Backend / Python,5767,AWS,0.2667
+role_family,backend,Backend / Python,5767,Cloud (unspecified),0.2511
+role_family,backend,Backend / Python,5767,Microservices / distributed systems,0.3985
+role_family,backend,Backend / Python,5767,LLMs / GenAI (general),0.1585
+role_family,backend,Backend / Python,5767,AI agents / agentic workflows,0.2063
+role_family,backend,Backend / Python,5767,Observability / tracing / monitoring,0.292
+role_family,backend,Backend / Python,5767,SQL,0.304
+role_family,backend,Backend / Python,5767,Java / Kotlin (Spring),0.3409
+role_family,backend,Backend / Python,5767,C++ / C#,0.27
+role_family,backend,Backend / Python,5767,CI/CD,0.2292
+role_family,backend,Backend / Python,5767,Machine learning fundamentals,0.1101
+role_family,backend,Backend / Python,5767,Full-stack / frontend,0.33
+role_family,backend,Backend / Python,5767,Kubernetes,0.2391
+role_family,backend,Backend / Python,5767,Financial services / banking domain,0.159
+role_family,backend,Backend / Python,5767,System design / architecture,0.1536
+role_family,backend,Backend / Python,5767,Docker / containers,0.2015
+role_family,backend,Backend / Python,5767,Linux / shell,0.1131
+role_family,backend,Backend / Python,5767,GCP / Vertex AI,0.1366
+role_family,backend,Backend / Python,5767,Go,0.2225
+role_family,backend,Backend / Python,5767,Azure (incl. Azure OpenAI),0.1359
+role_family,backend,Backend / Python,5767,LLM provider APIs (OpenAI / Anthropic / Gemini),0.1236
+role_family,backend,Backend / Python,5767,REST / API design & integration,0.218
+role_family,backend,Backend / Python,5767,TypeScript,0.2105
+role_family,backend,Backend / Python,5767,JavaScript / Node.js,0.2079
+role_family,backend,Backend / Python,5767,Data pipelines / ETL,0.0999
+role_family,backend,Backend / Python,5767,Terraform / IaC,0.0999
+role_family,backend,Backend / Python,5767,React / Next.js,0.2197
+role_family,backend,Backend / Python,5767,PostgreSQL / relational DBs,0.2252
+role_family,backend,Backend / Python,5767,LLM evaluation / eval harnesses,0.0832
+role_family,backend,Backend / Python,5767,KYC / AML / fraud / risk,0.0836
+role_family,backend,Backend / Python,5767,"AI coding tools (Claude Code, Cursor, Copilot)",0.1203
+role_family,backend,Backend / Python,5767,Spark / big data,0.0701
+role_family,backend,Backend / Python,5767,Guardrails / AI safety,0.0569
+role_family,backend,Backend / Python,5767,Pre-sales / solution architecture / PoCs,0.0111
+role_family,backend,Backend / Python,5767,Statistics / maths,0.0376
+role_family,backend,Backend / Python,5767,Kafka / message queues / streaming,0.151
+role_family,backend,Backend / Python,5767,Rust / Scala,0.1361
+role_family,backend,Backend / Python,5767,"NoSQL (MongoDB, DynamoDB)",0.1377
+role_family,backend,Backend / Python,5767,Governance / compliance / audit,0.0401
+role_family,frontend,Frontend & mobile,632,Python,0.1028
+role_family,frontend,Frontend & mobile,632,AWS,0.0902
+role_family,frontend,Frontend & mobile,632,Cloud (unspecified),0.0633
+role_family,frontend,Frontend & mobile,632,Microservices / distributed systems,0.1013
+role_family,frontend,Frontend & mobile,632,LLMs / GenAI (general),0.0854
+role_family,frontend,Frontend & mobile,632,AI agents / agentic workflows,0.1756
+role_family,frontend,Frontend & mobile,632,Observability / tracing / monitoring,0.1503
+role_family,frontend,Frontend & mobile,632,SQL,0.0949
+role_family,frontend,Frontend & mobile,632,Java / Kotlin (Spring),0.2991
+role_family,frontend,Frontend & mobile,632,C++ / C#,0.0839
+role_family,frontend,Frontend & mobile,632,CI/CD,0.2184
+role_family,frontend,Frontend & mobile,632,Machine learning fundamentals,0.0459
+role_family,frontend,Frontend & mobile,632,Full-stack / frontend,0.5554
+role_family,frontend,Frontend & mobile,632,Kubernetes,0.0491
+role_family,frontend,Frontend & mobile,632,Financial services / banking domain,0.1835
+role_family,frontend,Frontend & mobile,632,System design / architecture,0.1741
+role_family,frontend,Frontend & mobile,632,Docker / containers,0.0696
+role_family,frontend,Frontend & mobile,632,Linux / shell,0.0411
+role_family,frontend,Frontend & mobile,632,GCP / Vertex AI,0.0285
+role_family,frontend,Frontend & mobile,632,Go,0.0411
+role_family,frontend,Frontend & mobile,632,Azure (incl. Azure OpenAI),0.0459
+role_family,frontend,Frontend & mobile,632,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0902
+role_family,frontend,Frontend & mobile,632,REST / API design & integration,0.2405
+role_family,frontend,Frontend & mobile,632,TypeScript,0.3576
+role_family,frontend,Frontend & mobile,632,JavaScript / Node.js,0.3133
+role_family,frontend,Frontend & mobile,632,Data pipelines / ETL,0.0095
+role_family,frontend,Frontend & mobile,632,Terraform / IaC,0.0206
+role_family,frontend,Frontend & mobile,632,React / Next.js,0.5269
+role_family,frontend,Frontend & mobile,632,PostgreSQL / relational DBs,0.0665
+role_family,frontend,Frontend & mobile,632,LLM evaluation / eval harnesses,0.0285
+role_family,frontend,Frontend & mobile,632,KYC / AML / fraud / risk,0.0839
+role_family,frontend,Frontend & mobile,632,"AI coding tools (Claude Code, Cursor, Copilot)",0.1329
+role_family,frontend,Frontend & mobile,632,Spark / big data,0.0127
+role_family,frontend,Frontend & mobile,632,Guardrails / AI safety,0.0601
+role_family,frontend,Frontend & mobile,632,Pre-sales / solution architecture / PoCs,0.0
+role_family,frontend,Frontend & mobile,632,Statistics / maths,0.0554
+role_family,frontend,Frontend & mobile,632,Kafka / message queues / streaming,0.038
+role_family,frontend,Frontend & mobile,632,Rust / Scala,0.0285
+role_family,frontend,Frontend & mobile,632,"NoSQL (MongoDB, DynamoDB)",0.0237
+role_family,frontend,Frontend & mobile,632,Governance / compliance / audit,0.0047
+role_family,infra,"Infra, DevOps & security",3769,Python,0.3664
+role_family,infra,"Infra, DevOps & security",3769,AWS,0.3677
+role_family,infra,"Infra, DevOps & security",3769,Cloud (unspecified),0.3715
+role_family,infra,"Infra, DevOps & security",3769,Microservices / distributed systems,0.2327
+role_family,infra,"Infra, DevOps & security",3769,LLMs / GenAI (general),0.1276
+role_family,infra,"Infra, DevOps & security",3769,AI agents / agentic workflows,0.1565
+role_family,infra,"Infra, DevOps & security",3769,Observability / tracing / monitoring,0.3311
+role_family,infra,"Infra, DevOps & security",3769,SQL,0.1146
+role_family,infra,"Infra, DevOps & security",3769,Java / Kotlin (Spring),0.121
+role_family,infra,"Infra, DevOps & security",3769,C++ / C#,0.1149
+role_family,infra,"Infra, DevOps & security",3769,CI/CD,0.2571
+role_family,infra,"Infra, DevOps & security",3769,Machine learning fundamentals,0.0716
+role_family,infra,"Infra, DevOps & security",3769,Full-stack / frontend,0.0576
+role_family,infra,"Infra, DevOps & security",3769,Kubernetes,0.2911
+role_family,infra,"Infra, DevOps & security",3769,Financial services / banking domain,0.1382
+role_family,infra,"Infra, DevOps & security",3769,System design / architecture,0.0825
+role_family,infra,"Infra, DevOps & security",3769,Docker / containers,0.2261
+role_family,infra,"Infra, DevOps & security",3769,Linux / shell,0.2486
+role_family,infra,"Infra, DevOps & security",3769,GCP / Vertex AI,0.1863
+role_family,infra,"Infra, DevOps & security",3769,Go,0.2024
+role_family,infra,"Infra, DevOps & security",3769,Azure (incl. Azure OpenAI),0.173
+role_family,infra,"Infra, DevOps & security",3769,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0894
+role_family,infra,"Infra, DevOps & security",3769,REST / API design & integration,0.0504
+role_family,infra,"Infra, DevOps & security",3769,TypeScript,0.0631
+role_family,infra,"Infra, DevOps & security",3769,JavaScript / Node.js,0.0504
+role_family,infra,"Infra, DevOps & security",3769,Data pipelines / ETL,0.0427
+role_family,infra,"Infra, DevOps & security",3769,Terraform / IaC,0.2964
+role_family,infra,"Infra, DevOps & security",3769,React / Next.js,0.0318
+role_family,infra,"Infra, DevOps & security",3769,PostgreSQL / relational DBs,0.0533
+role_family,infra,"Infra, DevOps & security",3769,LLM evaluation / eval harnesses,0.0382
+role_family,infra,"Infra, DevOps & security",3769,KYC / AML / fraud / risk,0.1234
+role_family,infra,"Infra, DevOps & security",3769,"AI coding tools (Claude Code, Cursor, Copilot)",0.0552
+role_family,infra,"Infra, DevOps & security",3769,Spark / big data,0.0316
+role_family,infra,"Infra, DevOps & security",3769,Guardrails / AI safety,0.104
+role_family,infra,"Infra, DevOps & security",3769,Pre-sales / solution architecture / PoCs,0.0252
+role_family,infra,"Infra, DevOps & security",3769,Statistics / maths,0.021
+role_family,infra,"Infra, DevOps & security",3769,Kafka / message queues / streaming,0.0488
+role_family,infra,"Infra, DevOps & security",3769,Rust / Scala,0.0655
+role_family,infra,"Infra, DevOps & security",3769,"NoSQL (MongoDB, DynamoDB)",0.0589
+role_family,infra,"Infra, DevOps & security",3769,Governance / compliance / audit,0.1199
+role_family,quant,Quant & trading tech,682,Python,0.6012
+role_family,quant,Quant & trading tech,682,AWS,0.0572
+role_family,quant,Quant & trading tech,682,Cloud (unspecified),0.0528
+role_family,quant,Quant & trading tech,682,Microservices / distributed systems,0.0777
+role_family,quant,Quant & trading tech,682,LLMs / GenAI (general),0.0513
+role_family,quant,Quant & trading tech,682,AI agents / agentic workflows,0.044
+role_family,quant,Quant & trading tech,682,Observability / tracing / monitoring,0.1158
+role_family,quant,Quant & trading tech,682,SQL,0.2155
+role_family,quant,Quant & trading tech,682,Java / Kotlin (Spring),0.1129
+role_family,quant,Quant & trading tech,682,C++ / C#,0.3519
+role_family,quant,Quant & trading tech,682,CI/CD,0.0792
+role_family,quant,Quant & trading tech,682,Machine learning fundamentals,0.2375
+role_family,quant,Quant & trading tech,682,Full-stack / frontend,0.0587
+role_family,quant,Quant & trading tech,682,Kubernetes,0.0513
+role_family,quant,Quant & trading tech,682,Financial services / banking domain,0.2991
+role_family,quant,Quant & trading tech,682,System design / architecture,0.0587
+role_family,quant,Quant & trading tech,682,Docker / containers,0.063
+role_family,quant,Quant & trading tech,682,Linux / shell,0.1921
+role_family,quant,Quant & trading tech,682,GCP / Vertex AI,0.0161
+role_family,quant,Quant & trading tech,682,Go,0.0249
+role_family,quant,Quant & trading tech,682,Azure (incl. Azure OpenAI),0.0073
+role_family,quant,Quant & trading tech,682,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0161
+role_family,quant,Quant & trading tech,682,REST / API design & integration,0.0264
+role_family,quant,Quant & trading tech,682,TypeScript,0.0073
+role_family,quant,Quant & trading tech,682,JavaScript / Node.js,0.0176
+role_family,quant,Quant & trading tech,682,Data pipelines / ETL,0.0777
+role_family,quant,Quant & trading tech,682,Terraform / IaC,0.0337
+role_family,quant,Quant & trading tech,682,React / Next.js,0.0411
+role_family,quant,Quant & trading tech,682,PostgreSQL / relational DBs,0.0513
+role_family,quant,Quant & trading tech,682,LLM evaluation / eval harnesses,0.0264
+role_family,quant,Quant & trading tech,682,KYC / AML / fraud / risk,0.2947
+role_family,quant,Quant & trading tech,682,"AI coding tools (Claude Code, Cursor, Copilot)",0.0352
+role_family,quant,Quant & trading tech,682,Spark / big data,0.0308
+role_family,quant,Quant & trading tech,682,Guardrails / AI safety,0.0059
+role_family,quant,Quant & trading tech,682,Pre-sales / solution architecture / PoCs,0.0029
+role_family,quant,Quant & trading tech,682,Statistics / maths,0.3754
+role_family,quant,Quant & trading tech,682,Kafka / message queues / streaming,0.063
+role_family,quant,Quant & trading tech,682,Rust / Scala,0.044
+role_family,quant,Quant & trading tech,682,"NoSQL (MongoDB, DynamoDB)",0.0249
+role_family,quant,Quant & trading tech,682,Governance / compliance / audit,0.0411
+role_family,other_eng,Other engineering,5379,Python,0.2967
+role_family,other_eng,Other engineering,5379,AWS,0.2355
+role_family,other_eng,Other engineering,5379,Cloud (unspecified),0.2058
+role_family,other_eng,Other engineering,5379,Microservices / distributed systems,0.2461
+role_family,other_eng,Other engineering,5379,LLMs / GenAI (general),0.1642
+role_family,other_eng,Other engineering,5379,AI agents / agentic workflows,0.1591
+role_family,other_eng,Other engineering,5379,Observability / tracing / monitoring,0.1673
+role_family,other_eng,Other engineering,5379,SQL,0.1454
+role_family,other_eng,Other engineering,5379,Java / Kotlin (Spring),0.1965
+role_family,other_eng,Other engineering,5379,C++ / C#,0.2164
+role_family,other_eng,Other engineering,5379,CI/CD,0.1454
+role_family,other_eng,Other engineering,5379,Machine learning fundamentals,0.0963
+role_family,other_eng,Other engineering,5379,Full-stack / frontend,0.1273
+role_family,other_eng,Other engineering,5379,Kubernetes,0.0894
+role_family,other_eng,Other engineering,5379,Financial services / banking domain,0.1004
+role_family,other_eng,Other engineering,5379,System design / architecture,0.24
+role_family,other_eng,Other engineering,5379,Docker / containers,0.0799
+role_family,other_eng,Other engineering,5379,Linux / shell,0.1803
+role_family,other_eng,Other engineering,5379,GCP / Vertex AI,0.0751
+role_family,other_eng,Other engineering,5379,Go,0.0924
+role_family,other_eng,Other engineering,5379,Azure (incl. Azure OpenAI),0.082
+role_family,other_eng,Other engineering,5379,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0833
+role_family,other_eng,Other engineering,5379,REST / API design & integration,0.074
+role_family,other_eng,Other engineering,5379,TypeScript,0.0688
+role_family,other_eng,Other engineering,5379,JavaScript / Node.js,0.0615
+role_family,other_eng,Other engineering,5379,Data pipelines / ETL,0.0517
+role_family,other_eng,Other engineering,5379,Terraform / IaC,0.0695
+role_family,other_eng,Other engineering,5379,React / Next.js,0.0673
+role_family,other_eng,Other engineering,5379,PostgreSQL / relational DBs,0.0658
+role_family,other_eng,Other engineering,5379,LLM evaluation / eval harnesses,0.0465
+role_family,other_eng,Other engineering,5379,KYC / AML / fraud / risk,0.0747
+role_family,other_eng,Other engineering,5379,"AI coding tools (Claude Code, Cursor, Copilot)",0.0736
+role_family,other_eng,Other engineering,5379,Spark / big data,0.0383
+role_family,other_eng,Other engineering,5379,Guardrails / AI safety,0.0483
+role_family,other_eng,Other engineering,5379,Pre-sales / solution architecture / PoCs,0.0323
+role_family,other_eng,Other engineering,5379,Statistics / maths,0.0372
+role_family,other_eng,Other engineering,5379,Kafka / message queues / streaming,0.0569
+role_family,other_eng,Other engineering,5379,Rust / Scala,0.0669
+role_family,other_eng,Other engineering,5379,"NoSQL (MongoDB, DynamoDB)",0.0604
+role_family,other_eng,Other engineering,5379,Governance / compliance / audit,0.0318
 region,North America,North America,12327,Python,0.4457
 region,North America,North America,12327,AWS,0.3002
 region,North America,North America,12327,Cloud (unspecified),0.2792
@@ -616,69 +616,69 @@ region,North America,North America,12327,Kubernetes,0.1644
 region,North America,North America,12327,Financial services / banking domain,0.1466
 region,North America,North America,12327,System design / architecture,0.1856
 region,North America,North America,12327,Docker / containers,0.1362
-region,North America,North America,12327,Go,0.1649
-region,North America,North America,12327,GCP / Vertex AI,0.1374
 region,North America,North America,12327,Linux / shell,0.1252
-region,North America,North America,12327,LLM provider APIs (OpenAI / Anthropic / Gemini),0.1592
+region,North America,North America,12327,GCP / Vertex AI,0.1374
+region,North America,North America,12327,Go,0.1649
 region,North America,North America,12327,Azure (incl. Azure OpenAI),0.1189
-region,North America,North America,12327,TypeScript,0.13
-region,North America,North America,12327,Data pipelines / ETL,0.1232
-region,North America,North America,12327,JavaScript / Node.js,0.1032
+region,North America,North America,12327,LLM provider APIs (OpenAI / Anthropic / Gemini),0.1592
 region,North America,North America,12327,REST / API design & integration,0.1054
+region,North America,North America,12327,TypeScript,0.13
+region,North America,North America,12327,JavaScript / Node.js,0.1032
+region,North America,North America,12327,Data pipelines / ETL,0.1232
 region,North America,North America,12327,Terraform / IaC,0.1098
-region,North America,North America,12327,LLM evaluation / eval harnesses,0.1274
 region,North America,North America,12327,React / Next.js,0.1109
 region,North America,North America,12327,PostgreSQL / relational DBs,0.0935
+region,North America,North America,12327,LLM evaluation / eval harnesses,0.1274
 region,North America,North America,12327,KYC / AML / fraud / risk,0.0971
 region,North America,North America,12327,"AI coding tools (Claude Code, Cursor, Copilot)",0.1098
 region,North America,North America,12327,Spark / big data,0.0892
 region,North America,North America,12327,Guardrails / AI safety,0.1098
-region,North America,North America,12327,Statistics / maths,0.0999
-region,North America,North America,12327,Rust / Scala,0.1014
-region,North America,North America,12327,Kafka / message queues / streaming,0.0815
 region,North America,North America,12327,Pre-sales / solution architecture / PoCs,0.071
+region,North America,North America,12327,Statistics / maths,0.0999
+region,North America,North America,12327,Kafka / message queues / streaming,0.0815
+region,North America,North America,12327,Rust / Scala,0.1014
 region,North America,North America,12327,"NoSQL (MongoDB, DynamoDB)",0.0691
-region,North America,North America,12327,Cost / latency optimization,0.0862
-region,Southeast Asia,Southeast Asia,2947,Python,0.2796
-region,Southeast Asia,Southeast Asia,2947,AWS,0.1598
-region,Southeast Asia,Southeast Asia,2947,Cloud (unspecified),0.1452
-region,Southeast Asia,Southeast Asia,2947,Microservices / distributed systems,0.1286
-region,Southeast Asia,Southeast Asia,2947,LLMs / GenAI (general),0.1463
-region,Southeast Asia,Southeast Asia,2947,AI agents / agentic workflows,0.1232
-region,Southeast Asia,Southeast Asia,2947,Observability / tracing / monitoring,0.111
-region,Southeast Asia,Southeast Asia,2947,SQL,0.2447
-region,Southeast Asia,Southeast Asia,2947,Java / Kotlin (Spring),0.2175
-region,Southeast Asia,Southeast Asia,2947,C++ / C#,0.1391
-region,Southeast Asia,Southeast Asia,2947,CI/CD,0.1534
-region,Southeast Asia,Southeast Asia,2947,Machine learning fundamentals,0.1147
-region,Southeast Asia,Southeast Asia,2947,Full-stack / frontend,0.1765
-region,Southeast Asia,Southeast Asia,2947,Kubernetes,0.1272
-region,Southeast Asia,Southeast Asia,2947,Financial services / banking domain,0.1887
-region,Southeast Asia,Southeast Asia,2947,System design / architecture,0.0774
-region,Southeast Asia,Southeast Asia,2947,Docker / containers,0.1473
-region,Southeast Asia,Southeast Asia,2947,Go,0.0519
-region,Southeast Asia,Southeast Asia,2947,GCP / Vertex AI,0.0869
-region,Southeast Asia,Southeast Asia,2947,Linux / shell,0.1123
-region,Southeast Asia,Southeast Asia,2947,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0519
-region,Southeast Asia,Southeast Asia,2947,Azure (incl. Azure OpenAI),0.0974
-region,Southeast Asia,Southeast Asia,2947,TypeScript,0.0696
-region,Southeast Asia,Southeast Asia,2947,Data pipelines / ETL,0.1045
-region,Southeast Asia,Southeast Asia,2947,JavaScript / Node.js,0.1435
-region,Southeast Asia,Southeast Asia,2947,REST / API design & integration,0.1303
-region,Southeast Asia,Southeast Asia,2947,Terraform / IaC,0.0753
-region,Southeast Asia,Southeast Asia,2947,LLM evaluation / eval harnesses,0.0529
-region,Southeast Asia,Southeast Asia,2947,React / Next.js,0.095
-region,Southeast Asia,Southeast Asia,2947,PostgreSQL / relational DBs,0.1218
-region,Southeast Asia,Southeast Asia,2947,KYC / AML / fraud / risk,0.1079
-region,Southeast Asia,Southeast Asia,2947,"AI coding tools (Claude Code, Cursor, Copilot)",0.0434
-region,Southeast Asia,Southeast Asia,2947,Spark / big data,0.0845
-region,Southeast Asia,Southeast Asia,2947,Guardrails / AI safety,0.0485
-region,Southeast Asia,Southeast Asia,2947,Statistics / maths,0.074
-region,Southeast Asia,Southeast Asia,2947,Rust / Scala,0.0292
-region,Southeast Asia,Southeast Asia,2947,Kafka / message queues / streaming,0.0774
-region,Southeast Asia,Southeast Asia,2947,Pre-sales / solution architecture / PoCs,0.059
-region,Southeast Asia,Southeast Asia,2947,"NoSQL (MongoDB, DynamoDB)",0.058
-region,Southeast Asia,Southeast Asia,2947,Cost / latency optimization,0.0441
+region,North America,North America,12327,Governance / compliance / audit,0.0789
+region,Southeast Asia,Southeast Asia,5143,Python,0.1902
+region,Southeast Asia,Southeast Asia,5143,AWS,0.1363
+region,Southeast Asia,Southeast Asia,5143,Cloud (unspecified),0.1332
+region,Southeast Asia,Southeast Asia,5143,Microservices / distributed systems,0.0902
+region,Southeast Asia,Southeast Asia,5143,LLMs / GenAI (general),0.1001
+region,Southeast Asia,Southeast Asia,5143,AI agents / agentic workflows,0.0793
+region,Southeast Asia,Southeast Asia,5143,Observability / tracing / monitoring,0.1106
+region,Southeast Asia,Southeast Asia,5143,SQL,0.1791
+region,Southeast Asia,Southeast Asia,5143,Java / Kotlin (Spring),0.1538
+region,Southeast Asia,Southeast Asia,5143,C++ / C#,0.0933
+region,Southeast Asia,Southeast Asia,5143,CI/CD,0.1223
+region,Southeast Asia,Southeast Asia,5143,Machine learning fundamentals,0.0741
+region,Southeast Asia,Southeast Asia,5143,Full-stack / frontend,0.1297
+region,Southeast Asia,Southeast Asia,5143,Kubernetes,0.1091
+region,Southeast Asia,Southeast Asia,5143,Financial services / banking domain,0.1266
+region,Southeast Asia,Southeast Asia,5143,System design / architecture,0.0535
+region,Southeast Asia,Southeast Asia,5143,Docker / containers,0.1206
+region,Southeast Asia,Southeast Asia,5143,Linux / shell,0.1176
+region,Southeast Asia,Southeast Asia,5143,GCP / Vertex AI,0.0712
+region,Southeast Asia,Southeast Asia,5143,Go,0.0336
+region,Southeast Asia,Southeast Asia,5143,Azure (incl. Azure OpenAI),0.1005
+region,Southeast Asia,Southeast Asia,5143,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0334
+region,Southeast Asia,Southeast Asia,5143,REST / API design & integration,0.0984
+region,Southeast Asia,Southeast Asia,5143,TypeScript,0.0465
+region,Southeast Asia,Southeast Asia,5143,JavaScript / Node.js,0.1036
+region,Southeast Asia,Southeast Asia,5143,Data pipelines / ETL,0.0681
+region,Southeast Asia,Southeast Asia,5143,Terraform / IaC,0.0813
+region,Southeast Asia,Southeast Asia,5143,React / Next.js,0.0679
+region,Southeast Asia,Southeast Asia,5143,PostgreSQL / relational DBs,0.0879
+region,Southeast Asia,Southeast Asia,5143,LLM evaluation / eval harnesses,0.0348
+region,Southeast Asia,Southeast Asia,5143,KYC / AML / fraud / risk,0.0803
+region,Southeast Asia,Southeast Asia,5143,"AI coding tools (Claude Code, Cursor, Copilot)",0.0288
+region,Southeast Asia,Southeast Asia,5143,Spark / big data,0.0541
+region,Southeast Asia,Southeast Asia,5143,Guardrails / AI safety,0.034
+region,Southeast Asia,Southeast Asia,5143,Pre-sales / solution architecture / PoCs,0.0562
+region,Southeast Asia,Southeast Asia,5143,Statistics / maths,0.0469
+region,Southeast Asia,Southeast Asia,5143,Kafka / message queues / streaming,0.0527
+region,Southeast Asia,Southeast Asia,5143,Rust / Scala,0.0173
+region,Southeast Asia,Southeast Asia,5143,"NoSQL (MongoDB, DynamoDB)",0.0373
+region,Southeast Asia,Southeast Asia,5143,Governance / compliance / audit,0.0441
 region,Europe,Europe,2907,Python,0.4434
 region,Europe,Europe,2907,AWS,0.2745
 region,Europe,Europe,2907,Cloud (unspecified),0.269
@@ -696,29 +696,29 @@ region,Europe,Europe,2907,Kubernetes,0.1803
 region,Europe,Europe,2907,Financial services / banking domain,0.1555
 region,Europe,Europe,2907,System design / architecture,0.109
 region,Europe,Europe,2907,Docker / containers,0.1459
-region,Europe,Europe,2907,Go,0.1345
-region,Europe,Europe,2907,GCP / Vertex AI,0.1558
 region,Europe,Europe,2907,Linux / shell,0.1262
-region,Europe,Europe,2907,LLM provider APIs (OpenAI / Anthropic / Gemini),0.141
+region,Europe,Europe,2907,GCP / Vertex AI,0.1558
+region,Europe,Europe,2907,Go,0.1345
 region,Europe,Europe,2907,Azure (incl. Azure OpenAI),0.1507
-region,Europe,Europe,2907,TypeScript,0.1404
-region,Europe,Europe,2907,Data pipelines / ETL,0.0991
-region,Europe,Europe,2907,JavaScript / Node.js,0.1132
+region,Europe,Europe,2907,LLM provider APIs (OpenAI / Anthropic / Gemini),0.141
 region,Europe,Europe,2907,REST / API design & integration,0.1084
+region,Europe,Europe,2907,TypeScript,0.1404
+region,Europe,Europe,2907,JavaScript / Node.js,0.1132
+region,Europe,Europe,2907,Data pipelines / ETL,0.0991
 region,Europe,Europe,2907,Terraform / IaC,0.1146
-region,Europe,Europe,2907,LLM evaluation / eval harnesses,0.1376
 region,Europe,Europe,2907,React / Next.js,0.1056
 region,Europe,Europe,2907,PostgreSQL / relational DBs,0.0936
+region,Europe,Europe,2907,LLM evaluation / eval harnesses,0.1376
 region,Europe,Europe,2907,KYC / AML / fraud / risk,0.0901
 region,Europe,Europe,2907,"AI coding tools (Claude Code, Cursor, Copilot)",0.1087
 region,Europe,Europe,2907,Spark / big data,0.1087
 region,Europe,Europe,2907,Guardrails / AI safety,0.0915
-region,Europe,Europe,2907,Statistics / maths,0.0678
-region,Europe,Europe,2907,Rust / Scala,0.0939
-region,Europe,Europe,2907,Kafka / message queues / streaming,0.0829
 region,Europe,Europe,2907,Pre-sales / solution architecture / PoCs,0.1287
+region,Europe,Europe,2907,Statistics / maths,0.0678
+region,Europe,Europe,2907,Kafka / message queues / streaming,0.0829
+region,Europe,Europe,2907,Rust / Scala,0.0939
 region,Europe,Europe,2907,"NoSQL (MongoDB, DynamoDB)",0.1204
-region,Europe,Europe,2907,Cost / latency optimization,0.074
+region,Europe,Europe,2907,Governance / compliance / audit,0.0812
 region,South Asia,South Asia,1510,Python,0.4417
 region,South Asia,South Asia,1510,AWS,0.3358
 region,South Asia,South Asia,1510,Cloud (unspecified),0.343
@@ -736,29 +736,29 @@ region,South Asia,South Asia,1510,Kubernetes,0.2199
 region,South Asia,South Asia,1510,Financial services / banking domain,0.1894
 region,South Asia,South Asia,1510,System design / architecture,0.2371
 region,South Asia,South Asia,1510,Docker / containers,0.2159
-region,South Asia,South Asia,1510,Go,0.1179
-region,South Asia,South Asia,1510,GCP / Vertex AI,0.1954
 region,South Asia,South Asia,1510,Linux / shell,0.1762
-region,South Asia,South Asia,1510,LLM provider APIs (OpenAI / Anthropic / Gemini),0.1066
+region,South Asia,South Asia,1510,GCP / Vertex AI,0.1954
+region,South Asia,South Asia,1510,Go,0.1179
 region,South Asia,South Asia,1510,Azure (incl. Azure OpenAI),0.2192
-region,South Asia,South Asia,1510,TypeScript,0.0834
-region,South Asia,South Asia,1510,Data pipelines / ETL,0.149
-region,South Asia,South Asia,1510,JavaScript / Node.js,0.1358
+region,South Asia,South Asia,1510,LLM provider APIs (OpenAI / Anthropic / Gemini),0.1066
 region,South Asia,South Asia,1510,REST / API design & integration,0.1755
+region,South Asia,South Asia,1510,TypeScript,0.0834
+region,South Asia,South Asia,1510,JavaScript / Node.js,0.1358
+region,South Asia,South Asia,1510,Data pipelines / ETL,0.149
 region,South Asia,South Asia,1510,Terraform / IaC,0.1344
-region,South Asia,South Asia,1510,LLM evaluation / eval harnesses,0.0907
 region,South Asia,South Asia,1510,React / Next.js,0.1212
 region,South Asia,South Asia,1510,PostgreSQL / relational DBs,0.1642
+region,South Asia,South Asia,1510,LLM evaluation / eval harnesses,0.0907
 region,South Asia,South Asia,1510,KYC / AML / fraud / risk,0.1358
 region,South Asia,South Asia,1510,"AI coding tools (Claude Code, Cursor, Copilot)",0.1026
 region,South Asia,South Asia,1510,Spark / big data,0.1503
 region,South Asia,South Asia,1510,Guardrails / AI safety,0.1152
-region,South Asia,South Asia,1510,Statistics / maths,0.0901
-region,South Asia,South Asia,1510,Rust / Scala,0.0702
-region,South Asia,South Asia,1510,Kafka / message queues / streaming,0.1576
 region,South Asia,South Asia,1510,Pre-sales / solution architecture / PoCs,0.057
+region,South Asia,South Asia,1510,Statistics / maths,0.0901
+region,South Asia,South Asia,1510,Kafka / message queues / streaming,0.1576
+region,South Asia,South Asia,1510,Rust / Scala,0.0702
 region,South Asia,South Asia,1510,"NoSQL (MongoDB, DynamoDB)",0.1444
-region,South Asia,South Asia,1510,Cost / latency optimization,0.0954
+region,South Asia,South Asia,1510,Governance / compliance / audit,0.0894
 region,East Asia,East Asia,939,Python,0.4249
 region,East Asia,East Asia,939,AWS,0.1981
 region,East Asia,East Asia,939,Cloud (unspecified),0.2055
@@ -776,29 +776,29 @@ region,East Asia,East Asia,939,Kubernetes,0.1395
 region,East Asia,East Asia,939,Financial services / banking domain,0.229
 region,East Asia,East Asia,939,System design / architecture,0.082
 region,East Asia,East Asia,939,Docker / containers,0.1512
-region,East Asia,East Asia,939,Go,0.0905
-region,East Asia,East Asia,939,GCP / Vertex AI,0.1235
 region,East Asia,East Asia,939,Linux / shell,0.1917
-region,East Asia,East Asia,939,LLM provider APIs (OpenAI / Anthropic / Gemini),0.1097
+region,East Asia,East Asia,939,GCP / Vertex AI,0.1235
+region,East Asia,East Asia,939,Go,0.0905
 region,East Asia,East Asia,939,Azure (incl. Azure OpenAI),0.1353
-region,East Asia,East Asia,939,TypeScript,0.0735
-region,East Asia,East Asia,939,Data pipelines / ETL,0.0958
-region,East Asia,East Asia,939,JavaScript / Node.js,0.0948
+region,East Asia,East Asia,939,LLM provider APIs (OpenAI / Anthropic / Gemini),0.1097
 region,East Asia,East Asia,939,REST / API design & integration,0.098
+region,East Asia,East Asia,939,TypeScript,0.0735
+region,East Asia,East Asia,939,JavaScript / Node.js,0.0948
+region,East Asia,East Asia,939,Data pipelines / ETL,0.0958
 region,East Asia,East Asia,939,Terraform / IaC,0.0948
-region,East Asia,East Asia,939,LLM evaluation / eval harnesses,0.0596
 region,East Asia,East Asia,939,React / Next.js,0.082
 region,East Asia,East Asia,939,PostgreSQL / relational DBs,0.0756
+region,East Asia,East Asia,939,LLM evaluation / eval harnesses,0.0596
 region,East Asia,East Asia,939,KYC / AML / fraud / risk,0.1363
 region,East Asia,East Asia,939,"AI coding tools (Claude Code, Cursor, Copilot)",0.131
 region,East Asia,East Asia,939,Spark / big data,0.0937
 region,East Asia,East Asia,939,Guardrails / AI safety,0.065
-region,East Asia,East Asia,939,Statistics / maths,0.1225
-region,East Asia,East Asia,939,Rust / Scala,0.0777
-region,East Asia,East Asia,939,Kafka / message queues / streaming,0.0745
 region,East Asia,East Asia,939,Pre-sales / solution architecture / PoCs,0.1267
+region,East Asia,East Asia,939,Statistics / maths,0.1225
+region,East Asia,East Asia,939,Kafka / message queues / streaming,0.0745
+region,East Asia,East Asia,939,Rust / Scala,0.0777
 region,East Asia,East Asia,939,"NoSQL (MongoDB, DynamoDB)",0.0469
-region,East Asia,East Asia,939,Cost / latency optimization,0.099
+region,East Asia,East Asia,939,Governance / compliance / audit,0.0586
 region,Unknown,Unknown,748,Python,0.4144
 region,Unknown,Unknown,748,AWS,0.2874
 region,Unknown,Unknown,748,Cloud (unspecified),0.357
@@ -816,29 +816,29 @@ region,Unknown,Unknown,748,Kubernetes,0.1992
 region,Unknown,Unknown,748,Financial services / banking domain,0.0668
 region,Unknown,Unknown,748,System design / architecture,0.1029
 region,Unknown,Unknown,748,Docker / containers,0.1404
-region,Unknown,Unknown,748,Go,0.2647
-region,Unknown,Unknown,748,GCP / Vertex AI,0.1684
 region,Unknown,Unknown,748,Linux / shell,0.2527
-region,Unknown,Unknown,748,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0401
+region,Unknown,Unknown,748,GCP / Vertex AI,0.1684
+region,Unknown,Unknown,748,Go,0.2647
 region,Unknown,Unknown,748,Azure (incl. Azure OpenAI),0.1537
-region,Unknown,Unknown,748,TypeScript,0.1564
-region,Unknown,Unknown,748,Data pipelines / ETL,0.1029
-region,Unknown,Unknown,748,JavaScript / Node.js,0.1832
+region,Unknown,Unknown,748,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0401
 region,Unknown,Unknown,748,REST / API design & integration,0.1604
+region,Unknown,Unknown,748,TypeScript,0.1564
+region,Unknown,Unknown,748,JavaScript / Node.js,0.1832
+region,Unknown,Unknown,748,Data pipelines / ETL,0.1029
 region,Unknown,Unknown,748,Terraform / IaC,0.1778
-region,Unknown,Unknown,748,LLM evaluation / eval harnesses,0.0588
 region,Unknown,Unknown,748,React / Next.js,0.0668
 region,Unknown,Unknown,748,PostgreSQL / relational DBs,0.1176
+region,Unknown,Unknown,748,LLM evaluation / eval harnesses,0.0588
 region,Unknown,Unknown,748,KYC / AML / fraud / risk,0.0735
 region,Unknown,Unknown,748,"AI coding tools (Claude Code, Cursor, Copilot)",0.0949
 region,Unknown,Unknown,748,Spark / big data,0.1003
 region,Unknown,Unknown,748,Guardrails / AI safety,0.0655
-region,Unknown,Unknown,748,Statistics / maths,0.0615
-region,Unknown,Unknown,748,Rust / Scala,0.1604
-region,Unknown,Unknown,748,Kafka / message queues / streaming,0.0628
 region,Unknown,Unknown,748,Pre-sales / solution architecture / PoCs,0.1524
+region,Unknown,Unknown,748,Statistics / maths,0.0615
+region,Unknown,Unknown,748,Kafka / message queues / streaming,0.0628
+region,Unknown,Unknown,748,Rust / Scala,0.1604
 region,Unknown,Unknown,748,"NoSQL (MongoDB, DynamoDB)",0.0602
-region,Unknown,Unknown,748,Cost / latency optimization,0.0722
+region,Unknown,Unknown,748,Governance / compliance / audit,0.1163
 region,Remote,Remote,445,Python,0.4449
 region,Remote,Remote,445,AWS,0.3506
 region,Remote,Remote,445,Cloud (unspecified),0.2584
@@ -856,29 +856,29 @@ region,Remote,Remote,445,Kubernetes,0.2629
 region,Remote,Remote,445,Financial services / banking domain,0.2494
 region,Remote,Remote,445,System design / architecture,0.0607
 region,Remote,Remote,445,Docker / containers,0.1393
-region,Remote,Remote,445,Go,0.2045
-region,Remote,Remote,445,GCP / Vertex AI,0.2157
 region,Remote,Remote,445,Linux / shell,0.1303
-region,Remote,Remote,445,LLM provider APIs (OpenAI / Anthropic / Gemini),0.1124
+region,Remote,Remote,445,GCP / Vertex AI,0.2157
+region,Remote,Remote,445,Go,0.2045
 region,Remote,Remote,445,Azure (incl. Azure OpenAI),0.1124
-region,Remote,Remote,445,TypeScript,0.1978
-region,Remote,Remote,445,Data pipelines / ETL,0.1079
-region,Remote,Remote,445,JavaScript / Node.js,0.173
+region,Remote,Remote,445,LLM provider APIs (OpenAI / Anthropic / Gemini),0.1124
 region,Remote,Remote,445,REST / API design & integration,0.1573
+region,Remote,Remote,445,TypeScript,0.1978
+region,Remote,Remote,445,JavaScript / Node.js,0.173
+region,Remote,Remote,445,Data pipelines / ETL,0.1079
 region,Remote,Remote,445,Terraform / IaC,0.1753
-region,Remote,Remote,445,LLM evaluation / eval harnesses,0.0989
 region,Remote,Remote,445,React / Next.js,0.1865
 region,Remote,Remote,445,PostgreSQL / relational DBs,0.2831
+region,Remote,Remote,445,LLM evaluation / eval harnesses,0.0989
 region,Remote,Remote,445,KYC / AML / fraud / risk,0.2697
 region,Remote,Remote,445,"AI coding tools (Claude Code, Cursor, Copilot)",0.0944
 region,Remote,Remote,445,Spark / big data,0.1124
 region,Remote,Remote,445,Guardrails / AI safety,0.0629
-region,Remote,Remote,445,Statistics / maths,0.0719
-region,Remote,Remote,445,Rust / Scala,0.1101
-region,Remote,Remote,445,Kafka / message queues / streaming,0.1011
 region,Remote,Remote,445,Pre-sales / solution architecture / PoCs,0.1528
+region,Remote,Remote,445,Statistics / maths,0.0719
+region,Remote,Remote,445,Kafka / message queues / streaming,0.1011
+region,Remote,Remote,445,Rust / Scala,0.1101
 region,Remote,Remote,445,"NoSQL (MongoDB, DynamoDB)",0.0539
-region,Remote,Remote,445,Cost / latency optimization,0.0607
+region,Remote,Remote,445,Governance / compliance / audit,0.0899
 region,Latin America,Latin America,368,Python,0.462
 region,Latin America,Latin America,368,AWS,0.3641
 region,Latin America,Latin America,368,Cloud (unspecified),0.2799
@@ -896,29 +896,29 @@ region,Latin America,Latin America,368,Kubernetes,0.1549
 region,Latin America,Latin America,368,Financial services / banking domain,0.2554
 region,Latin America,Latin America,368,System design / architecture,0.1359
 region,Latin America,Latin America,368,Docker / containers,0.1114
-region,Latin America,Latin America,368,Go,0.0924
-region,Latin America,Latin America,368,GCP / Vertex AI,0.2092
 region,Latin America,Latin America,368,Linux / shell,0.0788
-region,Latin America,Latin America,368,LLM provider APIs (OpenAI / Anthropic / Gemini),0.1603
+region,Latin America,Latin America,368,GCP / Vertex AI,0.2092
+region,Latin America,Latin America,368,Go,0.0924
 region,Latin America,Latin America,368,Azure (incl. Azure OpenAI),0.1739
-region,Latin America,Latin America,368,TypeScript,0.1739
-region,Latin America,Latin America,368,Data pipelines / ETL,0.1495
-region,Latin America,Latin America,368,JavaScript / Node.js,0.1549
+region,Latin America,Latin America,368,LLM provider APIs (OpenAI / Anthropic / Gemini),0.1603
 region,Latin America,Latin America,368,REST / API design & integration,0.1658
+region,Latin America,Latin America,368,TypeScript,0.1739
+region,Latin America,Latin America,368,JavaScript / Node.js,0.1549
+region,Latin America,Latin America,368,Data pipelines / ETL,0.1495
 region,Latin America,Latin America,368,Terraform / IaC,0.0842
-region,Latin America,Latin America,368,LLM evaluation / eval harnesses,0.0924
 region,Latin America,Latin America,368,React / Next.js,0.1793
 region,Latin America,Latin America,368,PostgreSQL / relational DBs,0.1522
+region,Latin America,Latin America,368,LLM evaluation / eval harnesses,0.0924
 region,Latin America,Latin America,368,KYC / AML / fraud / risk,0.1576
 region,Latin America,Latin America,368,"AI coding tools (Claude Code, Cursor, Copilot)",0.1467
 region,Latin America,Latin America,368,Spark / big data,0.1196
 region,Latin America,Latin America,368,Guardrails / AI safety,0.0788
-region,Latin America,Latin America,368,Statistics / maths,0.0924
-region,Latin America,Latin America,368,Rust / Scala,0.0408
-region,Latin America,Latin America,368,Kafka / message queues / streaming,0.1603
 region,Latin America,Latin America,368,Pre-sales / solution architecture / PoCs,0.1875
+region,Latin America,Latin America,368,Statistics / maths,0.0924
+region,Latin America,Latin America,368,Kafka / message queues / streaming,0.1603
+region,Latin America,Latin America,368,Rust / Scala,0.0408
 region,Latin America,Latin America,368,"NoSQL (MongoDB, DynamoDB)",0.1413
-region,Latin America,Latin America,368,Cost / latency optimization,0.0435
+region,Latin America,Latin America,368,Governance / compliance / audit,0.0897
 region,Oceania,Oceania,249,Python,0.4659
 region,Oceania,Oceania,249,AWS,0.4056
 region,Oceania,Oceania,249,Cloud (unspecified),0.4337
@@ -936,29 +936,29 @@ region,Oceania,Oceania,249,Kubernetes,0.1968
 region,Oceania,Oceania,249,Financial services / banking domain,0.1044
 region,Oceania,Oceania,249,System design / architecture,0.1004
 region,Oceania,Oceania,249,Docker / containers,0.1606
-region,Oceania,Oceania,249,Go,0.1486
-region,Oceania,Oceania,249,GCP / Vertex AI,0.2169
 region,Oceania,Oceania,249,Linux / shell,0.253
-region,Oceania,Oceania,249,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0843
+region,Oceania,Oceania,249,GCP / Vertex AI,0.2169
+region,Oceania,Oceania,249,Go,0.1486
 region,Oceania,Oceania,249,Azure (incl. Azure OpenAI),0.1888
-region,Oceania,Oceania,249,TypeScript,0.0843
-region,Oceania,Oceania,249,Data pipelines / ETL,0.0964
-region,Oceania,Oceania,249,JavaScript / Node.js,0.1084
+region,Oceania,Oceania,249,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0843
 region,Oceania,Oceania,249,REST / API design & integration,0.0602
+region,Oceania,Oceania,249,TypeScript,0.0843
+region,Oceania,Oceania,249,JavaScript / Node.js,0.1084
+region,Oceania,Oceania,249,Data pipelines / ETL,0.0964
 region,Oceania,Oceania,249,Terraform / IaC,0.1165
-region,Oceania,Oceania,249,LLM evaluation / eval harnesses,0.0442
 region,Oceania,Oceania,249,React / Next.js,0.0562
 region,Oceania,Oceania,249,PostgreSQL / relational DBs,0.0522
+region,Oceania,Oceania,249,LLM evaluation / eval harnesses,0.0442
 region,Oceania,Oceania,249,KYC / AML / fraud / risk,0.1124
 region,Oceania,Oceania,249,"AI coding tools (Claude Code, Cursor, Copilot)",0.0643
 region,Oceania,Oceania,249,Spark / big data,0.1044
 region,Oceania,Oceania,249,Guardrails / AI safety,0.0924
-region,Oceania,Oceania,249,Statistics / maths,0.0321
-region,Oceania,Oceania,249,Rust / Scala,0.0723
-region,Oceania,Oceania,249,Kafka / message queues / streaming,0.0602
 region,Oceania,Oceania,249,Pre-sales / solution architecture / PoCs,0.249
+region,Oceania,Oceania,249,Statistics / maths,0.0321
+region,Oceania,Oceania,249,Kafka / message queues / streaming,0.0602
+region,Oceania,Oceania,249,Rust / Scala,0.0723
 region,Oceania,Oceania,249,"NoSQL (MongoDB, DynamoDB)",0.0723
-region,Oceania,Oceania,249,Cost / latency optimization,0.0442
+region,Oceania,Oceania,249,Governance / compliance / audit,0.0683
 region,Middle East,Middle East,194,Python,0.4381
 region,Middle East,Middle East,194,AWS,0.3247
 region,Middle East,Middle East,194,Cloud (unspecified),0.3041
@@ -976,29 +976,29 @@ region,Middle East,Middle East,194,Kubernetes,0.201
 region,Middle East,Middle East,194,Financial services / banking domain,0.1959
 region,Middle East,Middle East,194,System design / architecture,0.1598
 region,Middle East,Middle East,194,Docker / containers,0.1237
-region,Middle East,Middle East,194,Go,0.1134
-region,Middle East,Middle East,194,GCP / Vertex AI,0.1237
 region,Middle East,Middle East,194,Linux / shell,0.1959
-region,Middle East,Middle East,194,LLM provider APIs (OpenAI / Anthropic / Gemini),0.1186
+region,Middle East,Middle East,194,GCP / Vertex AI,0.1237
+region,Middle East,Middle East,194,Go,0.1134
 region,Middle East,Middle East,194,Azure (incl. Azure OpenAI),0.1392
-region,Middle East,Middle East,194,TypeScript,0.1031
-region,Middle East,Middle East,194,Data pipelines / ETL,0.0825
-region,Middle East,Middle East,194,JavaScript / Node.js,0.1392
+region,Middle East,Middle East,194,LLM provider APIs (OpenAI / Anthropic / Gemini),0.1186
 region,Middle East,Middle East,194,REST / API design & integration,0.0979
+region,Middle East,Middle East,194,TypeScript,0.1031
+region,Middle East,Middle East,194,JavaScript / Node.js,0.1392
+region,Middle East,Middle East,194,Data pipelines / ETL,0.0825
 region,Middle East,Middle East,194,Terraform / IaC,0.0876
-region,Middle East,Middle East,194,LLM evaluation / eval harnesses,0.1082
 region,Middle East,Middle East,194,React / Next.js,0.1186
 region,Middle East,Middle East,194,PostgreSQL / relational DBs,0.0773
+region,Middle East,Middle East,194,LLM evaluation / eval harnesses,0.1082
 region,Middle East,Middle East,194,KYC / AML / fraud / risk,0.1134
 region,Middle East,Middle East,194,"AI coding tools (Claude Code, Cursor, Copilot)",0.1134
 region,Middle East,Middle East,194,Spark / big data,0.1186
 region,Middle East,Middle East,194,Guardrails / AI safety,0.0876
-region,Middle East,Middle East,194,Statistics / maths,0.0876
-region,Middle East,Middle East,194,Rust / Scala,0.0515
-region,Middle East,Middle East,194,Kafka / message queues / streaming,0.1134
 region,Middle East,Middle East,194,Pre-sales / solution architecture / PoCs,0.0773
+region,Middle East,Middle East,194,Statistics / maths,0.0876
+region,Middle East,Middle East,194,Kafka / message queues / streaming,0.1134
+region,Middle East,Middle East,194,Rust / Scala,0.0515
 region,Middle East,Middle East,194,"NoSQL (MongoDB, DynamoDB)",0.134
-region,Middle East,Middle East,194,Cost / latency optimization,0.0773
+region,Middle East,Middle East,194,Governance / compliance / audit,0.0722
 country,US,US,11443,Python,0.4454
 country,US,US,11443,AWS,0.2972
 country,US,US,11443,Cloud (unspecified),0.2817
@@ -1016,69 +1016,69 @@ country,US,US,11443,Kubernetes,0.1604
 country,US,US,11443,Financial services / banking domain,0.1459
 country,US,US,11443,System design / architecture,0.1868
 country,US,US,11443,Docker / containers,0.1348
-country,US,US,11443,Go,0.1621
-country,US,US,11443,GCP / Vertex AI,0.1345
 country,US,US,11443,Linux / shell,0.1264
-country,US,US,11443,LLM provider APIs (OpenAI / Anthropic / Gemini),0.1585
+country,US,US,11443,GCP / Vertex AI,0.1345
+country,US,US,11443,Go,0.1621
 country,US,US,11443,Azure (incl. Azure OpenAI),0.1152
-country,US,US,11443,TypeScript,0.1291
-country,US,US,11443,Data pipelines / ETL,0.1237
-country,US,US,11443,JavaScript / Node.js,0.1012
+country,US,US,11443,LLM provider APIs (OpenAI / Anthropic / Gemini),0.1585
 country,US,US,11443,REST / API design & integration,0.101
+country,US,US,11443,TypeScript,0.1291
+country,US,US,11443,JavaScript / Node.js,0.1012
+country,US,US,11443,Data pipelines / ETL,0.1237
 country,US,US,11443,Terraform / IaC,0.1096
-country,US,US,11443,LLM evaluation / eval harnesses,0.1296
 country,US,US,11443,React / Next.js,0.1057
 country,US,US,11443,PostgreSQL / relational DBs,0.0895
+country,US,US,11443,LLM evaluation / eval harnesses,0.1296
 country,US,US,11443,KYC / AML / fraud / risk,0.0965
 country,US,US,11443,"AI coding tools (Claude Code, Cursor, Copilot)",0.1071
 country,US,US,11443,Spark / big data,0.0884
 country,US,US,11443,Guardrails / AI safety,0.111
-country,US,US,11443,Statistics / maths,0.1005
-country,US,US,11443,Rust / Scala,0.1011
-country,US,US,11443,Kafka / message queues / streaming,0.0784
 country,US,US,11443,Pre-sales / solution architecture / PoCs,0.0725
+country,US,US,11443,Statistics / maths,0.1005
+country,US,US,11443,Kafka / message queues / streaming,0.0784
+country,US,US,11443,Rust / Scala,0.1011
 country,US,US,11443,"NoSQL (MongoDB, DynamoDB)",0.065
-country,US,US,11443,Cost / latency optimization,0.0864
-country,SG,SG,2608,Python,0.2665
-country,SG,SG,2608,AWS,0.1576
-country,SG,SG,2608,Cloud (unspecified),0.1377
-country,SG,SG,2608,Microservices / distributed systems,0.115
-country,SG,SG,2608,LLMs / GenAI (general),0.1426
-country,SG,SG,2608,AI agents / agentic workflows,0.125
-country,SG,SG,2608,Observability / tracing / monitoring,0.0974
-country,SG,SG,2608,SQL,0.2393
-country,SG,SG,2608,Java / Kotlin (Spring),0.217
-country,SG,SG,2608,C++ / C#,0.1403
-country,SG,SG,2608,CI/CD,0.138
-country,SG,SG,2608,Machine learning fundamentals,0.1166
-country,SG,SG,2608,Full-stack / frontend,0.1699
-country,SG,SG,2608,Kubernetes,0.1173
-country,SG,SG,2608,Financial services / banking domain,0.1568
-country,SG,SG,2608,System design / architecture,0.0663
-country,SG,SG,2608,Docker / containers,0.1419
-country,SG,SG,2608,Go,0.0403
-country,SG,SG,2608,GCP / Vertex AI,0.0851
-country,SG,SG,2608,Linux / shell,0.1024
-country,SG,SG,2608,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0479
-country,SG,SG,2608,Azure (incl. Azure OpenAI),0.0893
-country,SG,SG,2608,TypeScript,0.0698
-country,SG,SG,2608,Data pipelines / ETL,0.1035
-country,SG,SG,2608,JavaScript / Node.js,0.148
-country,SG,SG,2608,REST / API design & integration,0.1311
-country,SG,SG,2608,Terraform / IaC,0.0675
-country,SG,SG,2608,LLM evaluation / eval harnesses,0.0537
-country,SG,SG,2608,React / Next.js,0.0962
-country,SG,SG,2608,PostgreSQL / relational DBs,0.1189
-country,SG,SG,2608,KYC / AML / fraud / risk,0.1104
-country,SG,SG,2608,"AI coding tools (Claude Code, Cursor, Copilot)",0.036
-country,SG,SG,2608,Spark / big data,0.0755
-country,SG,SG,2608,Guardrails / AI safety,0.0468
-country,SG,SG,2608,Statistics / maths,0.0683
-country,SG,SG,2608,Rust / Scala,0.0219
-country,SG,SG,2608,Kafka / message queues / streaming,0.0698
-country,SG,SG,2608,Pre-sales / solution architecture / PoCs,0.0575
-country,SG,SG,2608,"NoSQL (MongoDB, DynamoDB)",0.056
-country,SG,SG,2608,Cost / latency optimization,0.0391
+country,US,US,11443,Governance / compliance / audit,0.0792
+country,SG,SG,4804,Python,0.1767
+country,SG,SG,4804,AWS,0.1334
+country,SG,SG,4804,Cloud (unspecified),0.1282
+country,SG,SG,4804,Microservices / distributed systems,0.0801
+country,SG,SG,4804,LLMs / GenAI (general),0.0949
+country,SG,SG,4804,AI agents / agentic workflows,0.0772
+country,SG,SG,4804,Observability / tracing / monitoring,0.1032
+country,SG,SG,4804,SQL,0.1715
+country,SG,SG,4804,Java / Kotlin (Spring),0.149
+country,SG,SG,4804,C++ / C#,0.0908
+country,SG,SG,4804,CI/CD,0.1118
+country,SG,SG,4804,Machine learning fundamentals,0.0722
+country,SG,SG,4804,Full-stack / frontend,0.1228
+country,SG,SG,4804,Kubernetes,0.1024
+country,SG,SG,4804,Financial services / banking domain,0.1049
+country,SG,SG,4804,System design / architecture,0.0458
+country,SG,SG,4804,Docker / containers,0.1157
+country,SG,SG,4804,Linux / shell,0.1126
+country,SG,SG,4804,GCP / Vertex AI,0.0691
+country,SG,SG,4804,Go,0.026
+country,SG,SG,4804,Azure (incl. Azure OpenAI),0.0964
+country,SG,SG,4804,LLM provider APIs (OpenAI / Anthropic / Gemini),0.03
+country,SG,SG,4804,REST / API design & integration,0.0966
+country,SG,SG,4804,TypeScript,0.045
+country,SG,SG,4804,JavaScript / Node.js,0.1032
+country,SG,SG,4804,Data pipelines / ETL,0.0649
+country,SG,SG,4804,Terraform / IaC,0.0774
+country,SG,SG,4804,React / Next.js,0.0666
+country,SG,SG,4804,PostgreSQL / relational DBs,0.0839
+country,SG,SG,4804,LLM evaluation / eval harnesses,0.0339
+country,SG,SG,4804,KYC / AML / fraud / risk,0.0797
+country,SG,SG,4804,"AI coding tools (Claude Code, Cursor, Copilot)",0.0237
+country,SG,SG,4804,Spark / big data,0.047
+country,SG,SG,4804,Guardrails / AI safety,0.0321
+country,SG,SG,4804,Pre-sales / solution architecture / PoCs,0.0552
+country,SG,SG,4804,Statistics / maths,0.0418
+country,SG,SG,4804,Kafka / message queues / streaming,0.0468
+country,SG,SG,4804,Rust / Scala,0.0125
+country,SG,SG,4804,"NoSQL (MongoDB, DynamoDB)",0.0348
+country,SG,SG,4804,Governance / compliance / audit,0.0406
 country,IN,IN,1508,Python,0.4423
 country,IN,IN,1508,AWS,0.3362
 country,IN,IN,1508,Cloud (unspecified),0.3435
@@ -1096,29 +1096,29 @@ country,IN,IN,1508,Kubernetes,0.2202
 country,IN,IN,1508,Financial services / banking domain,0.1897
 country,IN,IN,1508,System design / architecture,0.2374
 country,IN,IN,1508,Docker / containers,0.2162
-country,IN,IN,1508,Go,0.118
-country,IN,IN,1508,GCP / Vertex AI,0.1956
 country,IN,IN,1508,Linux / shell,0.1764
-country,IN,IN,1508,LLM provider APIs (OpenAI / Anthropic / Gemini),0.1068
+country,IN,IN,1508,GCP / Vertex AI,0.1956
+country,IN,IN,1508,Go,0.118
 country,IN,IN,1508,Azure (incl. Azure OpenAI),0.2195
-country,IN,IN,1508,TypeScript,0.0829
-country,IN,IN,1508,Data pipelines / ETL,0.1492
-country,IN,IN,1508,JavaScript / Node.js,0.1353
+country,IN,IN,1508,LLM provider APIs (OpenAI / Anthropic / Gemini),0.1068
 country,IN,IN,1508,REST / API design & integration,0.1757
+country,IN,IN,1508,TypeScript,0.0829
+country,IN,IN,1508,JavaScript / Node.js,0.1353
+country,IN,IN,1508,Data pipelines / ETL,0.1492
 country,IN,IN,1508,Terraform / IaC,0.1346
-country,IN,IN,1508,LLM evaluation / eval harnesses,0.0908
 country,IN,IN,1508,React / Next.js,0.1207
 country,IN,IN,1508,PostgreSQL / relational DBs,0.1645
+country,IN,IN,1508,LLM evaluation / eval harnesses,0.0908
 country,IN,IN,1508,KYC / AML / fraud / risk,0.1359
 country,IN,IN,1508,"AI coding tools (Claude Code, Cursor, Copilot)",0.1028
 country,IN,IN,1508,Spark / big data,0.1505
 country,IN,IN,1508,Guardrails / AI safety,0.1154
-country,IN,IN,1508,Statistics / maths,0.0902
-country,IN,IN,1508,Rust / Scala,0.0703
-country,IN,IN,1508,Kafka / message queues / streaming,0.1578
 country,IN,IN,1508,Pre-sales / solution architecture / PoCs,0.057
+country,IN,IN,1508,Statistics / maths,0.0902
+country,IN,IN,1508,Kafka / message queues / streaming,0.1578
+country,IN,IN,1508,Rust / Scala,0.0703
 country,IN,IN,1508,"NoSQL (MongoDB, DynamoDB)",0.1446
-country,IN,IN,1508,Cost / latency optimization,0.0955
+country,IN,IN,1508,Governance / compliance / audit,0.0895
 country,Unknown,Unknown,1193,Python,0.4258
 country,Unknown,Unknown,1193,AWS,0.311
 country,Unknown,Unknown,1193,Cloud (unspecified),0.3202
@@ -1136,29 +1136,29 @@ country,Unknown,Unknown,1193,Kubernetes,0.223
 country,Unknown,Unknown,1193,Financial services / banking domain,0.135
 country,Unknown,Unknown,1193,System design / architecture,0.0872
 country,Unknown,Unknown,1193,Docker / containers,0.14
-country,Unknown,Unknown,1193,Go,0.2422
-country,Unknown,Unknown,1193,GCP / Vertex AI,0.1861
 country,Unknown,Unknown,1193,Linux / shell,0.207
-country,Unknown,Unknown,1193,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0671
+country,Unknown,Unknown,1193,GCP / Vertex AI,0.1861
+country,Unknown,Unknown,1193,Go,0.2422
 country,Unknown,Unknown,1193,Azure (incl. Azure OpenAI),0.1383
-country,Unknown,Unknown,1193,TypeScript,0.1718
-country,Unknown,Unknown,1193,Data pipelines / ETL,0.1048
-country,Unknown,Unknown,1193,JavaScript / Node.js,0.1794
+country,Unknown,Unknown,1193,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0671
 country,Unknown,Unknown,1193,REST / API design & integration,0.1593
+country,Unknown,Unknown,1193,TypeScript,0.1718
+country,Unknown,Unknown,1193,JavaScript / Node.js,0.1794
+country,Unknown,Unknown,1193,Data pipelines / ETL,0.1048
 country,Unknown,Unknown,1193,Terraform / IaC,0.1769
-country,Unknown,Unknown,1193,LLM evaluation / eval harnesses,0.0738
 country,Unknown,Unknown,1193,React / Next.js,0.1115
 country,Unknown,Unknown,1193,PostgreSQL / relational DBs,0.1794
+country,Unknown,Unknown,1193,LLM evaluation / eval harnesses,0.0738
 country,Unknown,Unknown,1193,KYC / AML / fraud / risk,0.1467
 country,Unknown,Unknown,1193,"AI coding tools (Claude Code, Cursor, Copilot)",0.0947
 country,Unknown,Unknown,1193,Spark / big data,0.1048
 country,Unknown,Unknown,1193,Guardrails / AI safety,0.0645
-country,Unknown,Unknown,1193,Statistics / maths,0.0654
-country,Unknown,Unknown,1193,Rust / Scala,0.1417
-country,Unknown,Unknown,1193,Kafka / message queues / streaming,0.0771
 country,Unknown,Unknown,1193,Pre-sales / solution architecture / PoCs,0.1526
+country,Unknown,Unknown,1193,Statistics / maths,0.0654
+country,Unknown,Unknown,1193,Kafka / message queues / streaming,0.0771
+country,Unknown,Unknown,1193,Rust / Scala,0.1417
 country,Unknown,Unknown,1193,"NoSQL (MongoDB, DynamoDB)",0.0578
-country,Unknown,Unknown,1193,Cost / latency optimization,0.0679
+country,Unknown,Unknown,1193,Governance / compliance / audit,0.1065
 country,GB,GB,1125,Python,0.4978
 country,GB,GB,1125,AWS,0.2311
 country,GB,GB,1125,Cloud (unspecified),0.2533
@@ -1176,29 +1176,29 @@ country,GB,GB,1125,Kubernetes,0.1671
 country,GB,GB,1125,Financial services / banking domain,0.1938
 country,GB,GB,1125,System design / architecture,0.1022
 country,GB,GB,1125,Docker / containers,0.1538
-country,GB,GB,1125,Go,0.1129
-country,GB,GB,1125,GCP / Vertex AI,0.1236
 country,GB,GB,1125,Linux / shell,0.1387
-country,GB,GB,1125,LLM provider APIs (OpenAI / Anthropic / Gemini),0.1378
+country,GB,GB,1125,GCP / Vertex AI,0.1236
+country,GB,GB,1125,Go,0.1129
 country,GB,GB,1125,Azure (incl. Azure OpenAI),0.1164
-country,GB,GB,1125,TypeScript,0.144
-country,GB,GB,1125,Data pipelines / ETL,0.0978
-country,GB,GB,1125,JavaScript / Node.js,0.1013
+country,GB,GB,1125,LLM provider APIs (OpenAI / Anthropic / Gemini),0.1378
 country,GB,GB,1125,REST / API design & integration,0.0924
+country,GB,GB,1125,TypeScript,0.144
+country,GB,GB,1125,JavaScript / Node.js,0.1013
+country,GB,GB,1125,Data pipelines / ETL,0.0978
 country,GB,GB,1125,Terraform / IaC,0.1049
-country,GB,GB,1125,LLM evaluation / eval harnesses,0.1093
 country,GB,GB,1125,React / Next.js,0.1093
 country,GB,GB,1125,PostgreSQL / relational DBs,0.0791
+country,GB,GB,1125,LLM evaluation / eval harnesses,0.1093
 country,GB,GB,1125,KYC / AML / fraud / risk,0.1191
 country,GB,GB,1125,"AI coding tools (Claude Code, Cursor, Copilot)",0.0978
 country,GB,GB,1125,Spark / big data,0.096
 country,GB,GB,1125,Guardrails / AI safety,0.0942
-country,GB,GB,1125,Statistics / maths,0.096
-country,GB,GB,1125,Rust / Scala,0.0791
-country,GB,GB,1125,Kafka / message queues / streaming,0.0693
 country,GB,GB,1125,Pre-sales / solution architecture / PoCs,0.1307
+country,GB,GB,1125,Statistics / maths,0.096
+country,GB,GB,1125,Kafka / message queues / streaming,0.0693
+country,GB,GB,1125,Rust / Scala,0.0791
 country,GB,GB,1125,"NoSQL (MongoDB, DynamoDB)",0.0667
-country,GB,GB,1125,Cost / latency optimization,0.0871
+country,GB,GB,1125,Governance / compliance / audit,0.0756
 country,CA,CA,884,Python,0.4491
 country,CA,CA,884,AWS,0.3382
 country,CA,CA,884,Cloud (unspecified),0.2466
@@ -1216,29 +1216,29 @@ country,CA,CA,884,Kubernetes,0.2161
 country,CA,CA,884,Financial services / banking domain,0.1561
 country,CA,CA,884,System design / architecture,0.1697
 country,CA,CA,884,Docker / containers,0.155
-country,CA,CA,884,Go,0.2014
-country,CA,CA,884,GCP / Vertex AI,0.1753
 country,CA,CA,884,Linux / shell,0.1097
-country,CA,CA,884,LLM provider APIs (OpenAI / Anthropic / Gemini),0.1686
+country,CA,CA,884,GCP / Vertex AI,0.1753
+country,CA,CA,884,Go,0.2014
 country,CA,CA,884,Azure (incl. Azure OpenAI),0.1674
-country,CA,CA,884,TypeScript,0.1414
-country,CA,CA,884,Data pipelines / ETL,0.1176
-country,CA,CA,884,JavaScript / Node.js,0.129
+country,CA,CA,884,LLM provider APIs (OpenAI / Anthropic / Gemini),0.1686
 country,CA,CA,884,REST / API design & integration,0.1618
+country,CA,CA,884,TypeScript,0.1414
+country,CA,CA,884,JavaScript / Node.js,0.129
+country,CA,CA,884,Data pipelines / ETL,0.1176
 country,CA,CA,884,Terraform / IaC,0.112
-country,CA,CA,884,LLM evaluation / eval harnesses,0.0984
 country,CA,CA,884,React / Next.js,0.1776
 country,CA,CA,884,PostgreSQL / relational DBs,0.1459
+country,CA,CA,884,LLM evaluation / eval harnesses,0.0984
 country,CA,CA,884,KYC / AML / fraud / risk,0.1052
 country,CA,CA,884,"AI coding tools (Claude Code, Cursor, Copilot)",0.1437
 country,CA,CA,884,Spark / big data,0.0995
 country,CA,CA,884,Guardrails / AI safety,0.0939
-country,CA,CA,884,Statistics / maths,0.0928
-country,CA,CA,884,Rust / Scala,0.1052
-country,CA,CA,884,Kafka / message queues / streaming,0.1222
 country,CA,CA,884,Pre-sales / solution architecture / PoCs,0.0509
+country,CA,CA,884,Statistics / maths,0.0928
+country,CA,CA,884,Kafka / message queues / streaming,0.1222
+country,CA,CA,884,Rust / Scala,0.1052
 country,CA,CA,884,"NoSQL (MongoDB, DynamoDB)",0.1222
-country,CA,CA,884,Cost / latency optimization,0.0837
+country,CA,CA,884,Governance / compliance / audit,0.0747
 country,HK,HK,336,Python,0.5119
 country,HK,HK,336,AWS,0.1161
 country,HK,HK,336,Cloud (unspecified),0.1696
@@ -1256,29 +1256,29 @@ country,HK,HK,336,Kubernetes,0.1071
 country,HK,HK,336,Financial services / banking domain,0.4077
 country,HK,HK,336,System design / architecture,0.1012
 country,HK,HK,336,Docker / containers,0.1071
-country,HK,HK,336,Go,0.0744
-country,HK,HK,336,GCP / Vertex AI,0.0417
 country,HK,HK,336,Linux / shell,0.2411
-country,HK,HK,336,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0685
+country,HK,HK,336,GCP / Vertex AI,0.0417
+country,HK,HK,336,Go,0.0744
 country,HK,HK,336,Azure (incl. Azure OpenAI),0.0774
-country,HK,HK,336,TypeScript,0.0149
-country,HK,HK,336,Data pipelines / ETL,0.119
-country,HK,HK,336,JavaScript / Node.js,0.0298
+country,HK,HK,336,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0685
 country,HK,HK,336,REST / API design & integration,0.0595
+country,HK,HK,336,TypeScript,0.0149
+country,HK,HK,336,JavaScript / Node.js,0.0298
+country,HK,HK,336,Data pipelines / ETL,0.119
 country,HK,HK,336,Terraform / IaC,0.0774
-country,HK,HK,336,LLM evaluation / eval harnesses,0.0506
 country,HK,HK,336,React / Next.js,0.0417
 country,HK,HK,336,PostgreSQL / relational DBs,0.0893
+country,HK,HK,336,LLM evaluation / eval harnesses,0.0506
 country,HK,HK,336,KYC / AML / fraud / risk,0.1935
 country,HK,HK,336,"AI coding tools (Claude Code, Cursor, Copilot)",0.0982
 country,HK,HK,336,Spark / big data,0.0685
 country,HK,HK,336,Guardrails / AI safety,0.0446
-country,HK,HK,336,Statistics / maths,0.1607
-country,HK,HK,336,Rust / Scala,0.0655
-country,HK,HK,336,Kafka / message queues / streaming,0.0893
 country,HK,HK,336,Pre-sales / solution architecture / PoCs,0.0149
+country,HK,HK,336,Statistics / maths,0.1607
+country,HK,HK,336,Kafka / message queues / streaming,0.0893
+country,HK,HK,336,Rust / Scala,0.0655
 country,HK,HK,336,"NoSQL (MongoDB, DynamoDB)",0.0387
-country,HK,HK,336,Cost / latency optimization,0.1607
+country,HK,HK,336,Governance / compliance / audit,0.0774
 country,DE,DE,327,Python,0.4495
 country,DE,DE,327,AWS,0.2966
 country,DE,DE,327,Cloud (unspecified),0.2599
@@ -1296,29 +1296,29 @@ country,DE,DE,327,Kubernetes,0.1223
 country,DE,DE,327,Financial services / banking domain,0.107
 country,DE,DE,327,System design / architecture,0.0979
 country,DE,DE,327,Docker / containers,0.1346
-country,DE,DE,327,Go,0.1131
-country,DE,DE,327,GCP / Vertex AI,0.1743
 country,DE,DE,327,Linux / shell,0.107
-country,DE,DE,327,LLM provider APIs (OpenAI / Anthropic / Gemini),0.159
+country,DE,DE,327,GCP / Vertex AI,0.1743
+country,DE,DE,327,Go,0.1131
 country,DE,DE,327,Azure (incl. Azure OpenAI),0.1651
-country,DE,DE,327,TypeScript,0.1927
-country,DE,DE,327,Data pipelines / ETL,0.0856
-country,DE,DE,327,JavaScript / Node.js,0.1101
+country,DE,DE,327,LLM provider APIs (OpenAI / Anthropic / Gemini),0.159
 country,DE,DE,327,REST / API design & integration,0.1009
+country,DE,DE,327,TypeScript,0.1927
+country,DE,DE,327,JavaScript / Node.js,0.1101
+country,DE,DE,327,Data pipelines / ETL,0.0856
 country,DE,DE,327,Terraform / IaC,0.1284
-country,DE,DE,327,LLM evaluation / eval harnesses,0.1468
 country,DE,DE,327,React / Next.js,0.1131
 country,DE,DE,327,PostgreSQL / relational DBs,0.0887
+country,DE,DE,327,LLM evaluation / eval harnesses,0.1468
 country,DE,DE,327,KYC / AML / fraud / risk,0.0612
 country,DE,DE,327,"AI coding tools (Claude Code, Cursor, Copilot)",0.0703
 country,DE,DE,327,Spark / big data,0.1131
 country,DE,DE,327,Guardrails / AI safety,0.0642
-country,DE,DE,327,Statistics / maths,0.0489
-country,DE,DE,327,Rust / Scala,0.0979
-country,DE,DE,327,Kafka / message queues / streaming,0.0428
 country,DE,DE,327,Pre-sales / solution architecture / PoCs,0.208
+country,DE,DE,327,Statistics / maths,0.0489
+country,DE,DE,327,Kafka / message queues / streaming,0.0428
+country,DE,DE,327,Rust / Scala,0.0979
 country,DE,DE,327,"NoSQL (MongoDB, DynamoDB)",0.0734
-country,DE,DE,327,Cost / latency optimization,0.0489
+country,DE,DE,327,Governance / compliance / audit,0.0856
 country,IE,IE,309,Python,0.3883
 country,IE,IE,309,AWS,0.4466
 country,IE,IE,309,Cloud (unspecified),0.4239
@@ -1336,29 +1336,29 @@ country,IE,IE,309,Kubernetes,0.1845
 country,IE,IE,309,Financial services / banking domain,0.0777
 country,IE,IE,309,System design / architecture,0.1618
 country,IE,IE,309,Docker / containers,0.1359
-country,IE,IE,309,Go,0.2298
-country,IE,IE,309,GCP / Vertex AI,0.2362
 country,IE,IE,309,Linux / shell,0.1812
-country,IE,IE,309,LLM provider APIs (OpenAI / Anthropic / Gemini),0.1424
+country,IE,IE,309,GCP / Vertex AI,0.2362
+country,IE,IE,309,Go,0.2298
 country,IE,IE,309,Azure (incl. Azure OpenAI),0.2492
-country,IE,IE,309,TypeScript,0.0906
-country,IE,IE,309,Data pipelines / ETL,0.055
-country,IE,IE,309,JavaScript / Node.js,0.1327
+country,IE,IE,309,LLM provider APIs (OpenAI / Anthropic / Gemini),0.1424
 country,IE,IE,309,REST / API design & integration,0.0939
+country,IE,IE,309,TypeScript,0.0906
+country,IE,IE,309,JavaScript / Node.js,0.1327
+country,IE,IE,309,Data pipelines / ETL,0.055
 country,IE,IE,309,Terraform / IaC,0.1618
-country,IE,IE,309,LLM evaluation / eval harnesses,0.1133
 country,IE,IE,309,React / Next.js,0.0809
 country,IE,IE,309,PostgreSQL / relational DBs,0.068
+country,IE,IE,309,LLM evaluation / eval harnesses,0.1133
 country,IE,IE,309,KYC / AML / fraud / risk,0.0583
 country,IE,IE,309,"AI coding tools (Claude Code, Cursor, Copilot)",0.1133
 country,IE,IE,309,Spark / big data,0.0453
 country,IE,IE,309,Guardrails / AI safety,0.0841
-country,IE,IE,309,Statistics / maths,0.0388
-country,IE,IE,309,Rust / Scala,0.0971
-country,IE,IE,309,Kafka / message queues / streaming,0.0777
 country,IE,IE,309,Pre-sales / solution architecture / PoCs,0.0906
+country,IE,IE,309,Statistics / maths,0.0388
+country,IE,IE,309,Kafka / message queues / streaming,0.0777
+country,IE,IE,309,Rust / Scala,0.0971
 country,IE,IE,309,"NoSQL (MongoDB, DynamoDB)",0.2039
-country,IE,IE,309,Cost / latency optimization,0.0259
+country,IE,IE,309,Governance / compliance / audit,0.0615
 country,AU,AU,234,Python,0.453
 country,AU,AU,234,AWS,0.3932
 country,AU,AU,234,Cloud (unspecified),0.4188
@@ -1376,29 +1376,29 @@ country,AU,AU,234,Kubernetes,0.1966
 country,AU,AU,234,Financial services / banking domain,0.1111
 country,AU,AU,234,System design / architecture,0.1068
 country,AU,AU,234,Docker / containers,0.1496
-country,AU,AU,234,Go,0.141
-country,AU,AU,234,GCP / Vertex AI,0.1966
 country,AU,AU,234,Linux / shell,0.2479
-country,AU,AU,234,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0897
+country,AU,AU,234,GCP / Vertex AI,0.1966
+country,AU,AU,234,Go,0.141
 country,AU,AU,234,Azure (incl. Azure OpenAI),0.1795
-country,AU,AU,234,TypeScript,0.0769
-country,AU,AU,234,Data pipelines / ETL,0.1026
-country,AU,AU,234,JavaScript / Node.js,0.1068
+country,AU,AU,234,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0897
 country,AU,AU,234,REST / API design & integration,0.0641
+country,AU,AU,234,TypeScript,0.0769
+country,AU,AU,234,JavaScript / Node.js,0.1068
+country,AU,AU,234,Data pipelines / ETL,0.1026
 country,AU,AU,234,Terraform / IaC,0.1026
-country,AU,AU,234,LLM evaluation / eval harnesses,0.0427
 country,AU,AU,234,React / Next.js,0.0598
 country,AU,AU,234,PostgreSQL / relational DBs,0.0427
+country,AU,AU,234,LLM evaluation / eval harnesses,0.0427
 country,AU,AU,234,KYC / AML / fraud / risk,0.1197
 country,AU,AU,234,"AI coding tools (Claude Code, Cursor, Copilot)",0.0641
 country,AU,AU,234,Spark / big data,0.1026
 country,AU,AU,234,Guardrails / AI safety,0.094
-country,AU,AU,234,Statistics / maths,0.0299
-country,AU,AU,234,Rust / Scala,0.0684
-country,AU,AU,234,Kafka / message queues / streaming,0.0598
 country,AU,AU,234,Pre-sales / solution architecture / PoCs,0.2393
+country,AU,AU,234,Statistics / maths,0.0299
+country,AU,AU,234,Kafka / message queues / streaming,0.0598
+country,AU,AU,234,Rust / Scala,0.0684
 country,AU,AU,234,"NoSQL (MongoDB, DynamoDB)",0.0641
-country,AU,AU,234,Cost / latency optimization,0.0427
+country,AU,AU,234,Governance / compliance / audit,0.0726
 sector,ai,AI labs & AI-first,5565,Python,0.4717
 sector,ai,AI labs & AI-first,5565,AWS,0.2063
 sector,ai,AI labs & AI-first,5565,Cloud (unspecified),0.2259
@@ -1416,109 +1416,109 @@ sector,ai,AI labs & AI-first,5565,Kubernetes,0.1759
 sector,ai,AI labs & AI-first,5565,Financial services / banking domain,0.1217
 sector,ai,AI labs & AI-first,5565,System design / architecture,0.0999
 sector,ai,AI labs & AI-first,5565,Docker / containers,0.1301
-sector,ai,AI labs & AI-first,5565,Go,0.1394
-sector,ai,AI labs & AI-first,5565,GCP / Vertex AI,0.1603
 sector,ai,AI labs & AI-first,5565,Linux / shell,0.1202
-sector,ai,AI labs & AI-first,5565,LLM provider APIs (OpenAI / Anthropic / Gemini),0.26
+sector,ai,AI labs & AI-first,5565,GCP / Vertex AI,0.1603
+sector,ai,AI labs & AI-first,5565,Go,0.1394
 sector,ai,AI labs & AI-first,5565,Azure (incl. Azure OpenAI),0.131
-sector,ai,AI labs & AI-first,5565,TypeScript,0.1402
-sector,ai,AI labs & AI-first,5565,Data pipelines / ETL,0.1267
-sector,ai,AI labs & AI-first,5565,JavaScript / Node.js,0.0956
+sector,ai,AI labs & AI-first,5565,LLM provider APIs (OpenAI / Anthropic / Gemini),0.26
 sector,ai,AI labs & AI-first,5565,REST / API design & integration,0.081
+sector,ai,AI labs & AI-first,5565,TypeScript,0.1402
+sector,ai,AI labs & AI-first,5565,JavaScript / Node.js,0.0956
+sector,ai,AI labs & AI-first,5565,Data pipelines / ETL,0.1267
 sector,ai,AI labs & AI-first,5565,Terraform / IaC,0.1057
-sector,ai,AI labs & AI-first,5565,LLM evaluation / eval harnesses,0.1901
 sector,ai,AI labs & AI-first,5565,React / Next.js,0.0913
 sector,ai,AI labs & AI-first,5565,PostgreSQL / relational DBs,0.0559
+sector,ai,AI labs & AI-first,5565,LLM evaluation / eval harnesses,0.1901
 sector,ai,AI labs & AI-first,5565,KYC / AML / fraud / risk,0.037
 sector,ai,AI labs & AI-first,5565,"AI coding tools (Claude Code, Cursor, Copilot)",0.1136
 sector,ai,AI labs & AI-first,5565,Spark / big data,0.1418
 sector,ai,AI labs & AI-first,5565,Guardrails / AI safety,0.1333
-sector,ai,AI labs & AI-first,5565,Statistics / maths,0.0598
-sector,ai,AI labs & AI-first,5565,Rust / Scala,0.1186
-sector,ai,AI labs & AI-first,5565,Kafka / message queues / streaming,0.0465
 sector,ai,AI labs & AI-first,5565,Pre-sales / solution architecture / PoCs,0.1305
+sector,ai,AI labs & AI-first,5565,Statistics / maths,0.0598
+sector,ai,AI labs & AI-first,5565,Kafka / message queues / streaming,0.0465
+sector,ai,AI labs & AI-first,5565,Rust / Scala,0.1186
 sector,ai,AI labs & AI-first,5565,"NoSQL (MongoDB, DynamoDB)",0.0279
-sector,ai,AI labs & AI-first,5565,Cost / latency optimization,0.0823
-sector,crypto,Crypto & Web3,815,Python,0.3804
-sector,crypto,Crypto & Web3,815,AWS,0.1975
-sector,crypto,Crypto & Web3,815,Cloud (unspecified),0.1767
-sector,crypto,Crypto & Web3,815,Microservices / distributed systems,0.2957
-sector,crypto,Crypto & Web3,815,LLMs / GenAI (general),0.2994
-sector,crypto,Crypto & Web3,815,AI agents / agentic workflows,0.2184
-sector,crypto,Crypto & Web3,815,Observability / tracing / monitoring,0.2675
-sector,crypto,Crypto & Web3,815,SQL,0.2748
-sector,crypto,Crypto & Web3,815,Java / Kotlin (Spring),0.2184
-sector,crypto,Crypto & Web3,815,C++ / C#,0.1313
-sector,crypto,Crypto & Web3,815,CI/CD,0.1963
-sector,crypto,Crypto & Web3,815,Machine learning fundamentals,0.1092
-sector,crypto,Crypto & Web3,815,Full-stack / frontend,0.1202
-sector,crypto,Crypto & Web3,815,Kubernetes,0.1791
-sector,crypto,Crypto & Web3,815,Financial services / banking domain,0.3497
-sector,crypto,Crypto & Web3,815,System design / architecture,0.135
-sector,crypto,Crypto & Web3,815,Docker / containers,0.1129
-sector,crypto,Crypto & Web3,815,Go,0.1877
-sector,crypto,Crypto & Web3,815,GCP / Vertex AI,0.1055
-sector,crypto,Crypto & Web3,815,Linux / shell,0.1399
-sector,crypto,Crypto & Web3,815,LLM provider APIs (OpenAI / Anthropic / Gemini),0.1546
-sector,crypto,Crypto & Web3,815,Azure (incl. Azure OpenAI),0.0528
-sector,crypto,Crypto & Web3,815,TypeScript,0.0969
-sector,crypto,Crypto & Web3,815,Data pipelines / ETL,0.1313
-sector,crypto,Crypto & Web3,815,JavaScript / Node.js,0.0822
-sector,crypto,Crypto & Web3,815,REST / API design & integration,0.162
-sector,crypto,Crypto & Web3,815,Terraform / IaC,0.1239
-sector,crypto,Crypto & Web3,815,LLM evaluation / eval harnesses,0.0933
-sector,crypto,Crypto & Web3,815,React / Next.js,0.1092
-sector,crypto,Crypto & Web3,815,PostgreSQL / relational DBs,0.1387
-sector,crypto,Crypto & Web3,815,KYC / AML / fraud / risk,0.1742
-sector,crypto,Crypto & Web3,815,"AI coding tools (Claude Code, Cursor, Copilot)",0.1325
-sector,crypto,Crypto & Web3,815,Spark / big data,0.0834
-sector,crypto,Crypto & Web3,815,Guardrails / AI safety,0.0748
-sector,crypto,Crypto & Web3,815,Statistics / maths,0.1153
-sector,crypto,Crypto & Web3,815,Rust / Scala,0.0847
-sector,crypto,Crypto & Web3,815,Kafka / message queues / streaming,0.146
-sector,crypto,Crypto & Web3,815,Pre-sales / solution architecture / PoCs,0.0282
-sector,crypto,Crypto & Web3,815,"NoSQL (MongoDB, DynamoDB)",0.0638
-sector,crypto,Crypto & Web3,815,Cost / latency optimization,0.1202
-sector,fintech,Fintech & finance,4951,Python,0.4779
-sector,fintech,Fintech & finance,4951,AWS,0.2573
-sector,fintech,Fintech & finance,4951,Cloud (unspecified),0.2585
-sector,fintech,Fintech & finance,4951,Microservices / distributed systems,0.2727
-sector,fintech,Fintech & finance,4951,LLMs / GenAI (general),0.1941
-sector,fintech,Fintech & finance,4951,AI agents / agentic workflows,0.1856
-sector,fintech,Fintech & finance,4951,Observability / tracing / monitoring,0.2852
-sector,fintech,Fintech & finance,4951,SQL,0.3355
-sector,fintech,Fintech & finance,4951,Java / Kotlin (Spring),0.2747
-sector,fintech,Fintech & finance,4951,C++ / C#,0.1323
-sector,fintech,Fintech & finance,4951,CI/CD,0.2644
-sector,fintech,Fintech & finance,4951,Machine learning fundamentals,0.1654
-sector,fintech,Fintech & finance,4951,Full-stack / frontend,0.2117
-sector,fintech,Fintech & finance,4951,Kubernetes,0.2062
-sector,fintech,Fintech & finance,4951,Financial services / banking domain,0.4603
-sector,fintech,Fintech & finance,4951,System design / architecture,0.1382
-sector,fintech,Fintech & finance,4951,Docker / containers,0.1919
-sector,fintech,Fintech & finance,4951,Go,0.1064
-sector,fintech,Fintech & finance,4951,GCP / Vertex AI,0.1341
-sector,fintech,Fintech & finance,4951,Linux / shell,0.1626
-sector,fintech,Fintech & finance,4951,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0796
-sector,fintech,Fintech & finance,4951,Azure (incl. Azure OpenAI),0.1501
-sector,fintech,Fintech & finance,4951,TypeScript,0.1014
-sector,fintech,Fintech & finance,4951,Data pipelines / ETL,0.1309
-sector,fintech,Fintech & finance,4951,JavaScript / Node.js,0.1196
-sector,fintech,Fintech & finance,4951,REST / API design & integration,0.1713
-sector,fintech,Fintech & finance,4951,Terraform / IaC,0.1345
-sector,fintech,Fintech & finance,4951,LLM evaluation / eval harnesses,0.0683
-sector,fintech,Fintech & finance,4951,React / Next.js,0.1408
-sector,fintech,Fintech & finance,4951,PostgreSQL / relational DBs,0.1721
-sector,fintech,Fintech & finance,4951,KYC / AML / fraud / risk,0.2565
-sector,fintech,Fintech & finance,4951,"AI coding tools (Claude Code, Cursor, Copilot)",0.1
-sector,fintech,Fintech & finance,4951,Spark / big data,0.0917
-sector,fintech,Fintech & finance,4951,Guardrails / AI safety,0.0832
-sector,fintech,Fintech & finance,4951,Statistics / maths,0.1464
-sector,fintech,Fintech & finance,4951,Rust / Scala,0.0652
-sector,fintech,Fintech & finance,4951,Kafka / message queues / streaming,0.1468
-sector,fintech,Fintech & finance,4951,Pre-sales / solution architecture / PoCs,0.0463
-sector,fintech,Fintech & finance,4951,"NoSQL (MongoDB, DynamoDB)",0.0911
-sector,fintech,Fintech & finance,4951,Cost / latency optimization,0.1006
+sector,ai,AI labs & AI-first,5565,Governance / compliance / audit,0.0823
+sector,crypto,Crypto & Web3,820,Python,0.378
+sector,crypto,Crypto & Web3,820,AWS,0.1963
+sector,crypto,Crypto & Web3,820,Cloud (unspecified),0.1756
+sector,crypto,Crypto & Web3,820,Microservices / distributed systems,0.2939
+sector,crypto,Crypto & Web3,820,LLMs / GenAI (general),0.2976
+sector,crypto,Crypto & Web3,820,AI agents / agentic workflows,0.2171
+sector,crypto,Crypto & Web3,820,Observability / tracing / monitoring,0.2659
+sector,crypto,Crypto & Web3,820,SQL,0.2744
+sector,crypto,Crypto & Web3,820,Java / Kotlin (Spring),0.2171
+sector,crypto,Crypto & Web3,820,C++ / C#,0.1305
+sector,crypto,Crypto & Web3,820,CI/CD,0.1963
+sector,crypto,Crypto & Web3,820,Machine learning fundamentals,0.1085
+sector,crypto,Crypto & Web3,820,Full-stack / frontend,0.1195
+sector,crypto,Crypto & Web3,820,Kubernetes,0.178
+sector,crypto,Crypto & Web3,820,Financial services / banking domain,0.3476
+sector,crypto,Crypto & Web3,820,System design / architecture,0.1354
+sector,crypto,Crypto & Web3,820,Docker / containers,0.1134
+sector,crypto,Crypto & Web3,820,Linux / shell,0.139
+sector,crypto,Crypto & Web3,820,GCP / Vertex AI,0.1049
+sector,crypto,Crypto & Web3,820,Go,0.1878
+sector,crypto,Crypto & Web3,820,Azure (incl. Azure OpenAI),0.0537
+sector,crypto,Crypto & Web3,820,LLM provider APIs (OpenAI / Anthropic / Gemini),0.1537
+sector,crypto,Crypto & Web3,820,REST / API design & integration,0.161
+sector,crypto,Crypto & Web3,820,TypeScript,0.0963
+sector,crypto,Crypto & Web3,820,JavaScript / Node.js,0.0829
+sector,crypto,Crypto & Web3,820,Data pipelines / ETL,0.1305
+sector,crypto,Crypto & Web3,820,Terraform / IaC,0.1232
+sector,crypto,Crypto & Web3,820,React / Next.js,0.1085
+sector,crypto,Crypto & Web3,820,PostgreSQL / relational DBs,0.1378
+sector,crypto,Crypto & Web3,820,LLM evaluation / eval harnesses,0.0927
+sector,crypto,Crypto & Web3,820,KYC / AML / fraud / risk,0.1732
+sector,crypto,Crypto & Web3,820,"AI coding tools (Claude Code, Cursor, Copilot)",0.1317
+sector,crypto,Crypto & Web3,820,Spark / big data,0.0829
+sector,crypto,Crypto & Web3,820,Guardrails / AI safety,0.0744
+sector,crypto,Crypto & Web3,820,Pre-sales / solution architecture / PoCs,0.0293
+sector,crypto,Crypto & Web3,820,Statistics / maths,0.1146
+sector,crypto,Crypto & Web3,820,Kafka / message queues / streaming,0.1451
+sector,crypto,Crypto & Web3,820,Rust / Scala,0.0854
+sector,crypto,Crypto & Web3,820,"NoSQL (MongoDB, DynamoDB)",0.0634
+sector,crypto,Crypto & Web3,820,Governance / compliance / audit,0.0878
+sector,fintech,Fintech & finance,5068,Python,0.4686
+sector,fintech,Fintech & finance,5068,AWS,0.2522
+sector,fintech,Fintech & finance,5068,Cloud (unspecified),0.2534
+sector,fintech,Fintech & finance,5068,Microservices / distributed systems,0.2674
+sector,fintech,Fintech & finance,5068,LLMs / GenAI (general),0.1918
+sector,fintech,Fintech & finance,5068,AI agents / agentic workflows,0.1817
+sector,fintech,Fintech & finance,5068,Observability / tracing / monitoring,0.2792
+sector,fintech,Fintech & finance,5068,SQL,0.3299
+sector,fintech,Fintech & finance,5068,Java / Kotlin (Spring),0.2735
+sector,fintech,Fintech & finance,5068,C++ / C#,0.1296
+sector,fintech,Fintech & finance,5068,CI/CD,0.2609
+sector,fintech,Fintech & finance,5068,Machine learning fundamentals,0.1616
+sector,fintech,Fintech & finance,5068,Full-stack / frontend,0.2101
+sector,fintech,Fintech & finance,5068,Kubernetes,0.2022
+sector,fintech,Fintech & finance,5068,Financial services / banking domain,0.4663
+sector,fintech,Fintech & finance,5068,System design / architecture,0.1352
+sector,fintech,Fintech & finance,5068,Docker / containers,0.189
+sector,fintech,Fintech & finance,5068,Linux / shell,0.1612
+sector,fintech,Fintech & finance,5068,GCP / Vertex AI,0.131
+sector,fintech,Fintech & finance,5068,Go,0.104
+sector,fintech,Fintech & finance,5068,Azure (incl. Azure OpenAI),0.1494
+sector,fintech,Fintech & finance,5068,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0781
+sector,fintech,Fintech & finance,5068,REST / API design & integration,0.1693
+sector,fintech,Fintech & finance,5068,TypeScript,0.0991
+sector,fintech,Fintech & finance,5068,JavaScript / Node.js,0.1184
+sector,fintech,Fintech & finance,5068,Data pipelines / ETL,0.1292
+sector,fintech,Fintech & finance,5068,Terraform / IaC,0.1328
+sector,fintech,Fintech & finance,5068,React / Next.js,0.1401
+sector,fintech,Fintech & finance,5068,PostgreSQL / relational DBs,0.1687
+sector,fintech,Fintech & finance,5068,LLM evaluation / eval harnesses,0.0667
+sector,fintech,Fintech & finance,5068,KYC / AML / fraud / risk,0.2534
+sector,fintech,Fintech & finance,5068,"AI coding tools (Claude Code, Cursor, Copilot)",0.0979
+sector,fintech,Fintech & finance,5068,Spark / big data,0.091
+sector,fintech,Fintech & finance,5068,Guardrails / AI safety,0.0823
+sector,fintech,Fintech & finance,5068,Pre-sales / solution architecture / PoCs,0.0464
+sector,fintech,Fintech & finance,5068,Statistics / maths,0.1431
+sector,fintech,Fintech & finance,5068,Kafka / message queues / streaming,0.1444
+sector,fintech,Fintech & finance,5068,Rust / Scala,0.0637
+sector,fintech,Fintech & finance,5068,"NoSQL (MongoDB, DynamoDB)",0.089
+sector,fintech,Fintech & finance,5068,Governance / compliance / audit,0.1103
 sector,tech,Other tech,9513,Python,0.4118
 sector,tech,Other tech,9513,AWS,0.3693
 sector,tech,Other tech,9513,Cloud (unspecified),0.3338
@@ -1536,66 +1536,66 @@ sector,tech,Other tech,9513,Kubernetes,0.1596
 sector,tech,Other tech,9513,Financial services / banking domain,0.0407
 sector,tech,Other tech,9513,System design / architecture,0.2156
 sector,tech,Other tech,9513,Docker / containers,0.1363
-sector,tech,Other tech,9513,Go,0.1824
-sector,tech,Other tech,9513,GCP / Vertex AI,0.1523
 sector,tech,Other tech,9513,Linux / shell,0.1431
-sector,tech,Other tech,9513,LLM provider APIs (OpenAI / Anthropic / Gemini),0.1014
+sector,tech,Other tech,9513,GCP / Vertex AI,0.1523
+sector,tech,Other tech,9513,Go,0.1824
 sector,tech,Other tech,9513,Azure (incl. Azure OpenAI),0.1389
-sector,tech,Other tech,9513,TypeScript,0.13
-sector,tech,Other tech,9513,Data pipelines / ETL,0.1071
-sector,tech,Other tech,9513,JavaScript / Node.js,0.1216
+sector,tech,Other tech,9513,LLM provider APIs (OpenAI / Anthropic / Gemini),0.1014
 sector,tech,Other tech,9513,REST / API design & integration,0.101
+sector,tech,Other tech,9513,TypeScript,0.13
+sector,tech,Other tech,9513,JavaScript / Node.js,0.1216
+sector,tech,Other tech,9513,Data pipelines / ETL,0.1071
 sector,tech,Other tech,9513,Terraform / IaC,0.1096
-sector,tech,Other tech,9513,LLM evaluation / eval harnesses,0.0982
 sector,tech,Other tech,9513,React / Next.js,0.1029
 sector,tech,Other tech,9513,PostgreSQL / relational DBs,0.095
+sector,tech,Other tech,9513,LLM evaluation / eval harnesses,0.0982
 sector,tech,Other tech,9513,KYC / AML / fraud / risk,0.0772
 sector,tech,Other tech,9513,"AI coding tools (Claude Code, Cursor, Copilot)",0.1075
 sector,tech,Other tech,9513,Spark / big data,0.0817
 sector,tech,Other tech,9513,Guardrails / AI safety,0.0942
-sector,tech,Other tech,9513,Statistics / maths,0.0853
-sector,tech,Other tech,9513,Rust / Scala,0.0978
-sector,tech,Other tech,9513,Kafka / message queues / streaming,0.0831
 sector,tech,Other tech,9513,Pre-sales / solution architecture / PoCs,0.0961
+sector,tech,Other tech,9513,Statistics / maths,0.0853
+sector,tech,Other tech,9513,Kafka / message queues / streaming,0.0831
+sector,tech,Other tech,9513,Rust / Scala,0.0978
 sector,tech,Other tech,9513,"NoSQL (MongoDB, DynamoDB)",0.11
-sector,tech,Other tech,9513,Cost / latency optimization,0.0725
-sector,other,Everything else,1807,Python,0.1909
-sector,other,Everything else,1807,AWS,0.1345
-sector,other,Everything else,1807,Cloud (unspecified),0.0913
-sector,other,Everything else,1807,Microservices / distributed systems,0.0587
-sector,other,Everything else,1807,LLMs / GenAI (general),0.0963
-sector,other,Everything else,1807,AI agents / agentic workflows,0.0869
-sector,other,Everything else,1807,Observability / tracing / monitoring,0.0415
-sector,other,Everything else,1807,SQL,0.2225
-sector,other,Everything else,1807,Java / Kotlin (Spring),0.2003
-sector,other,Everything else,1807,C++ / C#,0.1478
-sector,other,Everything else,1807,CI/CD,0.1013
-sector,other,Everything else,1807,Machine learning fundamentals,0.0991
-sector,other,Everything else,1807,Full-stack / frontend,0.1887
-sector,other,Everything else,1807,Kubernetes,0.078
-sector,other,Everything else,1807,Financial services / banking domain,0.0061
-sector,other,Everything else,1807,System design / architecture,0.0443
-sector,other,Everything else,1807,Docker / containers,0.1201
-sector,other,Everything else,1807,Go,0.0194
-sector,other,Everything else,1807,GCP / Vertex AI,0.057
-sector,other,Everything else,1807,Linux / shell,0.0647
-sector,other,Everything else,1807,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0227
-sector,other,Everything else,1807,Azure (incl. Azure OpenAI),0.0653
-sector,other,Everything else,1807,TypeScript,0.0697
-sector,other,Everything else,1807,Data pipelines / ETL,0.0946
-sector,other,Everything else,1807,JavaScript / Node.js,0.1638
-sector,other,Everything else,1807,REST / API design & integration,0.1378
-sector,other,Everything else,1807,Terraform / IaC,0.0504
-sector,other,Everything else,1807,LLM evaluation / eval harnesses,0.0382
-sector,other,Everything else,1807,React / Next.js,0.0985
-sector,other,Everything else,1807,PostgreSQL / relational DBs,0.1245
-sector,other,Everything else,1807,KYC / AML / fraud / risk,0.0238
-sector,other,Everything else,1807,"AI coding tools (Claude Code, Cursor, Copilot)",0.0138
-sector,other,Everything else,1807,Spark / big data,0.0609
-sector,other,Everything else,1807,Guardrails / AI safety,0.0194
-sector,other,Everything else,1807,Statistics / maths,0.0404
-sector,other,Everything else,1807,Rust / Scala,0.0111
-sector,other,Everything else,1807,Kafka / message queues / streaming,0.0421
-sector,other,Everything else,1807,Pre-sales / solution architecture / PoCs,0.036
-sector,other,Everything else,1807,"NoSQL (MongoDB, DynamoDB)",0.0542
-sector,other,Everything else,1807,Cost / latency optimization,0.0138
+sector,tech,Other tech,9513,Governance / compliance / audit,0.066
+sector,other,Everything else,3881,Python,0.1263
+sector,other,Everything else,3881,AWS,0.1208
+sector,other,Everything else,3881,Cloud (unspecified),0.1077
+sector,other,Everything else,3881,Microservices / distributed systems,0.0479
+sector,other,Everything else,3881,LLMs / GenAI (general),0.0636
+sector,other,Everything else,3881,AI agents / agentic workflows,0.0515
+sector,other,Everything else,3881,Observability / tracing / monitoring,0.0809
+sector,other,Everything else,3881,SQL,0.152
+sector,other,Everything else,3881,Java / Kotlin (Spring),0.1252
+sector,other,Everything else,3881,C++ / C#,0.0863
+sector,other,Everything else,3881,CI/CD,0.0892
+sector,other,Everything else,3881,Machine learning fundamentals,0.0572
+sector,other,Everything else,3881,Full-stack / frontend,0.1214
+sector,other,Everything else,3881,Kubernetes,0.0832
+sector,other,Everything else,3881,Financial services / banking domain,0.0057
+sector,other,Everything else,3881,System design / architecture,0.0322
+sector,other,Everything else,3881,Docker / containers,0.1015
+sector,other,Everything else,3881,Linux / shell,0.0977
+sector,other,Everything else,3881,GCP / Vertex AI,0.0549
+sector,other,Everything else,3881,Go,0.0139
+sector,other,Everything else,3881,Azure (incl. Azure OpenAI),0.0858
+sector,other,Everything else,3881,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0149
+sector,other,Everything else,3881,REST / API design & integration,0.093
+sector,other,Everything else,3881,TypeScript,0.0412
+sector,other,Everything else,3881,JavaScript / Node.js,0.1023
+sector,other,Everything else,3881,Data pipelines / ETL,0.0531
+sector,other,Everything else,3881,Terraform / IaC,0.0721
+sector,other,Everything else,3881,React / Next.js,0.0603
+sector,other,Everything else,3881,PostgreSQL / relational DBs,0.0812
+sector,other,Everything else,3881,LLM evaluation / eval harnesses,0.0237
+sector,other,Everything else,3881,KYC / AML / fraud / risk,0.032
+sector,other,Everything else,3881,"AI coding tools (Claude Code, Cursor, Copilot)",0.0113
+sector,other,Everything else,3881,Spark / big data,0.034
+sector,other,Everything else,3881,Guardrails / AI safety,0.016
+sector,other,Everything else,3881,Pre-sales / solution architecture / PoCs,0.0446
+sector,other,Everything else,3881,Statistics / maths,0.0247
+sector,other,Everything else,3881,Kafka / message queues / streaming,0.0294
+sector,other,Everything else,3881,Rust / Scala,0.0057
+sector,other,Everything else,3881,"NoSQL (MongoDB, DynamoDB)",0.0307
+sector,other,Everything else,3881,Governance / compliance / audit,0.026

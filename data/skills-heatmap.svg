@@ -1,305 +1,305 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="726" height="758" viewBox="0 0 726 758" role="img" aria-labelledby="t d">
 <title id="t">Skills heatmap: market demand vs my level</title>
-<desc id="d">Share of job postings asking for each skill, by role family, next to my self-rated level. Data as of 2026-11-18.</desc>
+<desc id="d">Share of job postings asking for each skill, by role family, next to my self-rated level. Data as of 2026-11-19.</desc>
 <style>:root{--bg:#F4F3EF;--ink:#14161B;--soft:#5C6068;--rule:#DDDAD2;--demand:31,79,216;--me:46,107,79}@media (prefers-color-scheme:dark){:root{--bg:#15171C;--ink:#E7E5DF;--soft:#A0A4AC;--rule:#2E323A;--demand:126,162,255;--me:111,193,152}}text{font:12px ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;fill:var(--ink)}.soft{fill:var(--soft)}.h{font-weight:600}.n{font-size:10px}.hi{fill:#fff}@media (prefers-color-scheme:dark){.hi{fill:#14161B}}</style>
 <rect width="726" height="758" rx="8" style="fill:var(--bg)"/>
 <text x="12" y="22" class="h">Skills demand vs my level</text>
-<text x="12" y="38" class="soft n">% of tech job postings asking for each skill · as of 2026-11-18</text>
+<text x="12" y="38" class="soft n">% of tech job postings asking for each skill · as of 2026-11-19</text>
 <text x="296.0" y="54" text-anchor="middle" class="h n">AI / ML</text>
 <text x="388.0" y="54" text-anchor="middle" class="h n">Forward dep.</text>
 <text x="480.0" y="54" text-anchor="middle" class="h n">Backend / Py</text>
 <text x="572.0" y="54" text-anchor="middle" class="h n">Data</text>
 <text x="664.0" y="54" text-anchor="middle" class="h n">Me</text>
 <text x="12" y="79"><title>Python</title>Python</text>
-<rect x="252" y="66" width="88" height="18" rx="3" style="fill:rgba(var(--demand),0.769)"/>
-<text x="296.0" y="79" text-anchor="middle" class="n hi">53%</text>
-<rect x="344" y="66" width="88" height="18" rx="3" style="fill:rgba(var(--demand),0.591)"/>
-<text x="388.0" y="79" text-anchor="middle" class="n hi">40%</text>
-<rect x="436" y="66" width="88" height="18" rx="3" style="fill:rgba(var(--demand),0.566)"/>
-<text x="480.0" y="79" text-anchor="middle" class="n">38%</text>
-<rect x="528" y="66" width="88" height="18" rx="3" style="fill:rgba(var(--demand),0.921)"/>
-<text x="572.0" y="79" text-anchor="middle" class="n hi">65%</text>
+<rect x="252" y="66" width="88" height="18" rx="3" style="fill:rgba(var(--demand),0.77)"/>
+<text x="296.0" y="79" text-anchor="middle" class="n hi">52%</text>
+<rect x="344" y="66" width="88" height="18" rx="3" style="fill:rgba(var(--demand),0.582)"/>
+<text x="388.0" y="79" text-anchor="middle" class="n">38%</text>
+<rect x="436" y="66" width="88" height="18" rx="3" style="fill:rgba(var(--demand),0.565)"/>
+<text x="480.0" y="79" text-anchor="middle" class="n">36%</text>
+<rect x="528" y="66" width="88" height="18" rx="3" style="fill:rgba(var(--demand),0.913)"/>
+<text x="572.0" y="79" text-anchor="middle" class="n hi">63%</text>
 <rect x="620" y="66" width="88" height="18" rx="3" style="fill:rgba(var(--me),1.0)"/>
 <text x="664.0" y="79" text-anchor="middle" class="n hi">Expert</text>
 <text x="12" y="101"><title>LLMs / GenAI (general)</title>LLMs / GenAI (general)</text>
-<rect x="252" y="88" width="88" height="18" rx="3" style="fill:rgba(var(--demand),0.788)"/>
-<text x="296.0" y="101" text-anchor="middle" class="n hi">55%</text>
-<rect x="344" y="88" width="88" height="18" rx="3" style="fill:rgba(var(--demand),0.451)"/>
-<text x="388.0" y="101" text-anchor="middle" class="n">29%</text>
-<rect x="436" y="88" width="88" height="18" rx="3" style="fill:rgba(var(--demand),0.292)"/>
+<rect x="252" y="88" width="88" height="18" rx="3" style="fill:rgba(var(--demand),0.795)"/>
+<text x="296.0" y="101" text-anchor="middle" class="n hi">54%</text>
+<rect x="344" y="88" width="88" height="18" rx="3" style="fill:rgba(var(--demand),0.444)"/>
+<text x="388.0" y="101" text-anchor="middle" class="n">27%</text>
+<rect x="436" y="88" width="88" height="18" rx="3" style="fill:rgba(var(--demand),0.291)"/>
 <text x="480.0" y="101" text-anchor="middle" class="n">16%</text>
-<rect x="528" y="88" width="88" height="18" rx="3" style="fill:rgba(var(--demand),0.32)"/>
-<text x="572.0" y="101" text-anchor="middle" class="n">19%</text>
+<rect x="528" y="88" width="88" height="18" rx="3" style="fill:rgba(var(--demand),0.323)"/>
+<text x="572.0" y="101" text-anchor="middle" class="n">18%</text>
 <rect x="620" y="88" width="88" height="18" rx="3" style="fill:rgba(var(--me),1.0)"/>
 <text x="664.0" y="101" text-anchor="middle" class="n hi">Expert</text>
 <text x="12" y="123"><title>AI agents / agentic workflows</title>AI agents / agentic workflows</text>
-<rect x="252" y="110" width="88" height="18" rx="3" style="fill:rgba(var(--demand),0.658)"/>
-<text x="296.0" y="123" text-anchor="middle" class="n hi">45%</text>
-<rect x="344" y="110" width="88" height="18" rx="3" style="fill:rgba(var(--demand),0.459)"/>
-<text x="388.0" y="123" text-anchor="middle" class="n">29%</text>
-<rect x="436" y="110" width="88" height="18" rx="3" style="fill:rgba(var(--demand),0.356)"/>
+<rect x="252" y="110" width="88" height="18" rx="3" style="fill:rgba(var(--demand),0.66)"/>
+<text x="296.0" y="123" text-anchor="middle" class="n hi">44%</text>
+<rect x="344" y="110" width="88" height="18" rx="3" style="fill:rgba(var(--demand),0.453)"/>
+<text x="388.0" y="123" text-anchor="middle" class="n">28%</text>
+<rect x="436" y="110" width="88" height="18" rx="3" style="fill:rgba(var(--demand),0.354)"/>
 <text x="480.0" y="123" text-anchor="middle" class="n">21%</text>
-<rect x="528" y="110" width="88" height="18" rx="3" style="fill:rgba(var(--demand),0.284)"/>
-<text x="572.0" y="123" text-anchor="middle" class="n">16%</text>
+<rect x="528" y="110" width="88" height="18" rx="3" style="fill:rgba(var(--demand),0.281)"/>
+<text x="572.0" y="123" text-anchor="middle" class="n">15%</text>
 <rect x="620" y="110" width="88" height="18" rx="3" style="fill:rgba(var(--me),0.83)"/>
 <text x="664.0" y="123" text-anchor="middle" class="n hi">Strong</text>
 <text x="12" y="145"><title>Microservices / distributed systems</title>Microservices / distributed sy…</text>
-<rect x="252" y="132" width="88" height="18" rx="3" style="fill:rgba(var(--demand),0.314)"/>
-<text x="296.0" y="145" text-anchor="middle" class="n">18%</text>
-<rect x="344" y="132" width="88" height="18" rx="3" style="fill:rgba(var(--demand),0.255)"/>
-<text x="388.0" y="145" text-anchor="middle" class="n">14%</text>
+<rect x="252" y="132" width="88" height="18" rx="3" style="fill:rgba(var(--demand),0.312)"/>
+<text x="296.0" y="145" text-anchor="middle" class="n">17%</text>
+<rect x="344" y="132" width="88" height="18" rx="3" style="fill:rgba(var(--demand),0.256)"/>
+<text x="388.0" y="145" text-anchor="middle" class="n">13%</text>
 <rect x="436" y="132" width="88" height="18" rx="3" style="fill:rgba(var(--demand),0.609)"/>
-<text x="480.0" y="145" text-anchor="middle" class="n hi">41%</text>
-<rect x="528" y="132" width="88" height="18" rx="3" style="fill:rgba(var(--demand),0.288)"/>
+<text x="480.0" y="145" text-anchor="middle" class="n hi">40%</text>
+<rect x="528" y="132" width="88" height="18" rx="3" style="fill:rgba(var(--demand),0.287)"/>
 <text x="572.0" y="145" text-anchor="middle" class="n">16%</text>
 <rect x="620" y="132" width="88" height="18" rx="3" style="fill:rgba(var(--me),0.66)"/>
 <text x="664.0" y="145" text-anchor="middle" class="n">Comfortable</text>
 <text x="12" y="167"><title>AWS</title>AWS</text>
-<rect x="252" y="154" width="88" height="18" rx="3" style="fill:rgba(var(--demand),0.336)"/>
-<text x="296.0" y="167" text-anchor="middle" class="n">20%</text>
+<rect x="252" y="154" width="88" height="18" rx="3" style="fill:rgba(var(--demand),0.335)"/>
+<text x="296.0" y="167" text-anchor="middle" class="n">19%</text>
 <rect x="344" y="154" width="88" height="18" rx="3" style="fill:rgba(var(--demand),0.556)"/>
-<text x="388.0" y="167" text-anchor="middle" class="n">37%</text>
-<rect x="436" y="154" width="88" height="18" rx="3" style="fill:rgba(var(--demand),0.433)"/>
+<text x="388.0" y="167" text-anchor="middle" class="n">36%</text>
+<rect x="436" y="154" width="88" height="18" rx="3" style="fill:rgba(var(--demand),0.434)"/>
 <text x="480.0" y="167" text-anchor="middle" class="n">27%</text>
-<rect x="528" y="154" width="88" height="18" rx="3" style="fill:rgba(var(--demand),0.512)"/>
-<text x="572.0" y="167" text-anchor="middle" class="n">33%</text>
+<rect x="528" y="154" width="88" height="18" rx="3" style="fill:rgba(var(--demand),0.511)"/>
+<text x="572.0" y="167" text-anchor="middle" class="n">32%</text>
 <rect x="620" y="154" width="88" height="18" rx="3" style="fill:rgba(var(--me),0.03)"/>
 <text x="664.0" y="167" text-anchor="middle" class="n">—</text>
 <text x="12" y="189"><title>Cloud (unspecified)</title>Cloud (unspecified)</text>
-<rect x="252" y="176" width="88" height="18" rx="3" style="fill:rgba(var(--demand),0.341)"/>
+<rect x="252" y="176" width="88" height="18" rx="3" style="fill:rgba(var(--demand),0.342)"/>
 <text x="296.0" y="189" text-anchor="middle" class="n">20%</text>
-<rect x="344" y="176" width="88" height="18" rx="3" style="fill:rgba(var(--demand),0.567)"/>
-<text x="388.0" y="189" text-anchor="middle" class="n">38%</text>
-<rect x="436" y="176" width="88" height="18" rx="3" style="fill:rgba(var(--demand),0.412)"/>
-<text x="480.0" y="189" text-anchor="middle" class="n">26%</text>
-<rect x="528" y="176" width="88" height="18" rx="3" style="fill:rgba(var(--demand),0.395)"/>
-<text x="572.0" y="189" text-anchor="middle" class="n">24%</text>
+<rect x="344" y="176" width="88" height="18" rx="3" style="fill:rgba(var(--demand),0.569)"/>
+<text x="388.0" y="189" text-anchor="middle" class="n">37%</text>
+<rect x="436" y="176" width="88" height="18" rx="3" style="fill:rgba(var(--demand),0.413)"/>
+<text x="480.0" y="189" text-anchor="middle" class="n">25%</text>
+<rect x="528" y="176" width="88" height="18" rx="3" style="fill:rgba(var(--demand),0.39)"/>
+<text x="572.0" y="189" text-anchor="middle" class="n">23%</text>
 <rect x="620" y="176" width="88" height="18" rx="3" style="fill:rgba(var(--me),0.03)"/>
 <text x="664.0" y="189" text-anchor="middle" class="n">—</text>
 <text x="12" y="211"><title>SQL</title>SQL</text>
-<rect x="252" y="198" width="88" height="18" rx="3" style="fill:rgba(var(--demand),0.366)"/>
-<text x="296.0" y="211" text-anchor="middle" class="n">22%</text>
-<rect x="344" y="198" width="88" height="18" rx="3" style="fill:rgba(var(--demand),0.341)"/>
+<rect x="252" y="198" width="88" height="18" rx="3" style="fill:rgba(var(--demand),0.364)"/>
+<text x="296.0" y="211" text-anchor="middle" class="n">21%</text>
+<rect x="344" y="198" width="88" height="18" rx="3" style="fill:rgba(var(--demand),0.34)"/>
 <text x="388.0" y="211" text-anchor="middle" class="n">20%</text>
-<rect x="436" y="198" width="88" height="18" rx="3" style="fill:rgba(var(--demand),0.473)"/>
+<rect x="436" y="198" width="88" height="18" rx="3" style="fill:rgba(var(--demand),0.484)"/>
 <text x="480.0" y="211" text-anchor="middle" class="n">30%</text>
 <rect x="528" y="198" width="88" height="18" rx="3" style="fill:rgba(var(--demand),1.0)"/>
-<text x="572.0" y="211" text-anchor="middle" class="n hi">71%</text>
+<text x="572.0" y="211" text-anchor="middle" class="n hi">69%</text>
 <rect x="620" y="198" width="88" height="18" rx="3" style="fill:rgba(var(--me),0.66)"/>
 <text x="664.0" y="211" text-anchor="middle" class="n">Comfortable</text>
 <text x="12" y="233"><title>Observability / tracing / monitoring</title>Observability / tracing / moni…</text>
-<rect x="252" y="220" width="88" height="18" rx="3" style="fill:rgba(var(--demand),0.357)"/>
+<rect x="252" y="220" width="88" height="18" rx="3" style="fill:rgba(var(--demand),0.355)"/>
 <text x="296.0" y="233" text-anchor="middle" class="n">21%</text>
-<rect x="344" y="220" width="88" height="18" rx="3" style="fill:rgba(var(--demand),0.271)"/>
-<text x="388.0" y="233" text-anchor="middle" class="n">15%</text>
-<rect x="436" y="220" width="88" height="18" rx="3" style="fill:rgba(var(--demand),0.47)"/>
-<text x="480.0" y="233" text-anchor="middle" class="n">30%</text>
-<rect x="528" y="220" width="88" height="18" rx="3" style="fill:rgba(var(--demand),0.382)"/>
-<text x="572.0" y="233" text-anchor="middle" class="n">23%</text>
+<rect x="344" y="220" width="88" height="18" rx="3" style="fill:rgba(var(--demand),0.269)"/>
+<text x="388.0" y="233" text-anchor="middle" class="n">14%</text>
+<rect x="436" y="220" width="88" height="18" rx="3" style="fill:rgba(var(--demand),0.468)"/>
+<text x="480.0" y="233" text-anchor="middle" class="n">29%</text>
+<rect x="528" y="220" width="88" height="18" rx="3" style="fill:rgba(var(--demand),0.378)"/>
+<text x="572.0" y="233" text-anchor="middle" class="n">22%</text>
 <rect x="620" y="220" width="88" height="18" rx="3" style="fill:rgba(var(--me),0.66)"/>
 <text x="664.0" y="233" text-anchor="middle" class="n">Comfortable</text>
-<text x="12" y="255"><title>Machine learning fundamentals</title>Machine learning fundamentals</text>
-<rect x="252" y="242" width="88" height="18" rx="3" style="fill:rgba(var(--demand),0.667)"/>
-<text x="296.0" y="255" text-anchor="middle" class="n hi">45%</text>
-<rect x="344" y="242" width="88" height="18" rx="3" style="fill:rgba(var(--demand),0.216)"/>
-<text x="388.0" y="255" text-anchor="middle" class="n">11%</text>
-<rect x="436" y="242" width="88" height="18" rx="3" style="fill:rgba(var(--demand),0.227)"/>
-<text x="480.0" y="255" text-anchor="middle" class="n">11%</text>
-<rect x="528" y="242" width="88" height="18" rx="3" style="fill:rgba(var(--demand),0.386)"/>
-<text x="572.0" y="255" text-anchor="middle" class="n">24%</text>
-<rect x="620" y="242" width="88" height="18" rx="3" style="fill:rgba(var(--me),0.66)"/>
-<text x="664.0" y="255" text-anchor="middle" class="n">Comfortable</text>
-<text x="12" y="277"><title>Java / Kotlin (Spring)</title>Java / Kotlin (Spring)</text>
-<rect x="252" y="264" width="88" height="18" rx="3" style="fill:rgba(var(--demand),0.274)"/>
-<text x="296.0" y="277" text-anchor="middle" class="n">15%</text>
-<rect x="344" y="264" width="88" height="18" rx="3" style="fill:rgba(var(--demand),0.237)"/>
-<text x="388.0" y="277" text-anchor="middle" class="n">12%</text>
-<rect x="436" y="264" width="88" height="18" rx="3" style="fill:rgba(var(--demand),0.522)"/>
-<text x="480.0" y="277" text-anchor="middle" class="n">34%</text>
-<rect x="528" y="264" width="88" height="18" rx="3" style="fill:rgba(var(--demand),0.304)"/>
-<text x="572.0" y="277" text-anchor="middle" class="n">17%</text>
-<rect x="620" y="264" width="88" height="18" rx="3" style="fill:rgba(var(--me),0.03)"/>
-<text x="664.0" y="277" text-anchor="middle" class="n">—</text>
+<text x="12" y="255"><title>Java / Kotlin (Spring)</title>Java / Kotlin (Spring)</text>
+<rect x="252" y="242" width="88" height="18" rx="3" style="fill:rgba(var(--demand),0.274)"/>
+<text x="296.0" y="255" text-anchor="middle" class="n">15%</text>
+<rect x="344" y="242" width="88" height="18" rx="3" style="fill:rgba(var(--demand),0.241)"/>
+<text x="388.0" y="255" text-anchor="middle" class="n">12%</text>
+<rect x="436" y="242" width="88" height="18" rx="3" style="fill:rgba(var(--demand),0.533)"/>
+<text x="480.0" y="255" text-anchor="middle" class="n">34%</text>
+<rect x="528" y="242" width="88" height="18" rx="3" style="fill:rgba(var(--demand),0.301)"/>
+<text x="572.0" y="255" text-anchor="middle" class="n">17%</text>
+<rect x="620" y="242" width="88" height="18" rx="3" style="fill:rgba(var(--me),0.03)"/>
+<text x="664.0" y="255" text-anchor="middle" class="n">—</text>
+<text x="12" y="277"><title>Machine learning fundamentals</title>Machine learning fundamentals</text>
+<rect x="252" y="264" width="88" height="18" rx="3" style="fill:rgba(var(--demand),0.668)"/>
+<text x="296.0" y="277" text-anchor="middle" class="n hi">44%</text>
+<rect x="344" y="264" width="88" height="18" rx="3" style="fill:rgba(var(--demand),0.214)"/>
+<text x="388.0" y="277" text-anchor="middle" class="n">10%</text>
+<rect x="436" y="264" width="88" height="18" rx="3" style="fill:rgba(var(--demand),0.226)"/>
+<text x="480.0" y="277" text-anchor="middle" class="n">11%</text>
+<rect x="528" y="264" width="88" height="18" rx="3" style="fill:rgba(var(--demand),0.386)"/>
+<text x="572.0" y="277" text-anchor="middle" class="n">23%</text>
+<rect x="620" y="264" width="88" height="18" rx="3" style="fill:rgba(var(--me),0.66)"/>
+<text x="664.0" y="277" text-anchor="middle" class="n">Comfortable</text>
 <text x="12" y="299"><title>Full-stack / frontend</title>Full-stack / frontend</text>
-<rect x="252" y="286" width="88" height="18" rx="3" style="fill:rgba(var(--demand),0.246)"/>
+<rect x="252" y="286" width="88" height="18" rx="3" style="fill:rgba(var(--demand),0.25)"/>
 <text x="296.0" y="299" text-anchor="middle" class="n">13%</text>
-<rect x="344" y="286" width="88" height="18" rx="3" style="fill:rgba(var(--demand),0.212)"/>
+<rect x="344" y="286" width="88" height="18" rx="3" style="fill:rgba(var(--demand),0.21)"/>
 <text x="388.0" y="299" text-anchor="middle" class="n">10%</text>
-<rect x="436" y="286" width="88" height="18" rx="3" style="fill:rgba(var(--demand),0.506)"/>
+<rect x="436" y="286" width="88" height="18" rx="3" style="fill:rgba(var(--demand),0.518)"/>
 <text x="480.0" y="299" text-anchor="middle" class="n">33%</text>
-<rect x="528" y="286" width="88" height="18" rx="3" style="fill:rgba(var(--demand),0.198)"/>
+<rect x="528" y="286" width="88" height="18" rx="3" style="fill:rgba(var(--demand),0.196)"/>
 <text x="572.0" y="299" text-anchor="middle" class="n">9%</text>
 <rect x="620" y="286" width="88" height="18" rx="3" style="fill:rgba(var(--me),0.03)"/>
 <text x="664.0" y="299" text-anchor="middle" class="n">—</text>
 <text x="12" y="321"><title>C++ / C#</title>C++ / C#</text>
-<rect x="252" y="308" width="88" height="18" rx="3" style="fill:rgba(var(--demand),0.285)"/>
-<text x="296.0" y="321" text-anchor="middle" class="n">16%</text>
+<rect x="252" y="308" width="88" height="18" rx="3" style="fill:rgba(var(--demand),0.283)"/>
+<text x="296.0" y="321" text-anchor="middle" class="n">15%</text>
 <rect x="344" y="308" width="88" height="18" rx="3" style="fill:rgba(var(--demand),0.169)"/>
 <text x="388.0" y="321" text-anchor="middle" class="n">7%</text>
-<rect x="436" y="308" width="88" height="18" rx="3" style="fill:rgba(var(--demand),0.435)"/>
+<rect x="436" y="308" width="88" height="18" rx="3" style="fill:rgba(var(--demand),0.439)"/>
 <text x="480.0" y="321" text-anchor="middle" class="n">27%</text>
-<rect x="528" y="308" width="88" height="18" rx="3" style="fill:rgba(var(--demand),0.133)"/>
+<rect x="528" y="308" width="88" height="18" rx="3" style="fill:rgba(var(--demand),0.132)"/>
 <text x="572.0" y="321" text-anchor="middle" class="n">4%</text>
 <rect x="620" y="308" width="88" height="18" rx="3" style="fill:rgba(var(--me),0.03)"/>
 <text x="664.0" y="321" text-anchor="middle" class="n">—</text>
 <text x="12" y="343"><title>Kubernetes</title>Kubernetes</text>
-<rect x="252" y="330" width="88" height="18" rx="3" style="fill:rgba(var(--demand),0.233)"/>
+<rect x="252" y="330" width="88" height="18" rx="3" style="fill:rgba(var(--demand),0.234)"/>
 <text x="296.0" y="343" text-anchor="middle" class="n">12%</text>
-<rect x="344" y="330" width="88" height="18" rx="3" style="fill:rgba(var(--demand),0.223)"/>
+<rect x="344" y="330" width="88" height="18" rx="3" style="fill:rgba(var(--demand),0.224)"/>
 <text x="388.0" y="343" text-anchor="middle" class="n">11%</text>
-<rect x="436" y="330" width="88" height="18" rx="3" style="fill:rgba(var(--demand),0.395)"/>
+<rect x="436" y="330" width="88" height="18" rx="3" style="fill:rgba(var(--demand),0.398)"/>
 <text x="480.0" y="343" text-anchor="middle" class="n">24%</text>
-<rect x="528" y="330" width="88" height="18" rx="3" style="fill:rgba(var(--demand),0.221)"/>
-<text x="572.0" y="343" text-anchor="middle" class="n">11%</text>
+<rect x="528" y="330" width="88" height="18" rx="3" style="fill:rgba(var(--demand),0.219)"/>
+<text x="572.0" y="343" text-anchor="middle" class="n">10%</text>
 <rect x="620" y="330" width="88" height="18" rx="3" style="fill:rgba(var(--me),0.03)"/>
 <text x="664.0" y="343" text-anchor="middle" class="n">—</text>
 <text x="12" y="365"><title>CI/CD</title>CI/CD</text>
-<rect x="252" y="352" width="88" height="18" rx="3" style="fill:rgba(var(--demand),0.24)"/>
+<rect x="252" y="352" width="88" height="18" rx="3" style="fill:rgba(var(--demand),0.242)"/>
 <text x="296.0" y="365" text-anchor="middle" class="n">12%</text>
 <rect x="344" y="352" width="88" height="18" rx="3" style="fill:rgba(var(--demand),0.231)"/>
-<text x="388.0" y="365" text-anchor="middle" class="n">12%</text>
-<rect x="436" y="352" width="88" height="18" rx="3" style="fill:rgba(var(--demand),0.382)"/>
+<text x="388.0" y="365" text-anchor="middle" class="n">11%</text>
+<rect x="436" y="352" width="88" height="18" rx="3" style="fill:rgba(var(--demand),0.384)"/>
 <text x="480.0" y="365" text-anchor="middle" class="n">23%</text>
-<rect x="528" y="352" width="88" height="18" rx="3" style="fill:rgba(var(--demand),0.327)"/>
-<text x="572.0" y="365" text-anchor="middle" class="n">19%</text>
+<rect x="528" y="352" width="88" height="18" rx="3" style="fill:rgba(var(--demand),0.326)"/>
+<text x="572.0" y="365" text-anchor="middle" class="n">18%</text>
 <rect x="620" y="352" width="88" height="18" rx="3" style="fill:rgba(var(--me),0.66)"/>
 <text x="664.0" y="365" text-anchor="middle" class="n">Comfortable</text>
 <text x="12" y="387"><title>Financial services / banking domain</title>Financial services / banking d…</text>
-<rect x="252" y="374" width="88" height="18" rx="3" style="fill:rgba(var(--demand),0.29)"/>
+<rect x="252" y="374" width="88" height="18" rx="3" style="fill:rgba(var(--demand),0.293)"/>
 <text x="296.0" y="387" text-anchor="middle" class="n">16%</text>
-<rect x="344" y="374" width="88" height="18" rx="3" style="fill:rgba(var(--demand),0.284)"/>
-<text x="388.0" y="387" text-anchor="middle" class="n">16%</text>
-<rect x="436" y="374" width="88" height="18" rx="3" style="fill:rgba(var(--demand),0.29)"/>
+<rect x="344" y="374" width="88" height="18" rx="3" style="fill:rgba(var(--demand),0.286)"/>
+<text x="388.0" y="387" text-anchor="middle" class="n">15%</text>
+<rect x="436" y="374" width="88" height="18" rx="3" style="fill:rgba(var(--demand),0.291)"/>
 <text x="480.0" y="387" text-anchor="middle" class="n">16%</text>
-<rect x="528" y="374" width="88" height="18" rx="3" style="fill:rgba(var(--demand),0.39)"/>
-<text x="572.0" y="387" text-anchor="middle" class="n">24%</text>
+<rect x="528" y="374" width="88" height="18" rx="3" style="fill:rgba(var(--demand),0.389)"/>
+<text x="572.0" y="387" text-anchor="middle" class="n">23%</text>
 <rect x="620" y="374" width="88" height="18" rx="3" style="fill:rgba(var(--me),0.03)"/>
 <text x="664.0" y="387" text-anchor="middle" class="n">—</text>
 <text x="12" y="409"><title>LLM provider APIs (OpenAI / Anthropic / Gemini)</title>LLM provider APIs (OpenAI / An…</text>
 <rect x="252" y="396" width="88" height="18" rx="3" style="fill:rgba(var(--demand),0.362)"/>
-<text x="296.0" y="409" text-anchor="middle" class="n">22%</text>
-<rect x="344" y="396" width="88" height="18" rx="3" style="fill:rgba(var(--demand),0.239)"/>
+<text x="296.0" y="409" text-anchor="middle" class="n">21%</text>
+<rect x="344" y="396" width="88" height="18" rx="3" style="fill:rgba(var(--demand),0.236)"/>
 <text x="388.0" y="409" text-anchor="middle" class="n">12%</text>
-<rect x="436" y="396" width="88" height="18" rx="3" style="fill:rgba(var(--demand),0.245)"/>
-<text x="480.0" y="409" text-anchor="middle" class="n">13%</text>
+<rect x="436" y="396" width="88" height="18" rx="3" style="fill:rgba(var(--demand),0.244)"/>
+<text x="480.0" y="409" text-anchor="middle" class="n">12%</text>
 <rect x="528" y="396" width="88" height="18" rx="3" style="fill:rgba(var(--demand),0.199)"/>
 <text x="572.0" y="409" text-anchor="middle" class="n">9%</text>
 <rect x="620" y="396" width="88" height="18" rx="3" style="fill:rgba(var(--me),0.83)"/>
 <text x="664.0" y="409" text-anchor="middle" class="n hi">Strong</text>
 <text x="12" y="431"><title>LLM evaluation / eval harnesses</title>LLM evaluation / eval harnesses</text>
-<rect x="252" y="418" width="88" height="18" rx="3" style="fill:rgba(var(--demand),0.437)"/>
-<text x="296.0" y="431" text-anchor="middle" class="n">28%</text>
-<rect x="344" y="418" width="88" height="18" rx="3" style="fill:rgba(var(--demand),0.203)"/>
-<text x="388.0" y="431" text-anchor="middle" class="n">10%</text>
+<rect x="252" y="418" width="88" height="18" rx="3" style="fill:rgba(var(--demand),0.438)"/>
+<text x="296.0" y="431" text-anchor="middle" class="n">27%</text>
+<rect x="344" y="418" width="88" height="18" rx="3" style="fill:rgba(var(--demand),0.201)"/>
+<text x="388.0" y="431" text-anchor="middle" class="n">9%</text>
 <rect x="436" y="418" width="88" height="18" rx="3" style="fill:rgba(var(--demand),0.191)"/>
-<text x="480.0" y="431" text-anchor="middle" class="n">9%</text>
-<rect x="528" y="418" width="88" height="18" rx="3" style="fill:rgba(var(--demand),0.163)"/>
+<text x="480.0" y="431" text-anchor="middle" class="n">8%</text>
+<rect x="528" y="418" width="88" height="18" rx="3" style="fill:rgba(var(--demand),0.162)"/>
 <text x="572.0" y="431" text-anchor="middle" class="n">6%</text>
 <rect x="620" y="418" width="88" height="18" rx="3" style="fill:rgba(var(--me),0.83)"/>
 <text x="664.0" y="431" text-anchor="middle" class="n hi">Strong</text>
 <text x="12" y="453"><title>Docker / containers</title>Docker / containers</text>
-<rect x="252" y="440" width="88" height="18" rx="3" style="fill:rgba(var(--demand),0.23)"/>
+<rect x="252" y="440" width="88" height="18" rx="3" style="fill:rgba(var(--demand),0.233)"/>
 <text x="296.0" y="453" text-anchor="middle" class="n">12%</text>
-<rect x="344" y="440" width="88" height="18" rx="3" style="fill:rgba(var(--demand),0.217)"/>
-<text x="388.0" y="453" text-anchor="middle" class="n">11%</text>
-<rect x="436" y="440" width="88" height="18" rx="3" style="fill:rgba(var(--demand),0.346)"/>
-<text x="480.0" y="453" text-anchor="middle" class="n">21%</text>
-<rect x="528" y="440" width="88" height="18" rx="3" style="fill:rgba(var(--demand),0.21)"/>
+<rect x="344" y="440" width="88" height="18" rx="3" style="fill:rgba(var(--demand),0.215)"/>
+<text x="388.0" y="453" text-anchor="middle" class="n">10%</text>
+<rect x="436" y="440" width="88" height="18" rx="3" style="fill:rgba(var(--demand),0.348)"/>
+<text x="480.0" y="453" text-anchor="middle" class="n">20%</text>
+<rect x="528" y="440" width="88" height="18" rx="3" style="fill:rgba(var(--demand),0.208)"/>
 <text x="572.0" y="453" text-anchor="middle" class="n">10%</text>
 <rect x="620" y="440" width="88" height="18" rx="3" style="fill:rgba(var(--me),0.83)"/>
 <text x="664.0" y="453" text-anchor="middle" class="n hi">Strong</text>
-<text x="12" y="475"><title>GCP / Vertex AI</title>GCP / Vertex AI</text>
-<rect x="252" y="462" width="88" height="18" rx="3" style="fill:rgba(var(--demand),0.242)"/>
-<text x="296.0" y="475" text-anchor="middle" class="n">13%</text>
-<rect x="344" y="462" width="88" height="18" rx="3" style="fill:rgba(var(--demand),0.357)"/>
-<text x="388.0" y="475" text-anchor="middle" class="n">21%</text>
-<rect x="436" y="462" width="88" height="18" rx="3" style="fill:rgba(var(--demand),0.261)"/>
-<text x="480.0" y="475" text-anchor="middle" class="n">14%</text>
-<rect x="528" y="462" width="88" height="18" rx="3" style="fill:rgba(var(--demand),0.334)"/>
-<text x="572.0" y="475" text-anchor="middle" class="n">20%</text>
+<text x="12" y="475"><title>JavaScript / Node.js</title>JavaScript / Node.js</text>
+<rect x="252" y="462" width="88" height="18" rx="3" style="fill:rgba(var(--demand),0.168)"/>
+<text x="296.0" y="475" text-anchor="middle" class="n">7%</text>
+<rect x="344" y="462" width="88" height="18" rx="3" style="fill:rgba(var(--demand),0.297)"/>
+<text x="388.0" y="475" text-anchor="middle" class="n">16%</text>
+<rect x="436" y="462" width="88" height="18" rx="3" style="fill:rgba(var(--demand),0.356)"/>
+<text x="480.0" y="475" text-anchor="middle" class="n">21%</text>
+<rect x="528" y="462" width="88" height="18" rx="3" style="fill:rgba(var(--demand),0.114)"/>
+<text x="572.0" y="475" text-anchor="middle" class="n">3%</text>
 <rect x="620" y="462" width="88" height="18" rx="3" style="fill:rgba(var(--me),0.03)"/>
 <text x="664.0" y="475" text-anchor="middle" class="n">—</text>
-<text x="12" y="497"><title>JavaScript / Node.js</title>JavaScript / Node.js</text>
-<rect x="252" y="484" width="88" height="18" rx="3" style="fill:rgba(var(--demand),0.167)"/>
-<text x="296.0" y="497" text-anchor="middle" class="n">7%</text>
-<rect x="344" y="484" width="88" height="18" rx="3" style="fill:rgba(var(--demand),0.3)"/>
-<text x="388.0" y="497" text-anchor="middle" class="n">17%</text>
-<rect x="436" y="484" width="88" height="18" rx="3" style="fill:rgba(var(--demand),0.348)"/>
-<text x="480.0" y="497" text-anchor="middle" class="n">21%</text>
-<rect x="528" y="484" width="88" height="18" rx="3" style="fill:rgba(var(--demand),0.113)"/>
-<text x="572.0" y="497" text-anchor="middle" class="n">3%</text>
+<text x="12" y="497"><title>GCP / Vertex AI</title>GCP / Vertex AI</text>
+<rect x="252" y="484" width="88" height="18" rx="3" style="fill:rgba(var(--demand),0.243)"/>
+<text x="296.0" y="497" text-anchor="middle" class="n">12%</text>
+<rect x="344" y="484" width="88" height="18" rx="3" style="fill:rgba(var(--demand),0.359)"/>
+<text x="388.0" y="497" text-anchor="middle" class="n">21%</text>
+<rect x="436" y="484" width="88" height="18" rx="3" style="fill:rgba(var(--demand),0.261)"/>
+<text x="480.0" y="497" text-anchor="middle" class="n">14%</text>
+<rect x="528" y="484" width="88" height="18" rx="3" style="fill:rgba(var(--demand),0.331)"/>
+<text x="572.0" y="497" text-anchor="middle" class="n">19%</text>
 <rect x="620" y="484" width="88" height="18" rx="3" style="fill:rgba(var(--me),0.03)"/>
 <text x="664.0" y="497" text-anchor="middle" class="n">—</text>
-<text x="12" y="519"><title>TypeScript</title>TypeScript</text>
-<rect x="252" y="506" width="88" height="18" rx="3" style="fill:rgba(var(--demand),0.181)"/>
+<text x="12" y="519"><title>REST / API design &amp; integration</title>REST / API design &amp; integration</text>
+<rect x="252" y="506" width="88" height="18" rx="3" style="fill:rgba(var(--demand),0.19)"/>
 <text x="296.0" y="519" text-anchor="middle" class="n">8%</text>
-<rect x="344" y="506" width="88" height="18" rx="3" style="fill:rgba(var(--demand),0.23)"/>
-<text x="388.0" y="519" text-anchor="middle" class="n">12%</text>
-<rect x="436" y="506" width="88" height="18" rx="3" style="fill:rgba(var(--demand),0.36)"/>
+<rect x="344" y="506" width="88" height="18" rx="3" style="fill:rgba(var(--demand),0.214)"/>
+<text x="388.0" y="519" text-anchor="middle" class="n">10%</text>
+<rect x="436" y="506" width="88" height="18" rx="3" style="fill:rgba(var(--demand),0.37)"/>
 <text x="480.0" y="519" text-anchor="middle" class="n">22%</text>
-<rect x="528" y="506" width="88" height="18" rx="3" style="fill:rgba(var(--demand),0.109)"/>
-<text x="572.0" y="519" text-anchor="middle" class="n">2%</text>
-<rect x="620" y="506" width="88" height="18" rx="3" style="fill:rgba(var(--me),0.66)"/>
-<text x="664.0" y="519" text-anchor="middle" class="n">Comfortable</text>
-<text x="12" y="541"><title>Go</title>Go</text>
-<rect x="252" y="528" width="88" height="18" rx="3" style="fill:rgba(var(--demand),0.185)"/>
-<text x="296.0" y="541" text-anchor="middle" class="n">8%</text>
-<rect x="344" y="528" width="88" height="18" rx="3" style="fill:rgba(var(--demand),0.189)"/>
-<text x="388.0" y="541" text-anchor="middle" class="n">8%</text>
-<rect x="436" y="528" width="88" height="18" rx="3" style="fill:rgba(var(--demand),0.377)"/>
-<text x="480.0" y="541" text-anchor="middle" class="n">23%</text>
-<rect x="528" y="528" width="88" height="18" rx="3" style="fill:rgba(var(--demand),0.158)"/>
-<text x="572.0" y="541" text-anchor="middle" class="n">6%</text>
-<rect x="620" y="528" width="88" height="18" rx="3" style="fill:rgba(var(--me),0.03)"/>
-<text x="664.0" y="541" text-anchor="middle" class="n">—</text>
-<text x="12" y="563"><title>REST / API design &amp; integration</title>REST / API design &amp; integration</text>
-<rect x="252" y="550" width="88" height="18" rx="3" style="fill:rgba(var(--demand),0.188)"/>
+<rect x="528" y="506" width="88" height="18" rx="3" style="fill:rgba(var(--demand),0.16)"/>
+<text x="572.0" y="519" text-anchor="middle" class="n">6%</text>
+<rect x="620" y="506" width="88" height="18" rx="3" style="fill:rgba(var(--me),0.83)"/>
+<text x="664.0" y="519" text-anchor="middle" class="n hi">Strong</text>
+<text x="12" y="541"><title>Azure (incl. Azure OpenAI)</title>Azure (incl. Azure OpenAI)</text>
+<rect x="252" y="528" width="88" height="18" rx="3" style="fill:rgba(var(--demand),0.215)"/>
+<text x="296.0" y="541" text-anchor="middle" class="n">10%</text>
+<rect x="344" y="528" width="88" height="18" rx="3" style="fill:rgba(var(--demand),0.373)"/>
+<text x="388.0" y="541" text-anchor="middle" class="n">22%</text>
+<rect x="436" y="528" width="88" height="18" rx="3" style="fill:rgba(var(--demand),0.26)"/>
+<text x="480.0" y="541" text-anchor="middle" class="n">14%</text>
+<rect x="528" y="528" width="88" height="18" rx="3" style="fill:rgba(var(--demand),0.27)"/>
+<text x="572.0" y="541" text-anchor="middle" class="n">14%</text>
+<rect x="620" y="528" width="88" height="18" rx="3" style="fill:rgba(var(--me),0.83)"/>
+<text x="664.0" y="541" text-anchor="middle" class="n hi">Strong</text>
+<text x="12" y="563"><title>TypeScript</title>TypeScript</text>
+<rect x="252" y="550" width="88" height="18" rx="3" style="fill:rgba(var(--demand),0.181)"/>
 <text x="296.0" y="563" text-anchor="middle" class="n">8%</text>
-<rect x="344" y="550" width="88" height="18" rx="3" style="fill:rgba(var(--demand),0.213)"/>
-<text x="388.0" y="563" text-anchor="middle" class="n">10%</text>
-<rect x="436" y="550" width="88" height="18" rx="3" style="fill:rgba(var(--demand),0.361)"/>
-<text x="480.0" y="563" text-anchor="middle" class="n">22%</text>
-<rect x="528" y="550" width="88" height="18" rx="3" style="fill:rgba(var(--demand),0.162)"/>
-<text x="572.0" y="563" text-anchor="middle" class="n">6%</text>
-<rect x="620" y="550" width="88" height="18" rx="3" style="fill:rgba(var(--me),0.83)"/>
-<text x="664.0" y="563" text-anchor="middle" class="n hi">Strong</text>
-<text x="12" y="585"><title>Azure (incl. Azure OpenAI)</title>Azure (incl. Azure OpenAI)</text>
-<rect x="252" y="572" width="88" height="18" rx="3" style="fill:rgba(var(--demand),0.212)"/>
-<text x="296.0" y="585" text-anchor="middle" class="n">10%</text>
-<rect x="344" y="572" width="88" height="18" rx="3" style="fill:rgba(var(--demand),0.368)"/>
-<text x="388.0" y="585" text-anchor="middle" class="n">22%</text>
-<rect x="436" y="572" width="88" height="18" rx="3" style="fill:rgba(var(--demand),0.259)"/>
-<text x="480.0" y="585" text-anchor="middle" class="n">14%</text>
-<rect x="528" y="572" width="88" height="18" rx="3" style="fill:rgba(var(--demand),0.27)"/>
-<text x="572.0" y="585" text-anchor="middle" class="n">15%</text>
-<rect x="620" y="572" width="88" height="18" rx="3" style="fill:rgba(var(--me),0.83)"/>
-<text x="664.0" y="585" text-anchor="middle" class="n hi">Strong</text>
+<rect x="344" y="550" width="88" height="18" rx="3" style="fill:rgba(var(--demand),0.227)"/>
+<text x="388.0" y="563" text-anchor="middle" class="n">11%</text>
+<rect x="436" y="550" width="88" height="18" rx="3" style="fill:rgba(var(--demand),0.36)"/>
+<text x="480.0" y="563" text-anchor="middle" class="n">21%</text>
+<rect x="528" y="550" width="88" height="18" rx="3" style="fill:rgba(var(--demand),0.109)"/>
+<text x="572.0" y="563" text-anchor="middle" class="n">2%</text>
+<rect x="620" y="550" width="88" height="18" rx="3" style="fill:rgba(var(--me),0.66)"/>
+<text x="664.0" y="563" text-anchor="middle" class="n">Comfortable</text>
+<text x="12" y="585"><title>Go</title>Go</text>
+<rect x="252" y="572" width="88" height="18" rx="3" style="fill:rgba(var(--demand),0.184)"/>
+<text x="296.0" y="585" text-anchor="middle" class="n">8%</text>
+<rect x="344" y="572" width="88" height="18" rx="3" style="fill:rgba(var(--demand),0.187)"/>
+<text x="388.0" y="585" text-anchor="middle" class="n">8%</text>
+<rect x="436" y="572" width="88" height="18" rx="3" style="fill:rgba(var(--demand),0.376)"/>
+<text x="480.0" y="585" text-anchor="middle" class="n">22%</text>
+<rect x="528" y="572" width="88" height="18" rx="3" style="fill:rgba(var(--demand),0.157)"/>
+<text x="572.0" y="585" text-anchor="middle" class="n">6%</text>
+<rect x="620" y="572" width="88" height="18" rx="3" style="fill:rgba(var(--me),0.03)"/>
+<text x="664.0" y="585" text-anchor="middle" class="n">—</text>
 <text x="12" y="607"><title>RAG</title>RAG</text>
 <rect x="252" y="594" width="88" height="18" rx="3" style="fill:rgba(var(--demand),0.249)"/>
 <text x="296.0" y="607" text-anchor="middle" class="n">13%</text>
-<rect x="344" y="594" width="88" height="18" rx="3" style="fill:rgba(var(--demand),0.224)"/>
+<rect x="344" y="594" width="88" height="18" rx="3" style="fill:rgba(var(--demand),0.221)"/>
 <text x="388.0" y="607" text-anchor="middle" class="n">11%</text>
 <rect x="436" y="594" width="88" height="18" rx="3" style="fill:rgba(var(--demand),0.117)"/>
 <text x="480.0" y="607" text-anchor="middle" class="n">3%</text>
-<rect x="528" y="594" width="88" height="18" rx="3" style="fill:rgba(var(--demand),0.119)"/>
+<rect x="528" y="594" width="88" height="18" rx="3" style="fill:rgba(var(--demand),0.118)"/>
 <text x="572.0" y="607" text-anchor="middle" class="n">3%</text>
 <rect x="620" y="594" width="88" height="18" rx="3" style="fill:rgba(var(--me),1.0)"/>
 <text x="664.0" y="607" text-anchor="middle" class="n hi">Expert</text>
 <text x="12" y="629"><title>Multi-agent systems</title>Multi-agent systems</text>
-<rect x="252" y="616" width="88" height="18" rx="3" style="fill:rgba(var(--demand),0.161)"/>
+<rect x="252" y="616" width="88" height="18" rx="3" style="fill:rgba(var(--demand),0.16)"/>
 <text x="296.0" y="629" text-anchor="middle" class="n">6%</text>
 <rect x="344" y="616" width="88" height="18" rx="3" style="fill:rgba(var(--demand),0.124)"/>
 <text x="388.0" y="629" text-anchor="middle" class="n">3%</text>
-<rect x="436" y="616" width="88" height="18" rx="3" style="fill:rgba(var(--demand),0.093)"/>
+<rect x="436" y="616" width="88" height="18" rx="3" style="fill:rgba(var(--demand),0.092)"/>
 <text x="480.0" y="629" text-anchor="middle" class="n">1%</text>
 <rect x="528" y="616" width="88" height="18" rx="3" style="fill:rgba(var(--demand),0.03)"/>
 <text x="572.0" y="629" text-anchor="middle" class="n">0%</text>
 <rect x="620" y="616" width="88" height="18" rx="3" style="fill:rgba(var(--me),0.83)"/>
 <text x="664.0" y="629" text-anchor="middle" class="n hi">Strong</text>
 <text x="12" y="651"><title>Tool / function calling</title>Tool / function calling</text>
-<rect x="252" y="638" width="88" height="18" rx="3" style="fill:rgba(var(--demand),0.204)"/>
-<text x="296.0" y="651" text-anchor="middle" class="n">10%</text>
-<rect x="344" y="638" width="88" height="18" rx="3" style="fill:rgba(var(--demand),0.119)"/>
+<rect x="252" y="638" width="88" height="18" rx="3" style="fill:rgba(var(--demand),0.203)"/>
+<text x="296.0" y="651" text-anchor="middle" class="n">9%</text>
+<rect x="344" y="638" width="88" height="18" rx="3" style="fill:rgba(var(--demand),0.118)"/>
 <text x="388.0" y="651" text-anchor="middle" class="n">3%</text>
 <rect x="436" y="638" width="88" height="18" rx="3" style="fill:rgba(var(--demand),0.104)"/>
 <text x="480.0" y="651" text-anchor="middle" class="n">2%</text>
@@ -310,11 +310,11 @@
 <text x="12" y="673"><title>Prompt &amp; context engineering</title>Prompt &amp; context engineering</text>
 <rect x="252" y="660" width="88" height="18" rx="3" style="fill:rgba(var(--demand),0.226)"/>
 <text x="296.0" y="673" text-anchor="middle" class="n">11%</text>
-<rect x="344" y="660" width="88" height="18" rx="3" style="fill:rgba(var(--demand),0.19)"/>
-<text x="388.0" y="673" text-anchor="middle" class="n">9%</text>
+<rect x="344" y="660" width="88" height="18" rx="3" style="fill:rgba(var(--demand),0.188)"/>
+<text x="388.0" y="673" text-anchor="middle" class="n">8%</text>
 <rect x="436" y="660" width="88" height="18" rx="3" style="fill:rgba(var(--demand),0.116)"/>
 <text x="480.0" y="673" text-anchor="middle" class="n">3%</text>
-<rect x="528" y="660" width="88" height="18" rx="3" style="fill:rgba(var(--demand),0.105)"/>
+<rect x="528" y="660" width="88" height="18" rx="3" style="fill:rgba(var(--demand),0.106)"/>
 <text x="572.0" y="673" text-anchor="middle" class="n">2%</text>
 <rect x="620" y="660" width="88" height="18" rx="3" style="fill:rgba(var(--me),0.83)"/>
 <text x="664.0" y="673" text-anchor="middle" class="n hi">Strong</text>
@@ -330,13 +330,13 @@
 <rect x="620" y="682" width="88" height="18" rx="3" style="fill:rgba(var(--me),0.83)"/>
 <text x="664.0" y="695" text-anchor="middle" class="n hi">Strong</text>
 <text x="12" y="717"><title>MCP</title>MCP</text>
-<rect x="252" y="704" width="88" height="18" rx="3" style="fill:rgba(var(--demand),0.177)"/>
-<text x="296.0" y="717" text-anchor="middle" class="n">8%</text>
-<rect x="344" y="704" width="88" height="18" rx="3" style="fill:rgba(var(--demand),0.128)"/>
+<rect x="252" y="704" width="88" height="18" rx="3" style="fill:rgba(var(--demand),0.176)"/>
+<text x="296.0" y="717" text-anchor="middle" class="n">7%</text>
+<rect x="344" y="704" width="88" height="18" rx="3" style="fill:rgba(var(--demand),0.127)"/>
 <text x="388.0" y="717" text-anchor="middle" class="n">4%</text>
-<rect x="436" y="704" width="88" height="18" rx="3" style="fill:rgba(var(--demand),0.129)"/>
+<rect x="436" y="704" width="88" height="18" rx="3" style="fill:rgba(var(--demand),0.128)"/>
 <text x="480.0" y="717" text-anchor="middle" class="n">4%</text>
-<rect x="528" y="704" width="88" height="18" rx="3" style="fill:rgba(var(--demand),0.116)"/>
+<rect x="528" y="704" width="88" height="18" rx="3" style="fill:rgba(var(--demand),0.115)"/>
 <text x="572.0" y="717" text-anchor="middle" class="n">3%</text>
 <rect x="620" y="704" width="88" height="18" rx="3" style="fill:rgba(var(--me),0.83)"/>
 <text x="664.0" y="717" text-anchor="middle" class="n hi">Strong</text>

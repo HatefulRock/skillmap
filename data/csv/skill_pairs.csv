@@ -1,71 +1,71 @@
 skill_a,skill_b,postings_together,lift
-Azure (incl. Azure OpenAI),GCP / Vertex AI,2090,5.02
-React / Next.js,TypeScript,1488,5.05
-Docker / containers,Kubernetes,2278,4.13
-Full-stack / frontend,React / Next.js,1792,4.12
-PostgreSQL / relational DBs,SQL,2167,3.9
-"AI coding tools (Claude Code, Cursor, Copilot)",LLM provider APIs (OpenAI / Anthropic / Gemini),1237,4.13
-JavaScript / Node.js,TypeScript,1273,4.0
-Kubernetes,Terraform / IaC,1536,3.67
-JavaScript / Node.js,React / Next.js,1043,3.65
-Docker / containers,Terraform / IaC,1233,3.42
-CI/CD,Terraform / IaC,1511,3.29
-Full-stack / frontend,TypeScript,1579,3.26
-AWS,Azure (incl. Azure OpenAI),2452,2.97
-AWS,GCP / Vertex AI,2605,2.91
-CI/CD,Docker / containers,1755,2.9
-GCP / Vertex AI,Kubernetes,1511,2.82
-Full-stack / frontend,JavaScript / Node.js,1341,2.86
-CI/CD,Kubernetes,1818,2.59
-Cloud (unspecified),GCP / Vertex AI,2145,2.53
-Azure (incl. Azure OpenAI),Cloud (unspecified),1992,2.54
-C++ / C#,Java / Kotlin (Spring),2272,2.48
-AWS,Cloud (unspecified),3889,2.31
-Go,Kubernetes,1416,2.61
-REST / API design & integration,React / Next.js,805,2.82
-GCP / Vertex AI,Terraform / IaC,959,2.73
-Observability / tracing / monitoring,Terraform / IaC,1501,2.54
-PostgreSQL / relational DBs,React / Next.js,732,2.81
-Azure (incl. Azure OpenAI),Kubernetes,1252,2.52
-Kubernetes,Observability / tracing / monitoring,2107,2.33
-Docker / containers,GCP / Vertex AI,1153,2.49
-LLM evaluation / eval harnesses,LLMs / GenAI (general),1497,2.37
-AWS,Terraform / IaC,1633,2.34
-Go,Terraform / IaC,902,2.54
-PostgreSQL / relational DBs,TypeScript,743,2.57
-Cloud (unspecified),Terraform / IaC,1528,2.31
-PostgreSQL / relational DBs,REST / API design & integration,717,2.56
-Cloud (unspecified),Kubernetes,2162,2.14
-AI agents / agentic workflows,LLMs / GenAI (general),3009,2.05
-Data pipelines / ETL,SQL,1382,2.26
-Azure (incl. Azure OpenAI),Docker / containers,1011,2.36
-Linux / shell,Terraform / IaC,820,2.43
-AWS,Kubernetes,2241,2.1
-Azure (incl. Azure OpenAI),Terraform / IaC,785,2.42
-JavaScript / Node.js,REST / API design & integration,749,2.43
-Kubernetes,Microservices / distributed systems,2061,2.08
-Go,Microservices / distributed systems,1781,2.12
-Cloud (unspecified),Docker / containers,1837,2.11
-JavaScript / Node.js,PostgreSQL / relational DBs,679,2.42
-Financial services / banking domain,KYC / AML / fraud / risk,892,2.32
-Docker / containers,Observability / tracing / monitoring,1652,2.12
-REST / API design & integration,TypeScript,754,2.37
-Kubernetes,PostgreSQL / relational DBs,926,2.29
-CI/CD,Observability / tracing / monitoring,2034,2.05
-Docker / containers,Go,1029,2.2
-Full-stack / frontend,PostgreSQL / relational DBs,944,2.21
-AI agents / agentic workflows,LLM evaluation / eval harnesses,1313,2.09
-"AI coding tools (Claude Code, Cursor, Copilot)",TypeScript,636,2.32
-Go,TypeScript,857,2.21
-Full-stack / frontend,REST / API design & integration,1006,2.15
-Go,Observability / tracing / monitoring,1542,2.02
-AWS,Docker / containers,1796,1.96
-Java / Kotlin (Spring),JavaScript / Node.js,1145,2.05
-Java / Kotlin (Spring),Microservices / distributed systems,2320,1.86
-CI/CD,GCP / Vertex AI,1187,2.02
-GCP / Vertex AI,Go,943,2.07
-CI/CD,REST / API design & integration,996,2.05
-Java / Kotlin (Spring),System design / architecture,1430,1.94
-Docker / containers,Linux / shell,913,2.06
-CI/CD,Cloud (unspecified),2047,1.84
-Go,Java / Kotlin (Spring),1331,1.95
+React / Next.js,TypeScript,1509,5.4
+Azure (incl. Azure OpenAI),GCP / Vertex AI,2130,5.03
+Docker / containers,Kubernetes,2369,4.26
+Full-stack / frontend,React / Next.js,1845,4.37
+"AI coding tools (Claude Code, Cursor, Copilot)",LLM provider APIs (OpenAI / Anthropic / Gemini),1242,4.48
+PostgreSQL / relational DBs,SQL,2251,4.13
+JavaScript / Node.js,TypeScript,1288,4.21
+Kubernetes,Terraform / IaC,1623,3.76
+JavaScript / Node.js,React / Next.js,1075,3.85
+Full-stack / frontend,TypeScript,1604,3.47
+Docker / containers,Terraform / IaC,1309,3.49
+CI/CD,Terraform / IaC,1569,3.34
+AWS,GCP / Vertex AI,2661,3.05
+AWS,Azure (incl. Azure OpenAI),2525,3.0
+CI/CD,Docker / containers,1807,2.98
+Full-stack / frontend,JavaScript / Node.js,1393,3.02
+GCP / Vertex AI,Kubernetes,1534,2.89
+Cloud (unspecified),GCP / Vertex AI,2206,2.64
+CI/CD,Kubernetes,1878,2.69
+C++ / C#,Java / Kotlin (Spring),2291,2.62
+AWS,Cloud (unspecified),3978,2.4
+REST / API design & integration,React / Next.js,827,2.95
+Azure (incl. Azure OpenAI),Cloud (unspecified),2084,2.59
+Go,Kubernetes,1419,2.72
+PostgreSQL / relational DBs,React / Next.js,738,2.91
+Observability / tracing / monitoring,Terraform / IaC,1572,2.59
+GCP / Vertex AI,Terraform / IaC,985,2.76
+LLM evaluation / eval harnesses,LLMs / GenAI (general),1504,2.55
+Kubernetes,Observability / tracing / monitoring,2151,2.39
+Azure (incl. Azure OpenAI),Kubernetes,1302,2.55
+Docker / containers,GCP / Vertex AI,1186,2.57
+PostgreSQL / relational DBs,TypeScript,746,2.69
+AWS,Terraform / IaC,1697,2.39
+AI agents / agentic workflows,LLMs / GenAI (general),3026,2.21
+Go,Terraform / IaC,907,2.59
+Cloud (unspecified),Terraform / IaC,1602,2.36
+PostgreSQL / relational DBs,REST / API design & integration,730,2.63
+Data pipelines / ETL,SQL,1388,2.36
+Go,Microservices / distributed systems,1782,2.28
+Cloud (unspecified),Kubernetes,2219,2.2
+JavaScript / Node.js,REST / API design & integration,774,2.53
+AWS,Kubernetes,2290,2.17
+Linux / shell,Terraform / IaC,890,2.47
+REST / API design & integration,TypeScript,766,2.5
+Kubernetes,Microservices / distributed systems,2079,2.17
+Azure (incl. Azure OpenAI),Docker / containers,1057,2.38
+Financial services / banking domain,KYC / AML / fraud / risk,904,2.42
+Azure (incl. Azure OpenAI),Terraform / IaC,840,2.44
+JavaScript / Node.js,PostgreSQL / relational DBs,695,2.51
+AI agents / agentic workflows,LLM evaluation / eval harnesses,1320,2.27
+Cloud (unspecified),Docker / containers,1894,2.16
+Docker / containers,Observability / tracing / monitoring,1697,2.17
+"AI coding tools (Claude Code, Cursor, Copilot)",TypeScript,637,2.49
+Go,TypeScript,858,2.38
+CI/CD,Observability / tracing / monitoring,2062,2.1
+Kubernetes,PostgreSQL / relational DBs,937,2.34
+Full-stack / frontend,PostgreSQL / relational DBs,966,2.31
+Docker / containers,Go,1031,2.28
+Full-stack / frontend,REST / API design & integration,1050,2.27
+Go,Observability / tracing / monitoring,1546,2.11
+AWS,Docker / containers,1867,2.04
+Java / Kotlin (Spring),JavaScript / Node.js,1180,2.15
+Java / Kotlin (Spring),Microservices / distributed systems,2336,1.96
+GCP / Vertex AI,Go,945,2.19
+Java / Kotlin (Spring),System design / architecture,1441,2.05
+CI/CD,GCP / Vertex AI,1212,2.09
+Go,Java / Kotlin (Spring),1333,2.06
+LLMs / GenAI (general),Machine learning fundamentals,1930,1.95
+CI/CD,Go,1181,2.08
+AI agents / agentic workflows,LLM provider APIs (OpenAI / Anthropic / Gemini),1413,2.02

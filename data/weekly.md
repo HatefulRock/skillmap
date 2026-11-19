@@ -1,7 +1,7 @@
-**Week of 2026-11-18**
+**Week of 2026-11-19**
 
-- 22,651 live tech postings in the last 30 days (+4,839 since 2026-11-18).
-- Biggest moves since last week: Financial services / banking domain 16% (−16.9 pp), Pre-sales / solution architecture / PoCs 9% (−10.9 pp), Observability / tracing / monitoring 24% (−9.7 pp).
-- New on the radar: DNS (120 companies), SIEM (114 companies), TCP (114 companies), CA (113 companies).
-- Median advertised pay in SG: SGD 90,000 a year, from 1,912 ads.
-- Median advertised pay in US: USD 216,100 a year (-2%), from 7,370 ads.
+- 24,847 live tech postings in the last 30 days (+2,196 since 2026-11-18).
+- Biggest moves since last week: Python 39% (−3.1 pp), AI agents / agentic workflows 23% (−2.1 pp), Microservices / distributed systems 24% (−2.0 pp).
+- New on the radar: CISSP (152 companies), IP (130 companies), DevSecOps (114 companies), PowerShell (107 companies).
+- Median advertised pay in SG: SGD 90,000 a year, from 4,101 ads.
+- Median advertised pay in US: USD 216,100 a year, from 7,370 ads.

@@ -1,16 +1,16 @@
 group_type,group,series,quarter_start,postings,skill,share
-by_role,fde,market,2026-10,2847,Pre-sales / solution architecture / PoCs,0.4865
-by_role,fde,market,2026-10,2847,Python,0.3955
-by_role,fde,market,2026-10,2847,Cloud (unspecified),0.3772
-by_role,fde,market,2026-10,2847,AWS,0.3688
-by_role,fde,market,2026-10,2847,AI agents / agentic workflows,0.2936
-by_role,fde,market,2026-10,2847,LLMs / GenAI (general),0.287
-by_role,fde,market,2026-10,2847,Azure (incl. Azure OpenAI),0.223
-by_role,fde,market,2026-10,2847,GCP / Vertex AI,0.2143
-by_role,fde,market,2026-10,2847,SQL,0.202
-by_role,fde,market,2026-10,2847,Spark / big data,0.1844
-by_role,fde,market,2026-10,2847,JavaScript / Node.js,0.17
-by_role,fde,market,2026-10,2847,Financial services / banking domain,0.1581
+by_role,fde,market,2026-10,2990,Pre-sales / solution architecture / PoCs,0.4863
+by_role,fde,market,2026-10,2990,Python,0.3783
+by_role,fde,market,2026-10,2990,Cloud (unspecified),0.3679
+by_role,fde,market,2026-10,2990,AWS,0.3585
+by_role,fde,market,2026-10,2990,AI agents / agentic workflows,0.2809
+by_role,fde,market,2026-10,2990,LLMs / GenAI (general),0.2742
+by_role,fde,market,2026-10,2990,Azure (incl. Azure OpenAI),0.2204
+by_role,fde,market,2026-10,2990,GCP / Vertex AI,0.2097
+by_role,fde,market,2026-10,2990,SQL,0.1957
+by_role,fde,market,2026-10,2990,Spark / big data,0.1779
+by_role,fde,market,2026-10,2990,JavaScript / Node.js,0.1635
+by_role,fde,market,2026-10,2990,Financial services / banking domain,0.1548
 by_role,fde,hn,2021-04,30,Pre-sales / solution architecture / PoCs,0.2
 by_role,fde,hn,2021-04,30,Python,0.2333
 by_role,fde,hn,2021-04,30,Cloud (unspecified),0.2
@@ -23,18 +23,18 @@ by_role,fde,hn,2021-04,30,SQL,0.1333
 by_role,fde,hn,2021-04,30,Spark / big data,0.0
 by_role,fde,hn,2021-04,30,JavaScript / Node.js,0.1
 by_role,fde,hn,2021-04,30,Financial services / banking domain,0.0
-by_role,ai_ml,market,2026-10,4467,LLMs / GenAI (general),0.5482
-by_role,ai_ml,market,2026-10,4467,Python,0.5337
-by_role,ai_ml,market,2026-10,4467,Machine learning fundamentals,0.4549
-by_role,ai_ml,market,2026-10,4467,AI agents / agentic workflows,0.4477
-by_role,ai_ml,market,2026-10,4467,LLM evaluation / eval harnesses,0.2767
-by_role,ai_ml,market,2026-10,4467,SQL,0.2212
-by_role,ai_ml,market,2026-10,4467,LLM provider APIs (OpenAI / Anthropic / Gemini),0.2183
-by_role,ai_ml,market,2026-10,4467,Observability / tracing / monitoring,0.2145
-by_role,ai_ml,market,2026-10,4467,Statistics / maths,0.2133
-by_role,ai_ml,market,2026-10,4467,Cloud (unspecified),0.2024
-by_role,ai_ml,market,2026-10,4467,AWS,0.1981
-by_role,ai_ml,market,2026-10,4467,Guardrails / AI safety,0.1914
+by_role,ai_ml,market,2026-10,4655,LLMs / GenAI (general),0.5381
+by_role,ai_ml,market,2026-10,4655,Python,0.5197
+by_role,ai_ml,market,2026-10,4655,Machine learning fundamentals,0.4425
+by_role,ai_ml,market,2026-10,4655,AI agents / agentic workflows,0.4367
+by_role,ai_ml,market,2026-10,4655,LLM evaluation / eval harnesses,0.2698
+by_role,ai_ml,market,2026-10,4655,SQL,0.2137
+by_role,ai_ml,market,2026-10,4655,LLM provider APIs (OpenAI / Anthropic / Gemini),0.2122
+by_role,ai_ml,market,2026-10,4655,Statistics / maths,0.2075
+by_role,ai_ml,market,2026-10,4655,Observability / tracing / monitoring,0.2071
+by_role,ai_ml,market,2026-10,4655,Cloud (unspecified),0.1976
+by_role,ai_ml,market,2026-10,4655,AWS,0.1921
+by_role,ai_ml,market,2026-10,4655,Guardrails / AI safety,0.1888
 by_role,ai_ml,hn,2013-01,39,LLMs / GenAI (general),0.0
 by_role,ai_ml,hn,2013-04,46,LLMs / GenAI (general),0.0
 by_role,ai_ml,hn,2013-07,34,LLMs / GenAI (general),0.0
@@ -427,62 +427,6 @@ by_role,ai_ml,hn,2026-01,247,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0
 by_role,ai_ml,hn,2026-04,252,LLM provider APIs (OpenAI / Anthropic / Gemini),0.1349
 by_role,ai_ml,hn,2026-07,188,LLM provider APIs (OpenAI / Anthropic / Gemini),0.117
 by_role,ai_ml,hn,2026-10,153,LLM provider APIs (OpenAI / Anthropic / Gemini),0.0915
-by_role,ai_ml,hn,2013-01,39,Observability / tracing / monitoring,0.0
-by_role,ai_ml,hn,2013-04,46,Observability / tracing / monitoring,0.0435
-by_role,ai_ml,hn,2013-07,34,Observability / tracing / monitoring,0.0
-by_role,ai_ml,hn,2013-10,34,Observability / tracing / monitoring,0.0294
-by_role,ai_ml,hn,2014-01,31,Observability / tracing / monitoring,0.0
-by_role,ai_ml,hn,2014-04,58,Observability / tracing / monitoring,0.0
-by_role,ai_ml,hn,2014-07,74,Observability / tracing / monitoring,0.0135
-by_role,ai_ml,hn,2014-10,51,Observability / tracing / monitoring,0.0
-by_role,ai_ml,hn,2015-01,78,Observability / tracing / monitoring,0.0
-by_role,ai_ml,hn,2015-04,42,Observability / tracing / monitoring,0.0
-by_role,ai_ml,hn,2015-07,115,Observability / tracing / monitoring,0.0
-by_role,ai_ml,hn,2015-10,48,Observability / tracing / monitoring,0.0
-by_role,ai_ml,hn,2016-01,57,Observability / tracing / monitoring,0.0
-by_role,ai_ml,hn,2016-04,62,Observability / tracing / monitoring,0.0
-by_role,ai_ml,hn,2016-07,159,Observability / tracing / monitoring,0.0
-by_role,ai_ml,hn,2016-10,174,Observability / tracing / monitoring,0.023
-by_role,ai_ml,hn,2017-01,168,Observability / tracing / monitoring,0.0
-by_role,ai_ml,hn,2017-04,190,Observability / tracing / monitoring,0.0
-by_role,ai_ml,hn,2017-07,200,Observability / tracing / monitoring,0.02
-by_role,ai_ml,hn,2017-10,240,Observability / tracing / monitoring,0.0083
-by_role,ai_ml,hn,2018-01,240,Observability / tracing / monitoring,0.0
-by_role,ai_ml,hn,2018-04,251,Observability / tracing / monitoring,0.004
-by_role,ai_ml,hn,2018-07,222,Observability / tracing / monitoring,0.0045
-by_role,ai_ml,hn,2018-10,238,Observability / tracing / monitoring,0.021
-by_role,ai_ml,hn,2019-01,213,Observability / tracing / monitoring,0.0047
-by_role,ai_ml,hn,2019-04,239,Observability / tracing / monitoring,0.0084
-by_role,ai_ml,hn,2019-07,195,Observability / tracing / monitoring,0.0205
-by_role,ai_ml,hn,2019-10,171,Observability / tracing / monitoring,0.0117
-by_role,ai_ml,hn,2020-01,175,Observability / tracing / monitoring,0.0114
-by_role,ai_ml,hn,2020-04,146,Observability / tracing / monitoring,0.0068
-by_role,ai_ml,hn,2020-07,174,Observability / tracing / monitoring,0.0115
-by_role,ai_ml,hn,2020-10,178,Observability / tracing / monitoring,0.0112
-by_role,ai_ml,hn,2021-01,233,Observability / tracing / monitoring,0.03
-by_role,ai_ml,hn,2021-04,245,Observability / tracing / monitoring,0.0204
-by_role,ai_ml,hn,2021-07,224,Observability / tracing / monitoring,0.0312
-by_role,ai_ml,hn,2021-10,212,Observability / tracing / monitoring,0.0047
-by_role,ai_ml,hn,2022-01,198,Observability / tracing / monitoring,0.0152
-by_role,ai_ml,hn,2022-04,210,Observability / tracing / monitoring,0.0
-by_role,ai_ml,hn,2022-07,181,Observability / tracing / monitoring,0.0221
-by_role,ai_ml,hn,2022-10,170,Observability / tracing / monitoring,0.0176
-by_role,ai_ml,hn,2023-01,138,Observability / tracing / monitoring,0.0
-by_role,ai_ml,hn,2023-04,148,Observability / tracing / monitoring,0.0135
-by_role,ai_ml,hn,2023-07,157,Observability / tracing / monitoring,0.0064
-by_role,ai_ml,hn,2023-10,181,Observability / tracing / monitoring,0.011
-by_role,ai_ml,hn,2024-01,155,Observability / tracing / monitoring,0.0065
-by_role,ai_ml,hn,2024-04,179,Observability / tracing / monitoring,0.0056
-by_role,ai_ml,hn,2024-07,199,Observability / tracing / monitoring,0.0302
-by_role,ai_ml,hn,2024-10,179,Observability / tracing / monitoring,0.0223
-by_role,ai_ml,hn,2025-01,206,Observability / tracing / monitoring,0.0194
-by_role,ai_ml,hn,2025-04,220,Observability / tracing / monitoring,0.0364
-by_role,ai_ml,hn,2025-07,228,Observability / tracing / monitoring,0.0219
-by_role,ai_ml,hn,2025-10,313,Observability / tracing / monitoring,0.0415
-by_role,ai_ml,hn,2026-01,247,Observability / tracing / monitoring,0.0486
-by_role,ai_ml,hn,2026-04,252,Observability / tracing / monitoring,0.0476
-by_role,ai_ml,hn,2026-07,188,Observability / tracing / monitoring,0.0372
-by_role,ai_ml,hn,2026-10,153,Observability / tracing / monitoring,0.0196
 by_role,ai_ml,hn,2013-01,39,Statistics / maths,0.1026
 by_role,ai_ml,hn,2013-04,46,Statistics / maths,0.1739
 by_role,ai_ml,hn,2013-07,34,Statistics / maths,0.2941
@@ -539,6 +483,62 @@ by_role,ai_ml,hn,2026-01,247,Statistics / maths,0.0202
 by_role,ai_ml,hn,2026-04,252,Statistics / maths,0.0119
 by_role,ai_ml,hn,2026-07,188,Statistics / maths,0.0106
 by_role,ai_ml,hn,2026-10,153,Statistics / maths,0.0327
+by_role,ai_ml,hn,2013-01,39,Observability / tracing / monitoring,0.0
+by_role,ai_ml,hn,2013-04,46,Observability / tracing / monitoring,0.0435
+by_role,ai_ml,hn,2013-07,34,Observability / tracing / monitoring,0.0
+by_role,ai_ml,hn,2013-10,34,Observability / tracing / monitoring,0.0294
+by_role,ai_ml,hn,2014-01,31,Observability / tracing / monitoring,0.0
+by_role,ai_ml,hn,2014-04,58,Observability / tracing / monitoring,0.0
+by_role,ai_ml,hn,2014-07,74,Observability / tracing / monitoring,0.0135
+by_role,ai_ml,hn,2014-10,51,Observability / tracing / monitoring,0.0
+by_role,ai_ml,hn,2015-01,78,Observability / tracing / monitoring,0.0
+by_role,ai_ml,hn,2015-04,42,Observability / tracing / monitoring,0.0
+by_role,ai_ml,hn,2015-07,115,Observability / tracing / monitoring,0.0
+by_role,ai_ml,hn,2015-10,48,Observability / tracing / monitoring,0.0
+by_role,ai_ml,hn,2016-01,57,Observability / tracing / monitoring,0.0
+by_role,ai_ml,hn,2016-04,62,Observability / tracing / monitoring,0.0
+by_role,ai_ml,hn,2016-07,159,Observability / tracing / monitoring,0.0
+by_role,ai_ml,hn,2016-10,174,Observability / tracing / monitoring,0.023
+by_role,ai_ml,hn,2017-01,168,Observability / tracing / monitoring,0.0
+by_role,ai_ml,hn,2017-04,190,Observability / tracing / monitoring,0.0
+by_role,ai_ml,hn,2017-07,200,Observability / tracing / monitoring,0.02
+by_role,ai_ml,hn,2017-10,240,Observability / tracing / monitoring,0.0083
+by_role,ai_ml,hn,2018-01,240,Observability / tracing / monitoring,0.0
+by_role,ai_ml,hn,2018-04,251,Observability / tracing / monitoring,0.004
+by_role,ai_ml,hn,2018-07,222,Observability / tracing / monitoring,0.0045
+by_role,ai_ml,hn,2018-10,238,Observability / tracing / monitoring,0.021
+by_role,ai_ml,hn,2019-01,213,Observability / tracing / monitoring,0.0047
+by_role,ai_ml,hn,2019-04,239,Observability / tracing / monitoring,0.0084
+by_role,ai_ml,hn,2019-07,195,Observability / tracing / monitoring,0.0205
+by_role,ai_ml,hn,2019-10,171,Observability / tracing / monitoring,0.0117
+by_role,ai_ml,hn,2020-01,175,Observability / tracing / monitoring,0.0114
+by_role,ai_ml,hn,2020-04,146,Observability / tracing / monitoring,0.0068
+by_role,ai_ml,hn,2020-07,174,Observability / tracing / monitoring,0.0115
+by_role,ai_ml,hn,2020-10,178,Observability / tracing / monitoring,0.0112
+by_role,ai_ml,hn,2021-01,233,Observability / tracing / monitoring,0.03
+by_role,ai_ml,hn,2021-04,245,Observability / tracing / monitoring,0.0204
+by_role,ai_ml,hn,2021-07,224,Observability / tracing / monitoring,0.0312
+by_role,ai_ml,hn,2021-10,212,Observability / tracing / monitoring,0.0047
+by_role,ai_ml,hn,2022-01,198,Observability / tracing / monitoring,0.0152
+by_role,ai_ml,hn,2022-04,210,Observability / tracing / monitoring,0.0
+by_role,ai_ml,hn,2022-07,181,Observability / tracing / monitoring,0.0221
+by_role,ai_ml,hn,2022-10,170,Observability / tracing / monitoring,0.0176
+by_role,ai_ml,hn,2023-01,138,Observability / tracing / monitoring,0.0
+by_role,ai_ml,hn,2023-04,148,Observability / tracing / monitoring,0.0135
+by_role,ai_ml,hn,2023-07,157,Observability / tracing / monitoring,0.0064
+by_role,ai_ml,hn,2023-10,181,Observability / tracing / monitoring,0.011
+by_role,ai_ml,hn,2024-01,155,Observability / tracing / monitoring,0.0065
+by_role,ai_ml,hn,2024-04,179,Observability / tracing / monitoring,0.0056
+by_role,ai_ml,hn,2024-07,199,Observability / tracing / monitoring,0.0302
+by_role,ai_ml,hn,2024-10,179,Observability / tracing / monitoring,0.0223
+by_role,ai_ml,hn,2025-01,206,Observability / tracing / monitoring,0.0194
+by_role,ai_ml,hn,2025-04,220,Observability / tracing / monitoring,0.0364
+by_role,ai_ml,hn,2025-07,228,Observability / tracing / monitoring,0.0219
+by_role,ai_ml,hn,2025-10,313,Observability / tracing / monitoring,0.0415
+by_role,ai_ml,hn,2026-01,247,Observability / tracing / monitoring,0.0486
+by_role,ai_ml,hn,2026-04,252,Observability / tracing / monitoring,0.0476
+by_role,ai_ml,hn,2026-07,188,Observability / tracing / monitoring,0.0372
+by_role,ai_ml,hn,2026-10,153,Observability / tracing / monitoring,0.0196
 by_role,ai_ml,hn,2013-01,39,Cloud (unspecified),0.1026
 by_role,ai_ml,hn,2013-04,46,Cloud (unspecified),0.0435
 by_role,ai_ml,hn,2013-07,34,Cloud (unspecified),0.0882
@@ -707,18 +707,18 @@ by_role,ai_ml,hn,2026-01,247,Guardrails / AI safety,0.0162
 by_role,ai_ml,hn,2026-04,252,Guardrails / AI safety,0.0317
 by_role,ai_ml,hn,2026-07,188,Guardrails / AI safety,0.0213
 by_role,ai_ml,hn,2026-10,153,Guardrails / AI safety,0.0196
-by_role,data,market,2026-10,932,SQL,0.7124
-by_role,data,market,2026-10,932,Python,0.6513
-by_role,data,market,2026-10,932,Data pipelines / ETL,0.6416
-by_role,data,market,2026-10,932,Spark / big data,0.4732
-by_role,data,market,2026-10,932,AWS,0.3348
-by_role,data,market,2026-10,932,Workflow orchestration,0.2693
-by_role,data,market,2026-10,932,Cloud (unspecified),0.2436
-by_role,data,market,2026-10,932,Financial services / banking domain,0.2403
-by_role,data,market,2026-10,932,Kafka / message queues / streaming,0.2371
-by_role,data,market,2026-10,932,Machine learning fundamentals,0.2371
-by_role,data,market,2026-10,932,Observability / tracing / monitoring,0.2339
-by_role,data,market,2026-10,932,Statistics / maths,0.2253
+by_role,data,market,2026-10,973,SQL,0.6927
+by_role,data,market,2026-10,973,Data pipelines / ETL,0.631
+by_role,data,market,2026-10,973,Python,0.6269
+by_role,data,market,2026-10,973,Spark / big data,0.4573
+by_role,data,market,2026-10,973,AWS,0.3248
+by_role,data,market,2026-10,973,Workflow orchestration,0.259
+by_role,data,market,2026-10,973,Cloud (unspecified),0.2333
+by_role,data,market,2026-10,973,Financial services / banking domain,0.2323
+by_role,data,market,2026-10,973,Machine learning fundamentals,0.2302
+by_role,data,market,2026-10,973,Kafka / message queues / streaming,0.2292
+by_role,data,market,2026-10,973,Observability / tracing / monitoring,0.224
+by_role,data,market,2026-10,973,Statistics / maths,0.2199
 by_role,data,hn,2014-10,34,SQL,0.3824
 by_role,data,hn,2015-01,30,SQL,0.2333
 by_role,data,hn,2015-07,61,SQL,0.2295
@@ -751,38 +751,6 @@ by_role,data,hn,2022-10,50,SQL,0.16
 by_role,data,hn,2023-01,44,SQL,0.2045
 by_role,data,hn,2023-04,35,SQL,0.2571
 by_role,data,hn,2024-10,31,SQL,0.2903
-by_role,data,hn,2014-10,34,Python,0.4412
-by_role,data,hn,2015-01,30,Python,0.1667
-by_role,data,hn,2015-07,61,Python,0.2131
-by_role,data,hn,2016-07,56,Python,0.3036
-by_role,data,hn,2016-10,76,Python,0.4079
-by_role,data,hn,2017-01,96,Python,0.3333
-by_role,data,hn,2017-04,74,Python,0.3649
-by_role,data,hn,2017-07,92,Python,0.2826
-by_role,data,hn,2017-10,86,Python,0.407
-by_role,data,hn,2018-01,73,Python,0.4384
-by_role,data,hn,2018-04,84,Python,0.5238
-by_role,data,hn,2018-07,84,Python,0.381
-by_role,data,hn,2018-10,103,Python,0.3689
-by_role,data,hn,2019-01,94,Python,0.383
-by_role,data,hn,2019-04,83,Python,0.3253
-by_role,data,hn,2019-07,59,Python,0.322
-by_role,data,hn,2019-10,54,Python,0.2407
-by_role,data,hn,2020-01,62,Python,0.3548
-by_role,data,hn,2020-04,44,Python,0.3864
-by_role,data,hn,2020-07,55,Python,0.3091
-by_role,data,hn,2020-10,65,Python,0.3692
-by_role,data,hn,2021-01,95,Python,0.3895
-by_role,data,hn,2021-04,89,Python,0.2697
-by_role,data,hn,2021-07,81,Python,0.3333
-by_role,data,hn,2021-10,99,Python,0.303
-by_role,data,hn,2022-01,85,Python,0.3529
-by_role,data,hn,2022-04,89,Python,0.3371
-by_role,data,hn,2022-07,51,Python,0.2941
-by_role,data,hn,2022-10,50,Python,0.4
-by_role,data,hn,2023-01,44,Python,0.3864
-by_role,data,hn,2023-04,35,Python,0.1714
-by_role,data,hn,2024-10,31,Python,0.2258
 by_role,data,hn,2014-10,34,Data pipelines / ETL,0.1471
 by_role,data,hn,2015-01,30,Data pipelines / ETL,0.0333
 by_role,data,hn,2015-07,61,Data pipelines / ETL,0.0656
@@ -815,6 +783,38 @@ by_role,data,hn,2022-10,50,Data pipelines / ETL,0.18
 by_role,data,hn,2023-01,44,Data pipelines / ETL,0.2727
 by_role,data,hn,2023-04,35,Data pipelines / ETL,0.1143
 by_role,data,hn,2024-10,31,Data pipelines / ETL,0.3226
+by_role,data,hn,2014-10,34,Python,0.4412
+by_role,data,hn,2015-01,30,Python,0.1667
+by_role,data,hn,2015-07,61,Python,0.2131
+by_role,data,hn,2016-07,56,Python,0.3036
+by_role,data,hn,2016-10,76,Python,0.4079
+by_role,data,hn,2017-01,96,Python,0.3333
+by_role,data,hn,2017-04,74,Python,0.3649
+by_role,data,hn,2017-07,92,Python,0.2826
+by_role,data,hn,2017-10,86,Python,0.407
+by_role,data,hn,2018-01,73,Python,0.4384
+by_role,data,hn,2018-04,84,Python,0.5238
+by_role,data,hn,2018-07,84,Python,0.381
+by_role,data,hn,2018-10,103,Python,0.3689
+by_role,data,hn,2019-01,94,Python,0.383
+by_role,data,hn,2019-04,83,Python,0.3253
+by_role,data,hn,2019-07,59,Python,0.322
+by_role,data,hn,2019-10,54,Python,0.2407
+by_role,data,hn,2020-01,62,Python,0.3548
+by_role,data,hn,2020-04,44,Python,0.3864
+by_role,data,hn,2020-07,55,Python,0.3091
+by_role,data,hn,2020-10,65,Python,0.3692
+by_role,data,hn,2021-01,95,Python,0.3895
+by_role,data,hn,2021-04,89,Python,0.2697
+by_role,data,hn,2021-07,81,Python,0.3333
+by_role,data,hn,2021-10,99,Python,0.303
+by_role,data,hn,2022-01,85,Python,0.3529
+by_role,data,hn,2022-04,89,Python,0.3371
+by_role,data,hn,2022-07,51,Python,0.2941
+by_role,data,hn,2022-10,50,Python,0.4
+by_role,data,hn,2023-01,44,Python,0.3864
+by_role,data,hn,2023-04,35,Python,0.1714
+by_role,data,hn,2024-10,31,Python,0.2258
 by_role,data,hn,2014-10,34,Spark / big data,0.3824
 by_role,data,hn,2015-01,30,Spark / big data,0.4
 by_role,data,hn,2015-07,61,Spark / big data,0.2459
@@ -975,38 +975,6 @@ by_role,data,hn,2022-10,50,Financial services / banking domain,0.04
 by_role,data,hn,2023-01,44,Financial services / banking domain,0.0455
 by_role,data,hn,2023-04,35,Financial services / banking domain,0.0
 by_role,data,hn,2024-10,31,Financial services / banking domain,0.0323
-by_role,data,hn,2014-10,34,Kafka / message queues / streaming,0.1765
-by_role,data,hn,2015-01,30,Kafka / message queues / streaming,0.2
-by_role,data,hn,2015-07,61,Kafka / message queues / streaming,0.1311
-by_role,data,hn,2016-07,56,Kafka / message queues / streaming,0.0893
-by_role,data,hn,2016-10,76,Kafka / message queues / streaming,0.1579
-by_role,data,hn,2017-01,96,Kafka / message queues / streaming,0.1562
-by_role,data,hn,2017-04,74,Kafka / message queues / streaming,0.1892
-by_role,data,hn,2017-07,92,Kafka / message queues / streaming,0.1196
-by_role,data,hn,2017-10,86,Kafka / message queues / streaming,0.1163
-by_role,data,hn,2018-01,73,Kafka / message queues / streaming,0.0822
-by_role,data,hn,2018-04,84,Kafka / message queues / streaming,0.2024
-by_role,data,hn,2018-07,84,Kafka / message queues / streaming,0.1786
-by_role,data,hn,2018-10,103,Kafka / message queues / streaming,0.1068
-by_role,data,hn,2019-01,94,Kafka / message queues / streaming,0.117
-by_role,data,hn,2019-04,83,Kafka / message queues / streaming,0.1325
-by_role,data,hn,2019-07,59,Kafka / message queues / streaming,0.0678
-by_role,data,hn,2019-10,54,Kafka / message queues / streaming,0.1111
-by_role,data,hn,2020-01,62,Kafka / message queues / streaming,0.0806
-by_role,data,hn,2020-04,44,Kafka / message queues / streaming,0.0227
-by_role,data,hn,2020-07,55,Kafka / message queues / streaming,0.0182
-by_role,data,hn,2020-10,65,Kafka / message queues / streaming,0.0308
-by_role,data,hn,2021-01,95,Kafka / message queues / streaming,0.1158
-by_role,data,hn,2021-04,89,Kafka / message queues / streaming,0.0787
-by_role,data,hn,2021-07,81,Kafka / message queues / streaming,0.0741
-by_role,data,hn,2021-10,99,Kafka / message queues / streaming,0.0606
-by_role,data,hn,2022-01,85,Kafka / message queues / streaming,0.0824
-by_role,data,hn,2022-04,89,Kafka / message queues / streaming,0.0562
-by_role,data,hn,2022-07,51,Kafka / message queues / streaming,0.0392
-by_role,data,hn,2022-10,50,Kafka / message queues / streaming,0.04
-by_role,data,hn,2023-01,44,Kafka / message queues / streaming,0.0227
-by_role,data,hn,2023-04,35,Kafka / message queues / streaming,0.0571
-by_role,data,hn,2024-10,31,Kafka / message queues / streaming,0.0968
 by_role,data,hn,2014-10,34,Machine learning fundamentals,0.1471
 by_role,data,hn,2015-01,30,Machine learning fundamentals,0.0667
 by_role,data,hn,2015-07,61,Machine learning fundamentals,0.1148
@@ -1039,6 +1007,38 @@ by_role,data,hn,2022-10,50,Machine learning fundamentals,0.14
 by_role,data,hn,2023-01,44,Machine learning fundamentals,0.0909
 by_role,data,hn,2023-04,35,Machine learning fundamentals,0.0571
 by_role,data,hn,2024-10,31,Machine learning fundamentals,0.1613
+by_role,data,hn,2014-10,34,Kafka / message queues / streaming,0.1765
+by_role,data,hn,2015-01,30,Kafka / message queues / streaming,0.2
+by_role,data,hn,2015-07,61,Kafka / message queues / streaming,0.1311
+by_role,data,hn,2016-07,56,Kafka / message queues / streaming,0.0893
+by_role,data,hn,2016-10,76,Kafka / message queues / streaming,0.1579
+by_role,data,hn,2017-01,96,Kafka / message queues / streaming,0.1562
+by_role,data,hn,2017-04,74,Kafka / message queues / streaming,0.1892
+by_role,data,hn,2017-07,92,Kafka / message queues / streaming,0.1196
+by_role,data,hn,2017-10,86,Kafka / message queues / streaming,0.1163
+by_role,data,hn,2018-01,73,Kafka / message queues / streaming,0.0822
+by_role,data,hn,2018-04,84,Kafka / message queues / streaming,0.2024
+by_role,data,hn,2018-07,84,Kafka / message queues / streaming,0.1786
+by_role,data,hn,2018-10,103,Kafka / message queues / streaming,0.1068
+by_role,data,hn,2019-01,94,Kafka / message queues / streaming,0.117
+by_role,data,hn,2019-04,83,Kafka / message queues / streaming,0.1325
+by_role,data,hn,2019-07,59,Kafka / message queues / streaming,0.0678
+by_role,data,hn,2019-10,54,Kafka / message queues / streaming,0.1111
+by_role,data,hn,2020-01,62,Kafka / message queues / streaming,0.0806
+by_role,data,hn,2020-04,44,Kafka / message queues / streaming,0.0227
+by_role,data,hn,2020-07,55,Kafka / message queues / streaming,0.0182
+by_role,data,hn,2020-10,65,Kafka / message queues / streaming,0.0308
+by_role,data,hn,2021-01,95,Kafka / message queues / streaming,0.1158
+by_role,data,hn,2021-04,89,Kafka / message queues / streaming,0.0787
+by_role,data,hn,2021-07,81,Kafka / message queues / streaming,0.0741
+by_role,data,hn,2021-10,99,Kafka / message queues / streaming,0.0606
+by_role,data,hn,2022-01,85,Kafka / message queues / streaming,0.0824
+by_role,data,hn,2022-04,89,Kafka / message queues / streaming,0.0562
+by_role,data,hn,2022-07,51,Kafka / message queues / streaming,0.0392
+by_role,data,hn,2022-10,50,Kafka / message queues / streaming,0.04
+by_role,data,hn,2023-01,44,Kafka / message queues / streaming,0.0227
+by_role,data,hn,2023-04,35,Kafka / message queues / streaming,0.0571
+by_role,data,hn,2024-10,31,Kafka / message queues / streaming,0.0968
 by_role,data,hn,2014-10,34,Observability / tracing / monitoring,0.0
 by_role,data,hn,2015-01,30,Observability / tracing / monitoring,0.0
 by_role,data,hn,2015-07,61,Observability / tracing / monitoring,0.0
@@ -1103,18 +1103,18 @@ by_role,data,hn,2022-10,50,Statistics / maths,0.0
 by_role,data,hn,2023-01,44,Statistics / maths,0.0227
 by_role,data,hn,2023-04,35,Statistics / maths,0.0
 by_role,data,hn,2024-10,31,Statistics / maths,0.0323
-by_role,backend,market,2026-10,5565,Microservices / distributed systems,0.4095
-by_role,backend,market,2026-10,5565,Python,0.3765
-by_role,backend,market,2026-10,5565,Java / Kotlin (Spring),0.3421
-by_role,backend,market,2026-10,5565,Full-stack / frontend,0.3299
-by_role,backend,market,2026-10,5565,SQL,0.3042
-by_role,backend,market,2026-10,5565,Observability / tracing / monitoring,0.3019
-by_role,backend,market,2026-10,5565,C++ / C#,0.2749
-by_role,backend,market,2026-10,5565,AWS,0.273
-by_role,backend,market,2026-10,5565,Cloud (unspecified),0.2568
-by_role,backend,market,2026-10,5565,Kubernetes,0.244
-by_role,backend,market,2026-10,5565,CI/CD,0.234
-by_role,backend,market,2026-10,5565,Go,0.23
+by_role,backend,market,2026-10,5767,Microservices / distributed systems,0.3985
+by_role,backend,market,2026-10,5767,Python,0.365
+by_role,backend,market,2026-10,5767,Java / Kotlin (Spring),0.3409
+by_role,backend,market,2026-10,5767,Full-stack / frontend,0.33
+by_role,backend,market,2026-10,5767,SQL,0.304
+by_role,backend,market,2026-10,5767,Observability / tracing / monitoring,0.292
+by_role,backend,market,2026-10,5767,C++ / C#,0.27
+by_role,backend,market,2026-10,5767,AWS,0.2667
+by_role,backend,market,2026-10,5767,Cloud (unspecified),0.2511
+by_role,backend,market,2026-10,5767,Kubernetes,0.2391
+by_role,backend,market,2026-10,5767,CI/CD,0.2292
+by_role,backend,market,2026-10,5767,PostgreSQL / relational DBs,0.2252
 by_role,backend,hn,2013-01,191,Microservices / distributed systems,0.0366
 by_role,backend,hn,2013-04,245,Microservices / distributed systems,0.0367
 by_role,backend,hn,2013-07,245,Microservices / distributed systems,0.0531
@@ -1731,74 +1731,74 @@ by_role,backend,hn,2026-01,352,CI/CD,0.0227
 by_role,backend,hn,2026-04,303,CI/CD,0.0561
 by_role,backend,hn,2026-07,210,CI/CD,0.0524
 by_role,backend,hn,2026-10,124,CI/CD,0.0806
-by_role,backend,hn,2013-01,191,Go,0.0052
-by_role,backend,hn,2013-04,245,Go,0.0245
-by_role,backend,hn,2013-07,245,Go,0.0163
-by_role,backend,hn,2013-10,281,Go,0.0249
-by_role,backend,hn,2014-01,212,Go,0.0094
-by_role,backend,hn,2014-04,268,Go,0.056
-by_role,backend,hn,2014-07,318,Go,0.044
-by_role,backend,hn,2014-10,333,Go,0.0571
-by_role,backend,hn,2015-01,402,Go,0.0448
-by_role,backend,hn,2015-04,154,Go,0.0455
-by_role,backend,hn,2015-07,520,Go,0.0481
-by_role,backend,hn,2015-10,247,Go,0.0283
-by_role,backend,hn,2016-01,239,Go,0.0167
-by_role,backend,hn,2016-04,353,Go,0.0227
-by_role,backend,hn,2016-07,549,Go,0.0965
-by_role,backend,hn,2016-10,663,Go,0.1176
-by_role,backend,hn,2017-01,865,Go,0.0855
-by_role,backend,hn,2017-04,830,Go,0.1096
-by_role,backend,hn,2017-07,789,Go,0.0989
-by_role,backend,hn,2017-10,886,Go,0.1005
-by_role,backend,hn,2018-01,769,Go,0.1144
-by_role,backend,hn,2018-04,914,Go,0.1225
-by_role,backend,hn,2018-07,765,Go,0.132
-by_role,backend,hn,2018-10,881,Go,0.1226
-by_role,backend,hn,2019-01,748,Go,0.111
-by_role,backend,hn,2019-04,729,Go,0.1043
-by_role,backend,hn,2019-07,697,Go,0.1291
-by_role,backend,hn,2019-10,679,Go,0.1193
-by_role,backend,hn,2020-01,563,Go,0.0941
-by_role,backend,hn,2020-04,461,Go,0.1106
-by_role,backend,hn,2020-07,598,Go,0.0853
-by_role,backend,hn,2020-10,717,Go,0.1158
-by_role,backend,hn,2021-01,867,Go,0.1015
-by_role,backend,hn,2021-04,881,Go,0.1101
-by_role,backend,hn,2021-07,932,Go,0.0826
-by_role,backend,hn,2021-10,843,Go,0.102
-by_role,backend,hn,2022-01,772,Go,0.1153
-by_role,backend,hn,2022-04,737,Go,0.1167
-by_role,backend,hn,2022-07,592,Go,0.0997
-by_role,backend,hn,2022-10,451,Go,0.1109
-by_role,backend,hn,2023-01,413,Go,0.0799
-by_role,backend,hn,2023-04,319,Go,0.0784
-by_role,backend,hn,2023-07,314,Go,0.086
-by_role,backend,hn,2023-10,321,Go,0.0561
-by_role,backend,hn,2024-01,308,Go,0.0747
-by_role,backend,hn,2024-04,342,Go,0.0906
-by_role,backend,hn,2024-07,363,Go,0.0744
-by_role,backend,hn,2024-10,321,Go,0.0654
-by_role,backend,hn,2025-01,342,Go,0.0965
-by_role,backend,hn,2025-04,335,Go,0.0836
-by_role,backend,hn,2025-07,305,Go,0.0787
-by_role,backend,hn,2025-10,377,Go,0.0875
-by_role,backend,hn,2026-01,352,Go,0.0795
-by_role,backend,hn,2026-04,303,Go,0.0924
-by_role,backend,hn,2026-07,210,Go,0.0714
-by_role,backend,hn,2026-10,124,Go,0.0806
-by_role,frontend,market,2026-10,559,Full-stack / frontend,0.5528
-by_role,frontend,market,2026-10,559,React / Next.js,0.5313
-by_role,frontend,market,2026-10,559,TypeScript,0.3775
-by_role,frontend,market,2026-10,559,JavaScript / Node.js,0.3131
-by_role,frontend,market,2026-10,559,Java / Kotlin (Spring),0.3113
-by_role,frontend,market,2026-10,559,REST / API design & integration,0.254
-by_role,frontend,market,2026-10,559,CI/CD,0.2236
-by_role,frontend,market,2026-10,559,AI agents / agentic workflows,0.1968
-by_role,frontend,market,2026-10,559,System design / architecture,0.1914
-by_role,frontend,market,2026-10,559,Financial services / banking domain,0.1896
-by_role,frontend,market,2026-10,559,Observability / tracing / monitoring,0.1592
-by_role,frontend,market,2026-10,559,"Testing (pytest, unit/integration)",0.1538
+by_role,backend,hn,2013-01,191,PostgreSQL / relational DBs,0.2304
+by_role,backend,hn,2013-04,245,PostgreSQL / relational DBs,0.2082
+by_role,backend,hn,2013-07,245,PostgreSQL / relational DBs,0.2367
+by_role,backend,hn,2013-10,281,PostgreSQL / relational DBs,0.2064
+by_role,backend,hn,2014-01,212,PostgreSQL / relational DBs,0.1887
+by_role,backend,hn,2014-04,268,PostgreSQL / relational DBs,0.209
+by_role,backend,hn,2014-07,318,PostgreSQL / relational DBs,0.2484
+by_role,backend,hn,2014-10,333,PostgreSQL / relational DBs,0.3093
+by_role,backend,hn,2015-01,402,PostgreSQL / relational DBs,0.2537
+by_role,backend,hn,2015-04,154,PostgreSQL / relational DBs,0.2273
+by_role,backend,hn,2015-07,520,PostgreSQL / relational DBs,0.1327
+by_role,backend,hn,2015-10,247,PostgreSQL / relational DBs,0.0
+by_role,backend,hn,2016-01,239,PostgreSQL / relational DBs,0.0084
+by_role,backend,hn,2016-04,353,PostgreSQL / relational DBs,0.0538
+by_role,backend,hn,2016-07,549,PostgreSQL / relational DBs,0.2022
+by_role,backend,hn,2016-10,663,PostgreSQL / relational DBs,0.2368
+by_role,backend,hn,2017-01,865,PostgreSQL / relational DBs,0.2116
+by_role,backend,hn,2017-04,830,PostgreSQL / relational DBs,0.2205
+by_role,backend,hn,2017-07,789,PostgreSQL / relational DBs,0.2066
+by_role,backend,hn,2017-10,886,PostgreSQL / relational DBs,0.2156
+by_role,backend,hn,2018-01,769,PostgreSQL / relational DBs,0.2341
+by_role,backend,hn,2018-04,914,PostgreSQL / relational DBs,0.2287
+by_role,backend,hn,2018-07,765,PostgreSQL / relational DBs,0.2353
+by_role,backend,hn,2018-10,881,PostgreSQL / relational DBs,0.2213
+by_role,backend,hn,2019-01,748,PostgreSQL / relational DBs,0.2353
+by_role,backend,hn,2019-04,729,PostgreSQL / relational DBs,0.2154
+by_role,backend,hn,2019-07,697,PostgreSQL / relational DBs,0.2181
+by_role,backend,hn,2019-10,679,PostgreSQL / relational DBs,0.2342
+by_role,backend,hn,2020-01,563,PostgreSQL / relational DBs,0.254
+by_role,backend,hn,2020-04,461,PostgreSQL / relational DBs,0.2148
+by_role,backend,hn,2020-07,598,PostgreSQL / relational DBs,0.2642
+by_role,backend,hn,2020-10,717,PostgreSQL / relational DBs,0.2176
+by_role,backend,hn,2021-01,867,PostgreSQL / relational DBs,0.2422
+by_role,backend,hn,2021-04,881,PostgreSQL / relational DBs,0.2599
+by_role,backend,hn,2021-07,932,PostgreSQL / relational DBs,0.2382
+by_role,backend,hn,2021-10,843,PostgreSQL / relational DBs,0.1922
+by_role,backend,hn,2022-01,772,PostgreSQL / relational DBs,0.2098
+by_role,backend,hn,2022-04,737,PostgreSQL / relational DBs,0.2551
+by_role,backend,hn,2022-07,592,PostgreSQL / relational DBs,0.2314
+by_role,backend,hn,2022-10,451,PostgreSQL / relational DBs,0.2417
+by_role,backend,hn,2023-01,413,PostgreSQL / relational DBs,0.1937
+by_role,backend,hn,2023-04,319,PostgreSQL / relational DBs,0.21
+by_role,backend,hn,2023-07,314,PostgreSQL / relational DBs,0.242
+by_role,backend,hn,2023-10,321,PostgreSQL / relational DBs,0.2336
+by_role,backend,hn,2024-01,308,PostgreSQL / relational DBs,0.211
+by_role,backend,hn,2024-04,342,PostgreSQL / relational DBs,0.1725
+by_role,backend,hn,2024-07,363,PostgreSQL / relational DBs,0.2342
+by_role,backend,hn,2024-10,321,PostgreSQL / relational DBs,0.2305
+by_role,backend,hn,2025-01,342,PostgreSQL / relational DBs,0.2368
+by_role,backend,hn,2025-04,335,PostgreSQL / relational DBs,0.2328
+by_role,backend,hn,2025-07,305,PostgreSQL / relational DBs,0.1967
+by_role,backend,hn,2025-10,377,PostgreSQL / relational DBs,0.2493
+by_role,backend,hn,2026-01,352,PostgreSQL / relational DBs,0.2926
+by_role,backend,hn,2026-04,303,PostgreSQL / relational DBs,0.3036
+by_role,backend,hn,2026-07,210,PostgreSQL / relational DBs,0.3
+by_role,backend,hn,2026-10,124,PostgreSQL / relational DBs,0.2742
+by_role,frontend,market,2026-10,632,Full-stack / frontend,0.5554
+by_role,frontend,market,2026-10,632,React / Next.js,0.5269
+by_role,frontend,market,2026-10,632,TypeScript,0.3576
+by_role,frontend,market,2026-10,632,JavaScript / Node.js,0.3133
+by_role,frontend,market,2026-10,632,Java / Kotlin (Spring),0.2991
+by_role,frontend,market,2026-10,632,REST / API design & integration,0.2405
+by_role,frontend,market,2026-10,632,CI/CD,0.2184
+by_role,frontend,market,2026-10,632,Financial services / banking domain,0.1835
+by_role,frontend,market,2026-10,632,AI agents / agentic workflows,0.1756
+by_role,frontend,market,2026-10,632,System design / architecture,0.1741
+by_role,frontend,market,2026-10,632,Observability / tracing / monitoring,0.1503
+by_role,frontend,market,2026-10,632,"Testing (pytest, unit/integration)",0.1408
 by_role,frontend,hn,2013-01,184,Full-stack / frontend,0.5543
 by_role,frontend,hn,2013-04,267,Full-stack / frontend,0.5019
 by_role,frontend,hn,2013-07,207,Full-stack / frontend,0.5894
@@ -2184,6 +2184,61 @@ by_role,frontend,hn,2025-10,62,CI/CD,0.0484
 by_role,frontend,hn,2026-01,65,CI/CD,0.0462
 by_role,frontend,hn,2026-04,47,CI/CD,0.0213
 by_role,frontend,hn,2026-07,34,CI/CD,0.1176
+by_role,frontend,hn,2013-01,184,Financial services / banking domain,0.0054
+by_role,frontend,hn,2013-04,267,Financial services / banking domain,0.0075
+by_role,frontend,hn,2013-07,207,Financial services / banking domain,0.0097
+by_role,frontend,hn,2013-10,255,Financial services / banking domain,0.0157
+by_role,frontend,hn,2014-01,249,Financial services / banking domain,0.008
+by_role,frontend,hn,2014-04,289,Financial services / banking domain,0.0035
+by_role,frontend,hn,2014-07,271,Financial services / banking domain,0.0074
+by_role,frontend,hn,2014-10,307,Financial services / banking domain,0.0163
+by_role,frontend,hn,2015-01,311,Financial services / banking domain,0.0225
+by_role,frontend,hn,2015-04,147,Financial services / banking domain,0.0136
+by_role,frontend,hn,2015-07,392,Financial services / banking domain,0.0204
+by_role,frontend,hn,2015-10,137,Financial services / banking domain,0.0
+by_role,frontend,hn,2016-01,150,Financial services / banking domain,0.0
+by_role,frontend,hn,2016-04,233,Financial services / banking domain,0.0129
+by_role,frontend,hn,2016-07,466,Financial services / banking domain,0.03
+by_role,frontend,hn,2016-10,461,Financial services / banking domain,0.0282
+by_role,frontend,hn,2017-01,403,Financial services / banking domain,0.0422
+by_role,frontend,hn,2017-04,440,Financial services / banking domain,0.0318
+by_role,frontend,hn,2017-07,451,Financial services / banking domain,0.0355
+by_role,frontend,hn,2017-10,508,Financial services / banking domain,0.0295
+by_role,frontend,hn,2018-01,424,Financial services / banking domain,0.0472
+by_role,frontend,hn,2018-04,446,Financial services / banking domain,0.0583
+by_role,frontend,hn,2018-07,416,Financial services / banking domain,0.0481
+by_role,frontend,hn,2018-10,426,Financial services / banking domain,0.0587
+by_role,frontend,hn,2019-01,385,Financial services / banking domain,0.039
+by_role,frontend,hn,2019-04,398,Financial services / banking domain,0.0452
+by_role,frontend,hn,2019-07,364,Financial services / banking domain,0.0495
+by_role,frontend,hn,2019-10,303,Financial services / banking domain,0.0264
+by_role,frontend,hn,2020-01,330,Financial services / banking domain,0.0606
+by_role,frontend,hn,2020-04,251,Financial services / banking domain,0.0438
+by_role,frontend,hn,2020-07,292,Financial services / banking domain,0.0445
+by_role,frontend,hn,2020-10,390,Financial services / banking domain,0.0359
+by_role,frontend,hn,2021-01,428,Financial services / banking domain,0.0374
+by_role,frontend,hn,2021-04,456,Financial services / banking domain,0.0702
+by_role,frontend,hn,2021-07,363,Financial services / banking domain,0.0331
+by_role,frontend,hn,2021-10,381,Financial services / banking domain,0.0604
+by_role,frontend,hn,2022-01,313,Financial services / banking domain,0.0575
+by_role,frontend,hn,2022-04,321,Financial services / banking domain,0.0467
+by_role,frontend,hn,2022-07,196,Financial services / banking domain,0.051
+by_role,frontend,hn,2022-10,191,Financial services / banking domain,0.0733
+by_role,frontend,hn,2023-01,150,Financial services / banking domain,0.06
+by_role,frontend,hn,2023-04,120,Financial services / banking domain,0.025
+by_role,frontend,hn,2023-07,103,Financial services / banking domain,0.0194
+by_role,frontend,hn,2023-10,97,Financial services / banking domain,0.0103
+by_role,frontend,hn,2024-01,92,Financial services / banking domain,0.0326
+by_role,frontend,hn,2024-04,97,Financial services / banking domain,0.0103
+by_role,frontend,hn,2024-07,90,Financial services / banking domain,0.0556
+by_role,frontend,hn,2024-10,102,Financial services / banking domain,0.049
+by_role,frontend,hn,2025-01,108,Financial services / banking domain,0.0463
+by_role,frontend,hn,2025-04,84,Financial services / banking domain,0.0595
+by_role,frontend,hn,2025-07,80,Financial services / banking domain,0.025
+by_role,frontend,hn,2025-10,62,Financial services / banking domain,0.0645
+by_role,frontend,hn,2026-01,65,Financial services / banking domain,0.0462
+by_role,frontend,hn,2026-04,47,Financial services / banking domain,0.0426
+by_role,frontend,hn,2026-07,34,Financial services / banking domain,0.0
 by_role,frontend,hn,2013-01,184,AI agents / agentic workflows,0.0
 by_role,frontend,hn,2013-04,267,AI agents / agentic workflows,0.0
 by_role,frontend,hn,2013-07,207,AI agents / agentic workflows,0.0
@@ -2294,61 +2349,6 @@ by_role,frontend,hn,2025-10,62,System design / architecture,0.0161
 by_role,frontend,hn,2026-01,65,System design / architecture,0.0462
 by_role,frontend,hn,2026-04,47,System design / architecture,0.0638
 by_role,frontend,hn,2026-07,34,System design / architecture,0.0
-by_role,frontend,hn,2013-01,184,Financial services / banking domain,0.0054
-by_role,frontend,hn,2013-04,267,Financial services / banking domain,0.0075
-by_role,frontend,hn,2013-07,207,Financial services / banking domain,0.0097
-by_role,frontend,hn,2013-10,255,Financial services / banking domain,0.0157
-by_role,frontend,hn,2014-01,249,Financial services / banking domain,0.008
-by_role,frontend,hn,2014-04,289,Financial services / banking domain,0.0035
-by_role,frontend,hn,2014-07,271,Financial services / banking domain,0.0074
-by_role,frontend,hn,2014-10,307,Financial services / banking domain,0.0163
-by_role,frontend,hn,2015-01,311,Financial services / banking domain,0.0225
-by_role,frontend,hn,2015-04,147,Financial services / banking domain,0.0136
-by_role,frontend,hn,2015-07,392,Financial services / banking domain,0.0204
-by_role,frontend,hn,2015-10,137,Financial services / banking domain,0.0
-by_role,frontend,hn,2016-01,150,Financial services / banking domain,0.0
-by_role,frontend,hn,2016-04,233,Financial services / banking domain,0.0129
-by_role,frontend,hn,2016-07,466,Financial services / banking domain,0.03
-by_role,frontend,hn,2016-10,461,Financial services / banking domain,0.0282
-by_role,frontend,hn,2017-01,403,Financial services / banking domain,0.0422
-by_role,frontend,hn,2017-04,440,Financial services / banking domain,0.0318
-by_role,frontend,hn,2017-07,451,Financial services / banking domain,0.0355
-by_role,frontend,hn,2017-10,508,Financial services / banking domain,0.0295
-by_role,frontend,hn,2018-01,424,Financial services / banking domain,0.0472
-by_role,frontend,hn,2018-04,446,Financial services / banking domain,0.0583
-by_role,frontend,hn,2018-07,416,Financial services / banking domain,0.0481
-by_role,frontend,hn,2018-10,426,Financial services / banking domain,0.0587
-by_role,frontend,hn,2019-01,385,Financial services / banking domain,0.039
-by_role,frontend,hn,2019-04,398,Financial services / banking domain,0.0452
-by_role,frontend,hn,2019-07,364,Financial services / banking domain,0.0495
-by_role,frontend,hn,2019-10,303,Financial services / banking domain,0.0264
-by_role,frontend,hn,2020-01,330,Financial services / banking domain,0.0606
-by_role,frontend,hn,2020-04,251,Financial services / banking domain,0.0438
-by_role,frontend,hn,2020-07,292,Financial services / banking domain,0.0445
-by_role,frontend,hn,2020-10,390,Financial services / banking domain,0.0359
-by_role,frontend,hn,2021-01,428,Financial services / banking domain,0.0374
-by_role,frontend,hn,2021-04,456,Financial services / banking domain,0.0702
-by_role,frontend,hn,2021-07,363,Financial services / banking domain,0.0331
-by_role,frontend,hn,2021-10,381,Financial services / banking domain,0.0604
-by_role,frontend,hn,2022-01,313,Financial services / banking domain,0.0575
-by_role,frontend,hn,2022-04,321,Financial services / banking domain,0.0467
-by_role,frontend,hn,2022-07,196,Financial services / banking domain,0.051
-by_role,frontend,hn,2022-10,191,Financial services / banking domain,0.0733
-by_role,frontend,hn,2023-01,150,Financial services / banking domain,0.06
-by_role,frontend,hn,2023-04,120,Financial services / banking domain,0.025
-by_role,frontend,hn,2023-07,103,Financial services / banking domain,0.0194
-by_role,frontend,hn,2023-10,97,Financial services / banking domain,0.0103
-by_role,frontend,hn,2024-01,92,Financial services / banking domain,0.0326
-by_role,frontend,hn,2024-04,97,Financial services / banking domain,0.0103
-by_role,frontend,hn,2024-07,90,Financial services / banking domain,0.0556
-by_role,frontend,hn,2024-10,102,Financial services / banking domain,0.049
-by_role,frontend,hn,2025-01,108,Financial services / banking domain,0.0463
-by_role,frontend,hn,2025-04,84,Financial services / banking domain,0.0595
-by_role,frontend,hn,2025-07,80,Financial services / banking domain,0.025
-by_role,frontend,hn,2025-10,62,Financial services / banking domain,0.0645
-by_role,frontend,hn,2026-01,65,Financial services / banking domain,0.0462
-by_role,frontend,hn,2026-04,47,Financial services / banking domain,0.0426
-by_role,frontend,hn,2026-07,34,Financial services / banking domain,0.0
 by_role,frontend,hn,2013-01,184,Observability / tracing / monitoring,0.0054
 by_role,frontend,hn,2013-04,267,Observability / tracing / monitoring,0.0037
 by_role,frontend,hn,2013-07,207,Observability / tracing / monitoring,0.0
@@ -2459,130 +2459,18 @@ by_role,frontend,hn,2025-10,62,"Testing (pytest, unit/integration)",0.0161
 by_role,frontend,hn,2026-01,65,"Testing (pytest, unit/integration)",0.0308
 by_role,frontend,hn,2026-04,47,"Testing (pytest, unit/integration)",0.0638
 by_role,frontend,hn,2026-07,34,"Testing (pytest, unit/integration)",0.0294
-by_role,infra,market,2026-10,2901,Python,0.4578
-by_role,infra,market,2026-10,2901,AWS,0.4316
-by_role,infra,market,2026-10,2901,Cloud (unspecified),0.4292
-by_role,infra,market,2026-10,2901,Observability / tracing / monitoring,0.3744
-by_role,infra,market,2026-10,2901,Kubernetes,0.3354
-by_role,infra,market,2026-10,2901,Terraform / IaC,0.3326
-by_role,infra,market,2026-10,2901,CI/CD,0.3033
-by_role,infra,market,2026-10,2901,Microservices / distributed systems,0.2923
-by_role,infra,market,2026-10,2901,Linux / shell,0.2744
-by_role,infra,market,2026-10,2901,Go,0.2596
-by_role,infra,market,2026-10,2901,Docker / containers,0.2509
-by_role,infra,market,2026-10,2901,GCP / Vertex AI,0.2203
-by_role,infra,hn,2013-01,63,Python,0.2381
-by_role,infra,hn,2013-04,74,Python,0.2703
-by_role,infra,hn,2013-07,69,Python,0.3188
-by_role,infra,hn,2013-10,75,Python,0.36
-by_role,infra,hn,2014-01,75,Python,0.3333
-by_role,infra,hn,2014-04,86,Python,0.2907
-by_role,infra,hn,2014-07,109,Python,0.3486
-by_role,infra,hn,2014-10,105,Python,0.2952
-by_role,infra,hn,2015-01,133,Python,0.3158
-by_role,infra,hn,2015-04,68,Python,0.2647
-by_role,infra,hn,2015-07,184,Python,0.2011
-by_role,infra,hn,2015-10,50,Python,0.02
-by_role,infra,hn,2016-01,47,Python,0.0851
-by_role,infra,hn,2016-04,99,Python,0.0808
-by_role,infra,hn,2016-07,210,Python,0.2286
-by_role,infra,hn,2016-10,252,Python,0.2302
-by_role,infra,hn,2017-01,257,Python,0.2685
-by_role,infra,hn,2017-04,241,Python,0.2822
-by_role,infra,hn,2017-07,220,Python,0.2682
-by_role,infra,hn,2017-10,244,Python,0.2623
-by_role,infra,hn,2018-01,202,Python,0.2624
-by_role,infra,hn,2018-04,277,Python,0.2924
-by_role,infra,hn,2018-07,231,Python,0.3074
-by_role,infra,hn,2018-10,268,Python,0.3097
-by_role,infra,hn,2019-01,246,Python,0.252
-by_role,infra,hn,2019-04,254,Python,0.2441
-by_role,infra,hn,2019-07,260,Python,0.2538
-by_role,infra,hn,2019-10,235,Python,0.2426
-by_role,infra,hn,2020-01,215,Python,0.1721
-by_role,infra,hn,2020-04,149,Python,0.1611
-by_role,infra,hn,2020-07,208,Python,0.1923
-by_role,infra,hn,2020-10,248,Python,0.1815
-by_role,infra,hn,2021-01,303,Python,0.1782
-by_role,infra,hn,2021-04,320,Python,0.1781
-by_role,infra,hn,2021-07,286,Python,0.2063
-by_role,infra,hn,2021-10,262,Python,0.1756
-by_role,infra,hn,2022-01,258,Python,0.2326
-by_role,infra,hn,2022-04,240,Python,0.2458
-by_role,infra,hn,2022-07,183,Python,0.2732
-by_role,infra,hn,2022-10,174,Python,0.2931
-by_role,infra,hn,2023-01,125,Python,0.24
-by_role,infra,hn,2023-04,122,Python,0.2295
-by_role,infra,hn,2023-07,106,Python,0.217
-by_role,infra,hn,2023-10,102,Python,0.2157
-by_role,infra,hn,2024-01,86,Python,0.093
-by_role,infra,hn,2024-04,106,Python,0.1604
-by_role,infra,hn,2024-07,74,Python,0.2973
-by_role,infra,hn,2024-10,77,Python,0.1818
-by_role,infra,hn,2025-01,97,Python,0.2268
-by_role,infra,hn,2025-04,78,Python,0.2692
-by_role,infra,hn,2025-07,83,Python,0.241
-by_role,infra,hn,2025-10,117,Python,0.2479
-by_role,infra,hn,2026-01,79,Python,0.3038
-by_role,infra,hn,2026-04,89,Python,0.2697
-by_role,infra,hn,2026-07,83,Python,0.2651
-by_role,infra,hn,2026-10,46,Python,0.1957
-by_role,infra,hn,2013-01,63,AWS,0.1587
-by_role,infra,hn,2013-04,74,AWS,0.2432
-by_role,infra,hn,2013-07,69,AWS,0.1884
-by_role,infra,hn,2013-10,75,AWS,0.1867
-by_role,infra,hn,2014-01,75,AWS,0.2
-by_role,infra,hn,2014-04,86,AWS,0.2093
-by_role,infra,hn,2014-07,109,AWS,0.2018
-by_role,infra,hn,2014-10,105,AWS,0.2952
-by_role,infra,hn,2015-01,133,AWS,0.2782
-by_role,infra,hn,2015-04,68,AWS,0.2941
-by_role,infra,hn,2015-07,184,AWS,0.2283
-by_role,infra,hn,2015-10,50,AWS,0.06
-by_role,infra,hn,2016-01,47,AWS,0.0213
-by_role,infra,hn,2016-04,99,AWS,0.0707
-by_role,infra,hn,2016-07,210,AWS,0.2905
-by_role,infra,hn,2016-10,252,AWS,0.2381
-by_role,infra,hn,2017-01,257,AWS,0.2296
-by_role,infra,hn,2017-04,241,AWS,0.2905
-by_role,infra,hn,2017-07,220,AWS,0.2682
-by_role,infra,hn,2017-10,244,AWS,0.3033
-by_role,infra,hn,2018-01,202,AWS,0.2871
-by_role,infra,hn,2018-04,277,AWS,0.3141
-by_role,infra,hn,2018-07,231,AWS,0.3117
-by_role,infra,hn,2018-10,268,AWS,0.25
-by_role,infra,hn,2019-01,246,AWS,0.2764
-by_role,infra,hn,2019-04,254,AWS,0.2795
-by_role,infra,hn,2019-07,260,AWS,0.3154
-by_role,infra,hn,2019-10,235,AWS,0.2468
-by_role,infra,hn,2020-01,215,AWS,0.2791
-by_role,infra,hn,2020-04,149,AWS,0.3087
-by_role,infra,hn,2020-07,208,AWS,0.2212
-by_role,infra,hn,2020-10,248,AWS,0.2742
-by_role,infra,hn,2021-01,303,AWS,0.2673
-by_role,infra,hn,2021-04,320,AWS,0.275
-by_role,infra,hn,2021-07,286,AWS,0.3147
-by_role,infra,hn,2021-10,262,AWS,0.2901
-by_role,infra,hn,2022-01,258,AWS,0.2326
-by_role,infra,hn,2022-04,240,AWS,0.2167
-by_role,infra,hn,2022-07,183,AWS,0.2022
-by_role,infra,hn,2022-10,174,AWS,0.2701
-by_role,infra,hn,2023-01,125,AWS,0.2
-by_role,infra,hn,2023-04,122,AWS,0.1557
-by_role,infra,hn,2023-07,106,AWS,0.2547
-by_role,infra,hn,2023-10,102,AWS,0.1863
-by_role,infra,hn,2024-01,86,AWS,0.1744
-by_role,infra,hn,2024-04,106,AWS,0.1887
-by_role,infra,hn,2024-07,74,AWS,0.2838
-by_role,infra,hn,2024-10,77,AWS,0.2208
-by_role,infra,hn,2025-01,97,AWS,0.2784
-by_role,infra,hn,2025-04,78,AWS,0.2051
-by_role,infra,hn,2025-07,83,AWS,0.2169
-by_role,infra,hn,2025-10,117,AWS,0.265
-by_role,infra,hn,2026-01,79,AWS,0.3418
-by_role,infra,hn,2026-04,89,AWS,0.2584
-by_role,infra,hn,2026-07,83,AWS,0.2651
-by_role,infra,hn,2026-10,46,AWS,0.2391
+by_role,infra,market,2026-10,3769,Cloud (unspecified),0.3715
+by_role,infra,market,2026-10,3769,AWS,0.3677
+by_role,infra,market,2026-10,3769,Python,0.3664
+by_role,infra,market,2026-10,3769,Observability / tracing / monitoring,0.3311
+by_role,infra,market,2026-10,3769,Terraform / IaC,0.2964
+by_role,infra,market,2026-10,3769,Kubernetes,0.2911
+by_role,infra,market,2026-10,3769,CI/CD,0.2571
+by_role,infra,market,2026-10,3769,Linux / shell,0.2486
+by_role,infra,market,2026-10,3769,Microservices / distributed systems,0.2327
+by_role,infra,market,2026-10,3769,Docker / containers,0.2261
+by_role,infra,market,2026-10,3769,Go,0.2024
+by_role,infra,market,2026-10,3769,GCP / Vertex AI,0.1863
 by_role,infra,hn,2013-01,63,Cloud (unspecified),0.0159
 by_role,infra,hn,2013-04,74,Cloud (unspecified),0.0541
 by_role,infra,hn,2013-07,69,Cloud (unspecified),0.0435
@@ -2639,6 +2527,118 @@ by_role,infra,hn,2026-01,79,Cloud (unspecified),0.2025
 by_role,infra,hn,2026-04,89,Cloud (unspecified),0.1461
 by_role,infra,hn,2026-07,83,Cloud (unspecified),0.1687
 by_role,infra,hn,2026-10,46,Cloud (unspecified),0.0217
+by_role,infra,hn,2013-01,63,AWS,0.1587
+by_role,infra,hn,2013-04,74,AWS,0.2432
+by_role,infra,hn,2013-07,69,AWS,0.1884
+by_role,infra,hn,2013-10,75,AWS,0.1867
+by_role,infra,hn,2014-01,75,AWS,0.2
+by_role,infra,hn,2014-04,86,AWS,0.2093
+by_role,infra,hn,2014-07,109,AWS,0.2018
+by_role,infra,hn,2014-10,105,AWS,0.2952
+by_role,infra,hn,2015-01,133,AWS,0.2782
+by_role,infra,hn,2015-04,68,AWS,0.2941
+by_role,infra,hn,2015-07,184,AWS,0.2283
+by_role,infra,hn,2015-10,50,AWS,0.06
+by_role,infra,hn,2016-01,47,AWS,0.0213
+by_role,infra,hn,2016-04,99,AWS,0.0707
+by_role,infra,hn,2016-07,210,AWS,0.2905
+by_role,infra,hn,2016-10,252,AWS,0.2381
+by_role,infra,hn,2017-01,257,AWS,0.2296
+by_role,infra,hn,2017-04,241,AWS,0.2905
+by_role,infra,hn,2017-07,220,AWS,0.2682
+by_role,infra,hn,2017-10,244,AWS,0.3033
+by_role,infra,hn,2018-01,202,AWS,0.2871
+by_role,infra,hn,2018-04,277,AWS,0.3141
+by_role,infra,hn,2018-07,231,AWS,0.3117
+by_role,infra,hn,2018-10,268,AWS,0.25
+by_role,infra,hn,2019-01,246,AWS,0.2764
+by_role,infra,hn,2019-04,254,AWS,0.2795
+by_role,infra,hn,2019-07,260,AWS,0.3154
+by_role,infra,hn,2019-10,235,AWS,0.2468
+by_role,infra,hn,2020-01,215,AWS,0.2791
+by_role,infra,hn,2020-04,149,AWS,0.3087
+by_role,infra,hn,2020-07,208,AWS,0.2212
+by_role,infra,hn,2020-10,248,AWS,0.2742
+by_role,infra,hn,2021-01,303,AWS,0.2673
+by_role,infra,hn,2021-04,320,AWS,0.275
+by_role,infra,hn,2021-07,286,AWS,0.3147
+by_role,infra,hn,2021-10,262,AWS,0.2901
+by_role,infra,hn,2022-01,258,AWS,0.2326
+by_role,infra,hn,2022-04,240,AWS,0.2167
+by_role,infra,hn,2022-07,183,AWS,0.2022
+by_role,infra,hn,2022-10,174,AWS,0.2701
+by_role,infra,hn,2023-01,125,AWS,0.2
+by_role,infra,hn,2023-04,122,AWS,0.1557
+by_role,infra,hn,2023-07,106,AWS,0.2547
+by_role,infra,hn,2023-10,102,AWS,0.1863
+by_role,infra,hn,2024-01,86,AWS,0.1744
+by_role,infra,hn,2024-04,106,AWS,0.1887
+by_role,infra,hn,2024-07,74,AWS,0.2838
+by_role,infra,hn,2024-10,77,AWS,0.2208
+by_role,infra,hn,2025-01,97,AWS,0.2784
+by_role,infra,hn,2025-04,78,AWS,0.2051
+by_role,infra,hn,2025-07,83,AWS,0.2169
+by_role,infra,hn,2025-10,117,AWS,0.265
+by_role,infra,hn,2026-01,79,AWS,0.3418
+by_role,infra,hn,2026-04,89,AWS,0.2584
+by_role,infra,hn,2026-07,83,AWS,0.2651
+by_role,infra,hn,2026-10,46,AWS,0.2391
+by_role,infra,hn,2013-01,63,Python,0.2381
+by_role,infra,hn,2013-04,74,Python,0.2703
+by_role,infra,hn,2013-07,69,Python,0.3188
+by_role,infra,hn,2013-10,75,Python,0.36
+by_role,infra,hn,2014-01,75,Python,0.3333
+by_role,infra,hn,2014-04,86,Python,0.2907
+by_role,infra,hn,2014-07,109,Python,0.3486
+by_role,infra,hn,2014-10,105,Python,0.2952
+by_role,infra,hn,2015-01,133,Python,0.3158
+by_role,infra,hn,2015-04,68,Python,0.2647
+by_role,infra,hn,2015-07,184,Python,0.2011
+by_role,infra,hn,2015-10,50,Python,0.02
+by_role,infra,hn,2016-01,47,Python,0.0851
+by_role,infra,hn,2016-04,99,Python,0.0808
+by_role,infra,hn,2016-07,210,Python,0.2286
+by_role,infra,hn,2016-10,252,Python,0.2302
+by_role,infra,hn,2017-01,257,Python,0.2685
+by_role,infra,hn,2017-04,241,Python,0.2822
+by_role,infra,hn,2017-07,220,Python,0.2682
+by_role,infra,hn,2017-10,244,Python,0.2623
+by_role,infra,hn,2018-01,202,Python,0.2624
+by_role,infra,hn,2018-04,277,Python,0.2924
+by_role,infra,hn,2018-07,231,Python,0.3074
+by_role,infra,hn,2018-10,268,Python,0.3097
+by_role,infra,hn,2019-01,246,Python,0.252
+by_role,infra,hn,2019-04,254,Python,0.2441
+by_role,infra,hn,2019-07,260,Python,0.2538
+by_role,infra,hn,2019-10,235,Python,0.2426
+by_role,infra,hn,2020-01,215,Python,0.1721
+by_role,infra,hn,2020-04,149,Python,0.1611
+by_role,infra,hn,2020-07,208,Python,0.1923
+by_role,infra,hn,2020-10,248,Python,0.1815
+by_role,infra,hn,2021-01,303,Python,0.1782
+by_role,infra,hn,2021-04,320,Python,0.1781
+by_role,infra,hn,2021-07,286,Python,0.2063
+by_role,infra,hn,2021-10,262,Python,0.1756
+by_role,infra,hn,2022-01,258,Python,0.2326
+by_role,infra,hn,2022-04,240,Python,0.2458
+by_role,infra,hn,2022-07,183,Python,0.2732
+by_role,infra,hn,2022-10,174,Python,0.2931
+by_role,infra,hn,2023-01,125,Python,0.24
+by_role,infra,hn,2023-04,122,Python,0.2295
+by_role,infra,hn,2023-07,106,Python,0.217
+by_role,infra,hn,2023-10,102,Python,0.2157
+by_role,infra,hn,2024-01,86,Python,0.093
+by_role,infra,hn,2024-04,106,Python,0.1604
+by_role,infra,hn,2024-07,74,Python,0.2973
+by_role,infra,hn,2024-10,77,Python,0.1818
+by_role,infra,hn,2025-01,97,Python,0.2268
+by_role,infra,hn,2025-04,78,Python,0.2692
+by_role,infra,hn,2025-07,83,Python,0.241
+by_role,infra,hn,2025-10,117,Python,0.2479
+by_role,infra,hn,2026-01,79,Python,0.3038
+by_role,infra,hn,2026-04,89,Python,0.2697
+by_role,infra,hn,2026-07,83,Python,0.2651
+by_role,infra,hn,2026-10,46,Python,0.1957
 by_role,infra,hn,2013-01,63,Observability / tracing / monitoring,0.0317
 by_role,infra,hn,2013-04,74,Observability / tracing / monitoring,0.0541
 by_role,infra,hn,2013-07,69,Observability / tracing / monitoring,0.0145
@@ -2695,62 +2695,6 @@ by_role,infra,hn,2026-01,79,Observability / tracing / monitoring,0.3038
 by_role,infra,hn,2026-04,89,Observability / tracing / monitoring,0.2809
 by_role,infra,hn,2026-07,83,Observability / tracing / monitoring,0.2048
 by_role,infra,hn,2026-10,46,Observability / tracing / monitoring,0.1739
-by_role,infra,hn,2013-01,63,Kubernetes,0.0
-by_role,infra,hn,2013-04,74,Kubernetes,0.0
-by_role,infra,hn,2013-07,69,Kubernetes,0.0
-by_role,infra,hn,2013-10,75,Kubernetes,0.0
-by_role,infra,hn,2014-01,75,Kubernetes,0.0133
-by_role,infra,hn,2014-04,86,Kubernetes,0.0
-by_role,infra,hn,2014-07,109,Kubernetes,0.0
-by_role,infra,hn,2014-10,105,Kubernetes,0.0
-by_role,infra,hn,2015-01,133,Kubernetes,0.0
-by_role,infra,hn,2015-04,68,Kubernetes,0.0
-by_role,infra,hn,2015-07,184,Kubernetes,0.0109
-by_role,infra,hn,2015-10,50,Kubernetes,0.0
-by_role,infra,hn,2016-01,47,Kubernetes,0.0
-by_role,infra,hn,2016-04,99,Kubernetes,0.0101
-by_role,infra,hn,2016-07,210,Kubernetes,0.0667
-by_role,infra,hn,2016-10,252,Kubernetes,0.0754
-by_role,infra,hn,2017-01,257,Kubernetes,0.0895
-by_role,infra,hn,2017-04,241,Kubernetes,0.0913
-by_role,infra,hn,2017-07,220,Kubernetes,0.1136
-by_role,infra,hn,2017-10,244,Kubernetes,0.127
-by_role,infra,hn,2018-01,202,Kubernetes,0.1386
-by_role,infra,hn,2018-04,277,Kubernetes,0.2058
-by_role,infra,hn,2018-07,231,Kubernetes,0.1688
-by_role,infra,hn,2018-10,268,Kubernetes,0.2015
-by_role,infra,hn,2019-01,246,Kubernetes,0.2033
-by_role,infra,hn,2019-04,254,Kubernetes,0.189
-by_role,infra,hn,2019-07,260,Kubernetes,0.1923
-by_role,infra,hn,2019-10,235,Kubernetes,0.2043
-by_role,infra,hn,2020-01,215,Kubernetes,0.2186
-by_role,infra,hn,2020-04,149,Kubernetes,0.1544
-by_role,infra,hn,2020-07,208,Kubernetes,0.2019
-by_role,infra,hn,2020-10,248,Kubernetes,0.2137
-by_role,infra,hn,2021-01,303,Kubernetes,0.2013
-by_role,infra,hn,2021-04,320,Kubernetes,0.2
-by_role,infra,hn,2021-07,286,Kubernetes,0.2133
-by_role,infra,hn,2021-10,262,Kubernetes,0.229
-by_role,infra,hn,2022-01,258,Kubernetes,0.2132
-by_role,infra,hn,2022-04,240,Kubernetes,0.1875
-by_role,infra,hn,2022-07,183,Kubernetes,0.1858
-by_role,infra,hn,2022-10,174,Kubernetes,0.1494
-by_role,infra,hn,2023-01,125,Kubernetes,0.192
-by_role,infra,hn,2023-04,122,Kubernetes,0.1803
-by_role,infra,hn,2023-07,106,Kubernetes,0.2736
-by_role,infra,hn,2023-10,102,Kubernetes,0.1667
-by_role,infra,hn,2024-01,86,Kubernetes,0.1512
-by_role,infra,hn,2024-04,106,Kubernetes,0.1887
-by_role,infra,hn,2024-07,74,Kubernetes,0.2027
-by_role,infra,hn,2024-10,77,Kubernetes,0.1818
-by_role,infra,hn,2025-01,97,Kubernetes,0.2062
-by_role,infra,hn,2025-04,78,Kubernetes,0.3205
-by_role,infra,hn,2025-07,83,Kubernetes,0.2048
-by_role,infra,hn,2025-10,117,Kubernetes,0.2051
-by_role,infra,hn,2026-01,79,Kubernetes,0.2532
-by_role,infra,hn,2026-04,89,Kubernetes,0.2472
-by_role,infra,hn,2026-07,83,Kubernetes,0.3133
-by_role,infra,hn,2026-10,46,Kubernetes,0.2391
 by_role,infra,hn,2013-01,63,Terraform / IaC,0.0159
 by_role,infra,hn,2013-04,74,Terraform / IaC,0.0135
 by_role,infra,hn,2013-07,69,Terraform / IaC,0.0145
@@ -2807,6 +2751,62 @@ by_role,infra,hn,2026-01,79,Terraform / IaC,0.3165
 by_role,infra,hn,2026-04,89,Terraform / IaC,0.2022
 by_role,infra,hn,2026-07,83,Terraform / IaC,0.3012
 by_role,infra,hn,2026-10,46,Terraform / IaC,0.2391
+by_role,infra,hn,2013-01,63,Kubernetes,0.0
+by_role,infra,hn,2013-04,74,Kubernetes,0.0
+by_role,infra,hn,2013-07,69,Kubernetes,0.0
+by_role,infra,hn,2013-10,75,Kubernetes,0.0
+by_role,infra,hn,2014-01,75,Kubernetes,0.0133
+by_role,infra,hn,2014-04,86,Kubernetes,0.0
+by_role,infra,hn,2014-07,109,Kubernetes,0.0
+by_role,infra,hn,2014-10,105,Kubernetes,0.0
+by_role,infra,hn,2015-01,133,Kubernetes,0.0
+by_role,infra,hn,2015-04,68,Kubernetes,0.0
+by_role,infra,hn,2015-07,184,Kubernetes,0.0109
+by_role,infra,hn,2015-10,50,Kubernetes,0.0
+by_role,infra,hn,2016-01,47,Kubernetes,0.0
+by_role,infra,hn,2016-04,99,Kubernetes,0.0101
+by_role,infra,hn,2016-07,210,Kubernetes,0.0667
+by_role,infra,hn,2016-10,252,Kubernetes,0.0754
+by_role,infra,hn,2017-01,257,Kubernetes,0.0895
+by_role,infra,hn,2017-04,241,Kubernetes,0.0913
+by_role,infra,hn,2017-07,220,Kubernetes,0.1136
+by_role,infra,hn,2017-10,244,Kubernetes,0.127
+by_role,infra,hn,2018-01,202,Kubernetes,0.1386
+by_role,infra,hn,2018-04,277,Kubernetes,0.2058
+by_role,infra,hn,2018-07,231,Kubernetes,0.1688
+by_role,infra,hn,2018-10,268,Kubernetes,0.2015
+by_role,infra,hn,2019-01,246,Kubernetes,0.2033
+by_role,infra,hn,2019-04,254,Kubernetes,0.189
+by_role,infra,hn,2019-07,260,Kubernetes,0.1923
+by_role,infra,hn,2019-10,235,Kubernetes,0.2043
+by_role,infra,hn,2020-01,215,Kubernetes,0.2186
+by_role,infra,hn,2020-04,149,Kubernetes,0.1544
+by_role,infra,hn,2020-07,208,Kubernetes,0.2019
+by_role,infra,hn,2020-10,248,Kubernetes,0.2137
+by_role,infra,hn,2021-01,303,Kubernetes,0.2013
+by_role,infra,hn,2021-04,320,Kubernetes,0.2
+by_role,infra,hn,2021-07,286,Kubernetes,0.2133
+by_role,infra,hn,2021-10,262,Kubernetes,0.229
+by_role,infra,hn,2022-01,258,Kubernetes,0.2132
+by_role,infra,hn,2022-04,240,Kubernetes,0.1875
+by_role,infra,hn,2022-07,183,Kubernetes,0.1858
+by_role,infra,hn,2022-10,174,Kubernetes,0.1494
+by_role,infra,hn,2023-01,125,Kubernetes,0.192
+by_role,infra,hn,2023-04,122,Kubernetes,0.1803
+by_role,infra,hn,2023-07,106,Kubernetes,0.2736
+by_role,infra,hn,2023-10,102,Kubernetes,0.1667
+by_role,infra,hn,2024-01,86,Kubernetes,0.1512
+by_role,infra,hn,2024-04,106,Kubernetes,0.1887
+by_role,infra,hn,2024-07,74,Kubernetes,0.2027
+by_role,infra,hn,2024-10,77,Kubernetes,0.1818
+by_role,infra,hn,2025-01,97,Kubernetes,0.2062
+by_role,infra,hn,2025-04,78,Kubernetes,0.3205
+by_role,infra,hn,2025-07,83,Kubernetes,0.2048
+by_role,infra,hn,2025-10,117,Kubernetes,0.2051
+by_role,infra,hn,2026-01,79,Kubernetes,0.2532
+by_role,infra,hn,2026-04,89,Kubernetes,0.2472
+by_role,infra,hn,2026-07,83,Kubernetes,0.3133
+by_role,infra,hn,2026-10,46,Kubernetes,0.2391
 by_role,infra,hn,2013-01,63,CI/CD,0.0317
 by_role,infra,hn,2013-04,74,CI/CD,0.027
 by_role,infra,hn,2013-07,69,CI/CD,0.0725
@@ -2863,62 +2863,6 @@ by_role,infra,hn,2026-01,79,CI/CD,0.2278
 by_role,infra,hn,2026-04,89,CI/CD,0.1461
 by_role,infra,hn,2026-07,83,CI/CD,0.1807
 by_role,infra,hn,2026-10,46,CI/CD,0.1739
-by_role,infra,hn,2013-01,63,Microservices / distributed systems,0.1746
-by_role,infra,hn,2013-04,74,Microservices / distributed systems,0.1081
-by_role,infra,hn,2013-07,69,Microservices / distributed systems,0.1014
-by_role,infra,hn,2013-10,75,Microservices / distributed systems,0.0667
-by_role,infra,hn,2014-01,75,Microservices / distributed systems,0.1067
-by_role,infra,hn,2014-04,86,Microservices / distributed systems,0.0814
-by_role,infra,hn,2014-07,109,Microservices / distributed systems,0.0826
-by_role,infra,hn,2014-10,105,Microservices / distributed systems,0.1238
-by_role,infra,hn,2015-01,133,Microservices / distributed systems,0.1128
-by_role,infra,hn,2015-04,68,Microservices / distributed systems,0.1029
-by_role,infra,hn,2015-07,184,Microservices / distributed systems,0.0815
-by_role,infra,hn,2015-10,50,Microservices / distributed systems,0.0
-by_role,infra,hn,2016-01,47,Microservices / distributed systems,0.0213
-by_role,infra,hn,2016-04,99,Microservices / distributed systems,0.0303
-by_role,infra,hn,2016-07,210,Microservices / distributed systems,0.119
-by_role,infra,hn,2016-10,252,Microservices / distributed systems,0.1151
-by_role,infra,hn,2017-01,257,Microservices / distributed systems,0.1323
-by_role,infra,hn,2017-04,241,Microservices / distributed systems,0.1203
-by_role,infra,hn,2017-07,220,Microservices / distributed systems,0.1182
-by_role,infra,hn,2017-10,244,Microservices / distributed systems,0.123
-by_role,infra,hn,2018-01,202,Microservices / distributed systems,0.104
-by_role,infra,hn,2018-04,277,Microservices / distributed systems,0.1408
-by_role,infra,hn,2018-07,231,Microservices / distributed systems,0.1255
-by_role,infra,hn,2018-10,268,Microservices / distributed systems,0.097
-by_role,infra,hn,2019-01,246,Microservices / distributed systems,0.0813
-by_role,infra,hn,2019-04,254,Microservices / distributed systems,0.0748
-by_role,infra,hn,2019-07,260,Microservices / distributed systems,0.1192
-by_role,infra,hn,2019-10,235,Microservices / distributed systems,0.1149
-by_role,infra,hn,2020-01,215,Microservices / distributed systems,0.093
-by_role,infra,hn,2020-04,149,Microservices / distributed systems,0.0872
-by_role,infra,hn,2020-07,208,Microservices / distributed systems,0.0913
-by_role,infra,hn,2020-10,248,Microservices / distributed systems,0.0968
-by_role,infra,hn,2021-01,303,Microservices / distributed systems,0.0528
-by_role,infra,hn,2021-04,320,Microservices / distributed systems,0.0469
-by_role,infra,hn,2021-07,286,Microservices / distributed systems,0.1329
-by_role,infra,hn,2021-10,262,Microservices / distributed systems,0.1145
-by_role,infra,hn,2022-01,258,Microservices / distributed systems,0.0698
-by_role,infra,hn,2022-04,240,Microservices / distributed systems,0.075
-by_role,infra,hn,2022-07,183,Microservices / distributed systems,0.0546
-by_role,infra,hn,2022-10,174,Microservices / distributed systems,0.1322
-by_role,infra,hn,2023-01,125,Microservices / distributed systems,0.104
-by_role,infra,hn,2023-04,122,Microservices / distributed systems,0.123
-by_role,infra,hn,2023-07,106,Microservices / distributed systems,0.0943
-by_role,infra,hn,2023-10,102,Microservices / distributed systems,0.1176
-by_role,infra,hn,2024-01,86,Microservices / distributed systems,0.0581
-by_role,infra,hn,2024-04,106,Microservices / distributed systems,0.0472
-by_role,infra,hn,2024-07,74,Microservices / distributed systems,0.0405
-by_role,infra,hn,2024-10,77,Microservices / distributed systems,0.1039
-by_role,infra,hn,2025-01,97,Microservices / distributed systems,0.1134
-by_role,infra,hn,2025-04,78,Microservices / distributed systems,0.1795
-by_role,infra,hn,2025-07,83,Microservices / distributed systems,0.1928
-by_role,infra,hn,2025-10,117,Microservices / distributed systems,0.1624
-by_role,infra,hn,2026-01,79,Microservices / distributed systems,0.1139
-by_role,infra,hn,2026-04,89,Microservices / distributed systems,0.2135
-by_role,infra,hn,2026-07,83,Microservices / distributed systems,0.0964
-by_role,infra,hn,2026-10,46,Microservices / distributed systems,0.1304
 by_role,infra,hn,2013-01,63,Linux / shell,0.2063
 by_role,infra,hn,2013-04,74,Linux / shell,0.2568
 by_role,infra,hn,2013-07,69,Linux / shell,0.3188
@@ -2975,62 +2919,62 @@ by_role,infra,hn,2026-01,79,Linux / shell,0.1519
 by_role,infra,hn,2026-04,89,Linux / shell,0.191
 by_role,infra,hn,2026-07,83,Linux / shell,0.1928
 by_role,infra,hn,2026-10,46,Linux / shell,0.1739
-by_role,infra,hn,2013-01,63,Go,0.0317
-by_role,infra,hn,2013-04,74,Go,0.0
-by_role,infra,hn,2013-07,69,Go,0.0145
-by_role,infra,hn,2013-10,75,Go,0.08
-by_role,infra,hn,2014-01,75,Go,0.0667
-by_role,infra,hn,2014-04,86,Go,0.0698
-by_role,infra,hn,2014-07,109,Go,0.1376
-by_role,infra,hn,2014-10,105,Go,0.1238
-by_role,infra,hn,2015-01,133,Go,0.0902
-by_role,infra,hn,2015-04,68,Go,0.0882
-by_role,infra,hn,2015-07,184,Go,0.1087
-by_role,infra,hn,2015-10,50,Go,0.0
-by_role,infra,hn,2016-01,47,Go,0.0
-by_role,infra,hn,2016-04,99,Go,0.0404
-by_role,infra,hn,2016-07,210,Go,0.1619
-by_role,infra,hn,2016-10,252,Go,0.1508
-by_role,infra,hn,2017-01,257,Go,0.1556
-by_role,infra,hn,2017-04,241,Go,0.1328
-by_role,infra,hn,2017-07,220,Go,0.1591
-by_role,infra,hn,2017-10,244,Go,0.1434
-by_role,infra,hn,2018-01,202,Go,0.1436
-by_role,infra,hn,2018-04,277,Go,0.13
-by_role,infra,hn,2018-07,231,Go,0.1602
-by_role,infra,hn,2018-10,268,Go,0.1791
-by_role,infra,hn,2019-01,246,Go,0.1748
-by_role,infra,hn,2019-04,254,Go,0.2165
-by_role,infra,hn,2019-07,260,Go,0.1269
-by_role,infra,hn,2019-10,235,Go,0.1404
-by_role,infra,hn,2020-01,215,Go,0.1349
-by_role,infra,hn,2020-04,149,Go,0.1342
-by_role,infra,hn,2020-07,208,Go,0.149
-by_role,infra,hn,2020-10,248,Go,0.129
-by_role,infra,hn,2021-01,303,Go,0.1419
-by_role,infra,hn,2021-04,320,Go,0.1281
-by_role,infra,hn,2021-07,286,Go,0.1713
-by_role,infra,hn,2021-10,262,Go,0.1641
-by_role,infra,hn,2022-01,258,Go,0.1318
-by_role,infra,hn,2022-04,240,Go,0.1333
-by_role,infra,hn,2022-07,183,Go,0.0984
-by_role,infra,hn,2022-10,174,Go,0.1092
-by_role,infra,hn,2023-01,125,Go,0.112
-by_role,infra,hn,2023-04,122,Go,0.1639
-by_role,infra,hn,2023-07,106,Go,0.1038
-by_role,infra,hn,2023-10,102,Go,0.1176
-by_role,infra,hn,2024-01,86,Go,0.1047
-by_role,infra,hn,2024-04,106,Go,0.1981
-by_role,infra,hn,2024-07,74,Go,0.2027
-by_role,infra,hn,2024-10,77,Go,0.1818
-by_role,infra,hn,2025-01,97,Go,0.0825
-by_role,infra,hn,2025-04,78,Go,0.1154
-by_role,infra,hn,2025-07,83,Go,0.0964
-by_role,infra,hn,2025-10,117,Go,0.1282
-by_role,infra,hn,2026-01,79,Go,0.0886
-by_role,infra,hn,2026-04,89,Go,0.1798
-by_role,infra,hn,2026-07,83,Go,0.1566
-by_role,infra,hn,2026-10,46,Go,0.1522
+by_role,infra,hn,2013-01,63,Microservices / distributed systems,0.1746
+by_role,infra,hn,2013-04,74,Microservices / distributed systems,0.1081
+by_role,infra,hn,2013-07,69,Microservices / distributed systems,0.1014
+by_role,infra,hn,2013-10,75,Microservices / distributed systems,0.0667
+by_role,infra,hn,2014-01,75,Microservices / distributed systems,0.1067
+by_role,infra,hn,2014-04,86,Microservices / distributed systems,0.0814
+by_role,infra,hn,2014-07,109,Microservices / distributed systems,0.0826
+by_role,infra,hn,2014-10,105,Microservices / distributed systems,0.1238
+by_role,infra,hn,2015-01,133,Microservices / distributed systems,0.1128
+by_role,infra,hn,2015-04,68,Microservices / distributed systems,0.1029
+by_role,infra,hn,2015-07,184,Microservices / distributed systems,0.0815
+by_role,infra,hn,2015-10,50,Microservices / distributed systems,0.0
+by_role,infra,hn,2016-01,47,Microservices / distributed systems,0.0213
+by_role,infra,hn,2016-04,99,Microservices / distributed systems,0.0303
+by_role,infra,hn,2016-07,210,Microservices / distributed systems,0.119
+by_role,infra,hn,2016-10,252,Microservices / distributed systems,0.1151
+by_role,infra,hn,2017-01,257,Microservices / distributed systems,0.1323
+by_role,infra,hn,2017-04,241,Microservices / distributed systems,0.1203
+by_role,infra,hn,2017-07,220,Microservices / distributed systems,0.1182
+by_role,infra,hn,2017-10,244,Microservices / distributed systems,0.123
+by_role,infra,hn,2018-01,202,Microservices / distributed systems,0.104
+by_role,infra,hn,2018-04,277,Microservices / distributed systems,0.1408
+by_role,infra,hn,2018-07,231,Microservices / distributed systems,0.1255
+by_role,infra,hn,2018-10,268,Microservices / distributed systems,0.097
+by_role,infra,hn,2019-01,246,Microservices / distributed systems,0.0813
+by_role,infra,hn,2019-04,254,Microservices / distributed systems,0.0748
+by_role,infra,hn,2019-07,260,Microservices / distributed systems,0.1192
+by_role,infra,hn,2019-10,235,Microservices / distributed systems,0.1149
+by_role,infra,hn,2020-01,215,Microservices / distributed systems,0.093
+by_role,infra,hn,2020-04,149,Microservices / distributed systems,0.0872
+by_role,infra,hn,2020-07,208,Microservices / distributed systems,0.0913
+by_role,infra,hn,2020-10,248,Microservices / distributed systems,0.0968
+by_role,infra,hn,2021-01,303,Microservices / distributed systems,0.0528
+by_role,infra,hn,2021-04,320,Microservices / distributed systems,0.0469
+by_role,infra,hn,2021-07,286,Microservices / distributed systems,0.1329
+by_role,infra,hn,2021-10,262,Microservices / distributed systems,0.1145
+by_role,infra,hn,2022-01,258,Microservices / distributed systems,0.0698
+by_role,infra,hn,2022-04,240,Microservices / distributed systems,0.075
+by_role,infra,hn,2022-07,183,Microservices / distributed systems,0.0546
+by_role,infra,hn,2022-10,174,Microservices / distributed systems,0.1322
+by_role,infra,hn,2023-01,125,Microservices / distributed systems,0.104
+by_role,infra,hn,2023-04,122,Microservices / distributed systems,0.123
+by_role,infra,hn,2023-07,106,Microservices / distributed systems,0.0943
+by_role,infra,hn,2023-10,102,Microservices / distributed systems,0.1176
+by_role,infra,hn,2024-01,86,Microservices / distributed systems,0.0581
+by_role,infra,hn,2024-04,106,Microservices / distributed systems,0.0472
+by_role,infra,hn,2024-07,74,Microservices / distributed systems,0.0405
+by_role,infra,hn,2024-10,77,Microservices / distributed systems,0.1039
+by_role,infra,hn,2025-01,97,Microservices / distributed systems,0.1134
+by_role,infra,hn,2025-04,78,Microservices / distributed systems,0.1795
+by_role,infra,hn,2025-07,83,Microservices / distributed systems,0.1928
+by_role,infra,hn,2025-10,117,Microservices / distributed systems,0.1624
+by_role,infra,hn,2026-01,79,Microservices / distributed systems,0.1139
+by_role,infra,hn,2026-04,89,Microservices / distributed systems,0.2135
+by_role,infra,hn,2026-07,83,Microservices / distributed systems,0.0964
+by_role,infra,hn,2026-10,46,Microservices / distributed systems,0.1304
 by_role,infra,hn,2013-01,63,Docker / containers,0.0
 by_role,infra,hn,2013-04,74,Docker / containers,0.0
 by_role,infra,hn,2013-07,69,Docker / containers,0.0145
@@ -3087,6 +3031,62 @@ by_role,infra,hn,2026-01,79,Docker / containers,0.1772
 by_role,infra,hn,2026-04,89,Docker / containers,0.1461
 by_role,infra,hn,2026-07,83,Docker / containers,0.1084
 by_role,infra,hn,2026-10,46,Docker / containers,0.1087
+by_role,infra,hn,2013-01,63,Go,0.0317
+by_role,infra,hn,2013-04,74,Go,0.0
+by_role,infra,hn,2013-07,69,Go,0.0145
+by_role,infra,hn,2013-10,75,Go,0.08
+by_role,infra,hn,2014-01,75,Go,0.0667
+by_role,infra,hn,2014-04,86,Go,0.0698
+by_role,infra,hn,2014-07,109,Go,0.1376
+by_role,infra,hn,2014-10,105,Go,0.1238
+by_role,infra,hn,2015-01,133,Go,0.0902
+by_role,infra,hn,2015-04,68,Go,0.0882
+by_role,infra,hn,2015-07,184,Go,0.1087
+by_role,infra,hn,2015-10,50,Go,0.0
+by_role,infra,hn,2016-01,47,Go,0.0
+by_role,infra,hn,2016-04,99,Go,0.0404
+by_role,infra,hn,2016-07,210,Go,0.1619
+by_role,infra,hn,2016-10,252,Go,0.1508
+by_role,infra,hn,2017-01,257,Go,0.1556
+by_role,infra,hn,2017-04,241,Go,0.1328
+by_role,infra,hn,2017-07,220,Go,0.1591
+by_role,infra,hn,2017-10,244,Go,0.1434
+by_role,infra,hn,2018-01,202,Go,0.1436
+by_role,infra,hn,2018-04,277,Go,0.13
+by_role,infra,hn,2018-07,231,Go,0.1602
+by_role,infra,hn,2018-10,268,Go,0.1791
+by_role,infra,hn,2019-01,246,Go,0.1748
+by_role,infra,hn,2019-04,254,Go,0.2165
+by_role,infra,hn,2019-07,260,Go,0.1269
+by_role,infra,hn,2019-10,235,Go,0.1404
+by_role,infra,hn,2020-01,215,Go,0.1349
+by_role,infra,hn,2020-04,149,Go,0.1342
+by_role,infra,hn,2020-07,208,Go,0.149
+by_role,infra,hn,2020-10,248,Go,0.129
+by_role,infra,hn,2021-01,303,Go,0.1419
+by_role,infra,hn,2021-04,320,Go,0.1281
+by_role,infra,hn,2021-07,286,Go,0.1713
+by_role,infra,hn,2021-10,262,Go,0.1641
+by_role,infra,hn,2022-01,258,Go,0.1318
+by_role,infra,hn,2022-04,240,Go,0.1333
+by_role,infra,hn,2022-07,183,Go,0.0984
+by_role,infra,hn,2022-10,174,Go,0.1092
+by_role,infra,hn,2023-01,125,Go,0.112
+by_role,infra,hn,2023-04,122,Go,0.1639
+by_role,infra,hn,2023-07,106,Go,0.1038
+by_role,infra,hn,2023-10,102,Go,0.1176
+by_role,infra,hn,2024-01,86,Go,0.1047
+by_role,infra,hn,2024-04,106,Go,0.1981
+by_role,infra,hn,2024-07,74,Go,0.2027
+by_role,infra,hn,2024-10,77,Go,0.1818
+by_role,infra,hn,2025-01,97,Go,0.0825
+by_role,infra,hn,2025-04,78,Go,0.1154
+by_role,infra,hn,2025-07,83,Go,0.0964
+by_role,infra,hn,2025-10,117,Go,0.1282
+by_role,infra,hn,2026-01,79,Go,0.0886
+by_role,infra,hn,2026-04,89,Go,0.1798
+by_role,infra,hn,2026-07,83,Go,0.1566
+by_role,infra,hn,2026-10,46,Go,0.1522
 by_role,infra,hn,2013-01,63,GCP / Vertex AI,0.0
 by_role,infra,hn,2013-04,74,GCP / Vertex AI,0.0
 by_role,infra,hn,2013-07,69,GCP / Vertex AI,0.0
@@ -3143,30 +3143,30 @@ by_role,infra,hn,2026-01,79,GCP / Vertex AI,0.1139
 by_role,infra,hn,2026-04,89,GCP / Vertex AI,0.0899
 by_role,infra,hn,2026-07,83,GCP / Vertex AI,0.1205
 by_role,infra,hn,2026-10,46,GCP / Vertex AI,0.087
-by_role,quant,market,2026-10,659,Trading / quant / markets,0.736
-by_role,quant,market,2026-10,659,Python,0.6115
-by_role,quant,market,2026-10,659,Statistics / maths,0.3839
-by_role,quant,market,2026-10,659,C++ / C#,0.3596
-by_role,quant,market,2026-10,659,Financial services / banking domain,0.3065
-by_role,quant,market,2026-10,659,KYC / AML / fraud / risk,0.2989
-by_role,quant,market,2026-10,659,Machine learning fundamentals,0.2428
-by_role,quant,market,2026-10,659,SQL,0.22
-by_role,quant,market,2026-10,659,Linux / shell,0.1912
-by_role,quant,market,2026-10,659,Crypto / Web3 / blockchain,0.1654
-by_role,quant,market,2026-10,659,Cost / latency optimization,0.1533
-by_role,quant,market,2026-10,659,Observability / tracing / monitoring,0.1168
-by_role,other_eng,market,2026-10,4721,Python,0.3302
-by_role,other_eng,market,2026-10,4721,Microservices / distributed systems,0.2762
-by_role,other_eng,market,2026-10,4721,System design / architecture,0.2711
-by_role,other_eng,market,2026-10,4721,AWS,0.2601
-by_role,other_eng,market,2026-10,4721,C++ / C#,0.2419
-by_role,other_eng,market,2026-10,4721,Cloud (unspecified),0.2262
-by_role,other_eng,market,2026-10,4721,Java / Kotlin (Spring),0.2169
-by_role,other_eng,market,2026-10,4721,LLMs / GenAI (general),0.1856
-by_role,other_eng,market,2026-10,4721,Linux / shell,0.1847
-by_role,other_eng,market,2026-10,4721,AI agents / agentic workflows,0.1807
-by_role,other_eng,market,2026-10,4721,Observability / tracing / monitoring,0.1784
-by_role,other_eng,market,2026-10,4721,CI/CD,0.158
+by_role,quant,market,2026-10,682,Trading / quant / markets,0.7287
+by_role,quant,market,2026-10,682,Python,0.6012
+by_role,quant,market,2026-10,682,Statistics / maths,0.3754
+by_role,quant,market,2026-10,682,C++ / C#,0.3519
+by_role,quant,market,2026-10,682,Financial services / banking domain,0.2991
+by_role,quant,market,2026-10,682,KYC / AML / fraud / risk,0.2947
+by_role,quant,market,2026-10,682,Machine learning fundamentals,0.2375
+by_role,quant,market,2026-10,682,SQL,0.2155
+by_role,quant,market,2026-10,682,Linux / shell,0.1921
+by_role,quant,market,2026-10,682,Crypto / Web3 / blockchain,0.1598
+by_role,quant,market,2026-10,682,Cost / latency optimization,0.1496
+by_role,quant,market,2026-10,682,Observability / tracing / monitoring,0.1158
+by_role,other_eng,market,2026-10,5379,Python,0.2967
+by_role,other_eng,market,2026-10,5379,Microservices / distributed systems,0.2461
+by_role,other_eng,market,2026-10,5379,System design / architecture,0.24
+by_role,other_eng,market,2026-10,5379,AWS,0.2355
+by_role,other_eng,market,2026-10,5379,C++ / C#,0.2164
+by_role,other_eng,market,2026-10,5379,Cloud (unspecified),0.2058
+by_role,other_eng,market,2026-10,5379,Java / Kotlin (Spring),0.1965
+by_role,other_eng,market,2026-10,5379,Linux / shell,0.1803
+by_role,other_eng,market,2026-10,5379,Observability / tracing / monitoring,0.1673
+by_role,other_eng,market,2026-10,5379,LLMs / GenAI (general),0.1642
+by_role,other_eng,market,2026-10,5379,AI agents / agentic workflows,0.1591
+by_role,other_eng,market,2026-10,5379,CI/CD,0.1454
 by_role,other_eng,hn,2013-01,65,Python,0.1538
 by_role,other_eng,hn,2013-04,80,Python,0.175
 by_role,other_eng,hn,2013-07,65,Python,0.2615
@@ -3559,62 +3559,6 @@ by_role,other_eng,hn,2026-01,111,Java / Kotlin (Spring),0.045
 by_role,other_eng,hn,2026-04,119,Java / Kotlin (Spring),0.042
 by_role,other_eng,hn,2026-07,97,Java / Kotlin (Spring),0.0515
 by_role,other_eng,hn,2026-10,65,Java / Kotlin (Spring),0.0308
-by_role,other_eng,hn,2013-01,65,LLMs / GenAI (general),0.0
-by_role,other_eng,hn,2013-04,80,LLMs / GenAI (general),0.0
-by_role,other_eng,hn,2013-07,65,LLMs / GenAI (general),0.0
-by_role,other_eng,hn,2013-10,75,LLMs / GenAI (general),0.0
-by_role,other_eng,hn,2014-01,74,LLMs / GenAI (general),0.0
-by_role,other_eng,hn,2014-04,115,LLMs / GenAI (general),0.0
-by_role,other_eng,hn,2014-07,95,LLMs / GenAI (general),0.0
-by_role,other_eng,hn,2014-10,105,LLMs / GenAI (general),0.0
-by_role,other_eng,hn,2015-01,111,LLMs / GenAI (general),0.0
-by_role,other_eng,hn,2015-04,55,LLMs / GenAI (general),0.0
-by_role,other_eng,hn,2015-07,173,LLMs / GenAI (general),0.0
-by_role,other_eng,hn,2015-10,69,LLMs / GenAI (general),0.0
-by_role,other_eng,hn,2016-01,93,LLMs / GenAI (general),0.0
-by_role,other_eng,hn,2016-04,100,LLMs / GenAI (general),0.0
-by_role,other_eng,hn,2016-07,182,LLMs / GenAI (general),0.0
-by_role,other_eng,hn,2016-10,199,LLMs / GenAI (general),0.0
-by_role,other_eng,hn,2017-01,225,LLMs / GenAI (general),0.0
-by_role,other_eng,hn,2017-04,209,LLMs / GenAI (general),0.0
-by_role,other_eng,hn,2017-07,204,LLMs / GenAI (general),0.0
-by_role,other_eng,hn,2017-10,249,LLMs / GenAI (general),0.0
-by_role,other_eng,hn,2018-01,269,LLMs / GenAI (general),0.0
-by_role,other_eng,hn,2018-04,256,LLMs / GenAI (general),0.0
-by_role,other_eng,hn,2018-07,250,LLMs / GenAI (general),0.0
-by_role,other_eng,hn,2018-10,236,LLMs / GenAI (general),0.0
-by_role,other_eng,hn,2019-01,207,LLMs / GenAI (general),0.0
-by_role,other_eng,hn,2019-04,194,LLMs / GenAI (general),0.0
-by_role,other_eng,hn,2019-07,236,LLMs / GenAI (general),0.0
-by_role,other_eng,hn,2019-10,196,LLMs / GenAI (general),0.0
-by_role,other_eng,hn,2020-01,155,LLMs / GenAI (general),0.0
-by_role,other_eng,hn,2020-04,165,LLMs / GenAI (general),0.0
-by_role,other_eng,hn,2020-07,169,LLMs / GenAI (general),0.0
-by_role,other_eng,hn,2020-10,186,LLMs / GenAI (general),0.0054
-by_role,other_eng,hn,2021-01,247,LLMs / GenAI (general),0.0
-by_role,other_eng,hn,2021-04,268,LLMs / GenAI (general),0.0
-by_role,other_eng,hn,2021-07,277,LLMs / GenAI (general),0.0
-by_role,other_eng,hn,2021-10,253,LLMs / GenAI (general),0.0
-by_role,other_eng,hn,2022-01,270,LLMs / GenAI (general),0.0
-by_role,other_eng,hn,2022-04,249,LLMs / GenAI (general),0.0
-by_role,other_eng,hn,2022-07,168,LLMs / GenAI (general),0.0
-by_role,other_eng,hn,2022-10,173,LLMs / GenAI (general),0.0
-by_role,other_eng,hn,2023-01,131,LLMs / GenAI (general),0.0229
-by_role,other_eng,hn,2023-04,114,LLMs / GenAI (general),0.0526
-by_role,other_eng,hn,2023-07,84,LLMs / GenAI (general),0.0119
-by_role,other_eng,hn,2023-10,131,LLMs / GenAI (general),0.0916
-by_role,other_eng,hn,2024-01,120,LLMs / GenAI (general),0.075
-by_role,other_eng,hn,2024-04,113,LLMs / GenAI (general),0.1062
-by_role,other_eng,hn,2024-07,131,LLMs / GenAI (general),0.0916
-by_role,other_eng,hn,2024-10,125,LLMs / GenAI (general),0.056
-by_role,other_eng,hn,2025-01,123,LLMs / GenAI (general),0.0569
-by_role,other_eng,hn,2025-04,108,LLMs / GenAI (general),0.0926
-by_role,other_eng,hn,2025-07,102,LLMs / GenAI (general),0.1569
-by_role,other_eng,hn,2025-10,103,LLMs / GenAI (general),0.1262
-by_role,other_eng,hn,2026-01,111,LLMs / GenAI (general),0.1261
-by_role,other_eng,hn,2026-04,119,LLMs / GenAI (general),0.084
-by_role,other_eng,hn,2026-07,97,LLMs / GenAI (general),0.1443
-by_role,other_eng,hn,2026-10,65,LLMs / GenAI (general),0.1692
 by_role,other_eng,hn,2013-01,65,Linux / shell,0.0615
 by_role,other_eng,hn,2013-04,80,Linux / shell,0.0625
 by_role,other_eng,hn,2013-07,65,Linux / shell,0.1538
@@ -3671,62 +3615,6 @@ by_role,other_eng,hn,2026-01,111,Linux / shell,0.045
 by_role,other_eng,hn,2026-04,119,Linux / shell,0.0504
 by_role,other_eng,hn,2026-07,97,Linux / shell,0.0619
 by_role,other_eng,hn,2026-10,65,Linux / shell,0.0615
-by_role,other_eng,hn,2013-01,65,AI agents / agentic workflows,0.0
-by_role,other_eng,hn,2013-04,80,AI agents / agentic workflows,0.0
-by_role,other_eng,hn,2013-07,65,AI agents / agentic workflows,0.0
-by_role,other_eng,hn,2013-10,75,AI agents / agentic workflows,0.0
-by_role,other_eng,hn,2014-01,74,AI agents / agentic workflows,0.0
-by_role,other_eng,hn,2014-04,115,AI agents / agentic workflows,0.0
-by_role,other_eng,hn,2014-07,95,AI agents / agentic workflows,0.0
-by_role,other_eng,hn,2014-10,105,AI agents / agentic workflows,0.0
-by_role,other_eng,hn,2015-01,111,AI agents / agentic workflows,0.0
-by_role,other_eng,hn,2015-04,55,AI agents / agentic workflows,0.0
-by_role,other_eng,hn,2015-07,173,AI agents / agentic workflows,0.0
-by_role,other_eng,hn,2015-10,69,AI agents / agentic workflows,0.0
-by_role,other_eng,hn,2016-01,93,AI agents / agentic workflows,0.0
-by_role,other_eng,hn,2016-04,100,AI agents / agentic workflows,0.0
-by_role,other_eng,hn,2016-07,182,AI agents / agentic workflows,0.0
-by_role,other_eng,hn,2016-10,199,AI agents / agentic workflows,0.0
-by_role,other_eng,hn,2017-01,225,AI agents / agentic workflows,0.0
-by_role,other_eng,hn,2017-04,209,AI agents / agentic workflows,0.0
-by_role,other_eng,hn,2017-07,204,AI agents / agentic workflows,0.0
-by_role,other_eng,hn,2017-10,249,AI agents / agentic workflows,0.0
-by_role,other_eng,hn,2018-01,269,AI agents / agentic workflows,0.0
-by_role,other_eng,hn,2018-04,256,AI agents / agentic workflows,0.0
-by_role,other_eng,hn,2018-07,250,AI agents / agentic workflows,0.0
-by_role,other_eng,hn,2018-10,236,AI agents / agentic workflows,0.0
-by_role,other_eng,hn,2019-01,207,AI agents / agentic workflows,0.0
-by_role,other_eng,hn,2019-04,194,AI agents / agentic workflows,0.0
-by_role,other_eng,hn,2019-07,236,AI agents / agentic workflows,0.0
-by_role,other_eng,hn,2019-10,196,AI agents / agentic workflows,0.0
-by_role,other_eng,hn,2020-01,155,AI agents / agentic workflows,0.0
-by_role,other_eng,hn,2020-04,165,AI agents / agentic workflows,0.0
-by_role,other_eng,hn,2020-07,169,AI agents / agentic workflows,0.0
-by_role,other_eng,hn,2020-10,186,AI agents / agentic workflows,0.0
-by_role,other_eng,hn,2021-01,247,AI agents / agentic workflows,0.0
-by_role,other_eng,hn,2021-04,268,AI agents / agentic workflows,0.0
-by_role,other_eng,hn,2021-07,277,AI agents / agentic workflows,0.0
-by_role,other_eng,hn,2021-10,253,AI agents / agentic workflows,0.0
-by_role,other_eng,hn,2022-01,270,AI agents / agentic workflows,0.0
-by_role,other_eng,hn,2022-04,249,AI agents / agentic workflows,0.0
-by_role,other_eng,hn,2022-07,168,AI agents / agentic workflows,0.0
-by_role,other_eng,hn,2022-10,173,AI agents / agentic workflows,0.0
-by_role,other_eng,hn,2023-01,131,AI agents / agentic workflows,0.0076
-by_role,other_eng,hn,2023-04,114,AI agents / agentic workflows,0.0
-by_role,other_eng,hn,2023-07,84,AI agents / agentic workflows,0.0
-by_role,other_eng,hn,2023-10,131,AI agents / agentic workflows,0.0076
-by_role,other_eng,hn,2024-01,120,AI agents / agentic workflows,0.0
-by_role,other_eng,hn,2024-04,113,AI agents / agentic workflows,0.0177
-by_role,other_eng,hn,2024-07,131,AI agents / agentic workflows,0.0076
-by_role,other_eng,hn,2024-10,125,AI agents / agentic workflows,0.008
-by_role,other_eng,hn,2025-01,123,AI agents / agentic workflows,0.0569
-by_role,other_eng,hn,2025-04,108,AI agents / agentic workflows,0.0833
-by_role,other_eng,hn,2025-07,102,AI agents / agentic workflows,0.0588
-by_role,other_eng,hn,2025-10,103,AI agents / agentic workflows,0.1165
-by_role,other_eng,hn,2026-01,111,AI agents / agentic workflows,0.0631
-by_role,other_eng,hn,2026-04,119,AI agents / agentic workflows,0.1429
-by_role,other_eng,hn,2026-07,97,AI agents / agentic workflows,0.1237
-by_role,other_eng,hn,2026-10,65,AI agents / agentic workflows,0.1846
 by_role,other_eng,hn,2013-01,65,Observability / tracing / monitoring,0.0308
 by_role,other_eng,hn,2013-04,80,Observability / tracing / monitoring,0.0125
 by_role,other_eng,hn,2013-07,65,Observability / tracing / monitoring,0.0462
@@ -3783,6 +3671,118 @@ by_role,other_eng,hn,2026-01,111,Observability / tracing / monitoring,0.0721
 by_role,other_eng,hn,2026-04,119,Observability / tracing / monitoring,0.0504
 by_role,other_eng,hn,2026-07,97,Observability / tracing / monitoring,0.0206
 by_role,other_eng,hn,2026-10,65,Observability / tracing / monitoring,0.0154
+by_role,other_eng,hn,2013-01,65,LLMs / GenAI (general),0.0
+by_role,other_eng,hn,2013-04,80,LLMs / GenAI (general),0.0
+by_role,other_eng,hn,2013-07,65,LLMs / GenAI (general),0.0
+by_role,other_eng,hn,2013-10,75,LLMs / GenAI (general),0.0
+by_role,other_eng,hn,2014-01,74,LLMs / GenAI (general),0.0
+by_role,other_eng,hn,2014-04,115,LLMs / GenAI (general),0.0
+by_role,other_eng,hn,2014-07,95,LLMs / GenAI (general),0.0
+by_role,other_eng,hn,2014-10,105,LLMs / GenAI (general),0.0
+by_role,other_eng,hn,2015-01,111,LLMs / GenAI (general),0.0
+by_role,other_eng,hn,2015-04,55,LLMs / GenAI (general),0.0
+by_role,other_eng,hn,2015-07,173,LLMs / GenAI (general),0.0
+by_role,other_eng,hn,2015-10,69,LLMs / GenAI (general),0.0
+by_role,other_eng,hn,2016-01,93,LLMs / GenAI (general),0.0
+by_role,other_eng,hn,2016-04,100,LLMs / GenAI (general),0.0
+by_role,other_eng,hn,2016-07,182,LLMs / GenAI (general),0.0
+by_role,other_eng,hn,2016-10,199,LLMs / GenAI (general),0.0
+by_role,other_eng,hn,2017-01,225,LLMs / GenAI (general),0.0
+by_role,other_eng,hn,2017-04,209,LLMs / GenAI (general),0.0
+by_role,other_eng,hn,2017-07,204,LLMs / GenAI (general),0.0
+by_role,other_eng,hn,2017-10,249,LLMs / GenAI (general),0.0
+by_role,other_eng,hn,2018-01,269,LLMs / GenAI (general),0.0
+by_role,other_eng,hn,2018-04,256,LLMs / GenAI (general),0.0
+by_role,other_eng,hn,2018-07,250,LLMs / GenAI (general),0.0
+by_role,other_eng,hn,2018-10,236,LLMs / GenAI (general),0.0
+by_role,other_eng,hn,2019-01,207,LLMs / GenAI (general),0.0
+by_role,other_eng,hn,2019-04,194,LLMs / GenAI (general),0.0
+by_role,other_eng,hn,2019-07,236,LLMs / GenAI (general),0.0
+by_role,other_eng,hn,2019-10,196,LLMs / GenAI (general),0.0
+by_role,other_eng,hn,2020-01,155,LLMs / GenAI (general),0.0
+by_role,other_eng,hn,2020-04,165,LLMs / GenAI (general),0.0
+by_role,other_eng,hn,2020-07,169,LLMs / GenAI (general),0.0
+by_role,other_eng,hn,2020-10,186,LLMs / GenAI (general),0.0054
+by_role,other_eng,hn,2021-01,247,LLMs / GenAI (general),0.0
+by_role,other_eng,hn,2021-04,268,LLMs / GenAI (general),0.0
+by_role,other_eng,hn,2021-07,277,LLMs / GenAI (general),0.0
+by_role,other_eng,hn,2021-10,253,LLMs / GenAI (general),0.0
+by_role,other_eng,hn,2022-01,270,LLMs / GenAI (general),0.0
+by_role,other_eng,hn,2022-04,249,LLMs / GenAI (general),0.0
+by_role,other_eng,hn,2022-07,168,LLMs / GenAI (general),0.0
+by_role,other_eng,hn,2022-10,173,LLMs / GenAI (general),0.0
+by_role,other_eng,hn,2023-01,131,LLMs / GenAI (general),0.0229
+by_role,other_eng,hn,2023-04,114,LLMs / GenAI (general),0.0526
+by_role,other_eng,hn,2023-07,84,LLMs / GenAI (general),0.0119
+by_role,other_eng,hn,2023-10,131,LLMs / GenAI (general),0.0916
+by_role,other_eng,hn,2024-01,120,LLMs / GenAI (general),0.075
+by_role,other_eng,hn,2024-04,113,LLMs / GenAI (general),0.1062
+by_role,other_eng,hn,2024-07,131,LLMs / GenAI (general),0.0916
+by_role,other_eng,hn,2024-10,125,LLMs / GenAI (general),0.056
+by_role,other_eng,hn,2025-01,123,LLMs / GenAI (general),0.0569
+by_role,other_eng,hn,2025-04,108,LLMs / GenAI (general),0.0926
+by_role,other_eng,hn,2025-07,102,LLMs / GenAI (general),0.1569
+by_role,other_eng,hn,2025-10,103,LLMs / GenAI (general),0.1262
+by_role,other_eng,hn,2026-01,111,LLMs / GenAI (general),0.1261
+by_role,other_eng,hn,2026-04,119,LLMs / GenAI (general),0.084
+by_role,other_eng,hn,2026-07,97,LLMs / GenAI (general),0.1443
+by_role,other_eng,hn,2026-10,65,LLMs / GenAI (general),0.1692
+by_role,other_eng,hn,2013-01,65,AI agents / agentic workflows,0.0
+by_role,other_eng,hn,2013-04,80,AI agents / agentic workflows,0.0
+by_role,other_eng,hn,2013-07,65,AI agents / agentic workflows,0.0
+by_role,other_eng,hn,2013-10,75,AI agents / agentic workflows,0.0
+by_role,other_eng,hn,2014-01,74,AI agents / agentic workflows,0.0
+by_role,other_eng,hn,2014-04,115,AI agents / agentic workflows,0.0
+by_role,other_eng,hn,2014-07,95,AI agents / agentic workflows,0.0
+by_role,other_eng,hn,2014-10,105,AI agents / agentic workflows,0.0
+by_role,other_eng,hn,2015-01,111,AI agents / agentic workflows,0.0
+by_role,other_eng,hn,2015-04,55,AI agents / agentic workflows,0.0
+by_role,other_eng,hn,2015-07,173,AI agents / agentic workflows,0.0
+by_role,other_eng,hn,2015-10,69,AI agents / agentic workflows,0.0
+by_role,other_eng,hn,2016-01,93,AI agents / agentic workflows,0.0
+by_role,other_eng,hn,2016-04,100,AI agents / agentic workflows,0.0
+by_role,other_eng,hn,2016-07,182,AI agents / agentic workflows,0.0
+by_role,other_eng,hn,2016-10,199,AI agents / agentic workflows,0.0
+by_role,other_eng,hn,2017-01,225,AI agents / agentic workflows,0.0
+by_role,other_eng,hn,2017-04,209,AI agents / agentic workflows,0.0
+by_role,other_eng,hn,2017-07,204,AI agents / agentic workflows,0.0
+by_role,other_eng,hn,2017-10,249,AI agents / agentic workflows,0.0
+by_role,other_eng,hn,2018-01,269,AI agents / agentic workflows,0.0
+by_role,other_eng,hn,2018-04,256,AI agents / agentic workflows,0.0
+by_role,other_eng,hn,2018-07,250,AI agents / agentic workflows,0.0
+by_role,other_eng,hn,2018-10,236,AI agents / agentic workflows,0.0
+by_role,other_eng,hn,2019-01,207,AI agents / agentic workflows,0.0
+by_role,other_eng,hn,2019-04,194,AI agents / agentic workflows,0.0
+by_role,other_eng,hn,2019-07,236,AI agents / agentic workflows,0.0
+by_role,other_eng,hn,2019-10,196,AI agents / agentic workflows,0.0
+by_role,other_eng,hn,2020-01,155,AI agents / agentic workflows,0.0
+by_role,other_eng,hn,2020-04,165,AI agents / agentic workflows,0.0
+by_role,other_eng,hn,2020-07,169,AI agents / agentic workflows,0.0
+by_role,other_eng,hn,2020-10,186,AI agents / agentic workflows,0.0
+by_role,other_eng,hn,2021-01,247,AI agents / agentic workflows,0.0
+by_role,other_eng,hn,2021-04,268,AI agents / agentic workflows,0.0
+by_role,other_eng,hn,2021-07,277,AI agents / agentic workflows,0.0
+by_role,other_eng,hn,2021-10,253,AI agents / agentic workflows,0.0
+by_role,other_eng,hn,2022-01,270,AI agents / agentic workflows,0.0
+by_role,other_eng,hn,2022-04,249,AI agents / agentic workflows,0.0
+by_role,other_eng,hn,2022-07,168,AI agents / agentic workflows,0.0
+by_role,other_eng,hn,2022-10,173,AI agents / agentic workflows,0.0
+by_role,other_eng,hn,2023-01,131,AI agents / agentic workflows,0.0076
+by_role,other_eng,hn,2023-04,114,AI agents / agentic workflows,0.0
+by_role,other_eng,hn,2023-07,84,AI agents / agentic workflows,0.0
+by_role,other_eng,hn,2023-10,131,AI agents / agentic workflows,0.0076
+by_role,other_eng,hn,2024-01,120,AI agents / agentic workflows,0.0
+by_role,other_eng,hn,2024-04,113,AI agents / agentic workflows,0.0177
+by_role,other_eng,hn,2024-07,131,AI agents / agentic workflows,0.0076
+by_role,other_eng,hn,2024-10,125,AI agents / agentic workflows,0.008
+by_role,other_eng,hn,2025-01,123,AI agents / agentic workflows,0.0569
+by_role,other_eng,hn,2025-04,108,AI agents / agentic workflows,0.0833
+by_role,other_eng,hn,2025-07,102,AI agents / agentic workflows,0.0588
+by_role,other_eng,hn,2025-10,103,AI agents / agentic workflows,0.1165
+by_role,other_eng,hn,2026-01,111,AI agents / agentic workflows,0.0631
+by_role,other_eng,hn,2026-04,119,AI agents / agentic workflows,0.1429
+by_role,other_eng,hn,2026-07,97,AI agents / agentic workflows,0.1237
+by_role,other_eng,hn,2026-10,65,AI agents / agentic workflows,0.1846
 by_role,other_eng,hn,2013-01,65,CI/CD,0.0308
 by_role,other_eng,hn,2013-04,80,CI/CD,0.0
 by_role,other_eng,hn,2013-07,65,CI/CD,0.0769
@@ -3839,18 +3839,18 @@ by_role,other_eng,hn,2026-01,111,CI/CD,0.0901
 by_role,other_eng,hn,2026-04,119,CI/CD,0.0504
 by_role,other_eng,hn,2026-07,97,CI/CD,0.0722
 by_role,other_eng,hn,2026-10,65,CI/CD,0.0154
-by_seniority,intern,market,2026-10,691,Python,0.6729
-by_seniority,intern,market,2026-10,691,C++ / C#,0.3878
-by_seniority,intern,market,2026-10,691,Java / Kotlin (Spring),0.3213
-by_seniority,intern,market,2026-10,691,Machine learning fundamentals,0.2981
-by_seniority,intern,market,2026-10,691,LLMs / GenAI (general),0.2634
-by_seniority,intern,market,2026-10,691,SQL,0.2489
-by_seniority,intern,market,2026-10,691,Cloud (unspecified),0.2287
-by_seniority,intern,market,2026-10,691,Statistics / maths,0.2243
-by_seniority,intern,market,2026-10,691,JavaScript / Node.js,0.1983
-by_seniority,intern,market,2026-10,691,Full-stack / frontend,0.1881
-by_seniority,intern,market,2026-10,691,TypeScript,0.1708
-by_seniority,intern,market,2026-10,691,AI agents / agentic workflows,0.165
+by_seniority,intern,market,2026-10,701,Python,0.6648
+by_seniority,intern,market,2026-10,701,C++ / C#,0.3837
+by_seniority,intern,market,2026-10,701,Java / Kotlin (Spring),0.3167
+by_seniority,intern,market,2026-10,701,Machine learning fundamentals,0.2967
+by_seniority,intern,market,2026-10,701,LLMs / GenAI (general),0.2668
+by_seniority,intern,market,2026-10,701,SQL,0.2468
+by_seniority,intern,market,2026-10,701,Cloud (unspecified),0.2268
+by_seniority,intern,market,2026-10,701,Statistics / maths,0.2225
+by_seniority,intern,market,2026-10,701,JavaScript / Node.js,0.1969
+by_seniority,intern,market,2026-10,701,Full-stack / frontend,0.1854
+by_seniority,intern,market,2026-10,701,TypeScript,0.1683
+by_seniority,intern,market,2026-10,701,AI agents / agentic workflows,0.1641
 by_seniority,intern,hn,2013-04,36,Python,0.2222
 by_seniority,intern,hn,2014-04,41,Python,0.1951
 by_seniority,intern,hn,2014-07,30,Python,0.2333
@@ -3899,18 +3899,18 @@ by_seniority,intern,hn,2013-04,36,AI agents / agentic workflows,0.0
 by_seniority,intern,hn,2014-04,41,AI agents / agentic workflows,0.0
 by_seniority,intern,hn,2014-07,30,AI agents / agentic workflows,0.0
 by_seniority,intern,hn,2015-01,31,AI agents / agentic workflows,0.0
-by_seniority,junior,market,2026-10,821,Python,0.4884
-by_seniority,junior,market,2026-10,821,Java / Kotlin (Spring),0.2948
-by_seniority,junior,market,2026-10,821,C++ / C#,0.2887
-by_seniority,junior,market,2026-10,821,Full-stack / frontend,0.2607
-by_seniority,junior,market,2026-10,821,SQL,0.2302
-by_seniority,junior,market,2026-10,821,Cloud (unspecified),0.2119
-by_seniority,junior,market,2026-10,821,JavaScript / Node.js,0.2107
-by_seniority,junior,market,2026-10,821,Microservices / distributed systems,0.2083
-by_seniority,junior,market,2026-10,821,AWS,0.1803
-by_seniority,junior,market,2026-10,821,CI/CD,0.1778
-by_seniority,junior,market,2026-10,821,Statistics / maths,0.1778
-by_seniority,junior,market,2026-10,821,TypeScript,0.1681
+by_seniority,junior,market,2026-10,1038,Python,0.3979
+by_seniority,junior,market,2026-10,1038,Java / Kotlin (Spring),0.2447
+by_seniority,junior,market,2026-10,1038,C++ / C#,0.2351
+by_seniority,junior,market,2026-10,1038,Full-stack / frontend,0.2168
+by_seniority,junior,market,2026-10,1038,SQL,0.2004
+by_seniority,junior,market,2026-10,1038,Cloud (unspecified),0.1859
+by_seniority,junior,market,2026-10,1038,JavaScript / Node.js,0.1753
+by_seniority,junior,market,2026-10,1038,Microservices / distributed systems,0.1657
+by_seniority,junior,market,2026-10,1038,AWS,0.1609
+by_seniority,junior,market,2026-10,1038,Observability / tracing / monitoring,0.1561
+by_seniority,junior,market,2026-10,1038,CI/CD,0.1551
+by_seniority,junior,market,2026-10,1038,Statistics / maths,0.1445
 by_seniority,junior,hn,2018-04,37,Python,0.3243
 by_seniority,junior,hn,2018-04,37,Java / Kotlin (Spring),0.1622
 by_seniority,junior,hn,2018-04,37,C++ / C#,0.1351
@@ -3920,21 +3920,21 @@ by_seniority,junior,hn,2018-04,37,Cloud (unspecified),0.0
 by_seniority,junior,hn,2018-04,37,JavaScript / Node.js,0.2432
 by_seniority,junior,hn,2018-04,37,Microservices / distributed systems,0.0
 by_seniority,junior,hn,2018-04,37,AWS,0.1622
+by_seniority,junior,hn,2018-04,37,Observability / tracing / monitoring,0.0
 by_seniority,junior,hn,2018-04,37,CI/CD,0.0
 by_seniority,junior,hn,2018-04,37,Statistics / maths,0.027
-by_seniority,junior,hn,2018-04,37,TypeScript,0.0811
-by_seniority,mid,market,2026-10,2851,Python,0.4114
-by_seniority,mid,market,2026-10,2851,AWS,0.2532
-by_seniority,mid,market,2026-10,2851,SQL,0.2504
-by_seniority,mid,market,2026-10,2851,Java / Kotlin (Spring),0.2441
-by_seniority,mid,market,2026-10,2851,C++ / C#,0.208
-by_seniority,mid,market,2026-10,2851,LLMs / GenAI (general),0.2073
-by_seniority,mid,market,2026-10,2851,Cloud (unspecified),0.2013
-by_seniority,mid,market,2026-10,2851,AI agents / agentic workflows,0.1964
-by_seniority,mid,market,2026-10,2851,Microservices / distributed systems,0.1845
-by_seniority,mid,market,2026-10,2851,Full-stack / frontend,0.1768
-by_seniority,mid,market,2026-10,2851,Machine learning fundamentals,0.1677
-by_seniority,mid,market,2026-10,2851,Observability / tracing / monitoring,0.1673
+by_seniority,mid,market,2026-10,3939,Python,0.3168
+by_seniority,mid,market,2026-10,3939,AWS,0.2122
+by_seniority,mid,market,2026-10,3939,SQL,0.2077
+by_seniority,mid,market,2026-10,3939,Java / Kotlin (Spring),0.195
+by_seniority,mid,market,2026-10,3939,Cloud (unspecified),0.1759
+by_seniority,mid,market,2026-10,3939,C++ / C#,0.1587
+by_seniority,mid,market,2026-10,3939,LLMs / GenAI (general),0.1579
+by_seniority,mid,market,2026-10,3939,Observability / tracing / monitoring,0.1511
+by_seniority,mid,market,2026-10,3939,Full-stack / frontend,0.148
+by_seniority,mid,market,2026-10,3939,AI agents / agentic workflows,0.1465
+by_seniority,mid,market,2026-10,3939,Microservices / distributed systems,0.1414
+by_seniority,mid,market,2026-10,3939,Linux / shell,0.1412
 by_seniority,mid,hn,2014-10,35,Python,0.2286
 by_seniority,mid,hn,2016-07,38,Python,0.3947
 by_seniority,mid,hn,2016-10,40,Python,0.175
@@ -4023,6 +4023,28 @@ by_seniority,mid,hn,2021-04,54,Java / Kotlin (Spring),0.1667
 by_seniority,mid,hn,2021-07,36,Java / Kotlin (Spring),0.2778
 by_seniority,mid,hn,2021-10,35,Java / Kotlin (Spring),0.2571
 by_seniority,mid,hn,2022-01,33,Java / Kotlin (Spring),0.1818
+by_seniority,mid,hn,2014-10,35,Cloud (unspecified),0.0857
+by_seniority,mid,hn,2016-07,38,Cloud (unspecified),0.0526
+by_seniority,mid,hn,2016-10,40,Cloud (unspecified),0.0
+by_seniority,mid,hn,2017-01,45,Cloud (unspecified),0.0444
+by_seniority,mid,hn,2017-04,60,Cloud (unspecified),0.0667
+by_seniority,mid,hn,2017-07,59,Cloud (unspecified),0.0339
+by_seniority,mid,hn,2017-10,80,Cloud (unspecified),0.05
+by_seniority,mid,hn,2018-01,60,Cloud (unspecified),0.0667
+by_seniority,mid,hn,2018-04,44,Cloud (unspecified),0.0
+by_seniority,mid,hn,2018-07,54,Cloud (unspecified),0.0185
+by_seniority,mid,hn,2018-10,46,Cloud (unspecified),0.0652
+by_seniority,mid,hn,2019-01,41,Cloud (unspecified),0.0976
+by_seniority,mid,hn,2019-04,30,Cloud (unspecified),0.0667
+by_seniority,mid,hn,2019-07,35,Cloud (unspecified),0.0571
+by_seniority,mid,hn,2019-10,31,Cloud (unspecified),0.0968
+by_seniority,mid,hn,2020-01,34,Cloud (unspecified),0.0588
+by_seniority,mid,hn,2020-07,37,Cloud (unspecified),0.027
+by_seniority,mid,hn,2021-01,33,Cloud (unspecified),0.0303
+by_seniority,mid,hn,2021-04,54,Cloud (unspecified),0.1111
+by_seniority,mid,hn,2021-07,36,Cloud (unspecified),0.0278
+by_seniority,mid,hn,2021-10,35,Cloud (unspecified),0.0571
+by_seniority,mid,hn,2022-01,33,Cloud (unspecified),0.0606
 by_seniority,mid,hn,2014-10,35,C++ / C#,0.2857
 by_seniority,mid,hn,2016-07,38,C++ / C#,0.1053
 by_seniority,mid,hn,2016-10,40,C++ / C#,0.125
@@ -4067,28 +4089,50 @@ by_seniority,mid,hn,2021-04,54,LLMs / GenAI (general),0.0
 by_seniority,mid,hn,2021-07,36,LLMs / GenAI (general),0.0
 by_seniority,mid,hn,2021-10,35,LLMs / GenAI (general),0.0
 by_seniority,mid,hn,2022-01,33,LLMs / GenAI (general),0.0
-by_seniority,mid,hn,2014-10,35,Cloud (unspecified),0.0857
-by_seniority,mid,hn,2016-07,38,Cloud (unspecified),0.0526
-by_seniority,mid,hn,2016-10,40,Cloud (unspecified),0.0
-by_seniority,mid,hn,2017-01,45,Cloud (unspecified),0.0444
-by_seniority,mid,hn,2017-04,60,Cloud (unspecified),0.0667
-by_seniority,mid,hn,2017-07,59,Cloud (unspecified),0.0339
-by_seniority,mid,hn,2017-10,80,Cloud (unspecified),0.05
-by_seniority,mid,hn,2018-01,60,Cloud (unspecified),0.0667
-by_seniority,mid,hn,2018-04,44,Cloud (unspecified),0.0
-by_seniority,mid,hn,2018-07,54,Cloud (unspecified),0.0185
-by_seniority,mid,hn,2018-10,46,Cloud (unspecified),0.0652
-by_seniority,mid,hn,2019-01,41,Cloud (unspecified),0.0976
-by_seniority,mid,hn,2019-04,30,Cloud (unspecified),0.0667
-by_seniority,mid,hn,2019-07,35,Cloud (unspecified),0.0571
-by_seniority,mid,hn,2019-10,31,Cloud (unspecified),0.0968
-by_seniority,mid,hn,2020-01,34,Cloud (unspecified),0.0588
-by_seniority,mid,hn,2020-07,37,Cloud (unspecified),0.027
-by_seniority,mid,hn,2021-01,33,Cloud (unspecified),0.0303
-by_seniority,mid,hn,2021-04,54,Cloud (unspecified),0.1111
-by_seniority,mid,hn,2021-07,36,Cloud (unspecified),0.0278
-by_seniority,mid,hn,2021-10,35,Cloud (unspecified),0.0571
-by_seniority,mid,hn,2022-01,33,Cloud (unspecified),0.0606
+by_seniority,mid,hn,2014-10,35,Observability / tracing / monitoring,0.0
+by_seniority,mid,hn,2016-07,38,Observability / tracing / monitoring,0.0
+by_seniority,mid,hn,2016-10,40,Observability / tracing / monitoring,0.0
+by_seniority,mid,hn,2017-01,45,Observability / tracing / monitoring,0.0222
+by_seniority,mid,hn,2017-04,60,Observability / tracing / monitoring,0.05
+by_seniority,mid,hn,2017-07,59,Observability / tracing / monitoring,0.0169
+by_seniority,mid,hn,2017-10,80,Observability / tracing / monitoring,0.0
+by_seniority,mid,hn,2018-01,60,Observability / tracing / monitoring,0.0167
+by_seniority,mid,hn,2018-04,44,Observability / tracing / monitoring,0.0
+by_seniority,mid,hn,2018-07,54,Observability / tracing / monitoring,0.037
+by_seniority,mid,hn,2018-10,46,Observability / tracing / monitoring,0.0217
+by_seniority,mid,hn,2019-01,41,Observability / tracing / monitoring,0.0
+by_seniority,mid,hn,2019-04,30,Observability / tracing / monitoring,0.0
+by_seniority,mid,hn,2019-07,35,Observability / tracing / monitoring,0.0
+by_seniority,mid,hn,2019-10,31,Observability / tracing / monitoring,0.0323
+by_seniority,mid,hn,2020-01,34,Observability / tracing / monitoring,0.0
+by_seniority,mid,hn,2020-07,37,Observability / tracing / monitoring,0.027
+by_seniority,mid,hn,2021-01,33,Observability / tracing / monitoring,0.0
+by_seniority,mid,hn,2021-04,54,Observability / tracing / monitoring,0.0
+by_seniority,mid,hn,2021-07,36,Observability / tracing / monitoring,0.0833
+by_seniority,mid,hn,2021-10,35,Observability / tracing / monitoring,0.0
+by_seniority,mid,hn,2022-01,33,Observability / tracing / monitoring,0.0
+by_seniority,mid,hn,2014-10,35,Full-stack / frontend,0.5143
+by_seniority,mid,hn,2016-07,38,Full-stack / frontend,0.6579
+by_seniority,mid,hn,2016-10,40,Full-stack / frontend,0.4
+by_seniority,mid,hn,2017-01,45,Full-stack / frontend,0.4889
+by_seniority,mid,hn,2017-04,60,Full-stack / frontend,0.5833
+by_seniority,mid,hn,2017-07,59,Full-stack / frontend,0.6102
+by_seniority,mid,hn,2017-10,80,Full-stack / frontend,0.625
+by_seniority,mid,hn,2018-01,60,Full-stack / frontend,0.5333
+by_seniority,mid,hn,2018-04,44,Full-stack / frontend,0.5455
+by_seniority,mid,hn,2018-07,54,Full-stack / frontend,0.5741
+by_seniority,mid,hn,2018-10,46,Full-stack / frontend,0.4783
+by_seniority,mid,hn,2019-01,41,Full-stack / frontend,0.6341
+by_seniority,mid,hn,2019-04,30,Full-stack / frontend,0.3333
+by_seniority,mid,hn,2019-07,35,Full-stack / frontend,0.6286
+by_seniority,mid,hn,2019-10,31,Full-stack / frontend,0.6774
+by_seniority,mid,hn,2020-01,34,Full-stack / frontend,0.4706
+by_seniority,mid,hn,2020-07,37,Full-stack / frontend,0.7297
+by_seniority,mid,hn,2021-01,33,Full-stack / frontend,0.5758
+by_seniority,mid,hn,2021-04,54,Full-stack / frontend,0.4444
+by_seniority,mid,hn,2021-07,36,Full-stack / frontend,0.6944
+by_seniority,mid,hn,2021-10,35,Full-stack / frontend,0.6
+by_seniority,mid,hn,2022-01,33,Full-stack / frontend,0.5152
 by_seniority,mid,hn,2014-10,35,AI agents / agentic workflows,0.0
 by_seniority,mid,hn,2016-07,38,AI agents / agentic workflows,0.0
 by_seniority,mid,hn,2016-10,40,AI agents / agentic workflows,0.0
@@ -4133,84 +4177,40 @@ by_seniority,mid,hn,2021-04,54,Microservices / distributed systems,0.037
 by_seniority,mid,hn,2021-07,36,Microservices / distributed systems,0.0556
 by_seniority,mid,hn,2021-10,35,Microservices / distributed systems,0.0857
 by_seniority,mid,hn,2022-01,33,Microservices / distributed systems,0.0303
-by_seniority,mid,hn,2014-10,35,Full-stack / frontend,0.5143
-by_seniority,mid,hn,2016-07,38,Full-stack / frontend,0.6579
-by_seniority,mid,hn,2016-10,40,Full-stack / frontend,0.4
-by_seniority,mid,hn,2017-01,45,Full-stack / frontend,0.4889
-by_seniority,mid,hn,2017-04,60,Full-stack / frontend,0.5833
-by_seniority,mid,hn,2017-07,59,Full-stack / frontend,0.6102
-by_seniority,mid,hn,2017-10,80,Full-stack / frontend,0.625
-by_seniority,mid,hn,2018-01,60,Full-stack / frontend,0.5333
-by_seniority,mid,hn,2018-04,44,Full-stack / frontend,0.5455
-by_seniority,mid,hn,2018-07,54,Full-stack / frontend,0.5741
-by_seniority,mid,hn,2018-10,46,Full-stack / frontend,0.4783
-by_seniority,mid,hn,2019-01,41,Full-stack / frontend,0.6341
-by_seniority,mid,hn,2019-04,30,Full-stack / frontend,0.3333
-by_seniority,mid,hn,2019-07,35,Full-stack / frontend,0.6286
-by_seniority,mid,hn,2019-10,31,Full-stack / frontend,0.6774
-by_seniority,mid,hn,2020-01,34,Full-stack / frontend,0.4706
-by_seniority,mid,hn,2020-07,37,Full-stack / frontend,0.7297
-by_seniority,mid,hn,2021-01,33,Full-stack / frontend,0.5758
-by_seniority,mid,hn,2021-04,54,Full-stack / frontend,0.4444
-by_seniority,mid,hn,2021-07,36,Full-stack / frontend,0.6944
-by_seniority,mid,hn,2021-10,35,Full-stack / frontend,0.6
-by_seniority,mid,hn,2022-01,33,Full-stack / frontend,0.5152
-by_seniority,mid,hn,2014-10,35,Machine learning fundamentals,0.0571
-by_seniority,mid,hn,2016-07,38,Machine learning fundamentals,0.0
-by_seniority,mid,hn,2016-10,40,Machine learning fundamentals,0.175
-by_seniority,mid,hn,2017-01,45,Machine learning fundamentals,0.1556
-by_seniority,mid,hn,2017-04,60,Machine learning fundamentals,0.1667
-by_seniority,mid,hn,2017-07,59,Machine learning fundamentals,0.1864
-by_seniority,mid,hn,2017-10,80,Machine learning fundamentals,0.1
-by_seniority,mid,hn,2018-01,60,Machine learning fundamentals,0.05
-by_seniority,mid,hn,2018-04,44,Machine learning fundamentals,0.1136
-by_seniority,mid,hn,2018-07,54,Machine learning fundamentals,0.0741
-by_seniority,mid,hn,2018-10,46,Machine learning fundamentals,0.1087
-by_seniority,mid,hn,2019-01,41,Machine learning fundamentals,0.0976
-by_seniority,mid,hn,2019-04,30,Machine learning fundamentals,0.0667
-by_seniority,mid,hn,2019-07,35,Machine learning fundamentals,0.2
-by_seniority,mid,hn,2019-10,31,Machine learning fundamentals,0.0323
-by_seniority,mid,hn,2020-01,34,Machine learning fundamentals,0.1765
-by_seniority,mid,hn,2020-07,37,Machine learning fundamentals,0.2162
-by_seniority,mid,hn,2021-01,33,Machine learning fundamentals,0.1515
-by_seniority,mid,hn,2021-04,54,Machine learning fundamentals,0.1296
-by_seniority,mid,hn,2021-07,36,Machine learning fundamentals,0.0278
-by_seniority,mid,hn,2021-10,35,Machine learning fundamentals,0.0286
-by_seniority,mid,hn,2022-01,33,Machine learning fundamentals,0.1515
-by_seniority,mid,hn,2014-10,35,Observability / tracing / monitoring,0.0
-by_seniority,mid,hn,2016-07,38,Observability / tracing / monitoring,0.0
-by_seniority,mid,hn,2016-10,40,Observability / tracing / monitoring,0.0
-by_seniority,mid,hn,2017-01,45,Observability / tracing / monitoring,0.0222
-by_seniority,mid,hn,2017-04,60,Observability / tracing / monitoring,0.05
-by_seniority,mid,hn,2017-07,59,Observability / tracing / monitoring,0.0169
-by_seniority,mid,hn,2017-10,80,Observability / tracing / monitoring,0.0
-by_seniority,mid,hn,2018-01,60,Observability / tracing / monitoring,0.0167
-by_seniority,mid,hn,2018-04,44,Observability / tracing / monitoring,0.0
-by_seniority,mid,hn,2018-07,54,Observability / tracing / monitoring,0.037
-by_seniority,mid,hn,2018-10,46,Observability / tracing / monitoring,0.0217
-by_seniority,mid,hn,2019-01,41,Observability / tracing / monitoring,0.0
-by_seniority,mid,hn,2019-04,30,Observability / tracing / monitoring,0.0
-by_seniority,mid,hn,2019-07,35,Observability / tracing / monitoring,0.0
-by_seniority,mid,hn,2019-10,31,Observability / tracing / monitoring,0.0323
-by_seniority,mid,hn,2020-01,34,Observability / tracing / monitoring,0.0
-by_seniority,mid,hn,2020-07,37,Observability / tracing / monitoring,0.027
-by_seniority,mid,hn,2021-01,33,Observability / tracing / monitoring,0.0
-by_seniority,mid,hn,2021-04,54,Observability / tracing / monitoring,0.0
-by_seniority,mid,hn,2021-07,36,Observability / tracing / monitoring,0.0833
-by_seniority,mid,hn,2021-10,35,Observability / tracing / monitoring,0.0
-by_seniority,mid,hn,2022-01,33,Observability / tracing / monitoring,0.0
-by_seniority,senior,market,2026-10,6676,Python,0.4564
-by_seniority,senior,market,2026-10,6676,AWS,0.3436
-by_seniority,senior,market,2026-10,6676,Cloud (unspecified),0.327
-by_seniority,senior,market,2026-10,6676,Microservices / distributed systems,0.2996
-by_seniority,senior,market,2026-10,6676,Observability / tracing / monitoring,0.2912
-by_seniority,senior,market,2026-10,6676,SQL,0.2668
-by_seniority,senior,market,2026-10,6676,AI agents / agentic workflows,0.2537
-by_seniority,senior,market,2026-10,6676,LLMs / GenAI (general),0.2377
-by_seniority,senior,market,2026-10,6676,CI/CD,0.2296
-by_seniority,senior,market,2026-10,6676,Kubernetes,0.2182
-by_seniority,senior,market,2026-10,6676,Java / Kotlin (Spring),0.2163
-by_seniority,senior,market,2026-10,6676,GCP / Vertex AI,0.1956
+by_seniority,mid,hn,2014-10,35,Linux / shell,0.4
+by_seniority,mid,hn,2016-07,38,Linux / shell,0.1316
+by_seniority,mid,hn,2016-10,40,Linux / shell,0.1
+by_seniority,mid,hn,2017-01,45,Linux / shell,0.0889
+by_seniority,mid,hn,2017-04,60,Linux / shell,0.1333
+by_seniority,mid,hn,2017-07,59,Linux / shell,0.0339
+by_seniority,mid,hn,2017-10,80,Linux / shell,0.15
+by_seniority,mid,hn,2018-01,60,Linux / shell,0.1
+by_seniority,mid,hn,2018-04,44,Linux / shell,0.0455
+by_seniority,mid,hn,2018-07,54,Linux / shell,0.037
+by_seniority,mid,hn,2018-10,46,Linux / shell,0.2609
+by_seniority,mid,hn,2019-01,41,Linux / shell,0.1707
+by_seniority,mid,hn,2019-04,30,Linux / shell,0.2
+by_seniority,mid,hn,2019-07,35,Linux / shell,0.0571
+by_seniority,mid,hn,2019-10,31,Linux / shell,0.129
+by_seniority,mid,hn,2020-01,34,Linux / shell,0.1176
+by_seniority,mid,hn,2020-07,37,Linux / shell,0.1622
+by_seniority,mid,hn,2021-01,33,Linux / shell,0.0
+by_seniority,mid,hn,2021-04,54,Linux / shell,0.1111
+by_seniority,mid,hn,2021-07,36,Linux / shell,0.0556
+by_seniority,mid,hn,2021-10,35,Linux / shell,0.0571
+by_seniority,mid,hn,2022-01,33,Linux / shell,0.0909
+by_seniority,senior,market,2026-10,7253,Python,0.4263
+by_seniority,senior,market,2026-10,7253,AWS,0.3251
+by_seniority,senior,market,2026-10,7253,Cloud (unspecified),0.3112
+by_seniority,senior,market,2026-10,7253,Microservices / distributed systems,0.2804
+by_seniority,senior,market,2026-10,7253,Observability / tracing / monitoring,0.2788
+by_seniority,senior,market,2026-10,7253,SQL,0.2537
+by_seniority,senior,market,2026-10,7253,AI agents / agentic workflows,0.2355
+by_seniority,senior,market,2026-10,7253,LLMs / GenAI (general),0.2218
+by_seniority,senior,market,2026-10,7253,CI/CD,0.2205
+by_seniority,senior,market,2026-10,7253,Kubernetes,0.2118
+by_seniority,senior,market,2026-10,7253,Java / Kotlin (Spring),0.2041
+by_seniority,senior,market,2026-10,7253,GCP / Vertex AI,0.1838
 by_seniority,senior,hn,2014-04,36,Python,0.1667
 by_seniority,senior,hn,2014-07,52,Python,0.2692
 by_seniority,senior,hn,2014-10,46,Python,0.2826
@@ -4823,18 +4823,18 @@ by_seniority,senior,hn,2026-01,184,GCP / Vertex AI,0.0761
 by_seniority,senior,hn,2026-04,154,GCP / Vertex AI,0.039
 by_seniority,senior,hn,2026-07,137,GCP / Vertex AI,0.0949
 by_seniority,senior,hn,2026-10,81,GCP / Vertex AI,0.0988
-by_seniority,staff,market,2026-10,3919,Python,0.4139
-by_seniority,staff,market,2026-10,3919,Microservices / distributed systems,0.3442
-by_seniority,staff,market,2026-10,3919,AI agents / agentic workflows,0.3177
-by_seniority,staff,market,2026-10,3919,LLMs / GenAI (general),0.3103
-by_seniority,staff,market,2026-10,3919,Observability / tracing / monitoring,0.3054
-by_seniority,staff,market,2026-10,3919,Cloud (unspecified),0.2911
-by_seniority,staff,market,2026-10,3919,AWS,0.2866
-by_seniority,staff,market,2026-10,3919,Kubernetes,0.2286
-by_seniority,staff,market,2026-10,3919,SQL,0.2279
-by_seniority,staff,market,2026-10,3919,CI/CD,0.224
-by_seniority,staff,market,2026-10,3919,Java / Kotlin (Spring),0.2171
-by_seniority,staff,market,2026-10,3919,Machine learning fundamentals,0.2123
+by_seniority,staff,market,2026-10,4041,Python,0.4044
+by_seniority,staff,market,2026-10,4041,Microservices / distributed systems,0.337
+by_seniority,staff,market,2026-10,4041,AI agents / agentic workflows,0.3096
+by_seniority,staff,market,2026-10,4041,LLMs / GenAI (general),0.3017
+by_seniority,staff,market,2026-10,4041,Observability / tracing / monitoring,0.2984
+by_seniority,staff,market,2026-10,4041,Cloud (unspecified),0.2863
+by_seniority,staff,market,2026-10,4041,AWS,0.2831
+by_seniority,staff,market,2026-10,4041,Kubernetes,0.2244
+by_seniority,staff,market,2026-10,4041,SQL,0.2237
+by_seniority,staff,market,2026-10,4041,CI/CD,0.2202
+by_seniority,staff,market,2026-10,4041,Java / Kotlin (Spring),0.2131
+by_seniority,staff,market,2026-10,4041,Machine learning fundamentals,0.2064
 by_seniority,staff,hn,2016-10,40,Python,0.225
 by_seniority,staff,hn,2017-01,50,Python,0.24
 by_seniority,staff,hn,2017-04,59,Python,0.339
@@ -5327,18 +5327,18 @@ by_seniority,staff,hn,2026-01,85,Machine learning fundamentals,0.0706
 by_seniority,staff,hn,2026-04,101,Machine learning fundamentals,0.0594
 by_seniority,staff,hn,2026-07,79,Machine learning fundamentals,0.038
 by_seniority,staff,hn,2026-10,43,Machine learning fundamentals,0.0698
-by_seniority,manager,market,2026-10,1629,AI agents / agentic workflows,0.3002
-by_seniority,manager,market,2026-10,1629,LLMs / GenAI (general),0.2658
-by_seniority,manager,market,2026-10,1629,Financial services / banking domain,0.256
-by_seniority,manager,market,2026-10,1629,Cloud (unspecified),0.2339
-by_seniority,manager,market,2026-10,1629,Microservices / distributed systems,0.2314
-by_seniority,manager,market,2026-10,1629,Observability / tracing / monitoring,0.2271
-by_seniority,manager,market,2026-10,1629,AWS,0.1921
-by_seniority,manager,market,2026-10,1629,Python,0.1915
-by_seniority,manager,market,2026-10,1629,Machine learning fundamentals,0.1614
-by_seniority,manager,market,2026-10,1629,SQL,0.1614
-by_seniority,manager,market,2026-10,1629,KYC / AML / fraud / risk,0.159
-by_seniority,manager,market,2026-10,1629,Full-stack / frontend,0.1486
+by_seniority,manager,market,2026-10,1811,AI agents / agentic workflows,0.2739
+by_seniority,manager,market,2026-10,1811,LLMs / GenAI (general),0.2474
+by_seniority,manager,market,2026-10,1811,Financial services / banking domain,0.238
+by_seniority,manager,market,2026-10,1811,Cloud (unspecified),0.2258
+by_seniority,manager,market,2026-10,1811,Microservices / distributed systems,0.2115
+by_seniority,manager,market,2026-10,1811,Observability / tracing / monitoring,0.2104
+by_seniority,manager,market,2026-10,1811,AWS,0.1795
+by_seniority,manager,market,2026-10,1811,Python,0.1773
+by_seniority,manager,market,2026-10,1811,KYC / AML / fraud / risk,0.1579
+by_seniority,manager,market,2026-10,1811,Machine learning fundamentals,0.1485
+by_seniority,manager,market,2026-10,1811,SQL,0.1485
+by_seniority,manager,market,2026-10,1811,CI/CD,0.1386
 by_seniority,manager,hn,2017-10,31,AI agents / agentic workflows,0.0
 by_seniority,manager,hn,2018-01,47,AI agents / agentic workflows,0.0
 by_seniority,manager,hn,2018-04,42,AI agents / agentic workflows,0.0
@@ -5515,6 +5515,28 @@ by_seniority,manager,hn,2022-07,44,Python,0.1364
 by_seniority,manager,hn,2022-10,41,Python,0.1951
 by_seniority,manager,hn,2023-01,33,Python,0.0909
 by_seniority,manager,hn,2023-04,39,Python,0.1026
+by_seniority,manager,hn,2017-10,31,KYC / AML / fraud / risk,0.0323
+by_seniority,manager,hn,2018-01,47,KYC / AML / fraud / risk,0.0213
+by_seniority,manager,hn,2018-04,42,KYC / AML / fraud / risk,0.0238
+by_seniority,manager,hn,2018-07,49,KYC / AML / fraud / risk,0.0
+by_seniority,manager,hn,2018-10,65,KYC / AML / fraud / risk,0.0
+by_seniority,manager,hn,2019-01,41,KYC / AML / fraud / risk,0.0
+by_seniority,manager,hn,2019-04,42,KYC / AML / fraud / risk,0.0714
+by_seniority,manager,hn,2019-07,48,KYC / AML / fraud / risk,0.0417
+by_seniority,manager,hn,2019-10,42,KYC / AML / fraud / risk,0.0238
+by_seniority,manager,hn,2020-04,37,KYC / AML / fraud / risk,0.0
+by_seniority,manager,hn,2020-07,38,KYC / AML / fraud / risk,0.0
+by_seniority,manager,hn,2020-10,46,KYC / AML / fraud / risk,0.0
+by_seniority,manager,hn,2021-01,56,KYC / AML / fraud / risk,0.0
+by_seniority,manager,hn,2021-04,64,KYC / AML / fraud / risk,0.0
+by_seniority,manager,hn,2021-07,57,KYC / AML / fraud / risk,0.0
+by_seniority,manager,hn,2021-10,63,KYC / AML / fraud / risk,0.0
+by_seniority,manager,hn,2022-01,66,KYC / AML / fraud / risk,0.0152
+by_seniority,manager,hn,2022-04,56,KYC / AML / fraud / risk,0.0
+by_seniority,manager,hn,2022-07,44,KYC / AML / fraud / risk,0.0682
+by_seniority,manager,hn,2022-10,41,KYC / AML / fraud / risk,0.0
+by_seniority,manager,hn,2023-01,33,KYC / AML / fraud / risk,0.0
+by_seniority,manager,hn,2023-04,39,KYC / AML / fraud / risk,0.0
 by_seniority,manager,hn,2017-10,31,Machine learning fundamentals,0.0
 by_seniority,manager,hn,2018-01,47,Machine learning fundamentals,0.1489
 by_seniority,manager,hn,2018-04,42,Machine learning fundamentals,0.119
@@ -5559,47 +5581,25 @@ by_seniority,manager,hn,2022-07,44,SQL,0.1591
 by_seniority,manager,hn,2022-10,41,SQL,0.122
 by_seniority,manager,hn,2023-01,33,SQL,0.1212
 by_seniority,manager,hn,2023-04,39,SQL,0.2308
-by_seniority,manager,hn,2017-10,31,KYC / AML / fraud / risk,0.0323
-by_seniority,manager,hn,2018-01,47,KYC / AML / fraud / risk,0.0213
-by_seniority,manager,hn,2018-04,42,KYC / AML / fraud / risk,0.0238
-by_seniority,manager,hn,2018-07,49,KYC / AML / fraud / risk,0.0
-by_seniority,manager,hn,2018-10,65,KYC / AML / fraud / risk,0.0
-by_seniority,manager,hn,2019-01,41,KYC / AML / fraud / risk,0.0
-by_seniority,manager,hn,2019-04,42,KYC / AML / fraud / risk,0.0714
-by_seniority,manager,hn,2019-07,48,KYC / AML / fraud / risk,0.0417
-by_seniority,manager,hn,2019-10,42,KYC / AML / fraud / risk,0.0238
-by_seniority,manager,hn,2020-04,37,KYC / AML / fraud / risk,0.0
-by_seniority,manager,hn,2020-07,38,KYC / AML / fraud / risk,0.0
-by_seniority,manager,hn,2020-10,46,KYC / AML / fraud / risk,0.0
-by_seniority,manager,hn,2021-01,56,KYC / AML / fraud / risk,0.0
-by_seniority,manager,hn,2021-04,64,KYC / AML / fraud / risk,0.0
-by_seniority,manager,hn,2021-07,57,KYC / AML / fraud / risk,0.0
-by_seniority,manager,hn,2021-10,63,KYC / AML / fraud / risk,0.0
-by_seniority,manager,hn,2022-01,66,KYC / AML / fraud / risk,0.0152
-by_seniority,manager,hn,2022-04,56,KYC / AML / fraud / risk,0.0
-by_seniority,manager,hn,2022-07,44,KYC / AML / fraud / risk,0.0682
-by_seniority,manager,hn,2022-10,41,KYC / AML / fraud / risk,0.0
-by_seniority,manager,hn,2023-01,33,KYC / AML / fraud / risk,0.0
-by_seniority,manager,hn,2023-04,39,KYC / AML / fraud / risk,0.0
-by_seniority,manager,hn,2017-10,31,Full-stack / frontend,0.3871
-by_seniority,manager,hn,2018-01,47,Full-stack / frontend,0.4468
-by_seniority,manager,hn,2018-04,42,Full-stack / frontend,0.4524
-by_seniority,manager,hn,2018-07,49,Full-stack / frontend,0.2857
-by_seniority,manager,hn,2018-10,65,Full-stack / frontend,0.3538
-by_seniority,manager,hn,2019-01,41,Full-stack / frontend,0.4634
-by_seniority,manager,hn,2019-04,42,Full-stack / frontend,0.3571
-by_seniority,manager,hn,2019-07,48,Full-stack / frontend,0.2708
-by_seniority,manager,hn,2019-10,42,Full-stack / frontend,0.3571
-by_seniority,manager,hn,2020-04,37,Full-stack / frontend,0.4595
-by_seniority,manager,hn,2020-07,38,Full-stack / frontend,0.4737
-by_seniority,manager,hn,2020-10,46,Full-stack / frontend,0.3478
-by_seniority,manager,hn,2021-01,56,Full-stack / frontend,0.4821
-by_seniority,manager,hn,2021-04,64,Full-stack / frontend,0.4375
-by_seniority,manager,hn,2021-07,57,Full-stack / frontend,0.4386
-by_seniority,manager,hn,2021-10,63,Full-stack / frontend,0.4603
-by_seniority,manager,hn,2022-01,66,Full-stack / frontend,0.4242
-by_seniority,manager,hn,2022-04,56,Full-stack / frontend,0.3036
-by_seniority,manager,hn,2022-07,44,Full-stack / frontend,0.3182
-by_seniority,manager,hn,2022-10,41,Full-stack / frontend,0.1707
-by_seniority,manager,hn,2023-01,33,Full-stack / frontend,0.2727
-by_seniority,manager,hn,2023-04,39,Full-stack / frontend,0.1282
+by_seniority,manager,hn,2017-10,31,CI/CD,0.129
+by_seniority,manager,hn,2018-01,47,CI/CD,0.0638
+by_seniority,manager,hn,2018-04,42,CI/CD,0.0476
+by_seniority,manager,hn,2018-07,49,CI/CD,0.0204
+by_seniority,manager,hn,2018-10,65,CI/CD,0.0462
+by_seniority,manager,hn,2019-01,41,CI/CD,0.0488
+by_seniority,manager,hn,2019-04,42,CI/CD,0.0476
+by_seniority,manager,hn,2019-07,48,CI/CD,0.0
+by_seniority,manager,hn,2019-10,42,CI/CD,0.0238
+by_seniority,manager,hn,2020-04,37,CI/CD,0.027
+by_seniority,manager,hn,2020-07,38,CI/CD,0.0
+by_seniority,manager,hn,2020-10,46,CI/CD,0.0435
+by_seniority,manager,hn,2021-01,56,CI/CD,0.0536
+by_seniority,manager,hn,2021-04,64,CI/CD,0.0
+by_seniority,manager,hn,2021-07,57,CI/CD,0.0
+by_seniority,manager,hn,2021-10,63,CI/CD,0.0159
+by_seniority,manager,hn,2022-01,66,CI/CD,0.0606
+by_seniority,manager,hn,2022-04,56,CI/CD,0.1429
+by_seniority,manager,hn,2022-07,44,CI/CD,0.0
+by_seniority,manager,hn,2022-10,41,CI/CD,0.0
+by_seniority,manager,hn,2023-01,33,CI/CD,0.0
+by_seniority,manager,hn,2023-04,39,CI/CD,0.0256
