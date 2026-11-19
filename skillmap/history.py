@@ -47,9 +47,10 @@ FIRST_YEAR = 2015  # Greenhouse and Lever pages are too few in earlier crawls
 SAMPLE = 400  # tech ads per half-year
 PER_COMPANY = 8
 MAX_FETCHES = 1000  # page fetches per crawl, since many pages turn out not to be tech roles
-INDEX_PAGES = 10  # index pages read per host, spread across the alphabet of board names
+INDEX_PAGES = 12  # index blocks (3,000 captures each) read per host, spread across the alphabet of board names
+EMPTY_TRIES = 3  # runs a crawl may come back empty before it counts as done with no ads
 MIN_PERIOD = 100  # a half-year with fewer tech ads gets no shares
-INTERVALS = {"index.commoncrawl.org": 2.0, "data.commoncrawl.org": 0.5}
+INTERVALS = {"index.commoncrawl.org": 2.0, "data.commoncrawl.org": 0.3}
 
 # (host, path pattern): the job page of one ad, with the board token and the job's id.
 JOB_PAGES = {
@@ -105,27 +106,99 @@ def job_key(url: str) -> tuple[str, str, str] | None:
     return host, match.group(1).lower(), match.group(2)
 
 
-def index_lines(client: PoliteClient, crawl: Crawl, host: str, pages: int = INDEX_PAGES) -> list[dict]:
-    """Successful HTML captures under `host` in this crawl, from up to `pages` index pages spread
-    evenly across the index (it is sorted by URL, so the first pages would only be boards a-c)."""
-    query = [("url", f"{host}/*"), ("output", "json"), ("filter", "=status:200"), ("filter", "~mime:html"),
-             ("fl", "url,timestamp,filename,offset,length")]
-    total = int(client.get_json(crawl.cdx, params=[*query, ("showNumPages", "true")]).get("pages", 0))
-    if total == 0:
-        return []
-    chosen = sorted({int(i * total / pages) for i in range(min(pages, total))})
-    out = []
-    for page in chosen:
-        try:
-            text = client.get_text(crawl.cdx, params=[*query, ("page", str(page))])
-        except Exception as exc:  # noqa: BLE001 - a missing page only shrinks the sample
-            log.warning("history %s %s page %d: %s", crawl.id, host, page, exc)
-            continue
-        for line in text.splitlines():
-            try:
-                out.append(json.loads(line))
-            except ValueError:
+def surt_prefix(host: str) -> str:
+    """The index's sort key for a host's pages: boards.greenhouse.io -> io,greenhouse,boards)/"""
+    return ",".join(reversed(host.split("."))) + ")/"
+
+
+def _range(client: PoliteClient, url: str, start: int, end: int) -> bytes:
+    response = client.request("GET", url, headers={"Range": f"bytes={start}-{end}"})
+    if response.status_code not in (200, 206):
+        raise RuntimeError(f"HTTP {response.status_code} for {url}")
+    return response.content
+
+
+def _size(client: PoliteClient, url: str) -> int:
+    response = client.request("GET", url, headers={"Range": "bytes=0-0"})
+    total = response.headers.get("Content-Range", "").rpartition("/")[2]
+    if response.status_code != 206 or not total.isdigit():
+        raise RuntimeError(f"no size for {url} (HTTP {response.status_code})")
+    return int(total)
+
+
+def _first_key_after(client: PoliteClient, url: str, pos: int, size: int) -> tuple[str, int]:
+    """The sort key of the first whole line starting after byte `pos`, and where it starts."""
+    chunk = _range(client, url, pos, min(size - 1, pos + 8191))
+    cut = 0 if pos == 0 else chunk.find(b"\n") + 1
+    line = chunk[cut:].split(b"\n", 1)[0].decode("utf-8", "replace")
+    return line.split(" ", 1)[0], pos + cut
+
+
+def cluster_blocks(client: PoliteClient, crawl: Crawl, prefix: str) -> list[tuple[str, int, int]]:
+    """Index blocks (file, offset, length) holding captures whose key starts with `prefix`.
+
+    Each crawl's index is ~300 sorted, gzip'd files, and cluster.idx names the first key of
+    every block of 3,000 lines. A binary search over cluster.idx with byte-range reads finds the
+    blocks for one host without the index server, which times out under load."""
+    url = f"{DATA}cc-index/collections/{crawl.id}/indexes/cluster.idx"
+    size = _size(client, url)
+    lo, hi = 0, size  # find the last line whose key sorts before the prefix
+    while hi - lo > 16384:
+        mid = (lo + hi) // 2
+        key, _ = _first_key_after(client, url, mid, size)
+        if key < prefix:
+            lo = mid
+        else:
+            hi = mid
+    blocks: list[tuple[str, int, int]] = []
+    pos, carry = lo, b""
+    while pos < size:
+        chunk = carry + _range(client, url, pos, min(size - 1, pos + 1_048_575))
+        pos += 1_048_576
+        lines = chunk.split(b"\n")
+        carry = lines.pop()
+        for raw in lines:
+            fields = raw.decode("utf-8", "replace").split("\t")
+            if len(fields) < 4:
                 continue
+            key = fields[0].split(" ", 1)[0]
+            if key < prefix:  # the block before the prefix starts can still hold its first captures
+                blocks = [(fields[1], int(fields[2]), int(fields[3]))]
+                continue
+            if not key.startswith(prefix):
+                return blocks
+            blocks.append((fields[1], int(fields[2]), int(fields[3])))
+    return blocks
+
+
+def index_lines(client: PoliteClient, crawl: Crawl, host: str, pages: int = INDEX_PAGES) -> list[dict]:
+    """Successful HTML captures under `host` in this crawl, from up to `pages` index blocks spread
+    evenly over the host's (the index is sorted by URL, so the first blocks would be boards a-c)."""
+    prefix = surt_prefix(host)
+    blocks = cluster_blocks(client, crawl, prefix)
+    if not blocks:
+        return []
+    chosen = range(len(blocks)) if len(blocks) <= pages else sorted({int(i * len(blocks) / pages) for i in range(pages)})
+    out = []
+    for i in chosen:
+        name, offset, length = blocks[i]
+        try:
+            raw = gzip.decompress(_range(client, f"{DATA}cc-index/collections/{crawl.id}/indexes/{name}",
+                                         offset, offset + length - 1))
+        except Exception as exc:  # noqa: BLE001 - a missing block only shrinks the sample
+            log.warning("history %s %s block %s:%d: %s", crawl.id, host, name, offset, exc)
+            continue
+        for line in raw.decode("utf-8", "replace").splitlines():
+            key, _, rest = line.partition(" ")
+            if not key.startswith(prefix):
+                continue
+            try:
+                cap = json.loads(rest.split(" ", 1)[1])
+            except (IndexError, ValueError):
+                continue
+            if cap.get("status") == "200" and "html" in cap.get("mime", "") + cap.get("mime-detected", ""):
+                cap["timestamp"] = rest.split(" ", 1)[0]
+                out.append(cap)
     return out
 
 
@@ -298,6 +371,9 @@ def run(client: PoliteClient, taxonomy: Taxonomy, out: Path, archive: Archive | 
     rows_path, state_path = out / "history-ads.jsonl.gz", out / "history-state.json"
     rows, state = load_rows(rows_path), load_state(state_path)
     state.setdefault("crawls", {})
+    # A crawl that gave no ads (the index was down, say) is only settled after EMPTY_TRIES runs.
+    state["crawls"] = {k: v for k, v in state["crawls"].items() if v.get("ads") or v.get("tries", 0) >= EMPTY_TRIES}
+    tries: dict[str, int] = dict(state.get("empty") or {})
     redone = reextract(rows, state, archive, taxonomy)
     try:
         crawls = pick_crawls(client.get_json(COLLINFO), today)
@@ -325,8 +401,16 @@ def run(client: PoliteClient, taxonomy: Taxonomy, out: Path, archive: Archive | 
                 log.warning("history: could not archive %s: %s", crawl.id, exc)
                 name = None
         rows = [r for r in rows if r["crawl"] != crawl.id] + new
+        if not new and tries.get(crawl.id, 0) + 1 < EMPTY_TRIES:
+            log.warning("history %s: no ads; the next run tries again", crawl.id)
+            state.setdefault("empty", {})[crawl.id] = tries.get(crawl.id, 0) + 1
+            state_path.write_text(json.dumps(state, indent=1, sort_keys=True))
+            continue
         state["crawls"][crawl.id] = {"period": crawl.period, "ads": len(new), "archive": name,
                                      "taxonomy_version": taxonomy.version, "done": today.isoformat()}
+        if not new:
+            state["crawls"][crawl.id]["tries"] = tries.get(crawl.id, 0) + 1
+        state.get("empty", {}).pop(crawl.id, None)
         added += 1
         # Saved after every crawl, so a cancelled run keeps what it finished.
         save_rows(rows_path, rows)

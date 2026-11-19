@@ -33,6 +33,32 @@ JOBS = {  # (token, id) -> html
 }
 
 
+def cdx_block() -> bytes:
+    lines = []
+    for (t, i), h in sorted(JOBS.items()):
+        cap = {"url": f"https://boards.greenhouse.io/{t}/jobs/{i}", "mime": "text/html", "status": "200",
+               "filename": f"crawl/{t}-{i}.warc.gz", "offset": "0", "length": str(len(warc(h)))}
+        lines.append(f"io,greenhouse,boards)/{t}/jobs/{i} 20240810120000 {json.dumps(cap)}")
+    lines.append('io,greenhouse,boards)/acme 20240810120000 {"url": "https://boards.greenhouse.io/acme", '
+                 '"mime": "text/html", "status": "200"}')
+    lines.append('io,greenhouse,boards)/beta/jobs/7 20240810120000 {"url": "https://boards.greenhouse.io/beta/jobs/7", '
+                 '"mime": "text/html", "status": "404"}')
+    return gzip.compress("\n".join(lines).encode())
+
+
+BLOCK = cdx_block()
+OTHER = gzip.compress(b"com,example)/ 20240810120000 {}")
+CLUSTER = (f"com,example)/ 20240810120000\tcdx-00000.gz\t0\t{len(OTHER)}\t1\n"
+           f"io,greenhouse,boards)/acme/jobs/1 20240810120000\tcdx-00001.gz\t0\t{len(BLOCK)}\t2\n"
+           f"org,zzz)/ 20240810120000\tcdx-00002.gz\t0\t10\t3\n").encode()
+INDEX = history.DATA + "cc-index/collections/CC-MAIN-2024-33/indexes/"
+
+
+def ranged(request: httpx.Request, body: bytes) -> httpx.Response:
+    a, b = request.headers["Range"].removeprefix("bytes=").split("-")
+    return httpx.Response(206, content=body[int(a):int(b) + 1], headers={"Content-Range": f"bytes {a}-{b}/{len(body)}"})
+
+
 def handler(request: httpx.Request) -> httpx.Response:
     url = str(request.url)
     if url.startswith(history.COLLINFO):
@@ -42,16 +68,15 @@ def handler(request: httpx.Request) -> httpx.Response:
             {"id": "CC-MAIN-2024-30", "cdx-api": "https://index.commoncrawl.org/CC-MAIN-2024-30-index"},  # older, same half
             {"id": "CC-MAIN-2012-10", "cdx-api": "x"},
         ])
-    if url.startswith(CDX):
-        host = request.url.params["url"].split("/")[0]
-        if request.url.params.get("showNumPages"):
-            return httpx.Response(200, json={"pages": 1 if host == "boards.greenhouse.io" else 0})
-        lines = [json.dumps({"url": f"https://boards.greenhouse.io/{t}/jobs/{i}", "timestamp": "20240810120000",
-                             "filename": f"crawl/{t}-{i}.warc.gz", "offset": "0", "length": str(len(warc(h)))})
-                 for (t, i), h in JOBS.items()]
-        lines.append(json.dumps({"url": "https://boards.greenhouse.io/acme", "timestamp": "20240810120000"}))
-        return httpx.Response(200, text="\n".join(lines))
-    if url.startswith(history.DATA):
+    if url.startswith("https://index.commoncrawl.org/"):
+        return httpx.Response(503)  # the index server is never needed
+    if url == INDEX + "cluster.idx":
+        return ranged(request, CLUSTER)
+    if url == INDEX + "cdx-00001.gz":
+        return ranged(request, BLOCK)
+    if url == INDEX + "cdx-00000.gz":
+        return ranged(request, OTHER)
+    if url.startswith(history.DATA + "crawl/"):
         name = url.removeprefix(history.DATA + "crawl/").removesuffix(".warc.gz")
         token, job = name.split("-")
         assert request.headers["Range"].startswith("bytes=0-")
@@ -124,3 +149,36 @@ def test_series_withholds_thin_half_years():
     s = history.series(rows, ["Python", "Go"])
     assert s["months"] == ["2019-01", "2019-07"] and s["n"] == [120, 5] and s["companies"] == [30, 1]
     assert s["shares"]["Python"] == [0.5, None] and s["shares"]["Go"] == [0.0, None]
+
+
+def test_surt_prefix_and_cluster_blocks():
+    assert history.surt_prefix("boards.greenhouse.io") == "io,greenhouse,boards)/"
+    crawl = history.Crawl("CC-MAIN-2024-33", CDX, "2024-07")
+    assert history.cluster_blocks(client(), crawl, "io,greenhouse,boards)/") == [
+        ("cdx-00000.gz", 0, len(OTHER)), ("cdx-00001.gz", 0, len(BLOCK))]
+    assert history.cluster_blocks(client(), crawl, "co,lever,jobs)/") == []
+
+
+def test_cluster_search_over_a_large_index():
+    keys = [f"com,site{i:05d})/ 20240810120000\tcdx-{i // 100:05d}.gz\t{i}\t10\t{i}" for i in range(3000)]
+    keys.insert(1500, "io,greenhouse,boards)/x 20240810120000\tcdx-99999.gz\t7\t9\t0")
+    big = ("\n".join(sorted(keys)) + "\n").encode()
+    assert len(big) > 3 * 16384
+    c = PoliteClient(min_interval=0, transport=httpx.MockTransport(lambda r: ranged(r, big)), retries=0)
+    c.sleep = lambda s: None
+    blocks = history.cluster_blocks(c, history.Crawl("CC-MAIN-2024-33", CDX, "2024-07"), "io,greenhouse,boards)/")
+    assert blocks[-1] == ("cdx-99999.gz", 7, 9) and len(blocks) == 2
+
+
+def test_an_empty_crawl_is_retried_before_it_counts_as_done(tmp_path):
+    empty = PoliteClient(min_interval=0, transport=httpx.MockTransport(
+        lambda r: handler(r) if str(r.url).startswith(history.COLLINFO) else httpx.Response(503)), retries=0)
+    for expected_done in (False, False, True):
+        history.run(empty, TAX, tmp_path, None, TODAY, budget_minutes=10)
+        state = json.loads((tmp_path / "history-state.json").read_text())
+        assert ("CC-MAIN-2024-33" in state["crawls"]) is expected_done
+    # A crawl recorded empty by an older run (no tries) is tried again.
+    state["crawls"]["CC-MAIN-2024-33"] = {"period": "2024-07", "ads": 0}
+    state.pop("empty", None)
+    (tmp_path / "history-state.json").write_text(json.dumps(state))
+    assert history.run(client(), TAX, tmp_path, None, TODAY, budget_minutes=10)["crawls_added"] == 1
