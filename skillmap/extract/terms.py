@@ -42,7 +42,16 @@ STOP = {
     # Formats, protocols and numbering every ad mentions in passing ("JSON", "ID", "Level II").
     "JSON", "XML", "YAML", "CSV", "PDF", "HTML", "HTTP", "HTTPS", "URL", "URLs", "ID", "IDs", "II", "III", "IV",
     "USD", "SGD", "GBP", "EUR", "CAD", "AUD", "HKD", "INR", "JPY", "CNY", "KRW", "AED", "CHF", "OKX", "ETH", "BTC",
+    # Benefits, education and business words ("FSA/HSA", "STEM degree", "SME", "RFP", "SOPs"), company and role
+    # names, and hardware or acronyms too generic or ambiguous to be a skill (CPU, DB, CD, AD).
+    "STEM", "FSA", "HSA", "FMLA", "PPO", "HMO", "EPO", "EAP", "RSU", "ESPP", "DOE", "STD", "HQ", "SME", "RFP",
+    "RFI", "SOP", "SOW", "FDE", "NVIDIA", "CPU", "DB", "CD", "AD", "TBA", "ASAP", "AM", "EOD",
 }
+
+
+def ignored(term: str) -> bool:
+    """A word that is never a skill, singular or plural ("RFPs", "UIs"; a capital S is part of the name: CSS, AWS)."""
+    return any(t in STOP or t.upper() in STOP for t in (term, term[:-1] if term.endswith("s") and len(term) > 2 else term))
 MAX_TERMS = 40
 # Three or more capitalised words in a row are a shouted heading ("WHAT YOU WILL DO"), not names.
 _HEADING = re.compile(r"\b[A-Z][A-Z'’]+(?: [A-Z][A-Z'’]*){2,}\b")
@@ -57,7 +66,7 @@ def candidates(text: str, known: Callable[[str], bool]) -> list[str]:
         if any(a <= match.start() < b for a, b in headings):
             continue
         term = match.group(1).rstrip(".")
-        if term in seen or term in STOP or term.upper() in STOP or len(term) < 2 or term.isdigit():
+        if term in seen or ignored(term) or len(term) < 2 or term.isdigit():
             continue
         if re.fullmatch(r"\d+[A-Za-z]{0,2}|[A-Z]\d|[A-Z]\d{1,2}[A-Z]?\d?", term) and not re.fullmatch(r"[A-Z]\d[A-Z]", term):
             continue  # "5x", "10k", grade and level codes (L5, E6, P3), but keep A2A-style names
