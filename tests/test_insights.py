@@ -56,6 +56,8 @@ def test_role_dna_ranks_by_lift_against_other_roles():
     assert dna["ai_ml"]["skills"][0] == {"name": "PyTorch", "share": 1.0, "elsewhere": 0.0, "lift": None}
     python = next(s for s in dna["backend"]["skills"] if s["name"] == "Python")
     assert python["lift"] == 1.0
+    # The core stack shows too, even when every role shares it.
+    assert {"name": "Python", "share": 1.0, "elsewhere": 1.0} in dna["backend"]["common"][:2]
 
 
 def test_seniority_ladder_and_profile():

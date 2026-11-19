@@ -65,7 +65,11 @@ def role_dna(rows: list[dict], top: int = 8, min_share: float = 0.1) -> dict:
              for s, v in a.items() if v >= min_share),
             key=lambda e: -(e["lift"] or 99),
         )
-        out[family] = {"n": len(mine), "label": roles.LABELS[family], "skills": ranked[:top]}
+        common = sorted(({"name": s, "share": round(v, 3), "elsewhere": round(b.get(s, 0.0), 3)}
+                         for s, v in a.items()), key=lambda e: (-e["share"], e["name"]))
+        # "skills" is what sets the role apart (lift); "common" is its core stack, which lift hides
+        # when every tech role shares it (Python, SQL).
+        out[family] = {"n": len(mine), "label": roles.LABELS[family], "skills": ranked[:top], "common": common[:top]}
     return out
 
 

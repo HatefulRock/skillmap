@@ -8,7 +8,7 @@
 #
 # Bump `version` whenever a pattern (or any other extractor, e.g. salary) changes: stored
 # postings are re-extracted on the next run.
-version: 6  # v2: salary from text. v3: ad length, years, unknown terms, degree, visa, equity. v4: no benefits/monitoring false positives. v5: seniority (bank grades, solutions architects), non-software engineering, pre-sales, more countries. v6: no shouted-heading words as unknown terms
+version: 7  # v2: salary from text. v3: ad length, years, unknown terms, degree, visa, equity. v4: no benefits/monitoring false positives. v5: seniority (bank grades, solutions architects), non-software engineering, pre-sales, more countries. v6: no shouted-heading words as unknown terms. v7: quant roles need a quant or trading-tech title (no PMs, quantum, trading ops); risk modelling split from KYC/AML
 
 skills:
   # ---------- Languages ----------
@@ -313,6 +313,10 @@ skills:
   Trading / quant / markets:
     category: Domain
     patterns: ['\bquant(?:itative)? (?:trading|research|finance|developer|analyst)\b', '\balgorithmic trading\b', '\bhigh[- ]frequency trading\b', '\bmarket[- ]making\b', '\bderivatives\b', '\border ?books?\b', '\btrading (?:systems?|strategies|platforms?)\b']
-  KYC / AML / fraud / risk:
+  KYC / AML / fraud:
     category: Domain
-    patterns: ['\bkyc\b', '\baml\b', '\banti[- ]money laundering\b', '\bfraud (?:detection|prevention)\b', '\bfraud\b', '\bcredit risk\b', '\brisk (?:models?|modell?ing|management)\b', '\bsanctions screening\b', '\btransaction monitoring\b']
+    patterns: ['\bkyc\b', '\baml\b', '\banti[- ]money laundering\b', '\bfraud (?:detection|prevention)\b', '\bfraud\b', '\bsanctions screening\b', '\btransaction monitoring\b']
+  Risk modelling:
+    category: Domain
+    # Split from KYC/AML: quant and lending ads ask for risk models, not compliance checks.
+    patterns: ['\bcredit risk\b', '\bmarket risk\b', '\brisk (?:models?|modell?ing|management|analytics)\b', '\bvar\b(?= (?:models?|calculation))', '\bvalue[- ]at[- ]risk\b']
