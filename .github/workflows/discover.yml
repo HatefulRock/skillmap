@@ -14,6 +14,10 @@ on:
       platforms:
         description: "Comma-separated platforms to probe (smartrecruiters is opt-in: its robots.txt disallows crawlers)"
         default: "greenhouse,lever,ashby,workable"
+      yc:
+        description: "Probe every hiring Y Combinator company (off: candidates.yaml and Common Crawl only)"
+        type: boolean
+        default: true
       commit:
         description: "Commit config/boards.yaml"
         type: boolean
@@ -39,6 +43,7 @@ jobs:
         run: |
           args=(--platforms "${{ inputs.platforms || 'greenhouse,lever,ashby,workable' }}")
           [ -n "${{ inputs.limit }}" ] && args+=(--limit "${{ inputs.limit }}")
+          [ "${{ inputs.yc }}" = "false" ] && args+=(--no-yc)
           uv run skillmap discover "${args[@]}" | tee discover-summary.txt
           { echo '```'; cat discover-summary.txt; echo '```'; } >> "$GITHUB_STEP_SUMMARY"
 
