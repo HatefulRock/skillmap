@@ -39,6 +39,8 @@ STOP = {
     # SDLC, and US state codes in locations.
     "OS", "IP", "SDLC", "CA", "NY", "TX", "WA", "MA", "IL", "NJ", "VA", "GA", "NC", "FL", "DC", "AZ", "CO", "UT", "PA", "OH",
     "MN", "MI", "MD", "CT", "ET", "PT", "PST", "EST", "CET", "GMT", "UTC",
+    # Formats, protocols and numbering every ad mentions in passing ("JSON", "ID", "Level II").
+    "JSON", "XML", "YAML", "CSV", "PDF", "HTML", "HTTP", "HTTPS", "URL", "URLs", "ID", "IDs", "II", "III", "IV",
     "USD", "SGD", "GBP", "EUR", "CAD", "AUD", "HKD", "INR", "JPY", "CNY", "KRW", "AED", "CHF", "OKX", "ETH", "BTC",
 }
 MAX_TERMS = 40

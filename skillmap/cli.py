@@ -14,7 +14,7 @@ from datetime import date
 from decimal import Decimal
 from pathlib import Path
 
-from . import aggregate, audit, digest, discover, exports, health, heatmap, vocab, watchlist
+from . import aggregate, audit, digest, discover, exports, health, heatmap, mail, vocab, watchlist
 from .archive import from_env as open_archive
 from .extract.skills import Taxonomy
 from .http import PoliteClient
@@ -121,6 +121,10 @@ def main(argv: list[str] | None = None) -> None:
     voc = sub.add_parser("vocab", help="how complete the skill list is: tech terms in stored ads no skill matches")
     voc.add_argument("--sample", type=int, default=vocab.SAMPLE)
     voc.add_argument("--out", type=Path, help="also write the full report as JSON")
+    em = sub.add_parser("email", help="build the weekly email from published files and send it (RESEND_API_KEY, DIGEST_TO)")
+    em.add_argument("--data", type=Path, default=Path("data"))
+    em.add_argument("--previous", type=Path, required=True, help="folder with last run's skills-market.json and postings")
+    em.add_argument("--html", type=Path, help="also write the email here")
     purge = sub.add_parser("purge", help="delete every stored posting of one source (maintenance)")
     purge.add_argument("--source", required=True, help="the source column value, e.g. workday")
     purge.add_argument("--confirm", required=True, help="the same source name again, as a safety check")
@@ -129,6 +133,10 @@ def main(argv: list[str] | None = None) -> None:
     logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s")
     if args.command == "discover":
         run_discover(args)
+        return
+    if args.command == "email":
+        sent = mail.run(args.data, args.previous, load_yaml("my_skills.yaml") or {}, args.html)
+        print(f"{mail.subject(sent)}: {'sent ' + sent['sent'] if sent['sent'] else 'not sent'}")
         return
     taxonomy = Taxonomy.load()
     store = open_store()
