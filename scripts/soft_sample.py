@@ -16,7 +16,8 @@ from skillmap.sources import greenhouse, mcf
 
 random.seed(7)
 tax = Taxonomy.load()
-CATEGORIES = set((sys.argv[2] if len(sys.argv) > 2 else "Soft skills").split(","))
+# The probe workflow splits arguments on spaces, so names are rejoined.
+CATEGORIES = {c.strip() for c in (" ".join(sys.argv[2:]) or "Soft skills").split(",")}
 soft = [s for s in tax.skills if s.category in CATEGORIES or s.name in CATEGORIES]
 boards = [b for b in load_boards() if b["ats"] == "greenhouse"]
 random.shuffle(boards)
