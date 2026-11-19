@@ -1,398 +1,2090 @@
-# Skill taxonomy. Canonical names and categories match the census spreadsheet's
+# Skill taxonomy, one skill per specific technology (v10). Names were first taken from the census spreadsheet's
 # skill_taxonomy.json so both report the same skills; the patterns here are written for full
 # posting text rather than short skill lists, so they need word boundaries and context.
 #
 #   patterns: case-insensitive regexes
 #   cs:       case-sensitive regexes (for short or ambiguous names like Go, R, MCP)
 #   not:      if any of these match the same sentence, that sentence doesn't count
+#   group:    the broader family a skill rolls up into on overview charts
 #
 # Bump `version` whenever a pattern (or any other extractor, e.g. salary) changes: stored
 # postings are re-extracted on the next run.
-version: 9  # v9: security, identity, networking, DevOps/SRE, mobile, BI, Windows and virtualisation skills; bare CI, GitOps and GitLab. v2: salary from text. v3: ad length, years, unknown terms, degree, visa, equity. v4: no benefits/monitoring false positives. v5: seniority (bank grades, solutions architects), non-software engineering, pre-sales, more countries. v6: no shouted-heading words as unknown terms. v8: trading desk, ops and product roles as their own group. v7: soft skills (own section); quant roles need a quant or trading-tech title (no PMs, quantum, trading ops); risk modelling split from KYC/AML
+version: 10  # v10: one skill per specific technology (React, Next.js, Vue apart; each vector DB, eval tool, model provider, serving engine), each with a `group` for roll-ups. v9: security, identity, networking, DevOps/SRE, mobile, BI, Windows and virtualisation skills; bare CI, GitOps and GitLab. v2: salary from text. v3: ad length, years, unknown terms, degree, visa, equity. v4: no benefits/monitoring false positives. v5: seniority (bank grades, solutions architects), non-software engineering, pre-sales, more countries. v6: no shouted-heading words as unknown terms. v8: trading desk, ops and product roles as their own group. v7: soft skills (own section); quant roles need a quant or trading-tech title (no PMs, quantum, trading ops); risk modelling split from KYC/AML
 
 skills:
-  # ---------- Languages ----------
   Python:
     category: Languages
-    patterns: ['\bpython\b', '\bpyspark\b', '\bpydantic\b']
+    group: Python
+    patterns:
+    - \bpython\b
+    - \bpyspark\b
+    - \bpydantic\b
   TypeScript:
     category: Languages
-    patterns: ['\btypescript\b']
-  JavaScript / Node.js:
+    group: JavaScript / TypeScript
+    patterns:
+    - \btypescript\b
+  JavaScript:
     category: Languages
-    patterns: ['\bjavascript\b', '\bnode\.?js\b', '\bnodejs\b', '\becmascript\b']
-  Java / Kotlin (Spring):
+    group: JavaScript / TypeScript
+    patterns:
+    - \bjavascript\b
+    - \becmascript\b
+  Node.js:
     category: Languages
-    patterns: ['\bjava\b(?!\s*script)', '\bkotlin\b', '\bspring ?boot\b', '\bspring framework\b']
+    group: JavaScript / TypeScript
+    patterns:
+    - \bnode\.?js\b
+    - \bnodejs\b
+  Java:
+    category: Languages
+    group: JVM
+    patterns:
+    - \bjava\b(?!\s*script)
+  Kotlin:
+    category: Languages
+    group: JVM
+    patterns:
+    - \bkotlin\b
+  Scala:
+    category: Languages
+    group: JVM
+    patterns:
+    - \bscala\b
   Go:
     category: Languages
-    patterns: ['\bgolang\b']
-    cs: ['\bGo\b(?=\s*(?:,|/|\)|and\b|or\b|developer|engineer|programming|services|microservices|backend))', '(?:,|/|\(|\band|\bor|\bin)\s+Go\b(?!\s+(?:to|live|beyond|above|from|through|deep|ahead|out|back)\b)']
-  C++ / C#:
+    group: Go
+    patterns:
+    - \bgolang\b
+    cs:
+    - \bGo\b(?=\s*(?:,|/|\)|and\b|or\b|developer|engineer|programming|services|microservices|backend))
+    - (?:,|/|\(|\band|\bor|\bin)\s+Go\b(?!\s+(?:to|live|beyond|above|from|through|deep|ahead|out|back)\b)
+  Rust:
     category: Languages
-    patterns: ['(?<![\w])c\+\+(?![\w])', '(?<![\w])c#(?![\w])', '\.net\b']
-  Rust / Scala:
+    group: Systems languages
+    patterns:
+    - \brust\b(?!\s*belt)
+  C++:
     category: Languages
-    patterns: ['\brust\b(?!\s*belt)', '\bscala\b']
+    group: Systems languages
+    patterns:
+    - (?<![\w])c\+\+(?![\w])
+  C#:
+    category: Languages
+    group: .NET
+    patterns:
+    - (?<![\w])c#(?![\w])
+  .NET:
+    category: Languages
+    group: .NET
+    patterns:
+    - (?<![\w])\.net\b
+    - \bdotnet\b
+    - \basp\.net\b
+  Ruby:
+    category: Languages
+    group: Ruby
+    patterns:
+    - \bruby\b
+  Ruby on Rails:
+    category: Languages
+    group: Ruby
+    patterns:
+    - \bruby on rails\b
+    - \brails\b(?= (?:apps?|applications?|developers?|engineers?|apis?|backend|monolith)|,|/)
+  PHP:
+    category: Languages
+    group: PHP
+    patterns:
+    - \bphp\b
+    - \blaravel\b
+    - \bsymfony\b
+  Elixir:
+    category: Languages
+    group: Elixir
+    patterns:
+    - \belixir\b
+    - \bphoenix framework\b
+  Swift:
+    category: Languages
+    group: Mobile
+    patterns:
+    - \bswift ?ui\b
+    - \bswift\b(?=\s*(?:,|/|\)|and\b|or\b|developer|engineer|programming|code))
+    - (?:,|/|\(|\band|\bor|\bin)\s+swift\b
   SQL:
     category: Languages
-    patterns: ['\bsql\b', '\bpostgres(?:ql)?\b', '\bmysql\b', '\bt-sql\b', '\bsnowflake\b', '\bbigquery\b']
-
-  # ---------- LLM & agents ----------
+    group: SQL
+    patterns:
+    - \bsql\b
+    - \bt-sql\b
+    - \bpl/sql\b
   LLMs / GenAI (general):
     category: LLM & agents
-    patterns: ['\bllms?\b', '\blarge language models?\b', '\bgen ?ai\b', '\bgenerative ai\b', '\bfoundation models?\b']
+    group: LLM concepts
+    patterns:
+    - \bllms?\b
+    - \blarge language models?\b
+    - \bgen ?ai\b
+    - \bgenerative ai\b
+    - \bfoundation models?\b
   RAG:
     category: LLM & agents
-    patterns: ['\brag\b', '\bretrieval[- ]augmented\b', '\bgraph ?rag\b']
+    group: LLM concepts
+    patterns:
+    - \brag\b
+    - \bretrieval[- ]augmented\b
   AI agents / agentic workflows:
     category: LLM & agents
-    patterns: ['\bagentic\b', '\bai agents?\b', '\bllm agents?\b', '\bautonomous agents?\b', '\bagent (?:frameworks?|systems?|workflows?|orchestration|development)\b', '\bbuild(?:ing)? agents\b']
+    group: LLM concepts
+    patterns:
+    - \bagentic\b
+    - \bai agents?\b
+    - \bllm agents?\b
+    - \bautonomous agents?\b
+    - \bagent (?:frameworks?|systems?|workflows?|orchestration|development)\b
+    - \bbuild(?:ing)? agents\b
   Multi-agent systems:
     category: LLM & agents
-    patterns: ['\bmulti[- ]agent\b']
+    group: LLM concepts
+    patterns:
+    - \bmulti[- ]agent\b
   Tool / function calling:
     category: LLM & agents
-    patterns: ['\btool[- ]?(?:calling|use)\b', '\bfunction[- ]calling\b']
-  Prompt & context engineering:
+    group: LLM concepts
+    patterns:
+    - \btool[- ]?(?:calling|use)\b
+    - \bfunction[- ]calling\b
+  Prompt engineering:
     category: LLM & agents
-    patterns: ['\bprompt (?:engineering|design|optimi[sz]ation|tuning)\b', '\bcontext engineering\b', '\bprompting\b', '\bfew[- ]shot\b', '\bchain[- ]of[- ]thought\b']
+    group: LLM concepts
+    patterns:
+    - \bprompt (?:engineering|design|optimi[sz]ation|tuning)\b
+    - \bprompting\b
+    - \bfew[- ]shot\b
+    - \bchain[- ]of[- ]thought\b
+  Context engineering:
+    category: LLM & agents
+    group: LLM concepts
+    patterns:
+    - \bcontext engineering\b
+    - \bcontext (?:window )?management\b(?= for (?:llms?|agents?))
   Structured output:
     category: LLM & agents
-    patterns: ['\bstructured outputs?\b', '\bjson mode\b', '\bconstrained decoding\b']
-  Workflow orchestration:
-    category: LLM & agents
-    patterns: ['\b(?:airflow|dagster|prefect|argo workflows)\b', '\bworkflow orchestration\b']
+    group: LLM concepts
+    patterns:
+    - \bstructured outputs?\b
+    - \bjson mode\b
+    - \bconstrained decoding\b
   MCP:
     category: LLM & agents
-    patterns: ['\bmodel context protocol\b']
-    cs: ['\bMCP\b']
+    group: Agent protocols
+    patterns:
+    - \bmodel context protocol\b
+    cs:
+    - \bMCP\b
+  A2A protocol:
+    category: LLM & agents
+    group: Agent protocols
+    patterns:
+    - \bagent[- ]to[- ]agent (?:protocol|communication)\b
+    cs:
+    - \bA2A\b
   Agent memory:
     category: LLM & agents
-    patterns: ['\bagent memory\b', '\blong[- ]term memory\b', '\bmemory (?:systems|architecture|layer) for (?:ai|llm|agents?)\b']
-
-  # ---------- Frameworks ----------
+    group: LLM concepts
+    patterns:
+    - \bagent memory\b
+    - \blong[- ]term memory\b
+    - \bmemory (?:systems|architecture|layer) for (?:ai|llm|agents?)\b
+  Computer use / browser agents:
+    category: LLM & agents
+    group: LLM concepts
+    patterns:
+    - \bcomputer[- ]use agents?\b
+    - \bbrowser (?:agents?|automation agents?)\b
+    - \bbrowser[- ]use\b
+  Workflow orchestration:
+    category: LLM & agents
+    group: Orchestration
+    patterns:
+    - \bworkflow orchestration\b
+    - \borchestration (?:frameworks?|engines?)\b
   LangChain:
     category: Frameworks
-    patterns: ['\blangchain\b']
+    group: Agent frameworks
+    patterns:
+    - \blangchain\b
   LangGraph:
     category: Frameworks
-    patterns: ['\blanggraph\b']
+    group: Agent frameworks
+    patterns:
+    - \blanggraph\b
   LlamaIndex:
     category: Frameworks
-    patterns: ['\bllama ?index\b']
-  CrewAI / AutoGen / other agent SDKs:
+    group: Agent frameworks
+    patterns:
+    - \bllama ?index\b
+  CrewAI:
     category: Frameworks
-    patterns: ['\bcrew ?ai\b', '\bautogen\b', '\bsemantic kernel\b', '\bagents sdk\b', '\bpydantic ?ai\b', '\bdspy\b', '\bsmolagents\b']
-  LLM provider APIs (OpenAI / Anthropic / Gemini):
+    group: Agent frameworks
+    patterns:
+    - \bcrew ?ai\b
+  AutoGen:
     category: Frameworks
-    patterns: ['\bopenai\b', '\banthropic\b', '\bclaude\b', '\bgemini\b(?! exchange)', '\bgpt-?\d', '\bchatgpt\b', '\bmistral\b', '\bllama ?\d', '\bbedrock\b', '\bcohere\b']
-  Hugging Face Transformers:
-    category: ML
-    patterns: ['\bhugging ?face\b', '\btransformers library\b']
-
-  # ---------- Retrieval & data ----------
+    group: Agent frameworks
+    patterns:
+    - \bautogen\b
+    - \bag2\b
+  Semantic Kernel:
+    category: Frameworks
+    group: Agent frameworks
+    patterns:
+    - \bsemantic kernel\b
+  OpenAI Agents SDK:
+    category: Frameworks
+    group: Agent frameworks
+    patterns:
+    - \bopenai agents? sdk\b
+    - (?<!claude )\bagents sdk\b
+  Claude Agent SDK:
+    category: Frameworks
+    group: Agent frameworks
+    patterns:
+    - \bclaude (?:agent|code) sdk\b
+  Google ADK:
+    category: Frameworks
+    group: Agent frameworks
+    patterns:
+    - \bgoogle adk\b
+    - \bagent development kit\b
+  Pydantic AI:
+    category: Frameworks
+    group: Agent frameworks
+    patterns:
+    - \bpydantic[- ]?ai\b
+  DSPy:
+    category: Frameworks
+    group: Agent frameworks
+    patterns:
+    - \bdspy\b
+  smolagents:
+    category: Frameworks
+    group: Agent frameworks
+    patterns:
+    - \bsmolagents\b
+  Haystack:
+    category: Frameworks
+    group: Agent frameworks
+    patterns:
+    - \bhaystack\b(?= (?:framework|pipelines?)|,|/|\))
+    - \bdeepset\b
+  LiteLLM:
+    category: Frameworks
+    group: LLM gateways
+    patterns:
+    - \blitellm\b
+  Vercel AI SDK:
+    category: Frameworks
+    group: Agent frameworks
+    patterns:
+    - \bvercel ai sdk\b
+  OpenAI API / GPT models:
+    category: Frameworks
+    group: Model providers
+    patterns:
+    - \bopenai\b(?! agents? sdk)
+    - \bgpt-?\d
+    - \bgpt-?4o\b
+    - \bchatgpt\b
+  Anthropic Claude:
+    category: Frameworks
+    group: Model providers
+    patterns:
+    - \banthropic\b
+    - \bclaude\b(?! code| agent sdk)
+  Google Gemini:
+    category: Frameworks
+    group: Model providers
+    patterns:
+    - \bgemini\b(?! exchange)
+  Mistral:
+    category: Frameworks
+    group: Model providers
+    patterns:
+    - \bmistral\b
+  Llama (Meta):
+    category: Frameworks
+    group: Model providers
+    patterns:
+    - \bllama ?\d
+    - \bllama\b(?!\s*(?:index|\.cpp|guard|stack))
+    - \bmeta llama\b
+  DeepSeek:
+    category: Frameworks
+    group: Model providers
+    patterns:
+    - \bdeepseek\b
+  Qwen:
+    category: Frameworks
+    group: Model providers
+    patterns:
+    - \bqwen\b
+  Cohere:
+    category: Frameworks
+    group: Model providers
+    patterns:
+    - \bcohere\b
+  Open-weight models:
+    category: Frameworks
+    group: Model providers
+    patterns:
+    - \bopen[- ](?:source|weights?) (?:llms?|models?|language models?)\b
+    - \bself[- ]hosted (?:llms?|models?)\b
+  Hugging Face:
+    category: Frameworks
+    group: ML libraries
+    patterns:
+    - \bhugging ?face\b
+    - \btransformers library\b
   Vector databases:
     category: Retrieval & data
-    patterns: ['\bvector (?:databases?|db|stores?|search)\b', '\bpinecone\b', '\bweaviate\b', '\bqdrant\b', '\bmilvus\b', '\bchroma(?:db)?\b', '\bpgvector\b', '\bfaiss\b']
+    group: Vector search
+    patterns:
+    - \bvector (?:databases?|dbs?|stores?|search|indexes?)\b
+  Pinecone:
+    category: Retrieval & data
+    group: Vector search
+    patterns:
+    - \bpinecone\b
+  Weaviate:
+    category: Retrieval & data
+    group: Vector search
+    patterns:
+    - \bweaviate\b
+  Qdrant:
+    category: Retrieval & data
+    group: Vector search
+    patterns:
+    - \bqdrant\b
+  Milvus:
+    category: Retrieval & data
+    group: Vector search
+    patterns:
+    - \bmilvus\b
+    - \bzilliz\b
+  Chroma:
+    category: Retrieval & data
+    group: Vector search
+    patterns:
+    - \bchroma(?:db)?\b
+  pgvector:
+    category: Retrieval & data
+    group: Vector search
+    patterns:
+    - \bpgvector\b
+  FAISS:
+    category: Retrieval & data
+    group: Vector search
+    patterns:
+    - \bfaiss\b
+  Elasticsearch / OpenSearch:
+    category: Retrieval & data
+    group: Search engines
+    patterns:
+    - \belasticsearch\b
+    - \bopensearch\b
+    - \belastic search\b
   Embeddings / semantic search:
     category: Retrieval & data
-    patterns: ['\bembeddings?\b', '\bsemantic search\b', '\bdense retrieval\b']
-  Hybrid search / reranking / chunking:
+    group: Vector search
+    patterns:
+    - \bembeddings?\b
+    - \bsemantic search\b
+    - \bdense retrieval\b
+  Reranking / hybrid search:
     category: Retrieval & data
-    patterns: ['\bre-?rank(?:ing|ers?)?\b', '\bhybrid search\b', '\bchunking\b', '\bbm25\b']
-  Knowledge graphs / GraphRAG:
+    group: Vector search
+    patterns:
+    - \bre-?rank(?:ing|ers?)?\b
+    - \bhybrid search\b
+    - \bbm25\b
+  Chunking strategies:
     category: Retrieval & data
-    patterns: ['\bknowledge graphs?\b', '\bgraph ?rag\b', '\bneo4j\b', '\bgraph databases?\b']
-  PostgreSQL / relational DBs:
+    group: Vector search
+    patterns:
+    - \bchunking\b
+  Knowledge graphs:
     category: Retrieval & data
-    patterns: ['\bpostgres(?:ql)?\b', '\bmysql\b', '\brelational databases?\b', '\brdbms\b', '\boracle db\b', '\bsql server\b']
-  NoSQL (MongoDB, DynamoDB):
+    group: Graphs
+    patterns:
+    - \bknowledge graphs?\b
+    - \bgraph databases?\b
+  GraphRAG:
     category: Retrieval & data
-    patterns: ['\bnosql\b', '\bmongo(?:db)?\b', '\bdynamodb\b', '\bcassandra\b', '\bcouchbase\b', '\belasticsearch\b', '\bopensearch\b']
-  Redis / caching:
+    group: Graphs
+    patterns:
+    - \bgraph ?rag\b
+  Neo4j:
     category: Retrieval & data
-    patterns: ['\bredis\b', '\bmemcached\b', '\bcaching\b']
-  Kafka / message queues / streaming:
+    group: Graphs
+    patterns:
+    - \bneo4j\b
+    - \bcypher\b(?= quer)
+  PostgreSQL:
     category: Retrieval & data
-    patterns: ['\bkafka\b', '\brabbitmq\b', '\bpub/?sub\b', '\bkinesis\b', '\bmessage (?:queues?|brokers?)\b', '\bevent[- ]driven\b', '\bstream processing\b', '\bflink\b']
-  BI / dashboards (Power BI, Tableau, Looker):
+    group: Relational databases
+    patterns:
+    - \bpostgres(?:ql)?\b
+  MySQL:
     category: Retrieval & data
-    patterns: ['\bpower ?bi\b', '\btableau\b', '\blooker\b', '\bbusiness intelligence\b', '\bmetabase\b', '\bqlik\w*', '\bsuperset\b(?=\s*(?:,|/|\)|dashboards?))']
-    cs: ['\bBI\b(?!-)']
-  Spark / big data:
+    group: Relational databases
+    patterns:
+    - \bmysql\b
+    - \bmariadb\b
+  SQL Server:
     category: Retrieval & data
-    patterns: ['\bapache spark\b', '\bpyspark\b', '\bspark\b(?=\s*(?:,|/|\)|sql|streaming|jobs?|clusters?))', '\bhadoop\b', '\bdatabricks\b', '\bbig data\b', '\bhive\b(?=\s*(?:,|/|\)|sql|tables?))']
+    group: Relational databases
+    patterns:
+    - \bsql server\b
+    - \bmssql\b
+  Oracle Database:
+    category: Retrieval & data
+    group: Relational databases
+    patterns:
+    - \boracle (?:db|database|sql|rac)\b
+  Relational databases:
+    category: Retrieval & data
+    group: Relational databases
+    patterns:
+    - \brelational databases?\b
+    - \brdbms\b
+  Snowflake:
+    category: Retrieval & data
+    group: Data warehouses
+    patterns:
+    - \bsnowflake\b
+  BigQuery:
+    category: Retrieval & data
+    group: Data warehouses
+    patterns:
+    - \bbigquery\b
+  Redshift:
+    category: Retrieval & data
+    group: Data warehouses
+    patterns:
+    - \bredshift\b
+  ClickHouse:
+    category: Retrieval & data
+    group: Data warehouses
+    patterns:
+    - \bclickhouse\b
+  DuckDB:
+    category: Retrieval & data
+    group: Data warehouses
+    patterns:
+    - \bduckdb\b
+  MongoDB:
+    category: Retrieval & data
+    group: NoSQL
+    patterns:
+    - \bmongo(?:db)?\b
+  DynamoDB:
+    category: Retrieval & data
+    group: NoSQL
+    patterns:
+    - \bdynamodb\b
+  Cassandra:
+    category: Retrieval & data
+    group: NoSQL
+    patterns:
+    - \bcassandra\b
+    - \bscylla(?:db)?\b
+  NoSQL (general):
+    category: Retrieval & data
+    group: NoSQL
+    patterns:
+    - \bnosql\b
+  Redis:
+    category: Retrieval & data
+    group: Caching
+    patterns:
+    - \bredis\b
+    - \bvalkey\b
+  Caching:
+    category: Retrieval & data
+    group: Caching
+    patterns:
+    - \bmemcached\b
+    - \bcaching (?:layers?|strategies)\b
+    - \bdistributed cach(?:e|ing)\b
+  Kafka:
+    category: Retrieval & data
+    group: Streaming & queues
+    patterns:
+    - \bkafka\b
+    - \bconfluent\b
+  RabbitMQ:
+    category: Retrieval & data
+    group: Streaming & queues
+    patterns:
+    - \brabbitmq\b
+  AWS SQS / SNS:
+    category: Retrieval & data
+    group: Streaming & queues
+    patterns:
+    - \bsqs\b
+    - \bsns\b(?=,|/| (?:and|topics?))
+  Google Pub/Sub:
+    category: Retrieval & data
+    group: Streaming & queues
+    patterns:
+    - \bpub ?/ ?sub\b
+  Kinesis:
+    category: Retrieval & data
+    group: Streaming & queues
+    patterns:
+    - \bkinesis\b
+  Flink:
+    category: Retrieval & data
+    group: Streaming & queues
+    patterns:
+    - \bflink\b
+  Event-driven architecture:
+    category: Retrieval & data
+    group: Streaming & queues
+    patterns:
+    - \bevent[- ]driven\b
+    - \bmessage (?:queues?|brokers?)\b
+    - \bstream processing\b
+    - \bevent streaming\b
+  Spark:
+    category: Retrieval & data
+    group: Big data
+    patterns:
+    - \bapache spark\b
+    - \bpyspark\b
+    - \bspark\b(?=\s*(?:,|/|\)|sql|streaming|jobs?|clusters?|and\b))
+  Databricks:
+    category: Retrieval & data
+    group: Big data
+    patterns:
+    - \bdatabricks\b
+  Hadoop / Hive:
+    category: Retrieval & data
+    group: Big data
+    patterns:
+    - \bhadoop\b
+    - \bhdfs\b
+    - \bhive\b(?=\s*(?:,|/|\)|sql|tables?|metastore))
   Data pipelines / ETL:
     category: Retrieval & data
-    patterns: ['\betl\b', '\belt\b(?= pipelines?)', '\bdata pipelines?\b', '\bdbt\b', '\bdata ingestion\b']
-
-  # ---------- Eval, safety & observability ----------
-  LLM evaluation / eval harnesses:
+    group: Data pipelines
+    patterns:
+    - \betl\b
+    - \belt\b(?= pipelines?)
+    - \bdata pipelines?\b
+    - \bdata ingestion\b
+  dbt:
+    category: Retrieval & data
+    group: Data pipelines
+    patterns:
+    - \bdbt\b
+  Airflow:
+    category: Retrieval & data
+    group: Data pipelines
+    patterns:
+    - \bairflow\b
+  Dagster:
+    category: Retrieval & data
+    group: Data pipelines
+    patterns:
+    - \bdagster\b
+  Prefect:
+    category: Retrieval & data
+    group: Data pipelines
+    patterns:
+    - \bprefect\b(?= (?:flows?|cloud|orchestration)|,|/|\))
+  Fivetran / Airbyte:
+    category: Retrieval & data
+    group: Data pipelines
+    patterns:
+    - \bfivetran\b
+    - \bairbyte\b
+  Apache Iceberg / Delta Lake:
+    category: Retrieval & data
+    group: Big data
+    patterns:
+    - \biceberg\b(?= tables?|,|/|\))
+    - \bapache iceberg\b
+    - \bdelta lake\b
+    - \blakehouse\b
+  Power BI:
+    category: Retrieval & data
+    group: BI
+    patterns:
+    - \bpower ?bi\b
+  Tableau:
+    category: Retrieval & data
+    group: BI
+    patterns:
+    - \btableau\b
+  Looker:
+    category: Retrieval & data
+    group: BI
+    patterns:
+    - \blooker\b
+  BI (general):
+    category: Retrieval & data
+    group: BI
+    patterns:
+    - \bbusiness intelligence\b
+    - \bmetabase\b
+    - \bqlik\w*
+    - \bsuperset\b(?=\s*(?:,|/|\)|dashboards?))
+    cs:
+    - \bBI\b(?!-)
+  LLM evaluation:
     category: Eval, safety & observability
-    patterns: ['\bevals\b', '\b(?:llm|model|ai|offline|online) evaluations?\b', '\bevaluation (?:frameworks?|harness(?:es)?|pipelines?|sets?|datasets?)\b', '\bllm[- ]as[- ]a?[- ]?judge\b', '\bragas\b', '\bdeepeval\b', '\bbenchmarks?\b']
+    group: Evals
+    patterns:
+    - \bevals\b
+    - \b(?:llm|model|ai|offline|online) evaluations?\b
+    - \bevaluation (?:frameworks?|harness(?:es)?|pipelines?|sets?|datasets?)\b
+    - \bllm[- ]as[- ]a?[- ]?judge\b
+    - \bbenchmarks?\b
+  Ragas:
+    category: Eval, safety & observability
+    group: Evals
+    patterns:
+    - \bragas\b
+  DeepEval:
+    category: Eval, safety & observability
+    group: Evals
+    patterns:
+    - \bdeepeval\b
+  promptfoo:
+    category: Eval, safety & observability
+    group: Evals
+    patterns:
+    - \bpromptfoo\b
+  Braintrust:
+    category: Eval, safety & observability
+    group: Evals
+    patterns:
+    - \bbraintrust\b
+  lm-eval-harness / OpenAI Evals:
+    category: Eval, safety & observability
+    group: Evals
+    patterns:
+    - \blm[- ]eval(?:uation)?[- ]harness\b
+    - \bopenai evals\b
+    - \binspect ai\b
+    - \bhelm benchmark\b
   Guardrails / AI safety:
     category: Eval, safety & observability
-    patterns: ['\bguardrails?\b', '\bai safety\b', '\bresponsible ai\b', '\bred[- ]teaming\b', '\balignment\b(?=.{0,40}(?:model|ai|llm))', '\bhallucinations?\b']
+    group: AI safety
+    patterns:
+    - \bguardrails?\b
+    - \bai safety\b
+    - \bresponsible ai\b
+    - \balignment\b(?=.{0,40}(?:model|ai|llm))
+    - \bhallucinations?\b
+  NeMo Guardrails / Llama Guard:
+    category: Eval, safety & observability
+    group: AI safety
+    patterns:
+    - \bnemo guardrails\b
+    - \bllama ?guard\b
+    - \bguardrails ai\b
+  AI red teaming:
+    category: Eval, safety & observability
+    group: AI safety
+    patterns:
+    - \bred[- ]team(?:ing|ers?)?\b
   LLM security (prompt injection, OWASP LLM):
     category: Eval, safety & observability
-    patterns: ['\bprompt injections?\b', '\bjailbreaks?\b', '\bowasp (?:top 10 )?(?:for )?llm\b', '\bai security\b', '\bllm security\b']
-  Observability / tracing / monitoring:
+    group: AI safety
+    patterns:
+    - \bprompt injections?\b
+    - \bjailbreaks?\b
+    - \bowasp (?:top 10 )?(?:for )?llm\b
+    - \bai security\b
+    - \bllm security\b
+  Observability / monitoring:
     category: Eval, safety & observability
-    # Bare "monitoring" also matched transaction, patient and brand monitoring.
-    patterns: ['\bobservability\b', '\bopentelemetry\b', '\bprometheus\b', '\bgrafana\b', '\bdatadog\b', '\bdistributed tracing\b',
-               '\bsplunk\b', '\bnew relic\b',
-               '\b(?:application|systems?|infrastructure|production|performance|service|server|network|cloud|model) monitoring\b',
-               '\bmonitoring(?:,| and| &| /|/) ?(?:alerting|logging|observability|tracing)\b',
-               '\b(?:logging|alerting)(?:,| and| &| /|/) ?monitoring\b', '\bmonitoring (?:tools?|systems?|stack|dashboards?)\b']
-  LLM tracing tools (Langfuse / LangSmith / Arize):
+    group: Observability
+    patterns:
+    - \bobservability\b
+    - \bdistributed tracing\b
+    - \b(?:application|systems?|infrastructure|production|performance|service|server|network|cloud|model) monitoring\b
+    - \bmonitoring(?:,| and| &| /|/) ?(?:alerting|logging|observability|tracing)\b
+    - \b(?:logging|alerting)(?:,| and| &| /|/) ?monitoring\b
+    - \bmonitoring (?:tools?|systems?|stack|dashboards?)\b
+  OpenTelemetry:
     category: Eval, safety & observability
-    patterns: ['\blangfuse\b', '\blangsmith\b', '\barize\b', '\bphoenix\b(?= (?:tracing|arize))', '\bweights (?:&|and) biases\b', '\bwandb\b', '\bhelicone\b', '\bbraintrust\b']
+    group: Observability
+    patterns:
+    - \bopentelemetry\b
+    - \botel\b
+  Prometheus:
+    category: Eval, safety & observability
+    group: Observability
+    patterns:
+    - \bprometheus\b
+  Grafana:
+    category: Eval, safety & observability
+    group: Observability
+    patterns:
+    - \bgrafana\b
+  Datadog:
+    category: Eval, safety & observability
+    group: Observability
+    patterns:
+    - \bdatadog\b
+  Splunk:
+    category: Eval, safety & observability
+    group: Observability
+    patterns:
+    - \bsplunk\b
+  New Relic:
+    category: Eval, safety & observability
+    group: Observability
+    patterns:
+    - \bnew relic\b
+  ELK stack:
+    category: Eval, safety & observability
+    group: Observability
+    patterns:
+    - '\belk\b(?: stack)?'
+    - \belastic stack\b
+    - \bkibana\b
+    - \blogstash\b
+  Sentry:
+    category: Eval, safety & observability
+    group: Observability
+    patterns:
+    - \bsentry\b(?=,|/|\)| (?:for|and|or))
+  Langfuse:
+    category: Eval, safety & observability
+    group: LLM tracing
+    patterns:
+    - \blangfuse\b
+  LangSmith:
+    category: Eval, safety & observability
+    group: LLM tracing
+    patterns:
+    - \blangsmith\b
+  Arize / Phoenix:
+    category: Eval, safety & observability
+    group: LLM tracing
+    patterns:
+    - \barize\b
+    - \bphoenix\b(?= (?:tracing|arize))
+  Weights & Biases:
+    category: Eval, safety & observability
+    group: LLM tracing
+    patterns:
+    - \bweights (?:&|and) biases\b
+    - \bwandb\b
+    - \bw&b\b
+  Helicone:
+    category: Eval, safety & observability
+    group: LLM tracing
+    patterns:
+    - \bhelicone\b
   Cost / latency optimization:
     category: Eval, safety & observability
-    patterns: ['\blatency (?:optimi[sz]ation|reduction|budgets?)\b', '\bcost (?:optimi[sz]ation|efficiency|reduction)\b', '\blow[- ]latency\b']
-  Governance / compliance / audit:
+    group: Performance
+    patterns:
+    - \blatency (?:optimi[sz]ation|reduction|budgets?)\b
+    - \bcost (?:optimi[sz]ation|efficiency|reduction)\b
+    - \blow[- ]latency\b
+  AI governance:
     category: Eval, safety & observability
-    patterns: ['\bai governance\b', '\bmodel governance\b', '\bmodel risk\b', '\baudit trails?\b', '\bdata governance\b', '\bgdpr\b', '\bsoc ?2\b', '\biso ?27001\b']
-
-  # ---------- ML ----------
+    group: Governance
+    patterns:
+    - \bai governance\b
+    - \bmodel governance\b
+    - \bmodel risk\b
+    - \beu ai act\b
+    - \bai act\b(?= compliance)
+  Data governance:
+    category: Eval, safety & observability
+    group: Governance
+    patterns:
+    - \bdata governance\b
+    - \baudit trails?\b
+    - \bdata lineage\b
+  GDPR:
+    category: Eval, safety & observability
+    group: Governance
+    patterns:
+    - \bgdpr\b
   PyTorch:
     category: ML
-    patterns: ['\bpytorch\b', '\btorch\b']
-  TensorFlow / Keras / JAX:
+    group: DL frameworks
+    patterns:
+    - \bpytorch\b
+    - \btorch\b
+  TensorFlow:
     category: ML
-    patterns: ['\btensorflow\b', '\bkeras\b', '\bjax\b']
-  scikit-learn / classical ML:
+    group: DL frameworks
+    patterns:
+    - \btensorflow\b
+    - \btf ?2\b
+  Keras:
     category: ML
-    patterns: ['\bscikit[- ]learn\b', '\bsklearn\b', '\bxgboost\b', '\blightgbm\b', '\bcatboost\b', '\bgradient boost(?:ing|ed)\b', '\brandom forests?\b', '\blogistic regression\b']
+    group: DL frameworks
+    patterns:
+    - \bkeras\b
+  JAX:
+    category: ML
+    group: DL frameworks
+    patterns:
+    - \bjax\b
+    - \bflax\b
+  scikit-learn:
+    category: ML
+    group: Classical ML
+    patterns:
+    - \bscikit[- ]learn\b
+    - \bsklearn\b
+  XGBoost / LightGBM:
+    category: ML
+    group: Classical ML
+    patterns:
+    - \bxgboost\b
+    - \blightgbm\b
+    - \bcatboost\b
+  Classical ML (trees, regression):
+    category: ML
+    group: Classical ML
+    patterns:
+    - \bgradient boost(?:ing|ed)\b
+    - \brandom forests?\b
+    - \blogistic regression\b
+    - \bdecision trees?\b
   Machine learning fundamentals:
     category: ML
-    patterns: ['\bmachine learning\b', '\bml models?\b', '\bsupervised learning\b', '\bmodel training\b']
+    group: ML concepts
+    patterns:
+    - \bmachine learning\b
+    - \bml models?\b
+    - \bsupervised learning\b
+    - \bmodel training\b
   Deep learning:
     category: ML
-    patterns: ['\bdeep learning\b', '\bneural networks?\b', '\btransformer (?:models?|architectures?)\b', '\bcnns?\b', '\brnns?\b']
+    group: ML concepts
+    patterns:
+    - \bdeep learning\b
+    - \bneural networks?\b
+    - \btransformer (?:models?|architectures?)\b
+    - \bcnns?\b
+    - \brnns?\b
   NLP:
     category: ML
-    patterns: ['\bnlp\b', '\bnatural language processing\b', '\btext classification\b', '\bnamed entity recognition\b', '\bner\b']
-  Fine-tuning (SFT / LoRA / PEFT):
+    group: ML concepts
+    patterns:
+    - \bnlp\b
+    - \bnatural language processing\b
+    - \btext classification\b
+    - \bnamed entity recognition\b
+    - \bner\b
+  Fine-tuning:
     category: ML
-    patterns: ['\bfine[- ]?tun(?:e|ing|ed)\b', '\blora\b', '\bqlora\b', '\bpeft\b', '\bsft\b', '\binstruction tuning\b']
-  RLHF / DPO / RL:
+    group: Post-training
+    patterns:
+    - \bfine[- ]?tun(?:e|ing|ed)\b
+    - \bsft\b
+    - \binstruction tuning\b
+    - \bsupervised fine
+  LoRA / PEFT:
     category: ML
-    patterns: ['\brlhf\b', '\brlaif\b', '\bdpo\b', '\breinforcement learning\b', '\bppo\b', '\bgrpo\b']
-  LLM serving / inference optimization (vLLM, TGI):
+    group: Post-training
+    patterns:
+    - \blora\b
+    - \bqlora\b
+    - \bpeft\b
+  Unsloth / Axolotl / TRL:
     category: ML
-    patterns: ['\bvllm\b', '\btgi\b', '\btensorrt\b', '\btriton inference\b', '\bmodel serving\b', '\binference optimi[sz]ation\b', '\bquanti[sz]ation\b', '\bsglang\b', '\bllm inference\b', '\bonnx\b']
-  GPU / distributed training:
+    group: Post-training
+    patterns:
+    - \bunsloth\b
+    - \baxolotl\b
+    - \bhugging ?face trl\b
+  RLHF:
     category: ML
-    patterns: ['\bgpus?\b', '\bcuda\b', '\bdistributed training\b', '\bdeepspeed\b', '\bfsdp\b', '\bmegatron\b', '\btpus?\b', '\bray\b(?= ?(?:serve|train|tune|cluster|data|framework))']
-  Time series / anomaly detection:
+    group: Post-training
+    patterns:
+    - \brlhf\b
+    - \brlaif\b
+    - \breinforcement learning from human feedback\b
+  DPO / GRPO / PPO:
     category: ML
-    patterns: ['\btime[- ]series\b', '\banomaly detection\b', '\bforecasting\b']
-  Graph ML:
+    group: Post-training
+    patterns:
+    - \bdpo\b
+    - \bgrpo\b
+    - \bppo\b
+    - \bdirect preference optimi[sz]ation\b
+  Reinforcement learning:
     category: ML
-    patterns: ['\bgraph neural networks?\b', '\bgnns?\b', '\bgraph (?:ml|machine learning)\b']
-  Computer vision / multimodal / speech:
+    group: Post-training
+    patterns:
+    - \breinforcement learning\b(?! from human)
+    - \bdeep rl\b
+  Distillation:
     category: ML
-    patterns: ['\bcomputer vision\b', '\bmulti-?modal\b', '\bspeech (?:recognition|synthesis|to text)\b', '\basr\b', '\btts\b', '\bopencv\b', '\bobject detection\b', '\bimage (?:classification|segmentation|generation)\b', '\bvision[- ]language\b']
-  Feature engineering / data preprocessing:
+    group: Post-training
+    patterns:
+    - \b(?:knowledge |model )?distillation\b
+  vLLM:
     category: ML
-    patterns: ['\bfeature engineering\b', '\bfeature stores?\b', '\bdata preprocessing\b', '\bdata labell?ing\b']
-  Statistics / maths:
+    group: LLM serving
+    patterns:
+    - \bvllm\b
+  TGI (Text Generation Inference):
     category: ML
-    patterns: ['\bstatistics\b', '\bstatistical\b', '\bprobability\b', '\blinear algebra\b', '\ba/b test(?:s|ing)?\b', '\bexperiment(?:ation)? design\b', '\bcausal inference\b']
-  pandas / NumPy:
+    group: LLM serving
+    patterns:
+    - \btgi\b
+    - \btext generation inference\b
+  TensorRT / TensorRT-LLM:
     category: ML
-    patterns: ['\bpandas\b', '\bnumpy\b', '\bpolars\b', '\bscipy\b']
-
-  # ---------- MLOps & platform ----------
+    group: LLM serving
+    patterns:
+    - \btensorrt(?:-llm)?\b
+  Triton Inference Server:
+    category: ML
+    group: LLM serving
+    patterns:
+    - '\btriton inference(?: server)?\b'
+    - \bnvidia triton\b
+  SGLang:
+    category: ML
+    group: LLM serving
+    patterns:
+    - \bsglang\b
+  llama.cpp / Ollama:
+    category: ML
+    group: LLM serving
+    patterns:
+    - \bllama\.cpp\b
+    - \bollama\b
+    - \bgguf\b
+  ONNX:
+    category: ML
+    group: LLM serving
+    patterns:
+    - '\bonnx(?: ?runtime)?\b'
+  Quantization:
+    category: ML
+    group: LLM serving
+    patterns:
+    - \bquanti[sz]ation\b
+    - \bgptq\b
+    - \bawq\b
+  Model serving / inference optimization:
+    category: ML
+    group: LLM serving
+    patterns:
+    - \bmodel serving\b
+    - \binference optimi[sz]ation\b
+    - \bllm inference\b
+    - \binference (?:infrastructure|engines?|servers?|serving)\b
+    - \bspeculative decoding\b
+    - \bkv[- ]cache\b
+  CUDA:
+    category: ML
+    group: GPU & training
+    patterns:
+    - \bcuda\b
+    - \bgpu kernels?\b
+    - \btriton kernels?\b
+    - \bcutlass\b
+  GPUs (general):
+    category: ML
+    group: GPU & training
+    patterns:
+    - \bgpus?\b
+    - \btpus?\b
+  Distributed training:
+    category: ML
+    group: GPU & training
+    patterns:
+    - \bdistributed training\b
+    - \bmulti[- ]node training\b
+    - \bmodel parallel\w*\b
+    - \bdata parallel\w*\b
+  DeepSpeed / FSDP / Megatron:
+    category: ML
+    group: GPU & training
+    patterns:
+    - \bdeepspeed\b
+    - \bfsdp\b
+    - \bmegatron\b
+  Ray:
+    category: ML
+    group: GPU & training
+    patterns:
+    - \bray\b(?= ?(?:serve|train|tune|cluster|data|framework|core))
+    - \banyscale\b
+    - \bray\.io\b
+  Time series / forecasting:
+    category: ML
+    group: Applied ML
+    patterns:
+    - \btime[- ]series\b
+    - \bforecasting\b
+  Anomaly detection:
+    category: ML
+    group: Applied ML
+    patterns:
+    - \banomaly detection\b
+    - \boutlier detection\b
+  Recommender systems:
+    category: ML
+    group: Applied ML
+    patterns:
+    - \brecommend(?:er|ation) (?:systems?|engines?|models?)\b
+    - \brecsys\b
+  Graph neural networks:
+    category: ML
+    group: Applied ML
+    patterns:
+    - \bgraph neural networks?\b
+    - \bgnns?\b
+    - \bgraph (?:ml|machine learning)\b
+  Computer vision:
+    category: ML
+    group: Vision & speech
+    patterns:
+    - \bcomputer vision\b
+    - \bobject detection\b
+    - \bimage (?:classification|segmentation)\b
+  OpenCV:
+    category: ML
+    group: Vision & speech
+    patterns:
+    - \bopencv\b
+  YOLO:
+    category: ML
+    group: Vision & speech
+    patterns:
+    - \byolo(?:v\d+)?\b
+  Multimodal / vision-language models:
+    category: ML
+    group: Vision & speech
+    patterns:
+    - \bmulti-?modal\b
+    - \bvision[- ]language\b
+    - \bvlms?\b
+  Diffusion models:
+    category: ML
+    group: Vision & speech
+    patterns:
+    - \bdiffusion models?\b
+    - \bstable diffusion\b
+    - \bimage generation\b
+  Speech (ASR / TTS):
+    category: ML
+    group: Vision & speech
+    patterns:
+    - \bspeech (?:recognition|synthesis|to text)\b
+    - \basr\b
+    - \btts\b
+    - \btext[- ]to[- ]speech\b
+    - \bwhisper\b(?= (?:model|asr|api)|,|/|\))
+    - \bvoice ai\b
+  Feature engineering:
+    category: ML
+    group: ML data
+    patterns:
+    - \bfeature engineering\b
+    - \bdata preprocessing\b
+  Feature stores:
+    category: ML
+    group: ML data
+    patterns:
+    - \bfeature stores?\b
+    - \bfeast\b(?= feature|,|/|\))
+    - \btecton\b
+  Data labelling:
+    category: ML
+    group: ML data
+    patterns:
+    - \bdata labell?ing\b
+    - \bannotation pipelines?\b
+    - \blabel studio\b
+    - \bscale ai\b
+  Synthetic data generation:
+    category: ML
+    group: ML data
+    patterns:
+    - \bsynthetic data\b
+  Statistics:
+    category: ML
+    group: Maths & stats
+    patterns:
+    - \bstatistics\b
+    - \bstatistical\b
+    - \bprobability\b
+  A/B testing / experimentation:
+    category: ML
+    group: Maths & stats
+    patterns:
+    - \ba/b test(?:s|ing)?\b
+    - \bexperiment(?:ation)? design\b
+    - \bexperimentation platforms?\b
+  Causal inference:
+    category: ML
+    group: Maths & stats
+    patterns:
+    - \bcausal inference\b
+    - \bcausal ml\b
+    - \buplift model\w*\b
+  Bayesian methods:
+    category: ML
+    group: Maths & stats
+    patterns:
+    - \bbayesian\b
+    - \bpymc\b
+    - \bstan\b(?= models?)
+  Linear algebra / optimisation:
+    category: ML
+    group: Maths & stats
+    patterns:
+    - \blinear algebra\b
+    - \bconvex optimi[sz]ation\b
+    - \bnumerical (?:methods|optimi[sz]ation)\b
+  pandas:
+    category: ML
+    group: Python data stack
+    patterns:
+    - \bpandas\b
+  NumPy:
+    category: ML
+    group: Python data stack
+    patterns:
+    - \bnumpy\b
+  Polars:
+    category: ML
+    group: Python data stack
+    patterns:
+    - \bpolars\b
+  SciPy:
+    category: ML
+    group: Python data stack
+    patterns:
+    - \bscipy\b
+  Jupyter:
+    category: ML
+    group: Python data stack
+    patterns:
+    - \bjupyter\b
+    - \bnotebooks?\b(?= \(jupyter)
   MLOps / LLMOps:
     category: MLOps & platform
-    patterns: ['\bmlops\b', '\bllmops\b', '\bml (?:platform|infrastructure|pipelines?)\b', '\bmodel (?:deployment|monitoring|registry)\b']
-  MLflow / Kubeflow / SageMaker pipelines:
+    group: MLOps
+    patterns:
+    - \bmlops\b
+    - \bllmops\b
+    - \bml (?:platform|infrastructure|pipelines?)\b
+    - \bmodel (?:deployment|monitoring|registry)\b
+  MLflow:
     category: MLOps & platform
-    patterns: ['\bmlflow\b', '\bkubeflow\b', '\bsagemaker\b', '\bvertex ai pipelines\b', '\bazure ml\b', '\bmetaflow\b', '\bzenml\b']
-
-  # ---------- Backend ----------
+    group: MLOps
+    patterns:
+    - \bmlflow\b
+  Kubeflow:
+    category: MLOps & platform
+    group: MLOps
+    patterns:
+    - \bkubeflow\b
+  SageMaker:
+    category: MLOps & platform
+    group: MLOps
+    patterns:
+    - \bsagemaker\b
+  Azure ML:
+    category: MLOps & platform
+    group: MLOps
+    patterns:
+    - \bazure ml\b
+    - \bazure machine learning\b
+  Metaflow / ZenML:
+    category: MLOps & platform
+    group: MLOps
+    patterns:
+    - \bmetaflow\b
+    - \bzenml\b
+  Modal / Replicate:
+    category: MLOps & platform
+    group: MLOps
+    patterns:
+    - \bmodal(?:\.com| labs)\b
+    - \breplicate\.com\b
   FastAPI:
     category: Backend
-    patterns: ['\bfastapi\b']
-  Django / Flask:
+    group: Python web
+    patterns:
+    - \bfastapi\b
+  Django:
     category: Backend
-    patterns: ['\bdjango\b', '\bflask\b']
-  REST / API design & integration:
+    group: Python web
+    patterns:
+    - \bdjango\b
+  Flask:
     category: Backend
-    patterns: ['\brest(?:ful)?\b(?:\s*apis?)?(?=.{0,20}\bapis?\b)|\brestful\b', '\bapi (?:design|development|integrations?)\b', '\bgraphql\b', '\bgrpc\b', '\bopenapi\b', '\bweb ?hooks?\b']
-    cs: ['\bREST\b']
-  Microservices / distributed systems:
+    group: Python web
+    patterns:
+    - \bflask\b
+  Spring Boot:
     category: Backend
-    patterns: ['\bmicro-?services?\b', '\bdistributed systems?\b', '\bservice[- ]oriented\b', '\bhigh[- ]availability\b', '\bscalable (?:systems|services|backend)\b']
+    group: JVM
+    patterns:
+    - \bspring ?boot\b
+    - \bspring (?:framework|cloud|mvc|batch|webflux)\b
+  Express.js:
+    category: Backend
+    group: Node web
+    patterns:
+    - \bexpress\.?js\b
+    - \bexpress\b(?= (?:framework|server|apis?|backend)|,|/|\))
+  NestJS:
+    category: Backend
+    group: Node web
+    patterns:
+    - \bnest\.?js\b
+  REST APIs:
+    category: Backend
+    group: APIs
+    patterns:
+    - \brest(?:ful)?\b(?:\s*apis?)?(?=.{0,20}\bapis?\b)|\brestful\b
+    - \bapi (?:design|development|integrations?)\b
+    - \bopenapi\b
+    - \bswagger\b
+    - \bweb ?hooks?\b
+    cs:
+    - \bREST\b
+  GraphQL:
+    category: Backend
+    group: APIs
+    patterns:
+    - \bgraphql\b
+    - \bapollo\b(?= (?:server|client|graphql)|,|/)
+  gRPC / Protobuf:
+    category: Backend
+    group: APIs
+    patterns:
+    - \bgrpc\b
+    - \bprotobufs?\b
+    - \bprotocol buffers\b
+  WebSockets:
+    category: Backend
+    group: APIs
+    patterns:
+    - \bweb ?sockets?\b
+  Microservices:
+    category: Backend
+    group: Architecture
+    patterns:
+    - \bmicro-?services?\b
+    - \bservice[- ]oriented\b
+  Distributed systems:
+    category: Backend
+    group: Architecture
+    patterns:
+    - \bdistributed systems?\b
+    - \bhigh[- ]availability\b
+    - \bscalable (?:systems|services|backend)\b
+    - \bconsensus (?:algorithms?|protocols?)\b
   Async Python (asyncio):
     category: Backend
-    patterns: ['\basyncio\b', '\basync python\b', '\basynchronous programming\b', '\basync/await\b']
-  Celery / background jobs:
+    group: Python web
+    patterns:
+    - \basyncio\b
+    - \basync python\b
+    - \basynchronous programming\b
+    - \basync/await\b
+  Celery:
     category: Backend
-    patterns: ['\bcelery\b', '\bbackground jobs?\b', '\btask queues?\b', '\bsidekiq\b', '\bdramatiq\b']
+    group: Background jobs
+    patterns:
+    - \bcelery\b
+  Background jobs / task queues:
+    category: Backend
+    group: Background jobs
+    patterns:
+    - \bbackground jobs?\b
+    - \btask queues?\b
+    - \bsidekiq\b
+    - \bdramatiq\b
+    - \bbullmq\b
   System design / architecture:
     category: Backend
-    patterns: ['\bsystem design\b', '\bsoftware architecture\b', '\bsystems architecture\b', '\barchitect(?:ing)? (?:scalable|robust|end-to-end)\b', '\bdesign patterns\b']
-  Testing (pytest, unit/integration):
+    group: Architecture
+    patterns:
+    - \bsystem design\b
+    - \bsoftware architecture\b
+    - \bsystems architecture\b
+    - \barchitect(?:ing)? (?:scalable|robust|end-to-end)\b
+    - \bdesign patterns\b
+  pytest:
     category: Backend
-    patterns: ['\bpytest\b', '\bunit tests?\b', '\bintegration tests?\b', '\bunit testing\b', '\btest[- ]driven\b', '\btdd\b', '\bautomated testing\b', '\bjest\b']
-
-  # ---------- Frontend ----------
-  Full-stack / frontend:
+    group: Testing
+    patterns:
+    - \bpytest\b
+  Jest / Vitest:
+    category: Backend
+    group: Testing
+    patterns:
+    - \bjest\b
+    - \bvitest\b
+  Playwright / Cypress / Selenium:
+    category: Backend
+    group: Testing
+    patterns:
+    - \bplaywright\b
+    - \bcypress\b
+    - \bselenium\b
+  Unit / integration testing:
+    category: Backend
+    group: Testing
+    patterns:
+    - \bunit tests?\b
+    - \bintegration tests?\b
+    - \bunit testing\b
+    - \bautomated testing\b
+    - \bend[- ]to[- ]end tests?\b
+  TDD:
+    category: Backend
+    group: Testing
+    patterns:
+    - \btest[- ]driven\b
+    - \btdd\b
+  Supabase / Firebase:
+    category: Backend
+    group: Backend platforms
+    patterns:
+    - \bsupabase\b
+    - \bfirebase\b
+  Stripe:
+    category: Backend
+    group: Backend platforms
+    patterns:
+    - \bstripe\b(?= (?:api|integration|payments?|billing)|,|/|\))
+  React:
     category: Frontend
-    patterns: ['\bfull[- ]?stack\b', '\bfront[- ]?end\b', '\bhtml\b', '\bcss\b', '\btailwind\b']
-  React / Next.js:
+    group: Web frameworks
+    patterns:
+    - \breact(?:\.?js)?\b(?! native)
+  Next.js:
     category: Frontend
-    patterns: ['\breact(?:\.?js)?\b(?! native)', '\bnext\.?js\b', '\breact native\b', '\bvue(?:\.?js)?\b', '\bangular\b', '\bsvelte\b']
-
-  Mobile (iOS / Android):
+    group: Web frameworks
+    patterns:
+    - \bnext\.?js\b
+  Vue:
     category: Frontend
-    patterns: ['\bios\b', '\bandroid\b', '\bswift ?ui\b', '\bswift\b(?=\s*(?:,|/|\)|and\b|or\b|developer|engineer|programming))', '\breact native\b', '\bflutter\b', '\bmobile (?:apps?|development|engineer\w*)\b']
-
-  # ---------- Security & networking ----------
-  Security engineering (SIEM, AppSec, threat detection):
+    group: Web frameworks
+    patterns:
+    - \bvue(?:\.?js)?\b
+    - \bnuxt\b
+  Angular:
+    category: Frontend
+    group: Web frameworks
+    patterns:
+    - \bangular(?:js)?\b
+  Svelte:
+    category: Frontend
+    group: Web frameworks
+    patterns:
+    - \bsvelte(?:kit)?\b
+  HTML / CSS:
+    category: Frontend
+    group: Web basics
+    patterns:
+    - \bhtml5?\b
+    - \bcss3?\b
+  Tailwind CSS:
+    category: Frontend
+    group: Web basics
+    patterns:
+    - \btailwind\b
+  Full-stack:
+    category: Frontend
+    group: Full-stack
+    patterns:
+    - \bfull[- ]?stack\b
+  Frontend (general):
+    category: Frontend
+    group: Full-stack
+    patterns:
+    - \bfront[- ]?end\b
+  React Native:
+    category: Frontend
+    group: Mobile
+    patterns:
+    - \breact native\b
+  Flutter:
+    category: Frontend
+    group: Mobile
+    patterns:
+    - \bflutter\b
+    - \bdart\b(?=,|/|\)| and)
+  iOS:
+    category: Frontend
+    group: Mobile
+    patterns:
+    - \bios\b
+  Android:
+    category: Frontend
+    group: Mobile
+    patterns:
+    - \bandroid\b
+    - \bjetpack compose\b
+  SIEM:
     category: Security & networking
-    patterns: ['\bsiem\b', '\bsoar\b', '\b[ex]dr\b', '\bdevsecops\b', '\bappsec\b', '\bapplication security\b', '\bthreat (?:detection|hunting|intelligence|model(?:l?ing)?)\b',
-               '\bpenetration test\w*', '\bpen ?test\w*', '\bvulnerability (?:management|scann\w*|assessments?)\b', '\bsecurity operations\b', '\bsoc analysts?\b',
-               '\bzero trust\b', '\bsast\b', '\bdast\b', '\bsecurity incident response\b', '\bsplunk es\b']
-  Identity & access (IAM, SSO, OAuth, RBAC):
+    group: Security operations
+    patterns:
+    - \bsiem\b
+    - \bsoar\b
+    - \bsentinel\b(?= siem)
+    - \bsplunk es\b
+    - \bqradar\b
+  Security operations (SOC / incident response):
     category: Security & networking
-    # Not bare Okta: its own ads end with "The Okta Experience" and "Okta is an Equal Opportunity Employer".
-    patterns: ['\biam\b', '\bsso\b', '\bsingle sign[- ]on\b', '\boauth ?2?(?:\.0)?\b', '\bopenid connect\b', '\boidc\b', '\bsaml\b', '\brbac\b', '\babac\b',
-               '\bactive directory\b', '\bentra id\b', '\bldap\b', '\bkeycloak\b', '\bidentity and access management\b']
-  Security frameworks & certs (NIST, CISSP, ISO 27001):
+    group: Security operations
+    patterns:
+    - \bsecurity operations\b
+    - \bsoc analysts?\b
+    - \bsecurity incident response\b
+    - \b[ex]dr\b
+    - \bcrowdstrike\b
+  Threat detection / intelligence:
     category: Security & networking
-    patterns: ['\bnist\b', '\bcissp\b', '\bcism\b', '\boscp\b', '\bceh\b', '\bsecurity\+', '\bfedramp\b', '\bcmmc\b', '\bcis (?:benchmarks?|controls)\b', '\biso ?27001\b', '\bmitre att&ck\b']
-  Networking (TCP/IP, DNS, load balancing):
+    group: Security operations
+    patterns:
+    - \bthreat (?:detection|hunting|intelligence|model(?:l?ing)?)\b
+    - \bmitre att&ck\b
+  Application security (AppSec):
     category: Security & networking
-    patterns: ['\btcp(?:/ip)?\b', '\budp\b', '\bdns\b', '\bbgp\b', '\bvpns?\b', '\bfirewalls?\b', '\bload[- ]balanc\w+', '\bvlans?\b', '\bsd-?wan\b', '\bcdns?\b', '\bnetwork(?:ing)? protocols?\b',
-               '\bip (?:networking|routing|addressing)\b', '\bcisco\b']
-
-  # ---------- Cloud & DevOps ----------
+    group: AppSec
+    patterns:
+    - \bappsec\b
+    - \bapplication security\b
+    - \bsast\b
+    - \bdast\b
+    - \bsecure code review\b
+    - \bowasp\b(?! (?:top 10 )?(?:for )?llm)
+  DevSecOps:
+    category: Security & networking
+    group: AppSec
+    patterns:
+    - \bdevsecops\b
+    - \bsupply chain security\b
+    - \bsbom\b
+  Penetration testing:
+    category: Security & networking
+    group: AppSec
+    patterns:
+    - \bpenetration test\w*
+    - \bpen ?test\w*
+    - \bburp suite\b
+  Vulnerability management:
+    category: Security & networking
+    group: AppSec
+    patterns:
+    - \bvulnerability (?:management|scann\w*|assessments?)\b
+    - \bqualys\b
+    - \btenable\b
+    - \bnessus\b
+  Zero trust:
+    category: Security & networking
+    group: Identity
+    patterns:
+    - \bzero trust\b
+  IAM:
+    category: Security & networking
+    group: Identity
+    patterns:
+    - \biam\b
+    - \bidentity and access management\b
+  SSO / SAML:
+    category: Security & networking
+    group: Identity
+    patterns:
+    - \bsso\b
+    - \bsingle sign[- ]on\b
+    - \bsaml\b
+  OAuth / OIDC:
+    category: Security & networking
+    group: Identity
+    patterns:
+    - \boauth ?2?(?:\.0)?\b
+    - \bopenid connect\b
+    - \boidc\b
+    - \bjwts?\b
+  RBAC / access control:
+    category: Security & networking
+    group: Identity
+    patterns:
+    - \brbac\b
+    - \babac\b
+    - \brole[- ]based access\b
+  Active Directory / Entra ID:
+    category: Security & networking
+    group: Identity
+    patterns:
+    - \bactive directory\b
+    - \bentra id\b
+    - \bazure ad\b
+    - \bldap\b
+  Keycloak / Auth0:
+    category: Security & networking
+    group: Identity
+    patterns:
+    - \bkeycloak\b
+    - \bauth0\b
+  NIST frameworks:
+    category: Security & networking
+    group: Compliance & certs
+    patterns:
+    - \bnist\b
+  ISO 27001:
+    category: Security & networking
+    group: Compliance & certs
+    patterns:
+    - \biso ?27001\b
+  SOC 2:
+    category: Security & networking
+    group: Compliance & certs
+    patterns:
+    - \bsoc ?2\b
+  FedRAMP / CMMC:
+    category: Security & networking
+    group: Compliance & certs
+    patterns:
+    - \bfedramp\b
+    - \bcmmc\b
+    - \bil[456]\b
+  CISSP / CISM:
+    category: Security & networking
+    group: Compliance & certs
+    patterns:
+    - \bcissp\b
+    - \bcism\b
+    - \bcisa\b(?= cert)
+  OSCP / CEH / Security+:
+    category: Security & networking
+    group: Compliance & certs
+    patterns:
+    - \boscp\b
+    - \bceh\b
+    - \bsecurity\+
+    - \bgiac\b
+  TCP/IP:
+    category: Security & networking
+    group: Networking
+    patterns:
+    - \btcp(?:/ip)?\b
+    - \budp\b
+    - \bnetwork(?:ing)? protocols?\b
+    - \bip (?:networking|routing|addressing)\b
+  DNS:
+    category: Security & networking
+    group: Networking
+    patterns:
+    - \bdns\b
+  BGP / routing:
+    category: Security & networking
+    group: Networking
+    patterns:
+    - \bbgp\b
+    - \bospf\b
+    - \bmpls\b
+  VPN / firewalls:
+    category: Security & networking
+    group: Networking
+    patterns:
+    - \bvpns?\b
+    - \bfirewalls?\b
+    - \bpalo alto\b(?= networks|,|/)
+    - \bfortinet\b
+    - \bwireguard\b
+  Load balancing:
+    category: Security & networking
+    group: Networking
+    patterns:
+    - \bload[- ]balanc\w+
+    - \bnginx\b
+    - \bhaproxy\b
+    - \benvoy\b(?= proxy|,|/)
+  CDN / edge:
+    category: Security & networking
+    group: Networking
+    patterns:
+    - \bcdns?\b
+    - \bcloudflare\b
+    - \bfastly\b
+    - \bakamai\b
+  Cisco / Juniper:
+    category: Security & networking
+    group: Networking
+    patterns:
+    - \bcisco\b
+    - \bjuniper\b
+    - \bccna\b
+    - \bccnp\b
+  Kernel networking (DPDK, eBPF):
+    category: Security & networking
+    group: Networking
+    patterns:
+    - \bdpdk\b
+    - \bebpf\b
+    - \bkernel[- ]bypass\b
+    - \brdma\b
+    - \binfiniband\b
   AWS:
     category: Cloud & DevOps
-    patterns: ['\baws\b', '\bamazon web services\b', '\blambda\b(?= functions?|,|/)', '\bec2\b', '\bs3\b', '\becs\b', '\beks\b']
+    group: Cloud providers
+    patterns:
+    - \baws\b
+    - \bamazon web services\b
+    - \bec2\b
+    - \bs3\b
+    - \becs\b
+    - \beks\b
+  AWS Lambda / serverless:
+    category: Cloud & DevOps
+    group: Serverless
+    patterns:
+    - \baws lambda\b
+    - \blambda\b(?= functions?|,|/)
+    - \bserverless\b
+    - \bcloud functions\b
+    - \bcloud run\b
   AWS Bedrock:
     category: Cloud & DevOps
-    patterns: ['\bbedrock\b']
-  Azure (incl. Azure OpenAI):
+    group: Cloud AI platforms
+    patterns:
+    - \bbedrock\b
+  Azure:
     category: Cloud & DevOps
-    patterns: ['\bazure\b']
-  GCP / Vertex AI:
+    group: Cloud providers
+    patterns:
+    - \bazure\b(?! (?:openai|ml|machine learning|ad))
+  Azure OpenAI:
     category: Cloud & DevOps
-    patterns: ['\bgcp\b', '\bgoogle cloud\b', '\bvertex(?: ai)?\b', '\bbigquery\b']
+    group: Cloud AI platforms
+    patterns:
+    - \bazure openai\b
+    - \bazure ai (?:foundry|studio|services)\b
+  GCP:
+    category: Cloud & DevOps
+    group: Cloud providers
+    patterns:
+    - \bgcp\b
+    - \bgoogle cloud\b
+  Vertex AI:
+    category: Cloud & DevOps
+    group: Cloud AI platforms
+    patterns:
+    - '\bvertex(?: ai)?\b'
   Cloud (unspecified):
     category: Cloud & DevOps
-    patterns: ['\bcloud (?:platforms?|infrastructure|services|native|computing|environments?)\b', '\bcloud[- ]native\b']
-  Docker / containers:
+    group: Cloud providers
+    patterns:
+    - \bcloud (?:platforms?|infrastructure|services|computing|environments?)\b
+    - \bcloud[- ]native\b
+  Docker:
     category: Cloud & DevOps
-    patterns: ['\bdocker\b', '\bcontaineri[sz](?:ed|ation)\b', '\bcontainers?\b(?!\s*ship)']
+    group: Containers
+    patterns:
+    - \bdocker\b
+    - \bcontaineri[sz](?:ed|ation)\b
+    - \bcontainers?\b(?!\s*ship)
+    - \bpodman\b
   Kubernetes:
     category: Cloud & DevOps
-    patterns: ['\bkubernetes\b', '\bk8s\b', '\bhelm\b', '\bopenshift\b']
-  Terraform / IaC:
+    group: Containers
+    patterns:
+    - \bkubernetes\b
+    - \bk8s\b
+    - \bopenshift\b
+    - \bgke\b
+    - \baks\b
+  Helm:
     category: Cloud & DevOps
-    patterns: ['\bterraform\b', '\binfrastructure[- ]as[- ]code\b', '\biac\b', '\bpulumi\b', '\bcloudformation\b', '\bansible\b']
+    group: Containers
+    patterns:
+    - \bhelm\b(?= charts?|,|/|\))
+  Terraform:
+    category: Cloud & DevOps
+    group: Infrastructure as code
+    patterns:
+    - \bterraform\b
+    - \bopentofu\b
+  Pulumi / CloudFormation / CDK:
+    category: Cloud & DevOps
+    group: Infrastructure as code
+    patterns:
+    - \bpulumi\b
+    - \bcloudformation\b
+    - \baws cdk\b
+  Ansible:
+    category: Cloud & DevOps
+    group: Infrastructure as code
+    patterns:
+    - \bansible\b
+    - \bchef\b(?= (?:cookbooks?|infra)|,|/)
+    - \bpuppet\b
+  Infrastructure as code:
+    category: Cloud & DevOps
+    group: Infrastructure as code
+    patterns:
+    - \binfrastructure[- ]as[- ]code\b
+    - \biac\b
   CI/CD:
     category: Cloud & DevOps
-    patterns: ['\bci ?/ ?cd\b', '\bcontinuous (?:integration|delivery|deployment)\b', '\bgithub actions\b', '\bgitlab ci\b', '\bjenkins\b', '\bcircleci\b', '\bargo ?cd\b', '\bgitops\b', '\bflux ?cd\b']
-    cs: ['\bCI\b']
+    group: CI/CD
+    patterns:
+    - \bci ?/ ?cd\b
+    - \bcontinuous (?:integration|delivery|deployment)\b
+    cs:
+    - \bCI\b
+  GitHub Actions:
+    category: Cloud & DevOps
+    group: CI/CD
+    patterns:
+    - \bgithub actions\b
+  GitLab CI:
+    category: Cloud & DevOps
+    group: CI/CD
+    patterns:
+    - \bgitlab(?:[- ]ci)?\b
+  Jenkins:
+    category: Cloud & DevOps
+    group: CI/CD
+    patterns:
+    - \bjenkins\b
+  CircleCI / Buildkite:
+    category: Cloud & DevOps
+    group: CI/CD
+    patterns:
+    - \bcircleci\b
+    - \bbuildkite\b
+  Argo CD / GitOps:
+    category: Cloud & DevOps
+    group: CI/CD
+    patterns:
+    - \bargo ?cd\b
+    - \bgitops\b
+    - \bflux ?cd\b
+    - \bargo workflows\b
   Git:
     category: Cloud & DevOps
-    patterns: ['\bgit\b(?!hub actions)', '\bversion control\b', '\bgitlab\b', '\bbitbucket\b']
-  Linux / shell:
+    group: Version control
+    patterns:
+    - \bgit\b(?!hub actions|lab)
+    - \bversion control\b
+    - \bbitbucket\b
+  Linux:
     category: Cloud & DevOps
-    patterns: ['\blinux\b', '\bunix\b', '\bbash\b', '\bshell scripting\b']
+    group: Linux
+    patterns:
+    - \blinux\b
+    - \bunix\b
+  Bash / shell scripting:
+    category: Cloud & DevOps
+    group: Linux
+    patterns:
+    - \bbash\b
+    - \bshell scripting\b
+    - \bzsh\b
   On-prem / air-gapped / private cloud deploy:
     category: Cloud & DevOps
-    patterns: ['\bon-?prem(?:ise|ises)?\b', '\bair[- ]gapped\b', '\bprivate cloud\b', '\bself[- ]hosted\b']
-  DevOps / SRE (SLOs, on-call):
+    group: Deployment
+    patterns:
+    - \bon-?prem(?:ise|ises)?\b
+    - \bair[- ]gapped\b
+    - \bprivate cloud\b
+    - \bself[- ]hosted\b(?! (?:llms?|models?))
+  DevOps:
     category: Cloud & DevOps
-    patterns: ['\bdevops\b', '\bsre\b', '\bsite reliability\b', '\bslos?\b', '\bslis?\b', '\berror budgets?\b', '\bon[- ]call\b', '\bpost-?mortems?\b', '\bchaos engineering\b']
-  Windows / PowerShell:
+    group: DevOps & SRE
+    patterns:
+    - \bdevops\b
+  SRE (SLOs, on-call):
     category: Cloud & DevOps
-    patterns: ['\bpowershell\b', '\bwindows server\b', '\bintune\b', '\bsccm\b']
-  Virtualisation (VMware, Hyper-V):
+    group: DevOps & SRE
+    patterns:
+    - \bsre\b
+    - \bsite reliability\b
+    - \bslos?\b
+    - \bslis?\b
+    - \berror budgets?\b
+    - \bon[- ]call\b
+    - \bpost-?mortems?\b
+    - \bchaos engineering\b
+  PowerShell:
     category: Cloud & DevOps
-    patterns: ['\bvmware\b', '\bvsphere\b', '\besxi\b', '\bhyper-v\b', '\bproxmox\b', '\bcitrix\b', '\bvirtuali[sz]ation\b']
-  Temporal / durable execution:
+    group: Windows
+    patterns:
+    - \bpowershell\b
+  Windows Server / Intune:
     category: Cloud & DevOps
-    patterns: ['\btemporal(?:\.io)?\b(?= (?:workflows?|io|cloud)|,|/|\))', '\bdurable execution\b']
-
-  # ---------- Ways of working ----------
-  AI coding tools (Claude Code, Cursor, Copilot):
+    group: Windows
+    patterns:
+    - \bwindows server\b
+    - \bintune\b
+    - \bsccm\b
+  VMware:
+    category: Cloud & DevOps
+    group: Virtualisation
+    patterns:
+    - \bvmware\b
+    - \bvsphere\b
+    - \besxi\b
+  Hyper-V / Citrix / Proxmox:
+    category: Cloud & DevOps
+    group: Virtualisation
+    patterns:
+    - \bhyper-v\b
+    - \bproxmox\b
+    - \bcitrix\b
+  Temporal:
+    category: Cloud & DevOps
+    group: Durable execution
+    patterns:
+    - \btemporal(?:\.io)?\b(?= (?:workflows?|io|cloud)|,|/|\))
+    - \bdurable execution\b
+  Claude Code:
     category: Ways of working
-    patterns: ['\bclaude code\b', '\bcursor\b(?= (?:ide|ai|editor)|,|/|\))', '\bgithub copilot\b', '\bcopilot\b', '\bai[- ](?:assisted|powered) (?:coding|development)\b', '\bai coding (?:tools|assistants?)\b', '\bwindsurf\b', '\bcodex\b']
-  Low-code automation (n8n, Zapier):
+    group: AI coding tools
+    patterns:
+    - \bclaude code\b
+  Cursor:
     category: Ways of working
-    patterns: ['\bn8n\b', '\bzapier\b', '\bmake\.com\b', '\blow[- ]code\b', '\bno[- ]code\b', '\brpa\b', '\buipath\b']
+    group: AI coding tools
+    patterns:
+    - \bcursor\b(?= (?:ide|ai|editor)|,|/|\))
+  GitHub Copilot:
+    category: Ways of working
+    group: AI coding tools
+    patterns:
+    - \bgithub copilot\b
+    - \bcopilot\b(?! studio)
+  Windsurf / Codex:
+    category: Ways of working
+    group: AI coding tools
+    patterns:
+    - \bwindsurf\b
+    - \bcodex\b
+  AI-assisted development:
+    category: Ways of working
+    group: AI coding tools
+    patterns:
+    - \bai[- ](?:assisted|powered|native) (?:coding|development|engineering)\b
+    - \bai coding (?:tools|assistants?|agents?)\b
+    - \bvibe coding\b
+  n8n:
+    category: Ways of working
+    group: Automation
+    patterns:
+    - \bn8n\b
+  Zapier / Make:
+    category: Ways of working
+    group: Automation
+    patterns:
+    - \bzapier\b
+    - \bmake\.com\b
+  RPA (UiPath):
+    category: Ways of working
+    group: Automation
+    patterns:
+    - \brpa\b
+    - \buipath\b
+    - \bautomation anywhere\b
+  Low-code / no-code:
+    category: Ways of working
+    group: Automation
+    patterns:
+    - \blow[- ]code\b
+    - \bno[- ]code\b
   Pre-sales / solution architecture / PoCs:
     category: Ways of working
-    # Bare "PoC", "customer-facing" and "stakeholder management" appear in ordinary engineering ads.
-    patterns: ['\bpre-?sales\b', '\bsolutions? architecture\b', '\bproofs? of concepts? (?:for|with) (?:customers|clients|prospects)\b', '\b(?:customer|client) pocs?\b', '\btechnical (?:discovery|demos?)\b', '\b(?:customer|client|prospect)[- ](?:demos?|workshops?)\b', '\bsales cycles?\b', '\bsolution design for (?:customers|clients)\b']
-
-  # ---------- Soft skills ----------
-  # Kept out of every tech-skill chart (aggregate.split_soft): they get their own section. Each
-  # pattern needs the ask itself ("strong communication skills"), never a bare word, because
-  # culture blurbs, benefits and EEO text use the same words.
+    group: Customer engineering
+    patterns:
+    - \bpre-?sales\b
+    - \bsolutions? architecture\b
+    - \bproofs? of concepts? (?:for|with) (?:customers|clients|prospects)\b
+    - \b(?:customer|client) pocs?\b
+    - \btechnical (?:discovery|demos?)\b
+    - \b(?:customer|client|prospect)[- ](?:demos?|workshops?)\b
+    - \bsales cycles?\b
+    - \bsolution design for (?:customers|clients)\b
   Communication:
     category: Soft skills
-    patterns: ['\b(?:excellent|strong|great|exceptional|effective|clear|outstanding|good|solid|superb) (?:written,? (?:and|&) (?:verbal|oral) |(?:verbal|oral),? (?:and|&) written |written |verbal |oral |interpersonal (?:and|&) )?communications?(?: and (?:interpersonal|presentation|collaboration) )?(?: skills| abilities)?\b', '\bcommunication skills\b', '\bcommunicate (?:complex|technical|clearly|effectively)\b', '\b(?:explain|translate|articulate) (?:complex|technical|ml|ai)(?: (?:and|or) (?:complex|technical))? (?:concepts|ideas|topics|problems|trade-?offs)\b']
+    group: Soft skills
+    patterns:
+    - '\b(?:excellent|strong|great|exceptional|effective|clear|outstanding|good|solid|superb) (?:written,? (?:and|&) (?:verbal|oral) |(?:verbal|oral),? (?:and|&) written |written |verbal |oral |interpersonal
+      (?:and|&) )?communications?(?: and (?:interpersonal|presentation|collaboration) )?(?: skills| abilities)?\b'
+    - \bcommunication skills\b
+    - \bcommunicate (?:complex|technical|clearly|effectively)\b
+    - '\b(?:explain|translate|articulate) (?:complex|technical|ml|ai)(?: (?:and|or) (?:complex|technical))? (?:concepts|ideas|topics|problems|trade-?offs)\b'
   Stakeholder & client-facing:
     category: Soft skills
-    patterns: ['\bstakeholder (?:management|engagement)\b', '\bmanag(?:e|ing) (?:multiple )?stakeholders\b', '\b(?:customer|client)[- ]facing\b(?! (?:products?|features?|applications?|apps?|marketing|content|ai|ml|llm|systems?|services?|platforms?|tools?|websites?|surfaces?|experiences?|ui|interfaces?|software|data|agents?|solutions)\b)', '\bwork(?:ing)? (?:directly|closely|hand in hand) with (?:our )?(?:customers|clients|end users)\b', '\b(?:build|building|develop|maintain) (?:strong |trusted )?relationships with (?:customers|clients|stakeholders|partners)\b', '\btrusted (?:technical )?advisor\b']
+    group: Soft skills
+    patterns:
+    - \bstakeholder (?:management|engagement)\b
+    - \bmanag(?:e|ing) (?:multiple )?stakeholders\b
+    - \b(?:customer|client)[- ]facing\b(?! (?:products?|features?|applications?|apps?|marketing|content|ai|ml|llm|systems?|services?|platforms?|tools?|websites?|surfaces?|experiences?|ui|interfaces?|software|data|agents?|solutions)\b)
+    - \bwork(?:ing)? (?:directly|closely|hand in hand) with (?:our )?(?:customers|clients|end users)\b
+    - \b(?:build|building|develop|maintain) (?:strong |trusted )?relationships with (?:customers|clients|stakeholders|partners)\b
+    - \btrusted (?:technical )?advisor\b
   Ownership & autonomy:
     category: Soft skills
-    patterns: ['\b(?:take|takes|taking|show|demonstrate[sd]?|high|strong|extreme|full|sense of) ownership\b', '\bself[- ](?:starter|motivated|directed|driven)\b', '\bwork(?:s|ing)? (?:independently|autonomously)\b', '\bbias (?:for|to|towards) action\b', '\bminimal (?:supervision|guidance|direction)\b']
+    group: Soft skills
+    patterns:
+    - \b(?:take|takes|taking|show|demonstrate[sd]?|high|strong|extreme|full|sense of) ownership\b
+    - \bself[- ](?:starter|motivated|directed|driven)\b
+    - \bwork(?:s|ing)? (?:independently|autonomously)\b
+    - \bbias (?:for|to|towards) action\b
+    - \bminimal (?:supervision|guidance|direction)\b
   Collaboration:
     category: Soft skills
-    patterns: ['\bteam player\b', '\bcross[- ]functional(?:ly)? (?:teams?|collaboration|partners|stakeholders|peers)\b', '\bcollaborat(?:e|es|ing|ive(?:ly)?) (?:closely |effectively |well )?(?:with|across) (?:cross[- ]functional|product|design|engineering|research|business|other|teams|stakeholders|data)\b', '\bcollaboration skills\b', '\bwork(?:s|ing)? well (?:in|with|as part of) (?:a )?teams?\b']
+    group: Soft skills
+    patterns:
+    - \bteam player\b
+    - \bcross[- ]functional(?:ly)? (?:teams?|collaboration|partners|stakeholders|peers)\b
+    - \bcollaborat(?:e|es|ing|ive(?:ly)?) (?:closely |effectively |well )?(?:with|across) (?:cross[- ]functional|product|design|engineering|research|business|other|teams|stakeholders|data)\b
+    - \bcollaboration skills\b
+    - \bwork(?:s|ing)? well (?:in|with|as part of) (?:a )?teams?\b
   Mentoring & leadership:
     category: Soft skills
-    # "mentorship programme" is a benefit, so mentoring needs someone to mentor.
-    patterns: ['\bmentor(?:s|ing)?,? (?:and (?:coach|grow|develop|support)(?:ing)? )?(?:junior|other|less[- ]experienced|fellow|new|team ?members|engineers|developers|the team|others|teammates|colleagues)\b', '\bcoach(?:ing)? (?:junior|engineers|developers|team ?members|others)\b', '\btechnical leadership\b', '\bleadership skills\b', '\blead(?:ing)? (?:and (?:mentor|grow)(?:ing)? )?(?:a |the )?(?:small )?team of\b']
+    group: Soft skills
+    patterns:
+    - \bmentor(?:s|ing)?,? (?:and (?:coach|grow|develop|support)(?:ing)? )?(?:junior|other|less[- ]experienced|fellow|new|team ?members|engineers|developers|the team|others|teammates|colleagues)\b
+    - \bcoach(?:ing)? (?:junior|engineers|developers|team ?members|others)\b
+    - \btechnical leadership\b
+    - \bleadership skills\b
+    - \blead(?:ing)? (?:and (?:mentor|grow)(?:ing)? )?(?:a |the )?(?:small )?team of\b
   Comfort with ambiguity:
     category: Soft skills
-    patterns: ['\b(?:ambiguity|ambiguous (?:problems|situations|environments?|requirements|spaces?))\b', '\b(?:thrive|thrives|thriving|comfortable|succeed|excel|flourish) (?:in|working in) (?:a |an )?(?:fast[- ]paced|dynamic|startup|rapidly[- ]changing|ever[- ]changing|high[- ]growth|unstructured)\b', '\bwear(?:ing)? (?:many|multiple) hats\b', '\bscrappy\b']
+    group: Soft skills
+    patterns:
+    - \b(?:ambiguity|ambiguous (?:problems|situations|environments?|requirements|spaces?))\b
+    - \b(?:thrive|thrives|thriving|comfortable|succeed|excel|flourish) (?:in|working in) (?:a |an )?(?:fast[- ]paced|dynamic|startup|rapidly[- ]changing|ever[- ]changing|high[- ]growth|unstructured)\b
+    - \bwear(?:ing)? (?:many|multiple) hats\b
+    - \bscrappy\b
   Presenting & demos:
     category: Soft skills
-    patterns: ['\bpresent(?:ing|s)? (?:findings |results |technical (?:concepts|content|solutions) |complex (?:ideas|topics) |ideas |work |solutions )?to (?:customers|clients|executives|leadership|stakeholders|senior|c-level|non-technical|technical and non-technical|audiences|the business)\b', '\bpresentation skills\b', '\bpublic speaking\b', '\b(?:conference )?talks? at conferences\b', '\b(?:deliver|run|lead)(?:ing)? (?:technical |product |live )?(?:demos|presentations|workshops)\b']
+    group: Soft skills
+    patterns:
+    - \bpresent(?:ing|s)? (?:findings |results |technical (?:concepts|content|solutions) |complex (?:ideas|topics) |ideas |work |solutions )?to (?:customers|clients|executives|leadership|stakeholders|senior|c-level|non-technical|technical
+      and non-technical|audiences|the business)\b
+    - \bpresentation skills\b
+    - \bpublic speaking\b
+    - \b(?:conference )?talks? at conferences\b
+    - \b(?:deliver|run|lead)(?:ing)? (?:technical |product |live )?(?:demos|presentations|workshops)\b
   Problem solving:
     category: Soft skills
-    # Interview-process blurbs ("showcase your problem-solving skills") are not asks.
-    not: ['\binterview', '\bassessment\b', '\bwe (?:depend|rely) on\b']
-    patterns: ['\bproblem[- ]solv(?:ing|er|ers)\b', '\b(?:strong |excellent )?analytical (?:and problem[- ]solving )?(?:skills|thinking|mindset)\b', '\bcritical thinking\b', '\bfirst[- ]principles thinking\b']
+    group: Soft skills
+    not:
+    - \binterview
+    - \bassessment\b
+    - \bwe (?:depend|rely) on\b
+    patterns:
+    - \bproblem[- ]solv(?:ing|er|ers)\b
+    - \b(?:strong |excellent )?analytical (?:and problem[- ]solving )?(?:skills|thinking|mindset)\b
+    - \bcritical thinking\b
+    - \bfirst[- ]principles thinking\b
   Writing & English:
     category: Soft skills
-    patterns: ['\b(?:fluent|fluency|proficien(?:t|cy)|excellent|strong|good|professional|business[- ]level) (?:in |with )?(?:(?:written|spoken|verbal),? (?:and|&) (?:written|spoken|verbal) |written |spoken |business |professional )?english\b', '\benglish (?:fluency|proficiency|language skills)\b', '\bwritten english\b', '\b(?:design docs|technical writing|written communication)\b']
+    group: Soft skills
+    patterns:
+    - \b(?:fluent|fluency|proficien(?:t|cy)|excellent|strong|good|professional|business[- ]level) (?:in |with )?(?:(?:written|spoken|verbal),? (?:and|&) (?:written|spoken|verbal) |written |spoken |business
+      |professional )?english\b
+    - \benglish (?:fluency|proficiency|language skills)\b
+    - \bwritten english\b
+    - \b(?:design docs|technical writing|written communication)\b
   Other languages (Mandarin, Japanese…):
     category: Soft skills
-    patterns: ['\b(?:fluent|fluency|proficien(?:t|cy)|native|bilingual|business[- ]level|conversational|speak(?:s|ing)?|read and write) (?:in |with )?(?:english and |both english and )?(?:mandarin|chinese|cantonese|japanese|korean|bahasa(?: indonesia| melayu)?|malay|vietnamese|thai|tagalog|hindi|german|french|spanish|italian|portuguese|dutch|arabic)\b', '\b(?:mandarin|cantonese|japanese|korean|bahasa|vietnamese|thai|german|french|spanish|portuguese|arabic)(?:[- ]speaking| speakers?| language skills| proficiency| fluency| \(?jlpt)\b', '\bjlpt\b', '\bhsk ?\d\b']
-
-  # ---------- Domain ----------
+    group: Soft skills
+    patterns:
+    - '\b(?:fluent|fluency|proficien(?:t|cy)|native|bilingual|business[- ]level|conversational|speak(?:s|ing)?|read and write) (?:in |with )?(?:english and |both english and )?(?:mandarin|chinese|cantonese|japanese|korean|bahasa(?:
+      indonesia| melayu)?|malay|vietnamese|thai|tagalog|hindi|german|french|spanish|italian|portuguese|dutch|arabic)\b'
+    - \b(?:mandarin|cantonese|japanese|korean|bahasa|vietnamese|thai|german|french|spanish|portuguese|arabic)(?:[- ]speaking| speakers?| language skills| proficiency| fluency| \(?jlpt)\b
+    - \bjlpt\b
+    - \bhsk ?\d\b
   Financial services / banking domain:
     category: Domain
-    # Bare "insurance" matched every US benefits list (health, dental, life insurance).
-    patterns: ['\bfinancial services\b', '\bbanking\b', '\bwealth management\b', '\binsurtech\b', '\bcapital markets\b', '\bfintech\b',
-               '\binsurance (?:industry|compan(?:y|ies)|carriers?|sector|clients|customers|products|domain|technology|claims|underwriting)\b',
-               '\b(?:insurers|reinsurance|underwriting)\b']
-    not: ['\b(?:health|medical|dental|vision|life|disability|pet|travel) insurance\b', '\binsurance (?:coverage|plans?|benefits?|premiums?)\b']
+    group: Domain
+    patterns:
+    - \bfinancial services\b
+    - \bbanking\b
+    - \bwealth management\b
+    - \binsurtech\b
+    - \bcapital markets\b
+    - \bfintech\b
+    - \binsurance (?:industry|compan(?:y|ies)|carriers?|sector|clients|customers|products|domain|technology|claims|underwriting)\b
+    - \b(?:insurers|reinsurance|underwriting)\b
+    not:
+    - \b(?:health|medical|dental|vision|life|disability|pet|travel) insurance\b
+    - \binsurance (?:coverage|plans?|benefits?|premiums?)\b
   Payments:
     category: Domain
-    patterns: ['\bpayments?\b(?= (?:systems?|infrastructure|platforms?|processing|industry|rails|domain))', '\bcard (?:issuing|acquiring|networks?)\b', '\bremittance\b', '\bcross-border payments?\b', '\bstablecoin payments?\b']
+    group: Domain
+    patterns:
+    - \bpayments?\b(?= (?:systems?|infrastructure|platforms?|processing|industry|rails|domain))
+    - \bcard (?:issuing|acquiring|networks?)\b
+    - \bremittance\b
+    - \bcross-border payments?\b
+    - \bstablecoin payments?\b
   Crypto / Web3 / blockchain:
     category: Domain
-    patterns: ['\bblockchains?\b', '\bweb3\b', '\bcrypto(?:currency|currencies)?\b', '\bdefi\b', '\bon-?chain\b', '\bsmart contracts?\b', '\bsolidity\b', '\bethereum\b', '\bstablecoins?\b', '\bevm\b']
+    group: Domain
+    patterns:
+    - \bblockchains?\b
+    - \bweb3\b
+    - \bcrypto(?:currency|currencies)?\b
+    - \bdefi\b
+    - \bon-?chain\b
+    - \bsmart contracts?\b
+    - \bsolidity\b
+    - \bethereum\b
+    - \bstablecoins?\b
+    - \bevm\b
   Trading / quant / markets:
     category: Domain
-    patterns: ['\bquant(?:itative)? (?:trading|research|finance|developer|analyst)\b', '\balgorithmic trading\b', '\bhigh[- ]frequency trading\b', '\bmarket[- ]making\b', '\bderivatives\b', '\border ?books?\b', '\btrading (?:systems?|strategies|platforms?)\b']
+    group: Domain
+    patterns:
+    - \bquant(?:itative)? (?:trading|research|finance|developer|analyst)\b
+    - \balgorithmic trading\b
+    - \bhigh[- ]frequency trading\b
+    - \bmarket[- ]making\b
+    - \bderivatives\b
+    - \border ?books?\b
+    - \btrading (?:systems?|strategies|platforms?)\b
   KYC / AML / fraud:
     category: Domain
-    patterns: ['\bkyc\b', '\baml\b', '\banti[- ]money laundering\b', '\bfraud (?:detection|prevention)\b', '\bfraud\b', '\bsanctions screening\b', '\btransaction monitoring\b']
+    group: Domain
+    patterns:
+    - \bkyc\b
+    - \baml\b
+    - \banti[- ]money laundering\b
+    - \bfraud (?:detection|prevention)\b
+    - \bfraud\b
+    - \bsanctions screening\b
+    - \btransaction monitoring\b
   Risk modelling:
     category: Domain
-    # Split from KYC/AML: quant and lending ads ask for risk models, not compliance checks.
-    patterns: ['\bcredit risk\b', '\bmarket risk\b', '\brisk (?:models?|modell?ing|management|analytics)\b', '\bvar\b(?= (?:models?|calculation))', '\bvalue[- ]at[- ]risk\b']
+    group: Domain
+    patterns:
+    - \bcredit risk\b
+    - \bmarket risk\b
+    - \brisk (?:models?|modell?ing|management|analytics)\b
+    - \bvar\b(?= (?:models?|calculation))
+    - \bvalue[- ]at[- ]risk\b

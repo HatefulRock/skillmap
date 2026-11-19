@@ -66,7 +66,7 @@ def test_run_scores_regex_against_claude(tmp_path):
     assert all(s["name"] != "Made-up skill" for s in report["skills"])
     call = client.calls[0]
     assert call["model"] == "claude-opus-5-5" and call["fallbacks"] == "default"
-    assert call["system"][0]["cache_control"] == {"type": "ephemeral"} and "Rust / Scala" in call["system"][0]["text"]
+    assert call["system"][0]["cache_control"] == {"type": "ephemeral"} and "Rust" in call["system"][0]["text"]
     assert "<p>" not in json.dumps([c["messages"] for c in client.calls])  # Claude reads plain text
 
 

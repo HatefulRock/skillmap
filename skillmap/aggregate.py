@@ -426,7 +426,7 @@ def observed(rows: list[dict], first_runs: dict[str, date]) -> list[dict]:
 
 def build(rows: list[dict], today: date, categories: dict[str, str], taxonomy_version: int,
           ratings: dict[str, int] | None = None, runs: list[dict] | None = None,
-          first_runs: dict[str, date] | None = None) -> dict:
+          first_runs: dict[str, date] | None = None, groups: dict[str, str] | None = None) -> dict:
     soft_names = sorted(n for n, c in categories.items() if c == SOFT_CATEGORY)
     rows = split_soft(rows, categories)
     categories = {n: c for n, c in categories.items() if c != SOFT_CATEGORY}
@@ -451,6 +451,8 @@ def build(rows: list[dict], today: date, categories: dict[str, str], taxonomy_ve
             "generated_at": datetime.now(UTC).isoformat(timespec="seconds"),
             "as_of": today.isoformat(),
             "taxonomy_version": taxonomy_version,
+            # Skill -> broader family (React, Vue -> "Web frameworks"), for roll-up views.
+            "skill_groups": dict(sorted((groups or {}).items())),
             "windows": {"current_days": CURRENT_DAYS, "segment_days": SEGMENT_DAYS, "salary_days": SALARY_DAYS},
             "min_group": MIN_GROUP,
             "totals": {

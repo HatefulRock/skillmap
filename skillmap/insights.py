@@ -182,7 +182,7 @@ def requirement_creep(rows: list[dict], today: date) -> dict:
 
 # A generic skill counts as covered by the best of the specific ones it stands for: an ad that
 # only says "cloud" is met by someone strong on any one provider.
-COVERED_BY = {"Cloud (unspecified)": ["AWS", "Azure (incl. Azure OpenAI)", "GCP / Vertex AI"]}
+COVERED_BY = {"Cloud (unspecified)": ["AWS", "Azure", "GCP"]}
 LEARN_FAMILIES = ["ai_ml", "fde"]  # the roles he is aiming at; backend and data dilute the list
 COMFORTABLE = 3  # a rating that meets an ad's ask
 

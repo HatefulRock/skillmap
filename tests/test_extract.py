@@ -14,10 +14,10 @@ def skills(text, title=""):
 
 @pytest.mark.parametrize("text,expected", [
     ("Strong Python and FastAPI skills", {"Python", "FastAPI"}),
-    ("Experience with k8s and Docker", {"Kubernetes", "Docker / containers"}),
-    ("Services written in Go, Rust and TypeScript", {"Go", "Rust / Scala", "TypeScript"}),
-    ("Build RAG pipelines on pgvector", {"RAG", "Vector databases"}),
-    ("You know C++ and C#", {"C++ / C#"}),
+    ("Experience with k8s and Docker", {"Kubernetes", "Docker"}),
+    ("Services written in Go, Rust and TypeScript", {"Go", "Rust", "TypeScript"}),
+    ("Build RAG pipelines on pgvector", {"RAG", "pgvector"}),
+    ("You know C++ and C#", {"C++", "C#"}),
     ("Ship agentic workflows using the Model Context Protocol", {"AI agents / agentic workflows", "MCP"}),
 ])
 def test_finds_skills(text, expected):
@@ -28,7 +28,7 @@ def test_finds_skills(text, expected):
     ("We go to great lengths to support you", "Go"),
     ("Let's go beyond the obvious", "Go"),
     ("JavaScript and TypeScript", "Java / Kotlin (Spring)"),
-    ("We rely on rigorous research", "Rust / Scala"),
+    ("We rely on rigorous research", "Rust"),
     ("A fast-paced environment with a ragged edge", "RAG"),
     ("Your travel agent will book flights", "AI agents / agentic workflows"),
     ("mcp is lowercase here", "MCP"),
@@ -39,13 +39,13 @@ def test_avoids_false_positives(text, absent):
 
 def test_nice_to_have_section():
     found, nice = TAX.extract("Engineer", "<h3>Requirements</h3><ul><li>Python</li></ul><h3>Nice to have</h3><ul><li>Rust</li></ul>")
-    assert "Python" in found and "Rust / Scala" in found
-    assert nice == ["Rust / Scala"]
+    assert "Python" in found and "Rust" in found
+    assert nice == ["Rust"]
 
 
 def test_inline_plus_is_nice():
     _, nice = TAX.extract("Engineer", "Python required.\nExperience with Kafka is a plus.")
-    assert nice == ["Kafka / message queues / streaming"]
+    assert nice == ["Kafka"]
 
 
 def test_title_counts():
@@ -149,8 +149,8 @@ def test_benefits_and_generic_monitoring_are_not_skills():
     assert not found("Benefits: health insurance, dental and vision insurance, 401k.")
     assert "Financial services / banking domain" in found("We build software for the insurance industry.")
     assert not found("Monitoring of patient outcomes.")
-    assert "Observability / tracing / monitoring" in found("Experience with monitoring and alerting.")
-    assert "Observability / tracing / monitoring" not in found("Own transaction monitoring for AML.")
+    assert "Observability / monitoring" in found("Experience with monitoring and alerting.")
+    assert "Observability / monitoring" not in found("Own transaction monitoring for AML.")
 
 
 def test_pre_sales_needs_a_customer_context():

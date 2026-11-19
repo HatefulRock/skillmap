@@ -81,9 +81,9 @@ def test_build_includes_changes():
 
 def test_unknown_terms_skip_known_skills_and_ad_vocabulary():
     text = ("Agents with LangGraph and MCP, served via vLLM. DSPy, Next.js, PyTorch, A2A protocol, GPT-5. "
-            "DuckDB and ClickHouse. eBPF. L5 level. EEO employer in the USA. 5+ years, 10x. Q3 2026. SOC2. COVID-19.")
+            "TurboPuffer and LanceDB. Mojo2. L5 level. EEO employer in the USA. 5+ years, 10x. Q3 2026. SOC2. COVID-19.")
     found = terms.candidates(text, TAX.known)
-    assert {"A2A", "DuckDB", "ClickHouse", "eBPF"} <= set(found)
+    assert {"TurboPuffer", "LanceDB", "Mojo2"} <= set(found)
     assert not {"LangGraph", "MCP", "PyTorch", "EEO", "USA", "L5", "10x", "Q3", "SOC2"} & set(found)
 
 
@@ -112,9 +112,9 @@ def test_visa(text, expected):
 
 def test_normalise_records_the_shape_of_the_ad():
     raw = RawPosting("greenhouse", "1", "Acme", "ML Engineer",
-                     "<p>5+ years of experience with Python. We use DuckDB.</p><p>PhD required.</p><p>Salary plus equity.</p>")
+                     "<p>5+ years of experience with Python. We use LanceDB.</p><p>PhD required.</p><p>Salary plus equity.</p>")
     p = normalise(raw, TAX, TODAY)
-    assert p.min_years == 5 and p.n_words > 5 and "DuckDB" in p.terms and p.degree == "phd" and p.equity
+    assert p.min_years == 5 and p.n_words > 5 and "LanceDB" in p.terms and p.degree == "phd" and p.equity
 
 
 # --- text archive ---------------------------------------------------------------------------
@@ -141,7 +141,7 @@ def test_archive_moves_text_out_and_reextraction_reads_it_back(tmp_path):
     for r in store.data.values():  # pretend the taxonomy moved on and extraction was lost
         r.update(taxonomy_version=0, skills=[])
     assert reextract(store, TAX, TODAY, archive) == 5
-    assert all(r["skills"] == ["Python", "Rust / Scala"] for r in store.data.values())
+    assert all(r["skills"] == ["Python", "Rust"] for r in store.data.values())
 
 
 def test_supabase_archive_requests():
@@ -181,9 +181,9 @@ def test_an_unreadable_archive_file_is_skipped(tmp_path):
 
 
 def test_shouted_headings_and_contractions_are_not_terms():
-    text = "WHAT YOU WILL DO\nBuild agents. ABOUT THE ROLE: you'll use DuckDB. WE'RE hiring. NICE TO HAVE: eBPF"
+    text = "WHAT YOU WILL DO\nBuild agents. ABOUT THE ROLE: you'll use LanceDB. WE'RE hiring. NICE TO HAVE: TurboPuffer"
     found = terms.candidates(text, TAX.known)
-    assert set(found) == {"DuckDB", "eBPF"}
+    assert set(found) == {"LanceDB", "TurboPuffer"}
 
 
 def test_no_rising_terms_without_an_earlier_window():
@@ -218,7 +218,7 @@ def test_lost_text_keeps_extraction_and_comes_back_when_seen_again(tmp_path):
     for r in store.data.values():
         r.update(taxonomy_version=0)
     assert reextract(store, TAX, TODAY, archive) == 1
-    assert all(r["skills"] == ["Python", "Rust / Scala"] for r in store.data.values())  # nothing wiped
+    assert all(r["skills"] == ["Python", "Rust"] for r in store.data.values())  # nothing wiped
 
     store.save([(normalise(r, TAX, TODAY), r) for r in raws[1:2]], TAX.version)  # seen again, with text
     assert store.data["greenhouse:1"]["description"] and store.data["greenhouse:1"]["taxonomy_version"] is None
@@ -322,10 +322,10 @@ ADS = [
 
 
 def test_incremental_extraction_equals_full_extraction():
-    old = _variant(1, drop=["Rust / Scala"])                     # Rust is new in the next version
+    old = _variant(1, drop=["Rust"])                     # Rust is new in the next version
     new = _variant(2, edit=("Elixir", r"\belixir\b"))           # Elixir added, Rust back
     changed = new.changed_since(old.fingerprints)
-    assert changed == {"Rust / Scala", "Elixir"}
+    assert changed == {"Rust", "Elixir"}
     for title, text in ADS:
         prior = old.extract(title, text)
         assert new.extract_since(title, text, prior, changed) == new.extract(title, text), title
@@ -340,7 +340,7 @@ def test_changed_matching_code_or_unknown_version_rematches_everything():
 
 def test_reextract_only_rematches_changed_skills_and_matches_a_full_run():
     from skillmap import runner
-    old, new = _variant(1, drop=["Rust / Scala"]), _variant(2)
+    old, new = _variant(1, drop=["Rust"]), _variant(2)
     store = MemoryStore()
     raws = [RawPosting("greenhouse", str(i), "Acme", title, text) for i, (title, text) in enumerate(ADS)]
     store.save([(normalise(r, old, TODAY), r) for r in raws], old.version)
@@ -349,7 +349,7 @@ def test_reextract_only_rematches_changed_skills_and_matches_a_full_run():
     original = new.extract
     new.extract = lambda title, text, only=None: calls.append(only) or original(title, text, only)  # type: ignore[method-assign]
     runner.reextract(store, new, TODAY)
-    assert calls and all(only == {"Rust / Scala"} for only in calls)
+    assert calls and all(only == {"Rust"} for only in calls)
     for r in raws:
         row = store.data[r.posting_id]
         assert (row["skills"], row["skills_nice"]) == tuple(original(r.title, r.description))

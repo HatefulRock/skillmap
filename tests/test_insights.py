@@ -117,7 +117,7 @@ def test_learn_next_weighs_demand_gap_and_premium():
 
 def test_learn_next_counts_generic_cloud_as_covered_by_a_provider():
     rows = [row(i, ["Python", "Cloud (unspecified)", "Go"], role_family="ai_ml") for i in range(40)]
-    out = insights.learn_next(rows, {"Python": 5, "Azure (incl. Azure OpenAI)": 4}, {}, {})
+    out = insights.learn_next(rows, {"Python": 5, "Azure": 4}, {}, {})
     assert [e["name"] for e in out] == ["Go"] and out[0]["unlocks"] == 40
 
 
