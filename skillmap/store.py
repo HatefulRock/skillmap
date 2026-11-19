@@ -56,6 +56,8 @@ class Store(Protocol):
     def purge(self, source: str) -> int: ...
     def run_history(self, days: int) -> list[dict]: ...
     def first_runs(self) -> dict[str, date]: ...
+    def skill_fingerprints(self, taxonomy_version: int) -> dict[str, str] | None: ...
+    def save_skill_fingerprints(self, taxonomy_version: int, fingerprints: dict[str, str]) -> None: ...
 
 
 def _raw_from_row(row: dict) -> RawPosting:
@@ -66,6 +68,7 @@ def _raw_from_row(row: dict) -> RawPosting:
         sector_hint=row["sector_hint"], seniority_hint=row["seniority_hint"], min_years_hint=row["min_years_hint"],
         salary_min=row["salary_min"], salary_max=row["salary_max"], salary_currency=row["salary_currency"],
         salary_period=row["salary_period"],
+        prior=(row.get("taxonomy_version"), list(row.get("skills") or []), list(row.get("skills_nice") or [])),
     )
 
 
@@ -73,6 +76,7 @@ class MemoryStore:
     def __init__(self) -> None:
         self.data: dict[str, dict] = {}
         self.runs: list[dict] = []
+        self.fingerprints: dict[int, dict[str, str]] = {}
 
     def known_ids(self, source: str) -> set[str]:
         return {pid.split(":", 1)[1] for pid, row in self.data.items() if row["source"] == source
@@ -123,6 +127,12 @@ class MemoryStore:
 
     def archive_ids(self, archive: str) -> list[str]:
         return [pid for pid, r in self.data.items() if r["text_archive"] == archive]
+
+    def skill_fingerprints(self, taxonomy_version: int) -> dict[str, str] | None:
+        return self.fingerprints.get(taxonomy_version)
+
+    def save_skill_fingerprints(self, taxonomy_version: int, fingerprints: dict[str, str]) -> None:
+        self.fingerprints[taxonomy_version] = dict(fingerprints)
 
     def mark_current(self, posting_ids: list[str], taxonomy_version: int) -> None:
         for pid in posting_ids:
@@ -278,6 +288,18 @@ class PostgresStore:
     def archive_ids(self, archive: str) -> list[str]:
         return [row["posting_id"] for row in self.conn.execute(
             "select posting_id from skillmap.postings where text_archive = %s", (archive,)).fetchall()]
+
+    def skill_fingerprints(self, taxonomy_version: int) -> dict[str, str] | None:
+        row = self.conn.execute("select fingerprints from skillmap.taxonomy_versions where version = %s",
+                                (taxonomy_version,)).fetchone()
+        return row["fingerprints"] if row else None
+
+    def save_skill_fingerprints(self, taxonomy_version: int, fingerprints: dict[str, str]) -> None:
+        from psycopg.types.json import Jsonb
+
+        self.conn.execute(
+            "insert into skillmap.taxonomy_versions (version, fingerprints) values (%s, %s) "
+            "on conflict (version) do update set fingerprints = excluded.fingerprints", (taxonomy_version, Jsonb(fingerprints)))
 
     def mark_current(self, posting_ids: list[str], taxonomy_version: int) -> None:
         self.conn.execute("update skillmap.postings set taxonomy_version = %s where posting_id = any(%s)",

@@ -7,6 +7,7 @@ as a failed source instead of stopping the whole run.
 
 from __future__ import annotations
 
+import threading
 import time
 from typing import Any
 from urllib.parse import urlparse
@@ -32,14 +33,21 @@ class PoliteClient:
         # A server can ask for a wait of hours; past this the request fails and the caller moves on.
         self.max_retry_after = max_retry_after
         self._last_call: dict[str, float] = {}
+        # Sources are collected in parallel threads, one per site; a lock per host keeps two
+        # threads that reach the same host to its interval.
+        self._host_locks: dict[str, threading.Lock] = {}
+        self._locks_lock = threading.Lock()
         self.sleep = time.sleep  # swapped out in tests
 
     def _wait(self, host: str) -> None:
-        interval = self.per_host_interval.get(host, self.min_interval)
-        elapsed = time.monotonic() - self._last_call.get(host, 0.0)
-        if elapsed < interval:
-            self.sleep(interval - elapsed)
-        self._last_call[host] = time.monotonic()
+        with self._locks_lock:
+            lock = self._host_locks.setdefault(host, threading.Lock())
+        with lock:
+            interval = self.per_host_interval.get(host, self.min_interval)
+            elapsed = time.monotonic() - self._last_call.get(host, 0.0)
+            if elapsed < interval:
+                self.sleep(interval - elapsed)
+            self._last_call[host] = time.monotonic()
 
     def request(self, method: str, url: str, **kwargs: Any) -> httpx.Response:
         host = urlparse(url).netloc

@@ -33,6 +33,9 @@ class RawPosting:
     salary_max: float | None = None
     salary_currency: str | None = None
     salary_period: str | None = None  # month | year
+    # Set only when a stored posting is re-read for re-extraction: (taxonomy version, skills,
+    # nice-to-have skills) from its last extraction, so unchanged skills needn't be matched again.
+    prior: tuple[int | None, list[str], list[str]] | None = field(default=None, compare=False, repr=False)
 
     @property
     def posting_id(self) -> str:

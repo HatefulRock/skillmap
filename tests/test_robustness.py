@@ -39,7 +39,8 @@ def test_a_platform_that_keeps_rate_limiting_is_skipped_for_the_run(monkeypatch)
                                           "descriptionPlain": "Python", "hostedUrl": "https://x"}])
 
     report = collect(MemoryStore(), client_for(handler), TAX, TODAY, {"boards"})
-    greenhouse = [r for r in report.results if r.name.startswith("greenhouse:")]
+    # The report is sorted by name (sources run in parallel); boards ran in list order.
+    greenhouse = sorted((r for r in report.results if r.name.startswith("greenhouse:")), key=lambda r: int(r.name[12:]))
     assert len(greenhouse) == 12 and sum("greenhouse" in c for c in calls) == runner.RATE_LIMITED_BOARDS
     assert all(r.error == "skipped: platform rate-limiting" for r in greenhouse[runner.RATE_LIMITED_BOARDS:])
     assert next(r for r in report.results if r.name == "lever:ok").inserted == 1  # other platforms carry on
@@ -105,3 +106,28 @@ def test_purge_command_refuses_without_a_matching_confirmation(monkeypatch, caps
                  ["purge", "--source", "workday", "--confirm", "workday"]):  # no database configured
         with pytest.raises(SystemExit):
             cli.main(argv)
+
+
+def test_sites_are_collected_in_parallel_but_each_site_stays_sequential(monkeypatch):
+    import threading
+    import time
+    boards = [{"company": f"G{i}", "ats": "greenhouse", "token": f"g{i}"} for i in range(3)]
+    boards += [{"company": f"L{i}", "ats": "lever", "token": f"l{i}"} for i in range(3)]
+    monkeypatch.setattr(runner, "load_boards", lambda: boards)
+    active: dict[str, int] = {"greenhouse": 0, "lever": 0}
+    peak = {"same_site": 0, "both": 0}
+    lock = threading.Lock()
+
+    def handler(request: httpx.Request) -> httpx.Response:
+        site = "greenhouse" if "greenhouse" in str(request.url) else "lever"
+        with lock:
+            active[site] += 1
+            peak["same_site"] = max(peak["same_site"], active[site])
+            peak["both"] = max(peak["both"], int(all(active.values())))
+        time.sleep(0.05)
+        with lock:
+            active[site] -= 1
+        return httpx.Response(200, json=jobs(1, str(request.url)[-12:]) if site == "greenhouse" else [])
+
+    collect(MemoryStore(), client_for(handler), TAX, TODAY, {"boards"})
+    assert peak == {"same_site": 1, "both": 1}

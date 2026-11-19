@@ -63,3 +63,12 @@ create table if not exists skillmap.runs (
   error       text
 );
 alter table skillmap.runs enable row level security;
+
+-- Each taxonomy version's per-skill fingerprints, so a re-extraction after a taxonomy change only
+-- matches the skills whose patterns changed (see Taxonomy.changed_since).
+create table if not exists skillmap.taxonomy_versions (
+  version      int primary key,
+  fingerprints jsonb not null,
+  saved_at     timestamptz not null default now()
+);
+alter table skillmap.taxonomy_versions enable row level security;
