@@ -49,6 +49,7 @@ PER_COMPANY = 8
 MAX_FETCHES = 1000  # page fetches per crawl, since many pages turn out not to be tech roles
 INDEX_PAGES = 12  # index blocks (3,000 captures each) read per host, spread across the alphabet of board names
 EMPTY_TRIES = 3  # runs a crawl may come back empty before it counts as done with no ads
+NO_INDEX_TRIES = 10  # the same when its index gave no captures at all, which is usually the server failing
 MIN_PERIOD = 100  # a half-year with fewer tech ads gets no shares
 INTERVALS = {"index.commoncrawl.org": 2.0, "data.commoncrawl.org": 1.0}  # it answers 503 when pressed
 
@@ -171,7 +172,8 @@ def cluster_blocks(client: PoliteClient, crawl: Crawl, prefix: str) -> list[tupl
     return blocks
 
 
-def index_lines(client: PoliteClient, crawl: Crawl, host: str, pages: int = INDEX_PAGES) -> list[dict]:
+def index_lines(client: PoliteClient, crawl: Crawl, host: str, pages: int = INDEX_PAGES,
+                errors: list[str] | None = None) -> list[dict]:
     """Successful HTML captures under `host` in this crawl, from up to `pages` index blocks spread
     evenly over the host's (the index is sorted by URL, so the first blocks would be boards a-c)."""
     prefix = surt_prefix(host)
@@ -187,6 +189,8 @@ def index_lines(client: PoliteClient, crawl: Crawl, host: str, pages: int = INDE
                                          offset, offset + length - 1))
         except Exception as exc:  # noqa: BLE001 - a missing block only shrinks the sample
             log.warning("history %s %s block %s:%d: %s", crawl.id, host, name, offset, exc)
+            if errors is not None:
+                errors.append(f"{host} block: {str(exc)[:60]}")
             continue
         for line in raw.decode("utf-8", "replace").splitlines():
             key, _, rest = line.partition(" ")
@@ -280,11 +284,13 @@ def collect_crawl(client: PoliteClient, crawl: Crawl, taxonomy: Taxonomy, deadli
     `prior` are the rows an earlier, unfinished run of this crawl kept."""
     resume, prior = resume or {}, prior or []
     captures = []
+    index_errors: list[str] = []
     for host in JOB_PAGES:
         try:
-            captures += index_lines(client, crawl, host)
+            captures += index_lines(client, crawl, host, errors=index_errors)
         except Exception as exc:  # noqa: BLE001 - one host down still leaves the others
             log.warning("history %s %s: %s", crawl.id, host, exc)
+            index_errors.append(f"{host}: {str(exc)[:60]}")
     rows: list[dict] = []
     texts: list[tuple[str, str]] = []
     per_company: Counter = Counter(r["company"] for r in prior)
@@ -296,7 +302,8 @@ def collect_crawl(client: PoliteClient, crawl: Crawl, taxonomy: Taxonomy, deadli
 
     def progress(finished: bool) -> dict:
         return {"finished": finished, "tried": sorted(tried), "fetched": fetched, "failed": failed,
-                "stats": {"captures": len(captures), **stats, "skipped_titles": skipped[:8]}}
+                "stats": {"captures": len(captures), **stats, "skipped_titles": skipped[:8],
+                          **({"index_errors": index_errors[:8]} if index_errors else {})}}
 
     for cap in sample(captures, crawl.id):
         if len(prior) + len(rows) >= SAMPLE or fetched >= MAX_FETCHES:
@@ -441,7 +448,10 @@ def run(client: PoliteClient, taxonomy: Taxonomy, out: Path, archive: Archive | 
             break
         state.get("partial", {}).pop(crawl.id, None)
         got = len(prior) + len(new)
-        if not got and tries.get(crawl.id, 0) + 1 < EMPTY_TRIES:
+        # No captures at all usually means the index files couldn't be read this time, so that
+        # is given more runs than a crawl whose pages were read and held no tech ads.
+        limit = EMPTY_TRIES if progress["stats"]["captures"] else NO_INDEX_TRIES
+        if not got and tries.get(crawl.id, 0) + 1 < limit:
             log.warning("history %s: no ads; the next run tries again (%s)", crawl.id, progress["stats"])
             state.setdefault("empty", {})[crawl.id] = tries.get(crawl.id, 0) + 1
             state.setdefault("empty_stats", {})[crawl.id] = progress["stats"]

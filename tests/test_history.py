@@ -205,12 +205,24 @@ def test_cluster_search_over_a_large_index():
 def test_an_empty_crawl_is_retried_before_it_counts_as_done(tmp_path):
     empty = PoliteClient(min_interval=0, transport=httpx.MockTransport(
         lambda r: handler(r) if str(r.url).startswith(history.COLLINFO) else httpx.Response(503)), retries=0)
-    for expected_done in (False, False, True):
+    # An index that can't be read gives no captures: that gets NO_INDEX_TRIES runs, with the errors kept.
+    for run in range(1, history.NO_INDEX_TRIES + 1):
         history.run(empty, TAX, tmp_path, None, TODAY, budget_minutes=10)
         state = json.loads((tmp_path / "history-state.json").read_text())
-        assert ("CC-MAIN-2024-33" in state["crawls"]) is expected_done
+        assert ("CC-MAIN-2024-33" in state["crawls"]) is (run == history.NO_INDEX_TRIES)
+        if run == 1:
+            assert state["empty_stats"]["CC-MAIN-2024-33"]["index_errors"]
     # A crawl recorded empty by an older run (no tries) is tried again.
     state["crawls"]["CC-MAIN-2024-33"] = {"period": "2024-07", "ads": 0}
     state.pop("empty", None)
     (tmp_path / "history-state.json").write_text(json.dumps(state))
     assert history.run(client(), TAX, tmp_path, None, TODAY, budget_minutes=10)["crawls_added"] == 1
+
+
+def test_a_crawl_whose_pages_hold_no_tech_ads_settles_after_empty_tries(tmp_path, monkeypatch):
+    monkeypatch.setattr(history, "row_for", lambda *a, **k: None)
+    for run in range(1, history.EMPTY_TRIES + 1):
+        history.run(client(), TAX, tmp_path, None, TODAY, budget_minutes=10)
+        state = json.loads((tmp_path / "history-state.json").read_text())
+        assert ("CC-MAIN-2024-33" in state["crawls"]) is (run == history.EMPTY_TRIES)
+    assert state["crawls"]["CC-MAIN-2024-33"]["stats"]["not_tech"] == 4
