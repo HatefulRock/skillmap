@@ -137,10 +137,40 @@ def test_run_backfills_tech_ads_archives_text_and_resumes(tmp_path):
     assert history.run(offline, newer, tmp_path, archive, TODAY, budget_minutes=10)["reextracted"] == 3
 
 
-def test_out_of_time_saves_nothing_partial(tmp_path):
-    ticks = iter([0.0] + [10_000.0] * 100)
-    result = history.run(client(), TAX, tmp_path, None, TODAY, budget_minutes=1, clock=lambda: next(ticks))
-    assert result["crawls_added"] == 0 and not (tmp_path / "history-ads.jsonl.gz").exists()
+def test_out_of_time_keeps_what_it_fetched_and_the_next_run_carries_on(tmp_path):
+    archive = LocalArchive(tmp_path / "archive")
+    pages: list[str] = []
+
+    def counting(request: httpx.Request) -> httpx.Response:
+        if str(request.url).startswith(history.DATA + "crawl/"):
+            pages.append(str(request.url))
+        return handler(request)
+
+    c = PoliteClient(min_interval=0, transport=httpx.MockTransport(counting), retries=0)
+    c.sleep = lambda s: None
+    # The deadline passes once two job pages have been fetched.
+    result = history.run(c, TAX, tmp_path, archive, TODAY, budget_minutes=1,
+                         clock=lambda: 10_000.0 if len(pages) >= 2 else 0.0)
+    assert result["crawls_added"] == 0 and len(pages) == 2
+    state = json.loads((tmp_path / "history-state.json").read_text())
+    partial = state["partial"]["CC-MAIN-2024-33"]
+    assert partial["fetched"] == 2 and len(partial["tried"]) == 2 and len(partial["archives"]) <= 1
+    kept = history.load_rows(tmp_path / "history-ads.jsonl.gz")
+    # The second run fetches only the pages not tried yet, and settles the crawl.
+    first = list(pages)
+    result = history.run(c, TAX, tmp_path, archive, TODAY, budget_minutes=10, clock=lambda: 0.0)
+    assert result["crawls_added"] == 1 and len(pages) == 4 and not set(first) & set(pages[2:])
+    rows = history.load_rows(tmp_path / "history-ads.jsonl.gz")
+    assert {r["id"] for r in kept} <= {r["id"] for r in rows}
+    assert {r["title"] for r in rows} == {"Machine Learning Engineer", "Backend Engineer", "Data Engineer"}
+    state = json.loads((tmp_path / "history-state.json").read_text())
+    assert not state.get("partial") and state["crawls"]["CC-MAIN-2024-33"]["ads"] == 3
+    # Text from both runs is archived, so a taxonomy change re-extracts every ad.
+    newer = Taxonomy.load()
+    newer.version = TAX.version + 1
+    offline = PoliteClient(min_interval=0, transport=httpx.MockTransport(
+        lambda r: handler(r) if str(r.url).startswith(history.COLLINFO) else httpx.Response(500)), retries=0)
+    assert history.run(offline, newer, tmp_path, archive, TODAY, budget_minutes=10)["reextracted"] == 3
 
 
 def test_series_withholds_thin_half_years():
