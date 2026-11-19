@@ -55,7 +55,8 @@ def write_outputs(store: Store, taxonomy: Taxonomy, today: date, out: Path, runs
     profile = load_yaml("my_skills.yaml") or {}
     ratings = profile.get("ratings") or {}
     data = aggregate.build(rows, today, taxonomy.categories, taxonomy.version, ratings, runs, store.first_runs(),
-                           groups=taxonomy.groups)
+                           groups=taxonomy.groups,
+                           frontier=frozenset(c.lower() for c in load_yaml("frontier.yaml")["companies"]))
     out.mkdir(parents=True, exist_ok=True)
     # The weekly note compares with the previous run's file, so read it before overwriting.
     previous_path = out / "skills-market.json"
