@@ -228,6 +228,37 @@ def collect(store: Store, client: PoliteClient, taxonomy: Taxonomy, today: date,
     return report
 
 
+REEXTRACT_BATCH = 4000
+# Skill matching is ~15 ms of regex work an ad, so a re-extraction of every stored ad (after a
+# taxonomy change) is CPU-bound: below this many ads one process is quicker than starting more.
+PARALLEL_MIN = 400
+_worker_taxonomy: Taxonomy | None = None
+
+
+def _init_worker(taxonomy: Taxonomy) -> None:
+    global _worker_taxonomy
+    _worker_taxonomy = taxonomy
+
+
+def _normalise_chunk(args: tuple[list[RawPosting], date]) -> list:
+    raws, today = args
+    assert _worker_taxonomy is not None
+    return [normalise(raw, _worker_taxonomy, today) for raw in raws]
+
+
+def _normalise_all(raws: list[RawPosting], taxonomy: Taxonomy, today: date) -> list:
+    """normalise() for each posting, in order, on every CPU core when there are enough of them."""
+    workers = min(os.cpu_count() or 1, 8)
+    if workers < 2 or len(raws) < PARALLEL_MIN:
+        return [normalise(raw, taxonomy, today) for raw in raws]
+    from concurrent.futures import ProcessPoolExecutor
+
+    size = -(-len(raws) // (workers * 4))
+    chunks = [(raws[i:i + size], today) for i in range(0, len(raws), size)]
+    with ProcessPoolExecutor(workers, initializer=_init_worker, initargs=(taxonomy,)) as pool:
+        return [posting for part in pool.map(_normalise_chunk, chunks) for posting in part]
+
+
 def reextract(store: Store, taxonomy: Taxonomy, today: date, archive: Archive | None = None) -> int:
     """Re-run extraction on postings stored under an older taxonomy version: those whose text is
     in an archive file (one file at a time), then those whose text is in the database."""
@@ -237,27 +268,27 @@ def reextract(store: Store, taxonomy: Taxonomy, today: date, archive: Archive | 
         """A posting whose text is missing keeps its extraction: re-extracting an empty text
         would wipe its skills. Its text comes back if a collector sees the posting again."""
         nonlocal count
-        batch: list = []
         missing: list[str] = []
         textless: list[str] = []
+        pending: list[RawPosting] = []
         for raw in raws:
             if texts is not None:
                 if raw.posting_id not in texts:
                     missing.append(raw.posting_id)
                     continue
                 raw.description = texts[raw.posting_id]
-            posting = normalise(raw, taxonomy, today)
-            if not raw.description and posting.role_family != "non_tech":
-                textless.append(raw.posting_id)
-                continue
-            batch.append(posting)
-            if len(batch) >= 1000:
+            pending.append(raw)
+        for start in range(0, len(pending), REEXTRACT_BATCH):
+            batch = []
+            for raw, posting in zip(pending[start:start + REEXTRACT_BATCH],
+                                    _normalise_all(pending[start:start + REEXTRACT_BATCH], taxonomy, today), strict=True):
+                if not raw.description and posting.role_family != "non_tech":
+                    textless.append(raw.posting_id)
+                    continue
+                batch.append(posting)
+            if batch:
                 store.update_extraction(batch, taxonomy.version)
                 count += len(batch)
-                batch = []
-        if batch:
-            store.update_extraction(batch, taxonomy.version)
-            count += len(batch)
         if missing:
             log.warning("%d postings point to an archive file that doesn't hold their text", len(missing))
             store.forget_archive(missing)

@@ -56,7 +56,13 @@ class Taxonomy:
     def _find(self, lines: list[str]) -> set[str]:
         found: set[str] = set()
         sentences = [s for line in lines for s in _SENTENCE.split(line) if s]
+        # One search per pattern over the whole text first: an ad names ~10 of the ~110 skills,
+        # and only those need the per-sentence check (which the `not` rules are scoped to).
+        # Joined by newlines, a sentence's match is also a match here, so nothing is missed.
+        blob = "\n".join(sentences)
         for skill in self.skills:
+            if not any(pattern.search(blob) for pattern in skill.patterns):
+                continue
             if any(skill.matches(sentence) for sentence in sentences):
                 found.add(skill.name)
         return found

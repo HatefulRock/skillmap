@@ -285,3 +285,13 @@ def test_infrastructure_and_security_names_are_tracked_skills():
     for term in ["CI", "REST", "IAM", "DNS", "SRE", "SIEM", "OAuth", "RBAC", "GitOps", "iOS", "NIST", "VMware"]:
         assert TAX.known(term), term
     assert terms.candidates("Runs on any OS, CA based, owns the SDLC and IP", TAX.known) == []
+
+
+def test_parallel_reextraction_matches_one_process(monkeypatch):
+    from skillmap import runner
+    monkeypatch.setattr(runner, "PARALLEL_MIN", 2)
+    raws = [RawPosting("greenhouse", str(i), "Acme", "Backend Engineer",
+                       f"We use Python and Kubernetes. Ad {i} also wants {'Rust' if i % 2 else 'Go, gRPC'}.")
+            for i in range(40)]
+    serial = [normalise(r, TAX, TODAY) for r in raws]
+    assert runner._normalise_all(raws, TAX, TODAY) == serial
