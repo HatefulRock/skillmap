@@ -43,6 +43,18 @@
    },
    "taxonomy_version": 12
   },
+  "CC-MAIN-2016-26": {
+   "ads": 0,
+   "archives": [],
+   "done": "2026-11-21",
+   "period": "2016-01",
+   "stats": {
+    "captures": 0,
+    "skipped_titles": []
+   },
+   "taxonomy_version": 12,
+   "tries": 3
+  },
   "CC-MAIN-2016-50": {
    "ads": 12,
    "archives": [
@@ -111,6 +123,18 @@
     ]
    },
    "taxonomy_version": 12
+  },
+  "CC-MAIN-2018-26": {
+   "ads": 0,
+   "archives": [],
+   "done": "2026-11-21",
+   "period": "2018-01",
+   "stats": {
+    "captures": 0,
+    "skipped_titles": []
+   },
+   "taxonomy_version": 12,
+   "tries": 3
   },
   "CC-MAIN-2018-51": {
    "ads": 267,
@@ -396,20 +420,8 @@
    "taxonomy_version": 12
   }
  },
- "empty": {
-  "CC-MAIN-2016-26": 2,
-  "CC-MAIN-2018-26": 2
- },
- "empty_stats": {
-  "CC-MAIN-2016-26": {
-   "captures": 0,
-   "skipped_titles": []
-  },
-  "CC-MAIN-2018-26": {
-   "captures": 0,
-   "skipped_titles": []
-  }
- },
+ "empty": {},
+ "empty_stats": {},
  "partial": {},
  "taxonomy_version": null
 }
