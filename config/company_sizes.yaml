@@ -1,0 +1,551 @@
+# Company size tiers for the "by company size" breakdowns. Names are matched after
+# normalise_company() (lowercase, legal suffixes dropped), either exactly or as the start of the
+# name ("google" matches "GOOGLE ASIA PACIFIC PTE. LTD."). Companies not listed here are sorted by
+# rule in skillmap/company_size.py: recruitment agencies and consultancies by their names, then
+# companies hiring through startup job boards (Greenhouse, Ashby, Lever, ...) count as startups.
+# Public information only; add names freely.
+
+big_tech:
+  - amazon
+  - aws
+  - microsoft
+  - google
+  - alphabet
+  - deepmind
+  - google deepmind
+  - youtube
+  - waymo
+  - apple
+  - meta
+  - facebook
+  - instagram
+  - whatsapp
+  - netflix
+  - nvidia
+  - intel
+  - amd
+  - advanced micro devices
+  - qualcomm
+  - broadcom
+  - micron
+  - micron semiconductor
+  - samsung
+  - sony
+  - salesforce
+  - oracle
+  - ibm
+  - red hat
+  - adobe
+  - cisco
+  - sap
+  - servicenow
+  - workday
+  - intuit
+  - hp
+  - hewlett packard enterprise
+  - dell
+  - linkedin
+  - github
+  - uber
+  - airbnb
+  - booking
+  - booking com
+  - agoda
+  - paypal
+  - spotify
+  - tiktok
+  - bytedance
+  - alibaba
+  - lazada
+  - tencent
+  - baidu
+  - huawei
+  - xiaomi
+  - shopee
+  - sea
+  - garena
+  - grab
+  - tesla
+  - spacex
+  - spacexsi
+  - x
+  - twitter
+  - snap
+  - pinterest
+  - reddit
+  - ebay
+  - zoom
+  - dropbox
+  - atlassian
+  - autodesk
+  - vmware
+  - texas instruments
+  - applied materials
+  - arm
+  - asml
+  - tsmc
+  - walmart global tech
+  - twitch
+  - roku
+  - electronic arts
+  - activision blizzard
+  - epic games
+  - riot games
+  - roblox
+
+midsize:
+  - veeam software
+  - voyager technologies
+  - two six technologies
+  - zeta global
+  - hims hers
+  - torc robotics
+  - abnormal
+  - doit
+  - openai
+  - anthropic
+  - databricks
+  - stripe
+  - scale ai
+  - perplexity
+  - cohere
+  - mistral ai
+  - mistral
+  - xai
+  - hugging face
+  - elevenlabs
+  - cursor
+  - anysphere
+  - cognition
+  - character ai
+  - thinking machines lab
+  - safe superintelligence
+  - together ai
+  - fireworks ai
+  - baseten
+  - modal
+  - lambda
+  - coreweave
+  - crusoe
+  - nebius
+  - cerebras
+  - tenstorrent
+  - groq
+  - sambanova
+  - graphcore
+  - harvey
+  - legora
+  - sierra
+  - decagon
+  - glean
+  - writer
+  - synthesia
+  - runway
+  - suno
+  - deepgram
+  - assemblyai
+  - abridge
+  - mercor
+  - surge ai
+  - turing
+  - snorkel ai
+  - langchain
+  - pinecone
+  - weaviate
+  - vercel
+  - supabase
+  - replit
+  - notion
+  - figma
+  - canva
+  - linear
+  - airtable
+  - miro
+  - ramp
+  - brex
+  - mercury
+  - plaid
+  - chime
+  - chime financial
+  - revolut
+  - monzo
+  - nubank
+  - klarna
+  - adyen
+  - wise
+  - n26
+  - trade republic
+  - airwallex
+  - rippling
+  - deel
+  - gusto
+  - navan
+  - vanta
+  - wiz
+  - snyk
+  - 1password
+  - tailscale
+  - cribl
+  - chainguard
+  - clickhouse
+  - fivetran
+  - dbt labs
+  - airbyte
+  - temporal technologies
+  - grafana labs
+  - sentry
+  - posthog
+  - celonis
+  - personio
+  - helsing
+  - anduril
+  - andurilindustries
+  - shield ai
+  - palantir
+  - wayve
+  - zoox
+  - nuro
+  - aurora
+  - motional
+  - waabi
+  - applied intuition
+  - physical intelligence
+  - figure
+  - skild ai
+  - verkada
+  - samsara
+  - flexport
+  - faire
+  - instacart
+  - doordash
+  - lyft
+  - robinhood
+  - coinbase
+  - kraken
+  - binance
+  - okx
+  - bybit
+  - crypto com
+  - ripple
+  - circle
+  - fireblocks
+  - chainalysis
+  - trm labs
+  - tether
+  - tether operations
+  - bitgo
+  - gemini
+  - kalshi
+  - polymarket
+  - elastic
+  - cloudflare
+  - snowflake
+  - mongodb
+  - datadog
+  - okta
+  - zscaler
+  - crowdstrike
+  - palo alto networks
+  - fortinet
+  - gitlab
+  - hashicorp
+  - confluent
+  - twilio
+  - asana
+  - toast
+  - affirm
+  - sofi
+  - upstart
+  - duolingo
+  - discord
+  - shopify
+  - squarespace
+  - webflow
+  - hubspot
+  - docusign
+  - box
+  - zillow
+  - zillow group
+  - doctolib
+  - getyourguide
+  - deliveroo
+  - sumup
+  - bolt
+  - ninja van
+  - gxs bank
+  - moomoo
+  - appier
+  - meesho
+  - bjak
+  - akamai
+  - akamai technologies
+  - fastly
+  - pagerduty
+  - amplitude
+  - mixpanel
+  - algolia
+  - intercom
+  - zendesk
+  - canonical
+  - docker
+  - weka
+  - singlestore
+  - redis
+  - mozilla
+  - dataiku
+  - ziprecruiter
+  - coursera
+  - udacity
+  - tripadvisor
+  - wrike
+  - workato
+  - zoominfo
+  - zoominfo technologies
+  - veeva systems
+  - tenable
+  - teleport
+  - speechify
+  - backbase
+  - tide
+  - zip co
+  - zip
+  - tabby
+  - truecaller
+  - wellhub
+  - kpler
+  - voodoo
+  - tripledot studios
+  - wargaming
+  - 2k
+  - avalara
+  - addepar
+  - benchling
+  - checkr
+  - true anomaly
+  - varda space industries
+  - astranis
+  - vast
+  - relativity space
+  - firefly aerospace
+  - ursa major
+
+enterprise:
+  - decathlontechnology
+  - decathlon
+  - citi
+  - citibank
+  - citigroup
+  - capital one
+  - jpmorgan
+  - jpmorgan chase
+  - jp morgan
+  - goldman sachs
+  - morgan stanley
+  - bank of america
+  - wells fargo
+  - barclays
+  - hsbc
+  - standard chartered
+  - deutsche bank
+  - ubs
+  - bnp paribas
+  - societe generale
+  - credit agricole
+  - ing
+  - santander
+  - mufg
+  - mizuho
+  - smbc
+  - dbs
+  - dbs bank
+  - ocbc
+  - uob
+  - united overseas bank
+  - maybank
+  - julius baer
+  - state street
+  - bny
+  - bny mellon
+  - blackrock
+  - fidelity
+  - fidelity investments
+  - vanguard
+  - charles schwab
+  - american express
+  - mastercard
+  - visa
+  - first citizens
+  - fico
+  - hkex
+  - sgx
+  - london stock exchange group
+  - lseg
+  - nasdaq
+  - ice
+  - cme group
+  - bloomberg
+  - thomson reuters
+  - s p global
+  - moody s
+  - jane street
+  - citadel
+  - citadel securities
+  - two sigma
+  - de shaw
+  - d e shaw
+  - hudson river trading
+  - jump trading
+  - tower research capital
+  - optiver
+  - imc
+  - imc trading
+  - flow traders
+  - virtu
+  - drw
+  - akuna capital
+  - susquehanna
+  - sig
+  - point72
+  - millennium
+  - balyasny
+  - qube research technologies
+  - squarepoint capital
+  - schonfeld
+  - worldquant
+  - man group
+  - pdt partners
+  - dv trading
+  - belvedere trading
+  - graviton research capital
+  - manulife
+  - aia
+  - prudential
+  - allianz
+  - axa
+  - zurich
+  - great eastern
+  - singapore airlines
+  - singapore telecommunications
+  - singtel
+  - starhub
+  - telstra
+  - vodafone
+  - deutsche telekom
+  - at t
+  - verizon
+  - t mobile
+  - comcast
+  - lockheed martin
+  - northrop grumman
+  - raytheon
+  - rtx
+  - boeing
+  - airbus
+  - general dynamics
+  - general dynamics information technology
+  - leidos
+  - caci
+  - caci international
+  - peraton
+  - bae systems
+  - l3harris
+  - motorola solutions
+  - st engineering
+  - synapxe
+  - govtech
+  - nanyang technological university
+  - national university of singapore
+  - walmart
+  - target
+  - home depot
+  - home depot u s a
+  - costco
+  - nike
+  - unilever
+  - nestle
+  - procter gamble
+  - siemens
+  - bosch
+  - philips
+  - toshiba
+  - toshiba global commerce solutions
+  - keysight
+  - keysight technologies
+  - cardinal health
+  - unitedhealth
+  - johnson johnson
+  - pfizer
+  - roche
+  - novartis
+  - natera
+  - wpp
+  - vml wpp enterprise solutions
+  - transperfect
+  - rws group
+  - mckinsey
+  - boston consulting group
+  - bain
+  - deloitte
+  - pwc
+  - ey
+  - kpmg
+  - draftkings
+  - verra mobility
+
+services:
+  - accenture
+  - capgemini
+  - cognizant
+  - infosys
+  - tata consultancy services
+  - tcs
+  - wipro
+  - hcl
+  - hcltech
+  - tech mahindra
+  - ntt
+  - ntt data
+  - fujitsu
+  - nec
+  - kyndryl
+  - dxc
+  - epam
+  - thoughtworks
+  - globant
+  - endava
+  - nagarro
+  - ci t
+  - encora
+  - encora technologies
+  - fpt
+  - stefanini
+  - valtech
+  - sigma software
+  - intetics
+  - software mind
+  - ciklum
+  - description ciklum
+  - dev pro
+  - codilime
+  - miratech
+  - nearform
+  - yld
+  - spyrosoft
+  - ncs
+  - astek
+  - capco
+  - talan
+  - wavestone
+  - artefact
+  - 3cloud
+  - trace3
+  - lovelytics
+  - fusemachines
+  - telus international
+  - telus international ai
+  - icf
+  - logistics management institute
+  - mindteck
+  - saksoft
+  - r systems
+  - cmc apac

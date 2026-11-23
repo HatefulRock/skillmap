@@ -13,7 +13,9 @@ from collections.abc import Iterable
 from datetime import UTC, date, datetime, timedelta
 from statistics import median, quantiles
 
+from . import company_size
 from .extract import roles, salary, sector
+from .models import normalise_company
 
 SOURCE_PRIORITY = ["greenhouse", "lever", "ashby", "workable", "recruitee", "personio", "teamtailor", "smartrecruiters", "workday", "amazon", "microsoft", "jsonld", "mcf", "himalayas", "jobicy", "remoteok", "arbeitnow", "adzuna"]  # who wins a duplicate
 MIN_GROUP = 30
@@ -108,11 +110,19 @@ def current_block(rows: list[dict], today: date, categories: dict[str, str]) -> 
     role_shares = {k: shares(v) for k, v in by_role.items() if len(v) >= MIN_GROUP}
     for rs in role_shares.values():
         keep.update(name for name, share in rs.items() if share >= ROLE_MIN_SHARE)
+    by_size: dict[str, list[dict]] = {}
+    for r in now:
+        if r.get("size") and r["size"] != "unknown":
+            by_size.setdefault(r["size"], []).append(r)
+    size_shares = {k: shares(v) for k, v in by_size.items() if len(v) >= MIN_GROUP}
+    for ss in size_shares.values():
+        keep.update(name for name, share in ss.items() if share >= ROLE_MIN_SHARE)
     comparable = len(before) >= MIN_GROUP
     return {
         "n": len(now),
         "n_previous": len(before),
         "n_roles": {k: len(v) for k, v in sorted(by_role.items()) if k in role_shares},
+        "n_sizes": {k: len(by_size[k]) for k in company_size.SIZES if k in size_shares},
         "skills": [
             {
                 "name": name,
@@ -123,6 +133,8 @@ def current_block(rows: list[dict], today: date, categories: dict[str, str]) -> 
                 "delta": round(share - before_shares.get(name, 0.0), 4) if comparable else None,
                 # Share of each role's ads (roles with enough ads only); absent means none asked.
                 "roles": {k: rs[name] for k, rs in sorted(role_shares.items()) if rs.get(name)},
+                # The same by company size.
+                "sizes": {k: ss[name] for k, ss in sorted(size_shares.items()) if ss.get(name)},
             }
             for name, share in by_share
             if name in keep
@@ -295,6 +307,47 @@ def _pay_countries(points: list[tuple[dict, float, float]]) -> list[dict]:
     return out
 
 
+def _pay_by_size(points: list[tuple[dict, float, float]], countries: list[str]) -> dict:
+    """Pay per company size, keyed "country|level" ("all" for every country): within one country
+    so US startups are compared with US big tech, not with Singapore ads."""
+    out = {}
+    for country in ["all", *countries]:
+        for level in ("all", "mid_senior"):
+            members = PAY_LEVELS[level]
+            groups: dict[str, list[float]] = defaultdict(list)
+            for r, _, usd in points:
+                if (country == "all" or r.get("country") == country) and (members is None or r["seniority"] in members):
+                    groups[r.get("size") or "unknown"].append(usd)
+            rows = [{"key": k, "label": company_size.LABELS[k], "n": len(groups[k]), "usd": _spread(groups[k])}
+                    for k in company_size.SIZES if len(groups.get(k, [])) >= PAY_MIN]
+            if rows:
+                out[f"{country}|{level}"] = rows
+    return out
+
+
+def _pay_by_company(points: list[tuple[dict, float, float]]) -> list[dict]:
+    """Every company with PAY_MIN+ ads that state pay: its size, main country and pay in USD,
+    plus the median for mid and senior ads alone when there are enough of them."""
+    groups: dict[str, list[tuple[dict, float, float]]] = defaultdict(list)
+    for point in points:
+        groups[normalise_company(point[0].get("company") or "")].append(point)
+    out = []
+    for key, group in groups.items():
+        if not key or len(group) < PAY_MIN:
+            continue
+        name = Counter(r.get("company") or "" for r, _, _ in group).most_common(1)[0][0]
+        mid_senior = [usd for r, _, usd in group if r["seniority"] in PAY_LEVELS["mid_senior"]]
+        out.append({
+            "company": name,
+            "size": Counter(r.get("size") or "unknown" for r, _, _ in group).most_common(1)[0][0],
+            "country": Counter(r.get("country") or "Unknown" for r, _, _ in group).most_common(1)[0][0],
+            "n": len(group),
+            "usd": _spread([usd for _, _, usd in group]),
+            "mid_senior_usd": _spread(mid_senior) if len(mid_senior) >= PAY_CELL else None,
+        })
+    return sorted(out, key=lambda c: -c["usd"]["median"])
+
+
 def pay_block(rows: list[dict]) -> dict:
     """Advertised yearly pay wherever it is stated: per country (local currency and USD), and per
     role family × seniority within the best-covered countries (USD, so levels compare)."""
@@ -329,6 +382,8 @@ def pay_block(rows: list[dict]) -> dict:
     return {
         "period": "year",
         "fx_note": "Converted to USD at fixed November 2026 rates",
+        "by_size": _pay_by_size(points, [c["key"] for c in countries[:PAY_COUNTRIES]]),
+        "by_company": _pay_by_company(points),
         "n": len(points),
         "n_rows": len(rows),
         "countries": countries,
@@ -457,6 +512,8 @@ def build(rows: list[dict], today: date, categories: dict[str, str], taxonomy_ve
     rows = split_soft(rows, categories)
     categories = {n: c for n, c in categories.items() if c != SOFT_CATEGORY}
     all_rows = dedupe(rows)
+    for r in all_rows:
+        r["size"] = company_size.classify(r.get("company") or "", {r["source"]})
     tech = [r for r in all_rows if r["role_family"] != "non_tech"]
     first_runs = {s: d for s, d in (first_runs or {}).items() if d <= today}
     market = observed([r for r in tech if r["source"] != "hn"], first_runs)
@@ -479,6 +536,7 @@ def build(rows: list[dict], today: date, categories: dict[str, str], taxonomy_ve
             "taxonomy_version": taxonomy_version,
             # Skill -> broader family (React, Vue -> "Web frameworks"), for roll-up views.
             "skill_groups": dict(sorted((groups or {}).items())),
+            "size_labels": company_size.LABELS,
             "windows": {"current_days": CURRENT_DAYS, "segment_days": SEGMENT_DAYS, "salary_days": SALARY_DAYS},
             "min_group": MIN_GROUP,
             "totals": {
@@ -496,7 +554,7 @@ def build(rows: list[dict], today: date, categories: dict[str, str], taxonomy_ve
             "runs": runs or [],
             "attribution": ["Job data: The Adzuna API"] * any(r["source"] == "adzuna" for r in rows) + ["Hacker News “Who is hiring?” via the HN Algolia API",
                             "MyCareersFuture (Singapore)",
-                            "Company boards on Greenhouse, Lever, Ashby, Workable, SmartRecruiters and Workday",
+                            "Company boards on Greenhouse, Lever, Ashby, Workable, Recruitee, Personio, Teamtailor, SmartRecruiters and Workday",
                             "Amazon and Microsoft careers sites",
                             "Remote jobs from Himalayas (himalayas.app), Jobicy (jobicy.com) and Remote OK (remoteok.com)",
                             "European jobs from Arbeitnow (arbeitnow.com)"],
@@ -518,6 +576,7 @@ def build(rows: list[dict], today: date, categories: dict[str, str], taxonomy_ve
             "region": segment_block(window, "region", seg_skills),
             "country": segment_block(window, "country", seg_skills, limit=10),
             "sector": segment_block(window, "sector", seg_skills, sector.SECTORS, sector.LABELS),
+            "size": segment_block(window, "size", seg_skills, company_size.SIZES, company_size.LABELS),
         },
         "salary": salary_block(active(market, today - timedelta(days=SALARY_DAYS - 1), today), seg_skills),
         "pay": pay_block(active(market, today - timedelta(days=SALARY_DAYS - 1), today)),
