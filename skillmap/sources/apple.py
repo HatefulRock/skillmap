@@ -19,7 +19,6 @@ from ..models import RawPosting
 
 BASE = "https://jobs.apple.com"
 HYDRATION = re.compile(r'__staticRouterHydrationData\s*=\s*JSON\.parse\("((?:[^"\\]|\\.)*)"\)')
-DETAIL = re.compile(r'href="(/[a-z]{2}-[a-z]{2}/details/(\d+(?:-\d+)?)/([a-z0-9-]+))')
 TEXT_FIELDS = ("jobSummary", "description", "responsibilities", "minimumQualifications",
                "preferredQualifications", "educationAndExperience", "additionalRequirements", "payAndBenefits")
 
@@ -51,13 +50,19 @@ def jobs_data(data: object) -> dict | None:
     return None
 
 
-def links(page: str) -> list[tuple[str, str, str]]:
-    """(path, job number, title guessed from the address) for each role on a search page."""
-    out, seen = [], set()
-    for path, number, slug in DETAIL.findall(page):
-        if number not in seen:
-            seen.add(number)
-            out.append((path, number, slug.replace("-", " ")))
+def entries(data: object) -> list[dict]:
+    """The roles on a search page: every object in the hydration data with an id, a posting title
+    and the address slug (summary, locations and date included, but not the full text)."""
+    out: list[dict] = []
+    if isinstance(data, dict):
+        if data.get("id") and data.get("postingTitle") and data.get("transformedPostingTitle"):
+            out.append(data)
+        else:
+            for child in data.values():
+                out.extend(entries(child))
+    elif isinstance(data, list):
+        for child in data:
+            out.extend(entries(child))
     return out
 
 
@@ -102,20 +107,21 @@ def collect(client: PoliteClient, token: str, company: str, sector: str | None =
         page = client.request("GET", f"{BASE}/{locale}/search", params={"sort": "newest", "page": page_no},
                               headers={"Accept": "text/html"})
         page.raise_for_status()
-        found = links(page.text)
+        found = entries(hydration(page.text))
         if not found:
             break
-        for path, number, guess in found:
-            if not roles.classify(guess):
+        for entry in found:
+            number = str(entry["id"])
+            if not roles.classify(entry["postingTitle"]):
                 continue  # non-technical: never stored
-            url = f"{BASE}{path}"
+            url = f"{BASE}/{locale}/details/{number}/{entry['transformedPostingTitle']}"
             if number in known:
                 yield RawPosting(source="apple", native_id=number, company=company, title="", description="", url=url)
                 continue
-            if fetched >= max_new_texts:
-                continue
-            detail = client.request("GET", url, headers={"Accept": "text/html"})
-            fetched += 1
-            job = jobs_data(hydration(detail.text)) if detail.status_code == 200 else None
-            if job and roles.classify(job.get("postingTitle") or ""):
-                yield parse(job, number, url, company, sector)
+            job = entry
+            if fetched < max_new_texts:
+                detail = client.request("GET", url, headers={"Accept": "text/html"})
+                fetched += 1
+                full = jobs_data(hydration(detail.text)) if detail.status_code == 200 else None
+                job = {**entry, **full} if full else entry
+            yield parse(job, number, url, company, sector)

@@ -247,29 +247,34 @@ def test_apple_reads_search_pages_then_tech_detail_pages():
     from skillmap.http import PoliteClient
     from skillmap.sources import apple
 
-    def page(data: dict, body: str = "") -> str:
+    def page(data: dict) -> str:
         literal = _json.dumps(_json.dumps(data))[1:-1]
-        return f'<html>{body}<script>window.__staticRouterHydrationData = JSON.parse("{literal}");</script></html>'
+        return f'<html><script>window.__staticRouterHydrationData = JSON.parse("{literal}");</script></html>'
 
-    search = page({"loaderData": {}}, '<a href="/en-us/details/200644467-0836/senior-machine-learning-engineer-ads">x</a>'
-                  '<a href="/en-us/details/114438158/us-specialist-seasonal">y</a>'
-                  '<a href="/en-us/details/200000001-0836/software-engineer-maps">z</a>')
-    job = {"jobsData": {"postingTitle": "Senior Machine Learning Engineer - Ads", "jobSummary": "Build ranking models.",
-                        "minimumQualifications": "Python, PyTorch", "postingDate": "Nov 20, 2026",
-                        "locations": [{"city": "Cupertino", "stateProvince": "California", "countryName": "United States",
-                                       "countryID": "iso-country-USA"}]}}
+    def entry(number, title, slug):
+        return {"id": number, "postingTitle": title, "transformedPostingTitle": slug, "jobSummary": "Summary.",
+                "postingDate": "Nov 20, 2026", "locations": [{"city": "Cupertino", "stateProvince": "California",
+                                                              "countryName": "United States", "countryID": "iso-country-USA"}]}
+
+    search = page({"loaderData": {"search": {"searchResults": [
+        entry("200644467-0836", "Senior Machine Learning Engineer - Ads", "senior-machine-learning-engineer-ads"),
+        entry("114438158", "US - Specialist: Seasonal, Part-time", "us-specialist-seasonal"),
+        entry("200000001-0836", "Software Engineer, Maps", "software-engineer-maps")]}}})
+    detail = page({"loaderData": {"details": {"jobsData": {"postingTitle": "Senior Machine Learning Engineer - Ads",
+                                                           "minimumQualifications": "Python, PyTorch"}}}})
     calls = []
 
     def handler(request: httpx.Request) -> httpx.Response:
         calls.append(str(request.url))
-        if "/search" in request.url.path:
+        if request.url.path.endswith("/search"):
             return httpx.Response(200, text=search if request.url.params["page"] == "1" else "<html></html>")
-        return httpx.Response(200, text=page({"loaderData": {"details": job}}))
+        return httpx.Response(200, text=detail)
 
     client = PoliteClient(min_interval=0, transport=httpx.MockTransport(handler))
     posts = list(apple.collect(client, "en-us", "Apple", known={"200000001-0836"}))
     assert [p.native_id for p in posts] == ["200644467-0836", "200000001-0836"]
     first = posts[0]
     assert first.title == "Senior Machine Learning Engineer - Ads" and "PyTorch" in first.description
-    assert first.country_hint == "US" and first.posted_on.isoformat() == "2026-11-20"
+    assert "Summary." in first.description and first.country_hint == "US" and first.posted_on.isoformat() == "2026-11-20"
+    assert first.url.endswith("/details/200644467-0836/senior-machine-learning-engineer-ads")
     assert sum("/details/" in c for c in calls) == 1  # the retail role and the known role are not read
