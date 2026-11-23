@@ -64,8 +64,8 @@ Terraform,mid,0.057
 Terraform,senior,0.109
 Terraform,staff,0.11
 Terraform,manager,0.051
-C++,junior,0.201
-C++,mid,0.103
-C++,senior,0.121
-C++,staff,0.129
-C++,manager,0.048
+Data structures & algorithms,junior,0.175
+Data structures & algorithms,mid,0.07
+Data structures & algorithms,senior,0.083
+Data structures & algorithms,staff,0.102
+Data structures & algorithms,manager,0.037
