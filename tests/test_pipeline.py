@@ -133,6 +133,19 @@ def test_dedupe_prefers_company_board():
     assert merged["skills"] == ["Python", "SQL"]
 
 
+def test_dedupe_keeps_the_same_title_reposted_months_later():
+    def ad(pid, source, first, last):
+        return {"posting_id": pid, "source": source, "dedup_key": "k", "first_seen": first, "last_seen": last,
+                "skills": []}
+    rows = [ad("greenhouse:1", "greenhouse", date(2025, 3, 1), date(2025, 4, 1)),
+            ad("mcf:9", "mcf", date(2026, 3, 1), date(2026, 3, 20)),  # a year later: a new opening
+            ad("mcf:2", "mcf", date(2025, 4, 10), date(2025, 4, 30))]  # picked up late: the same ad
+    kept = aggregate.dedupe(rows)
+    assert sorted(r["posting_id"] for r in kept) == ["greenhouse:1", "mcf:9"]
+    first = next(r for r in kept if r["posting_id"] == "greenhouse:1")
+    assert first["last_seen"] == date(2025, 4, 30)
+
+
 def test_heatmap_escapes_names():
     svg = heatmap.render({"families": [{"key": "ai_ml", "label": "AI", "n": 1}],
                           "rows": [{"name": "C++ & <stuff>", "demand": {"ai_ml": 0.5}, "rating": 3}]}, "2026-11-17")

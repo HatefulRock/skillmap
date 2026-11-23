@@ -32,6 +32,7 @@ TOP_SEGMENT = 40
 TARGET_FAMILIES = ["ai_ml", "fde", "backend", "data"]
 SENIORITY_ORDER = ["intern", "junior", "mid", "senior", "staff", "manager", "unspecified"]
 TOP_GROUP_TREND = 30
+DEDUP_GAP_DAYS = 14  # aggregators can pick an ad up a week or two after the company posts it
 PAY_MIN = 20  # postings with stated pay before a country gets a figure
 PAY_CELL = 10  # ...and before a role × seniority cell does
 PAY_COUNTRIES = 4
@@ -44,25 +45,45 @@ def dedupe(rows: Iterable[dict]) -> list[dict]:
     company with five open "Software Engineer" seats on its own board keeps five rows. When a
     key spans sources, the highest-priority source's rows are kept and the others dropped; if
     that leaves a single row, it takes the widest live span and the union of skills found.
-    HN posts are never merged: they are a separate population.
+    Only rows live at overlapping times are merged: the same title posted again months later is
+    a new opening. HN posts are never merged: they are a separate population.
     """
     out: list[dict] = []
     groups: dict[str, list[dict]] = defaultdict(list)
     for row in rows:
         (out.append(row) if row["source"] == "hn" else groups[row["dedup_key"]].append(row))
     rank = {source: i for i, source in enumerate(SOURCE_PRIORITY)}
-    for members in groups.values():
-        best_source = min((r["source"] for r in members), key=lambda s: rank.get(s, 99))
-        kept = [r for r in members if r["source"] == best_source]
-        if len(kept) == 1 and len(members) > 1:
-            merged = dict(kept[0])
-            merged["first_seen"] = min(r["first_seen"] for r in members)
-            merged["last_seen"] = max(r["last_seen"] for r in members)
-            merged["skills"] = sorted(set().union(*(r["skills"] for r in members)))
-            merged["soft"] = sorted(set().union(*(r.get("soft") or [] for r in members)))
-            kept = [merged]
-        out.extend(kept)
+    for group in groups.values():
+        for members in _live_together(group):
+            out.extend(_merge(members, rank))
     return out
+
+
+def _live_together(rows: list[dict]) -> list[list[dict]]:
+    """Split one dedup key's rows into runs whose live spans overlap (within DEDUP_GAP_DAYS):
+    the same title a year later is a new opening, not the same ad on another site."""
+    clusters: list[list[dict]] = []
+    end: date | None = None
+    for row in sorted(rows, key=lambda r: r["first_seen"]):
+        if end is None or row["first_seen"] > end + timedelta(days=DEDUP_GAP_DAYS):
+            clusters.append([])
+            end = row["last_seen"]
+        clusters[-1].append(row)
+        end = max(end, row["last_seen"])
+    return clusters
+
+
+def _merge(members: list[dict], rank: dict[str, int]) -> list[dict]:
+    best_source = min((r["source"] for r in members), key=lambda s: rank.get(s, 99))
+    kept = [r for r in members if r["source"] == best_source]
+    if len(kept) == 1 and len(members) > 1:
+        merged = dict(kept[0])
+        merged["first_seen"] = min(r["first_seen"] for r in members)
+        merged["last_seen"] = max(r["last_seen"] for r in members)
+        merged["skills"] = sorted(set().union(*(r["skills"] for r in members)))
+        merged["soft"] = sorted(set().union(*(r.get("soft") or [] for r in members)))
+        kept = [merged]
+    return kept
 
 
 def active(rows: list[dict], start: date, end: date) -> list[dict]:
