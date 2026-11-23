@@ -294,6 +294,15 @@ companies:
   ats: oracle_hcm
   token: jpmc.fa.oraclecloud.com/CX_1001
   sector: fintech
+# Eightfold careers sites: token is "host|domain".
+- company: Netflix
+  ats: eightfold
+  token: explore.jobs.netflix.net|netflix.com
+  sector: tech
+- company: Oracle
+  ats: oracle_hcm
+  token: eeho.fa.us2.oraclecloud.com/CX_45001
+  sector: tech
 # Japan job boards in English, read through their job pages' JSON-LD; company "*" takes each
 # ad's employer from the page.
 - company: "*"

@@ -218,3 +218,22 @@ def test_amazon_pay_and_one_name_per_company():
     assert classify("Roblox") == "midsize"
     job = {"id": 1, "title": "Software Engineer", "job_post_info": {"min_salary": "150000", "max_salary": "250000", "currency": "USD"}}
     assert (tt.parse(job).salary_min, tt.parse(job).salary_period) == (150_000, "year")
+
+
+def test_eightfold_lists_then_reads_text_for_new_tech_ads():
+    from skillmap.sources import eightfold
+
+    def answer(url, params):
+        if url.endswith("/jobs"):
+            return {"count": 3, "positions": [
+                {"id": 1, "name": "Senior Software Engineer, Streaming", "locations": ["Los Gatos, California"], "t_create": 1795392000},
+                {"id": 2, "name": "Communications Manager", "location": "Seoul"},
+                {"id": 3, "name": "Machine Learning Engineer", "location": "Remote, US", "work_location_option": "remote"}]}
+        return {"job_description": f"<p>Text for {url.rsplit('/', 1)[1]}</p>"}
+
+    client = Fake(answer)
+    posts = list(eightfold.collect(client, "explore.jobs.netflix.net|netflix.com", "Netflix", known={"netflix:3"}))
+    assert [p.native_id for p in posts] == ["netflix:1", "netflix:3"]
+    assert posts[0].description == "<p>Text for 1</p>" and posts[0].posted_on.year == 2026
+    assert posts[1].description == "" and posts[1].remote_hint
+    assert sum(1 for c in client.calls if not c[0].endswith("/jobs")) == 1  # one text request, for the new ad

@@ -26,7 +26,7 @@ ALL_SOURCES = {"boards", "adzuna", "mcf", "hn", "public"}
 MAX_TABLE_BYTES = 420 * 1024 * 1024
 HOST_INTERVALS = {"api.smartrecruiters.com": 0.4, "hn.algolia.com": 0.5,
                   "apply.careers.microsoft.com": 4.0,
-                  "api.lifeattiktok.com": 1.5}  # answers 429 after a few quick requests
+                  "api.lifeattiktok.com": 1.5, "explore.jobs.netflix.net": 1.0}  # answers 429 after a few quick requests
 HEALTH_DAYS = 70  # earlier runs the health check compares with (about ten weekly runs)
 # Workable answers "429 Too Many Requests" to discovery at the default pace.
 DISCOVER_INTERVALS = {"workable": 1.5}
