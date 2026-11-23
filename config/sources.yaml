@@ -18,11 +18,15 @@ hn:
   backfill_from: 2011-01-01 # first run walks every monthly thread since then
 
 public:                     # public job-board APIs that ask for a credit link (see meta.attribution)
-  boards: [himalayas, jobicy, remoteok, arbeitnow]
+  boards: [himalayas, jobicy, remoteok, arbeitnow, remotive, workingnomads, getonbrd]
   himalayas:                # remote jobs worldwide, ~118k ads; search is 20 a page, newest first
     queries: ["software engineer", "machine learning", "ai engineer", "llm", "data engineer", "data scientist",
               "backend", "frontend", "full stack", "devops", "platform engineer", "solutions engineer",
               "forward deployed", "security engineer", "mobile developer", "python", "quantitative"]
     max_pages: 150           # ~1 week of "software engineer" is 60 pages; the search stops at 250
+  getonbrd:                 # Latin America (Chile, Mexico, Colombia, Peru…), Spanish and English ads
+    queries: ["software", "developer", "data", "machine learning", "devops", "backend", "frontend", "python"]
+  remotive:                 # a few hundred remote ads; asks for a handful of requests a day at most
+    categories: [software-development, data, devops, artificial-intelligence]
   jobicy:
     industries: [dev, data-science, engineering, technical-support]

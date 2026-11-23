@@ -25,16 +25,19 @@ from .sources import (
     amazon,
     ashby,
     boards_public,
+    gem,
     greenhouse,
     hn,
     jsonld,
     lever,
     mcf,
     microsoft,
+    oracle_hcm,
     personio,
     recruitee,
     smartrecruiters,
     teamtailor,
+    tiktok,
     workable,
     workday,
 )
@@ -43,11 +46,12 @@ from .store import Store
 log = logging.getLogger("skillmap")
 CONFIG = Path(__file__).resolve().parents[1] / "config"
 BOARDS = {"greenhouse": greenhouse, "lever": lever, "ashby": ashby, "workable": workable,
-          "recruitee": recruitee, "personio": personio, "teamtailor": teamtailor,
+          "recruitee": recruitee, "personio": personio, "teamtailor": teamtailor, "gem": gem,
           "smartrecruiters": smartrecruiters, "workday": workday, "amazon": amazon, "microsoft": microsoft,
+          "tiktok": tiktok, "oracle_hcm": oracle_hcm,
           "jsonld": jsonld}
 # Platforms whose list gives no text: their collectors fetch text only for postings not stored yet.
-NEEDS_KNOWN = {"smartrecruiters", "workday", "microsoft", "jsonld"}
+NEEDS_KNOWN = {"smartrecruiters", "workday", "microsoft", "oracle_hcm", "jsonld"}
 
 
 # After this many boards in a row on one platform fail with "429 Too Many Requests", the rest of

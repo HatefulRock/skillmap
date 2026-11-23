@@ -28,7 +28,7 @@ LABELS = {
 }
 # Boards companies set up themselves, which mostly means younger tech companies; the big ones
 # that use them are on the list.
-STARTUP_SOURCES = {"greenhouse", "lever", "ashby", "workable", "recruitee", "personio", "teamtailor"}
+STARTUP_SOURCES = {"greenhouse", "lever", "ashby", "workable", "recruitee", "personio", "teamtailor", "gem"}
 AGENCY = re.compile(
     r"\b(?:recruit\w*|staffing|manpower|personnel|talents?|human (?:resources?|capital|union)|hr|employment|"
     r"headhunt\w*|placement|careers? connex|michael page|hays|randstad|adecco|allegis|robert walters|"
