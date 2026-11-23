@@ -22,7 +22,7 @@ runs = {
     "remotive": lambda: bp.remotive(client, ["software-development"], since),
     "workingnomads": lambda: bp.working_nomads(client, since),
     "gem": lambda: gem.collect(client, "gem", "Gem"),
-    "apple": lambda: apple.collect(client, "en-us", "Apple", max_pages=3, max_new_texts=4),
+    "apple": lambda: apple.collect(client, "en-us", "Apple", max_pages=15, max_new_texts=4),
 }
 if "raw" in sys.argv:
     data = client.post_json(tiktok.API, {"keyword": "", "limit": 2, "offset": 0}, headers=tiktok.HEADERS)["data"]
