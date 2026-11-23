@@ -33,6 +33,8 @@ def places(city: object) -> list[str]:
 def parse(job: dict, company: str = "TikTok", sector: str | None = None) -> RawPosting:
     text = "\n\n".join(filter(None, [job.get("description"), job.get("requirement")]))
     info = job.get("job_post_info") if isinstance(job.get("job_post_info"), dict) else {}
+    low, high = _amount(info.get("min_salary")), _amount(info.get("max_salary"))
+    currency = str(info.get("currency") or "").upper() or None
     return RawPosting(
         source="tiktok",
         native_id=str(job.get("id")),
@@ -43,7 +45,18 @@ def parse(job: dict, company: str = "TikTok", sector: str | None = None) -> RawP
         location=", ".join(places(job.get("city_info"))),
         posted_on=parse_date(info.get("publish_time") or job.get("publish_time")),
         sector_hint=sector,
+        # Filled for pay-transparency locations; a yearly figure. salary.clean drops anything implausible.
+        salary_min=low, salary_max=high or low, salary_currency=currency if low else None,
+        salary_period="year" if low and currency else None,
     )
+
+
+def _amount(value: object) -> float | None:
+    try:
+        number = float(str(value).replace(",", ""))
+    except (TypeError, ValueError):
+        return None
+    return number if number > 0 else None
 
 
 def collect(client: PoliteClient, token: str = "tiktok", company: str = "TikTok", sector: str | None = None,

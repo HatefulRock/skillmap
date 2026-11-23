@@ -51,17 +51,50 @@ def _clean(company: str) -> str:
     return name
 
 
+# How a listed company is shown when an ad names a local legal entity ("GOOGLE ASIA PACIFIC PTE.
+# LTD.") or a board's internal name ("SpaceXSI"); otherwise the listed name is title-cased.
+DISPLAY = {
+    "aws": "Amazon", "amazon": "Amazon", "google": "Google", "alphabet": "Google", "google deepmind": "Google DeepMind",
+    "deepmind": "Google DeepMind", "youtube": "YouTube", "meta": "Meta", "facebook": "Meta", "nvidia": "NVIDIA",
+    "amd": "AMD", "advanced micro devices": "AMD", "ibm": "IBM", "sap": "SAP", "servicenow": "ServiceNow",
+    "hp": "HP", "hewlett packard enterprise": "Hewlett Packard Enterprise", "linkedin": "LinkedIn", "github": "GitHub",
+    "paypal": "PayPal", "tiktok": "TikTok", "bytedance": "ByteDance", "spacex": "SpaceX", "spacexsi": "SpaceX",
+    "x": "X", "ebay": "eBay", "asml": "ASML", "tsmc": "TSMC", "arm": "Arm", "grab": "Grab", "grabtaxi": "Grab",
+    "sea": "Sea", "booking com": "Booking.com", "booking": "Booking.com", "micron semiconductor": "Micron",
+    "jpmorgan chase": "JPMorgan Chase", "jpmorgan": "JPMorgan Chase", "jp morgan": "JPMorgan Chase",
+}
+
+
+def _listed(company: str) -> str | None:
+    """The longest listed name the company's name starts with: "google asia pacific" is "google"."""
+    words = _clean(company or "").split()
+    known = _known()
+    for n in range(len(words), 0, -1):
+        if " ".join(words[:n]) in known:
+            return " ".join(words[:n])
+    return None
+
+
+def display_name(company: str) -> str:
+    """One name per listed company, so its local entities count together; others unchanged."""
+    key = _listed(company)
+    if key is None:
+        return company
+    if key in DISPLAY:
+        return DISPLAY[key]
+    # The ad's own spelling when it is just the name ("Microsoft"), not a shouted legal entity.
+    if _clean(company) == key and not company.isupper():
+        return company.strip()
+    return key.title()
+
+
 def classify(company: str, sources: set[str] | frozenset[str] = frozenset()) -> str:
     name = _clean(company or "")
     if not name:
         return "unknown"
-    known = _known()
-    words = name.split()
-    # Longest listed prefix of the name wins: "google asia pacific" is Google.
-    for n in range(len(words), 0, -1):
-        tier = known.get(" ".join(words[:n]))
-        if tier:
-            return tier
+    key = _listed(name)
+    if key:
+        return _known()[key]
     if AGENCY.search(name):
         return "agency"
     if SERVICES.search(name):

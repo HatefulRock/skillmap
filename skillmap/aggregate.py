@@ -249,8 +249,11 @@ def salary_block(rows: list[dict], skills: list[str]) -> dict:
     sg = []
     for r in rows:
         if r.get("country") == "SG" and r.get("salary_currency") == "SGD" and r.get("salary_min"):
-            factor = 1 / 12 if r.get("salary_period") == "year" else 1
-            mid = (float(r["salary_min"]) + float(r.get("salary_max") or r["salary_min"])) / 2 * factor
+            low = salary.annual(r["salary_min"], r.get("salary_period"))
+            if not low:
+                continue
+            high = salary.annual(r.get("salary_max"), r.get("salary_period")) or low
+            mid = (low + high) / 2 / 12  # monthly, whatever period the ad used
             sg.append((mid, set(r["skills"])))
     overall = median([mid for mid, _ in sg]) if sg else None
     by_skill = []
@@ -535,6 +538,7 @@ def build(rows: list[dict], today: date, categories: dict[str, str], taxonomy_ve
     all_rows = dedupe(rows)
     for r in all_rows:
         r["size"] = company_size.classify(r.get("company") or "", {r["source"]})
+        r["company"] = company_size.display_name(r.get("company") or "")
     tech = [r for r in all_rows if r["role_family"] != "non_tech"]
     first_runs = {s: d for s, d in (first_runs or {}).items() if d <= today}
     market = observed([r for r in tech if r["source"] != "hn"], first_runs)

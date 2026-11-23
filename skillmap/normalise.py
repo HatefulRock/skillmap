@@ -33,8 +33,8 @@ def normalise(raw: RawPosting, taxonomy: Taxonomy, today: date, changed: set[str
     # published (when the board says so) until the day they stop appearing.
     first_seen = posted if raw.source == "hn" else (posted or today)
     last_seen = posted if raw.source == "hn" else today
-    pay = (raw.salary_min, raw.salary_max, raw.salary_currency, raw.salary_period)
-    if not (raw.salary_min and raw.salary_currency and raw.salary_period):
+    pay = salary.clean(raw.salary_min, raw.salary_max, raw.salary_currency, raw.salary_period)
+    if pay is None:
         # No salary field: many ads state the range in the text (US/EU pay-transparency laws, HN posts).
         pay = salary.from_text(plain, country) or (None, None, None, None)
     tech = family is not None

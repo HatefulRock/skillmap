@@ -47,7 +47,6 @@ big_tech:
   - linkedin
   - github
   - uber
-  - airbnb
   - booking
   - booking com
   - agoda
@@ -65,17 +64,14 @@ big_tech:
   - sea
   - garena
   - grab
+  - grabtaxi
   - tesla
   - spacex
   - spacexsi
   - x
   - twitter
-  - snap
-  - pinterest
-  - reddit
   - ebay
   - zoom
-  - dropbox
   - atlassian
   - autodesk
   - vmware
@@ -86,14 +82,19 @@ big_tech:
   - tsmc
   - walmart global tech
   - twitch
-  - roku
   - electronic arts
   - activision blizzard
-  - epic games
-  - riot games
-  - roblox
 
 midsize:
+  - airbnb
+  - reddit
+  - roblox
+  - epic games
+  - riot games
+  - roku
+  - dropbox
+  - pinterest
+  - snap
   - veeam software
   - voyager technologies
   - two six technologies
