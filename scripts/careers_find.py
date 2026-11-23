@@ -11,6 +11,7 @@ from __future__ import annotations
 
 import re
 import sys
+import time
 from urllib.parse import urlparse
 
 from skillmap import discover
@@ -40,7 +41,7 @@ def guesses(name: str) -> list[str]:
     stems = sorted({s for s in discover.slug_variants(name) if "-" not in s}, key=len)[:2] or discover.slug_variants(name)[:1]
     urls = []
     for stem in stems:
-        for tld in ("com", "io", "ai", "co.uk"):
+        for tld in ("com", "io", "ai"):
             urls += [f"https://www.{stem}.{tld}/careers", f"https://careers.{stem}.{tld}", f"https://jobs.{stem}.{tld}"]
     return urls
 
@@ -60,9 +61,13 @@ def main() -> None:
     min_ads = int(sys.argv[2]) if len(sys.argv) > 2 else 5
     candidates = discover.seen_candidates(min_ads=min_ads, limit=limit)
     print(f"{len(candidates)} employers seen only through job boards ({min_ads}+ tech ads)\n")
-    client = PoliteClient(min_interval=0.5, timeout=15.0)
+    client = PoliteClient(min_interval=0.3, timeout=6.0, retries=0)
+    deadline = time.monotonic() + 75 * 60  # the probe job stops at 90 minutes
     suggestions = []
     for c in candidates:
+        if time.monotonic() > deadline:
+            print("stopped at the time limit", flush=True)
+            break
         result = "no careers page found"
         for url in guesses(c.name):
             try:
@@ -79,7 +84,7 @@ def main() -> None:
             for ats, token in found[:1]:
                 suggestions.append(f"- company: {c.name}\n  ats: {ats}\n  token: {token}\n  sector: {c.sector}")
             break
-        print(f"{c.name[:40]:40} {result}")
+        print(f"{c.name[:40]:40} {result}", flush=True)
     print("\nSuggested companies.yaml entries (check each before adding):\n")
     print("\n".join(suggestions))
 
