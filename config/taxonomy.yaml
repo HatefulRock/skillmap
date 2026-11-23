@@ -9,7 +9,7 @@
 #
 # Bump `version` whenever a pattern (or any other extractor, e.g. salary) changes: stored
 # postings are re-extracted on the next run.
-version: 14  # v14: Chinese names for concept skills (机器学习, 大模型, 微服务…). v13: skill names in Spanish, Portuguese, French, German, Italian and Dutch for concept skills (machine learning, NLP, microservices, testing…). v12: ~90 more skills from a coverage check on stored ads (skillmap vocab): hardware and embedded, business apps (Salesforce, SAP, ServiceNow), R, MATLAB, Agile, Jira, Figma, Excel, identity, compliance, TLS/PKI, networking, build tools, ETL tools, data modelling and quality, pretraining, post-training, hyperparameter tuning, interpretability; AWS, Azure and GCP service names; context-free Cursor, Helm and Spark. v11: fewer false matches (Gemini the exchange, recruiting-fraud notices, DPO offices, 'embedding' as a verb, payment rails, non-AI guardrails and benchmarks). v10: one skill per specific technology (React, Next.js, Vue apart; each vector DB, eval tool, model provider, serving engine), each with a `group` for roll-ups. v9: security, identity, networking, DevOps/SRE, mobile, BI, Windows and virtualisation skills; bare CI, GitOps and GitLab. v2: salary from text. v3: ad length, years, unknown terms, degree, visa, equity. v4: no benefits/monitoring false positives. v5: seniority (bank grades, solutions architects), non-software engineering, pre-sales, more countries. v6: no shouted-heading words as unknown terms. v8: trading desk, ops and product roles as their own group. v7: soft skills (own section); quant roles need a quant or trading-tech title (no PMs, quantum, trading ops); risk modelling split from KYC/AML
+version: 15  # v15: JS and RL as JavaScript and reinforcement learning; 'PLN' (the Polish currency) no longer counts as NLP. v14: Chinese names for concept skills (机器学习, 大模型, 微服务…). v13: skill names in Spanish, Portuguese, French, German, Italian and Dutch for concept skills (machine learning, NLP, microservices, testing…). v12: ~90 more skills from a coverage check on stored ads (skillmap vocab): hardware and embedded, business apps (Salesforce, SAP, ServiceNow), R, MATLAB, Agile, Jira, Figma, Excel, identity, compliance, TLS/PKI, networking, build tools, ETL tools, data modelling and quality, pretraining, post-training, hyperparameter tuning, interpretability; AWS, Azure and GCP service names; context-free Cursor, Helm and Spark. v11: fewer false matches (Gemini the exchange, recruiting-fraud notices, DPO offices, 'embedding' as a verb, payment rails, non-AI guardrails and benchmarks). v10: one skill per specific technology (React, Next.js, Vue apart; each vector DB, eval tool, model provider, serving engine), each with a `group` for roll-ups. v9: security, identity, networking, DevOps/SRE, mobile, BI, Windows and virtualisation skills; bare CI, GitOps and GitLab. v2: salary from text. v3: ad length, years, unknown terms, degree, visa, equity. v4: no benefits/monitoring false positives. v5: seniority (bank grades, solutions architects), non-software engineering, pre-sales, more countries. v6: no shouted-heading words as unknown terms. v8: trading desk, ops and product roles as their own group. v7: soft skills (own section); quant roles need a quant or trading-tech title (no PMs, quantum, trading ops); risk modelling split from KYC/AML
 
 skills:
   Python:
@@ -30,6 +30,8 @@ skills:
     patterns:
     - \bjavascript\b
     - \becmascript\b
+    cs:
+    - '(?<![.\w])JS\b(?![.\-/])'
   Node.js:
     category: Languages
     group: JavaScript / TypeScript
@@ -974,7 +976,6 @@ skills:
     - '\bprocessamento de linguagem natural\b'
     - '\btraitement (?:automatique )?du langage naturel\b'
     - '\bverarbeitung nat[üu]rlicher sprache\b'
-    - '\bpln\b'
     - '\btaln\b'
     - '自然语言处理'
     - '自然語言處理'
@@ -1032,6 +1033,8 @@ skills:
     - '\bapprentissage par renforcement\b'
     - '\bbest[äa]rkende[sn]? lernen\b'
     - '强化学习'
+    cs:
+    - '(?<![\w-])RL\b(?![\w-])'
   Distillation:
     category: ML
     group: Post-training

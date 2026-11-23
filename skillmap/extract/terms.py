@@ -46,6 +46,9 @@ STOP = {
     # names, and hardware or acronyms too generic or ambiguous to be a skill (CPU, DB, CD, AD).
     "STEM", "FSA", "HSA", "FMLA", "PPO", "HMO", "EPO", "EAP", "RSU", "ESPP", "DOE", "STD", "HQ", "SME", "RFP",
     "RFI", "SOP", "SOW", "FDE", "NVIDIA", "CPU", "DB", "CD", "AD", "TBA", "ASAP", "AM", "EOD",
+    # Company legal forms, work modes and more US state codes seen in titles and locations.
+    "GMBH", "GmbH", "SE", "AG", "KG", "SA", "SAS", "BV", "NV", "SRL", "SPA", "PLC", "LLP", "KK", "HYBRID", "REMOTE", "ONSITE",
+    "TN", "WI", "MO", "KY", "SC", "AL", "OK", "KS", "NE", "NM", "MT", "NH", "ME", "RI", "DE",
     # "AI" in German, French and Spanish ads; employers and agencies; life-science words.
     "KI", "IA", "IBM", "NASA", "DoD", "DOD", "NATO", "FDA", "DNA", "RNA", "GMP", "OSHA", "EHS",
 }
