@@ -164,3 +164,11 @@ def test_pre_sales_needs_a_customer_context():
     assert skill not in found("Build PoCs for new features and handle stakeholder management across teams.")
     assert skill not in found("A customer-facing product used by millions.")
     assert skill in found("Lead technical discovery and customer demos through the sales cycle.")
+
+
+def test_rating_provenance_names_rated_skills_with_known_sources():
+    profile = yaml.safe_load((CONFIG / "my_skills.yaml").read_text())
+    listed = [s for skills in profile["provenance"].values() for s in skills]
+    assert set(profile["provenance"]) <= {"owner", "resume", "bucket"}
+    assert set(listed) <= set(profile["ratings"]) and len(listed) == len(set(listed))
+    assert profile["status"]

@@ -334,3 +334,15 @@ def test_basis_lists_only_his_rated_skills_that_co_occur_most():
     ratings = {"Python": 5, "Docker": 3, "Go": 2}  # Go is rated below 3, Kubernetes unrated
     assert insights.basis(rows, "Kubernetes", ratings) == ["Python", "Docker"]
     assert insights.basis(rows, "Kubernetes", {}) == []
+
+
+def test_me_rows_carry_where_each_rating_came_from():
+    from skillmap import aggregate
+
+    rows = [row(i, ["Python", "Go"], role_family="ai_ml") for i in range(5)]
+    out = aggregate.me_block(rows, {"Python": 5, "Go": 2}, {"Python": "Languages", "Go": "Languages", "Rust": "Languages"},
+                             {"status": "DRAFT", "source": {"Go": "bucket"}})
+    by_name = {r["name"]: r for r in out["rows"]}
+    assert out["ratings_status"] == "DRAFT"
+    assert (by_name["Python"]["source"], by_name["Go"]["source"]) == ("draft", "bucket")
+    assert all(r["source"] is None for r in out["rows"] if r["rating"] is None)
