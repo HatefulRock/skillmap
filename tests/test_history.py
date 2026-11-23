@@ -93,6 +93,9 @@ def client():
 def test_pick_crawls_last_of_each_half_year_skipping_the_running_one():
     crawls = history.pick_crawls(client().get_json(history.COLLINFO), TODAY)
     assert [(c.id, c.period) for c in crawls] == [("CC-MAIN-2024-33", "2024-07")]
+    # A crawl that held no job pages gives way to the half-year's earlier crawl.
+    crawls = history.pick_crawls(client().get_json(history.COLLINFO), TODAY, {"CC-MAIN-2024-33"})
+    assert [(c.id, c.period) for c in crawls] == [("CC-MAIN-2024-30", "2024-07")]
 
 
 def test_job_key_only_job_pages():
@@ -205,13 +208,18 @@ def test_cluster_search_over_a_large_index():
 def test_an_empty_crawl_is_retried_before_it_counts_as_done(tmp_path):
     empty = PoliteClient(min_interval=0, transport=httpx.MockTransport(
         lambda r: handler(r) if str(r.url).startswith(history.COLLINFO) else httpx.Response(503)), retries=0)
-    # An index that can't be read gives no captures: that gets NO_INDEX_TRIES runs, with the errors kept.
-    for run in range(1, history.NO_INDEX_TRIES + 1):
+    # An index that can't be read gives no captures; the errors are kept.
+    for run in range(1, history.EMPTY_TRIES + 1):
         history.run(empty, TAX, tmp_path, None, TODAY, budget_minutes=10)
         state = json.loads((tmp_path / "history-state.json").read_text())
-        assert ("CC-MAIN-2024-33" in state["crawls"]) is (run == history.NO_INDEX_TRIES)
+        assert ("CC-MAIN-2024-33" in state["crawls"]) is (run == history.EMPTY_TRIES)
         if run == 1:
             assert state["empty_stats"]["CC-MAIN-2024-33"]["index_errors"]
+    # Settled with no pages at all, its half-year moves on to the earlier crawl.
+    history.run(empty, TAX, tmp_path, None, TODAY, budget_minutes=10)
+    state = json.loads((tmp_path / "history-state.json").read_text())
+    assert state["empty"] == {"CC-MAIN-2024-30": 1}
+    state.pop("empty_stats", None)
     # A crawl recorded empty by an older run (no tries) is tried again.
     state["crawls"]["CC-MAIN-2024-33"] = {"period": "2024-07", "ads": 0}
     state.pop("empty", None)

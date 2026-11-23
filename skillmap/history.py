@@ -49,7 +49,6 @@ PER_COMPANY = 8
 MAX_FETCHES = 1000  # page fetches per crawl, since many pages turn out not to be tech roles
 INDEX_PAGES = 12  # index blocks (3,000 captures each) read per host, spread across the alphabet of board names
 EMPTY_TRIES = 3  # runs a crawl may come back empty before it counts as done with no ads
-NO_INDEX_TRIES = 10  # the same when its index gave no captures at all, which is usually the server failing
 MIN_PERIOD = 100  # a half-year with fewer tech ads gets no shares
 INTERVALS = {"index.commoncrawl.org": 2.0, "data.commoncrawl.org": 1.0}  # it answers 503 when pressed
 
@@ -79,9 +78,10 @@ def half_year(day: date) -> str:
     return f"{day.year}-{'01' if day.month <= 6 else '07'}"
 
 
-def pick_crawls(collinfo: list[dict], today: date) -> list[Crawl]:
+def pick_crawls(collinfo: list[dict], today: date, skip: frozenset[str] | set[str] = frozenset()) -> list[Crawl]:
     """The last crawl of each half-year from FIRST_YEAR on, newest first; the running half-year is
-    left out until it ends (the live data covers it)."""
+    left out until it ends (the live data covers it). Crawls in `skip` (ones that held no job
+    pages at all) give way to the half-year's next-latest crawl."""
     by_period: dict[str, Crawl] = {}
     for entry in collinfo:
         match = re.fullmatch(r"CC-MAIN-(\d{4})-(\d{2})", entry.get("id", ""))
@@ -89,7 +89,7 @@ def pick_crawls(collinfo: list[dict], today: date) -> list[Crawl]:
             continue
         crawl = Crawl(entry["id"], entry["cdx-api"], "")
         period = half_year(crawl.day)
-        if period == half_year(today):
+        if period == half_year(today) or crawl.id in skip:
             continue
         if period not in by_period or crawl.day > by_period[period].day:
             by_period[period] = Crawl(crawl.id, crawl.cdx, period)
@@ -412,7 +412,10 @@ def run(client: PoliteClient, taxonomy: Taxonomy, out: Path, archive: Archive | 
     tries: dict[str, int] = dict(state.get("empty") or {})
     redone = reextract(rows, state, archive, taxonomy)
     try:
-        crawls = pick_crawls(client.get_json(COLLINFO), today)
+        # Some crawls hold no Greenhouse or Lever pages at all (2016 H1, 2018 H1, 2022 H2 and 2025 H2
+        # came back with no captures, run after run); their half-year falls back to an earlier crawl.
+        no_pages = {k for k, v in state["crawls"].items() if not v.get("ads") and v.get("stats", {}).get("captures") == 0}
+        crawls = pick_crawls(client.get_json(COLLINFO), today, no_pages)
     except Exception as exc:  # noqa: BLE001 - keep any re-extraction; the next run tries again
         log.warning("history: crawl list unavailable: %s", exc)
         crawls = []
@@ -448,10 +451,7 @@ def run(client: PoliteClient, taxonomy: Taxonomy, out: Path, archive: Archive | 
             break
         state.get("partial", {}).pop(crawl.id, None)
         got = len(prior) + len(new)
-        # No captures at all usually means the index files couldn't be read this time, so that
-        # is given more runs than a crawl whose pages were read and held no tech ads.
-        limit = EMPTY_TRIES if progress["stats"]["captures"] else NO_INDEX_TRIES
-        if not got and tries.get(crawl.id, 0) + 1 < limit:
+        if not got and tries.get(crawl.id, 0) + 1 < EMPTY_TRIES:
             log.warning("history %s: no ads; the next run tries again (%s)", crawl.id, progress["stats"])
             state.setdefault("empty", {})[crawl.id] = tries.get(crawl.id, 0) + 1
             state.setdefault("empty_stats", {})[crawl.id] = progress["stats"]
