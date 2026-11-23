@@ -9,7 +9,7 @@
 #
 # Bump `version` whenever a pattern (or any other extractor, e.g. salary) changes: stored
 # postings are re-extracted on the next run.
-version: 13  # v13: skill names in Spanish, Portuguese, French, German, Italian and Dutch for concept skills (machine learning, NLP, microservices, testing…). v12: ~90 more skills from a coverage check on stored ads (skillmap vocab): hardware and embedded, business apps (Salesforce, SAP, ServiceNow), R, MATLAB, Agile, Jira, Figma, Excel, identity, compliance, TLS/PKI, networking, build tools, ETL tools, data modelling and quality, pretraining, post-training, hyperparameter tuning, interpretability; AWS, Azure and GCP service names; context-free Cursor, Helm and Spark. v11: fewer false matches (Gemini the exchange, recruiting-fraud notices, DPO offices, 'embedding' as a verb, payment rails, non-AI guardrails and benchmarks). v10: one skill per specific technology (React, Next.js, Vue apart; each vector DB, eval tool, model provider, serving engine), each with a `group` for roll-ups. v9: security, identity, networking, DevOps/SRE, mobile, BI, Windows and virtualisation skills; bare CI, GitOps and GitLab. v2: salary from text. v3: ad length, years, unknown terms, degree, visa, equity. v4: no benefits/monitoring false positives. v5: seniority (bank grades, solutions architects), non-software engineering, pre-sales, more countries. v6: no shouted-heading words as unknown terms. v8: trading desk, ops and product roles as their own group. v7: soft skills (own section); quant roles need a quant or trading-tech title (no PMs, quantum, trading ops); risk modelling split from KYC/AML
+version: 14  # v14: Chinese names for concept skills (机器学习, 大模型, 微服务…). v13: skill names in Spanish, Portuguese, French, German, Italian and Dutch for concept skills (machine learning, NLP, microservices, testing…). v12: ~90 more skills from a coverage check on stored ads (skillmap vocab): hardware and embedded, business apps (Salesforce, SAP, ServiceNow), R, MATLAB, Agile, Jira, Figma, Excel, identity, compliance, TLS/PKI, networking, build tools, ETL tools, data modelling and quality, pretraining, post-training, hyperparameter tuning, interpretability; AWS, Azure and GCP service names; context-free Cursor, Helm and Spark. v11: fewer false matches (Gemini the exchange, recruiting-fraud notices, DPO offices, 'embedding' as a verb, payment rails, non-AI guardrails and benchmarks). v10: one skill per specific technology (React, Next.js, Vue apart; each vector DB, eval tool, model provider, serving engine), each with a `group` for roll-ups. v9: security, identity, networking, DevOps/SRE, mobile, BI, Windows and virtualisation skills; bare CI, GitOps and GitLab. v2: salary from text. v3: ad length, years, unknown terms, degree, visa, equity. v4: no benefits/monitoring false positives. v5: seniority (bank grades, solutions architects), non-software engineering, pre-sales, more countries. v6: no shouted-heading words as unknown terms. v8: trading desk, ops and product roles as their own group. v7: soft skills (own section); quant roles need a quant or trading-tech title (no PMs, quantum, trading ops); risk modelling split from KYC/AML
 
 skills:
   Python:
@@ -137,12 +137,18 @@ skills:
     - '\bmodelos? de linguagem\b'
     - '\bmod[eè]les? de langage\b'
     - '\bsprachmodelle?n?\b'
+    - '大语言模型'
+    - '大模型'
+    - '生成式人工智能'
+    - '生成式AI'
+    - '生成式ai'
   RAG:
     category: LLM & agents
     group: LLM concepts
     patterns:
     - \brag\b
     - \bretrieval[- ]augmented\b
+    - '检索增强生成'
   AI agents / agentic workflows:
     category: LLM & agents
     group: LLM concepts
@@ -156,6 +162,7 @@ skills:
     - '\bagentes de (?:ia|inteligencia artificial)\b'
     - '\bagents? (?:d''ia|ia|intelligents?)\b'
     - '\bki-agenten\b'
+    - '智能体'
   Multi-agent systems:
     category: LLM & agents
     group: LLM concepts
@@ -621,6 +628,9 @@ skills:
     - '\bdatenpipelines?\b'
     - '\bingesta de datos\b'
     - '\bingest[aã]o de dados\b'
+    - '数据管道'
+    - '数据仓库'
+    - '数仓'
   dbt:
     category: Retrieval & data
     group: Data pipelines
@@ -929,6 +939,8 @@ skills:
     - '\bmaschinelle[snm]? lernen?s?\b'
     - '\bapprendimento automatico\b'
     - '\bmachinaal leren\b'
+    - '机器学习'
+    - '機器學習'
   Deep learning:
     category: ML
     group: ML concepts
@@ -946,6 +958,9 @@ skills:
     - '\br[ée]seaux? (?:de )?neurones?\b'
     - '\bneuronale[n]? netze?\b'
     - '\breti neurali\b'
+    - '深度学习'
+    - '神经网络'
+    - '深度學習'
   NLP:
     category: ML
     group: ML concepts
@@ -961,6 +976,8 @@ skills:
     - '\bverarbeitung nat[üu]rlicher sprache\b'
     - '\bpln\b'
     - '\btaln\b'
+    - '自然语言处理'
+    - '自然語言處理'
   Fine-tuning:
     category: ML
     group: Post-training
@@ -971,6 +988,7 @@ skills:
     - \bsupervised fine
     - '\bajuste fino\b'
     - '\bafinamiento\b'
+    - '微调'
   LoRA / PEFT:
     category: ML
     group: Post-training
@@ -1013,6 +1031,7 @@ skills:
     - '\baprendizado por refor[cç]o\b'
     - '\bapprentissage par renforcement\b'
     - '\bbest[äa]rkende[sn]? lernen\b'
+    - '强化学习'
   Distillation:
     category: ML
     group: Post-training
@@ -1123,6 +1142,7 @@ skills:
     - '\bzeitreihen\w*\b'
     - '\bpron[oó]stic\w+\b'
     - '\bprevis[aã]o de demanda\b'
+    - '时间序列'
   Anomaly detection:
     category: ML
     group: Applied ML
@@ -1133,6 +1153,7 @@ skills:
     - '\bdetec[cç][aã]o de anomalias\b'
     - '\bd[ée]tection d''anomalies\b'
     - '\banomalieerkennung\b'
+    - '异常检测'
   Recommender systems:
     category: ML
     group: Applied ML
@@ -1143,6 +1164,8 @@ skills:
     - '\bsistemas? de recomenda[cç][aã]o\b'
     - '\bsyst[eè]mes? de recommandation\b'
     - '\bempfehlungssystem\w*\b'
+    - '推荐系统'
+    - '推荐算法'
   Graph neural networks:
     category: ML
     group: Applied ML
@@ -1162,6 +1185,9 @@ skills:
     - '\bvision (?:par ordinateur|artificielle)\b'
     - '\bbildverarbeitung\b'
     - '\bvisione artificiale\b'
+    - '计算机视觉'
+    - '图像识别'
+    - '電腦視覺'
   OpenCV:
     category: ML
     group: Vision & speech
@@ -1203,6 +1229,8 @@ skills:
     - '\breconhecimento de fala\b'
     - '\breconnaissance vocale\b'
     - '\bspracherkennung\b'
+    - '语音识别'
+    - '语音合成'
   Feature engineering:
     category: ML
     group: ML data
@@ -1404,6 +1432,8 @@ skills:
     - '\bmicroservicios\b'
     - '\bmicrosservi[cç]os\b'
     - '\bmicroservizi\b'
+    - '微服务'
+    - '微服務'
   Distributed systems:
     category: Backend
     group: Architecture
@@ -1418,6 +1448,10 @@ skills:
     - '\balta disponibilidad(?:e)?\b'
     - '\bhaute disponibilit[ée]\b'
     - '\bhochverf[üu]gbar\w*\b'
+    - '分布式系统'
+    - '分布式'
+    - '高并发'
+    - '高可用'
   Async Python (asyncio):
     category: Backend
     group: Python web
@@ -1454,6 +1488,8 @@ skills:
     - '\barchitecture logicielle\b'
     - '\bsoftwarearchitektur\b'
     - '\bdise[ñn]o de sistemas\b'
+    - '系统设计'
+    - '架构设计'
   pytest:
     category: Backend
     group: Testing
@@ -1488,6 +1524,9 @@ skills:
     - '\btests? (?:unitaires?|d''int[ée]gration|automatis[ée]s)\b'
     - '\bunit-?tests?\b'
     - '\bintegrationstests?\b'
+    - '单元测试'
+    - '自动化测试'
+    - '集成测试'
     cs:
     - \bUAT\b
   TDD:

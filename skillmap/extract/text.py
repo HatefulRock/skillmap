@@ -24,11 +24,18 @@ SECTION_HEADING = re.compile(
 NICE_INLINE = re.compile(r"\b(?:is a (?:big )?plus|a plus\b|nice to have|preferred\b|bonus\b|advantageous|desirable)", re.I)
 
 
+# Chinese, Japanese and Korean count as word characters, so "熟悉Python和" has no word boundary
+# around Python; a space at each script change lets \b patterns match inside CJK text.
+_CJK = "\u3040-\u30ff\u3400-\u9fff\uac00-\ud7af"
+_CJK_EDGE = re.compile(rf"(?<=[{_CJK}])(?=[A-Za-z0-9])|(?<=[A-Za-z0-9+#])(?=[{_CJK}])")
+
+
 def to_plain(text: str) -> str:
     text = html.unescape(text or "")
     text = _BLOCK_TAGS.sub("\n", text)
     text = _TAGS.sub(" ", text)
     text = html.unescape(text)  # double-escaped sources
+    text = _CJK_EDGE.sub(" ", text)
     lines = [_SPACES.sub(" ", line).strip() for line in text.splitlines()]
     return "\n".join(line for line in lines if line)
 

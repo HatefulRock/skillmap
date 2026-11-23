@@ -90,6 +90,12 @@ _WORDS: list[tuple[re.Pattern[str], str]] = [(re.compile(a, re.I), b) for a, b i
     (r"\b(?:calidad|qualidade|qualit[ée]|qualit[äa]t|qualit[àa])\b", "quality"),
     (r"\b(?:procesos|processos|proc[ée]d[ée]s|prozess\w*)\b", "process"),
     (r"\b(?:construcci[oó]n|constru[cç][aã]o|bau\w*)\b", "construction"),
+    # Chinese job words.
+    (r"机器学习|機器學習", " machine learning "), (r"人工智能", " AI "), (r"大语言模型|大模型", " LLM "),
+    (r"算法", " ML "), (r"数据|數據", " data "), (r"软件|軟體", " software "), (r"后端|後端", " backend "),
+    (r"前端", " frontend "), (r"全栈", " full stack "), (r"移动端|客户端", " mobile "), (r"运维", " devops "),
+    (r"云计算", " cloud "), (r"安全", " security "), (r"架构师", " architect "), (r"科学家", " scientist "),
+    (r"分析师", " analyst "), (r"研发|开发|開發", " developer "), (r"工程师|工程師", " engineer "),
     # Japanese and Korean katakana / hangul job words.
     (r"エンジニア|엔지니어", " engineer "), (r"データ|데이터", " data "), (r"機械学習|머신러닝", " machine learning "),
     (r"ソフトウェア|소프트웨어", " software "), (r"バックエンド|백엔드", " backend "), (r"フロントエンド|프론트엔드", " frontend "),
