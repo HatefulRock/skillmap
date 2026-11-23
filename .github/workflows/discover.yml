@@ -13,7 +13,7 @@ on:
         default: ""
       platforms:
         description: "Comma-separated platforms to probe (smartrecruiters is opt-in: its robots.txt disallows crawlers)"
-        default: "greenhouse,lever,ashby,workable"
+        default: "greenhouse,lever,ashby,workable,recruitee,personio,teamtailor"
       yc:
         description: "Probe every hiring Y Combinator company (off: candidates.yaml and Common Crawl only)"
         type: boolean
@@ -41,7 +41,7 @@ jobs:
 
       - name: Probe job boards
         run: |
-          args=(--platforms "${{ inputs.platforms || 'greenhouse,lever,ashby,workable' }}")
+          args=(--platforms "${{ inputs.platforms || 'greenhouse,lever,ashby,workable,recruitee,personio,teamtailor' }}")
           [ -n "${{ inputs.limit }}" ] && args+=(--limit "${{ inputs.limit }}")
           [ "${{ inputs.yc }}" = "false" ] && args+=(--no-yc)
           uv run skillmap discover "${args[@]}" | tee discover-summary.txt
