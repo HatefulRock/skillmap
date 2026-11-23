@@ -111,7 +111,7 @@ def test_learn_next_weighs_demand_gap_and_premium():
     # Go is the last gap in the 20 ads without Rust: 1.0 × 1/3 + 10 × 0.5 beats Rust's (0.5 + 0) × 2.
     assert [e["name"] for e in out] == ["Go", "Rust"]
     assert out[0] == {"name": "Go", "category": "Languages", "demand": 1.0, "unlocks": 20, "n_target": 40,
-                      "rating": 2, "premium": None, "score": 5.3333}
+                      "rating": 2, "premium": None, "score": 5.3333, "basis": ["Python"]}
     assert insights.learn_next(rows, {}, premium, {}, ["ai_ml"]) == []
 
 
@@ -325,3 +325,12 @@ def test_current_keeps_skills_central_to_one_role_even_when_rare_overall(monkeyp
     assert "JAX" not in names  # rare everywhere, and not its category's top
     ft = next(s for s in block["skills"] if s["name"] == "Fine-tuning")
     assert ft["roles"] == {"ai_ml": 0.9756} and block["n_roles"] == {"ai_ml": 41, "backend": 200}
+
+
+def test_basis_lists_only_his_rated_skills_that_co_occur_most():
+    from skillmap import insights
+
+    rows = [{"skills": ["Kubernetes", "Python", "Docker"]}] * 3 + [{"skills": ["Kubernetes", "Python", "Go"]}] * 2
+    ratings = {"Python": 5, "Docker": 3, "Go": 2}  # Go is rated below 3, Kubernetes unrated
+    assert insights.basis(rows, "Kubernetes", ratings) == ["Python", "Docker"]
+    assert insights.basis(rows, "Kubernetes", {}) == []
