@@ -92,3 +92,43 @@ def test_oracle_fetches_text_only_for_new_tech_ads():
     details = [c for c in client.calls if "Details" in c[0]]
     assert len(details) == 1 and 'Id="1"' in details[0][1]["finder"]
     assert out[0].posted_on == date(2026, 11, 20)
+
+
+def test_titles_in_other_languages_are_read_as_english():
+    from skillmap.extract import roles
+
+    cases = {
+        "Ingeniero de Datos": "data", "Softwareentwickler (m/w/d)": "backend", "Java-Entwicklerin": "backend",
+        "Científico de Datos": "ai_ml", "Ingénieur Machine Learning": "ai_ml", "Desenvolvedor Python Sênior": "backend",
+        "Ingeniera de IA": "ai_ml", "KI-Entwickler": "ai_ml", "Ingegnere del Software": "backend",
+        "Arquitecto de Soluciones": "fde", "Liderança Técnica": "other_eng", "データエンジニア": "data",
+        "백엔드 개발자": "backend", "Ingénieur Sécurité Cloud": "infra",
+        # non-software engineering stays out, in any language
+        "Ingeniero Mecánico": None, "Elektroingenieur (m/w/d)": None, "Bauingenieur": None, "Técnico de Mantenimiento": None,
+        # English titles keep their word order and family
+        "Senior Solution Architect Security Specialist": "fde", "Senior Electrical Engineer Data Centers": "other_eng",
+        "Asia Sales Lead": None,
+    }
+    assert {t: roles.classify(t) for t in cases} == cases
+
+
+def test_skills_in_other_languages():
+    from skillmap.extract.skills import Taxonomy
+
+    tax = Taxonomy.load()
+    skills, _ = tax.extract("Ingeniero de Datos", "Experiencia en aprendizaje automático, microservicios y pruebas unitarias.")
+    assert {"Machine learning fundamentals", "Microservices", "Unit / integration testing"} <= set(skills)
+    skills, _ = tax.extract("Data Scientist", "Erfahrung mit maschinellem Lernen und verteilten Systemen.")
+    assert "Machine learning fundamentals" in skills
+
+
+def test_a_retitled_non_tech_posting_is_fetched_again():
+    from skillmap.runner import _known
+
+    class S:
+        def known_ids(self, source):
+            return {"1", "2", "3"}
+
+        def non_tech_titles(self, source):
+            return {"2": "Softwareentwickler (m/w/d)", "3": "Buchhalter"}
+    assert _known(S(), "workday") == {"1", "3"}
