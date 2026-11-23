@@ -103,6 +103,27 @@ def annual_wage(row: dict[str, str]) -> float | None:
     return wage if MIN_USD <= wage <= MAX_USD else None
 
 
+LEGAL = re.compile(r"[\s,]+(?:inc|incorporated|corp|corporation|co|company|llc|l\.l\.c|llp|l\.l\.p|lp|ltd|limited|"
+                   r"plc|pllc|pc|n\.?a|u\.?s\.?(?:a\.?)?|holdings?|group)\.?$", re.I)
+
+
+def employer_name(raw: str) -> str:
+    """One display name per employer: listed companies by their canonical name, others without the
+    legal form and out of capitals ("WAL-MART ASSOCIATES, INC." is "Wal-Mart Associates")."""
+    raw = re.sub(r"\s+", " ", raw).strip(" ,.")
+    shown = company_size.display_name(raw)
+    if shown != raw:
+        return shown
+    previous = None
+    while previous != raw:
+        previous, raw = raw, LEGAL.sub("", raw).strip(" ,.")
+    if raw.isupper():
+        small = {"OF": "of", "AND": "and", "THE": "the", "FOR": "for"}
+        raw = " ".join(small[w] if w in small and i else w if len(w) <= 3 and w.isalpha() and w not in small
+                       else w.title() for i, w in enumerate(raw.split()))
+    return raw or previous
+
+
 def parse(row: dict[str, str]) -> dict | None:
     """A certified H-1B filing for a technical role, reduced to what the pay view needs."""
     if (row.get("CASE_STATUS") or "").strip().lower() != "certified":
@@ -118,7 +139,7 @@ def parse(row: dict[str, str]) -> dict | None:
         return None
     employer = (row.get("EMPLOYER_NAME") or "").strip()
     return {
-        "company": company_size.display_name(employer),
+        "company": employer_name(employer),
         "size": company_size.classify(employer),
         "role_family": family,
         "seniority": seniority.classify(title),

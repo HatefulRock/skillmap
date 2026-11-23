@@ -62,3 +62,12 @@ def test_latest_files_and_summary():
     assert data["by_company"][0]["company"] == "Google" and data["by_company"][0]["n"] == 25
     assert data["by_role"]["backend"]["median"] == 162000
     assert "backend" in data["by_company"][0]["roles"]
+
+
+def test_employer_names_merge_legal_entities():
+    assert visa.employer_name("Apple Inc.") == "Apple"
+    assert visa.employer_name("GOOGLE LLC") == "Google"
+    assert visa.employer_name("Microsoft Corporation") == "Microsoft"
+    assert visa.employer_name("WAL-MART ASSOCIATES, INC.") == "Wal-Mart Associates"
+    assert visa.employer_name("Ernst & Young U.S. LLP") == "Ernst & Young"
+    assert visa.employer_name("BANK OF AMERICA N.A.") == "Bank of America"
