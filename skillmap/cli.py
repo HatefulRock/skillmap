@@ -68,8 +68,9 @@ def write_outputs(store: Store, taxonomy: Taxonomy, today: date, out: Path, runs
     rows = aggregate.split_soft(store.rows(), taxonomy.categories)
     profile = load_yaml("my_skills.yaml") or {}
     ratings = profile.get("ratings") or {}
+    sources = {skill: kind for kind, skills in (profile.get("provenance") or {}).items() for skill in skills or []}
     data = aggregate.build(rows, today, taxonomy.categories, taxonomy.version, ratings, runs, store.first_runs(),
-                           groups=taxonomy.groups,
+                           groups=taxonomy.groups, rating_meta={"status": profile.get("status"), "source": sources},
                            frontier=frozenset(c.lower() for c in load_yaml("frontier.yaml")["companies"]))
     out.mkdir(parents=True, exist_ok=True)
     # The weekly note compares with the previous run's file, so read it before overwriting.

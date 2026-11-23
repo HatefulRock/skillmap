@@ -440,14 +440,19 @@ def pairs_block(rows: list[dict], skills: list[str], top: int = 5) -> dict:
     return out
 
 
-def me_block(rows: list[dict], ratings: dict[str, int], categories: dict[str, str]) -> dict:
-    """The heatmap: market demand per target role family next to the owner's own rating."""
+def me_block(rows: list[dict], ratings: dict[str, int], categories: dict[str, str],
+             meta: dict | None = None) -> dict:
+    """The heatmap: market demand per target role family next to the owner's own rating.
+    `meta` carries the ratings file's status line and where each rating came from."""
+    meta = meta or {}
+    source = meta.get("source") or {}
     families = {f: [r for r in rows if r["role_family"] == f] for f in TARGET_FAMILIES}
     family_shares = {f: shares(group) for f, group in families.items()}
     target = [r for f in ("ai_ml", "fde", "backend") for r in families[f]]
     ranked = [name for name, _ in sorted(shares(target).items(), key=lambda kv: -kv[1])]
     picked = ranked[:24] + [s for s in ratings if s not in ranked[:24] and s in categories][:6]
     return {
+        "ratings_status": meta.get("status"),
         "families": [{"key": f, "label": roles.LABELS[f], "n": len(families[f])} for f in TARGET_FAMILIES],
         "rows": [
             {
@@ -455,6 +460,8 @@ def me_block(rows: list[dict], ratings: dict[str, int], categories: dict[str, st
                 "category": categories.get(skill, "Other"),
                 "demand": {f: family_shares[f].get(skill, 0.0) for f in TARGET_FAMILIES},
                 "rating": ratings.get(skill),
+                # None when unrated; otherwise owner | resume | bucket | draft (the first draft).
+                "source": source.get(skill, "draft") if ratings.get(skill) is not None else None,
             }
             for skill in picked
         ],
@@ -533,7 +540,7 @@ def observed(rows: list[dict], first_runs: dict[str, date]) -> list[dict]:
 def build(rows: list[dict], today: date, categories: dict[str, str], taxonomy_version: int,
           ratings: dict[str, int] | None = None, runs: list[dict] | None = None,
           first_runs: dict[str, date] | None = None, groups: dict[str, str] | None = None,
-          frontier: frozenset[str] = frozenset()) -> dict:
+          frontier: frozenset[str] = frozenset(), rating_meta: dict | None = None) -> dict:
     soft_names = sorted(n for n, c in categories.items() if c == SOFT_CATEGORY)
     rows = split_soft(rows, categories)
     categories = {n: c for n, c in categories.items() if c != SOFT_CATEGORY}
@@ -614,5 +621,5 @@ def build(rows: list[dict], today: date, categories: dict[str, str], taxonomy_ve
                                    categories, ratings or {}, hn, frontier),
         "soft_skills": soft_block(window, active(market, today - timedelta(days=SALARY_DAYS - 1), today), soft_names),
         "pairs": pairs_block(window, current_names[:20]),
-        "me": me_block(window, ratings or {}, categories),
+        "me": me_block(window, ratings or {}, categories, rating_meta),
     }

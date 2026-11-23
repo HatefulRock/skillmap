@@ -187,6 +187,17 @@ LEARN_FAMILIES = ["ai_ml", "fde"]  # the roles he is aiming at; backend and data
 COMFORTABLE = 3  # a rating that meets an ad's ask
 
 
+BASIS_TOP = 3
+
+
+def basis(rows: list[dict], skill: str, ratings: dict[str, int], top: int = BASIS_TOP) -> list[str]:
+    """The skills he rated 3+ that appear most often in the ads naming `skill`: what a suggestion
+    is next to. Only his own ratings count; an unrated skill is never listed."""
+    mine = {s for s, v in ratings.items() if (v or 0) >= COMFORTABLE and s != skill}
+    together = Counter(s for r in rows if skill in r["skills"] for s in mine.intersection(r["skills"]))
+    return [s for s, _ in sorted(together.items(), key=lambda kv: (-kv[1], -ratings[kv[0]], kv[0]))[:top]]
+
+
 def effective_rating(skill: str, ratings: dict[str, int]) -> int:
     return max([ratings.get(skill, 0), *(ratings.get(s, 0) for s in COVERED_BY.get(skill, []))])
 
@@ -220,7 +231,10 @@ def learn_next(rows: list[dict], ratings: dict[str, int], premium: dict, categor
                     "unlocks": last_gap[skill], "n_target": len(target), "rating": ratings.get(skill),
                     "premium": premiums.get(skill), "score": round(score, 4)})
     out.sort(key=lambda e: -e["score"])
-    return out[:top]
+    out = out[:top]
+    for e in out:
+        e["basis"] = basis(target, e["name"], ratings)
+    return out
 
 
 EDGE_FAMILIES = ["ai_ml", "fde", "backend", "data", "infra", "frontend"]
@@ -358,9 +372,13 @@ def edge_skills(window: list[dict], momentum: dict[str, dict], premium_by_role: 
         e["why"] = [k for k, v in sorted(parts.items(), key=lambda kv: -kv[1]) if v >= 0.4][:3]
         out.append(e)
     out.sort(key=lambda e: (-e["score"], e["name"]))
+    out = out[:EDGE_TOP]
+    for e in out:
+        if e.get("near", 0) >= 1.3:
+            e["basis"] = basis(fam, e["name"], ratings)
     return {"label": roles.LABELS[family], "n": n, "n_split": len(split), "base_nice": round(base_nice, 3),
             "n_senior": len(senior), "n_junior": len(junior), "n_frontier": len(front) if has_front else 0,
-            "skills": out[:EDGE_TOP]}
+            "skills": out}
 
 
 def edge_block(window: list[dict], hn: list[dict], today: date, premium_by_role: dict,

@@ -3,6 +3,18 @@
 # Names must match config/taxonomy.yaml exactly (tests enforce it).
 #
 # DRAFT: to be corrected by the owner.
+# Shown on the dashboard beside the ratings, until the owner has gone through them.
+status: "DRAFT: to be corrected by the owner"
+# Where each rating came from, shown with it: owner (rated or confirmed by the owner himself),
+# resume (read off his résumé's stack lists), bucket (copied from the broad skill it was split
+# out of in taxonomy v10/v11). Ratings in none of these lists are the first draft. Move a skill
+# to `owner` once he has confirmed it.
+provenance:
+  owner: []
+  resume: [JavaScript, Node.js, Full-stack, Frontend (general), HTML / CSS, Redis, AI-assisted development, GCP,
+           PyTorch, Hugging Face, Event-driven architecture]
+  bucket: [OpenAI API / GPT models, Anthropic Claude, GraphRAG, Computer vision, Multimodal / vision-language models,
+           NumPy, Distributed systems, Azure OpenAI, Claude Code]
 ratings:
   # v10 split the broad buckets into specific technologies. Each old bucket's rating was
   # carried to the parts it clearly covered; parts that may not apply are marked "(from bucket)"
