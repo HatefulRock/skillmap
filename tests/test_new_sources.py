@@ -182,3 +182,39 @@ def test_hn_threads_from_both_accounts():
     client = Fake(lambda url, p: {"hits": hits[p["tags"].split("author_", 1)[1]], "nbPages": 1})
     threads = hn.list_threads(client, date(2015, 4, 1))
     assert [t["id"] for t in threads] == ["3", "2"]
+
+
+def test_pay_slips_are_fixed_or_dropped():
+    from skillmap.extract.salary import clean, from_text
+
+    assert clean(140, 245, "USD", "year") == (140_000, 245_000, "USD", "year")  # thousands
+    assert clean(195, 415_000, "USD", "year")[0] == 195_000
+    assert clean(180_000, 240_000, "SGD", "month")[3] == "year"  # yearly filed as monthly
+    assert clean(290_000, 322_000, "USD", "week")[3] == "year"
+    assert clean(5_200, 5_800, "EUR", "year")[3] == "month"  # monthly filed as yearly
+    assert clean(6_000, 9_000, "SGD", "month") == (6_000, 9_000, "SGD", "month")
+    assert clean(1, 1, "SGD", "month") is None
+    assert clean(5_000_000, 5_000_000, "USD", "year") is None  # a research grant, not pay
+    assert clean(45_000_000, 65_000_000, "CLP", "year")[2] == "CLP"
+    assert from_text("Sueldo: $30,000 - $40,000 mensual", "MX")[2:] == ("MXN", "month")
+    assert from_text("月薪 ¥30,000-¥40,000", "CN")[2] == "CNY"
+    assert from_text("Gehalt: 60.000 € - 75.000 € jährlich", "DE") == (60_000, 75_000, "EUR", "year")
+
+
+def test_amazon_pay_and_one_name_per_company():
+    from skillmap.company_size import classify, display_name
+    from skillmap.extract.salary import from_text
+    from skillmap.sources import tiktok as tt
+
+    text = "The base salary range for this position is listed below.\n\nUSA, WA, Seattle - 143,700.00 - 194,400.00 USD annually"
+    assert from_text(text, "US") == (143_700, 194_400, "USD", "year")
+    assert display_name("GOOGLE ASIA PACIFIC PTE. LTD.") == "Google"
+    assert display_name("BYTEDANCE PTE. LTD.") == "ByteDance"
+    assert display_name("SpaceXSI") == "SpaceX"
+    assert display_name("AMAZON WEB SERVICES SINGAPORE PRIVATE LIMITED") == "Amazon"
+    assert display_name("Microsoft") == "Microsoft"
+    assert display_name("Some Startup") == "Some Startup"
+    assert classify("GRABTAXI HOLDINGS PTE. LTD.") == "big_tech"
+    assert classify("Roblox") == "midsize"
+    job = {"id": 1, "title": "Software Engineer", "job_post_info": {"min_salary": "150000", "max_salary": "250000", "currency": "USD"}}
+    assert (tt.parse(job).salary_min, tt.parse(job).salary_period) == (150_000, "year")
