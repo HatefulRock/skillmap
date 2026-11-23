@@ -1,71 +1,71 @@
 skill,seniority,share
-AI agents / agentic workflows,junior,0.115
+AI agents / agentic workflows,junior,0.117
 AI agents / agentic workflows,mid,0.169
-AI agents / agentic workflows,senior,0.248
-AI agents / agentic workflows,staff,0.308
-AI agents / agentic workflows,manager,0.271
-Distributed systems,junior,0.121
-Distributed systems,mid,0.124
-Distributed systems,senior,0.209
-Distributed systems,staff,0.298
-Distributed systems,manager,0.235
-LLMs / GenAI (general),junior,0.145
-LLMs / GenAI (general),mid,0.221
-LLMs / GenAI (general),senior,0.241
-LLMs / GenAI (general),staff,0.309
-LLMs / GenAI (general),manager,0.311
-Observability / monitoring,junior,0.149
-Observability / monitoring,mid,0.142
-Observability / monitoring,senior,0.247
-Observability / monitoring,staff,0.304
-Observability / monitoring,manager,0.207
-Cloud (unspecified),junior,0.198
+AI agents / agentic workflows,senior,0.246
+AI agents / agentic workflows,staff,0.313
+AI agents / agentic workflows,manager,0.281
+Distributed systems,junior,0.127
+Distributed systems,mid,0.121
+Distributed systems,senior,0.204
+Distributed systems,staff,0.293
+Distributed systems,manager,0.227
+LLMs / GenAI (general),junior,0.147
+LLMs / GenAI (general),mid,0.219
+LLMs / GenAI (general),senior,0.239
+LLMs / GenAI (general),staff,0.307
+LLMs / GenAI (general),manager,0.313
+Observability / monitoring,junior,0.155
+Observability / monitoring,mid,0.145
+Observability / monitoring,senior,0.244
+Observability / monitoring,staff,0.308
+Observability / monitoring,manager,0.208
+Cloud (unspecified),junior,0.205
 Cloud (unspecified),mid,0.189
-Cloud (unspecified),senior,0.314
-Cloud (unspecified),staff,0.322
-Cloud (unspecified),manager,0.223
-"SRE (SLOs, on-call)",junior,0.046
-"SRE (SLOs, on-call)",mid,0.075
-"SRE (SLOs, on-call)",senior,0.13
-"SRE (SLOs, on-call)",staff,0.151
-"SRE (SLOs, on-call)",manager,0.126
-AWS,junior,0.202
+Cloud (unspecified),senior,0.309
+Cloud (unspecified),staff,0.325
+Cloud (unspecified),manager,0.226
+"SRE (SLOs, on-call)",junior,0.043
+"SRE (SLOs, on-call)",mid,0.074
+"SRE (SLOs, on-call)",senior,0.128
+"SRE (SLOs, on-call)",staff,0.15
+"SRE (SLOs, on-call)",manager,0.128
+Financial services / banking domain,junior,0.069
+Financial services / banking domain,mid,0.152
+Financial services / banking domain,senior,0.133
+Financial services / banking domain,staff,0.167
+Financial services / banking domain,manager,0.275
+AWS,junior,0.214
 AWS,mid,0.226
-AWS,senior,0.329
-AWS,staff,0.306
-AWS,manager,0.181
-Kubernetes,junior,0.13
-Kubernetes,mid,0.112
-Kubernetes,senior,0.214
-Kubernetes,staff,0.233
-Kubernetes,manager,0.123
-Financial services / banking domain,junior,0.074
-Financial services / banking domain,mid,0.15
-Financial services / banking domain,senior,0.134
-Financial services / banking domain,staff,0.165
-Financial services / banking domain,manager,0.284
-Git,junior,0.153
+AWS,senior,0.324
+AWS,staff,0.31
+AWS,manager,0.184
+Git,junior,0.161
 Git,mid,0.115
-Git,senior,0.101
-Git,staff,0.068
-Git,manager,0.023
-JavaScript,junior,0.161
-JavaScript,mid,0.116
-JavaScript,senior,0.108
-JavaScript,staff,0.077
-JavaScript,manager,0.026
-CI/CD,junior,0.173
-CI/CD,mid,0.175
-CI/CD,senior,0.265
-CI/CD,staff,0.255
-CI/CD,manager,0.14
-Query optimization / performance tuning,junior,0.038
-Query optimization / performance tuning,mid,0.058
-Query optimization / performance tuning,senior,0.103
-Query optimization / performance tuning,staff,0.118
-Query optimization / performance tuning,manager,0.051
-Cost / latency optimization,junior,0.026
-Cost / latency optimization,mid,0.043
-Cost / latency optimization,senior,0.068
-Cost / latency optimization,staff,0.106
-Cost / latency optimization,manager,0.065
+Git,senior,0.104
+Git,staff,0.067
+Git,manager,0.027
+Kubernetes,junior,0.138
+Kubernetes,mid,0.115
+Kubernetes,senior,0.212
+Kubernetes,staff,0.231
+Kubernetes,manager,0.125
+JavaScript,junior,0.169
+JavaScript,mid,0.115
+JavaScript,senior,0.111
+JavaScript,staff,0.084
+JavaScript,manager,0.028
+CI/CD,junior,0.177
+CI/CD,mid,0.177
+CI/CD,senior,0.27
+CI/CD,staff,0.261
+CI/CD,manager,0.142
+Statistics,junior,0.144
+Statistics,mid,0.064
+Statistics,senior,0.066
+Statistics,staff,0.061
+Statistics,manager,0.058
+Guardrails / AI safety,junior,0.026
+Guardrails / AI safety,mid,0.05
+Guardrails / AI safety,senior,0.064
+Guardrails / AI safety,staff,0.108
+Guardrails / AI safety,manager,0.102
