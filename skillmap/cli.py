@@ -279,8 +279,10 @@ def run_discover(args: argparse.Namespace) -> None:
         return PoliteClient(min_interval=interval, retries=2, max_retry_after=30.0)
 
     boards, unfinished = discover.discover(candidates, platforms, make_client, deadline)
-    if unfinished:
-        boards = discover.carry_over(boards, discover.load_previous(args.out), unfinished)
+    # Keep earlier boards on platforms cut short, and on platforms this run didn't probe at all,
+    # so probing one platform doesn't wipe the others from the list.
+    keep = unfinished + [ats for ats in discover.ATS if ats not in platforms]
+    boards = discover.carry_over(boards, discover.load_previous(args.out), keep)
     discover.write_boards(boards, args.out, today_utc(), len(candidates), unfinished)
     jobs = sum(b.jobs for b in boards)
     print(f"{len(boards)} boards with {jobs} open jobs, from {len(candidates)} companies → {args.out}")
