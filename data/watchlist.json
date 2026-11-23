@@ -1,7 +1,7 @@
 {
  "version": 1,
- "generated_at": "2026-11-23T00:54:51Z",
- "generated": "2026-11-22",
+ "generated_at": "2026-11-23T04:53:26Z",
+ "generated": "2026-11-23",
  "targets": {
   "role_families": [
    "ai_ml",
@@ -72,8 +72,8 @@
    ],
    "titles": [
     "Staff Software Engineer, Frontend/Mobile (Consumer - Agentic Trading)",
-    "Senior Software Engineer, Backend (Consumer - Risk)",
-    "Staff Software Engineer"
+    "Staff Software Engineer",
+    "Senior Software Engineer"
    ]
   },
   {
@@ -106,12 +106,12 @@
    "countries": [
     "US",
     "CA",
-    "NL"
+    "GB"
    ],
    "titles": [
     "Senior Software Engineer, Ads",
     "Staff Data Scientist, Marketing",
-    "Staff Data Scientist, Ads"
+    "Staff Machine Learning Engineer, Ads Foundational Representations"
    ]
   },
   {
@@ -241,9 +241,9 @@
     "SG"
    ],
    "titles": [
-    "Marketing Data Analyst (Bangkok Based, Relocation provided)",
     "Principal Software Engineer, Back End (Bangkok based, Relocation provided)",
-    "Staff Software Engineer - Front End AI (Bangkok based, Relocation provided)"
+    "Backend Lead Software Engineer (L5) — Bangkok Relocation Provided",
+    "Backend Staff Software Engineer (Level 4) | Bangkok based, Relocation provided"
    ]
   },
   {
@@ -262,7 +262,7 @@
    "titles": [
     "Senior Data Engineer - AI Platform",
     "Senior Software Engineer, Data Infrastructure - AI Platform",
-    "Solutions Architect, Onchain Compliance"
+    "Staff Data Platform Engineer - AI Platform"
    ]
   },
   {
@@ -279,8 +279,8 @@
     "remote"
    ],
    "titles": [
-    "Technical Solutions Engineer",
     "Forward Deployed AI Accelerator, Marketing",
+    "Technical Solutions Engineer",
     "Software Engineer, New Grad"
    ]
   },
@@ -312,12 +312,12 @@
    "countries": [
     "SG",
     "KR",
-    "CN"
+    "HK"
    ],
    "titles": [
-    "Senior Data Scientist, Analytics (Risk & Payments)",
-    "Staff Data Engineer, Data and AI, Customer Data Platform",
-    "Software Engineer Intern (Summer 2027)"
+    "Software Engineer Intern (Summer 2027)",
+    "Lead AI Engineer",
+    "Senior Software Engineer, Org & Identity"
    ]
   },
   {
@@ -327,7 +327,7 @@
    "sector": "tech",
    "matching": 41,
    "live_tech": 234,
-   "skill_fit": 0.4,
+   "skill_fit": 0.41,
    "countries": [
     "US",
     "JP",
@@ -372,9 +372,9 @@
     "KR"
    ],
    "titles": [
-    "Data Scientist, Analytics",
     "Senior Software Engineer, Data Backend (Ad Cloud) - Tokyo,Japan",
-    "(Senior) Machine Learning Scientist (LLM & Agents)"
+    "(Senior) Machine Learning Scientist (LLM & Agents)",
+    "Senior Machine Learning Scientist (ROAS) - Tokyo"
    ]
   },
   {
@@ -393,7 +393,7 @@
    "titles": [
     "Senior Forward Deployed Engineer (AI Agent)",
     "Senior Machine Learning Engineer",
-    "Solutions Architect"
+    "Forward Deployed Product Manager - AI Agent (EMEA)"
    ]
   },
   {
@@ -447,8 +447,8 @@
    ],
    "titles": [
     "Developer Relations Engineer",
-    "Software Engineer - Turso",
-    "Data API Engineer"
+    "Data API Engineer",
+    "Developer Relations Engineer (New York, NY)"
    ]
   },
   {
@@ -477,7 +477,7 @@
    "sector": "tech",
    "matching": 34,
    "live_tech": 122,
-   "skill_fit": 0.35,
+   "skill_fit": 0.34,
    "countries": [
     "US",
     "JP",
@@ -560,8 +560,8 @@
    ],
    "titles": [
     "Manager, Applied AI Architect",
-    "Applied AI Architects, Partner",
-    "Applied AI Architect"
+    "Applied AI Architect",
+    "Applied AI Architects, Partner"
    ]
   },
   {
@@ -579,8 +579,8 @@
    ],
    "titles": [
     "Software Engineer, Agent",
-    "Software Engineer, Agent (New Grad 2027)",
-    "Enterprise Sales Engineer - Majors"
+    "Enterprise Sales Engineer - Majors, Healthcare",
+    "Software Engineer, Agent (New Grad 2027)"
    ]
   },
   {
@@ -634,9 +634,9 @@
     "SE"
    ],
    "titles": [
-    "Machine Learning Engineering Manager II",
     "Senior Applied Research Scientist - Personalization",
-    "Research Scientist - Generative Audio"
+    "Research Scientist - Generative Audio",
+    "Machine Learning Engineering Manager II"
    ]
   },
   {
@@ -654,7 +654,7 @@
    "titles": [
     "AI Tutor, Biology - Temporary",
     "AI Tutor, Math - Temporary",
-    "AI Tutor, Chinese - Temporary"
+    "AI Tutor, German - Temporary"
    ]
   },
   {
@@ -673,7 +673,7 @@
    "titles": [
     "Machine Learning Engineer, Assistance Engineering",
     "Senior Machine Learning Engineer, Assistance Engineering",
-    "Senior Staff Software Engineer, Payments"
+    "Senior Staff Software Engineer, Trust"
    ]
   },
   {
@@ -691,8 +691,8 @@
    ],
    "titles": [
     "Senior Software Engineer - Clearing",
-    "Senior Data Scientist, Research",
-    "Senior Data Scientist AI Evaluation"
+    "Senior Full-Stack Engineer - Alpaca Connect",
+    "Senior Data Platform Engineer"
    ]
   },
   {
@@ -710,8 +710,8 @@
    ],
    "titles": [
     "Senior Pre-Sales Solutions Engineer - Europe",
-    "Research Staff, Applied Voice AI",
-    "Director of AI/ML Research, Text-to-Speech"
+    "Director of AI/ML Research, Text-to-Speech",
+    "Customer Success Engineer (Scaled)"
    ]
   },
   {
@@ -729,7 +729,7 @@
    "titles": [
     "Production Support Engineer — LLM Platform",
     "C++ Developer (Market Execution)",
-    "Software Engineer - Data & Lifecycle (Equities/CA)"
+    "Data Scientist"
    ]
   },
   {
@@ -785,8 +785,8 @@
    ],
    "titles": [
     "Sales Specialist - Data & AI Security",
-    "Partner Solution Architect - Data & AI Security",
-    "Senior Partner Manager - Data & AI Security"
+    "Senior Partner Manager - Data & AI Security",
+    "Partner Solution Architect - Data & AI Security"
    ]
   },
   {
@@ -801,9 +801,9 @@
     "US"
    ],
    "titles": [
-    "Senior Software Engineer - AI Experiences",
-    "Senior Software Engineer - Investments",
-    "Senior Data Analyst - Reconciliation"
+    "Senior Data Analyst - Reconciliation",
+    "Senior Analytics Engineer",
+    "Senior Software Engineer - Cards"
    ]
   },
   {
@@ -840,7 +840,7 @@
    "titles": [
     "Senior, Machine Learning Engineer - Camera Model",
     "Staff, ML Engineer - Scene Generation",
-    "Senior, ML Engineer - 3D Reconstruction"
+    "Senior, Machine Learning Engineer - 3D Perception"
    ]
   },
   {
@@ -857,8 +857,8 @@
    ],
    "titles": [
     "Staff Software Engineer (Backend)",
-    "Principal Data Engineer",
-    "Manager, Legal Programs, Privacy & AI (EU/UK)"
+    "Sr Analyst, AI Analytics",
+    "Senior Counsel, Privacy & AI (EU/UK)"
    ]
   },
   {
@@ -877,7 +877,7 @@
    "titles": [
     "Data Scientist",
     "Software Engineer",
-    "Full Stack Engineer"
+    "C++ Software Engineer - Data Platform"
    ]
   },
   {
@@ -895,27 +895,8 @@
    ],
    "titles": [
     "Forward Deployed AI Engineer, West",
-    "AI Sales Engineer, US",
-    "Applied AI Engineer"
-   ]
-  },
-  {
-   "company": "Dropbox",
-   "ats": "greenhouse",
-   "token": "dropbox",
-   "sector": "tech",
-   "matching": 11,
-   "live_tech": 24,
-   "skill_fit": 0.57,
-   "countries": [
-    "MX",
-    "remote",
-    "PL"
-   ],
-   "titles": [
-    "Full Stack Product Software Engineer",
-    "Principal Software Engineer, Product Engineering",
-    "Senior Security Engineer, AI Security"
+    "Senior AI Product Engineer, Backend",
+    "Senior AI Product Engineer, Fullstack"
    ]
   },
   {
@@ -973,6 +954,25 @@
    ]
   },
   {
+   "company": "Dropbox",
+   "ats": "greenhouse",
+   "token": "dropbox",
+   "sector": "tech",
+   "matching": 11,
+   "live_tech": 24,
+   "skill_fit": 0.55,
+   "countries": [
+    "MX",
+    "remote",
+    "PL"
+   ],
+   "titles": [
+    "Full Stack Product Software Engineer",
+    "Principal Software Engineer, Product Engineering",
+    "Senior Security Engineer, AI Security"
+   ]
+  },
+  {
    "company": "Fivetran",
    "ats": "greenhouse",
    "token": "fivetran",
@@ -983,7 +983,7 @@
    "countries": [
     "US",
     "DE",
-    "IE"
+    "IN"
    ],
    "titles": [
     "Senior Sales Engineer, Enterprise",
@@ -1005,7 +1005,7 @@
    "titles": [
     "Software Engineer, Coding Evaluation & Training Data",
     "Research Engineer, Coding Evaluation & Training Data",
-    "Data Scientist"
+    "Human Data Architect"
    ]
   },
   {
@@ -1020,9 +1020,9 @@
     "US"
    ],
    "titles": [
-    "Research Scientist - Human-AI Systems",
-    "Staff Applied AI Engineer - Pre-Sales",
-    "Research Scientist, Open Benchmarks Red Team"
+    "Research Scientist",
+    "Forward Deployed Researcher - Data as a Service",
+    "Research Scientist - RL Training"
    ]
   },
   {
@@ -1038,9 +1038,9 @@
     "ES"
    ],
    "titles": [
-    "Senior Backend Engineer",
     "Staff Data Scientist",
-    "Lead Machine Learning Scientist, Business Banking"
+    "Senior Machine Learning Manager, Borrowing",
+    "Senior Staff Backend Engineer"
    ]
   },
   {
@@ -1069,7 +1069,7 @@
    "sector": "tech",
    "matching": 12,
    "live_tech": 90,
-   "skill_fit": 0.31,
+   "skill_fit": 0.32,
    "countries": [
     "CN",
     "KR",
@@ -1093,9 +1093,9 @@
     "remote"
    ],
    "titles": [
-    "Senior Software Engineer II",
     "Senior Software Engineer, Machine Learning",
-    "Software Engineer, Big Data, Tech Enablement"
+    "Staff Software Engineer, Job Seeker Apps",
+    "Software Engineering Manager"
    ]
   },
   {
@@ -1131,8 +1131,8 @@
    ],
    "titles": [
     "Senior Solutions Architect",
-    "Advisory Solutions Architect",
-    "Solutions Architect"
+    "Solutions Architect",
+    "Manager, Solutions Architecture"
    ]
   },
   {
@@ -1167,9 +1167,9 @@
     "CA"
    ],
    "titles": [
-    "Senior/Staff Analytics Engineer",
-    "Software Engineer, Dev Velocity (all levels)",
-    "Software Engineer, Agent Access & Governance"
+    "Software Engineer, Expansion (all levels)",
+    "Developer Documentation Writer",
+    "Staff Developer Relations Engineer"
    ]
   },
   {
@@ -1188,7 +1188,7 @@
    "titles": [
     "Campus Python Software Engineer (Intern)",
     "Campus C++ Software Engineer (Intern)",
-    "Data Scientist | Post Trade Analytics"
+    "Deep Learning Researcher | Trading Team"
    ]
   },
   {
@@ -1207,7 +1207,7 @@
    "titles": [
     "Senior / Staff Fullstack Engineer",
     "Developer Relations",
-    "Senior / Staff Product Engineer, Applied AI"
+    "Analytics Engineer"
    ]
   },
   {
@@ -1242,8 +1242,8 @@
    ],
    "titles": [
     "Software Engineer, Backend, Comms Platform",
-    "Data Scientist",
-    "AI Solutions Engineer"
+    "AI Solutions Engineer",
+    "Senior Software Engineer, Product Foundations"
    ]
   },
   {
@@ -1257,12 +1257,12 @@
    "countries": [
     "US",
     "remote",
-    "JP"
+    "SG"
    ],
    "titles": [
     "Forward Deployed Engineer (Remote)",
-    "Software Engineer, Go (Edge) - Remote",
-    "Software Engineer, Elixir - Telephony"
+    "Senior Product Marketing Manager, AI Compute",
+    "Technical Product Manager, Developer Experience & Product-Led Growth"
    ]
   },
   {
@@ -1294,9 +1294,9 @@
     "US"
    ],
    "titles": [
-    "Senior/Staff Software Engineer, Product",
     "ML Engineer, Inference & Optimization",
-    "Senior/Staff Software Engineer, Backend"
+    "Principal Software Engineer, Product",
+    "Senior/Staff Software Engineer, Product"
    ]
   },
   {
@@ -1351,8 +1351,8 @@
    ],
    "titles": [
     "Field Solutions Engineer (5919)",
-    "Forward Deployed Engineer, Autonomy (open level)",
-    "Staff Deep Learning Engineer, State Estimation (R5785)"
+    "Staff Deep Learning Engineer, State Estimation (R5785)",
+    "Staff Field Solutions Engineer (SD/TX)"
    ]
   },
   {
@@ -1371,7 +1371,7 @@
    "titles": [
     "Staff Product Designer, Agentic CMS",
     "Staff Data Engineer",
-    "Senior Software Engineer, Build Loop"
+    "Senior Software Engineer, Optimize/Analyze"
    ]
   },
   {
@@ -1404,8 +1404,8 @@
    ],
    "titles": [
     "Senior AI Platform Engineer",
-    "Lead Marketing Data Analyst",
-    "Principal Conversation & Agentic Experience Architect"
+    "Principal Conversation & Agentic Experience Architect",
+    "Staff AI Engineer"
    ]
   },
   {
@@ -1422,9 +1422,9 @@
     "TW"
    ],
    "titles": [
-    "Principal Solutions Architect, AI Ecosystem & Alliances",
-    "Tech Lead - AI Inference",
-    "Director, Product Management – AI Infrastructure & NVIDIA Alliance"
+    "Senior Sales Engineer - Japan",
+    "Senior Solutions Architect",
+    "WEKA Data Platform Administrator (Remote US)"
    ]
   },
   {
@@ -1440,8 +1440,8 @@
    ],
    "titles": [
     "Software Engineer II",
-    "Software Engineer Ⅰ",
-    "Senior Applied Data Scientist"
+    "Software Engineer I",
+    "Software Engineer Ⅰ"
    ]
   },
   {
@@ -1457,8 +1457,8 @@
    ],
    "titles": [
     "Senior Software Engineer (Core)",
-    "Senior Software Engineer (B2B/B2X)",
-    "Business Intelligence Analyst"
+    "Business Intelligence Analyst",
+    "Senior Software Engineer (B2B/B2X)"
    ]
   },
   {
@@ -1470,13 +1470,13 @@
    "live_tech": 10,
    "skill_fit": 0.61,
    "countries": [
-    "CN",
     "SG",
+    "CN",
     "PH"
    ],
    "titles": [
-    "Senior Staff Software Engineer",
     "Staff Software Engineer",
+    "Senior Staff Software Engineer",
     "Senior Software Solutions Engineer"
    ]
   },
@@ -1509,13 +1509,13 @@
    "skill_fit": 0.36,
    "countries": [
     "JP",
-    "KR",
-    "ID"
+    "ID",
+    "KR"
    ],
    "titles": [
     "Principal Solution Architect",
     "Senior Solution Architect (pre-sales)",
-    "Senior Solution Architect Security Specialist"
+    "Senior Solutions Architect"
    ]
   },
   {
@@ -1532,7 +1532,7 @@
    "titles": [
     "Staff Software Engineer, Enterprise Platform",
     "Senior Data Engineer, Ads",
-    "Staff Software Engineer, Safety Platform"
+    "Staff Software Engineer, Safety Processing"
    ]
   },
   {
@@ -1548,9 +1548,9 @@
     "TH"
    ],
    "titles": [
-    "Principal Solutions Architect/Engineer (pre-sales)",
     "Lead AI Engineer",
-    "Senior Full Stack Developer (Node.js & Cloud)"
+    "Senior Full Stack Developer (Node.js & Cloud)",
+    "Senior Machine Learning Engineer"
    ]
   },
   {
@@ -1566,8 +1566,8 @@
    ],
    "titles": [
     "AI Technical Mentor - Independent Contractor (US Canada, Europe, MENA, India & APAC Timezones)",
-    "Agentic AI Technical Mentor - Independent Contractor (US Canada, Europe, MENA, India & APAC Timezones)",
-    "AI Mentor (Independent Contractor) - Business Leader Programs"
+    "AI Mentor (Independent Contractor) - Business Leader Programs",
+    "Claude AI Engineer Technical Mentor - Independent Contractor (US Canada, Europe, MENA, India & APAC Timezones)"
    ]
   },
   {
@@ -1582,9 +1582,9 @@
     "US"
    ],
    "titles": [
-    "CX Data Analyst",
-    "Senior AI Enablement Engineer, GTM",
-    "Research Engineer / Scientist, Reinforcement Learning"
+    "Research Engineer / Scientist, Reinforcement Learning",
+    "Research Engineer / Scientist, Data & Evals",
+    "Research Engineer, Infrastructure"
    ]
   },
   {
@@ -1602,7 +1602,7 @@
    "titles": [
     "Senior Unity Software Engineer",
     "Unity Software Engineer",
-    "AI Level Designer"
+    "Data Scientist"
    ]
   },
   {
@@ -1687,9 +1687,9 @@
     "US"
    ],
    "titles": [
-    "Regional Principal Security Solutions Architect | Wiz/PAN/CrowdStrike (Remote)",
     "Architect | GRC/AI Governance (Remote)",
-    "Sr. Architect | Offensive Security/ AI Testing/ Cloud Testing (Remote)"
+    "Sr. Consultant | GRC/AI/Privacy (Remote)",
+    "Regional Principal Security Solutions Architect | Wiz/PAN/CrowdStrike (Remote)"
    ]
   },
   {
@@ -1702,13 +1702,13 @@
    "skill_fit": 0.58,
    "countries": [
     "US",
-    "ES",
-    "CA"
+    "CA",
+    "ES"
    ],
    "titles": [
     "CEO, AI Services - US-Based",
     "Enterprise Sales Executive, AI Solutions - US-Based",
-    "Senior Fullstack Engineer"
+    "Enterprise Sales Executive, AI Solutions"
    ]
   },
   {
@@ -1743,8 +1743,8 @@
    ],
    "titles": [
     "Product Lead, AI",
-    "Software Engineer, Partner Solutions (Greece)",
-    "Senior Dealmaker - AI"
+    "Senior Dealmaker - AI",
+    "Software Engineer, Partner Solutions (Greece)"
    ]
   },
   {
@@ -1764,6 +1764,23 @@
    ]
   },
   {
+   "company": "Animoca Brands",
+   "ats": "lever",
+   "token": "animocabrands",
+   "sector": "crypto",
+   "matching": 3,
+   "live_tech": 3,
+   "skill_fit": 0.89,
+   "countries": [
+    "CN"
+   ],
+   "titles": [
+    "转市策略 AI 产品经理 (Go-to-Market AI Product Manager)",
+    "AI 产品经理 (Vertical AI Product Manager)",
+    "数据分析负责人 (Lead Data Analyst)"
+   ]
+  },
+  {
    "company": "Tower Research Capital",
    "ats": "greenhouse",
    "token": "towerresearchcapital",
@@ -1779,23 +1796,6 @@
     "Software Engineer, C++",
     "Machine Learning Engineer",
     "Data Engineer"
-   ]
-  },
-  {
-   "company": "Animoca Brands",
-   "ats": "lever",
-   "token": "animocabrands",
-   "sector": "crypto",
-   "matching": 3,
-   "live_tech": 3,
-   "skill_fit": 0.83,
-   "countries": [
-    "CN"
-   ],
-   "titles": [
-    "转市策略 AI 产品经理 (Go-to-Market AI Product Manager)",
-    "AI 产品经理 (Vertical AI Product Manager)",
-    "数据分析负责人 (Lead Data Analyst)"
    ]
   },
   {
@@ -1863,24 +1863,7 @@
    "titles": [
     "Data Engineer",
     "Staff Software Engineer, AI Engineering",
-    "Senior Analytics Engineer"
-   ]
-  },
-  {
-   "company": "The Quality Group GmbH",
-   "ats": "greenhouse",
-   "token": "thequalitygroupgmbh1",
-   "sector": "other",
-   "matching": 4,
-   "live_tech": 13,
-   "skill_fit": 0.42,
-   "countries": [
-    "remote"
-   ],
-   "titles": [
-    "Senior Java Engineer (gn)",
-    "AI Security Engineer (gn)",
-    "AI Platform Lead (gn)"
+    "Senior Software Engineer"
    ]
   },
   {
@@ -1896,9 +1879,26 @@
     "US"
    ],
    "titles": [
-    "Senior Engineer, Backend (Data Platform)",
     "AI Engineer",
-    "Staff Data Scientist"
+    "Staff Data Scientist",
+    "Senior Engineer, Backend (Data Platform)"
+   ]
+  },
+  {
+   "company": "The Quality Group GmbH",
+   "ats": "greenhouse",
+   "token": "thequalitygroupgmbh1",
+   "sector": "other",
+   "matching": 4,
+   "live_tech": 13,
+   "skill_fit": 0.41,
+   "countries": [
+    "remote"
+   ],
+   "titles": [
+    "AI Security Engineer (gn)",
+    "Senior Data Engineer (gn)",
+    "AI Platform Lead (gn)"
    ]
   },
   {
@@ -1914,8 +1914,8 @@
     "BR"
    ],
    "titles": [
-    "Senior Software Developer",
-    "Software Developer"
+    "Software Developer",
+    "Senior Software Developer"
    ]
   },
   {
@@ -1949,8 +1949,8 @@
    ],
    "titles": [
     "Software Engineer - Low Level (C++)",
-    "Deployment Engineer",
-    "Software Engineer - Python"
+    "Software Engineer - Python",
+    "Software Engineer - Distributed Compute"
    ]
   },
   {
@@ -1965,8 +1965,8 @@
     "SG"
    ],
    "titles": [
+    "Analytics Engineer",
     "Senior Infrastructure Engineer (AI Lab)",
-    "Intern, Data Engineering",
     "Senior Software Engineer (Golang - Platform team)"
    ]
   },
@@ -1979,14 +1979,14 @@
    "live_tech": 11,
    "skill_fit": 0.54,
    "countries": [
-    "GB",
     "BR",
-    "US"
+    "US",
+    "GB"
    ],
    "titles": [
-    "Senior Solutions Engineer (French Speaking)",
     "Senior Solutions Engineer - Portuguese Speaking",
-    "Solutions Architect"
+    "Solutions Architect",
+    "Senior Solutions Engineer (French Speaking)"
    ]
   },
   {
@@ -2002,26 +2002,9 @@
     "SG"
    ],
    "titles": [
-    "AI Field Engineer - Enterprise",
     "Field Execution Partner, AI Field Engineering",
-    "Member of Technical Staff, Applied Machine Learning Engineer, Singapore"
-   ]
-  },
-  {
-   "company": "Wave",
-   "ats": "greenhouse",
-   "token": "wavemm1",
-   "sector": "other",
-   "matching": 4,
-   "live_tech": 6,
-   "skill_fit": 0.27,
-   "countries": [
-    "remote"
-   ],
-   "titles": [
-    "Applied AI Scientist - LLMs & Voice",
-    "Data Scientist",
-    "Technical Product Manager - Developer Experience (DevEx)"
+    "Member of Technical Staff, Applied Machine Learning Engineer, Singapore",
+    "AI Field Engineer, Singapore"
    ]
   },
   {
@@ -2037,8 +2020,8 @@
    ],
    "titles": [
     "Solutions Engineer",
-    "AI Developer Experience Engineer",
-    "Software Engineer - PlanetScale Postgres"
+    "Software Engineer - PlanetScale Postgres",
+    "AI Developer Experience Engineer"
    ]
   },
   {
@@ -2054,9 +2037,9 @@
     "SG"
    ],
    "titles": [
-    "Lead AI Engineer",
     "Software Developer（OTR）",
-    "Software Developer"
+    "Software Developer",
+    "Lead AI Engineer"
    ]
   },
   {
@@ -2088,9 +2071,9 @@
     "remote"
    ],
    "titles": [
-    "Senior Software Engineer, Issuing",
-    "Senior Software Engineer, Processing",
-    "Senior Software Engineer, Product Platform"
+    "Software Engineer, Treasury",
+    "Senior Software Engineer, Product Platform",
+    "Senior Software Engineer, Processing"
    ]
   },
   {
@@ -2154,26 +2137,9 @@
     "US"
    ],
    "titles": [
+    "Senior Analytics Engineer",
     "Senior Full Stack Engineer, Premium",
-    "Staff Applied AI Engineer",
-    "Senior Analytics Engineer"
-   ]
-  },
-  {
-   "company": "Upgrade",
-   "ats": "greenhouse",
-   "token": "upgrade",
-   "sector": "fintech",
-   "matching": 3,
-   "live_tech": 10,
-   "skill_fit": 0.44,
-   "countries": [
-    "CA"
-   ],
-   "titles": [
-    "Senior QA Automation Developer (HELOC)",
-    "Senior QA Automation Developer (Platform)",
-    "AI Experience Engineer (Conversational AI)"
+    "Staff Applied AI Engineer"
    ]
   },
   {
@@ -2188,8 +2154,8 @@
     "JP"
    ],
    "titles": [
-    "WPP Production | AI Production Solutions Architect, Japan",
-    "APAC Media AI Orchestration Senior Director, Japan"
+    "APAC Media AI Orchestration Senior Director, Japan",
+    "WPP Production | AI Production Solutions Architect, Japan"
    ]
   },
   {
@@ -2238,8 +2204,8 @@
    ],
    "titles": [
     "Staff Software Engineer (Interfaces)",
-    "Senior Staff Data Scientist",
-    "Senior Software Engineer"
+    "Senior Software Engineer",
+    "Senior Staff Data Scientist"
    ]
   },
   {
@@ -2256,8 +2222,8 @@
    ],
    "titles": [
     "Member of Technical Staff - Applied ML, Japanese Multimodal",
-    "Member of Technical Staff - Post Training, Applied",
-    "Member of Technical Staff - ML Scientist, Japanese Multimodal"
+    "Member of Technical Staff - ML Scientist, Japanese Multimodal",
+    "Member of Technical Staff - Post Training, Applied"
    ]
   },
   {
@@ -2272,9 +2238,9 @@
     "SG"
    ],
    "titles": [
-    "Intern Software Developer - Singapore - 2027",
     "Software Developer - Risk Technology",
-    "Software Developer - Core Data"
+    "Software Developer - Core Data",
+    "Intern Software Developer - Singapore - 2027"
    ]
   },
   {
@@ -2323,24 +2289,8 @@
     "remote"
    ],
    "titles": [
-    "Senior Product Marketing Manager, AI",
-    "AI Marketing Strategist (PST based)"
-   ]
-  },
-  {
-   "company": "Ethena Labs",
-   "ats": "lever",
-   "token": "ethena",
-   "sector": "crypto",
-   "matching": 3,
-   "live_tech": 3,
-   "skill_fit": 0.33,
-   "countries": [
-    "US"
-   ],
-   "titles": [
-    "Sales Engineer",
-    "Customer Success Engineer"
+    "AI Marketing Strategist (PST based)",
+    "Senior Product Marketing Manager, AI"
    ]
   },
   {
@@ -2424,9 +2374,9 @@
     "HK"
    ],
    "titles": [
-    "Senior Software Engineer, C++",
     "Senior Research Engineer",
-    "Senior Software Engineer, C++ (Market Data)"
+    "Senior Software Engineer, C++ (Market Data)",
+    "Senior Software Engineer, C++"
    ]
   },
   {
@@ -2459,8 +2409,8 @@
     "IN"
    ],
    "titles": [
-    "Data Platform Engineer",
     "Senior Technical Account Manager",
+    "Data Platform Engineer",
     "Senior Software Engineer, Identity & Regulatory Platform"
    ]
   },
@@ -2509,8 +2459,8 @@
     "SG"
    ],
    "titles": [
-    "Implementation Engineer",
-    "Team Lead - Software Engineer"
+    "Team Lead - Software Engineer",
+    "Implementation Engineer"
    ]
   },
   {
@@ -2544,8 +2494,8 @@
    ],
    "titles": [
     "Principal Solutions Engineer",
-    "Product Manager - Developer Experience",
-    "UX Designer - Developer Experience (DevEx)"
+    "UX Designer - Developer Experience (DevEx)",
+    "Product Manager - Developer Experience"
    ]
   },
   {
@@ -2594,6 +2544,23 @@
    "titles": [
     "Forward Deployed Engineer, Payments",
     "AI Platform Engineer"
+   ]
+  },
+  {
+   "company": "Tenstorrent",
+   "ats": "greenhouse",
+   "token": "tenstorrent",
+   "sector": "other",
+   "matching": 3,
+   "live_tech": 91,
+   "skill_fit": 0.18,
+   "countries": [
+    "JP"
+   ],
+   "titles": [
+    "Forward Deployed Engineer",
+    "Field Support Engineer - AI Server Systems",
+    "Software Engineer-AI Model Bring Up"
    ]
   },
   {
@@ -2675,8 +2642,8 @@
    ],
    "titles": [
     "Developer Engagement Representative - LATAM (Part-Time Contract)",
-    "Developer Engagement Team  (Contract)",
-    "Head of Developer Relations, SEA and OCE"
+    "Head of Developer Relations, SEA and OCE",
+    "Developer Engagement Team  (Contract)"
    ]
   },
   {
@@ -2694,6 +2661,39 @@
     "Software Developer - Experienced (DV QES)",
     "Data Engineer (DV QES)",
     "2027 Software Developer Intern  (DV QES)"
+   ]
+  },
+  {
+   "company": "The Knot Worldwide",
+   "ats": "greenhouse",
+   "token": "theknotworldwide",
+   "sector": "other",
+   "matching": 2,
+   "live_tech": 3,
+   "skill_fit": 0.48,
+   "countries": [
+    "US"
+   ],
+   "titles": [
+    "Lead Analytics Engineer",
+    "AI Principal Product Manager"
+   ]
+  },
+  {
+   "company": "6sense",
+   "ats": "greenhouse",
+   "token": "6sense",
+   "sector": "other",
+   "matching": 2,
+   "live_tech": 17,
+   "skill_fit": 0.47,
+   "countries": [
+    "remote",
+    "US"
+   ],
+   "titles": [
+    "Business Solutions Partner - Enterprise AI",
+    "Sr. Data Scientist, Forward-Deployed"
    ]
   }
  ],
@@ -2777,9 +2777,9 @@
    "torcrobotics",
    "worldquant",
    "arizeai",
-   "dropbox",
    "janestreet",
    "3cloud",
+   "dropbox",
    "fivetran",
    "snorkelai",
    "monzo",
@@ -2817,13 +2817,11 @@
    "adaptivebiotechnologies",
    "wehrtyou",
    "workato",
-   "wavemm1",
    "planetscale",
    "thoughtworksreferral",
    "lithic",
    "upboundext",
    "truebill",
-   "upgrade",
    "wpp",
    "fireblocks",
    "netlify",
@@ -2839,11 +2837,14 @@
    "xendit",
    "versaterm",
    "workatbackbase",
+   "tenstorrent",
    "weedmaps77",
    "asana",
    "tripactions",
    "roblox",
-   "dvtrading"
+   "dvtrading",
+   "theknotworldwide",
+   "6sense"
   ],
   "watch_lever": [
    "spotify",
@@ -2851,8 +2852,7 @@
    "palantir",
    "crypto",
    "toptal",
-   "animocabrands",
-   "ethena"
+   "animocabrands"
   ]
  }
 }

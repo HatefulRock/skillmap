@@ -14,13 +14,13 @@ in that role family that ask for the skill, and the last column is my own rating
 ## This week
 
 <!-- weekly:start -->
-**Week of 2026-11-22**
+**Week of 2026-11-23**
 
-- 40,759 live tech postings in the last 30 days (+4,006 since 2026-11-19).
-- Biggest moves since last week: Distributed systems 19% (−0.5 pp).
-- New on the radar: KI (150 companies), IBM (113 companies), IA (111 companies), DNA (110 companies).
-- Median advertised pay in SG: SGD 90,000 a year, from 4,658 ads.
-- Median advertised pay in US: USD 205,000 a year, from 10,699 ads.
+- 43,068 live tech postings in the last 30 days (+2,309 since 2026-11-22).
+- Biggest moves since last week: Data structures & algorithms 10% (+1.0 pp), Machine learning fundamentals 18% (+1.0 pp), NLP 3% (+1.0 pp).
+- New on the radar: GmbH (108 companies), SOX (96 companies), CIS (96 companies), JS (95 companies).
+- Median advertised pay in SG: SGD 90,000 a year, from 4,600 ads.
+- Median advertised pay in US: USD 205,000 a year, from 10,710 ads.
 <!-- weekly:end -->
 
 [RSS](data/feed.xml) · [all notes](data/digest.json) · [CSV tables](data/csv/) · [JSON](data/skills-market.json)

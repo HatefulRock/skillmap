@@ -1,1681 +1,1681 @@
 dimension,key,label,postings,skill,share
-seniority,intern,intern,981,Python,0.6575
-seniority,intern,intern,981,AWS,0.1662
-seniority,intern,intern,981,Cloud (unspecified),0.211
-seniority,intern,intern,981,LLMs / GenAI (general),0.2875
-seniority,intern,intern,981,AI agents / agentic workflows,0.2059
-seniority,intern,intern,981,CI/CD,0.1233
-seniority,intern,intern,981,Observability / monitoring,0.0622
-seniority,intern,intern,981,Distributed systems,0.1152
-seniority,intern,intern,981,SQL,0.2324
-seniority,intern,intern,981,Java,0.2518
-seniority,intern,intern,981,Machine learning fundamentals,0.2966
-seniority,intern,intern,981,Kubernetes,0.0561
-seniority,intern,intern,981,Docker,0.0683
-seniority,intern,intern,981,Financial services / banking domain,0.1091
-seniority,intern,intern,981,Azure,0.0775
-seniority,intern,intern,981,GCP,0.0622
-seniority,intern,intern,981,System design / architecture,0.0724
-seniority,intern,intern,981,REST APIs,0.0652
-seniority,intern,intern,981,C++,0.3038
-seniority,intern,intern,981,TypeScript,0.156
-seniority,intern,intern,981,Go,0.1111
-seniority,intern,intern,981,Linux,0.1203
-seniority,intern,intern,981,"SRE (SLOs, on-call)",0.0428
-seniority,intern,intern,981,Frontend (general),0.1081
-seniority,intern,intern,981,Data pipelines / ETL,0.0836
-seniority,intern,intern,981,Full-stack,0.0591
-seniority,intern,intern,981,Incident response / on-call,0.0234
-seniority,intern,intern,981,React,0.1193
-seniority,intern,intern,981,JavaScript,0.1672
-seniority,intern,intern,981,DevOps,0.0459
-seniority,intern,intern,981,Git,0.1662
-seniority,intern,intern,981,OOP / design patterns,0.0958
-seniority,intern,intern,981,Data structures & algorithms,0.2569
-seniority,intern,intern,981,Infrastructure as code,0.0122
-seniority,intern,intern,981,Query optimization / performance tuning,0.051
-seniority,intern,intern,981,Terraform,0.0143
-seniority,intern,intern,981,Unit / integration testing,0.0795
-seniority,intern,intern,981,Pre-sales / solution architecture / PoCs,0.0214
-seniority,intern,intern,981,LLM evaluation,0.0652
-seniority,intern,intern,981,AI-assisted development,0.0958
-seniority,junior,junior,1675,Python,0.4096
-seniority,junior,junior,1675,AWS,0.2143
-seniority,junior,junior,1675,Cloud (unspecified),0.2048
-seniority,junior,junior,1675,LLMs / GenAI (general),0.1469
-seniority,junior,junior,1675,AI agents / agentic workflows,0.117
-seniority,junior,junior,1675,CI/CD,0.1773
-seniority,junior,junior,1675,Observability / monitoring,0.1546
-seniority,junior,junior,1675,Distributed systems,0.1272
-seniority,junior,junior,1675,SQL,0.1821
-seniority,junior,junior,1675,Java,0.2173
-seniority,junior,junior,1675,Machine learning fundamentals,0.1493
-seniority,junior,junior,1675,Kubernetes,0.1379
-seniority,junior,junior,1675,Docker,0.1636
-seniority,junior,junior,1675,Financial services / banking domain,0.0693
-seniority,junior,junior,1675,Azure,0.126
-seniority,junior,junior,1675,GCP,0.1248
-seniority,junior,junior,1675,System design / architecture,0.1224
-seniority,junior,junior,1675,REST APIs,0.0991
-seniority,junior,junior,1675,C++,0.1331
-seniority,junior,junior,1675,TypeScript,0.1582
-seniority,junior,junior,1675,Go,0.1337
-seniority,junior,junior,1675,Linux,0.1075
-seniority,junior,junior,1675,"SRE (SLOs, on-call)",0.043
-seniority,junior,junior,1675,Frontend (general),0.1373
-seniority,junior,junior,1675,Data pipelines / ETL,0.0848
-seniority,junior,junior,1675,Full-stack,0.1409
-seniority,junior,junior,1675,Incident response / on-call,0.0669
-seniority,junior,junior,1675,React,0.089
-seniority,junior,junior,1675,JavaScript,0.169
-seniority,junior,junior,1675,DevOps,0.0591
-seniority,junior,junior,1675,Git,0.1612
-seniority,junior,junior,1675,OOP / design patterns,0.1176
-seniority,junior,junior,1675,Data structures & algorithms,0.1194
-seniority,junior,junior,1675,Infrastructure as code,0.0937
-seniority,junior,junior,1675,Query optimization / performance tuning,0.0382
-seniority,junior,junior,1675,Terraform,0.0376
-seniority,junior,junior,1675,Unit / integration testing,0.1075
-seniority,junior,junior,1675,Pre-sales / solution architecture / PoCs,0.0209
-seniority,junior,junior,1675,LLM evaluation,0.0519
-seniority,junior,junior,1675,AI-assisted development,0.0466
-seniority,mid,mid,7304,Python,0.353
-seniority,mid,mid,7304,AWS,0.2262
-seniority,mid,mid,7304,Cloud (unspecified),0.1891
-seniority,mid,mid,7304,LLMs / GenAI (general),0.2193
-seniority,mid,mid,7304,AI agents / agentic workflows,0.1691
-seniority,mid,mid,7304,CI/CD,0.1766
-seniority,mid,mid,7304,Observability / monitoring,0.1449
-seniority,mid,mid,7304,Distributed systems,0.1208
-seniority,mid,mid,7304,SQL,0.1941
-seniority,mid,mid,7304,Java,0.1542
-seniority,mid,mid,7304,Machine learning fundamentals,0.1369
-seniority,mid,mid,7304,Kubernetes,0.1151
-seniority,mid,mid,7304,Docker,0.1349
-seniority,mid,mid,7304,Financial services / banking domain,0.152
-seniority,mid,mid,7304,Azure,0.1339
-seniority,mid,mid,7304,GCP,0.1008
-seniority,mid,mid,7304,System design / architecture,0.1023
-seniority,mid,mid,7304,REST APIs,0.1501
-seniority,mid,mid,7304,C++,0.0978
-seniority,mid,mid,7304,TypeScript,0.1071
-seniority,mid,mid,7304,Go,0.07
-seniority,mid,mid,7304,Linux,0.1083
-seniority,mid,mid,7304,"SRE (SLOs, on-call)",0.0738
-seniority,mid,mid,7304,Frontend (general),0.0994
-seniority,mid,mid,7304,Data pipelines / ETL,0.0994
-seniority,mid,mid,7304,Full-stack,0.1025
-seniority,mid,mid,7304,Incident response / on-call,0.0863
-seniority,mid,mid,7304,React,0.0993
-seniority,mid,mid,7304,JavaScript,0.1146
-seniority,mid,mid,7304,DevOps,0.0923
-seniority,mid,mid,7304,Git,0.1151
-seniority,mid,mid,7304,OOP / design patterns,0.088
-seniority,mid,mid,7304,Data structures & algorithms,0.065
-seniority,mid,mid,7304,Infrastructure as code,0.0553
-seniority,mid,mid,7304,Query optimization / performance tuning,0.0578
-seniority,mid,mid,7304,Terraform,0.0575
-seniority,mid,mid,7304,Unit / integration testing,0.0824
-seniority,mid,mid,7304,Pre-sales / solution architecture / PoCs,0.0552
-seniority,mid,mid,7304,LLM evaluation,0.0723
-seniority,mid,mid,7304,AI-assisted development,0.0587
-seniority,senior,senior,13081,Python,0.4415
-seniority,senior,senior,13081,AWS,0.3243
-seniority,senior,senior,13081,Cloud (unspecified),0.3088
-seniority,senior,senior,13081,LLMs / GenAI (general),0.2387
-seniority,senior,senior,13081,AI agents / agentic workflows,0.2459
-seniority,senior,senior,13081,CI/CD,0.2701
-seniority,senior,senior,13081,Observability / monitoring,0.2436
-seniority,senior,senior,13081,Distributed systems,0.2036
-seniority,senior,senior,13081,SQL,0.207
-seniority,senior,senior,13081,Java,0.1822
-seniority,senior,senior,13081,Machine learning fundamentals,0.1683
-seniority,senior,senior,13081,Kubernetes,0.2123
-seniority,senior,senior,13081,Docker,0.2006
-seniority,senior,senior,13081,Financial services / banking domain,0.1325
-seniority,senior,senior,13081,Azure,0.1899
-seniority,senior,senior,13081,GCP,0.1752
-seniority,senior,senior,13081,System design / architecture,0.127
-seniority,senior,senior,13081,REST APIs,0.1686
-seniority,senior,senior,13081,C++,0.1196
-seniority,senior,senior,13081,TypeScript,0.1491
-seniority,senior,senior,13081,Go,0.1416
-seniority,senior,senior,13081,Linux,0.1366
-seniority,senior,senior,13081,"SRE (SLOs, on-call)",0.1277
-seniority,senior,senior,13081,Frontend (general),0.1218
-seniority,senior,senior,13081,Data pipelines / ETL,0.1268
-seniority,senior,senior,13081,Full-stack,0.1222
-seniority,senior,senior,13081,Incident response / on-call,0.117
-seniority,senior,senior,13081,React,0.1145
-seniority,senior,senior,13081,JavaScript,0.1105
-seniority,senior,senior,13081,DevOps,0.1196
-seniority,senior,senior,13081,Git,0.1045
-seniority,senior,senior,13081,OOP / design patterns,0.089
-seniority,senior,senior,13081,Data structures & algorithms,0.08
-seniority,senior,senior,13081,Infrastructure as code,0.1089
-seniority,senior,senior,13081,Query optimization / performance tuning,0.1045
-seniority,senior,senior,13081,Terraform,0.1105
-seniority,senior,senior,13081,Unit / integration testing,0.0959
-seniority,senior,senior,13081,Pre-sales / solution architecture / PoCs,0.0907
-seniority,senior,senior,13081,LLM evaluation,0.0623
-seniority,senior,senior,13081,AI-assisted development,0.0914
-seniority,staff,staff,6380,Python,0.4147
-seniority,staff,staff,6380,AWS,0.3099
-seniority,staff,staff,6380,Cloud (unspecified),0.3249
-seniority,staff,staff,6380,LLMs / GenAI (general),0.3069
-seniority,staff,staff,6380,AI agents / agentic workflows,0.313
-seniority,staff,staff,6380,CI/CD,0.261
-seniority,staff,staff,6380,Observability / monitoring,0.308
-seniority,staff,staff,6380,Distributed systems,0.2931
-seniority,staff,staff,6380,SQL,0.1498
-seniority,staff,staff,6380,Java,0.1961
-seniority,staff,staff,6380,Machine learning fundamentals,0.1992
-seniority,staff,staff,6380,Kubernetes,0.2312
-seniority,staff,staff,6380,Docker,0.1945
-seniority,staff,staff,6380,Financial services / banking domain,0.1665
-seniority,staff,staff,6380,Azure,0.1804
-seniority,staff,staff,6380,GCP,0.1672
-seniority,staff,staff,6380,System design / architecture,0.1672
-seniority,staff,staff,6380,REST APIs,0.1235
-seniority,staff,staff,6380,C++,0.1273
-seniority,staff,staff,6380,TypeScript,0.1257
-seniority,staff,staff,6380,Go,0.1644
-seniority,staff,staff,6380,Linux,0.1022
-seniority,staff,staff,6380,"SRE (SLOs, on-call)",0.15
-seniority,staff,staff,6380,Frontend (general),0.1166
-seniority,staff,staff,6380,Data pipelines / ETL,0.1238
-seniority,staff,staff,6380,Full-stack,0.103
-seniority,staff,staff,6380,Incident response / on-call,0.1232
-seniority,staff,staff,6380,React,0.106
-seniority,staff,staff,6380,JavaScript,0.0837
-seniority,staff,staff,6380,DevOps,0.0934
-seniority,staff,staff,6380,Git,0.0669
-seniority,staff,staff,6380,OOP / design patterns,0.0708
-seniority,staff,staff,6380,Data structures & algorithms,0.1013
-seniority,staff,staff,6380,Infrastructure as code,0.1182
-seniority,staff,staff,6380,Query optimization / performance tuning,0.1182
-seniority,staff,staff,6380,Terraform,0.1092
-seniority,staff,staff,6380,Unit / integration testing,0.0824
-seniority,staff,staff,6380,Pre-sales / solution architecture / PoCs,0.0801
-seniority,staff,staff,6380,LLM evaluation,0.1063
-seniority,staff,staff,6380,AI-assisted development,0.1017
-seniority,manager,manager,2814,Python,0.1795
-seniority,manager,manager,2814,AWS,0.1841
-seniority,manager,manager,2814,Cloud (unspecified),0.226
-seniority,manager,manager,2814,LLMs / GenAI (general),0.3134
-seniority,manager,manager,2814,AI agents / agentic workflows,0.2811
-seniority,manager,manager,2814,CI/CD,0.1425
-seniority,manager,manager,2814,Observability / monitoring,0.2082
-seniority,manager,manager,2814,Distributed systems,0.2267
-seniority,manager,manager,2814,SQL,0.0952
-seniority,manager,manager,2814,Java,0.0892
-seniority,manager,manager,2814,Machine learning fundamentals,0.1624
-seniority,manager,manager,2814,Kubernetes,0.1254
-seniority,manager,manager,2814,Docker,0.0878
-seniority,manager,manager,2814,Financial services / banking domain,0.2747
-seniority,manager,manager,2814,Azure,0.1031
-seniority,manager,manager,2814,GCP,0.1055
-seniority,manager,manager,2814,System design / architecture,0.0959
-seniority,manager,manager,2814,REST APIs,0.0576
-seniority,manager,manager,2814,C++,0.0473
-seniority,manager,manager,2814,TypeScript,0.0661
-seniority,manager,manager,2814,Go,0.0721
-seniority,manager,manager,2814,Linux,0.0508
-seniority,manager,manager,2814,"SRE (SLOs, on-call)",0.1283
-seniority,manager,manager,2814,Frontend (general),0.0697
-seniority,manager,manager,2814,Data pipelines / ETL,0.0835
-seniority,manager,manager,2814,Full-stack,0.0839
-seniority,manager,manager,2814,Incident response / on-call,0.1365
-seniority,manager,manager,2814,React,0.0668
-seniority,manager,manager,2814,JavaScript,0.0281
-seniority,manager,manager,2814,DevOps,0.0657
-seniority,manager,manager,2814,Git,0.027
-seniority,manager,manager,2814,OOP / design patterns,0.0252
-seniority,manager,manager,2814,Data structures & algorithms,0.0373
-seniority,manager,manager,2814,Infrastructure as code,0.0526
-seniority,manager,manager,2814,Query optimization / performance tuning,0.0487
-seniority,manager,manager,2814,Terraform,0.0501
-seniority,manager,manager,2814,Unit / integration testing,0.043
-seniority,manager,manager,2814,Pre-sales / solution architecture / PoCs,0.0885
-seniority,manager,manager,2814,LLM evaluation,0.135
-seniority,manager,manager,2814,AI-assisted development,0.0771
-seniority,unspecified,unspecified,8524,Python,0.4032
-seniority,unspecified,unspecified,8524,AWS,0.2519
-seniority,unspecified,unspecified,8524,Cloud (unspecified),0.2224
-seniority,unspecified,unspecified,8524,LLMs / GenAI (general),0.2538
-seniority,unspecified,unspecified,8524,AI agents / agentic workflows,0.2362
-seniority,unspecified,unspecified,8524,CI/CD,0.155
-seniority,unspecified,unspecified,8524,Observability / monitoring,0.1705
-seniority,unspecified,unspecified,8524,Distributed systems,0.17
-seniority,unspecified,unspecified,8524,SQL,0.1475
-seniority,unspecified,unspecified,8524,Java,0.1682
-seniority,unspecified,unspecified,8524,Machine learning fundamentals,0.1652
-seniority,unspecified,unspecified,8524,Kubernetes,0.1279
-seniority,unspecified,unspecified,8524,Docker,0.1283
-seniority,unspecified,unspecified,8524,Financial services / banking domain,0.1459
-seniority,unspecified,unspecified,8524,Azure,0.1059
-seniority,unspecified,unspecified,8524,GCP,0.0969
-seniority,unspecified,unspecified,8524,System design / architecture,0.1502
-seniority,unspecified,unspecified,8524,REST APIs,0.089
-seniority,unspecified,unspecified,8524,C++,0.1668
-seniority,unspecified,unspecified,8524,TypeScript,0.116
-seniority,unspecified,unspecified,8524,Go,0.1015
-seniority,unspecified,unspecified,8524,Linux,0.1287
-seniority,unspecified,unspecified,8524,"SRE (SLOs, on-call)",0.1055
-seniority,unspecified,unspecified,8524,Frontend (general),0.0924
-seniority,unspecified,unspecified,8524,Data pipelines / ETL,0.0876
-seniority,unspecified,unspecified,8524,Full-stack,0.0967
-seniority,unspecified,unspecified,8524,Incident response / on-call,0.0835
-seniority,unspecified,unspecified,8524,React,0.0822
-seniority,unspecified,unspecified,8524,JavaScript,0.0748
-seniority,unspecified,unspecified,8524,DevOps,0.0734
-seniority,unspecified,unspecified,8524,Git,0.0652
-seniority,unspecified,unspecified,8524,OOP / design patterns,0.12
-seniority,unspecified,unspecified,8524,Data structures & algorithms,0.0885
-seniority,unspecified,unspecified,8524,Infrastructure as code,0.0624
-seniority,unspecified,unspecified,8524,Query optimization / performance tuning,0.0668
-seniority,unspecified,unspecified,8524,Terraform,0.0605
-seniority,unspecified,unspecified,8524,Unit / integration testing,0.0553
-seniority,unspecified,unspecified,8524,Pre-sales / solution architecture / PoCs,0.0966
-seniority,unspecified,unspecified,8524,LLM evaluation,0.0724
-seniority,unspecified,unspecified,8524,AI-assisted development,0.0589
-role_family,fde,Forward deployed / solutions,4350,Python,0.3731
-role_family,fde,Forward deployed / solutions,4350,AWS,0.3494
-role_family,fde,Forward deployed / solutions,4350,Cloud (unspecified),0.3646
-role_family,fde,Forward deployed / solutions,4350,LLMs / GenAI (general),0.2972
-role_family,fde,Forward deployed / solutions,4350,AI agents / agentic workflows,0.3067
-role_family,fde,Forward deployed / solutions,4350,CI/CD,0.1297
-role_family,fde,Forward deployed / solutions,4350,Observability / monitoring,0.1294
-role_family,fde,Forward deployed / solutions,4350,Distributed systems,0.1002
-role_family,fde,Forward deployed / solutions,4350,SQL,0.1653
-role_family,fde,Forward deployed / solutions,4350,Java,0.1103
-role_family,fde,Forward deployed / solutions,4350,Machine learning fundamentals,0.1062
-role_family,fde,Forward deployed / solutions,4350,Kubernetes,0.1333
-role_family,fde,Forward deployed / solutions,4350,Docker,0.1303
-role_family,fde,Forward deployed / solutions,4350,Financial services / banking domain,0.1423
-role_family,fde,Forward deployed / solutions,4350,Azure,0.2352
-role_family,fde,Forward deployed / solutions,4350,GCP,0.2028
-role_family,fde,Forward deployed / solutions,4350,System design / architecture,0.0963
-role_family,fde,Forward deployed / solutions,4350,REST APIs,0.1274
-role_family,fde,Forward deployed / solutions,4350,C++,0.0451
-role_family,fde,Forward deployed / solutions,4350,TypeScript,0.1193
-role_family,fde,Forward deployed / solutions,4350,Go,0.0851
-role_family,fde,Forward deployed / solutions,4350,Linux,0.0807
-role_family,fde,Forward deployed / solutions,4350,"SRE (SLOs, on-call)",0.0432
-role_family,fde,Forward deployed / solutions,4350,Frontend (general),0.0531
-role_family,fde,Forward deployed / solutions,4350,Data pipelines / ETL,0.1184
-role_family,fde,Forward deployed / solutions,4350,Full-stack,0.0545
-role_family,fde,Forward deployed / solutions,4350,Incident response / on-call,0.0421
-role_family,fde,Forward deployed / solutions,4350,React,0.0561
-role_family,fde,Forward deployed / solutions,4350,JavaScript,0.1299
-role_family,fde,Forward deployed / solutions,4350,DevOps,0.0936
-role_family,fde,Forward deployed / solutions,4350,Git,0.0368
-role_family,fde,Forward deployed / solutions,4350,OOP / design patterns,0.046
-role_family,fde,Forward deployed / solutions,4350,Data structures & algorithms,0.0244
-role_family,fde,Forward deployed / solutions,4350,Infrastructure as code,0.0575
-role_family,fde,Forward deployed / solutions,4350,Query optimization / performance tuning,0.0271
-role_family,fde,Forward deployed / solutions,4350,Terraform,0.0533
-role_family,fde,Forward deployed / solutions,4350,Unit / integration testing,0.0228
-role_family,fde,Forward deployed / solutions,4350,Pre-sales / solution architecture / PoCs,0.4989
-role_family,fde,Forward deployed / solutions,4350,LLM evaluation,0.0674
-role_family,fde,Forward deployed / solutions,4350,AI-assisted development,0.0485
-role_family,ai_ml,AI/ML engineering,8784,Python,0.5072
-role_family,ai_ml,AI/ML engineering,8784,AWS,0.2016
-role_family,ai_ml,AI/ML engineering,8784,Cloud (unspecified),0.2009
-role_family,ai_ml,AI/ML engineering,8784,LLMs / GenAI (general),0.5466
-role_family,ai_ml,AI/ML engineering,8784,AI agents / agentic workflows,0.4121
-role_family,ai_ml,AI/ML engineering,8784,CI/CD,0.1496
-role_family,ai_ml,AI/ML engineering,8784,Observability / monitoring,0.1915
-role_family,ai_ml,AI/ML engineering,8784,Distributed systems,0.1582
-role_family,ai_ml,AI/ML engineering,8784,SQL,0.1791
-role_family,ai_ml,AI/ML engineering,8784,Java,0.1096
-role_family,ai_ml,AI/ML engineering,8784,Machine learning fundamentals,0.4101
-role_family,ai_ml,AI/ML engineering,8784,Kubernetes,0.1136
-role_family,ai_ml,AI/ML engineering,8784,Docker,0.1247
-role_family,ai_ml,AI/ML engineering,8784,Financial services / banking domain,0.1995
-role_family,ai_ml,AI/ML engineering,8784,Azure,0.1243
-role_family,ai_ml,AI/ML engineering,8784,GCP,0.1199
-role_family,ai_ml,AI/ML engineering,8784,System design / architecture,0.088
-role_family,ai_ml,AI/ML engineering,8784,REST APIs,0.0936
-role_family,ai_ml,AI/ML engineering,8784,C++,0.1022
-role_family,ai_ml,AI/ML engineering,8784,TypeScript,0.0882
-role_family,ai_ml,AI/ML engineering,8784,Go,0.065
-role_family,ai_ml,AI/ML engineering,8784,Linux,0.0608
-role_family,ai_ml,AI/ML engineering,8784,"SRE (SLOs, on-call)",0.0483
-role_family,ai_ml,AI/ML engineering,8784,Frontend (general),0.0657
-role_family,ai_ml,AI/ML engineering,8784,Data pipelines / ETL,0.1341
-role_family,ai_ml,AI/ML engineering,8784,Full-stack,0.0834
-role_family,ai_ml,AI/ML engineering,8784,Incident response / on-call,0.0454
-role_family,ai_ml,AI/ML engineering,8784,React,0.0504
-role_family,ai_ml,AI/ML engineering,8784,JavaScript,0.0589
-role_family,ai_ml,AI/ML engineering,8784,DevOps,0.0559
-role_family,ai_ml,AI/ML engineering,8784,Git,0.07
-role_family,ai_ml,AI/ML engineering,8784,OOP / design patterns,0.0421
-role_family,ai_ml,AI/ML engineering,8784,Data structures & algorithms,0.122
-role_family,ai_ml,AI/ML engineering,8784,Infrastructure as code,0.0575
-role_family,ai_ml,AI/ML engineering,8784,Query optimization / performance tuning,0.0638
-role_family,ai_ml,AI/ML engineering,8784,Terraform,0.0513
-role_family,ai_ml,AI/ML engineering,8784,Unit / integration testing,0.0562
-role_family,ai_ml,AI/ML engineering,8784,Pre-sales / solution architecture / PoCs,0.0525
-role_family,ai_ml,AI/ML engineering,8784,LLM evaluation,0.2443
-role_family,ai_ml,AI/ML engineering,8784,AI-assisted development,0.085
-role_family,data,Data engineering & science,1859,Python,0.6509
-role_family,data,Data engineering & science,1859,AWS,0.3497
-role_family,data,Data engineering & science,1859,Cloud (unspecified),0.2453
-role_family,data,Data engineering & science,1859,LLMs / GenAI (general),0.1915
-role_family,data,Data engineering & science,1859,AI agents / agentic workflows,0.1614
-role_family,data,Data engineering & science,1859,CI/CD,0.2335
-role_family,data,Data engineering & science,1859,Observability / monitoring,0.2146
-role_family,data,Data engineering & science,1859,Distributed systems,0.1001
-role_family,data,Data engineering & science,1859,SQL,0.6875
-role_family,data,Data engineering & science,1859,Java,0.1382
-role_family,data,Data engineering & science,1859,Machine learning fundamentals,0.2431
-role_family,data,Data engineering & science,1859,Kubernetes,0.1146
-role_family,data,Data engineering & science,1859,Docker,0.1065
-role_family,data,Data engineering & science,1859,Financial services / banking domain,0.1953
-role_family,data,Data engineering & science,1859,Azure,0.2017
-role_family,data,Data engineering & science,1859,GCP,0.1824
-role_family,data,Data engineering & science,1859,System design / architecture,0.0737
-role_family,data,Data engineering & science,1859,REST APIs,0.0576
-role_family,data,Data engineering & science,1859,C++,0.0226
-role_family,data,Data engineering & science,1859,TypeScript,0.0167
-role_family,data,Data engineering & science,1859,Go,0.0473
-role_family,data,Data engineering & science,1859,Linux,0.0393
-role_family,data,Data engineering & science,1859,"SRE (SLOs, on-call)",0.0748
-role_family,data,Data engineering & science,1859,Frontend (general),0.0167
-role_family,data,Data engineering & science,1859,Data pipelines / ETL,0.5654
-role_family,data,Data engineering & science,1859,Full-stack,0.0371
-role_family,data,Data engineering & science,1859,Incident response / on-call,0.0683
-role_family,data,Data engineering & science,1859,React,0.0134
-role_family,data,Data engineering & science,1859,JavaScript,0.0134
-role_family,data,Data engineering & science,1859,DevOps,0.092
-role_family,data,Data engineering & science,1859,Git,0.1603
-role_family,data,Data engineering & science,1859,OOP / design patterns,0.0533
-role_family,data,Data engineering & science,1859,Data structures & algorithms,0.0812
-role_family,data,Data engineering & science,1859,Infrastructure as code,0.1033
-role_family,data,Data engineering & science,1859,Query optimization / performance tuning,0.1619
-role_family,data,Data engineering & science,1859,Terraform,0.0963
-role_family,data,Data engineering & science,1859,Unit / integration testing,0.0818
-role_family,data,Data engineering & science,1859,Pre-sales / solution architecture / PoCs,0.0242
-role_family,data,Data engineering & science,1859,LLM evaluation,0.0393
-role_family,data,Data engineering & science,1859,AI-assisted development,0.0646
-role_family,backend,Backend / Python,9481,Python,0.3664
-role_family,backend,Backend / Python,9481,AWS,0.2979
-role_family,backend,Backend / Python,9481,Cloud (unspecified),0.2789
-role_family,backend,Backend / Python,9481,LLMs / GenAI (general),0.1593
-role_family,backend,Backend / Python,9481,AI agents / agentic workflows,0.196
-role_family,backend,Backend / Python,9481,CI/CD,0.2894
-role_family,backend,Backend / Python,9481,Observability / monitoring,0.2822
-role_family,backend,Backend / Python,9481,Distributed systems,0.3198
-role_family,backend,Backend / Python,9481,SQL,0.1945
-role_family,backend,Backend / Python,9481,Java,0.3238
-role_family,backend,Backend / Python,9481,Machine learning fundamentals,0.101
-role_family,backend,Backend / Python,9481,Kubernetes,0.2441
-role_family,backend,Backend / Python,9481,Docker,0.2345
-role_family,backend,Backend / Python,9481,Financial services / banking domain,0.1452
-role_family,backend,Backend / Python,9481,Azure,0.1601
-role_family,backend,Backend / Python,9481,GCP,0.1447
-role_family,backend,Backend / Python,9481,System design / architecture,0.169
-role_family,backend,Backend / Python,9481,REST APIs,0.242
-role_family,backend,Backend / Python,9481,C++,0.1871
-role_family,backend,Backend / Python,9481,TypeScript,0.2383
-role_family,backend,Backend / Python,9481,Go,0.2019
-role_family,backend,Backend / Python,9481,Linux,0.1118
-role_family,backend,Backend / Python,9481,"SRE (SLOs, on-call)",0.1304
-role_family,backend,Backend / Python,9481,Frontend (general),0.2261
-role_family,backend,Backend / Python,9481,Data pipelines / ETL,0.0917
-role_family,backend,Backend / Python,9481,Full-stack,0.2504
-role_family,backend,Backend / Python,9481,Incident response / on-call,0.0788
-role_family,backend,Backend / Python,9481,React,0.2156
-role_family,backend,Backend / Python,9481,JavaScript,0.1795
-role_family,backend,Backend / Python,9481,DevOps,0.1017
-role_family,backend,Backend / Python,9481,Git,0.1351
-role_family,backend,Backend / Python,9481,OOP / design patterns,0.1258
-role_family,backend,Backend / Python,9481,Data structures & algorithms,0.1289
-role_family,backend,Backend / Python,9481,Infrastructure as code,0.0741
-role_family,backend,Backend / Python,9481,Query optimization / performance tuning,0.1326
-role_family,backend,Backend / Python,9481,Terraform,0.0709
-role_family,backend,Backend / Python,9481,Unit / integration testing,0.1411
-role_family,backend,Backend / Python,9481,Pre-sales / solution architecture / PoCs,0.0112
-role_family,backend,Backend / Python,9481,LLM evaluation,0.0355
-role_family,backend,Backend / Python,9481,AI-assisted development,0.1134
-role_family,frontend,Frontend & mobile,1250,Python,0.1064
-role_family,frontend,Frontend & mobile,1250,AWS,0.1184
-role_family,frontend,Frontend & mobile,1250,Cloud (unspecified),0.0888
-role_family,frontend,Frontend & mobile,1250,LLMs / GenAI (general),0.1248
-role_family,frontend,Frontend & mobile,1250,AI agents / agentic workflows,0.164
-role_family,frontend,Frontend & mobile,1250,CI/CD,0.3008
-role_family,frontend,Frontend & mobile,1250,Observability / monitoring,0.136
-role_family,frontend,Frontend & mobile,1250,Distributed systems,0.0624
-role_family,frontend,Frontend & mobile,1250,SQL,0.0872
-role_family,frontend,Frontend & mobile,1250,Java,0.1608
-role_family,frontend,Frontend & mobile,1250,Machine learning fundamentals,0.0448
-role_family,frontend,Frontend & mobile,1250,Kubernetes,0.0672
-role_family,frontend,Frontend & mobile,1250,Docker,0.0912
-role_family,frontend,Frontend & mobile,1250,Financial services / banking domain,0.168
-role_family,frontend,Frontend & mobile,1250,Azure,0.0568
-role_family,frontend,Frontend & mobile,1250,GCP,0.044
-role_family,frontend,Frontend & mobile,1250,System design / architecture,0.1488
-role_family,frontend,Frontend & mobile,1250,REST APIs,0.2888
-role_family,frontend,Frontend & mobile,1250,C++,0.0528
-role_family,frontend,Frontend & mobile,1250,TypeScript,0.3664
-role_family,frontend,Frontend & mobile,1250,Go,0.0392
-role_family,frontend,Frontend & mobile,1250,Linux,0.0384
-role_family,frontend,Frontend & mobile,1250,"SRE (SLOs, on-call)",0.044
-role_family,frontend,Frontend & mobile,1250,Frontend (general),0.4608
-role_family,frontend,Frontend & mobile,1250,Data pipelines / ETL,0.0104
-role_family,frontend,Frontend & mobile,1250,Full-stack,0.172
-role_family,frontend,Frontend & mobile,1250,Incident response / on-call,0.0336
-role_family,frontend,Frontend & mobile,1250,React,0.436
-role_family,frontend,Frontend & mobile,1250,JavaScript,0.2976
-role_family,frontend,Frontend & mobile,1250,DevOps,0.0824
-role_family,frontend,Frontend & mobile,1250,Git,0.144
-role_family,frontend,Frontend & mobile,1250,OOP / design patterns,0.1536
-role_family,frontend,Frontend & mobile,1250,Data structures & algorithms,0.0552
-role_family,frontend,Frontend & mobile,1250,Infrastructure as code,0.012
-role_family,frontend,Frontend & mobile,1250,Query optimization / performance tuning,0.1608
-role_family,frontend,Frontend & mobile,1250,Terraform,0.0208
-role_family,frontend,Frontend & mobile,1250,Unit / integration testing,0.1616
-role_family,frontend,Frontend & mobile,1250,Pre-sales / solution architecture / PoCs,0.0056
-role_family,frontend,Frontend & mobile,1250,LLM evaluation,0.0184
-role_family,frontend,Frontend & mobile,1250,AI-assisted development,0.1424
-role_family,infra,"Infra, DevOps & security",5628,Python,0.3868
-role_family,infra,"Infra, DevOps & security",5628,AWS,0.3918
-role_family,infra,"Infra, DevOps & security",5628,Cloud (unspecified),0.3961
-role_family,infra,"Infra, DevOps & security",5628,LLMs / GenAI (general),0.1352
-role_family,infra,"Infra, DevOps & security",5628,AI agents / agentic workflows,0.1684
-role_family,infra,"Infra, DevOps & security",5628,CI/CD,0.3038
-role_family,infra,"Infra, DevOps & security",5628,Observability / monitoring,0.3015
-role_family,infra,"Infra, DevOps & security",5628,Distributed systems,0.1892
-role_family,infra,"Infra, DevOps & security",5628,SQL,0.0744
-role_family,infra,"Infra, DevOps & security",5628,Java,0.1093
-role_family,infra,"Infra, DevOps & security",5628,Machine learning fundamentals,0.0677
-role_family,infra,"Infra, DevOps & security",5628,Kubernetes,0.3129
-role_family,infra,"Infra, DevOps & security",5628,Docker,0.2587
-role_family,infra,"Infra, DevOps & security",5628,Financial services / banking domain,0.1267
-role_family,infra,"Infra, DevOps & security",5628,Azure,0.205
-role_family,infra,"Infra, DevOps & security",5628,GCP,0.1946
-role_family,infra,"Infra, DevOps & security",5628,System design / architecture,0.0801
-role_family,infra,"Infra, DevOps & security",5628,REST APIs,0.0521
-role_family,infra,"Infra, DevOps & security",5628,C++,0.0903
-role_family,infra,"Infra, DevOps & security",5628,TypeScript,0.0673
-role_family,infra,"Infra, DevOps & security",5628,Go,0.1928
-role_family,infra,"Infra, DevOps & security",5628,Linux,0.221
-role_family,infra,"Infra, DevOps & security",5628,"SRE (SLOs, on-call)",0.2479
-role_family,infra,"Infra, DevOps & security",5628,Frontend (general),0.0263
-role_family,infra,"Infra, DevOps & security",5628,Data pipelines / ETL,0.0409
-role_family,infra,"Infra, DevOps & security",5628,Full-stack,0.0293
-role_family,infra,"Infra, DevOps & security",5628,Incident response / on-call,0.3006
-role_family,infra,"Infra, DevOps & security",5628,React,0.0272
-role_family,infra,"Infra, DevOps & security",5628,JavaScript,0.0437
-role_family,infra,"Infra, DevOps & security",5628,DevOps,0.1967
-role_family,infra,"Infra, DevOps & security",5628,Git,0.0776
-role_family,infra,"Infra, DevOps & security",5628,OOP / design patterns,0.0444
-role_family,infra,"Infra, DevOps & security",5628,Data structures & algorithms,0.03
-role_family,infra,"Infra, DevOps & security",5628,Infrastructure as code,0.2415
-role_family,infra,"Infra, DevOps & security",5628,Query optimization / performance tuning,0.0595
-role_family,infra,"Infra, DevOps & security",5628,Terraform,0.2367
-role_family,infra,"Infra, DevOps & security",5628,Unit / integration testing,0.0405
-role_family,infra,"Infra, DevOps & security",5628,Pre-sales / solution architecture / PoCs,0.0291
-role_family,infra,"Infra, DevOps & security",5628,LLM evaluation,0.0137
-role_family,infra,"Infra, DevOps & security",5628,AI-assisted development,0.0531
-role_family,quant,Quant & trading tech,535,Python,0.7551
-role_family,quant,Quant & trading tech,535,AWS,0.0766
-role_family,quant,Quant & trading tech,535,Cloud (unspecified),0.0673
-role_family,quant,Quant & trading tech,535,LLMs / GenAI (general),0.0617
-role_family,quant,Quant & trading tech,535,AI agents / agentic workflows,0.0449
-role_family,quant,Quant & trading tech,535,CI/CD,0.0972
-role_family,quant,Quant & trading tech,535,Observability / monitoring,0.1047
-role_family,quant,Quant & trading tech,535,Distributed systems,0.0841
-role_family,quant,Quant & trading tech,535,SQL,0.2056
-role_family,quant,Quant & trading tech,535,Java,0.1533
-role_family,quant,Quant & trading tech,535,Machine learning fundamentals,0.3327
-role_family,quant,Quant & trading tech,535,Kubernetes,0.0598
-role_family,quant,Quant & trading tech,535,Docker,0.0692
-role_family,quant,Quant & trading tech,535,Financial services / banking domain,0.2037
-role_family,quant,Quant & trading tech,535,Azure,0.0112
-role_family,quant,Quant & trading tech,535,GCP,0.0206
-role_family,quant,Quant & trading tech,535,System design / architecture,0.0579
-role_family,quant,Quant & trading tech,535,REST APIs,0.0318
-role_family,quant,Quant & trading tech,535,C++,0.4729
-role_family,quant,Quant & trading tech,535,TypeScript,0.0112
-role_family,quant,Quant & trading tech,535,Go,0.0299
-role_family,quant,Quant & trading tech,535,Linux,0.2243
-role_family,quant,Quant & trading tech,535,"SRE (SLOs, on-call)",0.0318
-role_family,quant,Quant & trading tech,535,Frontend (general),0.0393
-role_family,quant,Quant & trading tech,535,Data pipelines / ETL,0.0972
-role_family,quant,Quant & trading tech,535,Full-stack,0.028
-role_family,quant,Quant & trading tech,535,Incident response / on-call,0.0243
-role_family,quant,Quant & trading tech,535,React,0.0467
-role_family,quant,Quant & trading tech,535,JavaScript,0.0168
-role_family,quant,Quant & trading tech,535,DevOps,0.0355
-role_family,quant,Quant & trading tech,535,Git,0.0822
-role_family,quant,Quant & trading tech,535,OOP / design patterns,0.0673
-role_family,quant,Quant & trading tech,535,Data structures & algorithms,0.2019
-role_family,quant,Quant & trading tech,535,Infrastructure as code,0.0224
-role_family,quant,Quant & trading tech,535,Query optimization / performance tuning,0.0822
-role_family,quant,Quant & trading tech,535,Terraform,0.0131
-role_family,quant,Quant & trading tech,535,Unit / integration testing,0.0467
-role_family,quant,Quant & trading tech,535,Pre-sales / solution architecture / PoCs,0.0019
-role_family,quant,Quant & trading tech,535,LLM evaluation,0.0056
-role_family,quant,Quant & trading tech,535,AI-assisted development,0.0374
-role_family,trading_biz,"Trading desk, ops & product",335,Python,0.2507
-role_family,trading_biz,"Trading desk, ops & product",335,AWS,0.009
-role_family,trading_biz,"Trading desk, ops & product",335,Cloud (unspecified),0.009
-role_family,trading_biz,"Trading desk, ops & product",335,LLMs / GenAI (general),0.0239
-role_family,trading_biz,"Trading desk, ops & product",335,AI agents / agentic workflows,0.0209
-role_family,trading_biz,"Trading desk, ops & product",335,CI/CD,0.0149
-role_family,trading_biz,"Trading desk, ops & product",335,Observability / monitoring,0.0776
-role_family,trading_biz,"Trading desk, ops & product",335,Distributed systems,0.0358
-role_family,trading_biz,"Trading desk, ops & product",335,SQL,0.1612
-role_family,trading_biz,"Trading desk, ops & product",335,Java,0.0179
-role_family,trading_biz,"Trading desk, ops & product",335,Machine learning fundamentals,0.0239
-role_family,trading_biz,"Trading desk, ops & product",335,Kubernetes,0.009
-role_family,trading_biz,"Trading desk, ops & product",335,Docker,0.0149
-role_family,trading_biz,"Trading desk, ops & product",335,Financial services / banking domain,0.5672
-role_family,trading_biz,"Trading desk, ops & product",335,Azure,0.0
-role_family,trading_biz,"Trading desk, ops & product",335,GCP,0.006
-role_family,trading_biz,"Trading desk, ops & product",335,System design / architecture,0.0149
-role_family,trading_biz,"Trading desk, ops & product",335,REST APIs,0.0209
-role_family,trading_biz,"Trading desk, ops & product",335,C++,0.0358
-role_family,trading_biz,"Trading desk, ops & product",335,TypeScript,0.0
-role_family,trading_biz,"Trading desk, ops & product",335,Go,0.003
-role_family,trading_biz,"Trading desk, ops & product",335,Linux,0.0388
-role_family,trading_biz,"Trading desk, ops & product",335,"SRE (SLOs, on-call)",0.0179
-role_family,trading_biz,"Trading desk, ops & product",335,Frontend (general),0.0179
-role_family,trading_biz,"Trading desk, ops & product",335,Data pipelines / ETL,0.0149
-role_family,trading_biz,"Trading desk, ops & product",335,Full-stack,0.006
-role_family,trading_biz,"Trading desk, ops & product",335,Incident response / on-call,0.0328
-role_family,trading_biz,"Trading desk, ops & product",335,React,0.0179
-role_family,trading_biz,"Trading desk, ops & product",335,JavaScript,0.0
-role_family,trading_biz,"Trading desk, ops & product",335,DevOps,0.0119
-role_family,trading_biz,"Trading desk, ops & product",335,Git,0.009
-role_family,trading_biz,"Trading desk, ops & product",335,OOP / design patterns,0.0
-role_family,trading_biz,"Trading desk, ops & product",335,Data structures & algorithms,0.0239
-role_family,trading_biz,"Trading desk, ops & product",335,Infrastructure as code,0.0
-role_family,trading_biz,"Trading desk, ops & product",335,Query optimization / performance tuning,0.009
-role_family,trading_biz,"Trading desk, ops & product",335,Terraform,0.0
-role_family,trading_biz,"Trading desk, ops & product",335,Unit / integration testing,0.0358
-role_family,trading_biz,"Trading desk, ops & product",335,Pre-sales / solution architecture / PoCs,0.006
-role_family,trading_biz,"Trading desk, ops & product",335,LLM evaluation,0.0
-role_family,trading_biz,"Trading desk, ops & product",335,AI-assisted development,0.003
-role_family,other_eng,Other engineering,8537,Python,0.3177
-role_family,other_eng,Other engineering,8537,AWS,0.2221
-role_family,other_eng,Other engineering,8537,Cloud (unspecified),0.2044
-role_family,other_eng,Other engineering,8537,LLMs / GenAI (general),0.1566
-role_family,other_eng,Other engineering,8537,AI agents / agentic workflows,0.1586
-role_family,other_eng,Other engineering,8537,CI/CD,0.1674
-role_family,other_eng,Other engineering,8537,Observability / monitoring,0.1522
-role_family,other_eng,Other engineering,8537,Distributed systems,0.1855
-role_family,other_eng,Other engineering,8537,SQL,0.1211
-role_family,other_eng,Other engineering,8537,Java,0.1619
-role_family,other_eng,Other engineering,8537,Machine learning fundamentals,0.0915
-role_family,other_eng,Other engineering,8537,Kubernetes,0.098
-role_family,other_eng,Other engineering,8537,Docker,0.098
-role_family,other_eng,Other engineering,8537,Financial services / banking domain,0.0951
-role_family,other_eng,Other engineering,8537,Azure,0.1
-role_family,other_eng,Other engineering,8537,GCP,0.0795
-role_family,other_eng,Other engineering,8537,System design / architecture,0.1988
-role_family,other_eng,Other engineering,8537,REST APIs,0.0921
-role_family,other_eng,Other engineering,8537,C++,0.1661
-role_family,other_eng,Other engineering,8537,TypeScript,0.0821
-role_family,other_eng,Other engineering,8537,Go,0.0842
-role_family,other_eng,Other engineering,8537,Linux,0.1552
-role_family,other_eng,Other engineering,8537,"SRE (SLOs, on-call)",0.1266
-role_family,other_eng,Other engineering,8537,Frontend (general),0.076
-role_family,other_eng,Other engineering,8537,Data pipelines / ETL,0.0548
-role_family,other_eng,Other engineering,8537,Full-stack,0.0642
-role_family,other_eng,Other engineering,8537,Incident response / on-call,0.1128
-role_family,other_eng,Other engineering,8537,React,0.0667
-role_family,other_eng,Other engineering,8537,JavaScript,0.0637
-role_family,other_eng,Other engineering,8537,DevOps,0.0614
-role_family,other_eng,Other engineering,8537,Git,0.0799
-role_family,other_eng,Other engineering,8537,OOP / design patterns,0.1527
-role_family,other_eng,Other engineering,8537,Data structures & algorithms,0.0672
-role_family,other_eng,Other engineering,8537,Infrastructure as code,0.0464
-role_family,other_eng,Other engineering,8537,Query optimization / performance tuning,0.0637
-role_family,other_eng,Other engineering,8537,Terraform,0.0465
-role_family,other_eng,Other engineering,8537,Unit / integration testing,0.08
-role_family,other_eng,Other engineering,8537,Pre-sales / solution architecture / PoCs,0.032
-role_family,other_eng,Other engineering,8537,LLM evaluation,0.0254
-role_family,other_eng,Other engineering,8537,AI-assisted development,0.0602
-region,North America,North America,18137,Python,0.4531
-region,North America,North America,18137,AWS,0.3052
-region,North America,North America,18137,Cloud (unspecified),0.2914
-region,North America,North America,18137,LLMs / GenAI (general),0.2868
-region,North America,North America,18137,AI agents / agentic workflows,0.2874
-region,North America,North America,18137,CI/CD,0.21
-region,North America,North America,18137,Observability / monitoring,0.24
-region,North America,North America,18137,Distributed systems,0.2256
-region,North America,North America,18137,SQL,0.1621
-region,North America,North America,18137,Java,0.1865
-region,North America,North America,18137,Machine learning fundamentals,0.2112
-region,North America,North America,18137,Kubernetes,0.1684
-region,North America,North America,18137,Docker,0.1529
-region,North America,North America,18137,Financial services / banking domain,0.1341
-region,North America,North America,18137,Azure,0.1464
-region,North America,North America,18137,GCP,0.1377
-region,North America,North America,18137,System design / architecture,0.1693
-region,North America,North America,18137,REST APIs,0.1193
-region,North America,North America,18137,C++,0.1703
-region,North America,North America,18137,TypeScript,0.138
-region,North America,North America,18137,Go,0.1464
-region,North America,North America,18137,Linux,0.1112
-region,North America,North America,18137,"SRE (SLOs, on-call)",0.1354
-region,North America,North America,18137,Frontend (general),0.1105
-region,North America,North America,18137,Data pipelines / ETL,0.1241
-region,North America,North America,18137,Full-stack,0.1173
-region,North America,North America,18137,Incident response / on-call,0.1134
-region,North America,North America,18137,React,0.1056
-region,North America,North America,18137,JavaScript,0.0943
-region,North America,North America,18137,DevOps,0.0734
-region,North America,North America,18137,Git,0.0829
-region,North America,North America,18137,OOP / design patterns,0.1157
-region,North America,North America,18137,Data structures & algorithms,0.1062
-region,North America,North America,18137,Infrastructure as code,0.0903
-region,North America,North America,18137,Query optimization / performance tuning,0.0909
-region,North America,North America,18137,Terraform,0.0774
-region,North America,North America,18137,Unit / integration testing,0.0845
-region,North America,North America,18137,Pre-sales / solution architecture / PoCs,0.0757
-region,North America,North America,18137,LLM evaluation,0.092
-region,North America,North America,18137,AI-assisted development,0.0877
-region,Europe,Europe,7365,Python,0.4099
-region,Europe,Europe,7365,AWS,0.2516
-region,Europe,Europe,7365,Cloud (unspecified),0.2462
-region,Europe,Europe,7365,LLMs / GenAI (general),0.2717
-region,Europe,Europe,7365,AI agents / agentic workflows,0.2458
-region,Europe,Europe,7365,CI/CD,0.2311
-region,Europe,Europe,7365,Observability / monitoring,0.2216
-region,Europe,Europe,7365,Distributed systems,0.2015
-region,Europe,Europe,7365,SQL,0.1764
-region,Europe,Europe,7365,Java,0.159
-region,Europe,Europe,7365,Machine learning fundamentals,0.1586
-region,Europe,Europe,7365,Kubernetes,0.1787
-region,Europe,Europe,7365,Docker,0.1666
-region,Europe,Europe,7365,Financial services / banking domain,0.1799
-region,Europe,Europe,7365,Azure,0.1479
-region,Europe,Europe,7365,GCP,0.1454
-region,Europe,Europe,7365,System design / architecture,0.096
-region,Europe,Europe,7365,REST APIs,0.1261
-region,Europe,Europe,7365,C++,0.104
-region,Europe,Europe,7365,TypeScript,0.1411
-region,Europe,Europe,7365,Go,0.1098
-region,Europe,Europe,7365,Linux,0.1142
-region,Europe,Europe,7365,"SRE (SLOs, on-call)",0.107
-region,Europe,Europe,7365,Frontend (general),0.1286
-region,Europe,Europe,7365,Data pipelines / ETL,0.0946
-region,Europe,Europe,7365,Full-stack,0.1024
-region,Europe,Europe,7365,Incident response / on-call,0.0797
-region,Europe,Europe,7365,React,0.1013
-region,Europe,Europe,7365,JavaScript,0.0826
-region,Europe,Europe,7365,DevOps,0.102
-region,Europe,Europe,7365,Git,0.0896
-region,Europe,Europe,7365,OOP / design patterns,0.0618
-region,Europe,Europe,7365,Data structures & algorithms,0.0849
-region,Europe,Europe,7365,Infrastructure as code,0.0969
-region,Europe,Europe,7365,Query optimization / performance tuning,0.0733
-region,Europe,Europe,7365,Terraform,0.0934
-region,Europe,Europe,7365,Unit / integration testing,0.0707
-region,Europe,Europe,7365,Pre-sales / solution architecture / PoCs,0.095
-region,Europe,Europe,7365,LLM evaluation,0.085
-region,Europe,Europe,7365,AI-assisted development,0.0847
-region,Southeast Asia,Southeast Asia,6164,Python,0.1966
-region,Southeast Asia,Southeast Asia,6164,AWS,0.1402
-region,Southeast Asia,Southeast Asia,6164,Cloud (unspecified),0.1335
-region,Southeast Asia,Southeast Asia,6164,LLMs / GenAI (general),0.1196
-region,Southeast Asia,Southeast Asia,6164,AI agents / agentic workflows,0.0792
-region,Southeast Asia,Southeast Asia,6164,CI/CD,0.1153
-region,Southeast Asia,Southeast Asia,6164,Observability / monitoring,0.1012
-region,Southeast Asia,Southeast Asia,6164,Distributed systems,0.0691
-region,Southeast Asia,Southeast Asia,6164,SQL,0.1394
-region,Southeast Asia,Southeast Asia,6164,Java,0.1374
-region,Southeast Asia,Southeast Asia,6164,Machine learning fundamentals,0.0743
-region,Southeast Asia,Southeast Asia,6164,Kubernetes,0.1027
-region,Southeast Asia,Southeast Asia,6164,Docker,0.1162
-region,Southeast Asia,Southeast Asia,6164,Financial services / banking domain,0.142
-region,Southeast Asia,Southeast Asia,6164,Azure,0.0973
-region,Southeast Asia,Southeast Asia,6164,GCP,0.0699
-region,Southeast Asia,Southeast Asia,6164,System design / architecture,0.0565
-region,Southeast Asia,Southeast Asia,6164,REST APIs,0.1014
-region,Southeast Asia,Southeast Asia,6164,C++,0.056
-region,Southeast Asia,Southeast Asia,6164,TypeScript,0.0496
-region,Southeast Asia,Southeast Asia,6164,Go,0.0347
-region,Southeast Asia,Southeast Asia,6164,Linux,0.0969
-region,Southeast Asia,Southeast Asia,6164,"SRE (SLOs, on-call)",0.0282
-region,Southeast Asia,Southeast Asia,6164,Frontend (general),0.0542
-region,Southeast Asia,Southeast Asia,6164,Data pipelines / ETL,0.0675
-region,Southeast Asia,Southeast Asia,6164,Full-stack,0.0855
-region,Southeast Asia,Southeast Asia,6164,Incident response / on-call,0.0947
-region,Southeast Asia,Southeast Asia,6164,React,0.0574
-region,Southeast Asia,Southeast Asia,6164,JavaScript,0.0873
-region,Southeast Asia,Southeast Asia,6164,DevOps,0.0884
-region,Southeast Asia,Southeast Asia,6164,Git,0.0696
-region,Southeast Asia,Southeast Asia,6164,OOP / design patterns,0.0373
-region,Southeast Asia,Southeast Asia,6164,Data structures & algorithms,0.0279
-region,Southeast Asia,Southeast Asia,6164,Infrastructure as code,0.0346
-region,Southeast Asia,Southeast Asia,6164,Query optimization / performance tuning,0.0433
-region,Southeast Asia,Southeast Asia,6164,Terraform,0.0448
-region,Southeast Asia,Southeast Asia,6164,Unit / integration testing,0.0449
-region,Southeast Asia,Southeast Asia,6164,Pre-sales / solution architecture / PoCs,0.0535
-region,Southeast Asia,Southeast Asia,6164,LLM evaluation,0.0422
-region,Southeast Asia,Southeast Asia,6164,AI-assisted development,0.0156
-region,South Asia,South Asia,2424,Python,0.4484
-region,South Asia,South Asia,2424,AWS,0.3606
-region,South Asia,South Asia,2424,Cloud (unspecified),0.3486
-region,South Asia,South Asia,2424,LLMs / GenAI (general),0.295
-region,South Asia,South Asia,2424,AI agents / agentic workflows,0.2698
-region,South Asia,South Asia,2424,CI/CD,0.3292
-region,South Asia,South Asia,2424,Observability / monitoring,0.2508
-region,South Asia,South Asia,2424,Distributed systems,0.264
-region,South Asia,South Asia,2424,SQL,0.2892
-region,South Asia,South Asia,2424,Java,0.297
-region,South Asia,South Asia,2424,Machine learning fundamentals,0.2059
-region,South Asia,South Asia,2424,Kubernetes,0.2257
-region,South Asia,South Asia,2424,Docker,0.2417
-region,South Asia,South Asia,2424,Financial services / banking domain,0.1687
-region,South Asia,South Asia,2424,Azure,0.2413
-region,South Asia,South Asia,2424,GCP,0.198
-region,South Asia,South Asia,2424,System design / architecture,0.2083
-region,South Asia,South Asia,2424,REST APIs,0.2265
-region,South Asia,South Asia,2424,C++,0.1002
-region,South Asia,South Asia,2424,TypeScript,0.104
-region,South Asia,South Asia,2424,Go,0.1213
-region,South Asia,South Asia,2424,Linux,0.1473
-region,South Asia,South Asia,2424,"SRE (SLOs, on-call)",0.137
-region,South Asia,South Asia,2424,Frontend (general),0.1163
-region,South Asia,South Asia,2424,Data pipelines / ETL,0.1427
-region,South Asia,South Asia,2424,Full-stack,0.1077
-region,South Asia,South Asia,2424,Incident response / on-call,0.1246
-region,South Asia,South Asia,2424,React,0.1196
-region,South Asia,South Asia,2424,JavaScript,0.1225
-region,South Asia,South Asia,2424,DevOps,0.1526
-region,South Asia,South Asia,2424,Git,0.1452
-region,South Asia,South Asia,2424,OOP / design patterns,0.1716
-region,South Asia,South Asia,2424,Data structures & algorithms,0.1114
-region,South Asia,South Asia,2424,Infrastructure as code,0.1019
-region,South Asia,South Asia,2424,Query optimization / performance tuning,0.1382
-region,South Asia,South Asia,2424,Terraform,0.106
-region,South Asia,South Asia,2424,Unit / integration testing,0.1642
-region,South Asia,South Asia,2424,Pre-sales / solution architecture / PoCs,0.0553
-region,South Asia,South Asia,2424,LLM evaluation,0.0668
-region,South Asia,South Asia,2424,AI-assisted development,0.0928
-region,Unknown,Unknown,2140,Python,0.3888
-region,Unknown,Unknown,2140,AWS,0.2832
-region,Unknown,Unknown,2140,Cloud (unspecified),0.2939
-region,Unknown,Unknown,2140,LLMs / GenAI (general),0.1818
-region,Unknown,Unknown,2140,AI agents / agentic workflows,0.1804
-region,Unknown,Unknown,2140,CI/CD,0.2542
-region,Unknown,Unknown,2140,Observability / monitoring,0.1935
-region,Unknown,Unknown,2140,Distributed systems,0.1832
-region,Unknown,Unknown,2140,SQL,0.1486
-region,Unknown,Unknown,2140,Java,0.1294
-region,Unknown,Unknown,2140,Machine learning fundamentals,0.1126
-region,Unknown,Unknown,2140,Kubernetes,0.2121
-region,Unknown,Unknown,2140,Docker,0.2098
-region,Unknown,Unknown,2140,Financial services / banking domain,0.064
-region,Unknown,Unknown,2140,Azure,0.1668
-region,Unknown,Unknown,2140,GCP,0.136
-region,Unknown,Unknown,2140,System design / architecture,0.1065
-region,Unknown,Unknown,2140,REST APIs,0.1294
-region,Unknown,Unknown,2140,C++,0.1229
-region,Unknown,Unknown,2140,TypeScript,0.1416
-region,Unknown,Unknown,2140,Go,0.1449
-region,Unknown,Unknown,2140,Linux,0.1762
-region,Unknown,Unknown,2140,"SRE (SLOs, on-call)",0.1159
-region,Unknown,Unknown,2140,Frontend (general),0.0808
-region,Unknown,Unknown,2140,Data pipelines / ETL,0.0841
-region,Unknown,Unknown,2140,Full-stack,0.0822
-region,Unknown,Unknown,2140,Incident response / on-call,0.1084
-region,Unknown,Unknown,2140,React,0.0836
-region,Unknown,Unknown,2140,JavaScript,0.1313
-region,Unknown,Unknown,2140,DevOps,0.1243
-region,Unknown,Unknown,2140,Git,0.1103
-region,Unknown,Unknown,2140,OOP / design patterns,0.0584
-region,Unknown,Unknown,2140,Data structures & algorithms,0.0659
-region,Unknown,Unknown,2140,Infrastructure as code,0.121
-region,Unknown,Unknown,2140,Query optimization / performance tuning,0.0668
-region,Unknown,Unknown,2140,Terraform,0.1304
-region,Unknown,Unknown,2140,Unit / integration testing,0.0589
-region,Unknown,Unknown,2140,Pre-sales / solution architecture / PoCs,0.0874
-region,Unknown,Unknown,2140,LLM evaluation,0.0341
-region,Unknown,Unknown,2140,AI-assisted development,0.0766
-region,Remote,Remote,1271,Python,0.406
-region,Remote,Remote,1271,AWS,0.2762
-region,Remote,Remote,1271,Cloud (unspecified),0.2447
-region,Remote,Remote,1271,LLMs / GenAI (general),0.2148
-region,Remote,Remote,1271,AI agents / agentic workflows,0.2337
-region,Remote,Remote,1271,CI/CD,0.2109
-region,Remote,Remote,1271,Observability / monitoring,0.2132
-region,Remote,Remote,1271,Distributed systems,0.1518
-region,Remote,Remote,1271,SQL,0.2085
-region,Remote,Remote,1271,Java,0.1023
-region,Remote,Remote,1271,Machine learning fundamentals,0.1534
-region,Remote,Remote,1271,Kubernetes,0.2156
-region,Remote,Remote,1271,Docker,0.1723
-region,Remote,Remote,1271,Financial services / banking domain,0.1865
-region,Remote,Remote,1271,Azure,0.1511
-region,Remote,Remote,1271,GCP,0.1463
-region,Remote,Remote,1271,System design / architecture,0.0779
-region,Remote,Remote,1271,REST APIs,0.1432
-region,Remote,Remote,1271,C++,0.0543
-region,Remote,Remote,1271,TypeScript,0.1935
-region,Remote,Remote,1271,Go,0.1495
-region,Remote,Remote,1271,Linux,0.0999
-region,Remote,Remote,1271,"SRE (SLOs, on-call)",0.1676
-region,Remote,Remote,1271,Frontend (general),0.1298
-region,Remote,Remote,1271,Data pipelines / ETL,0.107
-region,Remote,Remote,1271,Full-stack,0.1172
-region,Remote,Remote,1271,Incident response / on-call,0.0944
-region,Remote,Remote,1271,React,0.1338
-region,Remote,Remote,1271,JavaScript,0.1298
-region,Remote,Remote,1271,DevOps,0.0921
-region,Remote,Remote,1271,Git,0.1078
-region,Remote,Remote,1271,OOP / design patterns,0.0543
-region,Remote,Remote,1271,Data structures & algorithms,0.0551
-region,Remote,Remote,1271,Infrastructure as code,0.1094
-region,Remote,Remote,1271,Query optimization / performance tuning,0.0936
-region,Remote,Remote,1271,Terraform,0.1078
-region,Remote,Remote,1271,Unit / integration testing,0.0755
-region,Remote,Remote,1271,Pre-sales / solution architecture / PoCs,0.1015
-region,Remote,Remote,1271,LLM evaluation,0.0771
-region,Remote,Remote,1271,AI-assisted development,0.1031
-region,East Asia,East Asia,1245,Python,0.3767
-region,East Asia,East Asia,1245,AWS,0.1735
-region,East Asia,East Asia,1245,Cloud (unspecified),0.1944
-region,East Asia,East Asia,1245,LLMs / GenAI (general),0.253
-region,East Asia,East Asia,1245,AI agents / agentic workflows,0.1815
-region,East Asia,East Asia,1245,CI/CD,0.1382
-region,East Asia,East Asia,1245,Observability / monitoring,0.1992
-region,East Asia,East Asia,1245,Distributed systems,0.1912
-region,East Asia,East Asia,1245,SQL,0.1863
-region,East Asia,East Asia,1245,Java,0.147
-region,East Asia,East Asia,1245,Machine learning fundamentals,0.1373
-region,East Asia,East Asia,1245,Kubernetes,0.1213
-region,East Asia,East Asia,1245,Docker,0.1317
-region,East Asia,East Asia,1245,Financial services / banking domain,0.2731
-region,East Asia,East Asia,1245,Azure,0.1245
-region,East Asia,East Asia,1245,GCP,0.1068
-region,East Asia,East Asia,1245,System design / architecture,0.0924
-region,East Asia,East Asia,1245,REST APIs,0.0667
-region,East Asia,East Asia,1245,C++,0.1598
-region,East Asia,East Asia,1245,TypeScript,0.0739
-region,East Asia,East Asia,1245,Go,0.0876
-region,East Asia,East Asia,1245,Linux,0.1767
-region,East Asia,East Asia,1245,"SRE (SLOs, on-call)",0.0819
-region,East Asia,East Asia,1245,Frontend (general),0.0948
-region,East Asia,East Asia,1245,Data pipelines / ETL,0.0811
-region,East Asia,East Asia,1245,Full-stack,0.0538
-region,East Asia,East Asia,1245,Incident response / on-call,0.0819
-region,East Asia,East Asia,1245,React,0.0667
-region,East Asia,East Asia,1245,JavaScript,0.0779
-region,East Asia,East Asia,1245,DevOps,0.0916
-region,East Asia,East Asia,1245,Git,0.057
-region,East Asia,East Asia,1245,OOP / design patterns,0.0442
-region,East Asia,East Asia,1245,Data structures & algorithms,0.0996
-region,East Asia,East Asia,1245,Infrastructure as code,0.0361
-region,East Asia,East Asia,1245,Query optimization / performance tuning,0.0964
-region,East Asia,East Asia,1245,Terraform,0.053
-region,East Asia,East Asia,1245,Unit / integration testing,0.0635
-region,East Asia,East Asia,1245,Pre-sales / solution architecture / PoCs,0.1221
-region,East Asia,East Asia,1245,LLM evaluation,0.0948
-region,East Asia,East Asia,1245,AI-assisted development,0.0618
-region,Latin America,Latin America,1170,Python,0.4795
-region,Latin America,Latin America,1170,AWS,0.4094
-region,Latin America,Latin America,1170,Cloud (unspecified),0.2974
-region,Latin America,Latin America,1170,LLMs / GenAI (general),0.3333
-region,Latin America,Latin America,1170,AI agents / agentic workflows,0.2991
-region,Latin America,Latin America,1170,CI/CD,0.3786
-region,Latin America,Latin America,1170,Observability / monitoring,0.235
-region,Latin America,Latin America,1170,Distributed systems,0.1684
-region,Latin America,Latin America,1170,SQL,0.3342
-region,Latin America,Latin America,1170,Java,0.1838
-region,Latin America,Latin America,1170,Machine learning fundamentals,0.159
-region,Latin America,Latin America,1170,Kubernetes,0.1949
-region,Latin America,Latin America,1170,Docker,0.2179
-region,Latin America,Latin America,1170,Financial services / banking domain,0.1966
-region,Latin America,Latin America,1170,Azure,0.259
-region,Latin America,Latin America,1170,GCP,0.2154
-region,Latin America,Latin America,1170,System design / architecture,0.1162
-region,Latin America,Latin America,1170,REST APIs,0.2838
-region,Latin America,Latin America,1170,C++,0.0436
-region,Latin America,Latin America,1170,TypeScript,0.2359
-region,Latin America,Latin America,1170,Go,0.1
-region,Latin America,Latin America,1170,Linux,0.0718
-region,Latin America,Latin America,1170,"SRE (SLOs, on-call)",0.112
-region,Latin America,Latin America,1170,Frontend (general),0.2291
-region,Latin America,Latin America,1170,Data pipelines / ETL,0.1487
-region,Latin America,Latin America,1170,Full-stack,0.1897
-region,Latin America,Latin America,1170,Incident response / on-call,0.0923
-region,Latin America,Latin America,1170,React,0.1957
-region,Latin America,Latin America,1170,JavaScript,0.1744
-region,Latin America,Latin America,1170,DevOps,0.1632
-region,Latin America,Latin America,1170,Git,0.1974
-region,Latin America,Latin America,1170,OOP / design patterns,0.1111
-region,Latin America,Latin America,1170,Data structures & algorithms,0.0547
-region,Latin America,Latin America,1170,Infrastructure as code,0.1043
-region,Latin America,Latin America,1170,Query optimization / performance tuning,0.0983
-region,Latin America,Latin America,1170,Terraform,0.1145
-region,Latin America,Latin America,1170,Unit / integration testing,0.1214
-region,Latin America,Latin America,1170,Pre-sales / solution architecture / PoCs,0.0932
-region,Latin America,Latin America,1170,LLM evaluation,0.0821
-region,Latin America,Latin America,1170,AI-assisted development,0.1538
-region,Oceania,Oceania,378,Python,0.4048
-region,Oceania,Oceania,378,AWS,0.3413
-region,Oceania,Oceania,378,Cloud (unspecified),0.3757
-region,Oceania,Oceania,378,LLMs / GenAI (general),0.2275
-region,Oceania,Oceania,378,AI agents / agentic workflows,0.2725
-region,Oceania,Oceania,378,CI/CD,0.1667
-region,Oceania,Oceania,378,Observability / monitoring,0.1931
-region,Oceania,Oceania,378,Distributed systems,0.2302
-region,Oceania,Oceania,378,SQL,0.1217
-region,Oceania,Oceania,378,Java,0.1376
-region,Oceania,Oceania,378,Machine learning fundamentals,0.119
-region,Oceania,Oceania,378,Kubernetes,0.1772
-region,Oceania,Oceania,378,Docker,0.1561
-region,Oceania,Oceania,378,Financial services / banking domain,0.2011
-region,Oceania,Oceania,378,Azure,0.1693
-region,Oceania,Oceania,378,GCP,0.1799
-region,Oceania,Oceania,378,System design / architecture,0.1032
-region,Oceania,Oceania,378,REST APIs,0.0794
-region,Oceania,Oceania,378,C++,0.1772
-region,Oceania,Oceania,378,TypeScript,0.1164
-region,Oceania,Oceania,378,Go,0.1561
-region,Oceania,Oceania,378,Linux,0.1878
-region,Oceania,Oceania,378,"SRE (SLOs, on-call)",0.1561
-region,Oceania,Oceania,378,Frontend (general),0.0952
-region,Oceania,Oceania,378,Data pipelines / ETL,0.0873
-region,Oceania,Oceania,378,Full-stack,0.0503
-region,Oceania,Oceania,378,Incident response / on-call,0.1323
-region,Oceania,Oceania,378,React,0.082
-region,Oceania,Oceania,378,JavaScript,0.0847
-region,Oceania,Oceania,378,DevOps,0.1058
-region,Oceania,Oceania,378,Git,0.0529
-region,Oceania,Oceania,378,OOP / design patterns,0.0608
-region,Oceania,Oceania,378,Data structures & algorithms,0.082
-region,Oceania,Oceania,378,Infrastructure as code,0.0767
-region,Oceania,Oceania,378,Query optimization / performance tuning,0.0767
-region,Oceania,Oceania,378,Terraform,0.0688
-region,Oceania,Oceania,378,Unit / integration testing,0.0476
-region,Oceania,Oceania,378,Pre-sales / solution architecture / PoCs,0.2143
-region,Oceania,Oceania,378,LLM evaluation,0.082
-region,Oceania,Oceania,378,AI-assisted development,0.0503
-region,Middle East,Middle East,355,Python,0.4338
-region,Middle East,Middle East,355,AWS,0.3211
-region,Middle East,Middle East,355,Cloud (unspecified),0.307
-region,Middle East,Middle East,355,LLMs / GenAI (general),0.338
-region,Middle East,Middle East,355,AI agents / agentic workflows,0.2648
-region,Middle East,Middle East,355,CI/CD,0.231
-region,Middle East,Middle East,355,Observability / monitoring,0.1465
-region,Middle East,Middle East,355,Distributed systems,0.1887
-region,Middle East,Middle East,355,SQL,0.1493
-region,Middle East,Middle East,355,Java,0.1606
-region,Middle East,Middle East,355,Machine learning fundamentals,0.1831
-region,Middle East,Middle East,355,Kubernetes,0.2197
-region,Middle East,Middle East,355,Docker,0.1634
-region,Middle East,Middle East,355,Financial services / banking domain,0.1662
-region,Middle East,Middle East,355,Azure,0.1662
-region,Middle East,Middle East,355,GCP,0.1549
-region,Middle East,Middle East,355,System design / architecture,0.1127
-region,Middle East,Middle East,355,REST APIs,0.1155
-region,Middle East,Middle East,355,C++,0.1915
-region,Middle East,Middle East,355,TypeScript,0.1268
-region,Middle East,Middle East,355,Go,0.1324
-region,Middle East,Middle East,355,Linux,0.1803
-region,Middle East,Middle East,355,"SRE (SLOs, on-call)",0.0789
-region,Middle East,Middle East,355,Frontend (general),0.0986
-region,Middle East,Middle East,355,Data pipelines / ETL,0.093
-region,Middle East,Middle East,355,Full-stack,0.1127
-region,Middle East,Middle East,355,Incident response / on-call,0.0704
-region,Middle East,Middle East,355,React,0.1155
-region,Middle East,Middle East,355,JavaScript,0.0845
-region,Middle East,Middle East,355,DevOps,0.1127
-region,Middle East,Middle East,355,Git,0.0817
-region,Middle East,Middle East,355,OOP / design patterns,0.0873
-region,Middle East,Middle East,355,Data structures & algorithms,0.1211
-region,Middle East,Middle East,355,Infrastructure as code,0.0592
-region,Middle East,Middle East,355,Query optimization / performance tuning,0.0986
-region,Middle East,Middle East,355,Terraform,0.062
-region,Middle East,Middle East,355,Unit / integration testing,0.0704
-region,Middle East,Middle East,355,Pre-sales / solution architecture / PoCs,0.0845
-region,Middle East,Middle East,355,LLM evaluation,0.0958
-region,Middle East,Middle East,355,AI-assisted development,0.107
+seniority,intern,intern,1348,Python,0.6454
+seniority,intern,intern,1348,AWS,0.1239
+seniority,intern,intern,1348,LLMs / GenAI (general),0.3361
+seniority,intern,intern,1348,Cloud (unspecified),0.1632
+seniority,intern,intern,1348,AI agents / agentic workflows,0.2211
+seniority,intern,intern,1348,CI/CD,0.0942
+seniority,intern,intern,1348,Observability / monitoring,0.0638
+seniority,intern,intern,1348,Distributed systems,0.138
+seniority,intern,intern,1348,Java,0.2804
+seniority,intern,intern,1348,Machine learning fundamentals,0.3783
+seniority,intern,intern,1348,SQL,0.2166
+seniority,intern,intern,1348,Kubernetes,0.043
+seniority,intern,intern,1348,Docker,0.0549
+seniority,intern,intern,1348,Financial services / banking domain,0.0794
+seniority,intern,intern,1348,Azure,0.0571
+seniority,intern,intern,1348,C++,0.3435
+seniority,intern,intern,1348,GCP,0.0467
+seniority,intern,intern,1348,System design / architecture,0.0749
+seniority,intern,intern,1348,REST APIs,0.0534
+seniority,intern,intern,1348,Go,0.1662
+seniority,intern,intern,1348,TypeScript,0.1209
+seniority,intern,intern,1348,Linux,0.1061
+seniority,intern,intern,1348,Data pipelines / ETL,0.1024
+seniority,intern,intern,1348,"SRE (SLOs, on-call)",0.0364
+seniority,intern,intern,1348,Frontend (general),0.0942
+seniority,intern,intern,1348,Full-stack,0.069
+seniority,intern,intern,1348,Incident response / on-call,0.0274
+seniority,intern,intern,1348,React,0.095
+seniority,intern,intern,1348,JavaScript,0.135
+seniority,intern,intern,1348,Data structures & algorithms,0.3168
+seniority,intern,intern,1348,DevOps,0.0371
+seniority,intern,intern,1348,Git,0.1239
+seniority,intern,intern,1348,OOP / design patterns,0.072
+seniority,intern,intern,1348,Query optimization / performance tuning,0.0616
+seniority,intern,intern,1348,Unit / integration testing,0.0645
+seniority,intern,intern,1348,Infrastructure as code,0.0104
+seniority,intern,intern,1348,Terraform,0.0104
+seniority,intern,intern,1348,AI-assisted development,0.0816
+seniority,intern,intern,1348,LLM evaluation,0.0772
+seniority,intern,intern,1348,Pre-sales / solution architecture / PoCs,0.0156
+seniority,junior,junior,1995,Python,0.4501
+seniority,junior,junior,1995,AWS,0.1845
+seniority,junior,junior,1995,LLMs / GenAI (general),0.2055
+seniority,junior,junior,1995,Cloud (unspecified),0.1799
+seniority,junior,junior,1995,AI agents / agentic workflows,0.1378
+seniority,junior,junior,1995,CI/CD,0.1544
+seniority,junior,junior,1995,Observability / monitoring,0.1429
+seniority,junior,junior,1995,Distributed systems,0.1424
+seniority,junior,junior,1995,Java,0.2551
+seniority,junior,junior,1995,Machine learning fundamentals,0.2195
+seniority,junior,junior,1995,SQL,0.1719
+seniority,junior,junior,1995,Kubernetes,0.1223
+seniority,junior,junior,1995,Docker,0.1449
+seniority,junior,junior,1995,Financial services / banking domain,0.0586
+seniority,junior,junior,1995,Azure,0.1073
+seniority,junior,junior,1995,C++,0.201
+seniority,junior,junior,1995,GCP,0.1078
+seniority,junior,junior,1995,System design / architecture,0.1153
+seniority,junior,junior,1995,REST APIs,0.0872
+seniority,junior,junior,1995,Go,0.1684
+seniority,junior,junior,1995,TypeScript,0.1388
+seniority,junior,junior,1995,Linux,0.1063
+seniority,junior,junior,1995,Data pipelines / ETL,0.0977
+seniority,junior,junior,1995,"SRE (SLOs, on-call)",0.0416
+seniority,junior,junior,1995,Frontend (general),0.1233
+seniority,junior,junior,1995,Full-stack,0.1333
+seniority,junior,junior,1995,Incident response / on-call,0.0607
+seniority,junior,junior,1995,React,0.0812
+seniority,junior,junior,1995,JavaScript,0.1519
+seniority,junior,junior,1995,Data structures & algorithms,0.1754
+seniority,junior,junior,1995,DevOps,0.0496
+seniority,junior,junior,1995,Git,0.1398
+seniority,junior,junior,1995,OOP / design patterns,0.1018
+seniority,junior,junior,1995,Query optimization / performance tuning,0.0496
+seniority,junior,junior,1995,Unit / integration testing,0.0952
+seniority,junior,junior,1995,Infrastructure as code,0.0787
+seniority,junior,junior,1995,Terraform,0.0336
+seniority,junior,junior,1995,AI-assisted development,0.0496
+seniority,junior,junior,1995,LLM evaluation,0.0637
+seniority,junior,junior,1995,Pre-sales / solution architecture / PoCs,0.0175
+seniority,mid,mid,7535,Python,0.3562
+seniority,mid,mid,7535,AWS,0.2246
+seniority,mid,mid,7535,LLMs / GenAI (general),0.221
+seniority,mid,mid,7535,Cloud (unspecified),0.1869
+seniority,mid,mid,7535,AI agents / agentic workflows,0.1707
+seniority,mid,mid,7535,CI/CD,0.177
+seniority,mid,mid,7535,Observability / monitoring,0.1472
+seniority,mid,mid,7535,Distributed systems,0.1249
+seniority,mid,mid,7535,Java,0.1597
+seniority,mid,mid,7535,Machine learning fundamentals,0.1437
+seniority,mid,mid,7535,SQL,0.1935
+seniority,mid,mid,7535,Kubernetes,0.1155
+seniority,mid,mid,7535,Docker,0.1342
+seniority,mid,mid,7535,Financial services / banking domain,0.1492
+seniority,mid,mid,7535,Azure,0.1334
+seniority,mid,mid,7535,C++,0.1026
+seniority,mid,mid,7535,GCP,0.1006
+seniority,mid,mid,7535,System design / architecture,0.1029
+seniority,mid,mid,7535,REST APIs,0.1494
+seniority,mid,mid,7535,Go,0.0756
+seniority,mid,mid,7535,TypeScript,0.1056
+seniority,mid,mid,7535,Linux,0.1075
+seniority,mid,mid,7535,Data pipelines / ETL,0.1003
+seniority,mid,mid,7535,"SRE (SLOs, on-call)",0.0735
+seniority,mid,mid,7535,Frontend (general),0.1007
+seniority,mid,mid,7535,Full-stack,0.1017
+seniority,mid,mid,7535,Incident response / on-call,0.086
+seniority,mid,mid,7535,React,0.0991
+seniority,mid,mid,7535,JavaScript,0.1124
+seniority,mid,mid,7535,Data structures & algorithms,0.0705
+seniority,mid,mid,7535,DevOps,0.0921
+seniority,mid,mid,7535,Git,0.1153
+seniority,mid,mid,7535,OOP / design patterns,0.0869
+seniority,mid,mid,7535,Query optimization / performance tuning,0.0583
+seniority,mid,mid,7535,Unit / integration testing,0.0877
+seniority,mid,mid,7535,Infrastructure as code,0.0549
+seniority,mid,mid,7535,Terraform,0.0573
+seniority,mid,mid,7535,AI-assisted development,0.0595
+seniority,mid,mid,7535,LLM evaluation,0.0726
+seniority,mid,mid,7535,Pre-sales / solution architecture / PoCs,0.0537
+seniority,senior,senior,13507,Python,0.4429
+seniority,senior,senior,13507,AWS,0.3234
+seniority,senior,senior,13507,LLMs / GenAI (general),0.2408
+seniority,senior,senior,13507,Cloud (unspecified),0.3053
+seniority,senior,senior,13507,AI agents / agentic workflows,0.2454
+seniority,senior,senior,13507,CI/CD,0.2714
+seniority,senior,senior,13507,Observability / monitoring,0.2449
+seniority,senior,senior,13507,Distributed systems,0.2046
+seniority,senior,senior,13507,Java,0.1844
+seniority,senior,senior,13507,Machine learning fundamentals,0.1704
+seniority,senior,senior,13507,SQL,0.2082
+seniority,senior,senior,13507,Kubernetes,0.2097
+seniority,senior,senior,13507,Docker,0.1992
+seniority,senior,senior,13507,Financial services / banking domain,0.131
+seniority,senior,senior,13507,Azure,0.1887
+seniority,senior,senior,13507,C++,0.1209
+seniority,senior,senior,13507,GCP,0.1749
+seniority,senior,senior,13507,System design / architecture,0.1302
+seniority,senior,senior,13507,REST APIs,0.1692
+seniority,senior,senior,13507,Go,0.1433
+seniority,senior,senior,13507,TypeScript,0.1494
+seniority,senior,senior,13507,Linux,0.1355
+seniority,senior,senior,13507,Data pipelines / ETL,0.1288
+seniority,senior,senior,13507,"SRE (SLOs, on-call)",0.1271
+seniority,senior,senior,13507,Frontend (general),0.1234
+seniority,senior,senior,13507,Full-stack,0.123
+seniority,senior,senior,13507,Incident response / on-call,0.1156
+seniority,senior,senior,13507,React,0.1165
+seniority,senior,senior,13507,JavaScript,0.1101
+seniority,senior,senior,13507,Data structures & algorithms,0.083
+seniority,senior,senior,13507,DevOps,0.1197
+seniority,senior,senior,13507,Git,0.1061
+seniority,senior,senior,13507,OOP / design patterns,0.088
+seniority,senior,senior,13507,Query optimization / performance tuning,0.1042
+seniority,senior,senior,13507,Unit / integration testing,0.1017
+seniority,senior,senior,13507,Infrastructure as code,0.1077
+seniority,senior,senior,13507,Terraform,0.1093
+seniority,senior,senior,13507,AI-assisted development,0.0937
+seniority,senior,senior,13507,LLM evaluation,0.0617
+seniority,senior,senior,13507,Pre-sales / solution architecture / PoCs,0.0885
+seniority,staff,staff,6547,Python,0.4181
+seniority,staff,staff,6547,AWS,0.313
+seniority,staff,staff,6547,LLMs / GenAI (general),0.3061
+seniority,staff,staff,6547,Cloud (unspecified),0.327
+seniority,staff,staff,6547,AI agents / agentic workflows,0.3121
+seniority,staff,staff,6547,CI/CD,0.2658
+seniority,staff,staff,6547,Observability / monitoring,0.3091
+seniority,staff,staff,6547,Distributed systems,0.2951
+seniority,staff,staff,6547,Java,0.2035
+seniority,staff,staff,6547,Machine learning fundamentals,0.201
+seniority,staff,staff,6547,SQL,0.1506
+seniority,staff,staff,6547,Kubernetes,0.2317
+seniority,staff,staff,6547,Docker,0.1967
+seniority,staff,staff,6547,Financial services / banking domain,0.1708
+seniority,staff,staff,6547,Azure,0.1799
+seniority,staff,staff,6547,C++,0.1285
+seniority,staff,staff,6547,GCP,0.1656
+seniority,staff,staff,6547,System design / architecture,0.1738
+seniority,staff,staff,6547,REST APIs,0.1262
+seniority,staff,staff,6547,Go,0.1654
+seniority,staff,staff,6547,TypeScript,0.1266
+seniority,staff,staff,6547,Linux,0.101
+seniority,staff,staff,6547,Data pipelines / ETL,0.1251
+seniority,staff,staff,6547,"SRE (SLOs, on-call)",0.1498
+seniority,staff,staff,6547,Frontend (general),0.1199
+seniority,staff,staff,6547,Full-stack,0.1052
+seniority,staff,staff,6547,Incident response / on-call,0.1231
+seniority,staff,staff,6547,React,0.1084
+seniority,staff,staff,6547,JavaScript,0.084
+seniority,staff,staff,6547,Data structures & algorithms,0.1022
+seniority,staff,staff,6547,DevOps,0.0935
+seniority,staff,staff,6547,Git,0.0677
+seniority,staff,staff,6547,OOP / design patterns,0.0724
+seniority,staff,staff,6547,Query optimization / performance tuning,0.1188
+seniority,staff,staff,6547,Unit / integration testing,0.0909
+seniority,staff,staff,6547,Infrastructure as code,0.1187
+seniority,staff,staff,6547,Terraform,0.1101
+seniority,staff,staff,6547,AI-assisted development,0.1091
+seniority,staff,staff,6547,LLM evaluation,0.1059
+seniority,staff,staff,6547,Pre-sales / solution architecture / PoCs,0.0782
+seniority,manager,manager,2878,Python,0.1824
+seniority,manager,manager,2878,AWS,0.1873
+seniority,manager,manager,2878,LLMs / GenAI (general),0.3117
+seniority,manager,manager,2878,Cloud (unspecified),0.2269
+seniority,manager,manager,2878,AI agents / agentic workflows,0.2828
+seniority,manager,manager,2878,CI/CD,0.1445
+seniority,manager,manager,2878,Observability / monitoring,0.2126
+seniority,manager,manager,2878,Distributed systems,0.2272
+seniority,manager,manager,2878,Java,0.0914
+seniority,manager,manager,2878,Machine learning fundamentals,0.1619
+seniority,manager,manager,2878,SQL,0.0966
+seniority,manager,manager,2878,Kubernetes,0.1279
+seniority,manager,manager,2878,Docker,0.09
+seniority,manager,manager,2878,Financial services / banking domain,0.2741
+seniority,manager,manager,2878,Azure,0.1028
+seniority,manager,manager,2878,C++,0.0476
+seniority,manager,manager,2878,GCP,0.1067
+seniority,manager,manager,2878,System design / architecture,0.0983
+seniority,manager,manager,2878,REST APIs,0.0601
+seniority,manager,manager,2878,Go,0.0733
+seniority,manager,manager,2878,TypeScript,0.0681
+seniority,manager,manager,2878,Linux,0.0504
+seniority,manager,manager,2878,Data pipelines / ETL,0.0862
+seniority,manager,manager,2878,"SRE (SLOs, on-call)",0.131
+seniority,manager,manager,2878,Frontend (general),0.0702
+seniority,manager,manager,2878,Full-stack,0.0837
+seniority,manager,manager,2878,Incident response / on-call,0.1376
+seniority,manager,manager,2878,React,0.0681
+seniority,manager,manager,2878,JavaScript,0.0281
+seniority,manager,manager,2878,Data structures & algorithms,0.0375
+seniority,manager,manager,2878,DevOps,0.0674
+seniority,manager,manager,2878,Git,0.0271
+seniority,manager,manager,2878,OOP / design patterns,0.025
+seniority,manager,manager,2878,Query optimization / performance tuning,0.05
+seniority,manager,manager,2878,Unit / integration testing,0.0438
+seniority,manager,manager,2878,Infrastructure as code,0.0535
+seniority,manager,manager,2878,Terraform,0.0514
+seniority,manager,manager,2878,AI-assisted development,0.0775
+seniority,manager,manager,2878,LLM evaluation,0.1334
+seniority,manager,manager,2878,Pre-sales / solution architecture / PoCs,0.0869
+seniority,unspecified,unspecified,9258,Python,0.402
+seniority,unspecified,unspecified,9258,AWS,0.2428
+seniority,unspecified,unspecified,9258,LLMs / GenAI (general),0.2575
+seniority,unspecified,unspecified,9258,Cloud (unspecified),0.211
+seniority,unspecified,unspecified,9258,AI agents / agentic workflows,0.2343
+seniority,unspecified,unspecified,9258,CI/CD,0.1527
+seniority,unspecified,unspecified,9258,Observability / monitoring,0.167
+seniority,unspecified,unspecified,9258,Distributed systems,0.1692
+seniority,unspecified,unspecified,9258,Java,0.1706
+seniority,unspecified,unspecified,9258,Machine learning fundamentals,0.1712
+seniority,unspecified,unspecified,9258,SQL,0.1487
+seniority,unspecified,unspecified,9258,Kubernetes,0.1249
+seniority,unspecified,unspecified,9258,Docker,0.1281
+seniority,unspecified,unspecified,9258,Financial services / banking domain,0.1378
+seniority,unspecified,unspecified,9258,Azure,0.1043
+seniority,unspecified,unspecified,9258,C++,0.1703
+seniority,unspecified,unspecified,9258,GCP,0.096
+seniority,unspecified,unspecified,9258,System design / architecture,0.1451
+seniority,unspecified,unspecified,9258,REST APIs,0.0897
+seniority,unspecified,unspecified,9258,Go,0.1063
+seniority,unspecified,unspecified,9258,TypeScript,0.1137
+seniority,unspecified,unspecified,9258,Linux,0.1262
+seniority,unspecified,unspecified,9258,Data pipelines / ETL,0.0897
+seniority,unspecified,unspecified,9258,"SRE (SLOs, on-call)",0.1014
+seniority,unspecified,unspecified,9258,Frontend (general),0.0938
+seniority,unspecified,unspecified,9258,Full-stack,0.0961
+seniority,unspecified,unspecified,9258,Incident response / on-call,0.0821
+seniority,unspecified,unspecified,9258,React,0.083
+seniority,unspecified,unspecified,9258,JavaScript,0.0739
+seniority,unspecified,unspecified,9258,Data structures & algorithms,0.0984
+seniority,unspecified,unspecified,9258,DevOps,0.0728
+seniority,unspecified,unspecified,9258,Git,0.0672
+seniority,unspecified,unspecified,9258,OOP / design patterns,0.1127
+seniority,unspecified,unspecified,9258,Query optimization / performance tuning,0.067
+seniority,unspecified,unspecified,9258,Unit / integration testing,0.0569
+seniority,unspecified,unspecified,9258,Infrastructure as code,0.0605
+seniority,unspecified,unspecified,9258,Terraform,0.0595
+seniority,unspecified,unspecified,9258,AI-assisted development,0.0579
+seniority,unspecified,unspecified,9258,LLM evaluation,0.0702
+seniority,unspecified,unspecified,9258,Pre-sales / solution architecture / PoCs,0.0895
+role_family,fde,Forward deployed / solutions,4406,Python,0.3754
+role_family,fde,Forward deployed / solutions,4406,AWS,0.347
+role_family,fde,Forward deployed / solutions,4406,LLMs / GenAI (general),0.2975
+role_family,fde,Forward deployed / solutions,4406,Cloud (unspecified),0.3604
+role_family,fde,Forward deployed / solutions,4406,AI agents / agentic workflows,0.3071
+role_family,fde,Forward deployed / solutions,4406,CI/CD,0.1291
+role_family,fde,Forward deployed / solutions,4406,Observability / monitoring,0.1294
+role_family,fde,Forward deployed / solutions,4406,Distributed systems,0.1017
+role_family,fde,Forward deployed / solutions,4406,Java,0.1148
+role_family,fde,Forward deployed / solutions,4406,Machine learning fundamentals,0.1062
+role_family,fde,Forward deployed / solutions,4406,SQL,0.165
+role_family,fde,Forward deployed / solutions,4406,Kubernetes,0.1325
+role_family,fde,Forward deployed / solutions,4406,Docker,0.1296
+role_family,fde,Forward deployed / solutions,4406,Financial services / banking domain,0.1409
+role_family,fde,Forward deployed / solutions,4406,Azure,0.2333
+role_family,fde,Forward deployed / solutions,4406,C++,0.0499
+role_family,fde,Forward deployed / solutions,4406,GCP,0.202
+role_family,fde,Forward deployed / solutions,4406,System design / architecture,0.0965
+role_family,fde,Forward deployed / solutions,4406,REST APIs,0.1276
+role_family,fde,Forward deployed / solutions,4406,Go,0.0894
+role_family,fde,Forward deployed / solutions,4406,TypeScript,0.118
+role_family,fde,Forward deployed / solutions,4406,Linux,0.0806
+role_family,fde,Forward deployed / solutions,4406,Data pipelines / ETL,0.1182
+role_family,fde,Forward deployed / solutions,4406,"SRE (SLOs, on-call)",0.0431
+role_family,fde,Forward deployed / solutions,4406,Frontend (general),0.0531
+role_family,fde,Forward deployed / solutions,4406,Full-stack,0.054
+role_family,fde,Forward deployed / solutions,4406,Incident response / on-call,0.0418
+role_family,fde,Forward deployed / solutions,4406,React,0.0554
+role_family,fde,Forward deployed / solutions,4406,JavaScript,0.1285
+role_family,fde,Forward deployed / solutions,4406,Data structures & algorithms,0.0247
+role_family,fde,Forward deployed / solutions,4406,DevOps,0.0935
+role_family,fde,Forward deployed / solutions,4406,Git,0.037
+role_family,fde,Forward deployed / solutions,4406,OOP / design patterns,0.0458
+role_family,fde,Forward deployed / solutions,4406,Query optimization / performance tuning,0.0277
+role_family,fde,Forward deployed / solutions,4406,Unit / integration testing,0.0227
+role_family,fde,Forward deployed / solutions,4406,Infrastructure as code,0.0572
+role_family,fde,Forward deployed / solutions,4406,Terraform,0.0531
+role_family,fde,Forward deployed / solutions,4406,AI-assisted development,0.0495
+role_family,fde,Forward deployed / solutions,4406,LLM evaluation,0.0674
+role_family,fde,Forward deployed / solutions,4406,Pre-sales / solution architecture / PoCs,0.4952
+role_family,ai_ml,AI/ML engineering,9725,Python,0.5134
+role_family,ai_ml,AI/ML engineering,9725,AWS,0.1899
+role_family,ai_ml,AI/ML engineering,9725,LLMs / GenAI (general),0.556
+role_family,ai_ml,AI/ML engineering,9725,Cloud (unspecified),0.1869
+role_family,ai_ml,AI/ML engineering,9725,AI agents / agentic workflows,0.4064
+role_family,ai_ml,AI/ML engineering,9725,CI/CD,0.1427
+role_family,ai_ml,AI/ML engineering,9725,Observability / monitoring,0.1851
+role_family,ai_ml,AI/ML engineering,9725,Distributed systems,0.1568
+role_family,ai_ml,AI/ML engineering,9725,Java,0.1164
+role_family,ai_ml,AI/ML engineering,9725,Machine learning fundamentals,0.4336
+role_family,ai_ml,AI/ML engineering,9725,SQL,0.176
+role_family,ai_ml,AI/ML engineering,9725,Kubernetes,0.1077
+role_family,ai_ml,AI/ML engineering,9725,Docker,0.1188
+role_family,ai_ml,AI/ML engineering,9725,Financial services / banking domain,0.1835
+role_family,ai_ml,AI/ML engineering,9725,Azure,0.1172
+role_family,ai_ml,AI/ML engineering,9725,C++,0.1231
+role_family,ai_ml,AI/ML engineering,9725,GCP,0.1132
+role_family,ai_ml,AI/ML engineering,9725,System design / architecture,0.0871
+role_family,ai_ml,AI/ML engineering,9725,REST APIs,0.0896
+role_family,ai_ml,AI/ML engineering,9725,Go,0.0741
+role_family,ai_ml,AI/ML engineering,9725,TypeScript,0.0838
+role_family,ai_ml,AI/ML engineering,9725,Linux,0.0606
+role_family,ai_ml,AI/ML engineering,9725,Data pipelines / ETL,0.1348
+role_family,ai_ml,AI/ML engineering,9725,"SRE (SLOs, on-call)",0.0464
+role_family,ai_ml,AI/ML engineering,9725,Frontend (general),0.0632
+role_family,ai_ml,AI/ML engineering,9725,Full-stack,0.0849
+role_family,ai_ml,AI/ML engineering,9725,Incident response / on-call,0.045
+role_family,ai_ml,AI/ML engineering,9725,React,0.0495
+role_family,ai_ml,AI/ML engineering,9725,JavaScript,0.0568
+role_family,ai_ml,AI/ML engineering,9725,Data structures & algorithms,0.1485
+role_family,ai_ml,AI/ML engineering,9725,DevOps,0.0528
+role_family,ai_ml,AI/ML engineering,9725,Git,0.0672
+role_family,ai_ml,AI/ML engineering,9725,OOP / design patterns,0.0389
+role_family,ai_ml,AI/ML engineering,9725,Query optimization / performance tuning,0.0646
+role_family,ai_ml,AI/ML engineering,9725,Unit / integration testing,0.0559
+role_family,ai_ml,AI/ML engineering,9725,Infrastructure as code,0.0535
+role_family,ai_ml,AI/ML engineering,9725,Terraform,0.0487
+role_family,ai_ml,AI/ML engineering,9725,AI-assisted development,0.0831
+role_family,ai_ml,AI/ML engineering,9725,LLM evaluation,0.2357
+role_family,ai_ml,AI/ML engineering,9725,Pre-sales / solution architecture / PoCs,0.0478
+role_family,data,Data engineering & science,2016,Python,0.6577
+role_family,data,Data engineering & science,2016,AWS,0.3368
+role_family,data,Data engineering & science,2016,LLMs / GenAI (general),0.19
+role_family,data,Data engineering & science,2016,Cloud (unspecified),0.2336
+role_family,data,Data engineering & science,2016,AI agents / agentic workflows,0.1632
+role_family,data,Data engineering & science,2016,CI/CD,0.2277
+role_family,data,Data engineering & science,2016,Observability / monitoring,0.2118
+role_family,data,Data engineering & science,2016,Distributed systems,0.1076
+role_family,data,Data engineering & science,2016,Java,0.1518
+role_family,data,Data engineering & science,2016,Machine learning fundamentals,0.246
+role_family,data,Data engineering & science,2016,SQL,0.6915
+role_family,data,Data engineering & science,2016,Kubernetes,0.1106
+role_family,data,Data engineering & science,2016,Docker,0.1037
+role_family,data,Data engineering & science,2016,Financial services / banking domain,0.1845
+role_family,data,Data engineering & science,2016,Azure,0.1944
+role_family,data,Data engineering & science,2016,C++,0.0303
+role_family,data,Data engineering & science,2016,GCP,0.1776
+role_family,data,Data engineering & science,2016,System design / architecture,0.0719
+role_family,data,Data engineering & science,2016,REST APIs,0.0556
+role_family,data,Data engineering & science,2016,Go,0.0541
+role_family,data,Data engineering & science,2016,TypeScript,0.0174
+role_family,data,Data engineering & science,2016,Linux,0.0387
+role_family,data,Data engineering & science,2016,Data pipelines / ETL,0.565
+role_family,data,Data engineering & science,2016,"SRE (SLOs, on-call)",0.0744
+role_family,data,Data engineering & science,2016,Frontend (general),0.0198
+role_family,data,Data engineering & science,2016,Full-stack,0.0392
+role_family,data,Data engineering & science,2016,Incident response / on-call,0.0694
+role_family,data,Data engineering & science,2016,React,0.0139
+role_family,data,Data engineering & science,2016,JavaScript,0.0134
+role_family,data,Data engineering & science,2016,Data structures & algorithms,0.0868
+role_family,data,Data engineering & science,2016,DevOps,0.0908
+role_family,data,Data engineering & science,2016,Git,0.1558
+role_family,data,Data engineering & science,2016,OOP / design patterns,0.0501
+role_family,data,Data engineering & science,2016,Query optimization / performance tuning,0.1597
+role_family,data,Data engineering & science,2016,Unit / integration testing,0.0868
+role_family,data,Data engineering & science,2016,Infrastructure as code,0.0982
+role_family,data,Data engineering & science,2016,Terraform,0.0923
+role_family,data,Data engineering & science,2016,AI-assisted development,0.064
+role_family,data,Data engineering & science,2016,LLM evaluation,0.0367
+role_family,data,Data engineering & science,2016,Pre-sales / solution architecture / PoCs,0.0218
+role_family,backend,Backend / Python,10084,Python,0.3696
+role_family,backend,Backend / Python,10084,AWS,0.2937
+role_family,backend,Backend / Python,10084,LLMs / GenAI (general),0.1576
+role_family,backend,Backend / Python,10084,Cloud (unspecified),0.2724
+role_family,backend,Backend / Python,10084,AI agents / agentic workflows,0.1933
+role_family,backend,Backend / Python,10084,CI/CD,0.2872
+role_family,backend,Backend / Python,10084,Observability / monitoring,0.2775
+role_family,backend,Backend / Python,10084,Distributed systems,0.3196
+role_family,backend,Backend / Python,10084,Java,0.3365
+role_family,backend,Backend / Python,10084,Machine learning fundamentals,0.1043
+role_family,backend,Backend / Python,10084,SQL,0.1926
+role_family,backend,Backend / Python,10084,Kubernetes,0.236
+role_family,backend,Backend / Python,10084,Docker,0.2306
+role_family,backend,Backend / Python,10084,Financial services / banking domain,0.1438
+role_family,backend,Backend / Python,10084,Azure,0.1572
+role_family,backend,Backend / Python,10084,C++,0.1978
+role_family,backend,Backend / Python,10084,GCP,0.1414
+role_family,backend,Backend / Python,10084,System design / architecture,0.176
+role_family,backend,Backend / Python,10084,REST APIs,0.2413
+role_family,backend,Backend / Python,10084,Go,0.2108
+role_family,backend,Backend / Python,10084,TypeScript,0.2332
+role_family,backend,Backend / Python,10084,Linux,0.1117
+role_family,backend,Backend / Python,10084,Data pipelines / ETL,0.0928
+role_family,backend,Backend / Python,10084,"SRE (SLOs, on-call)",0.125
+role_family,backend,Backend / Python,10084,Frontend (general),0.226
+role_family,backend,Backend / Python,10084,Full-stack,0.2459
+role_family,backend,Backend / Python,10084,Incident response / on-call,0.0761
+role_family,backend,Backend / Python,10084,React,0.2148
+role_family,backend,Backend / Python,10084,JavaScript,0.1757
+role_family,backend,Backend / Python,10084,Data structures & algorithms,0.1367
+role_family,backend,Backend / Python,10084,DevOps,0.1013
+role_family,backend,Backend / Python,10084,Git,0.1362
+role_family,backend,Backend / Python,10084,OOP / design patterns,0.124
+role_family,backend,Backend / Python,10084,Query optimization / performance tuning,0.1319
+role_family,backend,Backend / Python,10084,Unit / integration testing,0.1496
+role_family,backend,Backend / Python,10084,Infrastructure as code,0.072
+role_family,backend,Backend / Python,10084,Terraform,0.0694
+role_family,backend,Backend / Python,10084,AI-assisted development,0.1172
+role_family,backend,Backend / Python,10084,LLM evaluation,0.0347
+role_family,backend,Backend / Python,10084,Pre-sales / solution architecture / PoCs,0.0108
+role_family,frontend,Frontend & mobile,1336,Python,0.1055
+role_family,frontend,Frontend & mobile,1336,AWS,0.1213
+role_family,frontend,Frontend & mobile,1336,LLMs / GenAI (general),0.1257
+role_family,frontend,Frontend & mobile,1336,Cloud (unspecified),0.0868
+role_family,frontend,Frontend & mobile,1336,AI agents / agentic workflows,0.1639
+role_family,frontend,Frontend & mobile,1336,CI/CD,0.2927
+role_family,frontend,Frontend & mobile,1336,Observability / monitoring,0.1355
+role_family,frontend,Frontend & mobile,1336,Distributed systems,0.0644
+role_family,frontend,Frontend & mobile,1336,Java,0.1662
+role_family,frontend,Frontend & mobile,1336,Machine learning fundamentals,0.0457
+role_family,frontend,Frontend & mobile,1336,SQL,0.0861
+role_family,frontend,Frontend & mobile,1336,Kubernetes,0.0651
+role_family,frontend,Frontend & mobile,1336,Docker,0.0891
+role_family,frontend,Frontend & mobile,1336,Financial services / banking domain,0.1662
+role_family,frontend,Frontend & mobile,1336,Azure,0.0561
+role_family,frontend,Frontend & mobile,1336,C++,0.0546
+role_family,frontend,Frontend & mobile,1336,GCP,0.0457
+role_family,frontend,Frontend & mobile,1336,System design / architecture,0.1482
+role_family,frontend,Frontend & mobile,1336,REST APIs,0.2814
+role_family,frontend,Frontend & mobile,1336,Go,0.0427
+role_family,frontend,Frontend & mobile,1336,TypeScript,0.3578
+role_family,frontend,Frontend & mobile,1336,Linux,0.0359
+role_family,frontend,Frontend & mobile,1336,Data pipelines / ETL,0.0105
+role_family,frontend,Frontend & mobile,1336,"SRE (SLOs, on-call)",0.0427
+role_family,frontend,Frontend & mobile,1336,Frontend (general),0.4678
+role_family,frontend,Frontend & mobile,1336,Full-stack,0.1751
+role_family,frontend,Frontend & mobile,1336,Incident response / on-call,0.0329
+role_family,frontend,Frontend & mobile,1336,React,0.4349
+role_family,frontend,Frontend & mobile,1336,JavaScript,0.2957
+role_family,frontend,Frontend & mobile,1336,Data structures & algorithms,0.0629
+role_family,frontend,Frontend & mobile,1336,DevOps,0.0808
+role_family,frontend,Frontend & mobile,1336,Git,0.1415
+role_family,frontend,Frontend & mobile,1336,OOP / design patterns,0.149
+role_family,frontend,Frontend & mobile,1336,Query optimization / performance tuning,0.1557
+role_family,frontend,Frontend & mobile,1336,Unit / integration testing,0.1737
+role_family,frontend,Frontend & mobile,1336,Infrastructure as code,0.0112
+role_family,frontend,Frontend & mobile,1336,Terraform,0.0225
+role_family,frontend,Frontend & mobile,1336,AI-assisted development,0.1467
+role_family,frontend,Frontend & mobile,1336,LLM evaluation,0.0172
+role_family,frontend,Frontend & mobile,1336,Pre-sales / solution architecture / PoCs,0.0052
+role_family,infra,"Infra, DevOps & security",5862,Python,0.3913
+role_family,infra,"Infra, DevOps & security",5862,AWS,0.3886
+role_family,infra,"Infra, DevOps & security",5862,LLMs / GenAI (general),0.1351
+role_family,infra,"Infra, DevOps & security",5862,Cloud (unspecified),0.3941
+role_family,infra,"Infra, DevOps & security",5862,AI agents / agentic workflows,0.1679
+role_family,infra,"Infra, DevOps & security",5862,CI/CD,0.3038
+role_family,infra,"Infra, DevOps & security",5862,Observability / monitoring,0.3042
+role_family,infra,"Infra, DevOps & security",5862,Distributed systems,0.1953
+role_family,infra,"Infra, DevOps & security",5862,Java,0.1184
+role_family,infra,"Infra, DevOps & security",5862,Machine learning fundamentals,0.071
+role_family,infra,"Infra, DevOps & security",5862,SQL,0.074
+role_family,infra,"Infra, DevOps & security",5862,Kubernetes,0.3125
+role_family,infra,"Infra, DevOps & security",5862,Docker,0.2586
+role_family,infra,"Infra, DevOps & security",5862,Financial services / banking domain,0.1247
+role_family,infra,"Infra, DevOps & security",5862,Azure,0.2032
+role_family,infra,"Infra, DevOps & security",5862,C++,0.0971
+role_family,infra,"Infra, DevOps & security",5862,GCP,0.1938
+role_family,infra,"Infra, DevOps & security",5862,System design / architecture,0.0834
+role_family,infra,"Infra, DevOps & security",5862,REST APIs,0.052
+role_family,infra,"Infra, DevOps & security",5862,Go,0.2004
+role_family,infra,"Infra, DevOps & security",5862,TypeScript,0.0677
+role_family,infra,"Infra, DevOps & security",5862,Linux,0.2209
+role_family,infra,"Infra, DevOps & security",5862,Data pipelines / ETL,0.0444
+role_family,infra,"Infra, DevOps & security",5862,"SRE (SLOs, on-call)",0.2503
+role_family,infra,"Infra, DevOps & security",5862,Frontend (general),0.0271
+role_family,infra,"Infra, DevOps & security",5862,Full-stack,0.0297
+role_family,infra,"Infra, DevOps & security",5862,Incident response / on-call,0.2982
+role_family,infra,"Infra, DevOps & security",5862,React,0.0283
+role_family,infra,"Infra, DevOps & security",5862,JavaScript,0.0435
+role_family,infra,"Infra, DevOps & security",5862,Data structures & algorithms,0.0346
+role_family,infra,"Infra, DevOps & security",5862,DevOps,0.1955
+role_family,infra,"Infra, DevOps & security",5862,Git,0.0778
+role_family,infra,"Infra, DevOps & security",5862,OOP / design patterns,0.0442
+role_family,infra,"Infra, DevOps & security",5862,Query optimization / performance tuning,0.0609
+role_family,infra,"Infra, DevOps & security",5862,Unit / integration testing,0.0415
+role_family,infra,"Infra, DevOps & security",5862,Infrastructure as code,0.2398
+role_family,infra,"Infra, DevOps & security",5862,Terraform,0.2346
+role_family,infra,"Infra, DevOps & security",5862,AI-assisted development,0.0546
+role_family,infra,"Infra, DevOps & security",5862,LLM evaluation,0.0136
+role_family,infra,"Infra, DevOps & security",5862,Pre-sales / solution architecture / PoCs,0.028
+role_family,quant,Quant & trading tech,541,Python,0.7523
+role_family,quant,Quant & trading tech,541,AWS,0.0758
+role_family,quant,Quant & trading tech,541,LLMs / GenAI (general),0.0628
+role_family,quant,Quant & trading tech,541,Cloud (unspecified),0.0684
+role_family,quant,Quant & trading tech,541,AI agents / agentic workflows,0.0462
+role_family,quant,Quant & trading tech,541,CI/CD,0.0998
+role_family,quant,Quant & trading tech,541,Observability / monitoring,0.1035
+role_family,quant,Quant & trading tech,541,Distributed systems,0.0887
+role_family,quant,Quant & trading tech,541,Java,0.1553
+role_family,quant,Quant & trading tech,541,Machine learning fundamentals,0.3309
+role_family,quant,Quant & trading tech,541,SQL,0.2052
+role_family,quant,Quant & trading tech,541,Kubernetes,0.0591
+role_family,quant,Quant & trading tech,541,Docker,0.0684
+role_family,quant,Quant & trading tech,541,Financial services / banking domain,0.2015
+role_family,quant,Quant & trading tech,541,Azure,0.0111
+role_family,quant,Quant & trading tech,541,C++,0.4695
+role_family,quant,Quant & trading tech,541,GCP,0.0203
+role_family,quant,Quant & trading tech,541,System design / architecture,0.0628
+role_family,quant,Quant & trading tech,541,REST APIs,0.0351
+role_family,quant,Quant & trading tech,541,Go,0.0314
+role_family,quant,Quant & trading tech,541,TypeScript,0.0129
+role_family,quant,Quant & trading tech,541,Linux,0.2237
+role_family,quant,Quant & trading tech,541,Data pipelines / ETL,0.098
+role_family,quant,Quant & trading tech,541,"SRE (SLOs, on-call)",0.0333
+role_family,quant,Quant & trading tech,541,Frontend (general),0.0388
+role_family,quant,Quant & trading tech,541,Full-stack,0.0277
+role_family,quant,Quant & trading tech,541,Incident response / on-call,0.024
+role_family,quant,Quant & trading tech,541,React,0.0481
+role_family,quant,Quant & trading tech,541,JavaScript,0.0185
+role_family,quant,Quant & trading tech,541,Data structures & algorithms,0.2033
+role_family,quant,Quant & trading tech,541,DevOps,0.0351
+role_family,quant,Quant & trading tech,541,Git,0.0813
+role_family,quant,Quant & trading tech,541,OOP / design patterns,0.0684
+role_family,quant,Quant & trading tech,541,Query optimization / performance tuning,0.085
+role_family,quant,Quant & trading tech,541,Unit / integration testing,0.0499
+role_family,quant,Quant & trading tech,541,Infrastructure as code,0.0222
+role_family,quant,Quant & trading tech,541,Terraform,0.0129
+role_family,quant,Quant & trading tech,541,AI-assisted development,0.037
+role_family,quant,Quant & trading tech,541,LLM evaluation,0.0055
+role_family,quant,Quant & trading tech,541,Pre-sales / solution architecture / PoCs,0.0018
+role_family,trading_biz,"Trading desk, ops & product",336,Python,0.25
+role_family,trading_biz,"Trading desk, ops & product",336,AWS,0.0089
+role_family,trading_biz,"Trading desk, ops & product",336,LLMs / GenAI (general),0.0238
+role_family,trading_biz,"Trading desk, ops & product",336,Cloud (unspecified),0.0089
+role_family,trading_biz,"Trading desk, ops & product",336,AI agents / agentic workflows,0.0208
+role_family,trading_biz,"Trading desk, ops & product",336,CI/CD,0.0149
+role_family,trading_biz,"Trading desk, ops & product",336,Observability / monitoring,0.0774
+role_family,trading_biz,"Trading desk, ops & product",336,Distributed systems,0.0387
+role_family,trading_biz,"Trading desk, ops & product",336,Java,0.0179
+role_family,trading_biz,"Trading desk, ops & product",336,Machine learning fundamentals,0.0268
+role_family,trading_biz,"Trading desk, ops & product",336,SQL,0.1607
+role_family,trading_biz,"Trading desk, ops & product",336,Kubernetes,0.0089
+role_family,trading_biz,"Trading desk, ops & product",336,Docker,0.0149
+role_family,trading_biz,"Trading desk, ops & product",336,Financial services / banking domain,0.5685
+role_family,trading_biz,"Trading desk, ops & product",336,Azure,0.0
+role_family,trading_biz,"Trading desk, ops & product",336,C++,0.0357
+role_family,trading_biz,"Trading desk, ops & product",336,GCP,0.006
+role_family,trading_biz,"Trading desk, ops & product",336,System design / architecture,0.0179
+role_family,trading_biz,"Trading desk, ops & product",336,REST APIs,0.0208
+role_family,trading_biz,"Trading desk, ops & product",336,Go,0.003
+role_family,trading_biz,"Trading desk, ops & product",336,TypeScript,0.0
+role_family,trading_biz,"Trading desk, ops & product",336,Linux,0.0387
+role_family,trading_biz,"Trading desk, ops & product",336,Data pipelines / ETL,0.0149
+role_family,trading_biz,"Trading desk, ops & product",336,"SRE (SLOs, on-call)",0.0179
+role_family,trading_biz,"Trading desk, ops & product",336,Frontend (general),0.0179
+role_family,trading_biz,"Trading desk, ops & product",336,Full-stack,0.006
+role_family,trading_biz,"Trading desk, ops & product",336,Incident response / on-call,0.0327
+role_family,trading_biz,"Trading desk, ops & product",336,React,0.0179
+role_family,trading_biz,"Trading desk, ops & product",336,JavaScript,0.0
+role_family,trading_biz,"Trading desk, ops & product",336,Data structures & algorithms,0.0238
+role_family,trading_biz,"Trading desk, ops & product",336,DevOps,0.0119
+role_family,trading_biz,"Trading desk, ops & product",336,Git,0.0089
+role_family,trading_biz,"Trading desk, ops & product",336,OOP / design patterns,0.0
+role_family,trading_biz,"Trading desk, ops & product",336,Query optimization / performance tuning,0.0089
+role_family,trading_biz,"Trading desk, ops & product",336,Unit / integration testing,0.0357
+role_family,trading_biz,"Trading desk, ops & product",336,Infrastructure as code,0.0
+role_family,trading_biz,"Trading desk, ops & product",336,Terraform,0.0
+role_family,trading_biz,"Trading desk, ops & product",336,AI-assisted development,0.003
+role_family,trading_biz,"Trading desk, ops & product",336,LLM evaluation,0.0
+role_family,trading_biz,"Trading desk, ops & product",336,Pre-sales / solution architecture / PoCs,0.006
+role_family,other_eng,Other engineering,8762,Python,0.3186
+role_family,other_eng,Other engineering,8762,AWS,0.2203
+role_family,other_eng,Other engineering,8762,LLMs / GenAI (general),0.1567
+role_family,other_eng,Other engineering,8762,Cloud (unspecified),0.2018
+role_family,other_eng,Other engineering,8762,AI agents / agentic workflows,0.1577
+role_family,other_eng,Other engineering,8762,CI/CD,0.1669
+role_family,other_eng,Other engineering,8762,Observability / monitoring,0.1517
+role_family,other_eng,Other engineering,8762,Distributed systems,0.1851
+role_family,other_eng,Other engineering,8762,Java,0.1612
+role_family,other_eng,Other engineering,8762,Machine learning fundamentals,0.0914
+role_family,other_eng,Other engineering,8762,SQL,0.1206
+role_family,other_eng,Other engineering,8762,Kubernetes,0.0978
+role_family,other_eng,Other engineering,8762,Docker,0.0983
+role_family,other_eng,Other engineering,8762,Financial services / banking domain,0.0936
+role_family,other_eng,Other engineering,8762,Azure,0.0991
+role_family,other_eng,Other engineering,8762,C++,0.1648
+role_family,other_eng,Other engineering,8762,GCP,0.0791
+role_family,other_eng,Other engineering,8762,System design / architecture,0.195
+role_family,other_eng,Other engineering,8762,REST APIs,0.0914
+role_family,other_eng,Other engineering,8762,Go,0.0848
+role_family,other_eng,Other engineering,8762,TypeScript,0.0831
+role_family,other_eng,Other engineering,8762,Linux,0.1534
+role_family,other_eng,Other engineering,8762,Data pipelines / ETL,0.0556
+role_family,other_eng,Other engineering,8762,"SRE (SLOs, on-call)",0.1257
+role_family,other_eng,Other engineering,8762,Frontend (general),0.077
+role_family,other_eng,Other engineering,8762,Full-stack,0.0637
+role_family,other_eng,Other engineering,8762,Incident response / on-call,0.1123
+role_family,other_eng,Other engineering,8762,React,0.0669
+role_family,other_eng,Other engineering,8762,JavaScript,0.0636
+role_family,other_eng,Other engineering,8762,Data structures & algorithms,0.0692
+role_family,other_eng,Other engineering,8762,DevOps,0.0608
+role_family,other_eng,Other engineering,8762,Git,0.0793
+role_family,other_eng,Other engineering,8762,OOP / design patterns,0.1491
+role_family,other_eng,Other engineering,8762,Query optimization / performance tuning,0.0632
+role_family,other_eng,Other engineering,8762,Unit / integration testing,0.0819
+role_family,other_eng,Other engineering,8762,Infrastructure as code,0.0459
+role_family,other_eng,Other engineering,8762,Terraform,0.046
+role_family,other_eng,Other engineering,8762,AI-assisted development,0.0595
+role_family,other_eng,Other engineering,8762,LLM evaluation,0.0251
+role_family,other_eng,Other engineering,8762,Pre-sales / solution architecture / PoCs,0.0313
+region,North America,North America,18991,Python,0.4598
+region,North America,North America,18991,AWS,0.2952
+region,North America,North America,18991,LLMs / GenAI (general),0.2927
+region,North America,North America,18991,Cloud (unspecified),0.2828
+region,North America,North America,18991,AI agents / agentic workflows,0.2858
+region,North America,North America,18991,CI/CD,0.2054
+region,North America,North America,18991,Observability / monitoring,0.235
+region,North America,North America,18991,Distributed systems,0.2254
+region,North America,North America,18991,Java,0.1947
+region,North America,North America,18991,Machine learning fundamentals,0.2252
+region,North America,North America,18991,SQL,0.1609
+region,North America,North America,18991,Kubernetes,0.1637
+region,North America,North America,18991,Docker,0.1493
+region,North America,North America,18991,Financial services / banking domain,0.1308
+region,North America,North America,18991,Azure,0.1413
+region,North America,North America,18991,C++,0.1818
+region,North America,North America,18991,GCP,0.1331
+region,North America,North America,18991,System design / architecture,0.1677
+region,North America,North America,18991,REST APIs,0.1168
+region,North America,North America,18991,Go,0.1535
+region,North America,North America,18991,TypeScript,0.1336
+region,North America,North America,18991,Linux,0.1101
+region,North America,North America,18991,Data pipelines / ETL,0.1263
+region,North America,North America,18991,"SRE (SLOs, on-call)",0.1316
+region,North America,North America,18991,Frontend (general),0.1093
+region,North America,North America,18991,Full-stack,0.1171
+region,North America,North America,18991,Incident response / on-call,0.1108
+region,North America,North America,18991,React,0.1039
+region,North America,North America,18991,JavaScript,0.0931
+region,North America,North America,18991,Data structures & algorithms,0.1205
+region,North America,North America,18991,DevOps,0.0717
+region,North America,North America,18991,Git,0.0809
+region,North America,North America,18991,OOP / design patterns,0.1116
+region,North America,North America,18991,Query optimization / performance tuning,0.0917
+region,North America,North America,18991,Unit / integration testing,0.0846
+region,North America,North America,18991,Infrastructure as code,0.0872
+region,North America,North America,18991,Terraform,0.0748
+region,North America,North America,18991,AI-assisted development,0.0889
+region,North America,North America,18991,LLM evaluation,0.0907
+region,North America,North America,18991,Pre-sales / solution architecture / PoCs,0.0727
+region,Europe,Europe,7631,Python,0.4043
+region,Europe,Europe,7631,AWS,0.2469
+region,Europe,Europe,7631,LLMs / GenAI (general),0.2693
+region,Europe,Europe,7631,Cloud (unspecified),0.2398
+region,Europe,Europe,7631,AI agents / agentic workflows,0.2432
+region,Europe,Europe,7631,CI/CD,0.2278
+region,Europe,Europe,7631,Observability / monitoring,0.2209
+region,Europe,Europe,7631,Distributed systems,0.1987
+region,Europe,Europe,7631,Java,0.1588
+region,Europe,Europe,7631,Machine learning fundamentals,0.157
+region,Europe,Europe,7631,SQL,0.1756
+region,Europe,Europe,7631,Kubernetes,0.1751
+region,Europe,Europe,7631,Docker,0.1634
+region,Europe,Europe,7631,Financial services / banking domain,0.1763
+region,Europe,Europe,7631,Azure,0.1466
+region,Europe,Europe,7631,C++,0.1023
+region,Europe,Europe,7631,GCP,0.1418
+region,Europe,Europe,7631,System design / architecture,0.0967
+region,Europe,Europe,7631,REST APIs,0.1248
+region,Europe,Europe,7631,Go,0.1081
+region,Europe,Europe,7631,TypeScript,0.1377
+region,Europe,Europe,7631,Linux,0.1136
+region,Europe,Europe,7631,Data pipelines / ETL,0.0967
+region,Europe,Europe,7631,"SRE (SLOs, on-call)",0.1047
+region,Europe,Europe,7631,Frontend (general),0.1266
+region,Europe,Europe,7631,Full-stack,0.1005
+region,Europe,Europe,7631,Incident response / on-call,0.0782
+region,Europe,Europe,7631,React,0.0992
+region,Europe,Europe,7631,JavaScript,0.0809
+region,Europe,Europe,7631,Data structures & algorithms,0.0824
+region,Europe,Europe,7631,DevOps,0.1004
+region,Europe,Europe,7631,Git,0.0896
+region,Europe,Europe,7631,OOP / design patterns,0.0605
+region,Europe,Europe,7631,Query optimization / performance tuning,0.0713
+region,Europe,Europe,7631,Unit / integration testing,0.0742
+region,Europe,Europe,7631,Infrastructure as code,0.0945
+region,Europe,Europe,7631,Terraform,0.0912
+region,Europe,Europe,7631,AI-assisted development,0.0844
+region,Europe,Europe,7631,LLM evaluation,0.0835
+region,Europe,Europe,7631,Pre-sales / solution architecture / PoCs,0.0923
+region,Southeast Asia,Southeast Asia,6627,Python,0.2233
+region,Southeast Asia,Southeast Asia,6627,AWS,0.1314
+region,Southeast Asia,Southeast Asia,6627,LLMs / GenAI (general),0.1443
+region,Southeast Asia,Southeast Asia,6627,Cloud (unspecified),0.1265
+region,Southeast Asia,Southeast Asia,6627,AI agents / agentic workflows,0.0907
+region,Southeast Asia,Southeast Asia,6627,CI/CD,0.1089
+region,Southeast Asia,Southeast Asia,6627,Observability / monitoring,0.0997
+region,Southeast Asia,Southeast Asia,6627,Distributed systems,0.0837
+region,Southeast Asia,Southeast Asia,6627,Java,0.1569
+region,Southeast Asia,Southeast Asia,6627,Machine learning fundamentals,0.1068
+region,Southeast Asia,Southeast Asia,6627,SQL,0.1434
+region,Southeast Asia,Southeast Asia,6627,Kubernetes,0.0981
+region,Southeast Asia,Southeast Asia,6627,Docker,0.1099
+region,Southeast Asia,Southeast Asia,6627,Financial services / banking domain,0.1323
+region,Southeast Asia,Southeast Asia,6627,Azure,0.0911
+region,Southeast Asia,Southeast Asia,6627,C++,0.0821
+region,Southeast Asia,Southeast Asia,6627,GCP,0.0655
+region,Southeast Asia,Southeast Asia,6627,System design / architecture,0.0596
+region,Southeast Asia,Southeast Asia,6627,REST APIs,0.0958
+region,Southeast Asia,Southeast Asia,6627,Go,0.0545
+region,Southeast Asia,Southeast Asia,6627,TypeScript,0.0478
+region,Southeast Asia,Southeast Asia,6627,Linux,0.0952
+region,Southeast Asia,Southeast Asia,6627,Data pipelines / ETL,0.0717
+region,Southeast Asia,Southeast Asia,6627,"SRE (SLOs, on-call)",0.0287
+region,Southeast Asia,Southeast Asia,6627,Frontend (general),0.0536
+region,Southeast Asia,Southeast Asia,6627,Full-stack,0.0844
+region,Southeast Asia,Southeast Asia,6627,Incident response / on-call,0.0934
+region,Southeast Asia,Southeast Asia,6627,React,0.0552
+region,Southeast Asia,Southeast Asia,6627,JavaScript,0.0836
+region,Southeast Asia,Southeast Asia,6627,Data structures & algorithms,0.0566
+region,Southeast Asia,Southeast Asia,6627,DevOps,0.0828
+region,Southeast Asia,Southeast Asia,6627,Git,0.065
+region,Southeast Asia,Southeast Asia,6627,OOP / design patterns,0.0365
+region,Southeast Asia,Southeast Asia,6627,Query optimization / performance tuning,0.0496
+region,Southeast Asia,Southeast Asia,6627,Unit / integration testing,0.0436
+region,Southeast Asia,Southeast Asia,6627,Infrastructure as code,0.0324
+region,Southeast Asia,Southeast Asia,6627,Terraform,0.0416
+region,Southeast Asia,Southeast Asia,6627,AI-assisted development,0.019
+region,Southeast Asia,Southeast Asia,6627,LLM evaluation,0.0506
+region,Southeast Asia,Southeast Asia,6627,Pre-sales / solution architecture / PoCs,0.0499
+region,South Asia,South Asia,2470,Python,0.4498
+region,South Asia,South Asia,2470,AWS,0.3664
+region,South Asia,South Asia,2470,LLMs / GenAI (general),0.2923
+region,South Asia,South Asia,2470,Cloud (unspecified),0.3522
+region,South Asia,South Asia,2470,AI agents / agentic workflows,0.2692
+region,South Asia,South Asia,2470,CI/CD,0.3356
+region,South Asia,South Asia,2470,Observability / monitoring,0.2522
+region,South Asia,South Asia,2470,Distributed systems,0.2623
+region,South Asia,South Asia,2470,Java,0.302
+region,South Asia,South Asia,2470,Machine learning fundamentals,0.2061
+region,South Asia,South Asia,2470,SQL,0.2887
+region,South Asia,South Asia,2470,Kubernetes,0.2243
+region,South Asia,South Asia,2470,Docker,0.2425
+region,South Asia,South Asia,2470,Financial services / banking domain,0.1777
+region,South Asia,South Asia,2470,Azure,0.2405
+region,South Asia,South Asia,2470,C++,0.0984
+region,South Asia,South Asia,2470,GCP,0.1968
+region,South Asia,South Asia,2470,System design / architecture,0.2113
+region,South Asia,South Asia,2470,REST APIs,0.2267
+region,South Asia,South Asia,2470,Go,0.119
+region,South Asia,South Asia,2470,TypeScript,0.104
+region,South Asia,South Asia,2470,Linux,0.1462
+region,South Asia,South Asia,2470,Data pipelines / ETL,0.1437
+region,South Asia,South Asia,2470,"SRE (SLOs, on-call)",0.1377
+region,South Asia,South Asia,2470,Frontend (general),0.1194
+region,South Asia,South Asia,2470,Full-stack,0.1101
+region,South Asia,South Asia,2470,Incident response / on-call,0.1251
+region,South Asia,South Asia,2470,React,0.1219
+region,South Asia,South Asia,2470,JavaScript,0.1223
+region,South Asia,South Asia,2470,Data structures & algorithms,0.1113
+region,South Asia,South Asia,2470,DevOps,0.1526
+region,South Asia,South Asia,2470,Git,0.1462
+region,South Asia,South Asia,2470,OOP / design patterns,0.1684
+region,South Asia,South Asia,2470,Query optimization / performance tuning,0.1393
+region,South Asia,South Asia,2470,Unit / integration testing,0.1737
+region,South Asia,South Asia,2470,Infrastructure as code,0.102
+region,South Asia,South Asia,2470,Terraform,0.1065
+region,South Asia,South Asia,2470,AI-assisted development,0.102
+region,South Asia,South Asia,2470,LLM evaluation,0.0668
+region,South Asia,South Asia,2470,Pre-sales / solution architecture / PoCs,0.0547
+region,Unknown,Unknown,2261,Python,0.3737
+region,Unknown,Unknown,2261,AWS,0.2707
+region,Unknown,Unknown,2261,LLMs / GenAI (general),0.1738
+region,Unknown,Unknown,2261,Cloud (unspecified),0.2804
+region,Unknown,Unknown,2261,AI agents / agentic workflows,0.1747
+region,Unknown,Unknown,2261,CI/CD,0.2468
+region,Unknown,Unknown,2261,Observability / monitoring,0.1858
+region,Unknown,Unknown,2261,Distributed systems,0.1782
+region,Unknown,Unknown,2261,Java,0.1261
+region,Unknown,Unknown,2261,Machine learning fundamentals,0.1066
+region,Unknown,Unknown,2261,SQL,0.146
+region,Unknown,Unknown,2261,Kubernetes,0.2026
+region,Unknown,Unknown,2261,Docker,0.2026
+region,Unknown,Unknown,2261,Financial services / banking domain,0.061
+region,Unknown,Unknown,2261,Azure,0.1614
+region,Unknown,Unknown,2261,C++,0.1225
+region,Unknown,Unknown,2261,GCP,0.1305
+region,Unknown,Unknown,2261,System design / architecture,0.1097
+region,Unknown,Unknown,2261,REST APIs,0.1252
+region,Unknown,Unknown,2261,Go,0.1375
+region,Unknown,Unknown,2261,TypeScript,0.1375
+region,Unknown,Unknown,2261,Linux,0.1698
+region,Unknown,Unknown,2261,Data pipelines / ETL,0.084
+region,Unknown,Unknown,2261,"SRE (SLOs, on-call)",0.1101
+region,Unknown,Unknown,2261,Frontend (general),0.0792
+region,Unknown,Unknown,2261,Full-stack,0.0778
+region,Unknown,Unknown,2261,Incident response / on-call,0.1031
+region,Unknown,Unknown,2261,React,0.0801
+region,Unknown,Unknown,2261,JavaScript,0.1278
+region,Unknown,Unknown,2261,Data structures & algorithms,0.0624
+region,Unknown,Unknown,2261,DevOps,0.1203
+region,Unknown,Unknown,2261,Git,0.1123
+region,Unknown,Unknown,2261,OOP / design patterns,0.0571
+region,Unknown,Unknown,2261,Query optimization / performance tuning,0.0632
+region,Unknown,Unknown,2261,Unit / integration testing,0.0606
+region,Unknown,Unknown,2261,Infrastructure as code,0.1154
+region,Unknown,Unknown,2261,Terraform,0.1243
+region,Unknown,Unknown,2261,AI-assisted development,0.0725
+region,Unknown,Unknown,2261,LLM evaluation,0.0323
+region,Unknown,Unknown,2261,Pre-sales / solution architecture / PoCs,0.0831
+region,East Asia,East Asia,1517,Python,0.3942
+region,East Asia,East Asia,1517,AWS,0.2399
+region,East Asia,East Asia,1517,LLMs / GenAI (general),0.2716
+region,East Asia,East Asia,1517,Cloud (unspecified),0.2195
+region,East Asia,East Asia,1517,AI agents / agentic workflows,0.2123
+region,East Asia,East Asia,1517,CI/CD,0.1793
+region,East Asia,East Asia,1517,Observability / monitoring,0.2076
+region,East Asia,East Asia,1517,Distributed systems,0.1964
+region,East Asia,East Asia,1517,Java,0.1463
+region,East Asia,East Asia,1517,Machine learning fundamentals,0.1365
+region,East Asia,East Asia,1517,SQL,0.1872
+region,East Asia,East Asia,1517,Kubernetes,0.1503
+region,East Asia,East Asia,1517,Docker,0.1641
+region,East Asia,East Asia,1517,Financial services / banking domain,0.2472
+region,East Asia,East Asia,1517,Azure,0.1404
+region,East Asia,East Asia,1517,C++,0.151
+region,East Asia,East Asia,1517,GCP,0.1411
+region,East Asia,East Asia,1517,System design / architecture,0.1094
+region,East Asia,East Asia,1517,REST APIs,0.0949
+region,East Asia,East Asia,1517,Go,0.1127
+region,East Asia,East Asia,1517,TypeScript,0.1187
+region,East Asia,East Asia,1517,Linux,0.1681
+region,East Asia,East Asia,1517,Data pipelines / ETL,0.0916
+region,East Asia,East Asia,1517,"SRE (SLOs, on-call)",0.1055
+region,East Asia,East Asia,1517,Frontend (general),0.1358
+region,East Asia,East Asia,1517,Full-stack,0.0798
+region,East Asia,East Asia,1517,Incident response / on-call,0.0916
+region,East Asia,East Asia,1517,React,0.1081
+region,East Asia,East Asia,1517,JavaScript,0.0765
+region,East Asia,East Asia,1517,Data structures & algorithms,0.1055
+region,East Asia,East Asia,1517,DevOps,0.1009
+region,East Asia,East Asia,1517,Git,0.0705
+region,East Asia,East Asia,1517,OOP / design patterns,0.0521
+region,East Asia,East Asia,1517,Query optimization / performance tuning,0.0956
+region,East Asia,East Asia,1517,Unit / integration testing,0.0745
+region,East Asia,East Asia,1517,Infrastructure as code,0.062
+region,East Asia,East Asia,1517,Terraform,0.0811
+region,East Asia,East Asia,1517,AI-assisted development,0.0725
+region,East Asia,East Asia,1517,LLM evaluation,0.0903
+region,East Asia,East Asia,1517,Pre-sales / solution architecture / PoCs,0.1022
+region,Remote,Remote,1373,Python,0.4028
+region,Remote,Remote,1373,AWS,0.2775
+region,Remote,Remote,1373,LLMs / GenAI (general),0.2178
+region,Remote,Remote,1373,Cloud (unspecified),0.2389
+region,Remote,Remote,1373,AI agents / agentic workflows,0.2345
+region,Remote,Remote,1373,CI/CD,0.2192
+region,Remote,Remote,1373,Observability / monitoring,0.2141
+region,Remote,Remote,1373,Distributed systems,0.1515
+region,Remote,Remote,1373,Java,0.1063
+region,Remote,Remote,1373,Machine learning fundamentals,0.15
+region,Remote,Remote,1373,SQL,0.2141
+region,Remote,Remote,1373,Kubernetes,0.2112
+region,Remote,Remote,1373,Docker,0.1755
+region,Remote,Remote,1373,Financial services / banking domain,0.1792
+region,Remote,Remote,1373,Azure,0.1537
+region,Remote,Remote,1373,C++,0.0532
+region,Remote,Remote,1373,GCP,0.1493
+region,Remote,Remote,1373,System design / architecture,0.0794
+region,Remote,Remote,1373,REST APIs,0.1559
+region,Remote,Remote,1373,Go,0.1435
+region,Remote,Remote,1373,TypeScript,0.1959
+region,Remote,Remote,1373,Linux,0.0954
+region,Remote,Remote,1373,Data pipelines / ETL,0.1114
+region,Remote,Remote,1373,"SRE (SLOs, on-call)",0.161
+region,Remote,Remote,1373,Frontend (general),0.134
+region,Remote,Remote,1373,Full-stack,0.1224
+region,Remote,Remote,1373,Incident response / on-call,0.0925
+region,Remote,Remote,1373,React,0.1398
+region,Remote,Remote,1373,JavaScript,0.1318
+region,Remote,Remote,1373,Data structures & algorithms,0.0532
+region,Remote,Remote,1373,DevOps,0.1012
+region,Remote,Remote,1373,Git,0.1151
+region,Remote,Remote,1373,OOP / design patterns,0.0546
+region,Remote,Remote,1373,Query optimization / performance tuning,0.091
+region,Remote,Remote,1373,Unit / integration testing,0.0867
+region,Remote,Remote,1373,Infrastructure as code,0.1071
+region,Remote,Remote,1373,Terraform,0.1107
+region,Remote,Remote,1373,AI-assisted development,0.1049
+region,Remote,Remote,1373,LLM evaluation,0.075
+region,Remote,Remote,1373,Pre-sales / solution architecture / PoCs,0.0947
+region,Latin America,Latin America,1300,Python,0.4769
+region,Latin America,Latin America,1300,AWS,0.4038
+region,Latin America,Latin America,1300,LLMs / GenAI (general),0.3285
+region,Latin America,Latin America,1300,Cloud (unspecified),0.2823
+region,Latin America,Latin America,1300,AI agents / agentic workflows,0.2962
+region,Latin America,Latin America,1300,CI/CD,0.3854
+region,Latin America,Latin America,1300,Observability / monitoring,0.2754
+region,Latin America,Latin America,1300,Distributed systems,0.1808
+region,Latin America,Latin America,1300,Java,0.1892
+region,Latin America,Latin America,1300,Machine learning fundamentals,0.1631
+region,Latin America,Latin America,1300,SQL,0.3392
+region,Latin America,Latin America,1300,Kubernetes,0.1908
+region,Latin America,Latin America,1300,Docker,0.2238
+region,Latin America,Latin America,1300,Financial services / banking domain,0.1823
+region,Latin America,Latin America,1300,Azure,0.2608
+region,Latin America,Latin America,1300,C++,0.0423
+region,Latin America,Latin America,1300,GCP,0.2208
+region,Latin America,Latin America,1300,System design / architecture,0.1238
+region,Latin America,Latin America,1300,REST APIs,0.2908
+region,Latin America,Latin America,1300,Go,0.0985
+region,Latin America,Latin America,1300,TypeScript,0.2285
+region,Latin America,Latin America,1300,Linux,0.07
+region,Latin America,Latin America,1300,Data pipelines / ETL,0.1508
+region,Latin America,Latin America,1300,"SRE (SLOs, on-call)",0.1046
+region,Latin America,Latin America,1300,Frontend (general),0.2262
+region,Latin America,Latin America,1300,Full-stack,0.1877
+region,Latin America,Latin America,1300,Incident response / on-call,0.0862
+region,Latin America,Latin America,1300,React,0.2008
+region,Latin America,Latin America,1300,JavaScript,0.1731
+region,Latin America,Latin America,1300,Data structures & algorithms,0.05
+region,Latin America,Latin America,1300,DevOps,0.1677
+region,Latin America,Latin America,1300,Git,0.2146
+region,Latin America,Latin America,1300,OOP / design patterns,0.1062
+region,Latin America,Latin America,1300,Query optimization / performance tuning,0.0885
+region,Latin America,Latin America,1300,Unit / integration testing,0.1846
+region,Latin America,Latin America,1300,Infrastructure as code,0.0992
+region,Latin America,Latin America,1300,Terraform,0.1085
+region,Latin America,Latin America,1300,AI-assisted development,0.1454
+region,Latin America,Latin America,1300,LLM evaluation,0.0746
+region,Latin America,Latin America,1300,Pre-sales / solution architecture / PoCs,0.0846
+region,Oceania,Oceania,429,Python,0.4266
+region,Oceania,Oceania,429,AWS,0.31
+region,Oceania,Oceania,429,LLMs / GenAI (general),0.2168
+region,Oceania,Oceania,429,Cloud (unspecified),0.3543
+region,Oceania,Oceania,429,AI agents / agentic workflows,0.2424
+region,Oceania,Oceania,429,CI/CD,0.1515
+region,Oceania,Oceania,429,Observability / monitoring,0.1865
+region,Oceania,Oceania,429,Distributed systems,0.2424
+region,Oceania,Oceania,429,Java,0.1841
+region,Oceania,Oceania,429,Machine learning fundamentals,0.1282
+region,Oceania,Oceania,429,SQL,0.1096
+region,Oceania,Oceania,429,Kubernetes,0.1725
+region,Oceania,Oceania,429,Docker,0.1538
+region,Oceania,Oceania,429,Financial services / banking domain,0.1795
+region,Oceania,Oceania,429,Azure,0.1492
+region,Oceania,Oceania,429,C++,0.2168
+region,Oceania,Oceania,429,GCP,0.1632
+region,Oceania,Oceania,429,System design / architecture,0.1166
+region,Oceania,Oceania,429,REST APIs,0.0699
+region,Oceania,Oceania,429,Go,0.1935
+region,Oceania,Oceania,429,TypeScript,0.1026
+region,Oceania,Oceania,429,Linux,0.1911
+region,Oceania,Oceania,429,Data pipelines / ETL,0.0769
+region,Oceania,Oceania,429,"SRE (SLOs, on-call)",0.1585
+region,Oceania,Oceania,429,Frontend (general),0.1002
+region,Oceania,Oceania,429,Full-stack,0.049
+region,Oceania,Oceania,429,Incident response / on-call,0.1212
+region,Oceania,Oceania,429,React,0.0746
+region,Oceania,Oceania,429,JavaScript,0.0793
+region,Oceania,Oceania,429,Data structures & algorithms,0.1259
+region,Oceania,Oceania,429,DevOps,0.0932
+region,Oceania,Oceania,429,Git,0.0466
+region,Oceania,Oceania,429,OOP / design patterns,0.0676
+region,Oceania,Oceania,429,Query optimization / performance tuning,0.0862
+region,Oceania,Oceania,429,Unit / integration testing,0.042
+region,Oceania,Oceania,429,Infrastructure as code,0.0676
+region,Oceania,Oceania,429,Terraform,0.0606
+region,Oceania,Oceania,429,AI-assisted development,0.0466
+region,Oceania,Oceania,429,LLM evaluation,0.0723
+region,Oceania,Oceania,429,Pre-sales / solution architecture / PoCs,0.1888
+region,Middle East,Middle East,359,Python,0.4401
+region,Middle East,Middle East,359,AWS,0.3175
+region,Middle East,Middle East,359,LLMs / GenAI (general),0.337
+region,Middle East,Middle East,359,Cloud (unspecified),0.3036
+region,Middle East,Middle East,359,AI agents / agentic workflows,0.2618
+region,Middle East,Middle East,359,CI/CD,0.2284
+region,Middle East,Middle East,359,Observability / monitoring,0.1448
+region,Middle East,Middle East,359,Distributed systems,0.1866
+region,Middle East,Middle East,359,Java,0.1643
+region,Middle East,Middle East,359,Machine learning fundamentals,0.1866
+region,Middle East,Middle East,359,SQL,0.1532
+region,Middle East,Middle East,359,Kubernetes,0.2173
+region,Middle East,Middle East,359,Docker,0.1616
+region,Middle East,Middle East,359,Financial services / banking domain,0.1643
+region,Middle East,Middle East,359,Azure,0.1643
+region,Middle East,Middle East,359,C++,0.195
+region,Middle East,Middle East,359,GCP,0.1532
+region,Middle East,Middle East,359,System design / architecture,0.1142
+region,Middle East,Middle East,359,REST APIs,0.1142
+region,Middle East,Middle East,359,Go,0.1365
+region,Middle East,Middle East,359,TypeScript,0.1253
+region,Middle East,Middle East,359,Linux,0.1783
+region,Middle East,Middle East,359,Data pipelines / ETL,0.0947
+region,Middle East,Middle East,359,"SRE (SLOs, on-call)",0.078
+region,Middle East,Middle East,359,Frontend (general),0.0975
+region,Middle East,Middle East,359,Full-stack,0.1114
+region,Middle East,Middle East,359,Incident response / on-call,0.0696
+region,Middle East,Middle East,359,React,0.1142
+region,Middle East,Middle East,359,JavaScript,0.0836
+region,Middle East,Middle East,359,Data structures & algorithms,0.1198
+region,Middle East,Middle East,359,DevOps,0.1114
+region,Middle East,Middle East,359,Git,0.0808
+region,Middle East,Middle East,359,OOP / design patterns,0.0864
+region,Middle East,Middle East,359,Query optimization / performance tuning,0.0975
+region,Middle East,Middle East,359,Unit / integration testing,0.0696
+region,Middle East,Middle East,359,Infrastructure as code,0.0585
+region,Middle East,Middle East,359,Terraform,0.0613
+region,Middle East,Middle East,359,AI-assisted development,0.1058
+region,Middle East,Middle East,359,LLM evaluation,0.0975
+region,Middle East,Middle East,359,Pre-sales / solution architecture / PoCs,0.0836
 region,Africa,Africa,106,Python,0.4717
 region,Africa,Africa,106,AWS,0.3113
-region,Africa,Africa,106,Cloud (unspecified),0.2547
 region,Africa,Africa,106,LLMs / GenAI (general),0.2453
+region,Africa,Africa,106,Cloud (unspecified),0.2547
 region,Africa,Africa,106,AI agents / agentic workflows,0.2642
 region,Africa,Africa,106,CI/CD,0.3491
 region,Africa,Africa,106,Observability / monitoring,0.1698
 region,Africa,Africa,106,Distributed systems,0.1132
-region,Africa,Africa,106,SQL,0.3396
 region,Africa,Africa,106,Java,0.1981
 region,Africa,Africa,106,Machine learning fundamentals,0.1792
+region,Africa,Africa,106,SQL,0.3396
 region,Africa,Africa,106,Kubernetes,0.1792
 region,Africa,Africa,106,Docker,0.2358
 region,Africa,Africa,106,Financial services / banking domain,0.217
 region,Africa,Africa,106,Azure,0.3019
+region,Africa,Africa,106,C++,0.0755
 region,Africa,Africa,106,GCP,0.2075
 region,Africa,Africa,106,System design / architecture,0.1226
 region,Africa,Africa,106,REST APIs,0.2736
-region,Africa,Africa,106,C++,0.0755
-region,Africa,Africa,106,TypeScript,0.2075
 region,Africa,Africa,106,Go,0.066
+region,Africa,Africa,106,TypeScript,0.2075
 region,Africa,Africa,106,Linux,0.1226
+region,Africa,Africa,106,Data pipelines / ETL,0.1321
 region,Africa,Africa,106,"SRE (SLOs, on-call)",0.0849
 region,Africa,Africa,106,Frontend (general),0.1981
-region,Africa,Africa,106,Data pipelines / ETL,0.1321
 region,Africa,Africa,106,Full-stack,0.1415
 region,Africa,Africa,106,Incident response / on-call,0.1038
 region,Africa,Africa,106,React,0.1415
 region,Africa,Africa,106,JavaScript,0.1604
+region,Africa,Africa,106,Data structures & algorithms,0.1226
 region,Africa,Africa,106,DevOps,0.2358
 region,Africa,Africa,106,Git,0.2925
 region,Africa,Africa,106,OOP / design patterns,0.1132
-region,Africa,Africa,106,Data structures & algorithms,0.1226
-region,Africa,Africa,106,Infrastructure as code,0.0566
 region,Africa,Africa,106,Query optimization / performance tuning,0.1132
-region,Africa,Africa,106,Terraform,0.0755
 region,Africa,Africa,106,Unit / integration testing,0.1698
-region,Africa,Africa,106,Pre-sales / solution architecture / PoCs,0.0377
-region,Africa,Africa,106,LLM evaluation,0.0283
+region,Africa,Africa,106,Infrastructure as code,0.0566
+region,Africa,Africa,106,Terraform,0.0755
 region,Africa,Africa,106,AI-assisted development,0.1887
-country,US,US,16665,Python,0.4533
-country,US,US,16665,AWS,0.3015
-country,US,US,16665,Cloud (unspecified),0.2922
-country,US,US,16665,LLMs / GenAI (general),0.2847
-country,US,US,16665,AI agents / agentic workflows,0.2837
-country,US,US,16665,CI/CD,0.2034
-country,US,US,16665,Observability / monitoring,0.2374
-country,US,US,16665,Distributed systems,0.2232
-country,US,US,16665,SQL,0.1596
-country,US,US,16665,Java,0.1852
-country,US,US,16665,Machine learning fundamentals,0.2094
-country,US,US,16665,Kubernetes,0.1638
-country,US,US,16665,Docker,0.15
-country,US,US,16665,Financial services / banking domain,0.1341
-country,US,US,16665,Azure,0.1435
-country,US,US,16665,GCP,0.136
-country,US,US,16665,System design / architecture,0.1705
-country,US,US,16665,REST APIs,0.1152
-country,US,US,16665,C++,0.1749
-country,US,US,16665,TypeScript,0.1347
-country,US,US,16665,Go,0.1437
-country,US,US,16665,Linux,0.1128
-country,US,US,16665,"SRE (SLOs, on-call)",0.1306
-country,US,US,16665,Frontend (general),0.1069
-country,US,US,16665,Data pipelines / ETL,0.1247
-country,US,US,16665,Full-stack,0.1138
-country,US,US,16665,Incident response / on-call,0.114
-country,US,US,16665,React,0.1007
-country,US,US,16665,JavaScript,0.0926
-country,US,US,16665,DevOps,0.0716
-country,US,US,16665,Git,0.0818
-country,US,US,16665,OOP / design patterns,0.1147
-country,US,US,16665,Data structures & algorithms,0.1058
-country,US,US,16665,Infrastructure as code,0.09
-country,US,US,16665,Query optimization / performance tuning,0.0902
-country,US,US,16665,Terraform,0.0755
-country,US,US,16665,Unit / integration testing,0.0823
-country,US,US,16665,Pre-sales / solution architecture / PoCs,0.0764
-country,US,US,16665,LLM evaluation,0.0923
-country,US,US,16665,AI-assisted development,0.0815
-country,SG,SG,5473,Python,0.178
-country,SG,SG,5473,AWS,0.1367
-country,SG,SG,5473,Cloud (unspecified),0.1253
-country,SG,SG,5473,LLMs / GenAI (general),0.0985
-country,SG,SG,5473,AI agents / agentic workflows,0.0751
-country,SG,SG,5473,CI/CD,0.1007
-country,SG,SG,5473,Observability / monitoring,0.0904
-country,SG,SG,5473,Distributed systems,0.051
-country,SG,SG,5473,SQL,0.1323
-country,SG,SG,5473,Java,0.1363
-country,SG,SG,5473,Machine learning fundamentals,0.07
-country,SG,SG,5473,Kubernetes,0.0988
-country,SG,SG,5473,Docker,0.1118
-country,SG,SG,5473,Financial services / banking domain,0.1029
-country,SG,SG,5473,Azure,0.0903
-country,SG,SG,5473,GCP,0.0682
-country,SG,SG,5473,System design / architecture,0.0455
-country,SG,SG,5473,REST APIs,0.0963
-country,SG,SG,5473,C++,0.0539
-country,SG,SG,5473,TypeScript,0.0449
-country,SG,SG,5473,Go,0.0274
-country,SG,SG,5473,Linux,0.095
-country,SG,SG,5473,"SRE (SLOs, on-call)",0.0256
-country,SG,SG,5473,Frontend (general),0.0455
-country,SG,SG,5473,Data pipelines / ETL,0.0645
-country,SG,SG,5473,Full-stack,0.0839
-country,SG,SG,5473,Incident response / on-call,0.0934
-country,SG,SG,5473,React,0.0555
-country,SG,SG,5473,JavaScript,0.0873
-country,SG,SG,5473,DevOps,0.082
-country,SG,SG,5473,Git,0.0632
-country,SG,SG,5473,OOP / design patterns,0.0333
-country,SG,SG,5473,Data structures & algorithms,0.025
-country,SG,SG,5473,Infrastructure as code,0.0312
-country,SG,SG,5473,Query optimization / performance tuning,0.0354
-country,SG,SG,5473,Terraform,0.042
-country,SG,SG,5473,Unit / integration testing,0.038
-country,SG,SG,5473,Pre-sales / solution architecture / PoCs,0.0535
-country,SG,SG,5473,LLM evaluation,0.0291
-country,SG,SG,5473,AI-assisted development,0.0077
-country,Unknown,Unknown,3411,Python,0.3952
-country,Unknown,Unknown,3411,AWS,0.2806
-country,Unknown,Unknown,3411,Cloud (unspecified),0.2756
-country,Unknown,Unknown,3411,LLMs / GenAI (general),0.1941
-country,Unknown,Unknown,3411,AI agents / agentic workflows,0.2002
-country,Unknown,Unknown,3411,CI/CD,0.2381
-country,Unknown,Unknown,3411,Observability / monitoring,0.2008
-country,Unknown,Unknown,3411,Distributed systems,0.1715
-country,Unknown,Unknown,3411,SQL,0.1709
-country,Unknown,Unknown,3411,Java,0.1193
-country,Unknown,Unknown,3411,Machine learning fundamentals,0.1278
-country,Unknown,Unknown,3411,Kubernetes,0.2134
-country,Unknown,Unknown,3411,Docker,0.1958
-country,Unknown,Unknown,3411,Financial services / banking domain,0.1096
-country,Unknown,Unknown,3411,Azure,0.1609
-country,Unknown,Unknown,3411,GCP,0.1398
-country,Unknown,Unknown,3411,System design / architecture,0.0959
-country,Unknown,Unknown,3411,REST APIs,0.1346
-country,Unknown,Unknown,3411,C++,0.0973
-country,Unknown,Unknown,3411,TypeScript,0.1609
-country,Unknown,Unknown,3411,Go,0.1466
-country,Unknown,Unknown,3411,Linux,0.1478
-country,Unknown,Unknown,3411,"SRE (SLOs, on-call)",0.1352
-country,Unknown,Unknown,3411,Frontend (general),0.0991
-country,Unknown,Unknown,3411,Data pipelines / ETL,0.0926
-country,Unknown,Unknown,3411,Full-stack,0.0953
-country,Unknown,Unknown,3411,Incident response / on-call,0.1032
-country,Unknown,Unknown,3411,React,0.1023
-country,Unknown,Unknown,3411,JavaScript,0.1308
-country,Unknown,Unknown,3411,DevOps,0.1123
-country,Unknown,Unknown,3411,Git,0.1094
-country,Unknown,Unknown,3411,OOP / design patterns,0.0569
-country,Unknown,Unknown,3411,Data structures & algorithms,0.0619
-country,Unknown,Unknown,3411,Infrastructure as code,0.1167
-country,Unknown,Unknown,3411,Query optimization / performance tuning,0.0768
-country,Unknown,Unknown,3411,Terraform,0.122
-country,Unknown,Unknown,3411,Unit / integration testing,0.0651
-country,Unknown,Unknown,3411,Pre-sales / solution architecture / PoCs,0.0926
-country,Unknown,Unknown,3411,LLM evaluation,0.0501
-country,Unknown,Unknown,3411,AI-assisted development,0.0865
-country,IN,IN,2352,Python,0.4486
-country,IN,IN,2352,AWS,0.3669
-country,IN,IN,2352,Cloud (unspecified),0.3554
-country,IN,IN,2352,LLMs / GenAI (general),0.2968
-country,IN,IN,2352,AI agents / agentic workflows,0.2679
-country,IN,IN,2352,CI/CD,0.3291
-country,IN,IN,2352,Observability / monitoring,0.2547
-country,IN,IN,2352,Distributed systems,0.267
-country,IN,IN,2352,SQL,0.287
-country,IN,IN,2352,Java,0.3019
-country,IN,IN,2352,Machine learning fundamentals,0.21
-country,IN,IN,2352,Kubernetes,0.2287
-country,IN,IN,2352,Docker,0.2411
-country,IN,IN,2352,Financial services / banking domain,0.1696
-country,IN,IN,2352,Azure,0.2415
-country,IN,IN,2352,GCP,0.1994
-country,IN,IN,2352,System design / architecture,0.213
-country,IN,IN,2352,REST APIs,0.2241
-country,IN,IN,2352,C++,0.0999
-country,IN,IN,2352,TypeScript,0.0995
-country,IN,IN,2352,Go,0.1216
-country,IN,IN,2352,Linux,0.1463
-country,IN,IN,2352,"SRE (SLOs, on-call)",0.1386
-country,IN,IN,2352,Frontend (general),0.1131
-country,IN,IN,2352,Data pipelines / ETL,0.1424
-country,IN,IN,2352,Full-stack,0.1054
-country,IN,IN,2352,Incident response / on-call,0.1263
-country,IN,IN,2352,React,0.1195
-country,IN,IN,2352,JavaScript,0.119
-country,IN,IN,2352,DevOps,0.1522
-country,IN,IN,2352,Git,0.1424
-country,IN,IN,2352,OOP / design patterns,0.176
-country,IN,IN,2352,Data structures & algorithms,0.1127
-country,IN,IN,2352,Infrastructure as code,0.1042
-country,IN,IN,2352,Query optimization / performance tuning,0.1378
-country,IN,IN,2352,Terraform,0.1071
-country,IN,IN,2352,Unit / integration testing,0.1628
-country,IN,IN,2352,Pre-sales / solution architecture / PoCs,0.0557
-country,IN,IN,2352,LLM evaluation,0.0663
-country,IN,IN,2352,AI-assisted development,0.0889
-country,GB,GB,2283,Python,0.4503
-country,GB,GB,2283,AWS,0.2392
-country,GB,GB,2283,Cloud (unspecified),0.2462
-country,GB,GB,2283,LLMs / GenAI (general),0.2602
-country,GB,GB,2283,AI agents / agentic workflows,0.276
-country,GB,GB,2283,CI/CD,0.1958
-country,GB,GB,2283,Observability / monitoring,0.2194
-country,GB,GB,2283,Distributed systems,0.1905
-country,GB,GB,2283,SQL,0.1603
-country,GB,GB,2283,Java,0.1314
-country,GB,GB,2283,Machine learning fundamentals,0.1949
-country,GB,GB,2283,Kubernetes,0.1634
-country,GB,GB,2283,Docker,0.1551
-country,GB,GB,2283,Financial services / banking domain,0.2107
-country,GB,GB,2283,Azure,0.1156
-country,GB,GB,2283,GCP,0.1283
-country,GB,GB,2283,System design / architecture,0.0994
-country,GB,GB,2283,REST APIs,0.088
-country,GB,GB,2283,C++,0.1336
-country,GB,GB,2283,TypeScript,0.1301
-country,GB,GB,2283,Go,0.1056
-country,GB,GB,2283,Linux,0.106
-country,GB,GB,2283,"SRE (SLOs, on-call)",0.1126
-country,GB,GB,2283,Frontend (general),0.1069
-country,GB,GB,2283,Data pipelines / ETL,0.0915
-country,GB,GB,2283,Full-stack,0.0863
-country,GB,GB,2283,Incident response / on-call,0.0972
-country,GB,GB,2283,React,0.0972
-country,GB,GB,2283,JavaScript,0.0701
-country,GB,GB,2283,DevOps,0.081
-country,GB,GB,2283,Git,0.0775
-country,GB,GB,2283,OOP / design patterns,0.0583
-country,GB,GB,2283,Data structures & algorithms,0.0955
-country,GB,GB,2283,Infrastructure as code,0.0885
-country,GB,GB,2283,Query optimization / performance tuning,0.0609
-country,GB,GB,2283,Terraform,0.0819
-country,GB,GB,2283,Unit / integration testing,0.0596
-country,GB,GB,2283,Pre-sales / solution architecture / PoCs,0.1029
-country,GB,GB,2283,LLM evaluation,0.0841
-country,GB,GB,2283,AI-assisted development,0.0793
-country,CA,CA,1472,Python,0.4504
-country,CA,CA,1472,AWS,0.3471
-country,CA,CA,1472,Cloud (unspecified),0.2826
-country,CA,CA,1472,LLMs / GenAI (general),0.3105
-country,CA,CA,1472,AI agents / agentic workflows,0.3295
-country,CA,CA,1472,CI/CD,0.284
-country,CA,CA,1472,Observability / monitoring,0.269
-country,CA,CA,1472,Distributed systems,0.2527
-country,CA,CA,1472,SQL,0.1902
-country,CA,CA,1472,Java,0.2004
-country,CA,CA,1472,Machine learning fundamentals,0.2317
-country,CA,CA,1472,Kubernetes,0.2208
-country,CA,CA,1472,Docker,0.1861
-country,CA,CA,1472,Financial services / banking domain,0.1345
-country,CA,CA,1472,Azure,0.18
-country,CA,CA,1472,GCP,0.1569
-country,CA,CA,1472,System design / architecture,0.1556
-country,CA,CA,1472,REST APIs,0.1651
-country,CA,CA,1472,C++,0.1182
-country,CA,CA,1472,TypeScript,0.1746
-country,CA,CA,1472,Go,0.1773
-country,CA,CA,1472,Linux,0.0938
-country,CA,CA,1472,"SRE (SLOs, on-call)",0.1902
-country,CA,CA,1472,Frontend (general),0.1515
-country,CA,CA,1472,Data pipelines / ETL,0.1175
-country,CA,CA,1472,Full-stack,0.1569
-country,CA,CA,1472,Incident response / on-call,0.1067
-country,CA,CA,1472,React,0.1617
-country,CA,CA,1472,JavaScript,0.1135
-country,CA,CA,1472,DevOps,0.0931
-country,CA,CA,1472,Git,0.0951
-country,CA,CA,1472,OOP / design patterns,0.127
-country,CA,CA,1472,Data structures & algorithms,0.1107
-country,CA,CA,1472,Infrastructure as code,0.0931
-country,CA,CA,1472,Query optimization / performance tuning,0.0985
-country,CA,CA,1472,Terraform,0.0978
-country,CA,CA,1472,Unit / integration testing,0.1101
-country,CA,CA,1472,Pre-sales / solution architecture / PoCs,0.0673
-country,CA,CA,1472,LLM evaluation,0.0883
-country,CA,CA,1472,AI-assisted development,0.1576
-country,DE,DE,1242,Python,0.3607
-country,DE,DE,1242,AWS,0.215
-country,DE,DE,1242,Cloud (unspecified),0.1812
-country,DE,DE,1242,LLMs / GenAI (general),0.281
-country,DE,DE,1242,AI agents / agentic workflows,0.2222
-country,DE,DE,1242,CI/CD,0.186
-country,DE,DE,1242,Observability / monitoring,0.1747
-country,DE,DE,1242,Distributed systems,0.1763
-country,DE,DE,1242,SQL,0.1586
-country,DE,DE,1242,Java,0.1296
-country,DE,DE,1242,Machine learning fundamentals,0.1256
-country,DE,DE,1242,Kubernetes,0.1441
-country,DE,DE,1242,Docker,0.1626
-country,DE,DE,1242,Financial services / banking domain,0.1248
-country,DE,DE,1242,Azure,0.1353
-country,DE,DE,1242,GCP,0.1119
-country,DE,DE,1242,System design / architecture,0.0805
-country,DE,DE,1242,REST APIs,0.124
-country,DE,DE,1242,C++,0.0926
-country,DE,DE,1242,TypeScript,0.1675
-country,DE,DE,1242,Go,0.0958
-country,DE,DE,1242,Linux,0.1103
-country,DE,DE,1242,"SRE (SLOs, on-call)",0.0717
-country,DE,DE,1242,Frontend (general),0.157
-country,DE,DE,1242,Data pipelines / ETL,0.0749
-country,DE,DE,1242,Full-stack,0.1216
-country,DE,DE,1242,Incident response / on-call,0.0612
-country,DE,DE,1242,React,0.1159
-country,DE,DE,1242,JavaScript,0.0709
-country,DE,DE,1242,DevOps,0.0894
-country,DE,DE,1242,Git,0.0692
-country,DE,DE,1242,OOP / design patterns,0.037
-country,DE,DE,1242,Data structures & algorithms,0.0709
-country,DE,DE,1242,Infrastructure as code,0.0797
-country,DE,DE,1242,Query optimization / performance tuning,0.0604
-country,DE,DE,1242,Terraform,0.0805
-country,DE,DE,1242,Unit / integration testing,0.0531
-country,DE,DE,1242,Pre-sales / solution architecture / PoCs,0.1119
-country,DE,DE,1242,LLM evaluation,0.0741
-country,DE,DE,1242,AI-assisted development,0.0684
-country,PL,PL,488,Python,0.4549
-country,PL,PL,488,AWS,0.2684
-country,PL,PL,488,Cloud (unspecified),0.25
-country,PL,PL,488,LLMs / GenAI (general),0.3156
-country,PL,PL,488,AI agents / agentic workflows,0.2807
-country,PL,PL,488,CI/CD,0.3648
-country,PL,PL,488,Observability / monitoring,0.2418
-country,PL,PL,488,Distributed systems,0.2316
-country,PL,PL,488,SQL,0.2336
-country,PL,PL,488,Java,0.2131
-country,PL,PL,488,Machine learning fundamentals,0.1168
-country,PL,PL,488,Kubernetes,0.2336
-country,PL,PL,488,Docker,0.2172
-country,PL,PL,488,Financial services / banking domain,0.2008
-country,PL,PL,488,Azure,0.1967
-country,PL,PL,488,GCP,0.1742
-country,PL,PL,488,System design / architecture,0.0922
-country,PL,PL,488,REST APIs,0.2049
-country,PL,PL,488,C++,0.0902
-country,PL,PL,488,TypeScript,0.1885
-country,PL,PL,488,Go,0.125
-country,PL,PL,488,Linux,0.1619
-country,PL,PL,488,"SRE (SLOs, on-call)",0.1291
-country,PL,PL,488,Frontend (general),0.1578
-country,PL,PL,488,Data pipelines / ETL,0.1311
-country,PL,PL,488,Full-stack,0.125
-country,PL,PL,488,Incident response / on-call,0.0676
-country,PL,PL,488,React,0.1311
-country,PL,PL,488,JavaScript,0.1086
-country,PL,PL,488,DevOps,0.1619
-country,PL,PL,488,Git,0.1434
-country,PL,PL,488,OOP / design patterns,0.0881
-country,PL,PL,488,Data structures & algorithms,0.0533
-country,PL,PL,488,Infrastructure as code,0.1127
-country,PL,PL,488,Query optimization / performance tuning,0.1168
-country,PL,PL,488,Terraform,0.1107
-country,PL,PL,488,Unit / integration testing,0.1475
-country,PL,PL,488,Pre-sales / solution architecture / PoCs,0.041
-country,PL,PL,488,LLM evaluation,0.1107
-country,PL,PL,488,AI-assisted development,0.1496
-country,FR,FR,467,Python,0.4347
-country,FR,FR,467,AWS,0.257
-country,FR,FR,467,Cloud (unspecified),0.1927
-country,FR,FR,467,LLMs / GenAI (general),0.3126
-country,FR,FR,467,AI agents / agentic workflows,0.2976
-country,FR,FR,467,CI/CD,0.2206
-country,FR,FR,467,Observability / monitoring,0.1606
-country,FR,FR,467,Distributed systems,0.0985
-country,FR,FR,467,SQL,0.1949
-country,FR,FR,467,Java,0.0835
-country,FR,FR,467,Machine learning fundamentals,0.1884
-country,FR,FR,467,Kubernetes,0.2056
-country,FR,FR,467,Docker,0.1542
-country,FR,FR,467,Financial services / banking domain,0.06
-country,FR,FR,467,Azure,0.1199
-country,FR,FR,467,GCP,0.1606
-country,FR,FR,467,System design / architecture,0.0621
-country,FR,FR,467,REST APIs,0.0642
-country,FR,FR,467,C++,0.0578
-country,FR,FR,467,TypeScript,0.1478
-country,FR,FR,467,Go,0.1113
-country,FR,FR,467,Linux,0.0985
-country,FR,FR,467,"SRE (SLOs, on-call)",0.0899
-country,FR,FR,467,Frontend (general),0.1028
-country,FR,FR,467,Data pipelines / ETL,0.0792
-country,FR,FR,467,Full-stack,0.1092
-country,FR,FR,467,Incident response / on-call,0.0814
-country,FR,FR,467,React,0.0792
-country,FR,FR,467,JavaScript,0.06
-country,FR,FR,467,DevOps,0.0814
-country,FR,FR,467,Git,0.0728
-country,FR,FR,467,OOP / design patterns,0.0343
-country,FR,FR,467,Data structures & algorithms,0.0578
-country,FR,FR,467,Infrastructure as code,0.0964
-country,FR,FR,467,Query optimization / performance tuning,0.0364
-country,FR,FR,467,Terraform,0.1328
-country,FR,FR,467,Unit / integration testing,0.0364
-country,FR,FR,467,Pre-sales / solution architecture / PoCs,0.1906
-country,FR,FR,467,LLM evaluation,0.0664
-country,FR,FR,467,AI-assisted development,0.0771
-country,ES,ES,447,Python,0.3915
-country,ES,ES,447,AWS,0.2394
-country,ES,ES,447,Cloud (unspecified),0.1969
-country,ES,ES,447,LLMs / GenAI (general),0.2819
-country,ES,ES,447,AI agents / agentic workflows,0.1924
-country,ES,ES,447,CI/CD,0.2774
-country,ES,ES,447,Observability / monitoring,0.2394
-country,ES,ES,447,Distributed systems,0.1879
-country,ES,ES,447,SQL,0.2416
-country,ES,ES,447,Java,0.1946
-country,ES,ES,447,Machine learning fundamentals,0.132
-country,ES,ES,447,Kubernetes,0.1812
-country,ES,ES,447,Docker,0.1588
-country,ES,ES,447,Financial services / banking domain,0.226
-country,ES,ES,447,Azure,0.1499
-country,ES,ES,447,GCP,0.1365
-country,ES,ES,447,System design / architecture,0.0917
-country,ES,ES,447,REST APIs,0.1812
-country,ES,ES,447,C++,0.047
-country,ES,ES,447,TypeScript,0.1544
-country,ES,ES,447,Go,0.0805
-country,ES,ES,447,Linux,0.0738
-country,ES,ES,447,"SRE (SLOs, on-call)",0.1074
-country,ES,ES,447,Frontend (general),0.1432
-country,ES,ES,447,Data pipelines / ETL,0.0805
-country,ES,ES,447,Full-stack,0.1029
-country,ES,ES,447,Incident response / on-call,0.0559
-country,ES,ES,447,React,0.123
-country,ES,ES,447,JavaScript,0.1074
-country,ES,ES,447,DevOps,0.1096
-country,ES,ES,447,Git,0.1298
-country,ES,ES,447,OOP / design patterns,0.0716
-country,ES,ES,447,Data structures & algorithms,0.0626
-country,ES,ES,447,Infrastructure as code,0.0872
-country,ES,ES,447,Query optimization / performance tuning,0.0783
-country,ES,ES,447,Terraform,0.0761
-country,ES,ES,447,Unit / integration testing,0.0559
-country,ES,ES,447,Pre-sales / solution architecture / PoCs,0.0403
-country,ES,ES,447,LLM evaluation,0.085
-country,ES,ES,447,AI-assisted development,0.0828
-sector,ai,AI labs & AI-first,6737,Python,0.4707
-sector,ai,AI labs & AI-first,6737,AWS,0.2132
-sector,ai,AI labs & AI-first,6737,Cloud (unspecified),0.2317
-sector,ai,AI labs & AI-first,6737,LLMs / GenAI (general),0.3509
-sector,ai,AI labs & AI-first,6737,AI agents / agentic workflows,0.3361
-sector,ai,AI labs & AI-first,6737,CI/CD,0.1616
-sector,ai,AI labs & AI-first,6737,Observability / monitoring,0.2102
-sector,ai,AI labs & AI-first,6737,Distributed systems,0.2195
-sector,ai,AI labs & AI-first,6737,SQL,0.1277
-sector,ai,AI labs & AI-first,6737,Java,0.0658
-sector,ai,AI labs & AI-first,6737,Machine learning fundamentals,0.2158
-sector,ai,AI labs & AI-first,6737,Kubernetes,0.1759
-sector,ai,AI labs & AI-first,6737,Docker,0.1407
-sector,ai,AI labs & AI-first,6737,Financial services / banking domain,0.1112
-sector,ai,AI labs & AI-first,6737,Azure,0.1337
-sector,ai,AI labs & AI-first,6737,GCP,0.1538
-sector,ai,AI labs & AI-first,6737,System design / architecture,0.1006
-sector,ai,AI labs & AI-first,6737,REST APIs,0.0938
-sector,ai,AI labs & AI-first,6737,C++,0.1345
-sector,ai,AI labs & AI-first,6737,TypeScript,0.1547
-sector,ai,AI labs & AI-first,6737,Go,0.1331
-sector,ai,AI labs & AI-first,6737,Linux,0.1049
-sector,ai,AI labs & AI-first,6737,"SRE (SLOs, on-call)",0.1058
-sector,ai,AI labs & AI-first,6737,Frontend (general),0.1014
-sector,ai,AI labs & AI-first,6737,Data pipelines / ETL,0.1216
-sector,ai,AI labs & AI-first,6737,Full-stack,0.1263
-sector,ai,AI labs & AI-first,6737,Incident response / on-call,0.0943
-sector,ai,AI labs & AI-first,6737,React,0.0975
-sector,ai,AI labs & AI-first,6737,JavaScript,0.0839
-sector,ai,AI labs & AI-first,6737,DevOps,0.0438
-sector,ai,AI labs & AI-first,6737,Git,0.0549
-sector,ai,AI labs & AI-first,6737,OOP / design patterns,0.0246
-sector,ai,AI labs & AI-first,6737,Data structures & algorithms,0.084
-sector,ai,AI labs & AI-first,6737,Infrastructure as code,0.0766
-sector,ai,AI labs & AI-first,6737,Query optimization / performance tuning,0.083
-sector,ai,AI labs & AI-first,6737,Terraform,0.077
-sector,ai,AI labs & AI-first,6737,Unit / integration testing,0.0488
-sector,ai,AI labs & AI-first,6737,Pre-sales / solution architecture / PoCs,0.1262
-sector,ai,AI labs & AI-first,6737,LLM evaluation,0.1374
-sector,ai,AI labs & AI-first,6737,AI-assisted development,0.0742
-sector,crypto,Crypto & Web3,1057,Python,0.3728
-sector,crypto,Crypto & Web3,1057,AWS,0.2034
-sector,crypto,Crypto & Web3,1057,Cloud (unspecified),0.1779
-sector,crypto,Crypto & Web3,1057,LLMs / GenAI (general),0.2838
-sector,crypto,Crypto & Web3,1057,AI agents / agentic workflows,0.2223
-sector,crypto,Crypto & Web3,1057,CI/CD,0.2129
-sector,crypto,Crypto & Web3,1057,Observability / monitoring,0.2252
-sector,crypto,Crypto & Web3,1057,Distributed systems,0.2233
-sector,crypto,Crypto & Web3,1057,SQL,0.1873
-sector,crypto,Crypto & Web3,1057,Java,0.1722
-sector,crypto,Crypto & Web3,1057,Machine learning fundamentals,0.1277
-sector,crypto,Crypto & Web3,1057,Kubernetes,0.1618
-sector,crypto,Crypto & Web3,1057,Docker,0.1126
-sector,crypto,Crypto & Web3,1057,Financial services / banking domain,0.403
-sector,crypto,Crypto & Web3,1057,Azure,0.053
-sector,crypto,Crypto & Web3,1057,GCP,0.0946
-sector,crypto,Crypto & Web3,1057,System design / architecture,0.1202
-sector,crypto,Crypto & Web3,1057,REST APIs,0.1391
-sector,crypto,Crypto & Web3,1057,C++,0.1107
-sector,crypto,Crypto & Web3,1057,TypeScript,0.1466
-sector,crypto,Crypto & Web3,1057,Go,0.176
-sector,crypto,Crypto & Web3,1057,Linux,0.122
-sector,crypto,Crypto & Web3,1057,"SRE (SLOs, on-call)",0.1779
-sector,crypto,Crypto & Web3,1057,Frontend (general),0.105
-sector,crypto,Crypto & Web3,1057,Data pipelines / ETL,0.1135
-sector,crypto,Crypto & Web3,1057,Full-stack,0.0804
-sector,crypto,Crypto & Web3,1057,Incident response / on-call,0.1495
-sector,crypto,Crypto & Web3,1057,React,0.1126
-sector,crypto,Crypto & Web3,1057,JavaScript,0.088
-sector,crypto,Crypto & Web3,1057,DevOps,0.0908
-sector,crypto,Crypto & Web3,1057,Git,0.0605
-sector,crypto,Crypto & Web3,1057,OOP / design patterns,0.0511
-sector,crypto,Crypto & Web3,1057,Data structures & algorithms,0.0918
-sector,crypto,Crypto & Web3,1057,Infrastructure as code,0.0757
-sector,crypto,Crypto & Web3,1057,Query optimization / performance tuning,0.1627
-sector,crypto,Crypto & Web3,1057,Terraform,0.0842
-sector,crypto,Crypto & Web3,1057,Unit / integration testing,0.0889
-sector,crypto,Crypto & Web3,1057,Pre-sales / solution architecture / PoCs,0.0322
-sector,crypto,Crypto & Web3,1057,LLM evaluation,0.0605
-sector,crypto,Crypto & Web3,1057,AI-assisted development,0.1249
-sector,fintech,Fintech & finance,7190,Python,0.4214
-sector,fintech,Fintech & finance,7190,AWS,0.2505
-sector,fintech,Fintech & finance,7190,Cloud (unspecified),0.2455
-sector,fintech,Fintech & finance,7190,LLMs / GenAI (general),0.2382
-sector,fintech,Fintech & finance,7190,AI agents / agentic workflows,0.1741
-sector,fintech,Fintech & finance,7190,CI/CD,0.2481
-sector,fintech,Fintech & finance,7190,Observability / monitoring,0.2492
-sector,fintech,Fintech & finance,7190,Distributed systems,0.2331
-sector,fintech,Fintech & finance,7190,SQL,0.2431
-sector,fintech,Fintech & finance,7190,Java,0.2259
-sector,fintech,Fintech & finance,7190,Machine learning fundamentals,0.1456
-sector,fintech,Fintech & finance,7190,Kubernetes,0.1866
-sector,fintech,Fintech & finance,7190,Docker,0.1796
-sector,fintech,Fintech & finance,7190,Financial services / banking domain,0.5285
-sector,fintech,Fintech & finance,7190,Azure,0.1466
-sector,fintech,Fintech & finance,7190,GCP,0.127
-sector,fintech,Fintech & finance,7190,System design / architecture,0.1376
-sector,fintech,Fintech & finance,7190,REST APIs,0.1652
-sector,fintech,Fintech & finance,7190,C++,0.0707
-sector,fintech,Fintech & finance,7190,TypeScript,0.1054
-sector,fintech,Fintech & finance,7190,Go,0.0979
-sector,fintech,Fintech & finance,7190,Linux,0.1125
-sector,fintech,Fintech & finance,7190,"SRE (SLOs, on-call)",0.104
-sector,fintech,Fintech & finance,7190,Frontend (general),0.1263
-sector,fintech,Fintech & finance,7190,Data pipelines / ETL,0.1072
-sector,fintech,Fintech & finance,7190,Full-stack,0.1224
-sector,fintech,Fintech & finance,7190,Incident response / on-call,0.1058
-sector,fintech,Fintech & finance,7190,React,0.1107
-sector,fintech,Fintech & finance,7190,JavaScript,0.0958
-sector,fintech,Fintech & finance,7190,DevOps,0.1139
-sector,fintech,Fintech & finance,7190,Git,0.1203
-sector,fintech,Fintech & finance,7190,OOP / design patterns,0.0975
-sector,fintech,Fintech & finance,7190,Data structures & algorithms,0.0796
-sector,fintech,Fintech & finance,7190,Infrastructure as code,0.0928
-sector,fintech,Fintech & finance,7190,Query optimization / performance tuning,0.093
-sector,fintech,Fintech & finance,7190,Terraform,0.0732
-sector,fintech,Fintech & finance,7190,Unit / integration testing,0.1325
-sector,fintech,Fintech & finance,7190,Pre-sales / solution architecture / PoCs,0.0416
-sector,fintech,Fintech & finance,7190,LLM evaluation,0.0925
-sector,fintech,Fintech & finance,7190,AI-assisted development,0.0668
-sector,tech,Other tech,10561,Python,0.4097
-sector,tech,Other tech,10561,AWS,0.3616
-sector,tech,Other tech,10561,Cloud (unspecified),0.3316
-sector,tech,Other tech,10561,LLMs / GenAI (general),0.269
-sector,tech,Other tech,10561,AI agents / agentic workflows,0.2927
-sector,tech,Other tech,10561,CI/CD,0.1886
-sector,tech,Other tech,10561,Observability / monitoring,0.2421
-sector,tech,Other tech,10561,Distributed systems,0.2705
-sector,tech,Other tech,10561,SQL,0.1372
-sector,tech,Other tech,10561,Java,0.2605
-sector,tech,Other tech,10561,Machine learning fundamentals,0.1941
-sector,tech,Other tech,10561,Kubernetes,0.154
-sector,tech,Other tech,10561,Docker,0.1322
-sector,tech,Other tech,10561,Financial services / banking domain,0.0398
-sector,tech,Other tech,10561,Azure,0.1467
-sector,tech,Other tech,10561,GCP,0.1377
-sector,tech,Other tech,10561,System design / architecture,0.2103
-sector,tech,Other tech,10561,REST APIs,0.083
-sector,tech,Other tech,10561,C++,0.2351
-sector,tech,Other tech,10561,TypeScript,0.1259
-sector,tech,Other tech,10561,Go,0.1749
-sector,tech,Other tech,10561,Linux,0.1233
-sector,tech,Other tech,10561,"SRE (SLOs, on-call)",0.1668
-sector,tech,Other tech,10561,Frontend (general),0.0975
-sector,tech,Other tech,10561,Data pipelines / ETL,0.0958
-sector,tech,Other tech,10561,Full-stack,0.0887
-sector,tech,Other tech,10561,Incident response / on-call,0.1176
-sector,tech,Other tech,10561,React,0.0925
-sector,tech,Other tech,10561,JavaScript,0.0942
-sector,tech,Other tech,10561,DevOps,0.0768
-sector,tech,Other tech,10561,Git,0.0562
-sector,tech,Other tech,10561,OOP / design patterns,0.1788
-sector,tech,Other tech,10561,Data structures & algorithms,0.1221
-sector,tech,Other tech,10561,Infrastructure as code,0.0758
-sector,tech,Other tech,10561,Query optimization / performance tuning,0.082
-sector,tech,Other tech,10561,Terraform,0.0709
-sector,tech,Other tech,10561,Unit / integration testing,0.0513
-sector,tech,Other tech,10561,Pre-sales / solution architecture / PoCs,0.0959
-sector,tech,Other tech,10561,LLM evaluation,0.0614
-sector,tech,Other tech,10561,AI-assisted development,0.0801
-sector,other,Everything else,15214,Python,0.3516
-sector,other,Everything else,15214,AWS,0.2489
-sector,other,Everything else,15214,Cloud (unspecified),0.2339
-sector,other,Everything else,15214,LLMs / GenAI (general),0.1996
-sector,other,Everything else,15214,AI agents / agentic workflows,0.1846
-sector,other,Everything else,15214,CI/CD,0.2325
-sector,other,Everything else,15214,Observability / monitoring,0.1686
-sector,other,Everything else,15214,Distributed systems,0.1039
-sector,other,Everything else,15214,SQL,0.1896
-sector,other,Everything else,15214,Java,0.1351
-sector,other,Everything else,15214,Machine learning fundamentals,0.1441
-sector,other,Everything else,15214,Kubernetes,0.1642
-sector,other,Everything else,15214,Docker,0.1826
-sector,other,Everything else,15214,Financial services / banking domain,0.0493
-sector,other,Everything else,15214,Azure,0.1665
-sector,other,Everything else,15214,GCP,0.1305
-sector,other,Everything else,15214,System design / architecture,0.0845
-sector,other,Everything else,15214,REST APIs,0.1576
-sector,other,Everything else,15214,C++,0.0758
-sector,other,Everything else,15214,TypeScript,0.1211
-sector,other,Everything else,15214,Go,0.0775
-sector,other,Everything else,15214,Linux,0.1197
-sector,other,Everything else,15214,"SRE (SLOs, on-call)",0.0743
-sector,other,Everything else,15214,Frontend (general),0.1085
-sector,other,Everything else,15214,Data pipelines / ETL,0.109
-sector,other,Everything else,15214,Full-stack,0.1055
-sector,other,Everything else,15214,Incident response / on-call,0.0908
-sector,other,Everything else,15214,React,0.0989
-sector,other,Everything else,15214,JavaScript,0.1077
-sector,other,Everything else,15214,DevOps,0.1163
-sector,other,Everything else,15214,Git,0.1188
-sector,other,Everything else,15214,OOP / design patterns,0.0549
-sector,other,Everything else,15214,Data structures & algorithms,0.0627
-sector,other,Everything else,15214,Infrastructure as code,0.09
-sector,other,Everything else,15214,Query optimization / performance tuning,0.0721
-sector,other,Everything else,15214,Terraform,0.0929
-sector,other,Everything else,15214,Unit / integration testing,0.0864
-sector,other,Everything else,15214,Pre-sales / solution architecture / PoCs,0.0679
-sector,other,Everything else,15214,LLM evaluation,0.0569
-sector,other,Everything else,15214,AI-assisted development,0.0793
+region,Africa,Africa,106,LLM evaluation,0.0283
+region,Africa,Africa,106,Pre-sales / solution architecture / PoCs,0.0377
+country,US,US,17509,Python,0.4608
+country,US,US,17509,AWS,0.2907
+country,US,US,17509,LLMs / GenAI (general),0.2911
+country,US,US,17509,Cloud (unspecified),0.2829
+country,US,US,17509,AI agents / agentic workflows,0.2821
+country,US,US,17509,CI/CD,0.1986
+country,US,US,17509,Observability / monitoring,0.2321
+country,US,US,17509,Distributed systems,0.2231
+country,US,US,17509,Java,0.1942
+country,US,US,17509,Machine learning fundamentals,0.2247
+country,US,US,17509,SQL,0.1585
+country,US,US,17509,Kubernetes,0.1589
+country,US,US,17509,Docker,0.146
+country,US,US,17509,Financial services / banking domain,0.1306
+country,US,US,17509,Azure,0.138
+country,US,US,17509,C++,0.1872
+country,US,US,17509,GCP,0.1309
+country,US,US,17509,System design / architecture,0.1688
+country,US,US,17509,REST APIs,0.1126
+country,US,US,17509,Go,0.1516
+country,US,US,17509,TypeScript,0.1301
+country,US,US,17509,Linux,0.1114
+country,US,US,17509,Data pipelines / ETL,0.1271
+country,US,US,17509,"SRE (SLOs, on-call)",0.1267
+country,US,US,17509,Frontend (general),0.1058
+country,US,US,17509,Full-stack,0.1137
+country,US,US,17509,Incident response / on-call,0.1112
+country,US,US,17509,React,0.099
+country,US,US,17509,JavaScript,0.0914
+country,US,US,17509,Data structures & algorithms,0.1214
+country,US,US,17509,DevOps,0.0698
+country,US,US,17509,Git,0.0797
+country,US,US,17509,OOP / design patterns,0.1103
+country,US,US,17509,Query optimization / performance tuning,0.0912
+country,US,US,17509,Unit / integration testing,0.0822
+country,US,US,17509,Infrastructure as code,0.0867
+country,US,US,17509,Terraform,0.0728
+country,US,US,17509,AI-assisted development,0.0832
+country,US,US,17509,LLM evaluation,0.0909
+country,US,US,17509,Pre-sales / solution architecture / PoCs,0.0731
+country,SG,SG,5885,Python,0.2104
+country,SG,SG,5885,AWS,0.128
+country,SG,SG,5885,LLMs / GenAI (general),0.1229
+country,SG,SG,5885,Cloud (unspecified),0.1189
+country,SG,SG,5885,AI agents / agentic workflows,0.0889
+country,SG,SG,5885,CI/CD,0.0955
+country,SG,SG,5885,Observability / monitoring,0.0899
+country,SG,SG,5885,Distributed systems,0.0688
+country,SG,SG,5885,Java,0.1594
+country,SG,SG,5885,Machine learning fundamentals,0.1026
+country,SG,SG,5885,SQL,0.1375
+country,SG,SG,5885,Kubernetes,0.0946
+country,SG,SG,5885,Docker,0.1059
+country,SG,SG,5885,Financial services / banking domain,0.0957
+country,SG,SG,5885,Azure,0.0843
+country,SG,SG,5885,C++,0.0838
+country,SG,SG,5885,GCP,0.0637
+country,SG,SG,5885,System design / architecture,0.0501
+country,SG,SG,5885,REST APIs,0.0912
+country,SG,SG,5885,Go,0.0501
+country,SG,SG,5885,TypeScript,0.0433
+country,SG,SG,5885,Linux,0.0941
+country,SG,SG,5885,Data pipelines / ETL,0.07
+country,SG,SG,5885,"SRE (SLOs, on-call)",0.0265
+country,SG,SG,5885,Frontend (general),0.0459
+country,SG,SG,5885,Full-stack,0.0834
+country,SG,SG,5885,Incident response / on-call,0.0926
+country,SG,SG,5885,React,0.0535
+country,SG,SG,5885,JavaScript,0.0839
+country,SG,SG,5885,Data structures & algorithms,0.0578
+country,SG,SG,5885,DevOps,0.077
+country,SG,SG,5885,Git,0.059
+country,SG,SG,5885,OOP / design patterns,0.0328
+country,SG,SG,5885,Query optimization / performance tuning,0.0432
+country,SG,SG,5885,Unit / integration testing,0.0374
+country,SG,SG,5885,Infrastructure as code,0.0294
+country,SG,SG,5885,Terraform,0.0391
+country,SG,SG,5885,AI-assisted development,0.0121
+country,SG,SG,5885,LLM evaluation,0.0365
+country,SG,SG,5885,Pre-sales / solution architecture / PoCs,0.05
+country,Unknown,Unknown,3634,Python,0.3847
+country,Unknown,Unknown,3634,AWS,0.2733
+country,Unknown,Unknown,3634,LLMs / GenAI (general),0.1904
+country,Unknown,Unknown,3634,Cloud (unspecified),0.2647
+country,Unknown,Unknown,3634,AI agents / agentic workflows,0.1973
+country,Unknown,Unknown,3634,CI/CD,0.2364
+country,Unknown,Unknown,3634,Observability / monitoring,0.1965
+country,Unknown,Unknown,3634,Distributed systems,0.1681
+country,Unknown,Unknown,3634,Java,0.1186
+country,Unknown,Unknown,3634,Machine learning fundamentals,0.123
+country,Unknown,Unknown,3634,SQL,0.1717
+country,Unknown,Unknown,3634,Kubernetes,0.2058
+country,Unknown,Unknown,3634,Docker,0.1924
+country,Unknown,Unknown,3634,Financial services / banking domain,0.1057
+country,Unknown,Unknown,3634,Azure,0.1585
+country,Unknown,Unknown,3634,C++,0.0963
+country,Unknown,Unknown,3634,GCP,0.1376
+country,Unknown,Unknown,3634,System design / architecture,0.0982
+country,Unknown,Unknown,3634,REST APIs,0.1368
+country,Unknown,Unknown,3634,Go,0.1398
+country,Unknown,Unknown,3634,TypeScript,0.1596
+country,Unknown,Unknown,3634,Linux,0.1417
+country,Unknown,Unknown,3634,Data pipelines / ETL,0.0944
+country,Unknown,Unknown,3634,"SRE (SLOs, on-call)",0.1293
+country,Unknown,Unknown,3634,Frontend (general),0.0999
+country,Unknown,Unknown,3634,Full-stack,0.0947
+country,Unknown,Unknown,3634,Incident response / on-call,0.0991
+country,Unknown,Unknown,3634,React,0.1026
+country,Unknown,Unknown,3634,JavaScript,0.1293
+country,Unknown,Unknown,3634,Data structures & algorithms,0.0589
+country,Unknown,Unknown,3634,DevOps,0.1131
+country,Unknown,Unknown,3634,Git,0.1134
+country,Unknown,Unknown,3634,OOP / design patterns,0.0561
+country,Unknown,Unknown,3634,Query optimization / performance tuning,0.0737
+country,Unknown,Unknown,3634,Unit / integration testing,0.0704
+country,Unknown,Unknown,3634,Infrastructure as code,0.1123
+country,Unknown,Unknown,3634,Terraform,0.1192
+country,Unknown,Unknown,3634,AI-assisted development,0.0848
+country,Unknown,Unknown,3634,LLM evaluation,0.0484
+country,Unknown,Unknown,3634,Pre-sales / solution architecture / PoCs,0.0875
+country,IN,IN,2398,Python,0.45
+country,IN,IN,2398,AWS,0.3728
+country,IN,IN,2398,LLMs / GenAI (general),0.294
+country,IN,IN,2398,Cloud (unspecified),0.359
+country,IN,IN,2398,AI agents / agentic workflows,0.2673
+country,IN,IN,2398,CI/CD,0.3357
+country,IN,IN,2398,Observability / monitoring,0.256
+country,IN,IN,2398,Distributed systems,0.2652
+country,IN,IN,2398,Java,0.3069
+country,IN,IN,2398,Machine learning fundamentals,0.2102
+country,IN,IN,2398,SQL,0.2865
+country,IN,IN,2398,Kubernetes,0.2273
+country,IN,IN,2398,Docker,0.2419
+country,IN,IN,2398,Financial services / banking domain,0.1789
+country,IN,IN,2398,Azure,0.2406
+country,IN,IN,2398,C++,0.098
+country,IN,IN,2398,GCP,0.1981
+country,IN,IN,2398,System design / architecture,0.216
+country,IN,IN,2398,REST APIs,0.2244
+country,IN,IN,2398,Go,0.1193
+country,IN,IN,2398,TypeScript,0.0997
+country,IN,IN,2398,Linux,0.1451
+country,IN,IN,2398,Data pipelines / ETL,0.1435
+country,IN,IN,2398,"SRE (SLOs, on-call)",0.1393
+country,IN,IN,2398,Frontend (general),0.1163
+country,IN,IN,2398,Full-stack,0.108
+country,IN,IN,2398,Incident response / on-call,0.1268
+country,IN,IN,2398,React,0.1218
+country,IN,IN,2398,JavaScript,0.1188
+country,IN,IN,2398,Data structures & algorithms,0.1126
+country,IN,IN,2398,DevOps,0.1522
+country,IN,IN,2398,Git,0.1435
+country,IN,IN,2398,OOP / design patterns,0.1726
+country,IN,IN,2398,Query optimization / performance tuning,0.1389
+country,IN,IN,2398,Unit / integration testing,0.1726
+country,IN,IN,2398,Infrastructure as code,0.1043
+country,IN,IN,2398,Terraform,0.1076
+country,IN,IN,2398,AI-assisted development,0.0984
+country,IN,IN,2398,LLM evaluation,0.0663
+country,IN,IN,2398,Pre-sales / solution architecture / PoCs,0.055
+country,GB,GB,2333,Python,0.4492
+country,GB,GB,2333,AWS,0.2375
+country,GB,GB,2333,LLMs / GenAI (general),0.258
+country,GB,GB,2333,Cloud (unspecified),0.2443
+country,GB,GB,2333,AI agents / agentic workflows,0.273
+country,GB,GB,2333,CI/CD,0.1946
+country,GB,GB,2333,Observability / monitoring,0.2177
+country,GB,GB,2333,Distributed systems,0.1873
+country,GB,GB,2333,Java,0.1342
+country,GB,GB,2333,Machine learning fundamentals,0.1955
+country,GB,GB,2333,SQL,0.1616
+country,GB,GB,2333,Kubernetes,0.1607
+country,GB,GB,2333,Docker,0.153
+country,GB,GB,2333,Financial services / banking domain,0.21
+country,GB,GB,2333,Azure,0.114
+country,GB,GB,2333,C++,0.1346
+country,GB,GB,2333,GCP,0.126
+country,GB,GB,2333,System design / architecture,0.0994
+country,GB,GB,2333,REST APIs,0.087
+country,GB,GB,2333,Go,0.1059
+country,GB,GB,2333,TypeScript,0.1277
+country,GB,GB,2333,Linux,0.1046
+country,GB,GB,2333,Data pipelines / ETL,0.0939
+country,GB,GB,2333,"SRE (SLOs, on-call)",0.111
+country,GB,GB,2333,Frontend (general),0.1063
+country,GB,GB,2333,Full-stack,0.0866
+country,GB,GB,2333,Incident response / on-call,0.096
+country,GB,GB,2333,React,0.0964
+country,GB,GB,2333,JavaScript,0.0699
+country,GB,GB,2333,Data structures & algorithms,0.0943
+country,GB,GB,2333,DevOps,0.0797
+country,GB,GB,2333,Git,0.0776
+country,GB,GB,2333,OOP / design patterns,0.0579
+country,GB,GB,2333,Query optimization / performance tuning,0.06
+country,GB,GB,2333,Unit / integration testing,0.0634
+country,GB,GB,2333,Infrastructure as code,0.087
+country,GB,GB,2333,Terraform,0.081
+country,GB,GB,2333,AI-assisted development,0.0823
+country,GB,GB,2333,LLM evaluation,0.0862
+country,GB,GB,2333,Pre-sales / solution architecture / PoCs,0.1012
+country,CA,CA,1482,Python,0.4487
+country,CA,CA,1482,AWS,0.3489
+country,CA,CA,1482,LLMs / GenAI (general),0.3117
+country,CA,CA,1482,Cloud (unspecified),0.2814
+country,CA,CA,1482,AI agents / agentic workflows,0.3286
+country,CA,CA,1482,CI/CD,0.2848
+country,CA,CA,1482,Observability / monitoring,0.2692
+country,CA,CA,1482,Distributed systems,0.2517
+country,CA,CA,1482,Java,0.2004
+country,CA,CA,1482,Machine learning fundamentals,0.2314
+country,CA,CA,1482,SQL,0.1896
+country,CA,CA,1482,Kubernetes,0.2206
+country,CA,CA,1482,Docker,0.1883
+country,CA,CA,1482,Financial services / banking domain,0.1336
+country,CA,CA,1482,Azure,0.1808
+country,CA,CA,1482,C++,0.1181
+country,CA,CA,1482,GCP,0.1586
+country,CA,CA,1482,System design / architecture,0.1552
+country,CA,CA,1482,REST APIs,0.1667
+country,CA,CA,1482,Go,0.1761
+country,CA,CA,1482,TypeScript,0.1754
+country,CA,CA,1482,Linux,0.0938
+country,CA,CA,1482,Data pipelines / ETL,0.1167
+country,CA,CA,1482,"SRE (SLOs, on-call)",0.1896
+country,CA,CA,1482,Frontend (general),0.1511
+country,CA,CA,1482,Full-stack,0.1565
+country,CA,CA,1482,Incident response / on-call,0.1066
+country,CA,CA,1482,React,0.1626
+country,CA,CA,1482,JavaScript,0.1134
+country,CA,CA,1482,Data structures & algorithms,0.11
+country,CA,CA,1482,DevOps,0.0931
+country,CA,CA,1482,Git,0.0958
+country,CA,CA,1482,OOP / design patterns,0.1262
+country,CA,CA,1482,Query optimization / performance tuning,0.0978
+country,CA,CA,1482,Unit / integration testing,0.1127
+country,CA,CA,1482,Infrastructure as code,0.0931
+country,CA,CA,1482,Terraform,0.0985
+country,CA,CA,1482,AI-assisted development,0.1565
+country,CA,CA,1482,LLM evaluation,0.0891
+country,CA,CA,1482,Pre-sales / solution architecture / PoCs,0.0675
+country,DE,DE,1317,Python,0.3516
+country,DE,DE,1317,AWS,0.2073
+country,DE,DE,1317,LLMs / GenAI (general),0.2718
+country,DE,DE,1317,Cloud (unspecified),0.1708
+country,DE,DE,1317,AI agents / agentic workflows,0.2225
+country,DE,DE,1317,CI/CD,0.183
+country,DE,DE,1317,Observability / monitoring,0.1663
+country,DE,DE,1317,Distributed systems,0.1746
+country,DE,DE,1317,Java,0.126
+country,DE,DE,1317,Machine learning fundamentals,0.1222
+country,DE,DE,1317,SQL,0.1549
+country,DE,DE,1317,Kubernetes,0.1382
+country,DE,DE,1317,Docker,0.1557
+country,DE,DE,1317,Financial services / banking domain,0.1215
+country,DE,DE,1317,Azure,0.1329
+country,DE,DE,1317,C++,0.0896
+country,DE,DE,1317,GCP,0.1078
+country,DE,DE,1317,System design / architecture,0.0843
+country,DE,DE,1317,REST APIs,0.12
+country,DE,DE,1317,Go,0.0911
+country,DE,DE,1317,TypeScript,0.1602
+country,DE,DE,1317,Linux,0.1078
+country,DE,DE,1317,Data pipelines / ETL,0.0782
+country,DE,DE,1317,"SRE (SLOs, on-call)",0.0676
+country,DE,DE,1317,Frontend (general),0.1511
+country,DE,DE,1317,Full-stack,0.1147
+country,DE,DE,1317,Incident response / on-call,0.0585
+country,DE,DE,1317,React,0.1116
+country,DE,DE,1317,JavaScript,0.0699
+country,DE,DE,1317,Data structures & algorithms,0.0676
+country,DE,DE,1317,DevOps,0.0843
+country,DE,DE,1317,Git,0.0683
+country,DE,DE,1317,OOP / design patterns,0.0364
+country,DE,DE,1317,Query optimization / performance tuning,0.0569
+country,DE,DE,1317,Unit / integration testing,0.0554
+country,DE,DE,1317,Infrastructure as code,0.0759
+country,DE,DE,1317,Terraform,0.0759
+country,DE,DE,1317,AI-assisted development,0.0668
+country,DE,DE,1317,LLM evaluation,0.0699
+country,DE,DE,1317,Pre-sales / solution architecture / PoCs,0.1063
+country,JP,JP,567,Python,0.3898
+country,JP,JP,567,AWS,0.4021
+country,JP,JP,567,LLMs / GenAI (general),0.2822
+country,JP,JP,567,Cloud (unspecified),0.2734
+country,JP,JP,567,AI agents / agentic workflows,0.2646
+country,JP,JP,567,CI/CD,0.2293
+country,JP,JP,567,Observability / monitoring,0.2434
+country,JP,JP,567,Distributed systems,0.1675
+country,JP,JP,567,Java,0.1129
+country,JP,JP,567,Machine learning fundamentals,0.1129
+country,JP,JP,567,SQL,0.2187
+country,JP,JP,567,Kubernetes,0.2451
+country,JP,JP,567,Docker,0.2522
+country,JP,JP,567,Financial services / banking domain,0.1552
+country,JP,JP,567,Azure,0.2222
+country,JP,JP,567,C++,0.0899
+country,JP,JP,567,GCP,0.2751
+country,JP,JP,567,System design / architecture,0.1023
+country,JP,JP,567,REST APIs,0.127
+country,JP,JP,567,Go,0.1975
+country,JP,JP,567,TypeScript,0.231
+country,JP,JP,567,Linux,0.1481
+country,JP,JP,567,Data pipelines / ETL,0.1146
+country,JP,JP,567,"SRE (SLOs, on-call)",0.1675
+country,JP,JP,567,Frontend (general),0.2257
+country,JP,JP,567,Full-stack,0.1111
+country,JP,JP,567,Incident response / on-call,0.1093
+country,JP,JP,567,React,0.1887
+country,JP,JP,567,JavaScript,0.0776
+country,JP,JP,567,Data structures & algorithms,0.0935
+country,JP,JP,567,DevOps,0.1446
+country,JP,JP,567,Git,0.0882
+country,JP,JP,567,OOP / design patterns,0.0511
+country,JP,JP,567,Query optimization / performance tuning,0.067
+country,JP,JP,567,Unit / integration testing,0.0582
+country,JP,JP,567,Infrastructure as code,0.1058
+country,JP,JP,567,Terraform,0.1623
+country,JP,JP,567,AI-assisted development,0.0758
+country,JP,JP,567,LLM evaluation,0.0829
+country,JP,JP,567,Pre-sales / solution architecture / PoCs,0.1605
+country,FR,FR,516,Python,0.407
+country,FR,FR,516,AWS,0.2403
+country,FR,FR,516,LLMs / GenAI (general),0.3256
+country,FR,FR,516,Cloud (unspecified),0.1744
+country,FR,FR,516,AI agents / agentic workflows,0.2829
+country,FR,FR,516,CI/CD,0.2074
+country,FR,FR,516,Observability / monitoring,0.186
+country,FR,FR,516,Distributed systems,0.093
+country,FR,FR,516,Java,0.0814
+country,FR,FR,516,Machine learning fundamentals,0.1744
+country,FR,FR,516,SQL,0.188
+country,FR,FR,516,Kubernetes,0.1919
+country,FR,FR,516,Docker,0.1453
+country,FR,FR,516,Financial services / banking domain,0.0543
+country,FR,FR,516,Azure,0.1143
+country,FR,FR,516,C++,0.0543
+country,FR,FR,516,GCP,0.1473
+country,FR,FR,516,System design / architecture,0.062
+country,FR,FR,516,REST APIs,0.0581
+country,FR,FR,516,Go,0.1027
+country,FR,FR,516,TypeScript,0.1357
+country,FR,FR,516,Linux,0.0969
+country,FR,FR,516,Data pipelines / ETL,0.1008
+country,FR,FR,516,"SRE (SLOs, on-call)",0.0833
+country,FR,FR,516,Frontend (general),0.095
+country,FR,FR,516,Full-stack,0.1066
+country,FR,FR,516,Incident response / on-call,0.0756
+country,FR,FR,516,React,0.0775
+country,FR,FR,516,JavaScript,0.0543
+country,FR,FR,516,Data structures & algorithms,0.0523
+country,FR,FR,516,DevOps,0.0833
+country,FR,FR,516,Git,0.0736
+country,FR,FR,516,OOP / design patterns,0.031
+country,FR,FR,516,Query optimization / performance tuning,0.0329
+country,FR,FR,516,Unit / integration testing,0.0581
+country,FR,FR,516,Infrastructure as code,0.0872
+country,FR,FR,516,Terraform,0.1221
+country,FR,FR,516,AI-assisted development,0.0698
+country,FR,FR,516,LLM evaluation,0.0601
+country,FR,FR,516,Pre-sales / solution architecture / PoCs,0.1725
+country,PL,PL,489,Python,0.456
+country,PL,PL,489,AWS,0.2699
+country,PL,PL,489,LLMs / GenAI (general),0.3149
+country,PL,PL,489,Cloud (unspecified),0.2515
+country,PL,PL,489,AI agents / agentic workflows,0.2822
+country,PL,PL,489,CI/CD,0.364
+country,PL,PL,489,Observability / monitoring,0.2413
+country,PL,PL,489,Distributed systems,0.2331
+country,PL,PL,489,Java,0.2127
+country,PL,PL,489,Machine learning fundamentals,0.1166
+country,PL,PL,489,SQL,0.2331
+country,PL,PL,489,Kubernetes,0.2352
+country,PL,PL,489,Docker,0.2188
+country,PL,PL,489,Financial services / banking domain,0.2004
+country,PL,PL,489,Azure,0.1984
+country,PL,PL,489,C++,0.09
+country,PL,PL,489,GCP,0.1759
+country,PL,PL,489,System design / architecture,0.0941
+country,PL,PL,489,REST APIs,0.2045
+country,PL,PL,489,Go,0.1268
+country,PL,PL,489,TypeScript,0.1881
+country,PL,PL,489,Linux,0.1616
+country,PL,PL,489,Data pipelines / ETL,0.1309
+country,PL,PL,489,"SRE (SLOs, on-call)",0.1288
+country,PL,PL,489,Frontend (general),0.1575
+country,PL,PL,489,Full-stack,0.1247
+country,PL,PL,489,Incident response / on-call,0.0675
+country,PL,PL,489,React,0.1309
+country,PL,PL,489,JavaScript,0.1084
+country,PL,PL,489,Data structures & algorithms,0.0532
+country,PL,PL,489,DevOps,0.1616
+country,PL,PL,489,Git,0.1431
+country,PL,PL,489,OOP / design patterns,0.0879
+country,PL,PL,489,Query optimization / performance tuning,0.1166
+country,PL,PL,489,Unit / integration testing,0.1472
+country,PL,PL,489,Infrastructure as code,0.1125
+country,PL,PL,489,Terraform,0.1104
+country,PL,PL,489,AI-assisted development,0.1513
+country,PL,PL,489,LLM evaluation,0.1104
+country,PL,PL,489,Pre-sales / solution architecture / PoCs,0.0409
+sector,ai,AI labs & AI-first,6805,Python,0.4711
+sector,ai,AI labs & AI-first,6805,AWS,0.2154
+sector,ai,AI labs & AI-first,6805,LLMs / GenAI (general),0.3522
+sector,ai,AI labs & AI-first,6805,Cloud (unspecified),0.2312
+sector,ai,AI labs & AI-first,6805,AI agents / agentic workflows,0.3371
+sector,ai,AI labs & AI-first,6805,CI/CD,0.1619
+sector,ai,AI labs & AI-first,6805,Observability / monitoring,0.2103
+sector,ai,AI labs & AI-first,6805,Distributed systems,0.2185
+sector,ai,AI labs & AI-first,6805,Java,0.0657
+sector,ai,AI labs & AI-first,6805,Machine learning fundamentals,0.2156
+sector,ai,AI labs & AI-first,6805,SQL,0.1274
+sector,ai,AI labs & AI-first,6805,Kubernetes,0.1756
+sector,ai,AI labs & AI-first,6805,Docker,0.1412
+sector,ai,AI labs & AI-first,6805,Financial services / banking domain,0.1107
+sector,ai,AI labs & AI-first,6805,Azure,0.1342
+sector,ai,AI labs & AI-first,6805,C++,0.1336
+sector,ai,AI labs & AI-first,6805,GCP,0.1542
+sector,ai,AI labs & AI-first,6805,System design / architecture,0.1008
+sector,ai,AI labs & AI-first,6805,REST APIs,0.0943
+sector,ai,AI labs & AI-first,6805,Go,0.1328
+sector,ai,AI labs & AI-first,6805,TypeScript,0.1564
+sector,ai,AI labs & AI-first,6805,Linux,0.1055
+sector,ai,AI labs & AI-first,6805,Data pipelines / ETL,0.122
+sector,ai,AI labs & AI-first,6805,"SRE (SLOs, on-call)",0.1057
+sector,ai,AI labs & AI-first,6805,Frontend (general),0.1029
+sector,ai,AI labs & AI-first,6805,Full-stack,0.1281
+sector,ai,AI labs & AI-first,6805,Incident response / on-call,0.0939
+sector,ai,AI labs & AI-first,6805,React,0.0995
+sector,ai,AI labs & AI-first,6805,JavaScript,0.0839
+sector,ai,AI labs & AI-first,6805,Data structures & algorithms,0.0841
+sector,ai,AI labs & AI-first,6805,DevOps,0.0441
+sector,ai,AI labs & AI-first,6805,Git,0.0557
+sector,ai,AI labs & AI-first,6805,OOP / design patterns,0.0245
+sector,ai,AI labs & AI-first,6805,Query optimization / performance tuning,0.0824
+sector,ai,AI labs & AI-first,6805,Unit / integration testing,0.0495
+sector,ai,AI labs & AI-first,6805,Infrastructure as code,0.076
+sector,ai,AI labs & AI-first,6805,Terraform,0.0767
+sector,ai,AI labs & AI-first,6805,AI-assisted development,0.0761
+sector,ai,AI labs & AI-first,6805,LLM evaluation,0.1365
+sector,ai,AI labs & AI-first,6805,Pre-sales / solution architecture / PoCs,0.1255
+sector,crypto,Crypto & Web3,1072,Python,0.3703
+sector,crypto,Crypto & Web3,1072,AWS,0.2062
+sector,crypto,Crypto & Web3,1072,LLMs / GenAI (general),0.2808
+sector,crypto,Crypto & Web3,1072,Cloud (unspecified),0.18
+sector,crypto,Crypto & Web3,1072,AI agents / agentic workflows,0.222
+sector,crypto,Crypto & Web3,1072,CI/CD,0.2164
+sector,crypto,Crypto & Web3,1072,Observability / monitoring,0.2276
+sector,crypto,Crypto & Web3,1072,Distributed systems,0.2267
+sector,crypto,Crypto & Web3,1072,Java,0.1735
+sector,crypto,Crypto & Web3,1072,Machine learning fundamentals,0.1259
+sector,crypto,Crypto & Web3,1072,SQL,0.1847
+sector,crypto,Crypto & Web3,1072,Kubernetes,0.1623
+sector,crypto,Crypto & Web3,1072,Docker,0.1138
+sector,crypto,Crypto & Web3,1072,Financial services / banking domain,0.4039
+sector,crypto,Crypto & Web3,1072,Azure,0.0569
+sector,crypto,Crypto & Web3,1072,C++,0.1119
+sector,crypto,Crypto & Web3,1072,GCP,0.097
+sector,crypto,Crypto & Web3,1072,System design / architecture,0.125
+sector,crypto,Crypto & Web3,1072,REST APIs,0.1409
+sector,crypto,Crypto & Web3,1072,Go,0.1791
+sector,crypto,Crypto & Web3,1072,TypeScript,0.1511
+sector,crypto,Crypto & Web3,1072,Linux,0.1222
+sector,crypto,Crypto & Web3,1072,Data pipelines / ETL,0.1138
+sector,crypto,Crypto & Web3,1072,"SRE (SLOs, on-call)",0.1791
+sector,crypto,Crypto & Web3,1072,Frontend (general),0.1082
+sector,crypto,Crypto & Web3,1072,Full-stack,0.0802
+sector,crypto,Crypto & Web3,1072,Incident response / on-call,0.1502
+sector,crypto,Crypto & Web3,1072,React,0.1138
+sector,crypto,Crypto & Web3,1072,JavaScript,0.0868
+sector,crypto,Crypto & Web3,1072,Data structures & algorithms,0.0924
+sector,crypto,Crypto & Web3,1072,DevOps,0.0896
+sector,crypto,Crypto & Web3,1072,Git,0.0625
+sector,crypto,Crypto & Web3,1072,OOP / design patterns,0.0522
+sector,crypto,Crypto & Web3,1072,Query optimization / performance tuning,0.1651
+sector,crypto,Crypto & Web3,1072,Unit / integration testing,0.0905
+sector,crypto,Crypto & Web3,1072,Infrastructure as code,0.0793
+sector,crypto,Crypto & Web3,1072,Terraform,0.0868
+sector,crypto,Crypto & Web3,1072,AI-assisted development,0.1231
+sector,crypto,Crypto & Web3,1072,LLM evaluation,0.0597
+sector,crypto,Crypto & Web3,1072,Pre-sales / solution architecture / PoCs,0.0317
+sector,fintech,Fintech & finance,7377,Python,0.4231
+sector,fintech,Fintech & finance,7377,AWS,0.2577
+sector,fintech,Fintech & finance,7377,LLMs / GenAI (general),0.2374
+sector,fintech,Fintech & finance,7377,Cloud (unspecified),0.2515
+sector,fintech,Fintech & finance,7377,AI agents / agentic workflows,0.1768
+sector,fintech,Fintech & finance,7377,CI/CD,0.2584
+sector,fintech,Fintech & finance,7377,Observability / monitoring,0.2515
+sector,fintech,Fintech & finance,7377,Distributed systems,0.2334
+sector,fintech,Fintech & finance,7377,Java,0.2333
+sector,fintech,Fintech & finance,7377,Machine learning fundamentals,0.1476
+sector,fintech,Fintech & finance,7377,SQL,0.2445
+sector,fintech,Fintech & finance,7377,Kubernetes,0.1887
+sector,fintech,Fintech & finance,7377,Docker,0.1827
+sector,fintech,Fintech & finance,7377,Financial services / banking domain,0.5315
+sector,fintech,Fintech & finance,7377,Azure,0.1465
+sector,fintech,Fintech & finance,7377,C++,0.0704
+sector,fintech,Fintech & finance,7377,GCP,0.127
+sector,fintech,Fintech & finance,7377,System design / architecture,0.146
+sector,fintech,Fintech & finance,7377,REST APIs,0.169
+sector,fintech,Fintech & finance,7377,Go,0.0981
+sector,fintech,Fintech & finance,7377,TypeScript,0.1052
+sector,fintech,Fintech & finance,7377,Linux,0.1122
+sector,fintech,Fintech & finance,7377,Data pipelines / ETL,0.1103
+sector,fintech,Fintech & finance,7377,"SRE (SLOs, on-call)",0.1061
+sector,fintech,Fintech & finance,7377,Frontend (general),0.1303
+sector,fintech,Fintech & finance,7377,Full-stack,0.124
+sector,fintech,Fintech & finance,7377,Incident response / on-call,0.1072
+sector,fintech,Fintech & finance,7377,React,0.1136
+sector,fintech,Fintech & finance,7377,JavaScript,0.0967
+sector,fintech,Fintech & finance,7377,Data structures & algorithms,0.0817
+sector,fintech,Fintech & finance,7377,DevOps,0.1151
+sector,fintech,Fintech & finance,7377,Git,0.1225
+sector,fintech,Fintech & finance,7377,OOP / design patterns,0.0979
+sector,fintech,Fintech & finance,7377,Query optimization / performance tuning,0.0953
+sector,fintech,Fintech & finance,7377,Unit / integration testing,0.1434
+sector,fintech,Fintech & finance,7377,Infrastructure as code,0.0941
+sector,fintech,Fintech & finance,7377,Terraform,0.0765
+sector,fintech,Fintech & finance,7377,AI-assisted development,0.0785
+sector,fintech,Fintech & finance,7377,LLM evaluation,0.0916
+sector,fintech,Fintech & finance,7377,Pre-sales / solution architecture / PoCs,0.0407
+sector,tech,Other tech,11968,Python,0.428
+sector,tech,Other tech,11968,AWS,0.3219
+sector,tech,Other tech,11968,LLMs / GenAI (general),0.2873
+sector,tech,Other tech,11968,Cloud (unspecified),0.2977
+sector,tech,Other tech,11968,AI agents / agentic workflows,0.2868
+sector,tech,Other tech,11968,CI/CD,0.1694
+sector,tech,Other tech,11968,Observability / monitoring,0.225
+sector,tech,Other tech,11968,Distributed systems,0.2666
+sector,tech,Other tech,11968,Java,0.2715
+sector,tech,Other tech,11968,Machine learning fundamentals,0.2316
+sector,tech,Other tech,11968,SQL,0.1374
+sector,tech,Other tech,11968,Kubernetes,0.14
+sector,tech,Other tech,11968,Docker,0.1207
+sector,tech,Other tech,11968,Financial services / banking domain,0.0358
+sector,tech,Other tech,11968,Azure,0.1309
+sector,tech,Other tech,11968,C++,0.2574
+sector,tech,Other tech,11968,GCP,0.1237
+sector,tech,Other tech,11968,System design / architecture,0.1962
+sector,tech,Other tech,11968,REST APIs,0.0762
+sector,tech,Other tech,11968,Go,0.1905
+sector,tech,Other tech,11968,TypeScript,0.1136
+sector,tech,Other tech,11968,Linux,0.1184
+sector,tech,Other tech,11968,Data pipelines / ETL,0.1011
+sector,tech,Other tech,11968,"SRE (SLOs, on-call)",0.1517
+sector,tech,Other tech,11968,Frontend (general),0.092
+sector,tech,Other tech,11968,Full-stack,0.0876
+sector,tech,Other tech,11968,Incident response / on-call,0.1104
+sector,tech,Other tech,11968,React,0.0848
+sector,tech,Other tech,11968,JavaScript,0.0882
+sector,tech,Other tech,11968,Data structures & algorithms,0.1572
+sector,tech,Other tech,11968,DevOps,0.0691
+sector,tech,Other tech,11968,Git,0.0506
+sector,tech,Other tech,11968,OOP / design patterns,0.1599
+sector,tech,Other tech,11968,Query optimization / performance tuning,0.0844
+sector,tech,Other tech,11968,Unit / integration testing,0.0488
+sector,tech,Other tech,11968,Infrastructure as code,0.0677
+sector,tech,Other tech,11968,Terraform,0.0629
+sector,tech,Other tech,11968,AI-assisted development,0.077
+sector,tech,Other tech,11968,LLM evaluation,0.065
+sector,tech,Other tech,11968,Pre-sales / solution architecture / PoCs,0.0854
+sector,other,Everything else,15846,Python,0.3516
+sector,other,Everything else,15846,AWS,0.2518
+sector,other,Everything else,15846,LLMs / GenAI (general),0.2005
+sector,other,Everything else,15846,Cloud (unspecified),0.2319
+sector,other,Everything else,15846,AI agents / agentic workflows,0.185
+sector,other,Everything else,15846,CI/CD,0.2359
+sector,other,Everything else,15846,Observability / monitoring,0.1734
+sector,other,Everything else,15846,Distributed systems,0.1063
+sector,other,Everything else,15846,Java,0.1358
+sector,other,Everything else,15846,Machine learning fundamentals,0.1411
+sector,other,Everything else,15846,SQL,0.1913
+sector,other,Everything else,15846,Kubernetes,0.1646
+sector,other,Everything else,15846,Docker,0.1845
+sector,other,Everything else,15846,Financial services / banking domain,0.0483
+sector,other,Everything else,15846,Azure,0.1681
+sector,other,Everything else,15846,C++,0.0755
+sector,other,Everything else,15846,GCP,0.133
+sector,other,Everything else,15846,System design / architecture,0.0873
+sector,other,Everything else,15846,REST APIs,0.1599
+sector,other,Everything else,15846,Go,0.0784
+sector,other,Everything else,15846,TypeScript,0.1244
+sector,other,Everything else,15846,Linux,0.1183
+sector,other,Everything else,15846,Data pipelines / ETL,0.1104
+sector,other,Everything else,15846,"SRE (SLOs, on-call)",0.0751
+sector,other,Everything else,15846,Frontend (general),0.1121
+sector,other,Everything else,15846,Full-stack,0.1063
+sector,other,Everything else,15846,Incident response / on-call,0.0894
+sector,other,Everything else,15846,React,0.103
+sector,other,Everything else,15846,JavaScript,0.1074
+sector,other,Everything else,15846,Data structures & algorithms,0.0607
+sector,other,Everything else,15846,DevOps,0.1179
+sector,other,Everything else,15846,Git,0.1221
+sector,other,Everything else,15846,OOP / design patterns,0.0551
+sector,other,Everything else,15846,Query optimization / performance tuning,0.0706
+sector,other,Everything else,15846,Unit / integration testing,0.0937
+sector,other,Everything else,15846,Infrastructure as code,0.0899
+sector,other,Everything else,15846,Terraform,0.0932
+sector,other,Everything else,15846,AI-assisted development,0.0785
+sector,other,Everything else,15846,LLM evaluation,0.0563
+sector,other,Everything else,15846,Pre-sales / solution architecture / PoCs,0.0655

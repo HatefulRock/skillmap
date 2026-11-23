@@ -1,6 +1,7 @@
 company,live_postings,previous_window,delta,sector,top_role,top_skills
 Amazon,2818,0,2818,tech,other_eng,AWS; OOP / design patterns; System design / architecture; Java; Cloud (unspecified); C++
-Bjak,715,0,715,fintech,ai_ml,Financial services / banking domain; Distributed systems; LLMs / GenAI (general); KYC / AML / fraud; LLM evaluation; Payments
+TikTok,1346,0,1346,tech,ai_ml,Python; Machine learning fundamentals; C++; Data structures & algorithms; LLMs / GenAI (general); Java
+Bjak,718,0,718,fintech,ai_ml,Financial services / banking domain; Distributed systems; LLMs / GenAI (general); KYC / AML / fraud; LLM evaluation; Payments
 Databricks,653,0,653,ai,fde,Apache Iceberg / Delta Lake; Databricks; Excel / spreadsheets; Unity Catalog / data catalogs; Python; AWS
 OpenAI,512,0,512,ai,ai_ml,OpenAI API / GPT models; CDN / edge; Python; Observability / monitoring; Distributed systems; AI agents / agentic workflows
 Microsoft,501,0,501,tech,ai_ml,Azure; Python; Cloud (unspecified); C++; AI agents / agentic workflows; C#
@@ -22,7 +23,7 @@ Okta,215,0,215,tech,backend,Machine learning fundamentals; Okta / identity provi
 Fidelity Investments,212,0,212,fintech,trading_biz,Financial services / banking domain; Trading / quant / markets; AWS; CI/CD; Python; Cloud (unspecified)
 Salesforce,208,0,208,tech,fde,AI agents / agentic workflows; Salesforce; LLMs / GenAI (general); Python; Java; JavaScript
 Roblox,207,0,207,tech,backend,C++; Python; Distributed systems; Go; Observability / monitoring; Machine learning fundamentals
-Accenture,200,0,200,tech,ai_ml,Python; LLMs / GenAI (general); AI agents / agentic workflows; Cloud (unspecified); AWS; Azure
+Accenture,202,0,202,tech,ai_ml,Python; LLMs / GenAI (general); AI agents / agentic workflows; Cloud (unspecified); AWS; Azure
 MongoDB,200,0,200,tech,other_eng,MongoDB; AWS; Azure; Cloud (unspecified); GCP; Distributed systems
 Barclays,199,0,199,fintech,backend,Unit / integration testing; CI/CD; AWS; Java; Financial services / banking domain; Python
 Affirm,185,0,185,fintech,backend,"Python; SRE (SLOs, on-call); Kotlin; AWS; Kubernetes; MySQL"
@@ -38,4 +39,3 @@ Mastercard,166,0,166,fintech,backend,CI/CD; Observability / monitoring; Java; Cl
 Visa,166,0,166,fintech,ai_ml,LLMs / GenAI (general); Observability / monitoring; Cloud (unspecified); Python; Docker; Java
 CoreWeave,164,0,164,ai,infra,"Data labelling; GPU clouds & HPC (Slurm, CoreWeave); Kubernetes; Cloud (unspecified); Python; GPUs (general)"
 CrowdStrike,164,0,164,tech,other_eng,Distributed systems; Guardrails / AI safety; Security operations (SOC / incident response); Python; AWS; GCP
-ClickHouse,163,0,163,tech,backend,ClickHouse; AWS; Distributed systems; Azure; GCP; Cloud (unspecified)

@@ -1,71 +1,71 @@
 skill_a,skill_b,postings_together,lift
-OOP / design patterns,System design / architecture,2646,5.58
-Frontend (general),React,2327,5.34
-React,TypeScript,2557,5.01
-Azure,GCP,3705,4.52
-Full-stack,React,1958,4.52
-Docker,Kubernetes,4335,3.96
-Frontend (general),Full-stack,2011,4.29
-Frontend (general),TypeScript,2199,3.99
-JavaScript,TypeScript,1982,3.96
-Incident response / on-call,"SRE (SLOs, on-call)",1829,3.93
-Full-stack,TypeScript,1886,3.44
-AWS,GCP,4526,3.04
-JavaScript,React,1356,3.43
-Frontend (general),JavaScript,1418,3.32
-CI/CD,DevOps,2471,3.08
-AWS,Azure,4560,2.76
-DevOps,Docker,1824,3.0
-CI/CD,Docker,3756,2.72
-Cloud (unspecified),GCP,3798,2.67
-CI/CD,Git,2229,2.84
-GCP,Kubernetes,2539,2.76
-Go,Kubernetes,2244,2.78
-C++,Java,2438,2.73
-Java,OOP / design patterns,1779,2.82
-Go,"SRE (SLOs, on-call)",1516,2.83
-DevOps,Kubernetes,1734,2.73
-Azure,DevOps,1565,2.76
-Kubernetes,"SRE (SLOs, on-call)",2003,2.64
-Azure,Cloud (unspecified),3849,2.43
-AWS,Cloud (unspecified),6513,2.27
-CI/CD,Kubernetes,3465,2.4
-Observability / monitoring,"SRE (SLOs, on-call)",2386,2.5
-Full-stack,JavaScript,1158,2.72
-Distributed systems,Go,2263,2.45
-Data pipelines / ETL,SQL,1916,2.5
-JavaScript,REST APIs,1341,2.62
-REST APIs,React,1357,2.6
-Git,REST APIs,1245,2.62
-AI agents / agentic workflows,LLMs / GenAI (general),5262,2.17
-Azure,Kubernetes,2427,2.38
-Docker,GCP,2124,2.42
-Kubernetes,Observability / monitoring,3257,2.27
-AWS,Kubernetes,4007,2.16
-Cloud (unspecified),Kubernetes,3834,2.17
-C++,Linux,1466,2.42
-DevOps,Git,893,2.59
-Frontend (general),REST APIs,1370,2.43
-Docker,Git,1430,2.41
-Azure,Docker,2217,2.27
-Cloud (unspecified),Docker,3597,2.12
-Git,JavaScript,918,2.54
-Go,Java,1898,2.28
-REST APIs,TypeScript,1544,2.34
-AWS,Docker,3664,2.07
-Incident response / on-call,Observability / monitoring,1954,2.23
-Java,JavaScript,1565,2.27
-CI/CD,Observability / monitoring,3645,2.01
-Distributed systems,Observability / monitoring,3321,2.02
-Distributed systems,"SRE (SLOs, on-call)",1893,2.17
-Docker,Observability / monitoring,2832,2.06
-Docker,Go,1698,2.2
-Distributed systems,System design / architecture,2168,2.13
-C++,OOP / design patterns,1077,2.33
-Go,Observability / monitoring,2143,2.12
-Distributed systems,Kubernetes,2674,2.04
-Go,TypeScript,1348,2.23
-CI/CD,REST APIs,2294,2.07
-Full-stack,REST APIs,1256,2.24
-GCP,Go,1421,2.19
-Java,System design / architecture,1918,2.09
+Frontend (general),React,2479,5.35
+React,TypeScript,2694,5.08
+Azure,GCP,3828,4.62
+Full-stack,React,2060,4.5
+Docker,Kubernetes,4501,4.05
+Frontend (general),Full-stack,2124,4.27
+Frontend (general),TypeScript,2318,4.02
+JavaScript,TypeScript,2050,4.01
+Incident response / on-call,"SRE (SLOs, on-call)",1897,4.02
+AWS,GCP,4685,3.11
+Full-stack,TypeScript,1963,3.44
+JavaScript,React,1439,3.5
+CI/CD,DevOps,2565,3.11
+Frontend (general),JavaScript,1486,3.32
+AWS,Azure,4696,2.82
+DevOps,Docker,1888,3.04
+CI/CD,Docker,3927,2.76
+Cloud (unspecified),GCP,3906,2.73
+CI/CD,Git,2350,2.89
+C++,Data structures & algorithms,1677,3.01
+GCP,Kubernetes,2611,2.81
+C++,Java,2851,2.72
+Azure,DevOps,1626,2.83
+DevOps,Kubernetes,1801,2.79
+Go,Kubernetes,2328,2.66
+Kubernetes,"SRE (SLOs, on-call)",2075,2.7
+Azure,Cloud (unspecified),3940,2.49
+AWS,Cloud (unspecified),6696,2.32
+Go,"SRE (SLOs, on-call)",1593,2.73
+Observability / monitoring,"SRE (SLOs, on-call)",2504,2.56
+CI/CD,Kubernetes,3596,2.44
+Full-stack,JavaScript,1203,2.72
+REST APIs,React,1440,2.64
+Git,REST APIs,1324,2.67
+JavaScript,REST APIs,1394,2.65
+Docker,GCP,2215,2.47
+Azure,Kubernetes,2495,2.43
+Data pipelines / ETL,SQL,2062,2.49
+Distributed systems,Go,2499,2.42
+Kubernetes,Observability / monitoring,3391,2.31
+AI agents / agentic workflows,LLMs / GenAI (general),5664,2.16
+Go,Java,2292,2.38
+AWS,Kubernetes,4126,2.21
+Cloud (unspecified),Kubernetes,3944,2.22
+Frontend (general),REST APIs,1463,2.47
+Docker,Git,1504,2.45
+DevOps,Git,932,2.62
+Azure,Docker,2295,2.31
+Cloud (unspecified),Docker,3721,2.17
+Data structures & algorithms,Machine learning fundamentals,1754,2.38
+Git,JavaScript,956,2.56
+REST APIs,TypeScript,1610,2.37
+AWS,Docker,3815,2.12
+Incident response / on-call,Observability / monitoring,2039,2.26
+C++,Linux,1566,2.33
+CI/CD,Observability / monitoring,3851,2.05
+Docker,Observability / monitoring,2977,2.1
+C++,Go,1609,2.23
+CI/CD,REST APIs,2421,2.11
+Distributed systems,"SRE (SLOs, on-call)",1963,2.16
+Distributed systems,System design / architecture,2295,2.11
+Distributed systems,Observability / monitoring,3460,2.0
+Java,JavaScript,1635,2.2
+Distributed systems,Kubernetes,2790,2.05
+Full-stack,REST APIs,1325,2.26
+Docker,REST APIs,1840,2.13
+Azure,CI/CD,2658,2.02
+Java,System design / architecture,2104,2.08
+Docker,Go,1782,2.11
+Git,SQL,1474,2.16
