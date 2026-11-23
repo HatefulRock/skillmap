@@ -218,3 +218,63 @@ def test_amazon_pay_and_one_name_per_company():
     assert classify("Roblox") == "midsize"
     job = {"id": 1, "title": "Software Engineer", "job_post_info": {"min_salary": "150000", "max_salary": "250000", "currency": "USD"}}
     assert (tt.parse(job).salary_min, tt.parse(job).salary_period) == (150_000, "year")
+
+
+def test_eightfold_lists_then_reads_text_for_new_tech_ads():
+    from skillmap.sources import eightfold
+
+    def answer(url, params):
+        if url.endswith("/jobs"):
+            return {"count": 3, "positions": [
+                {"id": 1, "name": "Senior Software Engineer, Streaming", "locations": ["Los Gatos, California"], "t_create": 1795392000},
+                {"id": 2, "name": "Communications Manager", "location": "Seoul"},
+                {"id": 3, "name": "Machine Learning Engineer", "location": "Remote, US", "work_location_option": "remote"}]}
+        return {"job_description": f"<p>Text for {url.rsplit('/', 1)[1]}</p>"}
+
+    client = Fake(answer)
+    posts = list(eightfold.collect(client, "explore.jobs.netflix.net|netflix.com", "Netflix", known={"netflix:3"}))
+    assert [p.native_id for p in posts] == ["netflix:1", "netflix:3"]
+    assert posts[0].description == "<p>Text for 1</p>" and posts[0].posted_on.year == 2026
+    assert posts[1].description == "" and posts[1].remote_hint
+    assert sum(1 for c in client.calls if not c[0].endswith("/jobs")) == 1  # one text request, for the new ad
+
+
+def test_apple_reads_search_pages_then_tech_detail_pages():
+    import json as _json
+
+    import httpx
+
+    from skillmap.http import PoliteClient
+    from skillmap.sources import apple
+
+    def page(data: dict) -> str:
+        literal = _json.dumps(_json.dumps(data))[1:-1]
+        return f'<html><script>window.__staticRouterHydrationData = JSON.parse("{literal}");</script></html>'
+
+    def entry(number, title, slug):
+        return {"id": number, "postingTitle": title, "transformedPostingTitle": slug, "jobSummary": "Summary.",
+                "postingDate": "Nov 20, 2026", "locations": [{"city": "Cupertino", "stateProvince": "California",
+                                                              "countryName": "United States", "countryID": "iso-country-USA"}]}
+
+    search = page({"loaderData": {"search": {"searchResults": [
+        entry("200644467-0836", "Senior Machine Learning Engineer - Ads", "senior-machine-learning-engineer-ads"),
+        entry("114438158", "US - Specialist: Seasonal, Part-time", "us-specialist-seasonal"),
+        entry("200000001-0836", "Software Engineer, Maps", "software-engineer-maps")]}}})
+    detail = page({"loaderData": {"details": {"jobsData": {"postingTitle": "Senior Machine Learning Engineer - Ads",
+                                                           "minimumQualifications": "Python, PyTorch"}}}})
+    calls = []
+
+    def handler(request: httpx.Request) -> httpx.Response:
+        calls.append(str(request.url))
+        if request.url.path.endswith("/search"):
+            return httpx.Response(200, text=search if request.url.params["page"] == "1" else "<html></html>")
+        return httpx.Response(200, text=detail)
+
+    client = PoliteClient(min_interval=0, transport=httpx.MockTransport(handler))
+    posts = list(apple.collect(client, "en-us", "Apple", known={"200000001-0836"}))
+    assert [p.native_id for p in posts] == ["200644467-0836", "200000001-0836"]
+    first = posts[0]
+    assert first.title == "Senior Machine Learning Engineer - Ads" and "PyTorch" in first.description
+    assert "Summary." in first.description and first.country_hint == "US" and first.posted_on.isoformat() == "2026-11-20"
+    assert first.url.endswith("/details/200644467-0836/senior-machine-learning-engineer-ads")
+    assert sum("/details/" in c for c in calls) == 1  # the retail role and the known role are not read

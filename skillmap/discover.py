@@ -22,6 +22,7 @@ import logging
 import re
 import time
 import xml.etree.ElementTree as ET
+from collections import Counter
 from collections.abc import Callable, Iterable
 from concurrent.futures import ThreadPoolExecutor
 from dataclasses import dataclass, field
@@ -51,7 +52,7 @@ _DROP_WORDS = re.compile(r"\b(?:ai|labs?|inc|hq|technologies|technology|tech|app
 class Candidate:
     name: str
     sector: str
-    origin: str  # yc | curated
+    origin: str  # yc | curated | seen
     website: str | None = None
     tokens: list[str] = field(default_factory=list)
     platform: str | None = None  # known to be on this platform: probe only there, only `tokens`
@@ -392,13 +393,51 @@ def crawl_candidates(client: PoliteClient, platforms: Iterable[str], known: set[
     return out
 
 
+# Sources that carry other companies' ads. An employer seen only there may still have its own board.
+AGGREGATORS = {"himalayas", "arbeitnow", "jobicy", "remoteok", "remotive", "workingnomads", "getonbrd", "mcf", "hn",
+               "adzuna"}
+LIVE = Path(__file__).resolve().parents[1] / "data" / "postings-live.jsonl.gz"
+
+
+def seen_candidates(path: Path = LIVE, min_ads: int = 3, limit: int = 300) -> list[Candidate]:
+    """Employers with min_ads+ live tech ads that reach us only through aggregators (job boards,
+    MyCareersFuture, HN), busiest first: their own board, if any, is what discovery looks for.
+    Recruiters and consultancies are left out, since their ads are other companies' jobs."""
+    import gzip
+    import json
+
+    from . import company_size
+
+    if not path.exists():
+        return []
+    ads: Counter[str] = Counter()
+    names: dict[str, str] = {}
+    direct: set[str] = set()
+    with gzip.open(path, "rt") as fh:
+        for line in fh:
+            row = json.loads(line)
+            name = company_size.display_name(row.get("company") or "")
+            key = normalise_company(name)
+            if not key:
+                continue
+            if row.get("source") not in AGGREGATORS:
+                direct.add(key)
+            elif row.get("role_family") != "non_tech":
+                ads[key] += 1
+                names.setdefault(key, name)
+    return [Candidate(names[key], "tech", "seen") for key, n in ads.most_common()
+            if n >= min_ads and key not in direct
+            and company_size.classify(names[key]) not in ("agency", "services", "big_tech")][:limit]
+
+
 def load_candidates(client: PoliteClient, include_yc: bool = True, crawl_platforms: Iterable[str] = (),
-                    known: set[tuple[str, str]] = frozenset()) -> list[Candidate]:
+                    known: set[tuple[str, str]] = frozenset(), live: Path = LIVE) -> list[Candidate]:
     curated = curated_candidates(yaml.safe_load((CONFIG / "candidates.yaml").read_text()))
     yc = yc_candidates(client.get_json(YC_URL)) if include_yc else []
-    # Curated names first: they carry a hand-picked sector, and win a name clash.
+    # Curated names first: they carry a hand-picked sector, and win a name clash. Then employers
+    # seen on job boards without their own feed, then YC.
     out, seen = [], set()
-    for candidate in [*curated, *yc]:
+    for candidate in [*curated, *seen_candidates(live), *yc]:
         key = normalise_company(candidate.name)
         if key and key not in seen:
             seen.add(key)

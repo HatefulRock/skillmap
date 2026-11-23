@@ -62,6 +62,7 @@ DISPLAY = {
     "x": "X", "ebay": "eBay", "asml": "ASML", "tsmc": "TSMC", "arm": "Arm", "grab": "Grab", "grabtaxi": "Grab",
     "sea": "Sea", "booking com": "Booking.com", "booking": "Booking.com", "micron semiconductor": "Micron",
     "jpmorgan chase": "JPMorgan Chase", "jpmorgan": "JPMorgan Chase", "jp morgan": "JPMorgan Chase",
+    "hcl": "HCLTech", "hcl america": "HCLTech",
 }
 
 
@@ -83,9 +84,10 @@ def display_name(company: str) -> str:
     if key in DISPLAY:
         return DISPLAY[key]
     # The ad's own spelling when it is just the name ("Microsoft"), not a shouted legal entity.
-    if _clean(company) == key and not company.isupper():
+    if re.sub(r"[^a-z0-9]+", " ", company.lower()).strip() == key and not company.isupper():
         return company.strip()
-    return key.title()
+    return " ".join(w if i and w in {"of", "and", "the", "for", "de"} else w.title()
+                    for i, w in enumerate(key.split()))
 
 
 def classify(company: str, sources: set[str] | frozenset[str] = frozenset()) -> str:

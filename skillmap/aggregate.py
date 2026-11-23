@@ -17,7 +17,7 @@ from . import company_size
 from .extract import roles, salary, sector
 from .models import normalise_company
 
-SOURCE_PRIORITY = ["greenhouse", "lever", "ashby", "workable", "recruitee", "personio", "teamtailor", "gem", "smartrecruiters", "workday", "amazon", "microsoft", "tiktok", "oracle_hcm", "jsonld", "mcf", "himalayas", "jobicy", "remoteok", "remotive", "workingnomads", "arbeitnow", "getonbrd", "adzuna"]  # who wins a duplicate
+SOURCE_PRIORITY = ["greenhouse", "lever", "ashby", "workable", "recruitee", "personio", "teamtailor", "gem", "smartrecruiters", "workday", "amazon", "microsoft", "tiktok", "oracle_hcm", "eightfold", "apple", "jsonld", "mcf", "himalayas", "jobicy", "remoteok", "remotive", "workingnomads", "arbeitnow", "getonbrd", "adzuna"]  # who wins a duplicate
 MIN_GROUP = 30
 CURRENT_DAYS = 30
 SEGMENT_DAYS = 90
@@ -582,7 +582,7 @@ def build(rows: list[dict], today: date, categories: dict[str, str], taxonomy_ve
             "attribution": ["Job data: The Adzuna API"] * any(r["source"] == "adzuna" for r in rows) + ["Hacker News “Who is hiring?” via the HN Algolia API",
                             "MyCareersFuture (Singapore)",
                             "Company boards on Greenhouse, Lever, Ashby, Workable, Recruitee, Personio, Teamtailor, Gem, SmartRecruiters and Workday",
-                            "Amazon, Microsoft and TikTok careers sites, and banks on Oracle Recruiting Cloud",
+                            "Amazon, Apple, Microsoft, TikTok and Netflix careers sites, and Oracle and banks on Oracle Recruiting Cloud",
                             "Remote jobs from Himalayas (himalayas.app), Jobicy (jobicy.com), Remote OK (remoteok.com), Remotive (remotive.com) and Working Nomads (workingnomads.com)",
                             "European jobs from Arbeitnow (arbeitnow.com)",
                             "Latin American jobs from Get on Board (getonbrd.com)"],

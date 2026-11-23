@@ -33,15 +33,22 @@ def native_id(url: str) -> str:
     return hashlib.sha1(f"{parsed.netloc}{parsed.path}".rstrip("/").lower().encode()).hexdigest()[:16]
 
 
+def _site(host: str) -> str:
+    """The registrable part of a host, so careers.google.com and www.google.com count as one site."""
+    labels = host.lower().split(":")[0].split(".")
+    keep = 3 if len(labels) > 2 and labels[-2] in {"co", "com", "ac", "gov", "org", "net"} and len(labels[-1]) == 2 else 2
+    return ".".join(labels[-keep:])
+
+
 def job_links(page: str, base: str, pattern: str) -> list[str]:
     """Job-page addresses on a listing page or in a sitemap, on the same site, in page order."""
     rule = re.compile(pattern, re.I)
-    host = urlparse(base).netloc
+    host = _site(urlparse(base).netloc)
     found = LOC.findall(page) or [urljoin(base, href) for href in HREF.findall(page)]
     out = []
     for url in found:
         url = url.split("?")[0]
-        if urlparse(url).netloc == host and rule.search(urlparse(url).path) and url not in out and url != base:
+        if _site(urlparse(url).netloc) == host and rule.search(urlparse(url).path) and url not in out and url != base:
             out.append(url)
     return out
 
@@ -148,6 +155,8 @@ def collect(client: PoliteClient, token: str, company: str, sector: str | None =
     robots = _robots(client, token)
     if not robots.can_fetch(USER_AGENT, token):
         raise PermissionError(f"robots.txt disallows {token}")
+    # A sitemap may list job pages on a sibling host (careers.google.com); each host has its own robots.txt.
+    hosts = {urlparse(token).netloc: robots}
     listing = client.request("GET", token, headers={"Accept": "text/html,application/xml"})
     listing.raise_for_status()
     known, fetched = known or set(), 0
@@ -157,7 +166,10 @@ def collect(client: PoliteClient, token: str, company: str, sector: str | None =
             yield RawPosting(source="jsonld", native_id=native_id(url), company=company, title="", description="",
                              url=url)
             continue
-        if fetched >= max_new_texts or not robots.can_fetch(USER_AGENT, url):
+        host = urlparse(url).netloc
+        if host not in hosts:
+            hosts[host] = _robots(client, url)
+        if fetched >= max_new_texts or not hosts[host].can_fetch(USER_AGENT, url):
             continue
         page = client.request("GET", url, headers={"Accept": "text/html"})
         fetched += 1

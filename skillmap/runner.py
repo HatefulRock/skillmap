@@ -24,8 +24,10 @@ from .normalise import normalise
 from .sources import (
     adzuna,
     amazon,
+    apple,
     ashby,
     boards_public,
+    eightfold,
     gem,
     greenhouse,
     hn,
@@ -49,10 +51,10 @@ CONFIG = Path(__file__).resolve().parents[1] / "config"
 BOARDS = {"greenhouse": greenhouse, "lever": lever, "ashby": ashby, "workable": workable,
           "recruitee": recruitee, "personio": personio, "teamtailor": teamtailor, "gem": gem,
           "smartrecruiters": smartrecruiters, "workday": workday, "amazon": amazon, "microsoft": microsoft,
-          "tiktok": tiktok, "oracle_hcm": oracle_hcm,
-          "jsonld": jsonld}
+          "tiktok": tiktok, "oracle_hcm": oracle_hcm, "eightfold": eightfold,
+          "apple": apple, "jsonld": jsonld}
 # Platforms whose list gives no text: their collectors fetch text only for postings not stored yet.
-NEEDS_KNOWN = {"smartrecruiters", "workday", "microsoft", "oracle_hcm", "jsonld"}
+NEEDS_KNOWN = {"smartrecruiters", "workday", "microsoft", "oracle_hcm", "eightfold", "apple", "jsonld"}
 
 
 # After this many boards in a row on one platform fail with "429 Too Many Requests", the rest of

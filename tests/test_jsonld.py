@@ -78,3 +78,12 @@ def test_collect_refuses_a_disallowed_listing():
 
     with pytest.raises(PermissionError):
         list(jsonld.collect(client_for(handler), "https://acme.example/careers", "Acme"))
+
+
+def test_sitemap_links_on_a_sibling_host_count_as_the_same_site():
+    sitemap = ("<urlset><url><loc>https://careers.google.com/jobs/results/123-ml-engineer/</loc></url>"
+               "<url><loc>https://evil.example/jobs/results/9-x/</loc></url></urlset>")
+    base = "https://www.google.com/about/careers/applications/jobs/sitemap.xml"
+    assert jsonld.job_links(sitemap, base, r"/jobs/results/\d+-") == [
+        "https://careers.google.com/jobs/results/123-ml-engineer/"]
+    assert jsonld._site("jobs.example.co.uk") == "example.co.uk"

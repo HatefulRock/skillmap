@@ -14,7 +14,20 @@ from datetime import date
 from decimal import Decimal
 from pathlib import Path
 
-from . import aggregate, audit, digest, discover, exports, health, heatmap, history, mail, vocab, watchlist
+from . import (
+    aggregate,
+    audit,
+    digest,
+    discover,
+    exports,
+    health,
+    heatmap,
+    history,
+    mail,
+    visa,
+    vocab,
+    watchlist,
+)
 from .archive import from_env as open_archive
 from .extract.skills import Taxonomy
 from .http import PoliteClient
@@ -26,7 +39,7 @@ ALL_SOURCES = {"boards", "adzuna", "mcf", "hn", "public"}
 MAX_TABLE_BYTES = 420 * 1024 * 1024
 HOST_INTERVALS = {"api.smartrecruiters.com": 0.4, "hn.algolia.com": 0.5,
                   "apply.careers.microsoft.com": 4.0,
-                  "api.lifeattiktok.com": 1.5}  # answers 429 after a few quick requests
+                  "api.lifeattiktok.com": 1.5, "explore.jobs.netflix.net": 1.0}  # answers 429 after a few quick requests
 HEALTH_DAYS = 70  # earlier runs the health check compares with (about ten weekly runs)
 # Workable answers "429 Too Many Requests" to discovery at the default pace.
 DISCOVER_INTERVALS = {"workable": 1.5}
@@ -73,6 +86,7 @@ def write_outputs(store: Store, taxonomy: Taxonomy, today: date, out: Path, runs
     if readme:
         digest.update_readme(readme, notes[0])
     data["audit"] = audit.headline(out / "audit.json")
+    data["visa_pay"] = visa.load(out / "visa-pay.json")
     add_history(out, data)
     exports.write_csvs(data, out / "csv")
     watch = watchlist.build(rows, load_boards(), profile.get("targets") or {}, ratings, today)
@@ -145,6 +159,11 @@ def main(argv: list[str] | None = None) -> None:
     em.add_argument("--data", type=Path, default=Path("data"))
     em.add_argument("--previous", type=Path, required=True, help="folder with last run's skills-market.json and postings")
     em.add_argument("--html", type=Path, help="also write the email here")
+    vis = sub.add_parser("visa", help="summarise US H-1B filings (DOL LCA data) into data/visa-pay.json")
+    vis.add_argument("--quarters", type=int, default=visa.QUARTERS, help="newest files for the current view")
+    vis.add_argument("--history-quarters", type=int, default=visa.HISTORY_QUARTERS,
+                     help="files read for the per-year history (at least --quarters)")
+    vis.add_argument("--out", type=Path, default=Path("data") / "visa-pay.json")
     purge = sub.add_parser("purge", help="delete every stored posting of one source (maintenance)")
     purge.add_argument("--source", required=True, help="the source column value, e.g. workday")
     purge.add_argument("--confirm", required=True, help="the same source name again, as a safety check")
@@ -165,6 +184,14 @@ def main(argv: list[str] | None = None) -> None:
             client.close()
         add_history(args.out)
         print(result)
+        return
+    if args.command == "visa":
+        client = PoliteClient(min_interval=2.0, timeout=600.0)
+        try:
+            data = visa.run(client, args.out, today_utc(), args.quarters, args.history_quarters)
+        finally:
+            client.close()
+        print(f"{data['n']} filings from {', '.join(data['files'])}; {len(data['by_company'])} companies")
         return
     if args.command == "email":
         sent = mail.run(args.data, args.previous, load_yaml("my_skills.yaml") or {}, args.html)
