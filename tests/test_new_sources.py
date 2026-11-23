@@ -152,3 +152,17 @@ def test_chinese_titles_and_skills():
     skills, _ = Taxonomy.load().extract("算法工程师", "熟悉机器学习，有大模型微调经验。熟悉Python和PyTorch，了解微服务。")
     assert {"Machine learning fundamentals", "LLMs / GenAI (general)", "Fine-tuning", "Python", "PyTorch",
             "Microservices"} <= set(skills)
+
+
+def test_dashboard_review_fixes():
+    from skillmap.extract import roles, terms
+    from skillmap.extract.skills import Taxonomy
+
+    tax = Taxonomy.load()
+    assert "NLP" not in tax.extract("Backend Engineer", "Salary 20 000 - 28 000 PLN net (B2B).")[0]
+    skills, _ = tax.extract("Frontend Engineer", "Strong JS and React. Experience with RL for agents is a plus.")
+    assert {"JavaScript", "Reinforcement learning"} <= set(skills)
+    assert "JavaScript" not in tax.extract("Engineer", "We use Node.js and Next.js.")[0]
+    assert roles.classify("Software Development Engineer II, AWS") == "backend"
+    assert roles.classify("SDE II") == "backend"
+    assert all(terms.ignored(t) for t in ["GmbH", "SE", "HYBRID", "TN", "AG"])

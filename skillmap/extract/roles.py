@@ -36,7 +36,7 @@ RULES: list[tuple[str, re.Pattern[str]]] = [
     ("infra", re.compile(r"devops|\bsre\b|site reliability|platform engineer|infrastructure|cloud (?:engineer|architect)|"
                          r"security|devsecops|network engineer|systems engineer|reliability", re.I)),
     ("frontend", re.compile(r"front[- ]?end|\bui\b|\bios\b|android|mobile|react|web developer", re.I)),
-    ("backend", re.compile(r"back[- ]?end|python|software (?:engineer|developer)|\bswe\b|full[- ]?stack|"
+    ("backend", re.compile(r"back[- ]?end|python|software (?:development |dev )?(?:engineer|developer)|\bswe\b|\bsde\b|full[- ]?stack|"
                            r"(?:golang|go|java|node|rust|c\+\+) (?:engineer|developer)|api engineer|developer|software architect|"
                            r"programmer|founding engineer|member of technical staff", re.I)),
     ("other_eng", re.compile(r"engineer|scientist|technical lead|tech lead|cto\b", re.I)),
