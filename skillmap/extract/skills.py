@@ -17,7 +17,7 @@ DEFAULT_TAXONOMY = Path(__file__).resolve().parents[2] / "config" / "taxonomy.ya
 # The matching code itself: if it changes, every skill's result may change.
 CODE_KEY = "__code__"
 _CODE_FILES = [Path(__file__), Path(__file__).with_name("text.py")]
-_SENTENCE = re.compile(r"(?<=[.!?;])\s+|\n")
+_SENTENCE = re.compile(r"(?<=[.!?;])\s+|(?<=[。！？；])|\n")  # CJK full stops take no space
 
 
 @dataclass

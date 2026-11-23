@@ -141,3 +141,14 @@ def test_jsonld_board_takes_the_employer_from_the_page():
            "description": "Go", "jobLocation": {"address": {"addressLocality": "Tokyo", "addressCountry": "JP"}}}
     assert jsonld.parse(job, "https://www.tokyodev.com/companies/x/jobs/y", "*").company == "PayPay Card"
     assert jsonld.parse(job, "https://careers.example.com/1", "Example").company == "Example"
+
+
+def test_chinese_titles_and_skills():
+    from skillmap.extract import roles
+    from skillmap.extract.skills import Taxonomy
+
+    assert {t: roles.classify(t) for t in ["后端开发工程师", "算法工程师", "数据分析师", "产品经理"]} == {
+        "后端开发工程师": "backend", "算法工程师": "ai_ml", "数据分析师": "data", "产品经理": None}
+    skills, _ = Taxonomy.load().extract("算法工程师", "熟悉机器学习，有大模型微调经验。熟悉Python和PyTorch，了解微服务。")
+    assert {"Machine learning fundamentals", "LLMs / GenAI (general)", "Fine-tuning", "Python", "PyTorch",
+            "Microservices"} <= set(skills)
