@@ -67,7 +67,7 @@ seniority,junior,junior,1995,Frontend (general),0.1233
 seniority,junior,junior,1995,Full-stack,0.1333
 seniority,junior,junior,1995,Incident response / on-call,0.0607
 seniority,junior,junior,1995,React,0.0812
-seniority,junior,junior,1995,JavaScript,0.1519
+seniority,junior,junior,1995,JavaScript,0.1534
 seniority,junior,junior,1995,Data structures & algorithms,0.1754
 seniority,junior,junior,1995,DevOps,0.0496
 seniority,junior,junior,1995,Git,0.1398
@@ -107,7 +107,7 @@ seniority,mid,mid,7535,Frontend (general),0.1007
 seniority,mid,mid,7535,Full-stack,0.1017
 seniority,mid,mid,7535,Incident response / on-call,0.086
 seniority,mid,mid,7535,React,0.0991
-seniority,mid,mid,7535,JavaScript,0.1124
+seniority,mid,mid,7535,JavaScript,0.114
 seniority,mid,mid,7535,Data structures & algorithms,0.0705
 seniority,mid,mid,7535,DevOps,0.0921
 seniority,mid,mid,7535,Git,0.1153
@@ -147,7 +147,7 @@ seniority,senior,senior,13507,Frontend (general),0.1234
 seniority,senior,senior,13507,Full-stack,0.123
 seniority,senior,senior,13507,Incident response / on-call,0.1156
 seniority,senior,senior,13507,React,0.1165
-seniority,senior,senior,13507,JavaScript,0.1101
+seniority,senior,senior,13507,JavaScript,0.1127
 seniority,senior,senior,13507,Data structures & algorithms,0.083
 seniority,senior,senior,13507,DevOps,0.1197
 seniority,senior,senior,13507,Git,0.1061
@@ -187,7 +187,7 @@ seniority,staff,staff,6547,Frontend (general),0.1199
 seniority,staff,staff,6547,Full-stack,0.1052
 seniority,staff,staff,6547,Incident response / on-call,0.1231
 seniority,staff,staff,6547,React,0.1084
-seniority,staff,staff,6547,JavaScript,0.084
+seniority,staff,staff,6547,JavaScript,0.086
 seniority,staff,staff,6547,Data structures & algorithms,0.1022
 seniority,staff,staff,6547,DevOps,0.0935
 seniority,staff,staff,6547,Git,0.0677
@@ -227,7 +227,7 @@ seniority,manager,manager,2878,Frontend (general),0.0702
 seniority,manager,manager,2878,Full-stack,0.0837
 seniority,manager,manager,2878,Incident response / on-call,0.1376
 seniority,manager,manager,2878,React,0.0681
-seniority,manager,manager,2878,JavaScript,0.0281
+seniority,manager,manager,2878,JavaScript,0.0299
 seniority,manager,manager,2878,Data structures & algorithms,0.0375
 seniority,manager,manager,2878,DevOps,0.0674
 seniority,manager,manager,2878,Git,0.0271
@@ -267,7 +267,7 @@ seniority,unspecified,unspecified,9258,Frontend (general),0.0938
 seniority,unspecified,unspecified,9258,Full-stack,0.0961
 seniority,unspecified,unspecified,9258,Incident response / on-call,0.0821
 seniority,unspecified,unspecified,9258,React,0.083
-seniority,unspecified,unspecified,9258,JavaScript,0.0739
+seniority,unspecified,unspecified,9258,JavaScript,0.0765
 seniority,unspecified,unspecified,9258,Data structures & algorithms,0.0984
 seniority,unspecified,unspecified,9258,DevOps,0.0728
 seniority,unspecified,unspecified,9258,Git,0.0672
@@ -307,7 +307,7 @@ role_family,fde,Forward deployed / solutions,4406,Frontend (general),0.0531
 role_family,fde,Forward deployed / solutions,4406,Full-stack,0.054
 role_family,fde,Forward deployed / solutions,4406,Incident response / on-call,0.0418
 role_family,fde,Forward deployed / solutions,4406,React,0.0554
-role_family,fde,Forward deployed / solutions,4406,JavaScript,0.1285
+role_family,fde,Forward deployed / solutions,4406,JavaScript,0.13
 role_family,fde,Forward deployed / solutions,4406,Data structures & algorithms,0.0247
 role_family,fde,Forward deployed / solutions,4406,DevOps,0.0935
 role_family,fde,Forward deployed / solutions,4406,Git,0.037
@@ -347,7 +347,7 @@ role_family,ai_ml,AI/ML engineering,9725,Frontend (general),0.0632
 role_family,ai_ml,AI/ML engineering,9725,Full-stack,0.0849
 role_family,ai_ml,AI/ML engineering,9725,Incident response / on-call,0.045
 role_family,ai_ml,AI/ML engineering,9725,React,0.0495
-role_family,ai_ml,AI/ML engineering,9725,JavaScript,0.0568
+role_family,ai_ml,AI/ML engineering,9725,JavaScript,0.0572
 role_family,ai_ml,AI/ML engineering,9725,Data structures & algorithms,0.1485
 role_family,ai_ml,AI/ML engineering,9725,DevOps,0.0528
 role_family,ai_ml,AI/ML engineering,9725,Git,0.0672
@@ -399,46 +399,46 @@ role_family,data,Data engineering & science,2016,Terraform,0.0923
 role_family,data,Data engineering & science,2016,AI-assisted development,0.064
 role_family,data,Data engineering & science,2016,LLM evaluation,0.0367
 role_family,data,Data engineering & science,2016,Pre-sales / solution architecture / PoCs,0.0218
-role_family,backend,Backend / Python,10084,Python,0.3696
-role_family,backend,Backend / Python,10084,AWS,0.2937
-role_family,backend,Backend / Python,10084,LLMs / GenAI (general),0.1576
-role_family,backend,Backend / Python,10084,Cloud (unspecified),0.2724
-role_family,backend,Backend / Python,10084,AI agents / agentic workflows,0.1933
-role_family,backend,Backend / Python,10084,CI/CD,0.2872
-role_family,backend,Backend / Python,10084,Observability / monitoring,0.2775
-role_family,backend,Backend / Python,10084,Distributed systems,0.3196
-role_family,backend,Backend / Python,10084,Java,0.3365
-role_family,backend,Backend / Python,10084,Machine learning fundamentals,0.1043
-role_family,backend,Backend / Python,10084,SQL,0.1926
-role_family,backend,Backend / Python,10084,Kubernetes,0.236
-role_family,backend,Backend / Python,10084,Docker,0.2306
-role_family,backend,Backend / Python,10084,Financial services / banking domain,0.1438
-role_family,backend,Backend / Python,10084,Azure,0.1572
-role_family,backend,Backend / Python,10084,C++,0.1978
-role_family,backend,Backend / Python,10084,GCP,0.1414
-role_family,backend,Backend / Python,10084,System design / architecture,0.176
-role_family,backend,Backend / Python,10084,REST APIs,0.2413
-role_family,backend,Backend / Python,10084,Go,0.2108
-role_family,backend,Backend / Python,10084,TypeScript,0.2332
-role_family,backend,Backend / Python,10084,Linux,0.1117
-role_family,backend,Backend / Python,10084,Data pipelines / ETL,0.0928
-role_family,backend,Backend / Python,10084,"SRE (SLOs, on-call)",0.125
-role_family,backend,Backend / Python,10084,Frontend (general),0.226
-role_family,backend,Backend / Python,10084,Full-stack,0.2459
-role_family,backend,Backend / Python,10084,Incident response / on-call,0.0761
-role_family,backend,Backend / Python,10084,React,0.2148
-role_family,backend,Backend / Python,10084,JavaScript,0.1757
-role_family,backend,Backend / Python,10084,Data structures & algorithms,0.1367
-role_family,backend,Backend / Python,10084,DevOps,0.1013
-role_family,backend,Backend / Python,10084,Git,0.1362
-role_family,backend,Backend / Python,10084,OOP / design patterns,0.124
-role_family,backend,Backend / Python,10084,Query optimization / performance tuning,0.1319
-role_family,backend,Backend / Python,10084,Unit / integration testing,0.1496
-role_family,backend,Backend / Python,10084,Infrastructure as code,0.072
-role_family,backend,Backend / Python,10084,Terraform,0.0694
-role_family,backend,Backend / Python,10084,AI-assisted development,0.1172
-role_family,backend,Backend / Python,10084,LLM evaluation,0.0347
-role_family,backend,Backend / Python,10084,Pre-sales / solution architecture / PoCs,0.0108
+role_family,backend,Backend / Python,11302,Python,0.355
+role_family,backend,Backend / Python,11302,AWS,0.3197
+role_family,backend,Backend / Python,11302,LLMs / GenAI (general),0.1701
+role_family,backend,Backend / Python,11302,Cloud (unspecified),0.2816
+role_family,backend,Backend / Python,11302,AI agents / agentic workflows,0.1909
+role_family,backend,Backend / Python,11302,CI/CD,0.277
+role_family,backend,Backend / Python,11302,Observability / monitoring,0.2633
+role_family,backend,Backend / Python,11302,Distributed systems,0.3359
+role_family,backend,Backend / Python,11302,Java,0.3533
+role_family,backend,Backend / Python,11302,Machine learning fundamentals,0.1132
+role_family,backend,Backend / Python,11302,SQL,0.1806
+role_family,backend,Backend / Python,11302,Kubernetes,0.219
+role_family,backend,Backend / Python,11302,Docker,0.2154
+role_family,backend,Backend / Python,11302,Financial services / banking domain,0.1316
+role_family,backend,Backend / Python,11302,Azure,0.1445
+role_family,backend,Backend / Python,11302,C++,0.2238
+role_family,backend,Backend / Python,11302,GCP,0.1299
+role_family,backend,Backend / Python,11302,System design / architecture,0.2438
+role_family,backend,Backend / Python,11302,REST APIs,0.2239
+role_family,backend,Backend / Python,11302,Go,0.1996
+role_family,backend,Backend / Python,11302,TypeScript,0.217
+role_family,backend,Backend / Python,11302,Linux,0.113
+role_family,backend,Backend / Python,11302,Data pipelines / ETL,0.0905
+role_family,backend,Backend / Python,11302,"SRE (SLOs, on-call)",0.1343
+role_family,backend,Backend / Python,11302,Frontend (general),0.2083
+role_family,backend,Backend / Python,11302,Full-stack,0.2294
+role_family,backend,Backend / Python,11302,Incident response / on-call,0.075
+role_family,backend,Backend / Python,11302,React,0.1976
+role_family,backend,Backend / Python,11302,JavaScript,0.164
+role_family,backend,Backend / Python,11302,Data structures & algorithms,0.1367
+role_family,backend,Backend / Python,11302,DevOps,0.0941
+role_family,backend,Backend / Python,11302,Git,0.1307
+role_family,backend,Backend / Python,11302,OOP / design patterns,0.1989
+role_family,backend,Backend / Python,11302,Query optimization / performance tuning,0.1259
+role_family,backend,Backend / Python,11302,Unit / integration testing,0.1425
+role_family,backend,Backend / Python,11302,Infrastructure as code,0.0676
+role_family,backend,Backend / Python,11302,Terraform,0.0653
+role_family,backend,Backend / Python,11302,AI-assisted development,0.1149
+role_family,backend,Backend / Python,11302,LLM evaluation,0.0322
+role_family,backend,Backend / Python,11302,Pre-sales / solution architecture / PoCs,0.0104
 role_family,frontend,Frontend & mobile,1336,Python,0.1055
 role_family,frontend,Frontend & mobile,1336,AWS,0.1213
 role_family,frontend,Frontend & mobile,1336,LLMs / GenAI (general),0.1257
@@ -467,7 +467,7 @@ role_family,frontend,Frontend & mobile,1336,Frontend (general),0.4678
 role_family,frontend,Frontend & mobile,1336,Full-stack,0.1751
 role_family,frontend,Frontend & mobile,1336,Incident response / on-call,0.0329
 role_family,frontend,Frontend & mobile,1336,React,0.4349
-role_family,frontend,Frontend & mobile,1336,JavaScript,0.2957
+role_family,frontend,Frontend & mobile,1336,JavaScript,0.3046
 role_family,frontend,Frontend & mobile,1336,Data structures & algorithms,0.0629
 role_family,frontend,Frontend & mobile,1336,DevOps,0.0808
 role_family,frontend,Frontend & mobile,1336,Git,0.1415
@@ -507,7 +507,7 @@ role_family,infra,"Infra, DevOps & security",5862,Frontend (general),0.0271
 role_family,infra,"Infra, DevOps & security",5862,Full-stack,0.0297
 role_family,infra,"Infra, DevOps & security",5862,Incident response / on-call,0.2982
 role_family,infra,"Infra, DevOps & security",5862,React,0.0283
-role_family,infra,"Infra, DevOps & security",5862,JavaScript,0.0435
+role_family,infra,"Infra, DevOps & security",5862,JavaScript,0.0467
 role_family,infra,"Infra, DevOps & security",5862,Data structures & algorithms,0.0346
 role_family,infra,"Infra, DevOps & security",5862,DevOps,0.1955
 role_family,infra,"Infra, DevOps & security",5862,Git,0.0778
@@ -599,46 +599,46 @@ role_family,trading_biz,"Trading desk, ops & product",336,Terraform,0.0
 role_family,trading_biz,"Trading desk, ops & product",336,AI-assisted development,0.003
 role_family,trading_biz,"Trading desk, ops & product",336,LLM evaluation,0.0
 role_family,trading_biz,"Trading desk, ops & product",336,Pre-sales / solution architecture / PoCs,0.006
-role_family,other_eng,Other engineering,8762,Python,0.3186
-role_family,other_eng,Other engineering,8762,AWS,0.2203
-role_family,other_eng,Other engineering,8762,LLMs / GenAI (general),0.1567
-role_family,other_eng,Other engineering,8762,Cloud (unspecified),0.2018
-role_family,other_eng,Other engineering,8762,AI agents / agentic workflows,0.1577
-role_family,other_eng,Other engineering,8762,CI/CD,0.1669
-role_family,other_eng,Other engineering,8762,Observability / monitoring,0.1517
-role_family,other_eng,Other engineering,8762,Distributed systems,0.1851
-role_family,other_eng,Other engineering,8762,Java,0.1612
-role_family,other_eng,Other engineering,8762,Machine learning fundamentals,0.0914
-role_family,other_eng,Other engineering,8762,SQL,0.1206
-role_family,other_eng,Other engineering,8762,Kubernetes,0.0978
-role_family,other_eng,Other engineering,8762,Docker,0.0983
-role_family,other_eng,Other engineering,8762,Financial services / banking domain,0.0936
-role_family,other_eng,Other engineering,8762,Azure,0.0991
-role_family,other_eng,Other engineering,8762,C++,0.1648
-role_family,other_eng,Other engineering,8762,GCP,0.0791
-role_family,other_eng,Other engineering,8762,System design / architecture,0.195
-role_family,other_eng,Other engineering,8762,REST APIs,0.0914
-role_family,other_eng,Other engineering,8762,Go,0.0848
-role_family,other_eng,Other engineering,8762,TypeScript,0.0831
-role_family,other_eng,Other engineering,8762,Linux,0.1534
-role_family,other_eng,Other engineering,8762,Data pipelines / ETL,0.0556
-role_family,other_eng,Other engineering,8762,"SRE (SLOs, on-call)",0.1257
-role_family,other_eng,Other engineering,8762,Frontend (general),0.077
-role_family,other_eng,Other engineering,8762,Full-stack,0.0637
-role_family,other_eng,Other engineering,8762,Incident response / on-call,0.1123
-role_family,other_eng,Other engineering,8762,React,0.0669
-role_family,other_eng,Other engineering,8762,JavaScript,0.0636
-role_family,other_eng,Other engineering,8762,Data structures & algorithms,0.0692
-role_family,other_eng,Other engineering,8762,DevOps,0.0608
-role_family,other_eng,Other engineering,8762,Git,0.0793
-role_family,other_eng,Other engineering,8762,OOP / design patterns,0.1491
-role_family,other_eng,Other engineering,8762,Query optimization / performance tuning,0.0632
-role_family,other_eng,Other engineering,8762,Unit / integration testing,0.0819
-role_family,other_eng,Other engineering,8762,Infrastructure as code,0.0459
-role_family,other_eng,Other engineering,8762,Terraform,0.046
-role_family,other_eng,Other engineering,8762,AI-assisted development,0.0595
-role_family,other_eng,Other engineering,8762,LLM evaluation,0.0251
-role_family,other_eng,Other engineering,8762,Pre-sales / solution architecture / PoCs,0.0313
+role_family,other_eng,Other engineering,7544,Python,0.3323
+role_family,other_eng,Other engineering,7544,AWS,0.1695
+role_family,other_eng,Other engineering,7544,LLMs / GenAI (general),0.1377
+role_family,other_eng,Other engineering,7544,Cloud (unspecified),0.1766
+role_family,other_eng,Other engineering,7544,AI agents / agentic workflows,0.1555
+role_family,other_eng,Other engineering,7544,CI/CD,0.1626
+role_family,other_eng,Other engineering,7544,Observability / monitoring,0.1526
+role_family,other_eng,Other engineering,7544,Distributed systems,0.1391
+role_family,other_eng,Other engineering,7544,Java,0.1076
+role_family,other_eng,Other engineering,7544,Machine learning fundamentals,0.0761
+role_family,other_eng,Other engineering,7544,SQL,0.127
+role_family,other_eng,Other engineering,7544,Kubernetes,0.101
+role_family,other_eng,Other engineering,7544,Docker,0.0997
+role_family,other_eng,Other engineering,7544,Financial services / banking domain,0.1038
+role_family,other_eng,Other engineering,7544,Azure,0.1087
+role_family,other_eng,Other engineering,7544,C++,0.1206
+role_family,other_eng,Other engineering,7544,GCP,0.0863
+role_family,other_eng,Other engineering,7544,System design / architecture,0.0966
+role_family,other_eng,Other engineering,7544,REST APIs,0.0933
+role_family,other_eng,Other engineering,7544,Go,0.0813
+role_family,other_eng,Other engineering,7544,TypeScript,0.0832
+role_family,other_eng,Other engineering,7544,Linux,0.1581
+role_family,other_eng,Other engineering,7544,Data pipelines / ETL,0.053
+role_family,other_eng,Other engineering,7544,"SRE (SLOs, on-call)",0.1117
+role_family,other_eng,Other engineering,7544,Frontend (general),0.0795
+role_family,other_eng,Other engineering,7544,Full-stack,0.059
+role_family,other_eng,Other engineering,7544,Incident response / on-call,0.1197
+role_family,other_eng,Other engineering,7544,React,0.0688
+role_family,other_eng,Other engineering,7544,JavaScript,0.0697
+role_family,other_eng,Other engineering,7544,Data structures & algorithms,0.0582
+role_family,other_eng,Other engineering,7544,DevOps,0.0652
+role_family,other_eng,Other engineering,7544,Git,0.0783
+role_family,other_eng,Other engineering,7544,OOP / design patterns,0.0408
+role_family,other_eng,Other engineering,7544,Query optimization / performance tuning,0.0611
+role_family,other_eng,Other engineering,7544,Unit / integration testing,0.0817
+role_family,other_eng,Other engineering,7544,Infrastructure as code,0.0483
+role_family,other_eng,Other engineering,7544,Terraform,0.0484
+role_family,other_eng,Other engineering,7544,AI-assisted development,0.0536
+role_family,other_eng,Other engineering,7544,LLM evaluation,0.0273
+role_family,other_eng,Other engineering,7544,Pre-sales / solution architecture / PoCs,0.0353
 region,North America,North America,18991,Python,0.4598
 region,North America,North America,18991,AWS,0.2952
 region,North America,North America,18991,LLMs / GenAI (general),0.2927
@@ -667,7 +667,7 @@ region,North America,North America,18991,Frontend (general),0.1093
 region,North America,North America,18991,Full-stack,0.1171
 region,North America,North America,18991,Incident response / on-call,0.1108
 region,North America,North America,18991,React,0.1039
-region,North America,North America,18991,JavaScript,0.0931
+region,North America,North America,18991,JavaScript,0.0948
 region,North America,North America,18991,Data structures & algorithms,0.1205
 region,North America,North America,18991,DevOps,0.0717
 region,North America,North America,18991,Git,0.0809
@@ -707,7 +707,7 @@ region,Europe,Europe,7631,Frontend (general),0.1266
 region,Europe,Europe,7631,Full-stack,0.1005
 region,Europe,Europe,7631,Incident response / on-call,0.0782
 region,Europe,Europe,7631,React,0.0992
-region,Europe,Europe,7631,JavaScript,0.0809
+region,Europe,Europe,7631,JavaScript,0.0832
 region,Europe,Europe,7631,Data structures & algorithms,0.0824
 region,Europe,Europe,7631,DevOps,0.1004
 region,Europe,Europe,7631,Git,0.0896
@@ -747,7 +747,7 @@ region,Southeast Asia,Southeast Asia,6627,Frontend (general),0.0536
 region,Southeast Asia,Southeast Asia,6627,Full-stack,0.0844
 region,Southeast Asia,Southeast Asia,6627,Incident response / on-call,0.0934
 region,Southeast Asia,Southeast Asia,6627,React,0.0552
-region,Southeast Asia,Southeast Asia,6627,JavaScript,0.0836
+region,Southeast Asia,Southeast Asia,6627,JavaScript,0.085
 region,Southeast Asia,Southeast Asia,6627,Data structures & algorithms,0.0566
 region,Southeast Asia,Southeast Asia,6627,DevOps,0.0828
 region,Southeast Asia,Southeast Asia,6627,Git,0.065
@@ -787,7 +787,7 @@ region,South Asia,South Asia,2470,Frontend (general),0.1194
 region,South Asia,South Asia,2470,Full-stack,0.1101
 region,South Asia,South Asia,2470,Incident response / on-call,0.1251
 region,South Asia,South Asia,2470,React,0.1219
-region,South Asia,South Asia,2470,JavaScript,0.1223
+region,South Asia,South Asia,2470,JavaScript,0.1255
 region,South Asia,South Asia,2470,Data structures & algorithms,0.1113
 region,South Asia,South Asia,2470,DevOps,0.1526
 region,South Asia,South Asia,2470,Git,0.1462
@@ -827,7 +827,7 @@ region,Unknown,Unknown,2261,Frontend (general),0.0792
 region,Unknown,Unknown,2261,Full-stack,0.0778
 region,Unknown,Unknown,2261,Incident response / on-call,0.1031
 region,Unknown,Unknown,2261,React,0.0801
-region,Unknown,Unknown,2261,JavaScript,0.1278
+region,Unknown,Unknown,2261,JavaScript,0.1349
 region,Unknown,Unknown,2261,Data structures & algorithms,0.0624
 region,Unknown,Unknown,2261,DevOps,0.1203
 region,Unknown,Unknown,2261,Git,0.1123
@@ -867,7 +867,7 @@ region,East Asia,East Asia,1517,Frontend (general),0.1358
 region,East Asia,East Asia,1517,Full-stack,0.0798
 region,East Asia,East Asia,1517,Incident response / on-call,0.0916
 region,East Asia,East Asia,1517,React,0.1081
-region,East Asia,East Asia,1517,JavaScript,0.0765
+region,East Asia,East Asia,1517,JavaScript,0.0771
 region,East Asia,East Asia,1517,Data structures & algorithms,0.1055
 region,East Asia,East Asia,1517,DevOps,0.1009
 region,East Asia,East Asia,1517,Git,0.0705
@@ -907,7 +907,7 @@ region,Remote,Remote,1373,Frontend (general),0.134
 region,Remote,Remote,1373,Full-stack,0.1224
 region,Remote,Remote,1373,Incident response / on-call,0.0925
 region,Remote,Remote,1373,React,0.1398
-region,Remote,Remote,1373,JavaScript,0.1318
+region,Remote,Remote,1373,JavaScript,0.1333
 region,Remote,Remote,1373,Data structures & algorithms,0.0532
 region,Remote,Remote,1373,DevOps,0.1012
 region,Remote,Remote,1373,Git,0.1151
@@ -947,7 +947,7 @@ region,Latin America,Latin America,1300,Frontend (general),0.2262
 region,Latin America,Latin America,1300,Full-stack,0.1877
 region,Latin America,Latin America,1300,Incident response / on-call,0.0862
 region,Latin America,Latin America,1300,React,0.2008
-region,Latin America,Latin America,1300,JavaScript,0.1731
+region,Latin America,Latin America,1300,JavaScript,0.1762
 region,Latin America,Latin America,1300,Data structures & algorithms,0.05
 region,Latin America,Latin America,1300,DevOps,0.1677
 region,Latin America,Latin America,1300,Git,0.2146
@@ -1067,7 +1067,7 @@ region,Africa,Africa,106,Frontend (general),0.1981
 region,Africa,Africa,106,Full-stack,0.1415
 region,Africa,Africa,106,Incident response / on-call,0.1038
 region,Africa,Africa,106,React,0.1415
-region,Africa,Africa,106,JavaScript,0.1604
+region,Africa,Africa,106,JavaScript,0.1698
 region,Africa,Africa,106,Data structures & algorithms,0.1226
 region,Africa,Africa,106,DevOps,0.2358
 region,Africa,Africa,106,Git,0.2925
@@ -1107,7 +1107,7 @@ country,US,US,17509,Frontend (general),0.1058
 country,US,US,17509,Full-stack,0.1137
 country,US,US,17509,Incident response / on-call,0.1112
 country,US,US,17509,React,0.099
-country,US,US,17509,JavaScript,0.0914
+country,US,US,17509,JavaScript,0.0931
 country,US,US,17509,Data structures & algorithms,0.1214
 country,US,US,17509,DevOps,0.0698
 country,US,US,17509,Git,0.0797
@@ -1147,7 +1147,7 @@ country,SG,SG,5885,Frontend (general),0.0459
 country,SG,SG,5885,Full-stack,0.0834
 country,SG,SG,5885,Incident response / on-call,0.0926
 country,SG,SG,5885,React,0.0535
-country,SG,SG,5885,JavaScript,0.0839
+country,SG,SG,5885,JavaScript,0.0853
 country,SG,SG,5885,Data structures & algorithms,0.0578
 country,SG,SG,5885,DevOps,0.077
 country,SG,SG,5885,Git,0.059
@@ -1187,7 +1187,7 @@ country,Unknown,Unknown,3634,Frontend (general),0.0999
 country,Unknown,Unknown,3634,Full-stack,0.0947
 country,Unknown,Unknown,3634,Incident response / on-call,0.0991
 country,Unknown,Unknown,3634,React,0.1026
-country,Unknown,Unknown,3634,JavaScript,0.1293
+country,Unknown,Unknown,3634,JavaScript,0.1343
 country,Unknown,Unknown,3634,Data structures & algorithms,0.0589
 country,Unknown,Unknown,3634,DevOps,0.1131
 country,Unknown,Unknown,3634,Git,0.1134
@@ -1227,7 +1227,7 @@ country,IN,IN,2398,Frontend (general),0.1163
 country,IN,IN,2398,Full-stack,0.108
 country,IN,IN,2398,Incident response / on-call,0.1268
 country,IN,IN,2398,React,0.1218
-country,IN,IN,2398,JavaScript,0.1188
+country,IN,IN,2398,JavaScript,0.1222
 country,IN,IN,2398,Data structures & algorithms,0.1126
 country,IN,IN,2398,DevOps,0.1522
 country,IN,IN,2398,Git,0.1435
@@ -1267,7 +1267,7 @@ country,GB,GB,2333,Frontend (general),0.1063
 country,GB,GB,2333,Full-stack,0.0866
 country,GB,GB,2333,Incident response / on-call,0.096
 country,GB,GB,2333,React,0.0964
-country,GB,GB,2333,JavaScript,0.0699
+country,GB,GB,2333,JavaScript,0.0712
 country,GB,GB,2333,Data structures & algorithms,0.0943
 country,GB,GB,2333,DevOps,0.0797
 country,GB,GB,2333,Git,0.0776
@@ -1307,7 +1307,7 @@ country,CA,CA,1482,Frontend (general),0.1511
 country,CA,CA,1482,Full-stack,0.1565
 country,CA,CA,1482,Incident response / on-call,0.1066
 country,CA,CA,1482,React,0.1626
-country,CA,CA,1482,JavaScript,0.1134
+country,CA,CA,1482,JavaScript,0.1154
 country,CA,CA,1482,Data structures & algorithms,0.11
 country,CA,CA,1482,DevOps,0.0931
 country,CA,CA,1482,Git,0.0958
@@ -1347,7 +1347,7 @@ country,DE,DE,1317,Frontend (general),0.1511
 country,DE,DE,1317,Full-stack,0.1147
 country,DE,DE,1317,Incident response / on-call,0.0585
 country,DE,DE,1317,React,0.1116
-country,DE,DE,1317,JavaScript,0.0699
+country,DE,DE,1317,JavaScript,0.0744
 country,DE,DE,1317,Data structures & algorithms,0.0676
 country,DE,DE,1317,DevOps,0.0843
 country,DE,DE,1317,Git,0.0683
@@ -1467,7 +1467,7 @@ country,PL,PL,489,Frontend (general),0.1575
 country,PL,PL,489,Full-stack,0.1247
 country,PL,PL,489,Incident response / on-call,0.0675
 country,PL,PL,489,React,0.1309
-country,PL,PL,489,JavaScript,0.1084
+country,PL,PL,489,JavaScript,0.1104
 country,PL,PL,489,Data structures & algorithms,0.0532
 country,PL,PL,489,DevOps,0.1616
 country,PL,PL,489,Git,0.1431
@@ -1507,7 +1507,7 @@ sector,ai,AI labs & AI-first,6805,Frontend (general),0.1029
 sector,ai,AI labs & AI-first,6805,Full-stack,0.1281
 sector,ai,AI labs & AI-first,6805,Incident response / on-call,0.0939
 sector,ai,AI labs & AI-first,6805,React,0.0995
-sector,ai,AI labs & AI-first,6805,JavaScript,0.0839
+sector,ai,AI labs & AI-first,6805,JavaScript,0.0852
 sector,ai,AI labs & AI-first,6805,Data structures & algorithms,0.0841
 sector,ai,AI labs & AI-first,6805,DevOps,0.0441
 sector,ai,AI labs & AI-first,6805,Git,0.0557
@@ -1547,7 +1547,7 @@ sector,crypto,Crypto & Web3,1072,Frontend (general),0.1082
 sector,crypto,Crypto & Web3,1072,Full-stack,0.0802
 sector,crypto,Crypto & Web3,1072,Incident response / on-call,0.1502
 sector,crypto,Crypto & Web3,1072,React,0.1138
-sector,crypto,Crypto & Web3,1072,JavaScript,0.0868
+sector,crypto,Crypto & Web3,1072,JavaScript,0.0905
 sector,crypto,Crypto & Web3,1072,Data structures & algorithms,0.0924
 sector,crypto,Crypto & Web3,1072,DevOps,0.0896
 sector,crypto,Crypto & Web3,1072,Git,0.0625
@@ -1587,7 +1587,7 @@ sector,fintech,Fintech & finance,7377,Frontend (general),0.1303
 sector,fintech,Fintech & finance,7377,Full-stack,0.124
 sector,fintech,Fintech & finance,7377,Incident response / on-call,0.1072
 sector,fintech,Fintech & finance,7377,React,0.1136
-sector,fintech,Fintech & finance,7377,JavaScript,0.0967
+sector,fintech,Fintech & finance,7377,JavaScript,0.0992
 sector,fintech,Fintech & finance,7377,Data structures & algorithms,0.0817
 sector,fintech,Fintech & finance,7377,DevOps,0.1151
 sector,fintech,Fintech & finance,7377,Git,0.1225
@@ -1627,7 +1627,7 @@ sector,tech,Other tech,11968,Frontend (general),0.092
 sector,tech,Other tech,11968,Full-stack,0.0876
 sector,tech,Other tech,11968,Incident response / on-call,0.1104
 sector,tech,Other tech,11968,React,0.0848
-sector,tech,Other tech,11968,JavaScript,0.0882
+sector,tech,Other tech,11968,JavaScript,0.0894
 sector,tech,Other tech,11968,Data structures & algorithms,0.1572
 sector,tech,Other tech,11968,DevOps,0.0691
 sector,tech,Other tech,11968,Git,0.0506
@@ -1667,7 +1667,7 @@ sector,other,Everything else,15846,Frontend (general),0.1121
 sector,other,Everything else,15846,Full-stack,0.1063
 sector,other,Everything else,15846,Incident response / on-call,0.0894
 sector,other,Everything else,15846,React,0.103
-sector,other,Everything else,15846,JavaScript,0.1074
+sector,other,Everything else,15846,JavaScript,0.1102
 sector,other,Everything else,15846,Data structures & algorithms,0.0607
 sector,other,Everything else,15846,DevOps,0.1179
 sector,other,Everything else,15846,Git,0.1221

@@ -1,5 +1,5 @@
 company,live_postings,previous_window,delta,sector,top_role,top_skills
-Amazon,2818,0,2818,tech,other_eng,AWS; OOP / design patterns; System design / architecture; Java; Cloud (unspecified); C++
+Amazon,2818,0,2818,tech,backend,AWS; OOP / design patterns; System design / architecture; Java; Cloud (unspecified); C++
 TikTok,1346,0,1346,tech,ai_ml,Python; Machine learning fundamentals; C++; Data structures & algorithms; LLMs / GenAI (general); Java
 Bjak,718,0,718,fintech,ai_ml,Financial services / banking domain; Distributed systems; LLMs / GenAI (general); KYC / AML / fraud; LLM evaluation; Payments
 Databricks,653,0,653,ai,fde,Apache Iceberg / Delta Lake; Databricks; Excel / spreadsheets; Unity Catalog / data catalogs; Python; AWS
@@ -15,7 +15,7 @@ Citi,290,0,290,fintech,backend,Java; SQL; Financial services / banking domain; C
 Cloudflare,281,0,281,tech,fde,"CDN / edge; DNS; Other clouds (IBM, Alibaba, DigitalOcean); Distributed systems; Go; Observability / monitoring"
 Intel,246,0,246,tech,other_eng,Python; ASIC / RTL design; CPU / computer architecture; C++; Statistics; Linux
 Capital One,241,0,241,fintech,backend,AWS; Python; Statistics; Operations research / optimization; Cloud (unspecified); Azure
-Zscaler,237,0,237,other,other_eng,"Cloud security posture (Wiz, CSPM); Firewalls / SASE (Palo Alto, Zscaler); Zero trust; Cloud (unspecified); LLMs / GenAI (general); Python"
+Zscaler,237,0,237,other,backend,"Cloud security posture (Wiz, CSPM); Firewalls / SASE (Palo Alto, Zscaler); Zero trust; Cloud (unspecified); LLMs / GenAI (general); Python"
 Snowflake,236,0,236,tech,fde,AI agents / agentic workflows; Snowflake; Python; SQL; Cloud (unspecified); AWS
 Palantir,230,0,230,tech,fde,Python; Java; C++; JavaScript; Data structures & algorithms; Cloud (unspecified)
 Micron,224,0,224,tech,other_eng,Python; AI agents / agentic workflows; LLMs / GenAI (general); Statistics; Deep learning; PCB / electronics design
@@ -24,7 +24,7 @@ Fidelity Investments,212,0,212,fintech,trading_biz,Financial services / banking 
 Salesforce,208,0,208,tech,fde,AI agents / agentic workflows; Salesforce; LLMs / GenAI (general); Python; Java; JavaScript
 Roblox,207,0,207,tech,backend,C++; Python; Distributed systems; Go; Observability / monitoring; Machine learning fundamentals
 Accenture,202,0,202,tech,ai_ml,Python; LLMs / GenAI (general); AI agents / agentic workflows; Cloud (unspecified); AWS; Azure
-MongoDB,200,0,200,tech,other_eng,MongoDB; AWS; Azure; Cloud (unspecified); GCP; Distributed systems
+MongoDB,200,0,200,tech,backend,MongoDB; AWS; Azure; Cloud (unspecified); GCP; Distributed systems
 Barclays,199,0,199,fintech,backend,Unit / integration testing; CI/CD; AWS; Java; Financial services / banking domain; Python
 Affirm,185,0,185,fintech,backend,"Python; SRE (SLOs, on-call); Kotlin; AWS; Kubernetes; MySQL"
 State Street,182,0,182,fintech,backend,Financial services / banking domain; Cloud (unspecified); Azure; Python; AWS; Java

@@ -6,13 +6,13 @@ Full-stack,React,2060,4.5
 Docker,Kubernetes,4501,4.05
 Frontend (general),Full-stack,2124,4.27
 Frontend (general),TypeScript,2318,4.02
-JavaScript,TypeScript,2050,4.01
 Incident response / on-call,"SRE (SLOs, on-call)",1897,4.02
+JavaScript,TypeScript,2073,3.96
 AWS,GCP,4685,3.11
 Full-stack,TypeScript,1963,3.44
-JavaScript,React,1439,3.5
+JavaScript,React,1474,3.51
 CI/CD,DevOps,2565,3.11
-Frontend (general),JavaScript,1486,3.32
+Frontend (general),JavaScript,1514,3.31
 AWS,Azure,4696,2.82
 DevOps,Docker,1888,3.04
 CI/CD,Docker,3927,2.76
@@ -30,10 +30,10 @@ AWS,Cloud (unspecified),6696,2.32
 Go,"SRE (SLOs, on-call)",1593,2.73
 Observability / monitoring,"SRE (SLOs, on-call)",2504,2.56
 CI/CD,Kubernetes,3596,2.44
-Full-stack,JavaScript,1203,2.72
+Full-stack,JavaScript,1223,2.71
 REST APIs,React,1440,2.64
 Git,REST APIs,1324,2.67
-JavaScript,REST APIs,1394,2.65
+JavaScript,REST APIs,1417,2.63
 Docker,GCP,2215,2.47
 Azure,Kubernetes,2495,2.43
 Data pipelines / ETL,SQL,2062,2.49
@@ -49,7 +49,7 @@ DevOps,Git,932,2.62
 Azure,Docker,2295,2.31
 Cloud (unspecified),Docker,3721,2.17
 Data structures & algorithms,Machine learning fundamentals,1754,2.38
-Git,JavaScript,956,2.56
+Git,JavaScript,973,2.55
 REST APIs,TypeScript,1610,2.37
 AWS,Docker,3815,2.12
 Incident response / on-call,Observability / monitoring,2039,2.26
@@ -61,8 +61,8 @@ CI/CD,REST APIs,2421,2.11
 Distributed systems,"SRE (SLOs, on-call)",1963,2.16
 Distributed systems,System design / architecture,2295,2.11
 Distributed systems,Observability / monitoring,3460,2.0
-Java,JavaScript,1635,2.2
 Distributed systems,Kubernetes,2790,2.05
+Java,JavaScript,1670,2.19
 Full-stack,REST APIs,1325,2.26
 Docker,REST APIs,1840,2.13
 Azure,CI/CD,2658,2.02
