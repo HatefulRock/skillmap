@@ -71,3 +71,14 @@ def test_employer_names_merge_legal_entities():
     assert visa.employer_name("WAL-MART ASSOCIATES, INC.") == "Wal-Mart Associates"
     assert visa.employer_name("Ernst & Young U.S. LLP") == "Ernst & Young"
     assert visa.employer_name("BANK OF AMERICA N.A.") == "Bank of America"
+
+
+def test_history_gives_a_median_per_fiscal_year():
+    rows = [{"company": "Google", "size": "big_tech", "role_family": "backend", "seniority": "senior", "state": "CA",
+             "usd": 100000.0 + fy * 1000 + i, "fy": fy} for fy in (2020, 2021) for i in range(25)]
+    rows += [{"company": "Tiny", "size": "unknown", "role_family": "backend", "seniority": "mid", "state": "TX",
+              "usd": 90000.0, "fy": 2020}]
+    out = visa.history(rows)
+    assert sorted(out["years"]) == ["2020", "2021"]
+    assert out["years"]["2021"]["by_company"]["Google"]["median"] > out["years"]["2020"]["by_company"]["Google"]["median"]
+    assert "Tiny" not in out["years"]["2020"]["by_company"]  # too few filings

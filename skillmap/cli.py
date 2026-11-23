@@ -160,7 +160,9 @@ def main(argv: list[str] | None = None) -> None:
     em.add_argument("--previous", type=Path, required=True, help="folder with last run's skills-market.json and postings")
     em.add_argument("--html", type=Path, help="also write the email here")
     vis = sub.add_parser("visa", help="summarise US H-1B filings (DOL LCA data) into data/visa-pay.json")
-    vis.add_argument("--quarters", type=int, default=visa.QUARTERS)
+    vis.add_argument("--quarters", type=int, default=visa.QUARTERS, help="newest files for the current view")
+    vis.add_argument("--history-quarters", type=int, default=visa.HISTORY_QUARTERS,
+                     help="files read for the per-year history (at least --quarters)")
     vis.add_argument("--out", type=Path, default=Path("data") / "visa-pay.json")
     purge = sub.add_parser("purge", help="delete every stored posting of one source (maintenance)")
     purge.add_argument("--source", required=True, help="the source column value, e.g. workday")
@@ -186,7 +188,7 @@ def main(argv: list[str] | None = None) -> None:
     if args.command == "visa":
         client = PoliteClient(min_interval=2.0, timeout=600.0)
         try:
-            data = visa.run(client, args.out, today_utc(), args.quarters)
+            data = visa.run(client, args.out, today_utc(), args.quarters, args.history_quarters)
         finally:
             client.close()
         print(f"{data['n']} filings from {', '.join(data['files'])}; {len(data['by_company'])} companies")

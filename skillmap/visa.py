@@ -27,7 +27,9 @@ from .http import PoliteClient
 
 PAGE = "https://www.dol.gov/agencies/eta/foreign-labor/performance"
 FILE = re.compile(r'href="([^"]*LCA_Disclosure_Data_FY(\d{4})_Q(\d)\.xlsx)"', re.I)
-QUARTERS = 4  # the latest year of filings
+QUARTERS = 4  # the latest year of filings, for the current view
+HISTORY_QUARTERS = 28  # every year the DOL lists (FY2020 on), for the per-year history
+HISTORY_COMPANIES = 25
 PER_YEAR = {"year": 1, "month": 12, "bi-weekly": 26, "week": 52, "hour": 2080}
 MIN_USD, MAX_USD = 30_000, 1_500_000
 MIN_N = 20  # fewest filings behind a published median
@@ -197,10 +199,42 @@ def summarise(rows: list[dict], files: list[str], today: date) -> dict:
     }
 
 
-def run(client: PoliteClient, out: Path, today: date, quarters: int = QUARTERS) -> dict:
+def history(rows: list[dict]) -> dict:
+    """Median offered wage per fiscal year: overall, by role family, by company size, and for the
+    employers with most filings. Years with too few filings for a median are left out."""
+    years: dict[int, list[dict]] = defaultdict(list)
+    for r in rows:
+        years[r["fy"]].append(r)
+    totals: dict[str, int] = defaultdict(int)
+    for r in rows:
+        totals[r["company"]] += 1
+    top = [c for c, _ in sorted(totals.items(), key=lambda kv: -kv[1])[:HISTORY_COMPANIES]]
+    out = {}
+    for fy in sorted(years):
+        group = years[fy]
+        if len(group) < MIN_N:
+            continue
+
+        def spread(pick, group=group):
+            buckets: dict[str, list[float]] = defaultdict(list)
+            for r in group:
+                buckets[pick(r)].append(r["usd"])
+            return {k: _spread(v) for k, v in buckets.items() if len(v) >= MIN_N}
+
+        out[str(fy)] = {
+            **_spread([r["usd"] for r in group]),
+            "by_role": spread(lambda r: r["role_family"]),
+            "by_size": spread(lambda r: r["size"]),
+            "by_company": {k: v for k, v in spread(lambda r: r["company"]).items() if k in top},
+        }
+    return {"years": out, "companies": top}
+
+
+def run(client: PoliteClient, out: Path, today: date, quarters: int = QUARTERS,
+        history_quarters: int = HISTORY_QUARTERS) -> dict:
     page = client.request("GET", PAGE, headers={"Accept": "text/html"})
     page.raise_for_status()
-    files = latest_files(page.text, quarters)
+    files = latest_files(page.text, max(quarters, history_quarters))
     if not files:
         raise RuntimeError(f"no LCA disclosure files listed on {PAGE}")
     rows: list[dict] = []
@@ -213,12 +247,16 @@ def run(client: PoliteClient, out: Path, today: date, quarters: int = QUARTERS) 
             tmp.flush()
             del response
             before = len(rows)
-            rows.extend(r for r in map(parse, read_xlsx(Path(tmp.name))) if r)
+            fy = int(label[2:6])
+            rows.extend({**r, "fy": fy, "file": label} for r in map(parse, read_xlsx(Path(tmp.name))) if r)
             print(f"{label}: {len(rows) - before} technical filings")
     if len(rows) < MIN_ROWS:
         # A changed file layout reads as almost nothing: keep the published summary instead.
         raise RuntimeError(f"only {len(rows)} technical filings read; the file layout may have changed")
-    data = summarise(rows, [label for label, _ in files], today)
+    current = {label for label, _ in files[:quarters]}
+    data = summarise([r for r in rows if r["file"] in current], [label for label, _ in files[:quarters]], today)
+    data["history"] = history(rows)
+    data["history"]["files"] = [label for label, _ in files]
     out.write_text(json.dumps(data, indent=1, ensure_ascii=False))
     return data
 
