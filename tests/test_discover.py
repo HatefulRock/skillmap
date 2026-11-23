@@ -52,3 +52,20 @@ def test_scan_probes_crawl_candidates_only_on_their_platform_and_keeps_busy_boar
         del discover.PROBES["fake"]
     assert complete and calls == ["bigco", "tiny"]
     assert [(b.company, b.token, b.jobs) for b in found] == [("Big Co", "bigco", 12)]
+
+
+def test_employers_seen_only_on_job_boards_become_candidates(tmp_path):
+    import gzip
+    import json
+
+    from skillmap.discover import seen_candidates
+
+    rows = ([{"company": "Speechify", "source": "himalayas", "role_family": "backend"}] * 4
+            + [{"company": "Stripe", "source": "himalayas", "role_family": "backend"}] * 4
+            + [{"company": "Stripe", "source": "greenhouse", "role_family": "backend"}]
+            + [{"company": "RANDSTAD PTE. LIMITED", "source": "mcf", "role_family": "backend"}] * 5
+            + [{"company": "Tiny Co", "source": "hn", "role_family": "backend"}] * 2)
+    path = tmp_path / "live.jsonl.gz"
+    with gzip.open(path, "wt") as fh:
+        fh.write("\n".join(json.dumps(r) for r in rows))
+    assert [c.name for c in seen_candidates(path)] == ["Speechify"]
