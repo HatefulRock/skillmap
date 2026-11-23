@@ -333,7 +333,8 @@ def _pay_countries(points: list[tuple[dict, float, float]]) -> list[dict]:
 
 def _pay_by_size(points: list[tuple[dict, float, float]], countries: list[str]) -> dict:
     """Pay per company size, keyed "country|level" ("all" for every country): within one country
-    so US startups are compared with US big tech, not with Singapore ads."""
+    so US startups are compared with US big tech, not with Singapore ads. A country appears when at
+    least two sizes have PAY_MIN ads with stated pay."""
     out = {}
     for country in ["all", *countries]:
         for level in ("all", "mid_senior"):
@@ -344,7 +345,8 @@ def _pay_by_size(points: list[tuple[dict, float, float]], countries: list[str]) 
                     groups[r.get("size") or "unknown"].append(usd)
             rows = [{"key": k, "label": company_size.LABELS[k], "n": len(groups[k]), "usd": _spread(groups[k])}
                     for k in company_size.SIZES if len(groups.get(k, [])) >= PAY_MIN]
-            if rows:
+            # A comparison needs two sizes; every country with them gets one, not just the busiest few.
+            if len(rows) >= (1 if country == "all" else 2):
                 out[f"{country}|{level}"] = rows
     return out
 
@@ -406,7 +408,7 @@ def pay_block(rows: list[dict]) -> dict:
     return {
         "period": "year",
         "fx_note": "Converted to USD at fixed November 2026 rates",
-        "by_size": _pay_by_size(points, [c["key"] for c in countries[:PAY_COUNTRIES]]),
+        "by_size": _pay_by_size(points, [c["key"] for c in countries]),
         "by_company": _pay_by_company(points),
         "n": len(points),
         "n_rows": len(rows),
