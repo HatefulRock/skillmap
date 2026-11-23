@@ -1,0 +1,42 @@
+name: visa
+# Quarterly: summarise the US Department of Labor's H-1B filings (LCA disclosure data) into
+# data/visa-pay.json, a pay view kept apart from the ad statistics. The weekly refresh then
+# publishes it with the rest of the dashboard. Public data, no secrets needed.
+on:
+  schedule:
+    - cron: "0 2 20 1,4,7,10 *"  # the 20th of each quarter's first month, after the OFLC release
+  workflow_dispatch:
+    inputs:
+      quarters:
+        description: "Quarterly files to read (newest first)"
+        default: "4"
+
+concurrency:
+  group: refresh  # pushes to the same branch as the weekly refresh
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  visa:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+      - run: uv sync --locked --no-dev
+
+      - name: Summarise the filings
+        run: |
+          uv run skillmap visa --quarters "${{ inputs.quarters || '4' }}" | tee visa-summary.txt
+          { echo '```'; cat visa-summary.txt; echo '```'; } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Commit the summary
+        run: |
+          git config user.name "skillmap-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/visa-pay.json
+          if git diff --cached --quiet; then echo "No change"; exit 0; fi
+          git commit -m "data: H-1B filings $(date -u +%F)"
+          git pull --rebase --quiet && git push
