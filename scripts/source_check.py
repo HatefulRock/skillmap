@@ -36,6 +36,12 @@ CANDIDATES: dict[str, tuple[str, str, dict, object]] = {
     "japan_dev": ("GET", "https://japan-dev.com/api/v1/jobs?page=1", {}, None),
     "workingnomads": ("GET", "https://www.workingnomads.com/api/exposed_jobs/", {}, None),
     "jobvite": ("GET", "https://jobs.jobvite.com/logitech/jobs/feed", {}, None),
+    "tiktok_sg": ("POST", "https://api.lifeattiktok.com/api/v1/public/supplier/search/job/posts",
+                  {"website-path": "tiktok"}, {"keyword": "engineer", "limit": 1, "offset": 0, "location_code_list": []}),
+    "bytedance": ("POST", "https://jobs.bytedance.com/api/v1/search/job/posts",
+                  {"website-path": "en"}, {"keyword": "", "limit": 1, "offset": 0}),
+    "oracle_jpmc_detail": ("GET", "https://jpmc.fa.oraclecloud.com/hcmRestApi/resources/latest/recruitingCEJobRequisitionDetails"
+                           "?expand=all&onlyData=true&finder=ById;Id=%22210580374%22,siteNumber=CX_1001", {}, None),
 }
 
 
@@ -72,7 +78,8 @@ def shape(data: object) -> str:
     return f"{head} items@{where or '.'}={len(items)} first_keys={list(first)[:25]} longest_text={len(text)}c: {text[:160]!r}"
 
 
-names = sys.argv[1:] or list(CANDIDATES)
+dump = "--dump" in sys.argv
+names = [a for a in sys.argv[1:] if a != "--dump"] or list(CANDIDATES)
 with httpx.Client(headers={"User-Agent": USER_AGENT, "Accept": "application/json"}, timeout=30,
                   follow_redirects=True) as client:
     for name in names:
@@ -85,6 +92,9 @@ with httpx.Client(headers={"User-Agent": USER_AGENT, "Accept": "application/json
             continue
         print("   ", r.status_code, r.headers.get("content-type"), len(r.content), "bytes")
         try:
-            print("   ", shape(r.json()))
+            data = r.json()
+            print("   ", shape(data))
+            if dump:
+                print(json.dumps(data, ensure_ascii=False)[:3500])
         except (json.JSONDecodeError, ValueError):
             print("   ", repr(r.text[:300]))
