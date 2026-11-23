@@ -132,3 +132,12 @@ def test_a_retitled_non_tech_posting_is_fetched_again():
         def non_tech_titles(self, source):
             return {"2": "Softwareentwickler (m/w/d)", "3": "Buchhalter"}
     assert _known(S(), "workday") == {"1", "3"}
+
+
+def test_jsonld_board_takes_the_employer_from_the_page():
+    from skillmap.sources import jsonld
+
+    job = {"title": "Backend Engineer", "hiringOrganization": {"@type": "Organization", "name": "PayPay Card"},
+           "description": "Go", "jobLocation": {"address": {"addressLocality": "Tokyo", "addressCountry": "JP"}}}
+    assert jsonld.parse(job, "https://www.tokyodev.com/companies/x/jobs/y", "*").company == "PayPay Card"
+    assert jsonld.parse(job, "https://careers.example.com/1", "Example").company == "Example"

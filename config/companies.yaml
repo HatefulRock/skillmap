@@ -294,3 +294,13 @@ companies:
   ats: oracle_hcm
   token: jpmc.fa.oraclecloud.com/CX_1001
   sector: fintech
+# Japan job boards in English, read through their job pages' JSON-LD; company "*" takes each
+# ad's employer from the page.
+- company: "*"
+  ats: jsonld
+  token: https://www.tokyodev.com/sitemap.xml
+  links: /companies/[^/]+/jobs/
+- company: "*"
+  ats: jsonld
+  token: https://japan-dev.com/cdn/sitemaps/sitemap.xml
+  links: /jobs/[^/]+/
