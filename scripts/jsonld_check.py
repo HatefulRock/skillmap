@@ -27,3 +27,12 @@ if not links:
 for posting in jsonld.collect(client, url, "check", links=pattern, max_new_texts=n):
     print("-", posting.title, "|", posting.location, "|", posting.salary_min, posting.salary_currency,
           "|", len(posting.description), "chars")
+if links:
+    # What the first job page holds, to see why a posting is missing or empty.
+    first = client.request("GET", links[0], headers={"Accept": "text/html"})
+    blocks = jsonld.LD_JSON.findall(first.text)
+    job = jsonld.job_posting(first.text)
+    print("first job page:", first.status_code, len(first.text), "bytes,", len(blocks), "JSON-LD blocks,",
+          "JobPosting keys:", sorted(job) if job else None)
+    if job:
+        print("  description:", repr(str(job.get("description"))[:200]), "| jobLocation:", repr(job.get("jobLocation"))[:200])
