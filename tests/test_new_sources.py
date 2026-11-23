@@ -237,3 +237,39 @@ def test_eightfold_lists_then_reads_text_for_new_tech_ads():
     assert posts[0].description == "<p>Text for 1</p>" and posts[0].posted_on.year == 2026
     assert posts[1].description == "" and posts[1].remote_hint
     assert sum(1 for c in client.calls if not c[0].endswith("/jobs")) == 1  # one text request, for the new ad
+
+
+def test_apple_reads_search_pages_then_tech_detail_pages():
+    import json as _json
+
+    import httpx
+
+    from skillmap.http import PoliteClient
+    from skillmap.sources import apple
+
+    def page(data: dict, body: str = "") -> str:
+        literal = _json.dumps(_json.dumps(data))[1:-1]
+        return f'<html>{body}<script>window.__staticRouterHydrationData = JSON.parse("{literal}");</script></html>'
+
+    search = page({"loaderData": {}}, '<a href="/en-us/details/200644467-0836/senior-machine-learning-engineer-ads">x</a>'
+                  '<a href="/en-us/details/114438158/us-specialist-seasonal">y</a>'
+                  '<a href="/en-us/details/200000001-0836/software-engineer-maps">z</a>')
+    job = {"jobsData": {"postingTitle": "Senior Machine Learning Engineer - Ads", "jobSummary": "Build ranking models.",
+                        "minimumQualifications": "Python, PyTorch", "postingDate": "Nov 20, 2026",
+                        "locations": [{"city": "Cupertino", "stateProvince": "California", "countryName": "United States",
+                                       "countryID": "iso-country-USA"}]}}
+    calls = []
+
+    def handler(request: httpx.Request) -> httpx.Response:
+        calls.append(str(request.url))
+        if "/search" in request.url.path:
+            return httpx.Response(200, text=search if request.url.params["page"] == "1" else "<html></html>")
+        return httpx.Response(200, text=page({"loaderData": {"details": job}}))
+
+    client = PoliteClient(min_interval=0, transport=httpx.MockTransport(handler))
+    posts = list(apple.collect(client, "en-us", "Apple", known={"200000001-0836"}))
+    assert [p.native_id for p in posts] == ["200644467-0836", "200000001-0836"]
+    first = posts[0]
+    assert first.title == "Senior Machine Learning Engineer - Ads" and "PyTorch" in first.description
+    assert first.country_hint == "US" and first.posted_on.isoformat() == "2026-11-20"
+    assert sum("/details/" in c for c in calls) == 1  # the retail role and the known role are not read

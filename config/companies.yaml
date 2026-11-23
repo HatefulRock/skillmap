@@ -299,6 +299,11 @@ companies:
   ats: eightfold
   token: explore.jobs.netflix.net|netflix.com
   sector: tech
+# Apple's careers site: token is the locale path.
+- company: Apple
+  ats: apple
+  token: en-us
+  sector: tech
 - company: Oracle
   ats: oracle_hcm
   token: eeho.fa.us2.oraclecloud.com/CX_45001
