@@ -38,6 +38,7 @@ def stored_text(posting: Posting, raw: RawPosting) -> str | None:
 
 class Store(Protocol):
     def known_ids(self, source: str) -> set[str]: ...
+    def non_tech_titles(self, source: str) -> dict[str, str]: ...
     def save(self, items: Iterable[tuple[Posting, RawPosting]], taxonomy_version: int) -> int: ...
     def stale_extractions(self, taxonomy_version: int, archive: str | None = None) -> Iterator[RawPosting]: ...
     def stale_archives(self, taxonomy_version: int) -> list[str]: ...
@@ -81,6 +82,10 @@ class MemoryStore:
     def known_ids(self, source: str) -> set[str]:
         return {pid.split(":", 1)[1] for pid, row in self.data.items() if row["source"] == source
                 and (row["description"] or row["text_archive"] or row["role_family"] == "non_tech")}
+
+    def non_tech_titles(self, source: str) -> dict[str, str]:
+        return {pid.split(":", 1)[1]: row["title"] for pid, row in self.data.items()
+                if row["source"] == source and row["role_family"] == "non_tech"}
 
     def save(self, items: Iterable[tuple[Posting, RawPosting]], taxonomy_version: int) -> int:
         inserted = 0
@@ -202,6 +207,11 @@ class PostgresStore:
             "select native_id from skillmap.postings where source = %s and (description is not null "
             "or text_archive is not null or role_family = 'non_tech')", (source,)).fetchall()
         return {row["native_id"] for row in rows}
+
+    def non_tech_titles(self, source: str) -> dict[str, str]:
+        rows = self.conn.execute("select native_id, title from skillmap.postings where source = %s "
+                                 "and role_family = 'non_tech'", (source,)).fetchall()
+        return {row["native_id"]: row["title"] or "" for row in rows}
 
     def save(self, items: Iterable[tuple[Posting, RawPosting]], taxonomy_version: int) -> int:
         columns = [*POSTING_COLUMNS, "native_id", *HINT_COLUMNS]

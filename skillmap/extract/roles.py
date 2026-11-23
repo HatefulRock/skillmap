@@ -37,7 +37,7 @@ RULES: list[tuple[str, re.Pattern[str]]] = [
                          r"security|devsecops|network engineer|systems engineer|reliability", re.I)),
     ("frontend", re.compile(r"front[- ]?end|\bui\b|\bios\b|android|mobile|react|web developer", re.I)),
     ("backend", re.compile(r"back[- ]?end|python|software (?:engineer|developer)|\bswe\b|full[- ]?stack|"
-                           r"(?:golang|go|java|node|rust|c\+\+) (?:engineer|developer)|api engineer|developer|"
+                           r"(?:golang|go|java|node|rust|c\+\+) (?:engineer|developer)|api engineer|developer|software architect|"
                            r"programmer|founding engineer|member of technical staff", re.I)),
     ("other_eng", re.compile(r"engineer|scientist|technical lead|tech lead|cto\b", re.I)),
 ]
@@ -57,8 +57,75 @@ SOFTWARE = re.compile(r"software|\bml\b|machine learning|\bai\b|data|cloud|backe
                       r"\bapi\b|developer|programmer", re.I)
 
 
+# Non-English titles, rewritten into the English words the rules above look for. Order matters:
+# whole phrases first, then single words; then "engineer de data" is turned round.
+_WORDS: list[tuple[re.Pattern[str], str]] = [(re.compile(a, re.I), b) for a, b in [
+    (r"l[ií]der t[ée]cnic[oa]|lideran[cç]a t[ée]cnica|chef de projet technique|technische[rn]? (?:leiter|lead)", "tech lead"),
+    (r"aprendizaje autom[aá]tico|aprendizado de m[aá]quina|apprentissage automatique|maschinelle[snm]? lernen|"
+     r"apprendimento automatico|machinaal leren", "machine learning"),
+    (r"inteligencia artificial|intelig[eê]ncia artificial|intelligence artificielle|k[üu]nstliche[rn]? intelligenz|"
+     r"intelligenza artificiale|kunstmatige intelligentie|(?-i:\bIA\b|\bKI\b)", "AI"),
+    # German compounds: Softwareentwickler, Java-Entwicklerin, Dateningenieur, Backend-Entwickler.
+    (r"(\w*?)-?entwickler(?:in(?:nen)?)?\b", r"\1 developer"),
+    (r"(\w*?)-?ingenieur(?:in)?\b", r"\1 engineer"),
+    (r"(\w*?)-?architekt(?:in)?\b", r"\1 architect"),
+    (r"\b(?:desarrollador|desenvolvedor|d[ée]veloppeu(?:r|se)|sviluppatore|ontwikkelaar|programador|programmeur|"
+     r"programmierer)(?:a|es|as|s|in)?\b", "developer"),
+    (r"\b(?:ingenier[oa]|engenheir[oa]|ing[ée]nieure?|ingegnere)s?\b", "engineer"),
+    (r"\b(?:cient[ií]fic[oa]|cientista|scientifique|wissenschaftler(?:in)?|scienziato)s?\b", "scientist"),
+    (r"\b(?:arquitect[oa]|arquitet[oa]|architecte|architetto)s?\b", "architect"),
+    (r"\b(?:analista|analyste)s?\b", "analyst"),
+    (r"\bsoftwareontwikkelaar\b", "software developer"),
+    (r"\b(?:datos|dados|donn[ée]es|daten|dati|gegevens)\b", "data"),
+    (r"\b(?:seguridad|seguran[cç]a|s[ée]curit[ée]|sicherheit|sicurezza|beveiliging)\b", "security"),
+    (r"\b(?:nube|nuvem|nuage)\b", "cloud"),
+    (r"\b(?:soluciones|solu[cç][oõ]es|solutions|l[öo]sungs?)\b", "solutions"),
+    (r"\b(?:infraestructura|infraestrutura|infrastruktur|infrastruttura)\b", "infrastructure"),
+    (r"\b(?:plataforma|plateforme|plattform|piattaforma)\b", "platform"),
+    (r"\b(?:mec[aá]nic[oa]|m[ée]canique|mec[aâ]nic[oa]|maschinenbau\w*)\b", "mechanical"),
+    (r"\b(?:el[ée]ctric[oa]|el[ée]trico|[ée]lectrique|elektro\w*|elettrico)\b", "electrical"),
+    (r"\b(?:qu[ií]mic[oa]|chimique|chemie\w*)\b", "chemical"),
+    (r"\b(?:mantenimiento|manuten[cç][aã]o|instandhaltung|manutenzione)\b", "maintenance"),
+    (r"\b(?:t[ée]cnic[oa]|technicien(?:ne)?|techniker(?:in)?)\b", "technician"),
+    (r"\b(?:calidad|qualidade|qualit[ée]|qualit[äa]t|qualit[àa])\b", "quality"),
+    (r"\b(?:procesos|processos|proc[ée]d[ée]s|prozess\w*)\b", "process"),
+    (r"\b(?:construcci[oó]n|constru[cç][aã]o|bau\w*)\b", "construction"),
+    # Japanese and Korean katakana / hangul job words.
+    (r"エンジニア|엔지니어", " engineer "), (r"データ|데이터", " data "), (r"機械学習|머신러닝", " machine learning "),
+    (r"ソフトウェア|소프트웨어", " software "), (r"バックエンド|백엔드", " backend "), (r"フロントエンド|프론트엔드", " frontend "),
+    (r"インフラ|인프라", " infrastructure "), (r"セキュリティ|보안", " security "), (r"開発者|개발자|プログラマー", " developer "),
+    (r"サイエンティスト|과학자", " scientist "), (r"アーキテクト|아키텍트", " architect "),
+]]
+_PREPOSITIONS = re.compile(r"\b(?:de|des|du|da|do|em|en|di|del|della|der|in|of)\s+(?=(?:data|software|machine learning|AI|cloud|"
+                           r"security|infrastructure|platform|backend|frontend|solutions)\b)", re.I)
+_TURN = re.compile(r"\b(engineer|developer|scientist|analyst|architect)\s+(data|software|machine learning|AI|cloud|security|"
+                   r"infrastructure|platform|backend|back-end|frontend|front-end|full[- ]?stack|mechanical|electrical|"
+                   r"chemical|quality|process|maintenance|construction|solutions)\b", re.I)
+
+
+def english(title: str) -> str:
+    """The title with common non-English job words in English ("Ingeniero de Datos" → "data engineer")."""
+    if title.isascii() and not re.search(r"entwickler|ingenie|desarroll|desenvolv|veloppeu|programad|programmeu|"
+                                         r"cient|scientif|wissenschaft|arquite|architect[eo]|analist|analyste|ontwikkel|"
+                                         r"datos|dados|donn|daten|dati\b|seguri|securit|sicher|nube|nuvem|plataf|plattf|"
+                                         r"infraestr|infrastruk|soluci|solu[cç]|aprendiz|apprentiss|maschinell|intelig|intellig|k[üu]nstl|"
+                                         r"(?-i:\bIA\b|\bKI\b)|ingegner|sviluppat|programmier|beveilig|gegevens|"
+                                         r"kunstmatig|machinaal|t[ée]cnic|mec[aâ]n|el[ée]ctr|qu[ií]m|calidad|qualid|lider",
+                                         title, re.I):
+        return title
+    out = title
+    for pattern, replacement in _WORDS:
+        out = pattern.sub(replacement, out)
+    if out == title:  # nothing was translated: leave an English title's word order alone
+        return title
+    out = _PREPOSITIONS.sub("", out)
+    out = _TURN.sub(r"\2 \1", out)
+    return re.sub(r"\s+", " ", out).strip()
+
+
 def classify(title: str) -> str | None:
     """None means not a technical role; those postings are kept but left out of skill stats."""
+    title = english(title or "")
     if NOT_SOFTWARE.search(title or "") and not SOFTWARE.search(title or ""):
         return None
     for family, rule in RULES:

@@ -38,10 +38,10 @@ from .models import normalise_company
 log = logging.getLogger("skillmap.discover")
 CONFIG = Path(__file__).resolve().parents[1] / "config"
 YC_URL = "https://raw.githubusercontent.com/yc-oss/api/main/companies/all.json"
-ATS = ["greenhouse", "lever", "ashby", "workable", "recruitee", "personio", "teamtailor", "smartrecruiters"]
+ATS = ["greenhouse", "lever", "ashby", "workable", "recruitee", "personio", "teamtailor", "gem", "smartrecruiters"]
 # SmartRecruiters' API host asks crawlers to stay away in its robots.txt, so it is only probed
 # when asked for explicitly (`--platforms ...,smartrecruiters`).
-DEFAULT_ATS = ["greenhouse", "lever", "ashby", "workable", "recruitee", "personio", "teamtailor"]
+DEFAULT_ATS = ["greenhouse", "lever", "ashby", "workable", "recruitee", "personio", "teamtailor", "gem"]
 # Give up on a platform after this many probes in a row that ended in "429 Too Many Requests".
 RATE_LIMITED_GIVE_UP = 20
 _DROP_WORDS = re.compile(r"\b(?:ai|labs?|inc|hq|technologies|technology|tech|app|io|the|co|group|holdings|global)\b")
@@ -207,6 +207,11 @@ def probe_teamtailor(client: PoliteClient, token: str) -> tuple[int, str | None]
     return len(list(root.iter("item"))), (root.findtext("channel/title") or None)
 
 
+def probe_gem(client: PoliteClient, token: str) -> tuple[int, str | None] | None:
+    jobs = _get(client, f"https://api.gem.com/job_board/v0/{token}/job_posts/")
+    return (len(jobs), None) if isinstance(jobs, list) else None
+
+
 def probe_smartrecruiters(client: PoliteClient, token: str) -> tuple[int, str | None] | None:
     page = _get(client, f"https://api.smartrecruiters.com/v1/companies/{token}/postings", params={"limit": 1})
     if not isinstance(page, dict) or not page.get("totalFound"):
@@ -217,7 +222,7 @@ def probe_smartrecruiters(client: PoliteClient, token: str) -> tuple[int, str | 
 
 PROBES: dict[str, Probe] = {
     "greenhouse": probe_greenhouse, "lever": probe_lever, "ashby": probe_ashby, "workable": probe_workable,
-    "recruitee": probe_recruitee, "personio": probe_personio, "teamtailor": probe_teamtailor,
+    "recruitee": probe_recruitee, "personio": probe_personio, "teamtailor": probe_teamtailor, "gem": probe_gem,
     "smartrecruiters": probe_smartrecruiters,
 }
 
@@ -328,6 +333,7 @@ CRAWL_HOSTS = {
     "recruitee": ["*.recruitee.com"],
     "personio": ["*.jobs.personio.de"],
     "teamtailor": ["*.teamtailor.com"],
+    "gem": ["jobs.gem.com"],
 }
 CRAWL_MIN_JOBS = 5
 CRAWL_MAX_PAGES = 20  # index pages per host; each holds a few thousand URLs

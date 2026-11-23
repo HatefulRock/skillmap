@@ -1,5 +1,5 @@
-"""Public job-board APIs that ask only for a credit link: Himalayas, Jobicy, RemoteOK (remote
-jobs worldwide) and Arbeitnow (Europe, mostly Germany).
+"""Public job-board APIs that ask only for a credit link: Himalayas, Jobicy, RemoteOK, Remotive and
+Working Nomads (remote jobs worldwide) and Arbeitnow (Europe, mostly Germany).
 
 They republish ads from many companies, so many of their tech ads are also on a company board we
 already read; `aggregate.dedupe` merges those by company, title and country. Only tech titles
@@ -17,7 +17,7 @@ from datetime import date
 from ..extract import roles
 from ..http import PoliteClient
 from ..models import RawPosting
-from ._util import parse_date
+from ._util import dig, parse_date
 
 log = logging.getLogger(__name__)
 
@@ -25,7 +25,12 @@ HIMALAYAS = "https://himalayas.app/jobs/api/search"
 JOBICY = "https://jobicy.com/api/v2/remote-jobs"
 REMOTEOK = "https://remoteok.com/api"
 ARBEITNOW = "https://www.arbeitnow.com/api/job-board-api"
-HOST_INTERVAL = {"himalayas.app": 1.0, "jobicy.com": 2.0, "remoteok.com": 2.0, "www.arbeitnow.com": 1.0}
+# Remotive asks for at most a few requests a day; one per category per weekly run is well under.
+REMOTIVE = "https://remotive.com/api/remote-jobs"
+WORKING_NOMADS = "https://www.workingnomads.com/api/exposed_jobs/"
+GETONBRD = "https://www.getonbrd.com/api/v0/search/jobs"
+HOST_INTERVAL = {"himalayas.app": 1.0, "jobicy.com": 2.0, "remoteok.com": 2.0, "www.arbeitnow.com": 1.0,
+                 "remotive.com": 5.0, "www.workingnomads.com": 2.0, "www.getonbrd.com": 1.0}
 
 PERIOD = {"hourly": "hour", "hour": "hour", "daily": "day", "weekly": "week", "monthly": "month", "month": "month",
           "yearly": "year", "annual": "year", "annually": "year", "year": "year"}
@@ -191,6 +196,103 @@ def arbeitnow(client: PoliteClient, since: date, max_pages: int = 40) -> Iterato
             break
 
 
+def remotive_job(job: dict) -> RawPosting:
+    where = str(job.get("candidate_required_location") or "").strip()
+    return RawPosting(
+        source="remotive",
+        native_id=str(job.get("id")),
+        company=job.get("company_name") or "",
+        title=job.get("title") or "",
+        description=job.get("description") or "",
+        url=job.get("url") or "",
+        location=f"Remote, {where}" if where and where.lower() not in ("worldwide", "anywhere") else "Remote",
+        remote_hint=True,
+        posted_on=parse_date(job.get("publication_date")),
+    )
+
+
+def remotive(client: PoliteClient, categories: list[str], since: date) -> Iterator[RawPosting]:
+    seen: set[str] = set()
+    for category in categories:
+        for job in client.get_json(REMOTIVE, params={"category": category}).get("jobs") or []:
+            posting = remotive_job(job)
+            if posting.native_id in seen or (posting.posted_on and posting.posted_on < since):
+                continue
+            if roles.classify(posting.title):
+                seen.add(posting.native_id)
+                yield posting
+
+
+def working_nomads_job(job: dict) -> RawPosting:
+    where = str(job.get("location") or "").strip()
+    return RawPosting(
+        source="workingnomads",
+        native_id=str(job.get("url") or ""),
+        company=job.get("company_name") or "",
+        title=job.get("title") or "",
+        description=job.get("description") or "",
+        url=job.get("url") or "",
+        location=f"Remote, {where}" if where and where.lower() not in ("anywhere", "worldwide") else "Remote",
+        remote_hint=True,
+        posted_on=parse_date(job.get("pub_date")),
+    )
+
+
+def working_nomads(client: PoliteClient, since: date) -> Iterator[RawPosting]:
+    for job in client.get_json(WORKING_NOMADS) or []:
+        posting = working_nomads_job(job)
+        if posting.native_id and (not posting.posted_on or posting.posted_on >= since) and roles.classify(posting.title):
+            yield posting
+
+
+def getonbrd_job(job: dict) -> RawPosting:
+    a = job.get("attributes") or {}
+    company = dig(a, "company", "data", "attributes", "name") or ""
+    countries = [str(c) for c in a.get("countries") or [] if c]
+    remote = bool(a.get("remote")) or str(a.get("remote_modality") or "").startswith("fully_remote")
+    where = ", ".join(countries) or str(a.get("city") or "")
+    low, high = a.get("min_salary"), a.get("max_salary")
+    return RawPosting(
+        source="getonbrd",
+        native_id=str(job.get("id")),
+        company=str(company),
+        title=a.get("title") or "",
+        description="\n\n".join(str(a[k]) for k in ("description", "projects", "functions", "desirable") if a.get(k)),
+        url=dig(job, "links", "public_url") or f"https://www.getonbrd.com/jobs/{job.get('id')}",
+        location=(f"Remote, {where}" if where else "Remote") if remote else where,
+        remote_hint=True if remote else None,
+        posted_on=parse_date(a["published_at"] * 1000) if isinstance(a.get("published_at"), (int, float))
+        else parse_date(a.get("published_at")),
+        salary_min=float(low) if isinstance(low, (int, float)) and low > 0 else None,
+        salary_max=float(high) if isinstance(high, (int, float)) and high > 0 else None,
+        salary_currency="USD" if isinstance(low, (int, float)) and low > 0 else None,
+        salary_period="month" if isinstance(low, (int, float)) and low > 0 else None,
+    )
+
+
+def getonbrd(client: PoliteClient, queries: list[str], since: date, per_page: int = 100,
+             max_pages: int = 10) -> Iterator[RawPosting]:
+    """Get on Board (Latin America): a search per query, newest first, until ads predate `since`."""
+    seen: set[str] = set()
+    for query in queries:
+        for page in range(1, max_pages + 1):
+            body = client.get_json(GETONBRD, params={"query": query, "per_page": per_page, "page": page,
+                                                     "expand": '["company"]'})
+            jobs = body.get("data") or []
+            old = 0
+            for job in jobs:
+                posting = getonbrd_job(job)
+                if posting.posted_on and posting.posted_on < since:
+                    old += 1
+                    continue
+                if posting.native_id not in seen and roles.classify(posting.title):
+                    seen.add(posting.native_id)
+                    yield posting
+            total = dig(body, "meta", "total_pages")
+            if len(jobs) < per_page or old == len(jobs) or (isinstance(total, int) and page >= total):
+                break
+
+
 def collect(client: PoliteClient, cfg: dict, name: str, since: date) -> Iterator[RawPosting]:
     """One board's new tech ads, so each board is logged and fails on its own."""
     client.per_host_interval.update(HOST_INTERVAL)
@@ -202,5 +304,11 @@ def collect(client: PoliteClient, cfg: dict, name: str, since: date) -> Iterator
         yield from remoteok(client, since)
     elif name == "arbeitnow":
         yield from arbeitnow(client, since)
+    elif name == "remotive":
+        yield from remotive(client, (cfg.get("remotive") or {}).get("categories") or ["software-development"], since)
+    elif name == "workingnomads":
+        yield from working_nomads(client, since)
+    elif name == "getonbrd":
+        yield from getonbrd(client, (cfg.get("getonbrd") or {}).get("queries") or ["python"], since)
     else:
         raise ValueError(f"unknown public board {name!r}")

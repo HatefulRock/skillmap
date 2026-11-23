@@ -16,6 +16,7 @@ import httpx
 import yaml
 
 from .archive import Archive, pack, unpack
+from .extract import roles
 from .extract.skills import Taxonomy
 from .http import PoliteClient
 from .models import RawPosting, normalise_company
@@ -25,16 +26,19 @@ from .sources import (
     amazon,
     ashby,
     boards_public,
+    gem,
     greenhouse,
     hn,
     jsonld,
     lever,
     mcf,
     microsoft,
+    oracle_hcm,
     personio,
     recruitee,
     smartrecruiters,
     teamtailor,
+    tiktok,
     workable,
     workday,
 )
@@ -43,11 +47,12 @@ from .store import Store
 log = logging.getLogger("skillmap")
 CONFIG = Path(__file__).resolve().parents[1] / "config"
 BOARDS = {"greenhouse": greenhouse, "lever": lever, "ashby": ashby, "workable": workable,
-          "recruitee": recruitee, "personio": personio, "teamtailor": teamtailor,
+          "recruitee": recruitee, "personio": personio, "teamtailor": teamtailor, "gem": gem,
           "smartrecruiters": smartrecruiters, "workday": workday, "amazon": amazon, "microsoft": microsoft,
+          "tiktok": tiktok, "oracle_hcm": oracle_hcm,
           "jsonld": jsonld}
 # Platforms whose list gives no text: their collectors fetch text only for postings not stored yet.
-NEEDS_KNOWN = {"smartrecruiters", "workday", "microsoft", "jsonld"}
+NEEDS_KNOWN = {"smartrecruiters", "workday", "microsoft", "oracle_hcm", "jsonld"}
 
 
 # After this many boards in a row on one platform fail with "429 Too Many Requests", the rest of
@@ -173,6 +178,14 @@ def _ingest(store: Store, taxonomy: Taxonomy, today: date, name: str, produce: C
     return result
 
 
+def _known(store: Store, source: str) -> set[str]:
+    """Postings a text-fetching collector needn't fetch again. A posting stored as non-technical
+    whose title now reads as technical (the title rules learned its language, say) is fetched
+    again, so it gets its text and skills."""
+    retitled = {native for native, title in store.non_tech_titles(source).items() if roles.classify(title)}
+    return store.known_ids(source) - retitled
+
+
 def collect(store: Store, client: PoliteClient, taxonomy: Taxonomy, today: date, sources: set[str],
             board_limit: int | None = None, hn_since: date | None = None,
             platforms: set[str] | None = None, budget: Budget | None = None) -> RunReport:
@@ -188,7 +201,7 @@ def collect(store: Store, client: PoliteClient, taxonomy: Taxonomy, today: date,
 
     if "boards" in sources:
         boards = [b for b in load_boards() if not platforms or b["ats"] in platforms][:board_limit]
-        known = {ats: store.known_ids(ats) for ats in NEEDS_KNOWN if any(b["ats"] == ats for b in boards)}
+        known = {ats: _known(store, ats) for ats in NEEDS_KNOWN if any(b["ats"] == ats for b in boards)}
 
         def platform_lane(ats: str, mine: list[dict]) -> None:
             limited = 0  # boards in a row rate-limited

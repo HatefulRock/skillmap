@@ -285,3 +285,12 @@ companies:
   ats: microsoft
   token: microsoft.com
   sector: tech
+- company: TikTok
+  ats: tiktok
+  token: tiktok
+  sector: tech
+# Oracle Recruiting Cloud careers sites: token is "host/siteNumber".
+- company: JPMorgan Chase
+  ats: oracle_hcm
+  token: jpmc.fa.oraclecloud.com/CX_1001
+  sector: fintech
