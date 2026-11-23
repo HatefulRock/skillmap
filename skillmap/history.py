@@ -78,9 +78,10 @@ def half_year(day: date) -> str:
     return f"{day.year}-{'01' if day.month <= 6 else '07'}"
 
 
-def pick_crawls(collinfo: list[dict], today: date) -> list[Crawl]:
+def pick_crawls(collinfo: list[dict], today: date, skip: frozenset[str] | set[str] = frozenset()) -> list[Crawl]:
     """The last crawl of each half-year from FIRST_YEAR on, newest first; the running half-year is
-    left out until it ends (the live data covers it)."""
+    left out until it ends (the live data covers it). Crawls in `skip` (ones that held no job
+    pages at all) give way to the half-year's next-latest crawl."""
     by_period: dict[str, Crawl] = {}
     for entry in collinfo:
         match = re.fullmatch(r"CC-MAIN-(\d{4})-(\d{2})", entry.get("id", ""))
@@ -88,7 +89,7 @@ def pick_crawls(collinfo: list[dict], today: date) -> list[Crawl]:
             continue
         crawl = Crawl(entry["id"], entry["cdx-api"], "")
         period = half_year(crawl.day)
-        if period == half_year(today):
+        if period == half_year(today) or crawl.id in skip:
             continue
         if period not in by_period or crawl.day > by_period[period].day:
             by_period[period] = Crawl(crawl.id, crawl.cdx, period)
@@ -171,7 +172,8 @@ def cluster_blocks(client: PoliteClient, crawl: Crawl, prefix: str) -> list[tupl
     return blocks
 
 
-def index_lines(client: PoliteClient, crawl: Crawl, host: str, pages: int = INDEX_PAGES) -> list[dict]:
+def index_lines(client: PoliteClient, crawl: Crawl, host: str, pages: int = INDEX_PAGES,
+                errors: list[str] | None = None) -> list[dict]:
     """Successful HTML captures under `host` in this crawl, from up to `pages` index blocks spread
     evenly over the host's (the index is sorted by URL, so the first blocks would be boards a-c)."""
     prefix = surt_prefix(host)
@@ -187,6 +189,8 @@ def index_lines(client: PoliteClient, crawl: Crawl, host: str, pages: int = INDE
                                          offset, offset + length - 1))
         except Exception as exc:  # noqa: BLE001 - a missing block only shrinks the sample
             log.warning("history %s %s block %s:%d: %s", crawl.id, host, name, offset, exc)
+            if errors is not None:
+                errors.append(f"{host} block: {str(exc)[:60]}")
             continue
         for line in raw.decode("utf-8", "replace").splitlines():
             key, _, rest = line.partition(" ")
@@ -280,11 +284,13 @@ def collect_crawl(client: PoliteClient, crawl: Crawl, taxonomy: Taxonomy, deadli
     `prior` are the rows an earlier, unfinished run of this crawl kept."""
     resume, prior = resume or {}, prior or []
     captures = []
+    index_errors: list[str] = []
     for host in JOB_PAGES:
         try:
-            captures += index_lines(client, crawl, host)
+            captures += index_lines(client, crawl, host, errors=index_errors)
         except Exception as exc:  # noqa: BLE001 - one host down still leaves the others
             log.warning("history %s %s: %s", crawl.id, host, exc)
+            index_errors.append(f"{host}: {str(exc)[:60]}")
     rows: list[dict] = []
     texts: list[tuple[str, str]] = []
     per_company: Counter = Counter(r["company"] for r in prior)
@@ -296,7 +302,8 @@ def collect_crawl(client: PoliteClient, crawl: Crawl, taxonomy: Taxonomy, deadli
 
     def progress(finished: bool) -> dict:
         return {"finished": finished, "tried": sorted(tried), "fetched": fetched, "failed": failed,
-                "stats": {"captures": len(captures), **stats, "skipped_titles": skipped[:8]}}
+                "stats": {"captures": len(captures), **stats, "skipped_titles": skipped[:8],
+                          **({"index_errors": index_errors[:8]} if index_errors else {})}}
 
     for cap in sample(captures, crawl.id):
         if len(prior) + len(rows) >= SAMPLE or fetched >= MAX_FETCHES:
@@ -405,7 +412,10 @@ def run(client: PoliteClient, taxonomy: Taxonomy, out: Path, archive: Archive | 
     tries: dict[str, int] = dict(state.get("empty") or {})
     redone = reextract(rows, state, archive, taxonomy)
     try:
-        crawls = pick_crawls(client.get_json(COLLINFO), today)
+        # Some crawls hold no Greenhouse or Lever pages at all (2016 H1, 2018 H1, 2022 H2 and 2025 H2
+        # came back with no captures, run after run); their half-year falls back to an earlier crawl.
+        no_pages = {k for k, v in state["crawls"].items() if not v.get("ads") and v.get("stats", {}).get("captures") == 0}
+        crawls = pick_crawls(client.get_json(COLLINFO), today, no_pages)
     except Exception as exc:  # noqa: BLE001 - keep any re-extraction; the next run tries again
         log.warning("history: crawl list unavailable: %s", exc)
         crawls = []
