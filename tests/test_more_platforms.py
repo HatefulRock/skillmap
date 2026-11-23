@@ -105,3 +105,21 @@ def test_crawl_tokens_read_the_subdomain_on_wildcard_hosts():
              '{"url": "https://acme.jobs.personio.de/job/1"}']
     assert discover.crawl_tokens(lines, "*.recruitee.com") == {"bunq"}
     assert discover.crawl_tokens(lines, "*.jobs.personio.de") == {"acme"}
+
+
+def test_discovering_one_platform_keeps_the_other_platforms_boards(tmp_path, monkeypatch):
+    import yaml
+
+    from skillmap import cli
+
+    out = tmp_path / "boards.yaml"
+    out.write_text(yaml.safe_dump({"boards": [
+        {"company": "Acme", "ats": "greenhouse", "token": "acme", "sector": "ai", "jobs": 9, "origin": "yc"},
+        {"company": "OldCo", "ats": "recruitee", "token": "oldco", "sector": None, "jobs": 3, "origin": "yc"}]}))
+    monkeypatch.setattr(discover, "load_candidates", lambda *a, **k: [])
+    monkeypatch.setattr(cli, "load_boards", lambda: [])
+    monkeypatch.setattr(discover, "discover", lambda *a, **k: (
+        [discover.Board("Bunq", "recruitee", "bunq", None, 40, "curated")], []))
+    cli.main(["discover", "--platforms", "recruitee", "--no-crawl", "--out", str(out)])
+    boards = {(b["company"], b["ats"]) for b in yaml.safe_load(out.read_text())["boards"]}
+    assert boards == {("Acme", "greenhouse"), ("Bunq", "recruitee")}
