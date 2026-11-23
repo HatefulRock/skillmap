@@ -166,3 +166,19 @@ def test_dashboard_review_fixes():
     assert roles.classify("Software Development Engineer II, AWS") == "backend"
     assert roles.classify("SDE II") == "backend"
     assert all(terms.ignored(t) for t in ["GmbH", "SE", "HYBRID", "TN", "AG"])
+
+
+def test_hn_threads_from_both_accounts():
+    from datetime import date
+
+    from skillmap.sources import hn
+
+    hits = {
+        "whoishiring": [{"objectID": "3", "created_at": "2015-06-01T14:55:02Z", "title": "Ask HN: Who is hiring? (June 2015)"},
+                        {"objectID": "1", "created_at": "2015-03-01T15:04:12Z", "title": "Ask HN: Who is hiring? (March 2015)"}],
+        "_whoishiring": [{"objectID": "2", "created_at": "2015-04-01T13:38:36Z", "title": "Ask HN: Who is hiring? (April 2015)"},
+                         {"objectID": "9", "created_at": "2015-04-01T13:38:36Z", "title": "Ask HN: Who wants to be hired? (April 2015)"}],
+    }
+    client = Fake(lambda url, p: {"hits": hits[p["tags"].split("author_", 1)[1]], "nbPages": 1})
+    threads = hn.list_threads(client, date(2015, 4, 1))
+    assert [t["id"] for t in threads] == ["3", "2"]

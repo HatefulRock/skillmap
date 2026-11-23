@@ -31,13 +31,25 @@ def _looks_like_location(part: str) -> bool:
     return bool(LOCATION_WORDS.search(part) or location.normalise(part)[0])
 
 
+# The account that posts the threads; April and May 2015 came from "_whoishiring" instead.
+AUTHORS = ("whoishiring", "_whoishiring")
+
+
 def list_threads(client: PoliteClient, since: date | None = None) -> list[dict]:
     """Monthly "Who is hiring?" threads, newest first, as {id, month (first day), title}."""
+    by_month: dict[date, dict] = {}
+    for author in AUTHORS:
+        for thread in _threads_by(client, author, since):
+            by_month.setdefault(thread["month"], thread)
+    return [by_month[m] for m in sorted(by_month, reverse=True)]
+
+
+def _threads_by(client: PoliteClient, author: str, since: date | None) -> list[dict]:
     threads: list[dict] = []
     page = 0
     while True:
         payload = client.get_json(
-            SEARCH, params={"tags": "story,author_whoishiring", "hitsPerPage": 200, "page": page}
+            SEARCH, params={"tags": f"story,author_{author}", "hitsPerPage": 200, "page": page}
         )
         for hit in payload.get("hits", []):
             match = THREAD_TITLE.match(hit.get("title") or "")
