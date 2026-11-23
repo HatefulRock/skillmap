@@ -111,6 +111,14 @@ def _salary(job: dict) -> tuple[float | None, float | None, str | None, str | No
     return low, high, pay.get("currency") if low and unit else None, unit if low else None
 
 
+def employer(job: dict) -> str:
+    """The hiring company a job page names, for job boards listing many companies (company "*")."""
+    org = job.get("hiringOrganization")
+    if isinstance(org, list):
+        org = org[0] if org else None
+    return str(org.get("name") or "").strip() if isinstance(org, dict) else str(org or "").strip()
+
+
 def parse(job: dict, url: str, company: str, sector: str | None = None) -> RawPosting:
     location, country, remote = _location(job)
     low, high, currency, period = _salary(job)
@@ -119,7 +127,8 @@ def parse(job: dict, url: str, company: str, sector: str | None = None) -> RawPo
     except ValueError:
         posted = None
     return RawPosting(
-        source="jsonld", native_id=native_id(url), company=company, title=str(job.get("title") or ""),
+        source="jsonld", native_id=native_id(url), company=employer(job) if company == "*" else company,
+        title=str(job.get("title") or ""),
         description=str(job.get("description") or ""), url=url, location=location, country_hint=country,
         remote_hint=remote or None, posted_on=posted, sector_hint=sector,
         salary_min=low, salary_max=high, salary_currency=currency, salary_period=period,
