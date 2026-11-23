@@ -1,5 +1,5 @@
 """Run a few collectors against the real sites with small limits and print what they parse.
-python scripts/sources_try.py [NAME ...]   (tiktok, oracle, getonbrd, remotive, workingnomads, gem)
+python scripts/sources_try.py [NAME ...]   (tiktok, oracle, getonbrd, remotive, workingnomads, gem, apple)
 Stores nothing."""
 
 from __future__ import annotations
@@ -9,8 +9,8 @@ import sys
 from datetime import date, timedelta
 
 from skillmap.http import PoliteClient
+from skillmap.sources import apple, gem, oracle_hcm, tiktok
 from skillmap.sources import boards_public as bp
-from skillmap.sources import gem, oracle_hcm, tiktok
 
 client = PoliteClient(min_interval=1.5)
 since = date.today() - timedelta(days=30)
@@ -22,6 +22,7 @@ runs = {
     "remotive": lambda: bp.remotive(client, ["software-development"], since),
     "workingnomads": lambda: bp.working_nomads(client, since),
     "gem": lambda: gem.collect(client, "gem", "Gem"),
+    "apple": lambda: apple.collect(client, "en-us", "Apple", max_pages=3, max_new_texts=4),
 }
 if "raw" in sys.argv:
     data = client.post_json(tiktok.API, {"keyword": "", "limit": 2, "offset": 0}, headers=tiktok.HEADERS)["data"]
