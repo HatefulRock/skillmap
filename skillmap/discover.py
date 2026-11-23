@@ -21,6 +21,7 @@ from __future__ import annotations
 import logging
 import re
 import time
+import xml.etree.ElementTree as ET
 from collections.abc import Callable, Iterable
 from concurrent.futures import ThreadPoolExecutor
 from dataclasses import dataclass, field
@@ -37,10 +38,10 @@ from .models import normalise_company
 log = logging.getLogger("skillmap.discover")
 CONFIG = Path(__file__).resolve().parents[1] / "config"
 YC_URL = "https://raw.githubusercontent.com/yc-oss/api/main/companies/all.json"
-ATS = ["greenhouse", "lever", "ashby", "workable", "smartrecruiters"]
+ATS = ["greenhouse", "lever", "ashby", "workable", "recruitee", "personio", "teamtailor", "smartrecruiters"]
 # SmartRecruiters' API host asks crawlers to stay away in its robots.txt, so it is only probed
 # when asked for explicitly (`--platforms ...,smartrecruiters`).
-DEFAULT_ATS = ["greenhouse", "lever", "ashby", "workable"]
+DEFAULT_ATS = ["greenhouse", "lever", "ashby", "workable", "recruitee", "personio", "teamtailor"]
 # Give up on a platform after this many probes in a row that ended in "429 Too Many Requests".
 RATE_LIMITED_GIVE_UP = 20
 _DROP_WORDS = re.compile(r"\b(?:ai|labs?|inc|hq|technologies|technology|tech|app|io|the|co|group|holdings|global)\b")
@@ -169,6 +170,43 @@ def probe_workable(client: PoliteClient, token: str) -> tuple[int, str | None] |
     return len(board["jobs"]), board.get("name")
 
 
+def probe_recruitee(client: PoliteClient, token: str) -> tuple[int, str | None] | None:
+    board = _get(client, f"https://{token}.recruitee.com/api/offers/")
+    if not isinstance(board, dict) or "offers" not in board:
+        return None
+    offers = board["offers"] or []
+    return len(offers), (offers[0].get("company_name") if offers else None)
+
+
+def _get_xml(client: PoliteClient, url: str) -> ET.Element | None:
+    response = client.request("GET", url)
+    if response.status_code in (400, 401, 403, 404, 410, 422):
+        return None
+    response.raise_for_status()
+    text = response.text
+    if "<!DOCTYPE" in text[:500] or "<!ENTITY" in text:
+        return None
+    try:
+        return ET.fromstring(text.encode())
+    except ET.ParseError:
+        return None
+
+
+def probe_personio(client: PoliteClient, token: str) -> tuple[int, str | None] | None:
+    root = _get_xml(client, f"https://{token}.jobs.personio.de/xml?language=en")
+    if root is None or root.tag != "workzag-jobs":
+        return None
+    jobs = list(root.iter("position"))
+    return len(jobs), (jobs[0].findtext("subcompany") or None) if jobs else None
+
+
+def probe_teamtailor(client: PoliteClient, token: str) -> tuple[int, str | None] | None:
+    root = _get_xml(client, f"https://{token}.teamtailor.com/jobs.rss")
+    if root is None or root.tag != "rss":
+        return None
+    return len(list(root.iter("item"))), (root.findtext("channel/title") or None)
+
+
 def probe_smartrecruiters(client: PoliteClient, token: str) -> tuple[int, str | None] | None:
     page = _get(client, f"https://api.smartrecruiters.com/v1/companies/{token}/postings", params={"limit": 1})
     if not isinstance(page, dict) or not page.get("totalFound"):
@@ -179,6 +217,7 @@ def probe_smartrecruiters(client: PoliteClient, token: str) -> tuple[int, str | 
 
 PROBES: dict[str, Probe] = {
     "greenhouse": probe_greenhouse, "lever": probe_lever, "ashby": probe_ashby, "workable": probe_workable,
+    "recruitee": probe_recruitee, "personio": probe_personio, "teamtailor": probe_teamtailor,
     "smartrecruiters": probe_smartrecruiters,
 }
 
@@ -285,12 +324,17 @@ CRAWL_HOSTS = {
     "lever": ["jobs.lever.co"],
     "ashby": ["jobs.ashbyhq.com"],
     "workable": ["apply.workable.com"],
+    # On these the board is the subdomain ("*." hosts), not the first path segment.
+    "recruitee": ["*.recruitee.com"],
+    "personio": ["*.jobs.personio.de"],
+    "teamtailor": ["*.teamtailor.com"],
 }
 CRAWL_MIN_JOBS = 5
 CRAWL_MAX_PAGES = 20  # index pages per host; each holds a few thousand URLs
 _TOKEN = re.compile(r"^[A-Za-z0-9][A-Za-z0-9_.-]{1,60}$")
 _NOT_TOKENS = {"embed", "api", "v1", "jobs", "j", "careers", "static", "assets", "favicon.ico", "robots.txt",
-               "sitemap.xml", "search", "login", "signin", "privacy", "terms", "en", "job_board"}
+               "sitemap.xml", "search", "login", "signin", "privacy", "terms", "en", "job_board",
+               "www", "app", "status", "help", "support", "docs", "blog", "api-docs"}
 
 
 def crawl_tokens(lines: Iterable[str], host: str) -> set[str]:
@@ -301,9 +345,15 @@ def crawl_tokens(lines: Iterable[str], host: str) -> set[str]:
         if not match:
             continue
         url = urlparse(match.group(1))
-        if url.netloc.lower().split(":")[0] != host:
+        netloc = url.netloc.lower().split(":")[0]
+        if host.startswith("*."):
+            suffix = host[1:]
+            label = netloc[: -len(suffix)] if netloc.endswith(suffix) else ""
+            first = label if "." not in label else ""
+        elif netloc != host:
             continue
-        first = url.path.strip("/").split("/", 1)[0]
+        else:
+            first = url.path.strip("/").split("/", 1)[0]
         if _TOKEN.match(first) and first.lower() not in _NOT_TOKENS:
             out.add(first.lower())
     return out
@@ -322,7 +372,7 @@ def crawl_candidates(client: PoliteClient, platforms: Iterable[str], known: set[
     for ats in platforms:
         tokens: set[str] = set()
         for host in CRAWL_HOSTS.get(ats, []):
-            query = {"url": f"{host}/*", "output": "json", "fl": "url"}
+            query = {"url": host if host.startswith("*.") else f"{host}/*", "output": "json", "fl": "url"}
             try:
                 pages = int(client.get_json(crawl, params={**query, "showNumPages": "true"}).get("pages", 0))
                 for page in range(min(pages, max_pages)):

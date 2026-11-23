@@ -16,7 +16,7 @@ from datetime import date
 
 @dataclass
 class RawPosting:
-    source: str  # greenhouse | lever | ashby | workable | smartrecruiters | workday | amazon | adzuna | hn | mcf | himalayas | jobicy | remoteok | arbeitnow
+    source: str  # greenhouse | lever | ashby | workable | recruitee | personio | teamtailor | smartrecruiters | workday | amazon | adzuna | hn | mcf | himalayas | jobicy | remoteok | arbeitnow
     native_id: str
     company: str
     title: str

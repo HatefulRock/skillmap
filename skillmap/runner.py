@@ -31,7 +31,10 @@ from .sources import (
     lever,
     mcf,
     microsoft,
+    personio,
+    recruitee,
     smartrecruiters,
+    teamtailor,
     workable,
     workday,
 )
@@ -40,6 +43,7 @@ from .store import Store
 log = logging.getLogger("skillmap")
 CONFIG = Path(__file__).resolve().parents[1] / "config"
 BOARDS = {"greenhouse": greenhouse, "lever": lever, "ashby": ashby, "workable": workable,
+          "recruitee": recruitee, "personio": personio, "teamtailor": teamtailor,
           "smartrecruiters": smartrecruiters, "workday": workday, "amazon": amazon, "microsoft": microsoft,
           "jsonld": jsonld}
 # Platforms whose list gives no text: their collectors fetch text only for postings not stored yet.
