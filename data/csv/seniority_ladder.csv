@@ -1,71 +1,71 @@
 skill,seniority,share
-AI agents / agentic workflows,junior,0.138
-AI agents / agentic workflows,mid,0.171
-AI agents / agentic workflows,senior,0.245
-AI agents / agentic workflows,staff,0.312
-AI agents / agentic workflows,manager,0.283
-Observability / monitoring,junior,0.143
-Observability / monitoring,mid,0.147
-Observability / monitoring,senior,0.245
-Observability / monitoring,staff,0.309
-Observability / monitoring,manager,0.213
-Distributed systems,junior,0.142
-Distributed systems,mid,0.125
-Distributed systems,senior,0.205
-Distributed systems,staff,0.295
-Distributed systems,manager,0.227
-Cloud (unspecified),junior,0.18
+AI agents / agentic workflows,junior,0.135
+AI agents / agentic workflows,mid,0.168
+AI agents / agentic workflows,senior,0.236
+AI agents / agentic workflows,staff,0.305
+AI agents / agentic workflows,manager,0.275
+Observability / monitoring,junior,0.141
+Observability / monitoring,mid,0.148
+Observability / monitoring,senior,0.236
+Observability / monitoring,staff,0.306
+Observability / monitoring,manager,0.208
+Distributed systems,junior,0.14
+Distributed systems,mid,0.124
+Distributed systems,senior,0.199
+Distributed systems,staff,0.292
+Distributed systems,manager,0.221
+Cloud (unspecified),junior,0.176
 Cloud (unspecified),mid,0.187
-Cloud (unspecified),senior,0.305
-Cloud (unspecified),staff,0.327
-Cloud (unspecified),manager,0.227
-AWS,junior,0.184
-AWS,mid,0.225
-AWS,senior,0.323
-AWS,staff,0.313
-AWS,manager,0.187
-Financial services / banking domain,junior,0.059
-Financial services / banking domain,mid,0.149
-Financial services / banking domain,senior,0.131
-Financial services / banking domain,staff,0.171
-Financial services / banking domain,manager,0.274
-CI/CD,junior,0.154
-CI/CD,mid,0.177
-CI/CD,senior,0.271
-CI/CD,staff,0.266
-CI/CD,manager,0.144
-Kubernetes,junior,0.122
-Kubernetes,mid,0.116
-Kubernetes,senior,0.21
-Kubernetes,staff,0.232
-Kubernetes,manager,0.128
+Cloud (unspecified),senior,0.296
+Cloud (unspecified),staff,0.326
+Cloud (unspecified),manager,0.221
+AWS,junior,0.183
+AWS,mid,0.223
+AWS,senior,0.31
+AWS,staff,0.309
+AWS,manager,0.18
+CI/CD,junior,0.152
+CI/CD,mid,0.179
+CI/CD,senior,0.261
+CI/CD,staff,0.264
+CI/CD,manager,0.138
+Financial services / banking domain,junior,0.058
+Financial services / banking domain,mid,0.147
+Financial services / banking domain,senior,0.126
+Financial services / banking domain,staff,0.168
+Financial services / banking domain,manager,0.259
 "SRE (SLOs, on-call)",junior,0.042
-"SRE (SLOs, on-call)",mid,0.073
-"SRE (SLOs, on-call)",senior,0.127
-"SRE (SLOs, on-call)",staff,0.15
-"SRE (SLOs, on-call)",manager,0.131
-Statistics,junior,0.164
+"SRE (SLOs, on-call)",mid,0.074
+"SRE (SLOs, on-call)",senior,0.125
+"SRE (SLOs, on-call)",staff,0.149
+"SRE (SLOs, on-call)",manager,0.129
+Kubernetes,junior,0.121
+Kubernetes,mid,0.116
+Kubernetes,senior,0.201
+Kubernetes,staff,0.228
+Kubernetes,manager,0.121
+LLMs / GenAI (general),junior,0.201
+LLMs / GenAI (general),mid,0.22
+LLMs / GenAI (general),senior,0.236
+LLMs / GenAI (general),staff,0.302
+LLMs / GenAI (general),manager,0.306
+Statistics,junior,0.16
 Statistics,mid,0.066
-Statistics,senior,0.066
-Statistics,staff,0.061
-Statistics,manager,0.058
-LLMs / GenAI (general),junior,0.205
-LLMs / GenAI (general),mid,0.221
-LLMs / GenAI (general),senior,0.241
-LLMs / GenAI (general),staff,0.306
-LLMs / GenAI (general),manager,0.312
+Statistics,senior,0.065
+Statistics,staff,0.06
+Statistics,manager,0.057
 Guardrails / AI safety,junior,0.027
 Guardrails / AI safety,mid,0.05
-Guardrails / AI safety,senior,0.066
+Guardrails / AI safety,senior,0.064
 Guardrails / AI safety,staff,0.114
-Guardrails / AI safety,manager,0.102
-Terraform,junior,0.034
+Guardrails / AI safety,manager,0.101
+Terraform,junior,0.035
 Terraform,mid,0.057
-Terraform,senior,0.109
-Terraform,staff,0.11
-Terraform,manager,0.051
-Data structures & algorithms,junior,0.175
-Data structures & algorithms,mid,0.07
-Data structures & algorithms,senior,0.083
-Data structures & algorithms,staff,0.102
-Data structures & algorithms,manager,0.037
+Terraform,senior,0.104
+Terraform,staff,0.109
+Terraform,manager,0.049
+Azure,junior,0.104
+Azure,mid,0.133
+Azure,senior,0.18
+Azure,staff,0.177
+Azure,manager,0.097

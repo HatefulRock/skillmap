@@ -1,41 +1,41 @@
 company,live_postings,previous_window,delta,sector,top_role,top_skills
-Amazon,2818,0,2818,tech,backend,AWS; OOP / design patterns; System design / architecture; Java; Cloud (unspecified); C++
-TikTok,1346,0,1346,tech,ai_ml,Python; Machine learning fundamentals; C++; Data structures & algorithms; LLMs / GenAI (general); Java
-Bjak,718,0,718,fintech,ai_ml,Financial services / banking domain; Distributed systems; LLMs / GenAI (general); KYC / AML / fraud; LLM evaluation; Payments
-Databricks,653,0,653,ai,fde,Apache Iceberg / Delta Lake; Databricks; Excel / spreadsheets; Unity Catalog / data catalogs; Python; AWS
-OpenAI,512,0,512,ai,ai_ml,OpenAI API / GPT models; CDN / edge; Python; Observability / monitoring; Distributed systems; AI agents / agentic workflows
-Microsoft,501,0,501,tech,ai_ml,Azure; Python; Cloud (unspecified); C++; AI agents / agentic workflows; C#
-Accenture Federal Services,416,0,416,other,infra,AWS; Cloud (unspecified); Python; CI/CD; Docker; Agile / Scrum
-NVIDIA,380,0,380,ai,other_eng,"GPUs (general); Python; GPU clouds & HPC (Slurm, CoreWeave); C++; Linux; Deep learning"
+Apple,4316,0,4316,tech,other_eng,Machine learning fundamentals; ASIC / RTL design; LLMs / GenAI (general); GPUs (general); iOS; Data structures & algorithms
+Amazon,2884,0,2884,tech,backend,AWS; OOP / design patterns; System design / architecture; Java; C++; Cloud (unspecified)
+TikTok,1358,0,1358,tech,ai_ml,Python; Machine learning fundamentals; C++; Data structures & algorithms; LLMs / GenAI (general); Java
+Bjak,741,0,741,fintech,ai_ml,Financial services / banking domain; Distributed systems; LLMs / GenAI (general); KYC / AML / fraud; LLM evaluation; Payments
+Databricks,661,0,661,ai,fde,Databricks; Apache Iceberg / Delta Lake; Excel / spreadsheets; Unity Catalog / data catalogs; Python; AWS
+Accenture,627,0,627,other,infra,Cloud (unspecified); AWS; Python; CI/CD; Docker; Azure
+Microsoft,516,0,516,tech,ai_ml,Azure; Python; Cloud (unspecified); C++; AI agents / agentic workflows; C#
+OpenAI,513,0,513,ai,ai_ml,OpenAI API / GPT models; CDN / edge; Python; Observability / monitoring; Distributed systems; AI agents / agentic workflows
+NVIDIA,389,0,389,ai,other_eng,"GPUs (general); Python; GPU clouds & HPC (Slurm, CoreWeave); C++; Linux; Deep learning"
 Anthropic,365,0,365,ai,ai_ml,Anthropic Claude; Financial services / banking domain; Guardrails / AI safety; Interpretability / explainability; Multimodal / vision-language models; OpenAI API / GPT models
 Shield AI,355,0,355,ai,other_eng,Robotics / ROS; Python; C++; Linux; Industrial control (PLC / SCADA); CI/CD
-Stripe,306,0,306,fintech,backend,Stripe; Financial services / banking domain; Java; Python; Ruby; Go
+Stripe,313,0,313,fintech,backend,Stripe; Financial services / banking domain; Python; Java; Ruby; Go
+JPMorgan Chase,307,0,307,fintech,backend,Python; CI/CD; Financial services / banking domain; AWS; Guardrails / AI safety; AI-assisted development
+Citi,294,0,294,fintech,backend,Java; SQL; Financial services / banking domain; CI/CD; Python; Docker
 Elastic,291,0,291,tech,backend,Elasticsearch / OpenSearch; Observability / monitoring; Java; Concurrency / multithreading; Data structures & algorithms; Distributed systems
-Citi,290,0,290,fintech,backend,Java; SQL; Financial services / banking domain; CI/CD; Python; Docker
-Cloudflare,281,0,281,tech,fde,"CDN / edge; DNS; Other clouds (IBM, Alibaba, DigitalOcean); Distributed systems; Go; Observability / monitoring"
-Intel,246,0,246,tech,other_eng,Python; ASIC / RTL design; CPU / computer architecture; C++; Statistics; Linux
-Capital One,241,0,241,fintech,backend,AWS; Python; Statistics; Operations research / optimization; Cloud (unspecified); Azure
+Cloudflare,282,0,282,tech,fde,"CDN / edge; DNS; Other clouds (IBM, Alibaba, DigitalOcean); Distributed systems; Go; Observability / monitoring"
+Micron,258,0,258,tech,other_eng,Python; AI agents / agentic workflows; LLMs / GenAI (general); Statistics; Deep learning; ASIC / RTL design
+Intel,252,0,252,tech,other_eng,Python; ASIC / RTL design; CPU / computer architecture; C++; Statistics; Linux
+Capital One,242,0,242,fintech,backend,AWS; Python; Statistics; Operations research / optimization; Cloud (unspecified); Azure
+Snowflake,237,0,237,tech,fde,Snowflake; AI agents / agentic workflows; Python; SQL; Cloud (unspecified); AWS
 Zscaler,237,0,237,other,backend,"Cloud security posture (Wiz, CSPM); Firewalls / SASE (Palo Alto, Zscaler); Zero trust; Cloud (unspecified); LLMs / GenAI (general); Python"
-Snowflake,236,0,236,tech,fde,AI agents / agentic workflows; Snowflake; Python; SQL; Cloud (unspecified); AWS
 Palantir,230,0,230,tech,fde,Python; Java; C++; JavaScript; Data structures & algorithms; Cloud (unspecified)
-Micron,224,0,224,tech,other_eng,Python; AI agents / agentic workflows; LLMs / GenAI (general); Statistics; Deep learning; PCB / electronics design
-Okta,215,0,215,tech,backend,Machine learning fundamentals; Okta / identity providers; AWS; Cloud (unspecified); Java; IAM
-Fidelity Investments,212,0,212,fintech,trading_biz,Financial services / banking domain; Trading / quant / markets; AWS; CI/CD; Python; Cloud (unspecified)
-Salesforce,208,0,208,tech,fde,AI agents / agentic workflows; Salesforce; LLMs / GenAI (general); Python; Java; JavaScript
+Okta,216,0,216,tech,backend,Machine learning fundamentals; Okta / identity providers; AWS; Cloud (unspecified); Java; IAM
+Fidelity Investments,213,0,213,fintech,trading_biz,Financial services / banking domain; Trading / quant / markets; AWS; CI/CD; Python; Cloud (unspecified)
+Salesforce,209,0,209,tech,fde,AI agents / agentic workflows; Salesforce; LLMs / GenAI (general); Python; Java; JavaScript
 Roblox,207,0,207,tech,backend,C++; Python; Distributed systems; Go; Observability / monitoring; Machine learning fundamentals
-Accenture,202,0,202,tech,ai_ml,Python; LLMs / GenAI (general); AI agents / agentic workflows; Cloud (unspecified); AWS; Azure
-MongoDB,200,0,200,tech,backend,MongoDB; AWS; Azure; Cloud (unspecified); GCP; Distributed systems
-Barclays,199,0,199,fintech,backend,Unit / integration testing; CI/CD; AWS; Java; Financial services / banking domain; Python
+Barclays,202,0,202,fintech,backend,Unit / integration testing; CI/CD; AWS; Financial services / banking domain; Java; Python
+MongoDB,200,0,200,tech,other_eng,MongoDB; AWS; Azure; Cloud (unspecified); GCP; Distributed systems
+Broadcom,189,0,189,tech,other_eng,"ASIC / RTL design; Python; Perl; Verilog / SystemVerilog / VHDL; Hardware interfaces (I2C, SPI, UART, CAN); PCB / electronics design"
 Affirm,185,0,185,fintech,backend,"Python; SRE (SLOs, on-call); Kotlin; AWS; Kubernetes; MySQL"
-State Street,182,0,182,fintech,backend,Financial services / banking domain; Cloud (unspecified); Azure; Python; AWS; Java
-Qube Research & Technologies,181,0,181,fintech,quant,Python; Trading / quant / markets; C++; Linux; Cost / latency optimization; Cloud (unspecified)
-Thomson Reuters,178,0,178,tech,ai_ml,LLMs / GenAI (general); Python; AWS; AI agents / agentic workflows; Observability / monitoring; Cloud (unspecified)
-OKX,177,0,177,crypto,ai_ml,Crypto / Web3 / blockchain; Trading / quant / markets; Financial services / banking domain; AI agents / agentic workflows; Java; Query optimization / performance tuning
-Broadcom,176,0,176,tech,other_eng,ASIC / RTL design; Python; Perl; Verilog / SystemVerilog / VHDL; PCB / electronics design; C++
-Workday,175,0,175,tech,ai_ml,Python; Cloud (unspecified); AWS; CI/CD; AI agents / agentic workflows; Observability / monitoring
-Deutsche Bank,174,0,174,fintech,other_eng,Excel / spreadsheets; Financial services / banking domain; HTML / CSS; CI/CD; Python; Java
-HP,168,0,168,tech,ai_ml,Python; Embedded C / firmware; SQL; Agile / Scrum; C++; AI agents / agentic workflows
-Mastercard,166,0,166,fintech,backend,CI/CD; Observability / monitoring; Java; Cloud (unspecified); System design / architecture; Distributed systems
-Visa,166,0,166,fintech,ai_ml,LLMs / GenAI (general); Observability / monitoring; Cloud (unspecified); Python; Docker; Java
-CoreWeave,164,0,164,ai,infra,"Data labelling; GPU clouds & HPC (Slurm, CoreWeave); Kubernetes; Cloud (unspecified); Python; GPUs (general)"
-CrowdStrike,164,0,164,tech,other_eng,Distributed systems; Guardrails / AI safety; Security operations (SOC / incident response); Python; AWS; GCP
+State Street,184,0,184,fintech,backend,Financial services / banking domain; Cloud (unspecified); Azure; Python; AWS; Java
+Qube Research & Technologies,182,0,182,fintech,quant,Python; Trading / quant / markets; C++; Linux; Cost / latency optimization; Cloud (unspecified)
+Thomson Reuters,180,0,180,tech,ai_ml,LLMs / GenAI (general); Python; AWS; AI agents / agentic workflows; Observability / monitoring; Cloud (unspecified)
+Airwallex,179,0,179,fintech,backend,KYC / AML / fraud; Financial services / banking domain; Python; GCP; Distributed systems; Observability / monitoring
+Okx,177,0,177,crypto,ai_ml,Crypto / Web3 / blockchain; Trading / quant / markets; Financial services / banking domain; AI agents / agentic workflows; Java; Query optimization / performance tuning
+Workday,177,0,177,tech,ai_ml,Python; Cloud (unspecified); AWS; CI/CD; AI agents / agentic workflows; Observability / monitoring
+Deutsche Bank,176,0,176,fintech,other_eng,Excel / spreadsheets; Financial services / banking domain; HTML / CSS; CI/CD; Java; Python
+HP,171,0,171,tech,ai_ml,Python; Embedded C / firmware; SQL; Agile / Scrum; C++; AI agents / agentic workflows
+Mastercard,171,0,171,fintech,backend,CI/CD; Observability / monitoring; Java; Cloud (unspecified); System design / architecture; Distributed systems
+Visa,167,0,167,fintech,ai_ml,LLMs / GenAI (general); Observability / monitoring; Cloud (unspecified); Python; Docker; Java
