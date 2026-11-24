@@ -1,71 +1,71 @@
 skill,seniority,share
-AI agents / agentic workflows,junior,0.135
+AI agents / agentic workflows,junior,0.133
 AI agents / agentic workflows,mid,0.168
-AI agents / agentic workflows,senior,0.236
-AI agents / agentic workflows,staff,0.305
-AI agents / agentic workflows,manager,0.275
-Observability / monitoring,junior,0.141
+AI agents / agentic workflows,senior,0.237
+AI agents / agentic workflows,staff,0.294
+AI agents / agentic workflows,manager,0.276
+Observability / monitoring,junior,0.146
 Observability / monitoring,mid,0.148
-Observability / monitoring,senior,0.236
-Observability / monitoring,staff,0.306
-Observability / monitoring,manager,0.208
-Distributed systems,junior,0.14
+Observability / monitoring,senior,0.24
+Observability / monitoring,staff,0.298
+Observability / monitoring,manager,0.206
+Distributed systems,junior,0.144
 Distributed systems,mid,0.124
-Distributed systems,senior,0.199
-Distributed systems,staff,0.292
-Distributed systems,manager,0.221
-Cloud (unspecified),junior,0.176
-Cloud (unspecified),mid,0.187
-Cloud (unspecified),senior,0.296
-Cloud (unspecified),staff,0.326
-Cloud (unspecified),manager,0.221
-AWS,junior,0.183
-AWS,mid,0.223
-AWS,senior,0.31
-AWS,staff,0.309
-AWS,manager,0.18
-CI/CD,junior,0.152
-CI/CD,mid,0.179
-CI/CD,senior,0.261
-CI/CD,staff,0.264
-CI/CD,manager,0.138
-Financial services / banking domain,junior,0.058
-Financial services / banking domain,mid,0.147
-Financial services / banking domain,senior,0.126
-Financial services / banking domain,staff,0.168
-Financial services / banking domain,manager,0.259
-"SRE (SLOs, on-call)",junior,0.042
-"SRE (SLOs, on-call)",mid,0.074
-"SRE (SLOs, on-call)",senior,0.125
-"SRE (SLOs, on-call)",staff,0.149
-"SRE (SLOs, on-call)",manager,0.129
-Kubernetes,junior,0.121
-Kubernetes,mid,0.116
-Kubernetes,senior,0.201
-Kubernetes,staff,0.228
-Kubernetes,manager,0.121
-LLMs / GenAI (general),junior,0.201
-LLMs / GenAI (general),mid,0.22
-LLMs / GenAI (general),senior,0.236
-LLMs / GenAI (general),staff,0.302
-LLMs / GenAI (general),manager,0.306
-Statistics,junior,0.16
+Distributed systems,senior,0.2
+Distributed systems,staff,0.284
+Distributed systems,manager,0.22
+Cloud (unspecified),junior,0.18
+Cloud (unspecified),mid,0.188
+Cloud (unspecified),senior,0.298
+Cloud (unspecified),staff,0.319
+Cloud (unspecified),manager,0.224
+AWS,junior,0.191
+AWS,mid,0.226
+AWS,senior,0.313
+AWS,staff,0.301
+AWS,manager,0.182
+Financial services / banking domain,junior,0.06
+Financial services / banking domain,mid,0.148
+Financial services / banking domain,senior,0.13
+Financial services / banking domain,staff,0.164
+Financial services / banking domain,manager,0.257
+Statistics,junior,0.163
 Statistics,mid,0.066
-Statistics,senior,0.065
-Statistics,staff,0.06
-Statistics,manager,0.057
+Statistics,senior,0.066
+Statistics,staff,0.059
+Statistics,manager,0.06
+"SRE (SLOs, on-call)",junior,0.044
+"SRE (SLOs, on-call)",mid,0.076
+"SRE (SLOs, on-call)",senior,0.129
+"SRE (SLOs, on-call)",staff,0.145
+"SRE (SLOs, on-call)",manager,0.129
+CI/CD,junior,0.159
+CI/CD,mid,0.18
+CI/CD,senior,0.263
+CI/CD,staff,0.259
+CI/CD,manager,0.14
+Kubernetes,junior,0.128
+Kubernetes,mid,0.118
+Kubernetes,senior,0.203
+Kubernetes,staff,0.222
+Kubernetes,manager,0.127
+LLMs / GenAI (general),junior,0.201
+LLMs / GenAI (general),mid,0.221
+LLMs / GenAI (general),senior,0.239
+LLMs / GenAI (general),staff,0.292
+LLMs / GenAI (general),manager,0.302
 Guardrails / AI safety,junior,0.027
-Guardrails / AI safety,mid,0.05
+Guardrails / AI safety,mid,0.049
 Guardrails / AI safety,senior,0.064
-Guardrails / AI safety,staff,0.114
-Guardrails / AI safety,manager,0.101
-Terraform,junior,0.035
-Terraform,mid,0.057
-Terraform,senior,0.104
-Terraform,staff,0.109
-Terraform,manager,0.049
-Azure,junior,0.104
-Azure,mid,0.133
-Azure,senior,0.18
-Azure,staff,0.177
-Azure,manager,0.097
+Guardrails / AI safety,staff,0.112
+Guardrails / AI safety,manager,0.099
+Git,junior,0.145
+Git,mid,0.116
+Git,senior,0.105
+Git,staff,0.067
+Git,manager,0.027
+C++,junior,0.196
+C++,mid,0.103
+C++,senior,0.117
+C++,staff,0.122
+C++,manager,0.047

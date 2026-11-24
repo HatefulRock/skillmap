@@ -1,73 +1,73 @@
 role_family,skill,share,share_elsewhere,lift
-fde,Pre-sales / solution architecture / PoCs,0.485,0.025,19.62
-fde,Excel / spreadsheets,0.11,0.031,3.52
-fde,Databricks,0.12,0.035,3.39
-fde,RAG,0.112,0.05,2.26
-fde,Azure,0.229,0.123,1.87
-fde,GCP,0.199,0.112,1.78
-fde,Cloud (unspecified),0.353,0.221,1.6
-fde,JavaScript,0.127,0.085,1.49
-ai_ml,PyTorch,0.152,0.012,12.74
-ai_ml,Deep learning,0.132,0.013,10.49
-ai_ml,Fine-tuning,0.107,0.012,8.74
-ai_ml,LLM evaluation,0.22,0.029,7.71
-ai_ml,Multimodal / vision-language models,0.102,0.016,6.48
-ai_ml,MLOps / LLMOps,0.124,0.023,5.4
-ai_ml,RAG,0.145,0.03,4.8
-ai_ml,Prompt engineering,0.111,0.025,4.53
-data,dbt,0.205,0.009,22.3
-data,Airflow,0.224,0.013,17.63
-data,Tableau,0.139,0.009,14.96
-data,"ETL tools (Informatica, SSIS, Talend)",0.107,0.007,14.63
-data,Power BI,0.134,0.01,13.4
-data,BI (general),0.303,0.023,13.29
-data,Data quality,0.384,0.032,12.16
-data,Data modeling / warehousing,0.458,0.041,11.19
-backend,OOP / design patterns,0.192,0.042,4.53
-backend,C#,0.126,0.029,4.32
-backend,Concurrency / multithreading,0.113,0.027,4.17
-backend,Full-stack,0.218,0.058,3.75
-backend,Microservices,0.148,0.041,3.66
-backend,PostgreSQL,0.133,0.039,3.39
-backend,Java,0.342,0.108,3.16
-backend,React,0.185,0.059,3.16
-frontend,React Native,0.116,0.006,20.79
-frontend,Swift,0.177,0.009,20.78
-frontend,Android,0.309,0.016,19.54
-frontend,iOS,0.303,0.017,18.16
-frontend,Kotlin,0.216,0.02,11.0
-frontend,Redux / state management,0.142,0.013,10.73
-frontend,Accessibility (WCAG),0.128,0.014,9.34
-frontend,HTML / CSS,0.207,0.031,6.69
-infra,Vulnerability management,0.115,0.006,17.71
-infra,Security operations (SOC / incident response),0.139,0.011,12.3
-infra,Threat detection / intelligence,0.146,0.014,10.61
-infra,"Cloud security posture (Wiz, CSPM)",0.117,0.015,7.61
-infra,Application security (AppSec),0.112,0.016,7.15
-infra,IAM,0.124,0.024,5.26
-infra,TLS / PKI / certificates,0.129,0.026,5.0
-infra,Incident response / on-call,0.28,0.064,4.41
-quant,Trading / quant / markets,0.857,0.023,37.94
-quant,Risk modelling,0.342,0.037,9.23
-quant,Statistics,0.507,0.063,8.05
-quant,Time series / forecasting,0.151,0.026,5.71
-quant,C++,0.463,0.12,3.85
-quant,Crypto / Web3 / blockchain,0.104,0.028,3.76
-quant,Cost / latency optimization,0.204,0.059,3.43
-quant,Data structures & algorithms,0.206,0.091,2.27
-trading_biz,Trading / quant / markets,0.761,0.027,27.98
-trading_biz,Crypto / Web3 / blockchain,0.248,0.027,9.21
-trading_biz,Risk modelling,0.333,0.038,8.66
-trading_biz,Financial services / banking domain,0.563,0.13,4.33
-trading_biz,Excel / spreadsheets,0.124,0.038,3.28
-trading_biz,Statistics,0.121,0.068,1.78
-trading_biz,SQL,0.159,0.16,0.99
-trading_biz,Python,0.251,0.371,0.68
-other_eng,ASIC / RTL design,0.105,0.005,22.34
-other_eng,Linux,0.126,0.102,1.24
-other_eng,Python,0.263,0.398,0.66
-other_eng,CI/CD,0.128,0.209,0.61
-other_eng,Observability / monitoring,0.119,0.21,0.57
-other_eng,Distributed systems,0.11,0.197,0.56
-other_eng,Cloud (unspecified),0.139,0.257,0.54
-other_eng,AI agents / agentic workflows,0.122,0.243,0.5
+fde,Pre-sales / solution architecture / PoCs,0.487,0.025,19.82
+fde,Excel / spreadsheets,0.108,0.031,3.53
+fde,Databricks,0.119,0.035,3.42
+fde,RAG,0.11,0.049,2.24
+fde,Azure,0.23,0.122,1.89
+fde,GCP,0.198,0.116,1.71
+fde,Cloud (unspecified),0.355,0.225,1.57
+fde,JavaScript,0.128,0.084,1.52
+ai_ml,PyTorch,0.15,0.012,12.47
+ai_ml,Deep learning,0.13,0.013,10.4
+ai_ml,Fine-tuning,0.106,0.012,8.79
+ai_ml,LLM evaluation,0.215,0.028,7.64
+ai_ml,MLOps / LLMOps,0.123,0.023,5.45
+ai_ml,RAG,0.143,0.03,4.81
+ai_ml,Machine learning fundamentals,0.464,0.1,4.66
+ai_ml,Prompt engineering,0.109,0.024,4.53
+data,dbt,0.211,0.009,22.98
+data,Redshift,0.1,0.005,19.23
+data,Airflow,0.22,0.013,17.42
+data,Tableau,0.14,0.009,15.05
+data,"ETL tools (Informatica, SSIS, Talend)",0.104,0.007,14.32
+data,BI (general),0.303,0.022,13.45
+data,Power BI,0.134,0.01,13.41
+data,Data modeling / warehousing,0.45,0.041,11.11
+backend,C#,0.128,0.029,4.46
+backend,Concurrency / multithreading,0.112,0.027,4.18
+backend,Full-stack,0.217,0.057,3.81
+backend,Microservices,0.152,0.041,3.69
+backend,OOP / design patterns,0.193,0.055,3.54
+backend,Event-driven architecture,0.1,0.029,3.4
+backend,PostgreSQL,0.135,0.041,3.33
+backend,Java,0.347,0.107,3.25
+frontend,Android,0.478,0.021,22.89
+frontend,iOS,0.472,0.022,21.76
+frontend,Kotlin,0.407,0.019,20.89
+frontend,Stripe,0.251,0.015,17.07
+frontend,Swift,0.132,0.009,15.48
+frontend,Speech (ASR / TTS),0.253,0.017,14.8
+frontend,"Other clouds (IBM, Alibaba, DigitalOcean)",0.253,0.026,9.86
+frontend,"Java ecosystem (Hibernate, Spring, JUnit)",0.281,0.031,9.13
+infra,Vulnerability management,0.116,0.006,18.16
+infra,Security operations (SOC / incident response),0.139,0.011,12.4
+infra,Threat detection / intelligence,0.149,0.013,11.07
+infra,"Cloud security posture (Wiz, CSPM)",0.115,0.015,7.57
+infra,Application security (AppSec),0.113,0.015,7.4
+infra,IAM,0.127,0.023,5.55
+infra,TLS / PKI / certificates,0.136,0.026,5.27
+infra,Incident response / on-call,0.285,0.063,4.49
+quant,Trading / quant / markets,0.857,0.022,38.78
+quant,Risk modelling,0.337,0.038,8.97
+quant,Statistics,0.508,0.063,8.01
+quant,Time series / forecasting,0.151,0.026,5.74
+quant,C++,0.46,0.119,3.86
+quant,Crypto / Web3 / blockchain,0.102,0.027,3.79
+quant,Cost / latency optimization,0.203,0.059,3.47
+quant,Data structures & algorithms,0.205,0.09,2.28
+trading_biz,Trading / quant / markets,0.761,0.027,28.6
+trading_biz,Crypto / Web3 / blockchain,0.245,0.026,9.35
+trading_biz,Risk modelling,0.337,0.039,8.65
+trading_biz,Financial services / banking domain,0.556,0.13,4.27
+trading_biz,Excel / spreadsheets,0.127,0.037,3.42
+trading_biz,Statistics,0.124,0.068,1.82
+trading_biz,SQL,0.161,0.159,1.02
+trading_biz,Python,0.251,0.375,0.67
+other_eng,ASIC / RTL design,0.105,0.005,22.32
+other_eng,Linux,0.131,0.109,1.19
+other_eng,Python,0.268,0.401,0.67
+other_eng,CI/CD,0.129,0.208,0.62
+other_eng,SQL,0.101,0.173,0.58
+other_eng,Observability / monitoring,0.12,0.208,0.58
+other_eng,Distributed systems,0.11,0.195,0.56
+other_eng,Cloud (unspecified),0.14,0.262,0.53
