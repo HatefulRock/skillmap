@@ -308,6 +308,23 @@ companies:
   ats: oracle_hcm
   token: eeho.fa.us2.oraclecloud.com/CX_45001
   sector: tech
+# Employers we saw only through job boards, whose own careers pages link to their board
+# (found with scripts/careers_find.py, checked with scripts/boards_check.py).
+- {company: Speechify, ats: greenhouse, token: speechify, sector: ai}
+- {company: Boltz, ats: ashby, token: boltz, sector: ai}
+- {company: Laelaps, ats: ashby, token: laelaps, sector: ai}
+- {company: Kaluza, ats: ashby, token: kaluza, sector: tech}
+- {company: Shield, ats: workable, token: shield-1, sector: fintech}
+- {company: Zopa, ats: lever, token: zopa, sector: fintech}
+- {company: iwoca, ats: ashby, token: iwoca.co.uk, sector: fintech}
+- {company: Tilt, ats: ashby, token: tilthq, sector: fintech}
+- {company: Sezzle, ats: greenhouse, token: sezzle, sector: fintech}
+- {company: Canonical, ats: greenhouse, token: canonical, sector: tech}
+- {company: Natera, ats: greenhouse, token: natera, sector: tech}
+- {company: Backblaze, ats: greenhouse, token: backblaze, sector: tech}
+- {company: Motorola Solutions, ats: workday, token: motorolasolutions.wd5/Careers, sector: tech}
+- {company: Zillow, ats: workday, token: zillow.wd5/Zillow_Group_External, sector: tech}
+
 # Japan job boards in English, read through their job pages' JSON-LD; company "*" takes each
 # ad's employer from the page.
 - company: "*"
