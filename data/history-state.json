@@ -21,7 +21,7 @@
      "Product Designer"
     ]
    },
-   "taxonomy_version": 12
+   "taxonomy_version": 16
   },
   "CC-MAIN-2015-48": {
    "ads": 20,
@@ -41,7 +41,7 @@
      "Talent Network"
     ]
    },
-   "taxonomy_version": 12
+   "taxonomy_version": 16
   },
   "CC-MAIN-2016-26": {
    "ads": 0,
@@ -76,7 +76,7 @@
      "Product Manager"
     ]
    },
-   "taxonomy_version": 12
+   "taxonomy_version": 16
   },
   "CC-MAIN-2017-26": {
    "ads": 334,
@@ -99,7 +99,7 @@
      "Editor"
     ]
    },
-   "taxonomy_version": 12
+   "taxonomy_version": 16
   },
   "CC-MAIN-2017-51": {
    "ads": 302,
@@ -122,7 +122,31 @@
      "Customer Service Agent (Fluent in Spanish & English)"
     ]
    },
-   "taxonomy_version": 12
+   "taxonomy_version": 16
+  },
+  "CC-MAIN-2018-22": {
+   "ads": 321,
+   "archives": [
+    "history/CC-MAIN-2018-22-2026-11-24.jsonl.gz"
+   ],
+   "done": "2026-11-24",
+   "period": "2018-01",
+   "stats": {
+    "captures": 4424,
+    "error HTTP 503": 18,
+    "not_tech": 661,
+    "skipped_titles": [
+     "Growth Manager - Inbound",
+     "Closing Specialist - Consumer Mortgage",
+     "Food & Beverage Manager (w/f)",
+     "Recruiting Coordinator (temp)",
+     "Editorial Producer - Sneakers",
+     "Account Director",
+     "Producteur (Producer)",
+     "Creative Designer"
+    ]
+   },
+   "taxonomy_version": 16
   },
   "CC-MAIN-2018-26": {
    "ads": 0,
@@ -157,7 +181,7 @@
      "Assistant Head of School / Admissions Director"
     ]
    },
-   "taxonomy_version": 12
+   "taxonomy_version": 16
   },
   "CC-MAIN-2019-26": {
    "ads": 320,
@@ -180,7 +204,7 @@
      "Delivery Manager Los Angeles"
     ]
    },
-   "taxonomy_version": 12
+   "taxonomy_version": 16
   },
   "CC-MAIN-2019-51": {
    "ads": 292,
@@ -204,7 +228,7 @@
      "Marketing Intelligence Analyst (m/f/*)"
     ]
    },
-   "taxonomy_version": 12
+   "taxonomy_version": 16
   },
   "CC-MAIN-2020-24": {
    "ads": 347,
@@ -227,7 +251,7 @@
      "Software Architect, Medical Devices"
     ]
    },
-   "taxonomy_version": 12
+   "taxonomy_version": 16
   },
   "CC-MAIN-2020-50": {
    "ads": 301,
@@ -251,7 +275,7 @@
      "Director, Strategic Sales - Enterprise"
     ]
    },
-   "taxonomy_version": 12
+   "taxonomy_version": 16
   },
   "CC-MAIN-2021-25": {
    "ads": 329,
@@ -275,7 +299,7 @@
      "Senior Product Manager, Revenue"
     ]
    },
-   "taxonomy_version": 12
+   "taxonomy_version": 16
   },
   "CC-MAIN-2021-49": {
    "ads": 327,
@@ -299,7 +323,7 @@
      "Sales Development Manager"
     ]
    },
-   "taxonomy_version": 12
+   "taxonomy_version": 16
   },
   "CC-MAIN-2022-21": {
    "ads": 354,
@@ -324,7 +348,30 @@
      "UX Writer"
     ]
    },
-   "taxonomy_version": 12
+   "taxonomy_version": 16
+  },
+  "CC-MAIN-2022-40": {
+   "ads": 342,
+   "archives": [
+    "history/CC-MAIN-2022-40-2026-11-24.jsonl.gz"
+   ],
+   "done": "2026-11-24",
+   "period": "2022-07",
+   "stats": {
+    "captures": 13698,
+    "not_tech": 658,
+    "skipped_titles": [
+     "Sr. Copy + Campaign Strategist",
+     "Apprentice Optician, Part-Time - Legacy Place",
+     "Federal Solutions Manager",
+     "Analyst, Paid Social",
+     "Authenticator",
+     "Investment Associate hos CVX Ventures i K\u00f8benhavn",
+     "Senior Accounting Manager",
+     "Senior Director, Corporate Communications"
+    ]
+   },
+   "taxonomy_version": 16
   },
   "CC-MAIN-2022-49": {
    "ads": 0,
@@ -345,7 +392,7 @@
    ],
    "done": "2026-11-19",
    "period": "2023-01",
-   "taxonomy_version": 12
+   "taxonomy_version": 16
   },
   "CC-MAIN-2023-50": {
    "ads": 313,
@@ -354,7 +401,7 @@
    ],
    "done": "2026-11-19",
    "period": "2023-07",
-   "taxonomy_version": 12
+   "taxonomy_version": 16
   },
   "CC-MAIN-2024-26": {
    "ads": 248,
@@ -363,7 +410,7 @@
    ],
    "done": "2026-11-19",
    "period": "2024-01",
-   "taxonomy_version": 12
+   "taxonomy_version": 16
   },
   "CC-MAIN-2024-51": {
    "ads": 296,
@@ -372,7 +419,7 @@
    ],
    "done": "2026-11-19",
    "period": "2024-07",
-   "taxonomy_version": 12
+   "taxonomy_version": 16
   },
   "CC-MAIN-2025-26": {
    "ads": 299,
@@ -381,7 +428,7 @@
    ],
    "done": "2026-11-19",
    "period": "2025-01",
-   "taxonomy_version": 12
+   "taxonomy_version": 16
   },
   "CC-MAIN-2025-51": {
    "ads": 0,
@@ -417,11 +464,26 @@
      "Claude Code Platform Lead"
     ]
    },
-   "taxonomy_version": 12
+   "taxonomy_version": 16
   }
  },
- "empty": {},
- "empty_stats": {},
+ "empty": {
+  "CC-MAIN-2016-22": 1,
+  "CC-MAIN-2025-47": 1
+ },
+ "empty_stats": {
+  "CC-MAIN-2016-22": {
+   "captures": 11,
+   "not_tech": 1,
+   "skipped_titles": [
+    "Product Designer"
+   ]
+  },
+  "CC-MAIN-2025-47": {
+   "captures": 0,
+   "skipped_titles": []
+  }
+ },
  "partial": {},
  "taxonomy_version": null
 }
