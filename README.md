@@ -2,14 +2,16 @@
 
 Which skills do employers actually ask for, how is that changing, and how does it differ by
 seniority, location, role and sector, and what does it pay? `skillmap` answers that from
-job postings at about 1,000 companies plus Singapore's national job portal, collected every
-week, and publishes the result to
+job postings from about 570 companies' own job boards and careers sites, public job boards,
+Singapore's national job portal and Hacker News, collected every week, plus US H-1B visa filings
+for pay, and publishes the result to
 [pierreblachere.com/skills](https://www.pierreblachere.com/skills).
 
 ![Skills demand vs my level](data/skills-heatmap.svg)
 
 The heatmap above regenerates every week: each cell is the share of current tech postings
-in that role family that ask for the skill, and the last column is my own rating.
+in that role family that ask for the skill, and the last column is my own rating (a draft for now;
+the website hides it until the ratings are final).
 
 ## This week
 
@@ -30,19 +32,22 @@ in that role family that ask for the skill, and the last column is my own rating
 ```
  discover (monthly)
  YC companies +   ──▶ config/boards.yaml
- candidates.yaml        (~1,000 boards)
+ candidates.yaml        (~480 boards)
                               │
  company boards ◀─────────────┘
- (Greenhouse, Lever, ─┐
-  Ashby, Workable,    │    normalise                 Supabase Postgres           aggregate
-  SmartRecruiters)    ├──▶ skills · seniority ──▶   postings (fields;     ──▶  data/skills-market.json ──▶ website
- Adzuna API           │    role · location          text → Storage)            data/skills-heatmap.svg ──▶ this README
- MyCareersFuture      │    sector · pay                                       data/postings-live.jsonl.gz
- HN "Who is hiring?" ─┘
+ (Greenhouse, Lever,  ─┐
+  Ashby, Workday, …)   │    normalise                 Supabase Postgres           aggregate
+ big-employer sites    ├──▶ skills · seniority ──▶   postings (fields;     ──▶  data/skills-market.json ──▶ website
+ public boards, Adzuna │    role · location          text → Storage)            data/skills-heatmap.svg ──▶ this README
+ MyCareersFuture       │    sector · pay                                       data/postings-live.jsonl.gz
+ HN "Who is hiring?"  ─┘
                          GitHub Actions, weekly, Mondays 02:00 Singapore time
+
+ US H-1B filings (DOL) ──▶ visa (quarterly) ──▶ data/visa-pay.json ──▶ website
 ```
 
-- **Discover** (`skillmap/discover.py`). Greenhouse, Lever, Ashby and Workable publish a company's open jobs at a fixed address once you know its board name. Once a month,
+- **Discover** (`skillmap/discover.py`). Greenhouse, Lever, Ashby, Workable, Teamtailor,
+  Recruitee and Personio publish a company's open jobs at a fixed address once you know its board name. Once a month,
   discovery takes every active Y Combinator company that is hiring (from the public
   [yc-oss](https://github.com/yc-oss/api) list) plus the AI, crypto, fintech, quant and
   Singapore/Asia employers in `config/candidates.yaml`, tries the likely board names on each
@@ -53,7 +58,7 @@ in that role family that ask for the skill, and the last column is my own rating
   into a common `RawPosting`. A shared HTTP client identifies itself, rate-limits per host and
   retries transient errors. A source that fails is recorded in the run summary and the rest of
   the run carries on.
-- **Extract** (`skillmap/extract/`). A taxonomy of 90 skills (`config/taxonomy.yaml`), each a
+- **Extract** (`skillmap/extract/`). A taxonomy of about 400 skills (`config/taxonomy.yaml`), each a
   set of regexes written for full posting text: word boundaries, case-sensitive patterns for
   ambiguous names like *Go* and *MCP*, and context rules so "go beyond" is not Go. Lines under
   a "Nice to have" heading (or saying "is a plus") are tracked separately from requirements.
@@ -94,17 +99,22 @@ Only sources that publish postings for programmatic reading are used:
 
 | Source | What it adds | Access |
 |---|---|---|
-| Greenhouse, Lever, Ashby, Workable (SmartRecruiters opt-in: its API host's robots.txt disallows crawlers) | Full postings from ~1,000 companies (`config/boards.yaml`, `config/companies.yaml`) | Public job-board APIs that the companies publish themselves |
-| Workday career sites | About 30 banks, insurers and large tech employers listed in `config/companies.yaml` (text for new technical postings only, up to 150 a site per run) | The JSON each company's own careers page loads |
+| Greenhouse, Lever, Ashby, Workable, Teamtailor, Recruitee, Personio (SmartRecruiters opt-in: its API host's robots.txt disallows crawlers) | Full postings from about 570 companies (`config/boards.yaml`, `config/companies.yaml`) | Public job-board APIs that the companies publish themselves |
+| Workday career sites | About 35 banks, insurers and large tech employers listed in `config/companies.yaml` (text for new technical postings only, up to 150 a site per run) | The JSON each company's own careers page loads |
 | Amazon (amazon.jobs) | Technical job categories, newest 3,000 a run | The JSON Amazon's careers site loads |
 | Microsoft (apply.careers.microsoft.com) | Technical searches, newest first; text for new technical postings only | The JSON Microsoft's careers site loads (`/api/pcsx`, allowed by its robots.txt) |
+| Apple (jobs.apple.com), TikTok (lifeattiktok.com) | Technical postings; text for new technical titles only | The data each careers site's own pages load |
+| Eightfold and Oracle Recruiting Cloud careers sites | Netflix (Eightfold) and large banks such as JPMorgan Chase (Oracle) | The public JSON each careers page loads |
 | Other careers sites (`ats: jsonld`) | Companies with their own site, listed with a listing page or sitemap (`token`) and a job-link pattern (`links`); up to 150 new job pages a site per run | The schema.org `JobPosting` markup each job page carries for search engines; robots.txt is honoured |
 
-Google, Apple and Meta are left out: Google's careers results exist only inside page HTML, Apple's search needs a session token, and Meta's robots.txt forbids automated collection.
 | [Adzuna](https://developer.adzuna.com/) | Broad market in Singapore, the UK and the US | Free API key; "Job data: The Adzuna API". Descriptions are snippets, so its skill counts are a lower bound |
 | [Common Crawl](https://commoncrawl.org) | Job ads from past years: archived Greenhouse and Lever job pages, up to 400 tech ads per half-year since 2015 (`skillmap history`, the daily `history` workflow, which resumes where the last run stopped) | Public web archive; byte-range reads of its index files and of single pages, one request a second, backing off on 503 |
 | MyCareersFuture | Singapore's national job portal, including advertised salary ranges | The search API its own site uses, read slowly (one request every 3 s), newest first, stopping at postings already collected |
 | Hacker News "Who is hiring?" | Monthly threads back to 2011: the long trend lines | Official [HN Algolia API](https://hn.algolia.com/api) |
+| Himalayas, Jobicy, RemoteOK, Remotive, Working Nomads, Arbeitnow | Remote jobs worldwide and Europe; tech titles only, merged with the same ad from a company board | Public job-board APIs that ask only for a credit link |
+| US Department of Labor H-1B filings (LCA disclosure data) | What employers pay visa hires, by role and company size; a separate pay view, never mixed with ad statistics (`skillmap/visa.py`, the quarterly `visa` workflow) | Public quarterly Excel files from the Office of Foreign Labor Certification |
+
+Google and Meta are left out: Google's careers results exist only inside page HTML, and Meta's robots.txt forbids automated collection.
 
 LinkedIn, Indeed and Glassdoor forbid scraping in their terms and are not used.
 
@@ -147,7 +157,8 @@ Tests that need Postgres run when `SKILLMAP_TEST_DATABASE_URL` is set; CI provid
 
 - Company boards cover companies whose careers pages run on those platforms: mostly
   startups and scale-ups, US-heavy through Y Combinator. Big employers are covered only where
-  listed in `config/companies.yaml` (Workday sites, Amazon, Microsoft); others on in-house
+  listed in `config/companies.yaml` (Workday and Oracle sites, Amazon, Microsoft, Apple, TikTok,
+  Netflix); others on in-house
   systems are missing, though MyCareersFuture (and Adzuna, with a key) cover them for Singapore.
 - Pay is only what ads state. US ads state it far more often (by law) than Asian ones, so
   per-country figures rest on very different sample sizes; each figure carries its count.
@@ -155,7 +166,7 @@ Tests that need Postgres run when `SKILLMAP_TEST_DATABASE_URL` is set; CI provid
   never mixed with the live market numbers.
 - Regex extraction misses phrasing it has no pattern for. The tests pin both what it must find
   and the false positives it must avoid; new cases go in `tests/test_extract.py`. Once a month
-  (`audit` workflow) Claude labels about 100 recent postings and the regex is scored against it;
+  (`audit` workflow), Claude labels about 100 recent postings and the regex is scored against it;
   the precision and recall land in `data/audit.json` and on the website, and the skills with the
-  most disagreements show where the taxonomy needs work. Set the `ANTHROPIC_API_KEY` secret to
-  turn it on (a few dollars a month).
+  most disagreements show where the taxonomy needs work. The monthly schedule is paused until the
+  `ANTHROPIC_API_KEY` secret is set (a few dollars a month); it can be run by hand meanwhile.
