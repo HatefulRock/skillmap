@@ -234,3 +234,7 @@ def test_a_crawl_whose_pages_hold_no_tech_ads_settles_after_empty_tries(tmp_path
         state = json.loads((tmp_path / "history-state.json").read_text())
         assert ("CC-MAIN-2024-33" in state["crawls"]) is (run == history.EMPTY_TRIES)
     assert state["crawls"]["CC-MAIN-2024-33"]["stats"]["not_tech"] == 4
+    # Settled with pages but no tech ads, its half-year moves on to the earlier crawl too.
+    history.run(client(), TAX, tmp_path, None, TODAY, budget_minutes=10)
+    state = json.loads((tmp_path / "history-state.json").read_text())
+    assert state["empty"] == {"CC-MAIN-2024-30": 1}
