@@ -43,6 +43,21 @@
    },
    "taxonomy_version": 16
   },
+  "CC-MAIN-2016-22": {
+   "ads": 0,
+   "archives": [],
+   "done": "2026-11-26",
+   "period": "2016-01",
+   "stats": {
+    "captures": 11,
+    "not_tech": 1,
+    "skipped_titles": [
+     "Product Designer"
+    ]
+   },
+   "taxonomy_version": 16,
+   "tries": 3
+  },
   "CC-MAIN-2016-26": {
    "ads": 0,
    "archives": [],
@@ -430,6 +445,18 @@
    "period": "2025-01",
    "taxonomy_version": 16
   },
+  "CC-MAIN-2025-47": {
+   "ads": 0,
+   "archives": [],
+   "done": "2026-11-26",
+   "period": "2025-07",
+   "stats": {
+    "captures": 0,
+    "skipped_titles": []
+   },
+   "taxonomy_version": 16,
+   "tries": 3
+  },
   "CC-MAIN-2025-51": {
    "ads": 0,
    "archives": [],
@@ -467,23 +494,8 @@
    "taxonomy_version": 16
   }
  },
- "empty": {
-  "CC-MAIN-2016-22": 2,
-  "CC-MAIN-2025-47": 2
- },
- "empty_stats": {
-  "CC-MAIN-2016-22": {
-   "captures": 11,
-   "not_tech": 1,
-   "skipped_titles": [
-    "Product Designer"
-   ]
-  },
-  "CC-MAIN-2025-47": {
-   "captures": 0,
-   "skipped_titles": []
-  }
- },
+ "empty": {},
+ "empty_stats": {},
  "partial": {},
  "taxonomy_version": null
 }
