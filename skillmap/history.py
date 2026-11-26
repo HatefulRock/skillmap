@@ -412,9 +412,10 @@ def run(client: PoliteClient, taxonomy: Taxonomy, out: Path, archive: Archive | 
     tries: dict[str, int] = dict(state.get("empty") or {})
     redone = reextract(rows, state, archive, taxonomy)
     try:
-        # Some crawls hold no Greenhouse or Lever pages at all (2016 H1, 2018 H1, 2022 H2 and 2025 H2
-        # came back with no captures, run after run); their half-year falls back to an earlier crawl.
-        no_pages = {k for k, v in state["crawls"].items() if not v.get("ads") and v.get("stats", {}).get("captures") == 0}
+        # Some crawls give a half-year no tech ads at all: no Greenhouse or Lever pages (2018 H1,
+        # 2022 H2 and 2025 H2 came back with no captures, run after run), or only a few pages that
+        # aren't tech ads (2016 H1). Once settled, their half-year falls back to an earlier crawl.
+        no_pages = {k for k, v in state["crawls"].items() if not v.get("ads") and v.get("tries", 0) >= EMPTY_TRIES}
         crawls = pick_crawls(client.get_json(COLLINFO), today, no_pages)
     except Exception as exc:  # noqa: BLE001 - keep any re-extraction; the next run tries again
         log.warning("history: crawl list unavailable: %s", exc)
