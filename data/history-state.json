@@ -43,6 +43,23 @@
    },
    "taxonomy_version": 16
   },
+  "CC-MAIN-2016-18": {
+   "ads": 9,
+   "archives": [
+    "history/CC-MAIN-2016-18-2026-11-27.jsonl.gz"
+   ],
+   "done": "2026-11-27",
+   "period": "2016-01",
+   "stats": {
+    "captures": 32,
+    "not_tech": 2,
+    "skipped_titles": [
+     "Technical Project Manager",
+     "Talent Network"
+    ]
+   },
+   "taxonomy_version": 16
+  },
   "CC-MAIN-2016-22": {
    "ads": 0,
    "archives": [],
@@ -443,6 +460,30 @@
    ],
    "done": "2026-11-19",
    "period": "2025-01",
+   "taxonomy_version": 16
+  },
+  "CC-MAIN-2025-43": {
+   "ads": 295,
+   "archives": [
+    "history/CC-MAIN-2025-43-2026-11-27.jsonl.gz"
+   ],
+   "done": "2026-11-27",
+   "period": "2025-07",
+   "stats": {
+    "captures": 10154,
+    "error HTTP 503": 8,
+    "not_tech": 697,
+    "skipped_titles": [
+     "Principal Business Consultant - R&D - Clinical (Remote)",
+     "Principal Mechanical Design Engineer - Mechanical Systems (R3866) (Remote)",
+     "International In-house Lawyer",
+     "Gaming Assurance Manager",
+     "Detailer",
+     "Field Marketing Manager",
+     "Used Car Sales Manager",
+     "Senior Product Manager, Advertising"
+    ]
+   },
    "taxonomy_version": 16
   },
   "CC-MAIN-2025-47": {
